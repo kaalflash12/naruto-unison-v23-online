@@ -1,0 +1,54 @@
+NARUTO UNISON PT-BR — R33 — THIRD-PARTY / OPEN-SOURCE ASSETS
+================================================================================
+
+1) FONT AWESOME FREE — SVG UI ICONS
+Source project: https://github.com/FortAwesome/Font-Awesome
+Upstream: Fonticons, Inc.
+License for SVG icons: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License text bundled at:
+  static/img/ui/open-source-r33/FONTAWESOME-LICENSE.txt
+
+Used locally in R33:
+  user-ninja.svg       navigation / online/profile
+  scroll.svg           story / missions / scroll panels
+  crosshairs.svg       ninja missions / precision
+  bolt.svg             jutsu / lightning
+  certificate.svg      tasks / mastery seal
+  explosion.svg        events / explosive techniques
+  eye.svg              dojutsu / sensory
+  gem.svg              inventory / rare gear
+  mask.svg             shinobi / stealth
+  shield.svg           defensive mastery
+  fire.svg             katon
+  droplet.svg          suiton
+  wind.svg             futon
+  mountain.svg         doton
+  leaf.svg              home / shinobi theme
+  yin-yang.svg         chakra / bloodline
+  burst.svg            rasengan / impact
+  moon.svg             genjutsu / shadow
+  skull.svg            nukenin / dangerous techniques
+  person-running.svg   taijutsu / movement
+  hand.svg             seals / medical / control
+  fan.svg              wind / Temari-style families
+  meteor.svg           high-impact / bijuu
+  star.svg             mastery completion / rarity
+  circle-notch.svg     chakra control / loading
+  hurricane.svg        vortex / Rasengan-family accents
+
+Attribution:
+  Font Awesome Free icons by Fonticons, Inc., licensed CC BY 4.0.
+
+2) NARUTO UNISON — OPEN-SOURCE REFERENCE
+Source project: https://github.com/naruto-unison/naruto-unison
+License: BSD-3-Clause for project source.
+R33 uses the public repository only as an implementation/design reference; no
+third-party Naruto character artwork is copied from that repository into this
+asset bundle.
+
+IMPORTANT
+“Public on GitHub” does not automatically mean “free to redistribute.” R33 only
+bundles third-party assets whose reuse license is explicit. Naruto character art
+already present in the project remains fan-game content and is not re-licensed
+by this attribution file.
+================================================================================

@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#74191b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Naruto Unison">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/NarutoUnison-180.png">
+<title>Naruto Unison PT-BR — V23.17 R33 NARUTO UNISON</title>
+<link rel="icon" href="assets/NarutoUnison-Historia.ico">
+<link rel="stylesheet" href="static/css/embeds.css">
+<link rel="stylesheet" href="styles-online.css?v=r33-unison">
+</head>
+<body>
+<main id="main">
+
+<div id="authPage" class="authPage">
+  <section class="authCard">
+    <div class="authBrand"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><div><small>NARUTO UNISON PT-BR</small><h1>Entre para continuar</h1><p>Seu progresso fica vinculado à sua conta e é salvo automaticamente no servidor.</p></div></div>
+    <div class="authGrid">
+      <label>Usuário<input id="authUser" maxlength="24" autocomplete="username" placeholder="3 a 24 caracteres"></label>
+      <label>Senha<input id="authPass" type="password" maxlength="64" autocomplete="current-password" placeholder="mínimo 8 caracteres"></label>
+    </div>
+    <div class="authActions"><button id="authLogin">ENTRAR</button><button id="authRegister">CRIAR CONTA</button></div>
+    <p id="authMsg" class="authMsg">Pronto para entrar. Verificando o servidor em segundo plano...</p>
+    <div class="authInfo"><b>AUTOSAVE</b><span>História • personagens • Jutsus • Ryō • equipamentos • Tarefas • Missões Ninja • equipe • estatísticas</span></div>
+  </section>
+</div>
+
+<div id="homePage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button class="active" data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="homeMain">
+    <header class="homeTop"><div><small>SEU NINJA EM DESTAQUE</small><h1 id="homeCharacterName">Naruto Unison</h1><p id="homeCharacterMeta"></p></div><div class="homeCurrency"><span id="homeLevel"></span><b id="homeDna"></b></div></header>
+    <div class="homeHeroGrid">
+      <article class="homeCharacterCard">
+        <div class="homeCharacterPortrait"><img id="homeCharacterImage" src="static/img/icon.png" alt=""></div>
+        <div class="homeCharacterInfo"><h2 id="homeCharacterTitle"></h2><p id="homeCharacterBio"></p><div id="homeTeamMini" class="homeTeamMini"></div><button data-go="select">ALTERAR EQUIPE</button></div>
+      </article>
+      <article class="homeJutsuPanel"><header><div><small>ARSENAL ATUAL</small><h2>Jutsus equipados</h2></div><button data-go="jutsus">ABRIR ARSENAL</button></header><div id="homeJutsuCards" class="homeJutsuCards"></div></article>
+    </div>
+    <div class="homeActionGrid">
+      <button data-go="select"><b>JOGAR / MONTAR EQUIPE</b><span>Escolha 3 ninjas e enfrente a IA.</span></button>
+      <button data-go="story"><b>MODO HISTÓRIA</b><span>Capítulos, objetivos e desbloqueios.</span></button>
+      <button data-go="jutsus"><b>JUTSUS / ARSENAL</b><span>Veja, entenda e equipe cada técnica.</span></button>
+      <button data-go="ninjaMissions"><b>MISSÕES NINJA</b><span>100 operações interativas com decisões, risco e loot.</span></button>
+      <button data-go="events"><b>EVENTOS</b><span>Nukenin semanal e Raid Bijū mensal.</span></button>
+      <button data-go="encyclopedia"><b>ENCICLOPÉDIA</b><span>Consulta de personagens e técnicas.</span></button>
+      <button data-go="online"><b>ONLINE</b><span>Casual, salas e Ranked.</span></button>
+    </div>
+  </section>
+</div>
+
+<div id="jutsuPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button class="active" data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="jutsuMain">
+    <header class="jutsuHeader"><div><small>ARSENAL DE JUTSUS</small><h1>Escolha e entenda suas técnicas</h1><p>O que aparece equipado aqui é o que entra no combate.</p></div><button data-go="select">VOLTAR À EQUIPE</button></header>
+    <div class="jutsuLayout">
+      <aside class="jutsuCharacterList"><h3>NINJA</h3><input id="jutsuCharacterSearch" type="search" placeholder="Buscar personagem"><div id="jutsuCharacterList"></div></aside>
+      <section class="jutsuCharacterProfile">
+        <div class="jutsuCharacterHead"><img id="jutsuCharacterPortrait" src="static/img/icon.png" alt=""><div><small id="jutsuCharacterEra"></small><h2 id="jutsuCharacterName"></h2><p id="jutsuCharacterBio"></p><div id="jutsuCharacterMastery"></div></div></div>
+        <div id="jutsuSlots" class="jutsuSlots"></div>
+      </section>
+      <aside class="jutsuDetail"><div id="jutsuDetailEmpty"><h3>DETALHES</h3><p>Clique em uma técnica para ver imagem, custo, recarga, efeito e descrição.</p></div><div id="jutsuDetailBody"></div></aside>
+    </div>
+  </section>
+</div>
+
+<div id="selectPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button class="active" data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="selectMain">
+    <header class="selectTop"><div><small>PERSONAGENS / EQUIPE</small><h1>Monte seu time</h1><p>Escolha 3 ninjas, confira as técnicas e inicie a partida.</p></div></header>
+    <div id="charSelect">
+    <div id="historyBuildBadge">HISTÓRIA • PC + CELULAR • 44 CAPÍTULOS • ERA BORUTO • V23.17 R33 NARUTO UNISON</div>
+    <header>
+      <nav id="playButtons">
+        <button id="startMatch" class="playButton parchment">INICIAR PARTIDA</button>
+        <button id="randomYou" class="playButton parchment">TIME ALEATÓRIO</button>
+        <div id="aiCompact" class="parchment">
+          <span class="aiLabel">IA</span>
+          <select id="aiProfile" title="Escolher IA adversária"></select>
+          <button id="randomAI" title="Trocar time mantendo esta IA">NOVO</button>
+          <div id="aiTeamButtons" aria-label="Time adversário atual"></div>
+          <small id="aiSummary" aria-live="polite"></small>
+        </div>
+      </nav>
+      <div class="space"></div>
+      <div id="teamContainer">
+        <div id="teamButtons" class="select"></div>
+        <div class="space"></div>
+        <div id="underTeam" class="parchment"><span class="sideIdentity">VOCÊ</span><span id="teamCost"></span></div>
+      </div>
+      <section id="userBox" class="parchment loggedin">
+        <h4><aside class="ryo" id="selRyo">0</aside><span id="selName">Jogador</span></h4>
+        <p>Ninja</p>
+        <dt>Nível</dt><dd id="selLevel">1</dd>
+        <dt>Registro</dt><dd id="selRecord">0-0</dd>
+        <dt>Controle</dt><dd>VOCÊ</dd>
+      </section>
+    </header>
+
+    <article class="parchment" id="preview"></article>
+<section id="forTeam" class="chars parchment">
+      <button id="prevPage" class="scroll" disabled><div></div><img src="static/img/ui/scroll/close.png"></button>
+      <button id="nextPage" class="scroll"><div></div><img src="static/img/ui/scroll/right.png"></button>
+      <div id="roster" class="charScroll"></div>
+      <div id="browse">
+        <button class="parchment" data-browse="first">PRIMEIRO</button>
+        <button class="parchment" data-browse="all" disabled>TODOS</button>
+        <button class="parchment" data-browse="original">ORIGINAL</button>
+        <button class="parchment" data-browse="shippuden">SHIPPUDEN</button>
+        <button class="parchment" data-browse="reanimated">REANIMADOS</button>
+        <button class="parchment" data-browse="boruto">BORUTO</button>
+        <button class="parchment" data-browse="events">EVENTOS</button>
+      </div>
+    </section>
+    </div>
+  </section>
+</div>
+
+<div id="battlePage" class="hidden" style="width:100%">
+  <div id="game">
+    <div id="error"></div>
+    <div id="player0" class="player"><div class="controlTag">VOCÊ — LADO CONTROLADO</div></div>
+    <div id="player1" class="player"><div class="controlTag">IA — COMPUTADOR</div></div>
+    <div id="center"></div>
+    <div id="battlelog"></div>
+    <div id="bottom">
+      <div id="account0" class="account"><section><h3 id="bottomYou">Jogador</h3><p>VOCÊ</p></section></div>
+      <article class="parchment" id="view">
+        <section><h4>COMO JOGAR</h4><p><b>1.</b> Clique numa técnica. <b>2.</b> O alvo válido fica VERDE. <b>3.</b> Clique no alvo. <b>4.</b> A ação entra no centro. <b>5.</b> Clique em CONFIRMAR TURNO.</p></section>
+      </article>
+      <div id="account1" class="account"><section><h3 id="bottomAI">IA</h3><p id="bottomAIPlan">COMPUTADOR</p></section></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="storyPage" class="hidden">
+  <div id="storyHero">
+    <div class="storyHeroShade">
+      <div>
+        <span class="storyKicker">MODO HISTÓRIA</span>
+        <h1>Da Academia à Nova Geração</h1>
+        <p>7 arcos • 44 capítulos • diálogos • objetivos especiais • recompensas e desbloqueios</p>
+        <div class="storyHeroActions">
+          <button id="storyContinue" class="storyPrimary">CONTINUAR HISTÓRIA</button>
+          <button id="storyGuideBtn">COMO FUNCIONA?</button>
+          <button class="storyBack" data-go="select">VOLTAR À SELEÇÃO</button>
+        </div>
+      </div>
+      <div class="storyProgressBox">
+        <b id="storyProgressText">0 / 44</b>
+        <span>missões concluídas</span>
+        <div class="storyProgress"><i id="storyProgressBar"></i></div>
+        <small id="storyBadgeCount">0 marcos conquistados</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="storyHow" class="parchment">
+    <h3>Antes de começar</h3>
+    <div class="storyHowGrid">
+      <div><b>1. Abra um capítulo</b><span>Veja o pequeno texto de introdução, objetivo e equipes.</span></div>
+      <div><b>2. Lute normalmente</b><span>Técnica → alvo verde → fila → CONFIRMAR TURNO.</span></div>
+      <div><b>3. Leia o objetivo</b><span>Algumas missões pedem sobreviver ou proteger alguém, não apenas vencer.</span></div>
+      <div><b>4. Ganhe recompensas</b><span>Ryō, XP, personagens e marcos ficam salvos automaticamente.</span></div>
+    </div>
+  </div>
+
+  <div id="storyArcs"></div>
+</div>
+
+<div id="storyModal" class="hidden">
+  <div id="storyModalBackdrop"></div>
+  <section id="storyModalCard" class="parchment">
+    <div id="storyModalArt"></div>
+    <div id="storyModalBody">
+      <div id="storySpeakerRow">
+        <img id="storyPortrait" src="static/img/icon.png" alt="">
+        <div><small id="storyChapterLabel">HISTÓRIA</small><h3 id="storySpeaker">Narrador</h3></div>
+      </div>
+      <p id="storyText"></p>
+      <div id="storyBriefExtra"></div>
+      <div id="storyModalActions">
+        <button id="storySkip">PULAR</button>
+        <button id="storyNext" class="storyPrimary">PRÓXIMO</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div id="variantModal" class="hidden">
+  <div class="variantBackdrop"></div>
+  <section class="variantCard parchment">
+    <header><div><small>ARSENAL DE JUTSUS</small><h2 id="variantTitle">Variações</h2></div><button id="variantClose">×</button></header>
+    <p id="variantIntro"></p>
+    <div id="variantChoices"></div>
+  </section>
+</div>
+
+<div id="onlinePage" class="hidden">
+  <div class="pagePanel parchment onlinePanel">
+    <h2>JOGAR ONLINE</h2>
+    <div class="onlineStatusRow"><b>Servidor:</b> <span id="serverStatus">verificando...</span><span id="serverAddress"></span></div>
+    <section class="publicLinkCard" id="publicLinkCard">
+      <div><small>LINK PÚBLICO PARA JOGAR PELA INTERNET</small><h3 id="publicLinkStatus">Verificando o endereço público...</h3></div>
+      <div class="publicLinkControls">
+        <input id="publicLinkInput" type="text" readonly value="">
+        <button id="copyPublicLink">COPIAR LINK</button>
+        <button id="openPublicLink">ABRIR LINK</button>
+      </div>
+      <p id="publicLinkHelp">O endereço público do GitHub Pages funciona fora da sua rede e usa o backend Supabase configurado.</p>
+    </section>
+    <section id="onlineLoginBox">
+      <h3>Conta online</h3>
+      <div class="onlineFields">
+        <label>Usuário <input id="onlineUser" maxlength="24" autocomplete="username"></label>
+        <label>Senha <input id="onlinePass" type="password" maxlength="64" autocomplete="current-password"></label>
+      </div>
+      <div class="onlineActions">
+        <button id="onlineLogin">ENTRAR</button>
+        <button id="onlineRegister">CRIAR CONTA</button>
+      </div>
+      <p id="onlineLoginMsg"></p>
+    </section>
+    <section id="onlineLobbyBox" class="hidden">
+      <h3 id="onlineLoggedAs">Online</h3><button id="onlineLogout" class="onlineLogout">SAIR DA CONTA</button>
+      <p>Você entra com o mesmo time de 3 ninjas selecionado na tela principal.</p>
+      <div class="onlineActions">
+        <button id="onlineQuick">PARTIDA RÁPIDA</button>
+        <button id="onlineCreate">CRIAR SALA</button>
+      </div>
+      <div class="onlineJoin">
+        <input id="onlineCode" maxlength="6" placeholder="CÓDIGO">
+        <button id="onlineJoin">ENTRAR NA SALA</button>
+      </div>
+      <section id="rankedPanel" class="rankedPanel hidden">
+        <header><div><small>MODO ONLINE COMPETITIVO</small><h3>RANQUEADO</h3></div><div class="rankedIdentity"><b id="rankedRating">1000 MMR • Genin</b><span id="rankedRecord">0V • 0D • 0E</span></div></header>
+        <p>Fila separada do casual. Vitória, derrota, empate e abandono alteram o MMR da temporada. O pareamento procura primeiro jogadores próximos da sua pontuação.</p>
+        <div class="rankedActions"><button id="rankedQueue">ENTRAR NA FILA RANKED</button><button id="rankedCancel" class="secondary">SAIR DA FILA</button><button id="rankedRefresh">ATUALIZAR RANKING</button></div>
+        <div class="rankedDivisions"><span>Genin</span><span>Chūnin</span><span>Jōnin</span><span>ANBU</span><span>Sannin</span><span>Kage</span></div>
+        <div id="rankedLeaderboard" class="rankedLeaderboard"></div>
+      </section>
+      <div id="onlineRoomBox" class="hidden">
+        <h3>Sala <span id="onlineRoomCode"></span></h3>
+        <p id="onlineRoomStatus">Aguardando...</p>
+        <button id="onlineCancelRoom">SAIR DA SALA</button>
+      </div>
+    </section>
+    <div class="onlineHelp">
+      <b>Online:</b> GitHub Pages publica o cliente e Supabase mantém contas, saves, salas, Raid e Ranked. O PC pode ficar desligado depois do deploy.
+    </div>
+    <p><button class="playButton parchment" data-go="select">VOLTAR À SELEÇÃO</button></p>
+  </div>
+</div>
+
+<div id="missionPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button class="active" data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="missionMain">
+  <div class="pagePanel parchment missionPanel">
+    <h2>Tarefas, Feitos e Provas de Domínio</h2>
+    <p><b>Personagens continuam sendo liberados no Modo História.</b> Aqui ficam Tarefas rotativas, Feitos permanentes e as Provas de Domínio individuais dos Jutsus. As 100 Missões Ninja têm um modo próprio.</p>
+    <section class="periodicMissionBlock dailyBlock">
+      <header><div><small>REINICIA TODO DIA</small><h3>Tarefas Diárias • 10 de 20 rotativas</h3></div><div class="periodicSummary"><span id="dailyMissionText">0/10</span><div class="bar"><i id="dailyMissionBar"></i></div><button id="dailyBonus" disabled>BAÚ DIÁRIO</button></div></header>
+      <div class="missionGrid" id="dailyMissions"></div>
+    </section>
+    <section class="periodicMissionBlock weeklyBlock">
+      <header><div><small>REINICIA ÀS SEGUNDAS</small><h3>Tarefas Semanais • 10 de 20 rotativas</h3></div><div class="periodicSummary"><span id="weeklyMissionText">0/10</span><div class="bar"><i id="weeklyMissionBar"></i></div><button id="weeklyBonus" disabled>BAÚ SEMANAL</button></div></header>
+      <div class="missionGrid" id="weeklyMissions"></div>
+    </section>
+    <div class="jutsuMasteryHead" id="jutsuMasterySection">
+      <div><small>406 TREINAMENTOS INDIVIDUAIS</small><h3>Provas de Domínio de Jutsu</h3><p>Cada técnica possui prova própria: leitura, selos, precisão, controle, tempo de reação ou combate. Usos e vitórias genéricas não liberam Jutsus.</p></div>
+      <select id="jutsuMissionCharacter"></select>
+    </div>
+    <div id="jutsuMissions"></div>
+    <div id="masteryTrialPanel" class="masteryTrialPanel hidden"></div>
+    <h3 class="permanentFeatTitle">Feitos permanentes • progressão até o fim do jogo</h3>
+    <div class="missionGrid" id="missions"></div>
+    <p><button class="playButton parchment" data-go="select">VOLTAR À SELEÇÃO</button></p>
+  </div>
+  </section>
+</div>
+
+<div id="eventsPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button class="active" data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="eventMain">
+    <div class="pagePanel parchment eventPanel">
+      <header class="eventPageHead"><div><small>CONTEÚDO RECORRENTE</small><h1>Eventos Ninja</h1><p>Os eventos agora ficam separados das Tarefas. Prepare a equipe, escolha a estratégia e enfrente um alvo semanal ou uma Bijū mensal.</p></div><div id="eventCycleInfo" class="eventCycleInfo"></div></header>
+      <div class="eventRulesGrid">
+        <article><b>SEMANAL • LIVRO BINGO</b><span>Caçada Nukenin: vença uma vez por semana para receber 1 equipamento RARO ou ÉPICO. Repetições não duplicam a recompensa.</span></article>
+        <article><b>MENSAL • RAID BIJŪ</b><span>Raid Bijū: até 2 vitórias por ciclo. A 1ª libera a Bijū por 168h; a 2ª amplia o total do ciclo para 346h. O desbloqueio é o prêmio principal do evento mensal.</span></article>
+      </div>
+      <div id="bijuuEvents" class="bijuuEvents"></div>
+    </div>
+  </section>
+</div>
+
+<div id="ninjaMissionPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button class="active" data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="missionMain">
+    <div class="pagePanel parchment missionPanel ninjaMissionPanel">
+      <header class="ninjaMissionHead"><div><small>MODO MISSÕES NINJA</small><h2>100 Missões Ninja Interativas — Operações 01–100</h2><p>20 missões por Rank, exatamente da operação 01 à 100. Monte uma equipe de 3 ninjas, escolha abordagem e decisões por etapa. Primeiras conclusões entregam consumíveis úteis e, em marcos, equipamentos garantidos com durabilidade.</p></div><label>RANK<select id="ninjaMissionRank"><option>D</option><option>C</option><option>B</option><option>A</option><option>S</option></select></label></header>
+      <div id="ninjaMissionTeam" class="featureStatus"></div>
+      <div id="ninjaMissionGrid" class="ninjaMissionGrid"></div>
+      <p><button class="playButton parchment" data-go="select">ALTERAR EQUIPE</button></p>
+    </div>
+  </section>
+</div>
+
+<div id="ninjaMissionDetailModal" class="hidden">
+  <div class="ninjaMissionDetailBackdrop"></div>
+  <section class="ninjaMissionDetailCard parchment">
+    <button id="ninjaMissionDetailClose" class="modalClose" aria-label="Fechar">×</button>
+    <div id="ninjaMissionDetailBody"></div>
+  </section>
+</div>
+
+<div id="ninjaMissionRunModal" class="hidden">
+  <div class="ninjaMissionRunBackdrop"></div>
+  <section class="ninjaMissionRunCard parchment">
+    <div id="ninjaMissionRunBody"></div>
+  </section>
+</div>
+
+
+<div id="profilePage" class="hidden">
+  <div class="pagePanel parchment">
+    <h2>Perfil da conta</h2>
+    <p id="profileCloudStatus">Progresso salvo automaticamente no servidor e mantido em cache local.</p>
+    <div class="profileBtns"><input id="nameInput" type="text" maxlength="24"><button id="saveName">SALVAR NOME</button></div>
+    <p id="profileStats"></p>
+    <div class="profileBtns">
+      <button id="exportSave">EXPORTAR SAVE</button>
+      <label>IMPORTAR SAVE<input id="importSave" type="file" accept=".json" hidden></label>
+      <button id="resetSave">APAGAR PROGRESSO</button>
+      <button id="logoutAccount">SAIR DA CONTA</button>
+    </div>
+    <p><button class="playButton parchment" data-go="select">VOLTAR À SELEÇÃO</button></p>
+  </div>
+</div>
+
+<div id="shopPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="featureMain">
+    <div class="pagePanel parchment featurePanel">
+    <h2>Loja Ninja</h2>
+    <p>Compre consumíveis e equipamentos com Ryō. Armas, roupas, calçados, pergaminhos e talismãs podem ser equipados nos personagens e perdem durabilidade em lutas.</p>
+    <div id="shopWallet" class="featureStatus"></div>
+    <div id="shopTabs" class="shopTabs"></div>
+    <div id="shopFilters" class="shopFilters"></div>
+    <div id="shopItems"></div>
+    
+  </div>
+  </section>
+</div>
+
+<div id="inventoryPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="featureMain">
+    <div class="pagePanel parchment featurePanel">
+      <h2>Inventário Ninja</h2>
+      <p>Consumíveis e equipamentos comprados ou conquistados. Consumíveis usam o limite de 1 por turno; equipamentos ficam vinculados ao personagem, concedem bônus leves e perdem durabilidade em lutas.</p>
+      <div id="inventoryStatus" class="featureStatus"></div>
+      <div id="inventoryItems" class="featureGrid"></div>
+    </div>
+  </section>
+</div>
+<div id="encyclopediaPage" class="gameShellPage hidden">
+  <aside class="gameSideNav">
+    <div class="gameLogoBlock"><img src="static/img/icon.png" alt="Naruto Unison PT-BR"><b>NARUTO UNISON</b><span>PT-BR • V23.17 R33 NARUTO UNISON</span></div>
+    <button data-go="home">INÍCIO</button>
+    <button data-go="select">PERSONAGENS / EQUIPE</button>
+    <button data-go="jutsus">JUTSUS / ARSENAL</button>
+    <button data-go="tasks">TAREFAS</button>
+    <button data-go="ninjaMissions">MISSÕES NINJA</button>
+    <button data-go="events">EVENTOS</button>
+    <button data-go="story">HISTÓRIA</button>
+    <button data-go="shop">LOJA</button>
+    <button data-go="inventory">INVENTÁRIO</button>
+    <button data-go="encyclopedia">ENCICLOPÉDIA</button>
+    <button data-go="online">ONLINE</button>
+    <button data-go="profile">PERFIL</button>
+  </aside>
+  <section class="featureMain">
+    <div class="pagePanel parchment featurePanel">
+    <h2>Enciclopédia</h2>
+    <p>Consulta somente leitura. Ver uma técnica aqui não a equipa e não altera desbloqueios.</p>
+    <div class="featureFields"><input id="encyclopediaSearch" type="search" placeholder="Buscar ninja ou jutsu"><select id="encyclopediaEra"><option value="all">Todas as eras</option><option value="original">Original</option><option value="shippuden">Shippuden</option><option value="reanimated">Reanimados</option><option value="boruto">Boruto</option></select></div>
+    <div id="encyclopediaResults" class="encyclopediaResults"></div>
+    
+  </div>
+  </section>
+</div>
+
+</main>
+<script src="roster.js"></script>
+<script src="story-data.js"></script>
+<script src="character-unlocks.js"></script>
+<script src="jutsu-variants.js?v=r33-unison"></script>
+<script src="battle-fx.js"></script>
+<script src="v23-data.js"></script>
+<script src="online-config.js?v=r33-unison"></script>
+<script src="app-online.js?v=r33-unison"></script>
+</body>
+</html>

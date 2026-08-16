@@ -1,0 +1,3312 @@
+{
+  "version": "V22.9",
+  "generationMethod": "44 atlas de 10 quadros; recortes individuais 256x256",
+  "totalGeneratedTechniqueArts": 440,
+  "alternativeArts": 406,
+  "selectedBaseArts": 24,
+  "uniqueCharacterIcons": 3,
+  "uniqueStoryNpcPortraits": 2,
+  "extraCharacterArts": 5,
+  "atlases": [
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-001.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "naruto-uzumaki__variant_1",
+          "character": "Naruto Uzumaki",
+          "technique": "Big Ball Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "naruto-uzumaki__variant_2",
+          "character": "Naruto Uzumaki",
+          "technique": "Multiple Shadow Clone Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "sasuke-uchiha__variant_1",
+          "character": "Sasuke Uchiha",
+          "technique": "Chidori Sharp Spear",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "sasuke-uchiha__variant_2",
+          "character": "Sasuke Uchiha",
+          "technique": "Chidori Senbon",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "sakura-haruno__variant_1",
+          "character": "Sakura Haruno",
+          "technique": "Cherry Blossom Impact",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "sakura-haruno__variant_2",
+          "character": "Sakura Haruno",
+          "technique": "Mystical Palm Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "kakashi-hatake__variant_1",
+          "character": "Kakashi Hatake",
+          "technique": "Lightning Beast Tracking Fang",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "kakashi-hatake__variant_2",
+          "character": "Kakashi Hatake",
+          "technique": "Purple Electricity",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "rock-lee__variant_1",
+          "character": "Rock Lee",
+          "technique": "Sixth Gate: Gate of View",
+          "image": "static/img/jutsu-atlas-v229/crops/rock-lee__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "rock-lee__variant_2",
+          "character": "Rock Lee",
+          "technique": "Reverse Lotus",
+          "image": "static/img/jutsu-atlas-v229/crops/rock-lee__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-002.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "neji-hyuga__variant_1",
+          "character": "Neji Hyūga",
+          "technique": "Eight Trigrams Vacuum Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/neji-hyuga__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "neji-hyuga__variant_2",
+          "character": "Neji Hyūga",
+          "technique": "Eight Trigrams Palms Revolving Heaven",
+          "image": "static/img/jutsu-atlas-v229/crops/neji-hyuga__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "hinata-hyuga__variant_1",
+          "character": "Hinata Hyūga",
+          "technique": "Gentle Step Twin Lion Fists",
+          "image": "static/img/jutsu-atlas-v229/crops/hinata-hyuga__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "hinata-hyuga__variant_2",
+          "character": "Hinata Hyūga",
+          "technique": "Eight Trigrams Vacuum Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/hinata-hyuga__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "gaara__variant_1",
+          "character": "Gaara",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/gaara__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "gaara__variant_2",
+          "character": "Gaara",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/gaara__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "shikamaru-nara__variant_1",
+          "character": "Shikamaru Nara",
+          "technique": "Shadow Sewing Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shikamaru-nara__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "shikamaru-nara__variant_2",
+          "character": "Shikamaru Nara",
+          "technique": "Shadow–Neck Binding Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shikamaru-nara__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "itachi-uchiha-(s)__variant_1",
+          "character": "Itachi Uchiha",
+          "technique": "Tsukuyomi",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "itachi-uchiha-(s)__variant_2",
+          "character": "Itachi Uchiha",
+          "technique": "Yasaka Magatama",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-003.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "jiraiya__variant_1",
+          "character": "Jiraiya",
+          "technique": "Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/jiraiya__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "jiraiya__variant_2",
+          "character": "Jiraiya",
+          "technique": "Swamp of the Underworld",
+          "image": "static/img/jutsu-atlas-v229/crops/jiraiya__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "tsunade__variant_1",
+          "character": "Tsunade",
+          "technique": "Creation Rebirth",
+          "image": "static/img/jutsu-atlas-v229/crops/tsunade__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "tsunade__variant_2",
+          "character": "Tsunade",
+          "technique": "Heavenly Foot of Pain",
+          "image": "static/img/jutsu-atlas-v229/crops/tsunade__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "orochimaru__variant_1",
+          "character": "Orochimaru",
+          "technique": "Eight Branches Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/orochimaru__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "orochimaru__variant_2",
+          "character": "Orochimaru",
+          "technique": "Hidden Shadow Snake Hands",
+          "image": "static/img/jutsu-atlas-v229/crops/orochimaru__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "SasoriSOld__variant_1",
+          "character": "Sasori Antigo",
+          "technique": "Iron Sand World Method",
+          "image": "static/img/jutsu-atlas-v229/crops/SasoriSOld__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "SasoriSOld__variant_2",
+          "character": "Sasori Antigo",
+          "technique": "Red Secret Technique: Hundred Puppets",
+          "image": "static/img/jutsu-atlas-v229/crops/SasoriSOld__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "a-(r)__variant_1",
+          "character": "A",
+          "technique": "Piercing Four-Fingered",
+          "image": "static/img/jutsu-atlas-v229/crops/a-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "a-(r)__variant_2",
+          "character": "A",
+          "technique": "Three-Fingered Assault",
+          "image": "static/img/jutsu-atlas-v229/crops/a-(r)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-004.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "akatsuchi-(s)__variant_1",
+          "character": "Akatsuchi",
+          "technique": "High-Speed Assault",
+          "image": "static/img/jutsu-atlas-v229/crops/akatsuchi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "akatsuchi-(s)__variant_2",
+          "character": "Akatsuchi",
+          "technique": "Stone Golem",
+          "image": "static/img/jutsu-atlas-v229/crops/akatsuchi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "ameyuri-ringo-(r)__variant_1",
+          "character": "Ameyuri Ringo",
+          "technique": "Lightning Fang",
+          "image": "static/img/jutsu-atlas-v229/crops/ameyuri-ringo-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "ameyuri-ringo-(r)__variant_2",
+          "character": "Ameyuri Ringo",
+          "technique": "Depth Charge",
+          "image": "static/img/jutsu-atlas-v229/crops/ameyuri-ringo-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "animal-path-pain-(s)__variant_1",
+          "character": "Animal Path Pain",
+          "technique": "Summoning: Giant Centipede",
+          "image": "static/img/jutsu-atlas-v229/crops/animal-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "animal-path-pain-(s)__variant_2",
+          "character": "Animal Path Pain",
+          "technique": "Summoning: Giant Crustacean",
+          "image": "static/img/jutsu-atlas-v229/crops/animal-path-pain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "anko-mitarashi__variant_1",
+          "character": "Anko Mitarashi",
+          "technique": "Dual Pin",
+          "image": "static/img/jutsu-atlas-v229/crops/anko-mitarashi__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "anko-mitarashi__variant_2",
+          "character": "Anko Mitarashi",
+          "technique": "Dragon Flame",
+          "image": "static/img/jutsu-atlas-v229/crops/anko-mitarashi__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "ao-(s)__variant_1",
+          "character": "Ao",
+          "technique": "Byakugan",
+          "image": "static/img/jutsu-atlas-v229/crops/ao-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "ao-(s)__variant_2",
+          "character": "Ao",
+          "technique": "Técnica Sensorial",
+          "image": "static/img/jutsu-atlas-v229/crops/ao-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-005.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "aoba-yamashiro__variant_1",
+          "character": "Aoba Yamashiro",
+          "technique": "Scattering Crow Swarm",
+          "image": "static/img/jutsu-atlas-v229/crops/aoba-yamashiro__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "aoba-yamashiro__variant_2",
+          "character": "Aoba Yamashiro",
+          "technique": "Revenge of the Murder",
+          "image": "static/img/jutsu-atlas-v229/crops/aoba-yamashiro__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "asuma-sarutobi__variant_1",
+          "character": "Asuma Sarutobi",
+          "technique": "Thousand Hand Strike",
+          "image": "static/img/jutsu-atlas-v229/crops/asuma-sarutobi__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "asuma-sarutobi__variant_2",
+          "character": "Asuma Sarutobi",
+          "technique": "Burning Ash",
+          "image": "static/img/jutsu-atlas-v229/crops/asuma-sarutobi__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "asuma-sarutobi-(s)__variant_1",
+          "character": "Asuma Sarutobi",
+          "technique": "Flying Swallow",
+          "image": "static/img/jutsu-atlas-v229/crops/asuma-sarutobi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "asuma-sarutobi-(s)__variant_2",
+          "character": "Asuma Sarutobi",
+          "technique": "Finishing Blow",
+          "image": "static/img/jutsu-atlas-v229/crops/asuma-sarutobi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "asura-path-pain-(s)__variant_1",
+          "character": "Asura Path Pain",
+          "technique": "Metal Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/asura-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "asura-path-pain-(s)__variant_2",
+          "character": "Asura Path Pain",
+          "technique": "Missile Salvo",
+          "image": "static/img/jutsu-atlas-v229/crops/asura-path-pain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "atsui-(s)__variant_1",
+          "character": "Atsui",
+          "technique": "Burning Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/atsui-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "atsui-(s)__variant_2",
+          "character": "Atsui",
+          "technique": "Fire Wall",
+          "image": "static/img/jutsu-atlas-v229/crops/atsui-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-006.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "baki__variant_1",
+          "character": "Baki",
+          "technique": "Sudden Strike",
+          "image": "static/img/jutsu-atlas-v229/crops/baki__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "baki__variant_2",
+          "character": "Baki",
+          "technique": "Wind Sword",
+          "image": "static/img/jutsu-atlas-v229/crops/baki__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "c-(s)__variant_1",
+          "character": "C",
+          "technique": "Técnica Sensorial",
+          "image": "static/img/jutsu-atlas-v229/crops/c-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "c-(s)__variant_2",
+          "character": "C",
+          "technique": "Técnica de Cura",
+          "image": "static/img/jutsu-atlas-v229/crops/c-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "chiyo-(r)__variant_1",
+          "character": "Chiyo",
+          "technique": "Assault Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/chiyo-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "chiyo-(r)__variant_2",
+          "character": "Chiyo",
+          "technique": "Three Treasure Suction Crush",
+          "image": "static/img/jutsu-atlas-v229/crops/chiyo-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "chiyo-(s)__variant_1",
+          "character": "Chiyo",
+          "technique": "Possum",
+          "image": "static/img/jutsu-atlas-v229/crops/chiyo-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "chiyo-(s)__variant_2",
+          "character": "Chiyo",
+          "technique": "Army of Illusions",
+          "image": "static/img/jutsu-atlas-v229/crops/chiyo-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "choji-akimichi__variant_1",
+          "character": "Chōji Akimichi",
+          "technique": "Butterfly Bombing",
+          "image": "static/img/jutsu-atlas-v229/crops/choji-akimichi__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "choji-akimichi__variant_2",
+          "character": "Chōji Akimichi",
+          "technique": "Spiky Human Boulder",
+          "image": "static/img/jutsu-atlas-v229/crops/choji-akimichi__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-007.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "choji-akimichi-(s)__variant_1",
+          "character": "Chōji Akimichi",
+          "technique": "Spinach Pill",
+          "image": "static/img/jutsu-atlas-v229/crops/choji-akimichi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "choji-akimichi-(s)__variant_2",
+          "character": "Chōji Akimichi",
+          "technique": "Obstructing Tackle",
+          "image": "static/img/jutsu-atlas-v229/crops/choji-akimichi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "chojuro-(s)__variant_1",
+          "character": "Chōjūrō",
+          "technique": "Hiramekarei Longsword",
+          "image": "static/img/jutsu-atlas-v229/crops/chojuro-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "chojuro-(s)__variant_2",
+          "character": "Chōjūrō",
+          "technique": "Hiramekarei Hammer",
+          "image": "static/img/jutsu-atlas-v229/crops/chojuro-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "choza-akimichi__variant_1",
+          "character": "Chōza Akimichi",
+          "technique": "Chain Bind",
+          "image": "static/img/jutsu-atlas-v229/crops/choza-akimichi__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "choza-akimichi__variant_2",
+          "character": "Chōza Akimichi",
+          "technique": "Human Boulder",
+          "image": "static/img/jutsu-atlas-v229/crops/choza-akimichi__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "chukichi-(r)__variant_1",
+          "character": "Chūkichi",
+          "technique": "Hidden Frost",
+          "image": "static/img/jutsu-atlas-v229/crops/chukichi-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "chukichi-(r)__variant_2",
+          "character": "Chūkichi",
+          "technique": "Psychic Jamming",
+          "image": "static/img/jutsu-atlas-v229/crops/chukichi-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "corrupted-obito__variant_1",
+          "character": "Corrupted Obito",
+          "technique": "Kamui",
+          "image": "static/img/jutsu-atlas-v229/crops/corrupted-obito__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "corrupted-obito__variant_2",
+          "character": "Corrupted Obito",
+          "technique": "Fire Release: Blast Wave Wild Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/corrupted-obito__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-008.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "curse-mark-jugo-(s)__variant_1",
+          "character": "Curse Mark Jūgo",
+          "technique": "Psychotic Break",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-jugo-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "curse-mark-jugo-(s)__variant_2",
+          "character": "Curse Mark Jūgo",
+          "technique": "Connected Cannons",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-jugo-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "curse-mark-sasuke__variant_1",
+          "character": "Curse Mark Sasuke",
+          "technique": "Chidori",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-sasuke__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "curse-mark-sasuke__variant_2",
+          "character": "Curse Mark Sasuke",
+          "technique": "Dark Void",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-sasuke__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "curse-mark-sasuke-(s)__variant_1",
+          "character": "Curse Mark Sasuke (shippuden)",
+          "technique": "Snake Shedding",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-sasuke-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "curse-mark-sasuke-(s)__variant_2",
+          "character": "Curse Mark Sasuke (shippuden)",
+          "technique": "Sharingan Genjutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/curse-mark-sasuke-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "danzo-shimura-(s)__variant_1",
+          "character": "Danzō Shimura",
+          "technique": "Kotoamatsukami",
+          "image": "static/img/jutsu-atlas-v229/crops/danzo-shimura-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "danzo-shimura-(s)__variant_2",
+          "character": "Danzō Shimura",
+          "technique": "Kuchiyose: Baku",
+          "image": "static/img/jutsu-atlas-v229/crops/danzo-shimura-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "darui-(s)__variant_1",
+          "character": "Darui",
+          "technique": "Laser Circus",
+          "image": "static/img/jutsu-atlas-v229/crops/darui-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "darui-(s)__variant_2",
+          "character": "Darui",
+          "technique": "Water Wall",
+          "image": "static/img/jutsu-atlas-v229/crops/darui-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-009.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "deidara-(r)__variant_1",
+          "character": "Deidara",
+          "technique": "C4 Karura",
+          "image": "static/img/jutsu-atlas-v229/crops/deidara-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "deidara-(r)__variant_2",
+          "character": "Deidara",
+          "technique": "Clay Clone",
+          "image": "static/img/jutsu-atlas-v229/crops/deidara-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "deidara-(s)__variant_1",
+          "character": "Deidara",
+          "technique": "C4 Karura",
+          "image": "static/img/jutsu-atlas-v229/crops/deidara-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "deidara-(s)__variant_2",
+          "character": "Deidara",
+          "technique": "Clay Clone",
+          "image": "static/img/jutsu-atlas-v229/crops/deidara-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "demon-brothers__variant_1",
+          "character": "Demon Brothers",
+          "technique": "Chain Wrap",
+          "image": "static/img/jutsu-atlas-v229/crops/demon-brothers__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "demon-brothers__variant_2",
+          "character": "Demon Brothers",
+          "technique": "Chain Shred",
+          "image": "static/img/jutsu-atlas-v229/crops/demon-brothers__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "deva-path-pain-(s)__variant_1",
+          "character": "Deva Path Pain",
+          "technique": "Shinra Tensei — Grande Escala",
+          "image": "static/img/jutsu-atlas-v229/crops/deva-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "deva-path-pain-(s)__variant_2",
+          "character": "Deva Path Pain",
+          "technique": "Chibaku Tensei",
+          "image": "static/img/jutsu-atlas-v229/crops/deva-path-pain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "dodai-(s)__variant_1",
+          "character": "Dodai",
+          "technique": "Rubber Wall",
+          "image": "static/img/jutsu-atlas-v229/crops/dodai-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "dodai-(s)__variant_2",
+          "character": "Dodai",
+          "technique": "Técnica Sensorial",
+          "image": "static/img/jutsu-atlas-v229/crops/dodai-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-010.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "dosu-kinuta__variant_1",
+          "character": "Dosu Kinuta",
+          "technique": "Resonating Echo Drill",
+          "image": "static/img/jutsu-atlas-v229/crops/dosu-kinuta__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "dosu-kinuta__variant_2",
+          "character": "Dosu Kinuta",
+          "technique": "Sound Manipulation",
+          "image": "static/img/jutsu-atlas-v229/crops/dosu-kinuta__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "drunken-lee__variant_1",
+          "character": "Drunken Lee",
+          "technique": "Unpredictable Assault",
+          "image": "static/img/jutsu-atlas-v229/crops/drunken-lee__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "drunken-lee__variant_2",
+          "character": "Drunken Lee",
+          "technique": "Drunken Counter",
+          "image": "static/img/jutsu-atlas-v229/crops/drunken-lee__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "eight-gates-guy-(s)__variant_1",
+          "character": "Eight-Gates Guy",
+          "technique": "Evening Elephant",
+          "image": "static/img/jutsu-atlas-v229/crops/eight-gates-guy-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "eight-gates-guy-(s)__variant_2",
+          "character": "Eight-Gates Guy",
+          "technique": "Battle Stance",
+          "image": "static/img/jutsu-atlas-v229/crops/eight-gates-guy-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "eight-tailed-b-(s)__variant_1",
+          "character": "Eight-Tailed B",
+          "technique": "Chakra Bones",
+          "image": "static/img/jutsu-atlas-v229/crops/eight-tailed-b-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "eight-tailed-b-(s)__variant_2",
+          "character": "Eight-Tailed B",
+          "technique": "Lariat",
+          "image": "static/img/jutsu-atlas-v229/crops/eight-tailed-b-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "four-tailed-naruto-(s)__variant_1",
+          "character": "Four Tailed Naruto (shippuden)",
+          "technique": "Tailed Beast Bomb",
+          "image": "static/img/jutsu-atlas-v229/crops/four-tailed-naruto-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "four-tailed-naruto-(s)__variant_2",
+          "character": "Four Tailed Naruto (shippuden)",
+          "technique": "Chakra Slam",
+          "image": "static/img/jutsu-atlas-v229/crops/four-tailed-naruto-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-011.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "fu-yamanaka-(s)__variant_1",
+          "character": "Fū Yamanaka",
+          "technique": "Tantō Slash",
+          "image": "static/img/jutsu-atlas-v229/crops/fu-yamanaka-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "fu-yamanaka-(s)__variant_2",
+          "character": "Fū Yamanaka",
+          "technique": "Transferência Mental",
+          "image": "static/img/jutsu-atlas-v229/crops/fu-yamanaka-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "fuguki-suikazan-(r)__variant_1",
+          "character": "Fuguki Suikazan",
+          "technique": "Needle Senbon",
+          "image": "static/img/jutsu-atlas-v229/crops/fuguki-suikazan-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "fuguki-suikazan-(r)__variant_2",
+          "character": "Fuguki Suikazan",
+          "technique": "Chakra Weave",
+          "image": "static/img/jutsu-atlas-v229/crops/fuguki-suikazan-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "fukai-(r)__variant_1",
+          "character": "Fukai",
+          "technique": "Chakra Arms",
+          "image": "static/img/jutsu-atlas-v229/crops/fukai-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "fukai-(r)__variant_2",
+          "character": "Fukai",
+          "technique": "Tailed Beast Bomb Barrage",
+          "image": "static/img/jutsu-atlas-v229/crops/fukai-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "fukasaku-and-shima-(s)__variant_1",
+          "character": "Fukasaku and Shima",
+          "technique": "Frog Song",
+          "image": "static/img/jutsu-atlas-v229/crops/fukasaku-and-shima-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "fukasaku-and-shima-(s)__variant_2",
+          "character": "Fukasaku and Shima",
+          "technique": "Sand Dust",
+          "image": "static/img/jutsu-atlas-v229/crops/fukasaku-and-shima-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "gaara-of-the-funk__variant_1",
+          "character": "Gaara Of The Funk",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/gaara-of-the-funk__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "gaara-of-the-funk__variant_2",
+          "character": "Gaara Of The Funk",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/gaara-of-the-funk__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-012.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "gari-(r)__variant_1",
+          "character": "Gari",
+          "technique": "Exploding Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/gari-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "gari-(r)__variant_2",
+          "character": "Gari",
+          "technique": "Ground Pound",
+          "image": "static/img/jutsu-atlas-v229/crops/gari-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "gengetsu-hozuki-(r)__variant_1",
+          "character": "Gengetsu Hōzuki",
+          "technique": "Major Summoning: Giant Clam",
+          "image": "static/img/jutsu-atlas-v229/crops/gengetsu-hozuki-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "gengetsu-hozuki-(r)__variant_2",
+          "character": "Gengetsu Hōzuki",
+          "technique": "Water Pistol",
+          "image": "static/img/jutsu-atlas-v229/crops/gengetsu-hozuki-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "ginkaku-(r)__variant_1",
+          "character": "Ginkaku",
+          "technique": "Seven Stars Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/ginkaku-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "ginkaku-(r)__variant_2",
+          "character": "Ginkaku",
+          "technique": "Amber Purification Jar",
+          "image": "static/img/jutsu-atlas-v229/crops/ginkaku-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "haku__variant_1",
+          "character": "Haku",
+          "technique": "Thousand Flying Water Needles of Death",
+          "image": "static/img/jutsu-atlas-v229/crops/haku__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "haku__variant_2",
+          "character": "Haku",
+          "technique": "Ice Release: Ice Rock Dome",
+          "image": "static/img/jutsu-atlas-v229/crops/haku__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "haku-(r)__variant_1",
+          "character": "Haku",
+          "technique": "Thousand Flying Water Needles of Death",
+          "image": "static/img/jutsu-atlas-v229/crops/haku-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "haku-(r)__variant_2",
+          "character": "Haku",
+          "technique": "Ice Release: Ice Rock Dome",
+          "image": "static/img/jutsu-atlas-v229/crops/haku-(r)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-013.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "hanabi-hyuga__variant_1",
+          "character": "Hanabi Hyūga",
+          "technique": "Punho Gentil",
+          "image": "static/img/jutsu-atlas-v229/crops/hanabi-hyuga__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "hanabi-hyuga__variant_2",
+          "character": "Hanabi Hyūga",
+          "technique": "Eight Trigrams Palm Rotation",
+          "image": "static/img/jutsu-atlas-v229/crops/hanabi-hyuga__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "hanzo-(r)__variant_1",
+          "character": "Hanzō",
+          "technique": "Major Summoning: Ibuse",
+          "image": "static/img/jutsu-atlas-v229/crops/hanzo-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "hanzo-(r)__variant_2",
+          "character": "Hanzō",
+          "technique": "Poison Fog",
+          "image": "static/img/jutsu-atlas-v229/crops/hanzo-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "hashirama-senju__variant_1",
+          "character": "Hashirama Senju",
+          "technique": "Tree Wave Destruction",
+          "image": "static/img/jutsu-atlas-v229/crops/hashirama-senju__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "hashirama-senju__variant_2",
+          "character": "Hashirama Senju",
+          "technique": "Tree Strangulation",
+          "image": "static/img/jutsu-atlas-v229/crops/hashirama-senju__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "hashirama-senju-(r)__variant_1",
+          "character": "Hashirama Senju",
+          "technique": "Wooden Dragon",
+          "image": "static/img/jutsu-atlas-v229/crops/hashirama-senju-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "hashirama-senju-(r)__variant_2",
+          "character": "Hashirama Senju",
+          "technique": "Wood Golem",
+          "image": "static/img/jutsu-atlas-v229/crops/hashirama-senju-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "hayate-gekko__variant_1",
+          "character": "Hayate Gekkō",
+          "technique": "Secret Sword",
+          "image": "static/img/jutsu-atlas-v229/crops/hayate-gekko__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "hayate-gekko__variant_2",
+          "character": "Hayate Gekkō",
+          "technique": "Crescent Moon Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/hayate-gekko__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-014.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "hiashi-hyuga__variant_1",
+          "character": "Hiashi Hyūga",
+          "technique": "Punho Gentil",
+          "image": "static/img/jutsu-atlas-v229/crops/hiashi-hyuga__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "hiashi-hyuga__variant_2",
+          "character": "Hiashi Hyūga",
+          "technique": "Eight Trigrams Palm Rotation",
+          "image": "static/img/jutsu-atlas-v229/crops/hiashi-hyuga__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "hidan-(s)__variant_1",
+          "character": "Hidan",
+          "technique": "Death Controlling Possessed Blood",
+          "image": "static/img/jutsu-atlas-v229/crops/hidan-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "hidan-(s)__variant_2",
+          "character": "Hidan",
+          "technique": "Triple-Bladed Scythe Rush",
+          "image": "static/img/jutsu-atlas-v229/crops/hidan-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "hinata-hyuga-(s)__variant_1",
+          "character": "Hinata Hyūga",
+          "technique": "Gentle Step Twin Lion Fists",
+          "image": "static/img/jutsu-atlas-v229/crops/hinata-hyuga-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "hinata-hyuga-(s)__variant_2",
+          "character": "Hinata Hyūga",
+          "technique": "Eight Trigrams Vacuum Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/hinata-hyuga-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "hiruko-sasori-(s)__variant_1",
+          "character": "Hiruko Sasori (shippuden)",
+          "technique": "Iron Sand World Method",
+          "image": "static/img/jutsu-atlas-v229/crops/hiruko-sasori-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "hiruko-sasori-(s)__variant_2",
+          "character": "Hiruko Sasori (shippuden)",
+          "technique": "Red Secret Technique: Hundred Puppets",
+          "image": "static/img/jutsu-atlas-v229/crops/hiruko-sasori-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "hiruzen-sarutobi__variant_1",
+          "character": "Hiruzen Sarutobi",
+          "technique": "Dragon Flame Bomb",
+          "image": "static/img/jutsu-atlas-v229/crops/hiruzen-sarutobi__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "hiruzen-sarutobi__variant_2",
+          "character": "Hiruzen Sarutobi",
+          "technique": "Reaper Death Seal",
+          "image": "static/img/jutsu-atlas-v229/crops/hiruzen-sarutobi__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-015.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "hoshigaki-kisame-body-double-(s)__variant_1",
+          "character": "Hoshigaki Kisame Body Double (shippuden)",
+          "technique": "Triple Water Prison",
+          "image": "static/img/jutsu-atlas-v229/crops/hoshigaki-kisame-body-double-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "hoshigaki-kisame-body-double-(s)__variant_2",
+          "character": "Hoshigaki Kisame Body Double (shippuden)",
+          "technique": "5 Man Eating Sharks",
+          "image": "static/img/jutsu-atlas-v229/crops/hoshigaki-kisame-body-double-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "human-path-pain-(s)__variant_1",
+          "character": "Human Path Pain",
+          "technique": "Mind Invasion",
+          "image": "static/img/jutsu-atlas-v229/crops/human-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "human-path-pain-(s)__variant_2",
+          "character": "Human Path Pain",
+          "technique": "Spirit Absorption",
+          "image": "static/img/jutsu-atlas-v229/crops/human-path-pain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "ibiki-morino__variant_1",
+          "character": "Ibiki Morino",
+          "technique": "Biding Time",
+          "image": "static/img/jutsu-atlas-v229/crops/ibiki-morino__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "ibiki-morino__variant_2",
+          "character": "Ibiki Morino",
+          "technique": "Payback",
+          "image": "static/img/jutsu-atlas-v229/crops/ibiki-morino__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "ino-yamanaka__variant_1",
+          "character": "Ino Yamanaka",
+          "technique": "Proxy Surveillance",
+          "image": "static/img/jutsu-atlas-v229/crops/ino-yamanaka__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "ino-yamanaka__variant_2",
+          "character": "Ino Yamanaka",
+          "technique": "Mind Transfer Clone",
+          "image": "static/img/jutsu-atlas-v229/crops/ino-yamanaka__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "ino-yamanaka-(s)__variant_1",
+          "character": "Ino Yamanaka",
+          "technique": "Transferência Mental",
+          "image": "static/img/jutsu-atlas-v229/crops/ino-yamanaka-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "ino-yamanaka-(s)__variant_2",
+          "character": "Ino Yamanaka",
+          "technique": "Art of the Valentine",
+          "image": "static/img/jutsu-atlas-v229/crops/ino-yamanaka-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-016.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "inoichi-yamanaka__variant_1",
+          "character": "Inoichi Yamanaka",
+          "technique": "Psycho Mind Transmission",
+          "image": "static/img/jutsu-atlas-v229/crops/inoichi-yamanaka__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "inoichi-yamanaka__variant_2",
+          "character": "Inoichi Yamanaka",
+          "technique": "Sensory Radar",
+          "image": "static/img/jutsu-atlas-v229/crops/inoichi-yamanaka__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "iruka-umino__variant_1",
+          "character": "Iruka Umino",
+          "technique": "Shuriken Throw",
+          "image": "static/img/jutsu-atlas-v229/crops/iruka-umino__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "iruka-umino__variant_2",
+          "character": "Iruka Umino",
+          "technique": "Ally Shield",
+          "image": "static/img/jutsu-atlas-v229/crops/iruka-umino__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "itachi-uchiha__variant_1",
+          "character": "Itachi Uchiha",
+          "technique": "Tsukuyomi",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "itachi-uchiha__variant_2",
+          "character": "Itachi Uchiha",
+          "technique": "Yasaka Magatama",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "itachi-uchiha-(r)__variant_1",
+          "character": "Itachi Uchiha (reanimado)",
+          "technique": "Tsukuyomi",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "itachi-uchiha-(r)__variant_2",
+          "character": "Itachi Uchiha (reanimado)",
+          "technique": "Yasaka Magatama",
+          "image": "static/img/jutsu-atlas-v229/crops/itachi-uchiha-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "ittan-(s)__variant_1",
+          "character": "Ittan",
+          "technique": "Battlefield Trenches",
+          "image": "static/img/jutsu-atlas-v229/crops/ittan-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "ittan-(s)__variant_2",
+          "character": "Ittan",
+          "technique": "Mobile Core",
+          "image": "static/img/jutsu-atlas-v229/crops/ittan-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-017.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "izumo-and-kotetsu__variant_1",
+          "character": "Izumo and Kotetsu",
+          "technique": "Mace Crush",
+          "image": "static/img/jutsu-atlas-v229/crops/izumo-and-kotetsu__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "izumo-and-kotetsu__variant_2",
+          "character": "Izumo and Kotetsu",
+          "technique": "Syrup Trap",
+          "image": "static/img/jutsu-atlas-v229/crops/izumo-and-kotetsu__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "jinin-akebino-(r)__variant_1",
+          "character": "Jinin Akebino",
+          "technique": "Axe Chop",
+          "image": "static/img/jutsu-atlas-v229/crops/jinin-akebino-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "jinin-akebino-(r)__variant_2",
+          "character": "Jinin Akebino",
+          "technique": "Hammer Bash",
+          "image": "static/img/jutsu-atlas-v229/crops/jinin-akebino-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "jinpachi-munashi-(r)__variant_1",
+          "character": "Jinpachi Munashi",
+          "technique": "Splatter",
+          "image": "static/img/jutsu-atlas-v229/crops/jinpachi-munashi-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "jinpachi-munashi-(r)__variant_2",
+          "character": "Jinpachi Munashi",
+          "technique": "Bomb Reload",
+          "image": "static/img/jutsu-atlas-v229/crops/jinpachi-munashi-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "jiraiya-(s)__variant_1",
+          "character": "Jiraiya",
+          "technique": "Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/jiraiya-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "jiraiya-(s)__variant_2",
+          "character": "Jiraiya",
+          "technique": "Swamp of the Underworld",
+          "image": "static/img/jutsu-atlas-v229/crops/jiraiya-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "jirobo__variant_1",
+          "character": "Jirōbō",
+          "technique": "Rivalry",
+          "image": "static/img/jutsu-atlas-v229/crops/jirobo__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "jirobo__variant_2",
+          "character": "Jirōbō",
+          "technique": "Summoning: Earth Prison Golem",
+          "image": "static/img/jutsu-atlas-v229/crops/jirobo__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-018.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "jirobo-(r)__variant_1",
+          "character": "Jirōbō",
+          "technique": "Crushing Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/jirobo-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "jirobo-(r)__variant_2",
+          "character": "Jirōbō",
+          "technique": "Terra Shield",
+          "image": "static/img/jutsu-atlas-v229/crops/jirobo-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "jugo-(s)__variant_1",
+          "character": "Jūgo",
+          "technique": "Piston Fist",
+          "image": "static/img/jutsu-atlas-v229/crops/jugo-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "jugo-(s)__variant_2",
+          "character": "Jūgo",
+          "technique": "Sage Transformation",
+          "image": "static/img/jutsu-atlas-v229/crops/jugo-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "kabuto-yakushi__variant_1",
+          "character": "Kabuto Yakushi",
+          "technique": "Chakra Absorbing Snakes",
+          "image": "static/img/jutsu-atlas-v229/crops/kabuto-yakushi__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "kabuto-yakushi__variant_2",
+          "character": "Kabuto Yakushi",
+          "technique": "Striking Shadow Snakes",
+          "image": "static/img/jutsu-atlas-v229/crops/kabuto-yakushi__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "kabuto-yakushi-(s)__variant_1",
+          "character": "Kabuto Yakushi",
+          "technique": "Chakra Scalpel",
+          "image": "static/img/jutsu-atlas-v229/crops/kabuto-yakushi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "kabuto-yakushi-(s)__variant_2",
+          "character": "Kabuto Yakushi",
+          "technique": "Pre-Healing Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/kabuto-yakushi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "kakashi-hatake-(s)__variant_1",
+          "character": "Kakashi Hatake",
+          "technique": "Lightning Beast Tracking Fang",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "kakashi-hatake-(s)__variant_2",
+          "character": "Kakashi Hatake",
+          "technique": "Purple Electricity",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-019.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "kakuzu-(s)__variant_1",
+          "character": "Kakuzu",
+          "technique": "Fire Release: Intelligent Hard Work",
+          "image": "static/img/jutsu-atlas-v229/crops/kakuzu-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "kakuzu-(s)__variant_2",
+          "character": "Kakuzu",
+          "technique": "Lightning Release: False Darkness",
+          "image": "static/img/jutsu-atlas-v229/crops/kakuzu-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "kankuro__variant_1",
+          "character": "Kankurō",
+          "technique": "Black Secret Technique — Machine One Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/kankuro__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "kankuro__variant_2",
+          "character": "Kankurō",
+          "technique": "Black Secret Technique — Machine Triple Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/kankuro__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "kankuro-(s)__variant_1",
+          "character": "Kankurō",
+          "technique": "Black Secret Technique — Machine One Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/kankuro-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "kankuro-(s)__variant_2",
+          "character": "Kankurō",
+          "technique": "Black Secret Technique — Machine Triple Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/kankuro-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "karin-(s)__variant_1",
+          "character": "Karin",
+          "technique": "Mind's Eye",
+          "image": "static/img/jutsu-atlas-v229/crops/karin-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "karin-(s)__variant_2",
+          "character": "Karin",
+          "technique": "Adamantine Attacking Chains",
+          "image": "static/img/jutsu-atlas-v229/crops/karin-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "kazekage-gaara-(s)__variant_1",
+          "character": "Kazekage Gaara",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/kazekage-gaara-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "kazekage-gaara-(s)__variant_2",
+          "character": "Kazekage Gaara",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/kazekage-gaara-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-020.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "kiba-inuzuka__variant_1",
+          "character": "Kiba Inuzuka",
+          "technique": "Fang Wolf Fang",
+          "image": "static/img/jutsu-atlas-v229/crops/kiba-inuzuka__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "kiba-inuzuka__variant_2",
+          "character": "Kiba Inuzuka",
+          "technique": "Three-Headed Wolf",
+          "image": "static/img/jutsu-atlas-v229/crops/kiba-inuzuka__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "kiba-inuzuka-(s)__variant_1",
+          "character": "Kiba Inuzuka",
+          "technique": "Fang Wolf Fang",
+          "image": "static/img/jutsu-atlas-v229/crops/kiba-inuzuka-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "kiba-inuzuka-(s)__variant_2",
+          "character": "Kiba Inuzuka",
+          "technique": "Three-Headed Wolf",
+          "image": "static/img/jutsu-atlas-v229/crops/kiba-inuzuka-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "kidomaru__variant_1",
+          "character": "Kidōmaru",
+          "technique": "Spider War Bow",
+          "image": "static/img/jutsu-atlas-v229/crops/kidomaru__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "kidomaru__variant_2",
+          "character": "Kidōmaru",
+          "technique": "Summoning: Kyodaigumo",
+          "image": "static/img/jutsu-atlas-v229/crops/kidomaru__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "killer-b-(s)__variant_1",
+          "character": "Killer B",
+          "technique": "Acrobat",
+          "image": "static/img/jutsu-atlas-v229/crops/killer-b-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "killer-b-(s)__variant_2",
+          "character": "Killer B",
+          "technique": "Lariat",
+          "image": "static/img/jutsu-atlas-v229/crops/killer-b-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "kimimaro__variant_1",
+          "character": "Kimimaro",
+          "technique": "Macabre Bone Pulse",
+          "image": "static/img/jutsu-atlas-v229/crops/kimimaro__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "kimimaro__variant_2",
+          "character": "Kimimaro",
+          "technique": "Digital Shrapnel",
+          "image": "static/img/jutsu-atlas-v229/crops/kimimaro__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-021.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "kimimaro-(r)__variant_1",
+          "character": "Kimimaro",
+          "technique": "Camellia Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/kimimaro-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "kimimaro-(r)__variant_2",
+          "character": "Kimimaro",
+          "technique": "Bracken Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/kimimaro-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "kin-tsuchi__variant_1",
+          "character": "Kin Tsuchi",
+          "technique": "Bell Ring Illusion",
+          "image": "static/img/jutsu-atlas-v229/crops/kin-tsuchi__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "kin-tsuchi__variant_2",
+          "character": "Kin Tsuchi",
+          "technique": "Shadow Senbon",
+          "image": "static/img/jutsu-atlas-v229/crops/kin-tsuchi__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "kinkaku-(r)__variant_1",
+          "character": "Kinkaku",
+          "technique": "Leaf Fan",
+          "image": "static/img/jutsu-atlas-v229/crops/kinkaku-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "kinkaku-(r)__variant_2",
+          "character": "Kinkaku",
+          "technique": "Gold Rope",
+          "image": "static/img/jutsu-atlas-v229/crops/kinkaku-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "kisame-hoshigaki__variant_1",
+          "character": "Kisame Hoshigaki",
+          "technique": "Water Release: Great Shark Bullet",
+          "image": "static/img/jutsu-atlas-v229/crops/kisame-hoshigaki__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "kisame-hoshigaki__variant_2",
+          "character": "Kisame Hoshigaki",
+          "technique": "Water Prison Shark Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/kisame-hoshigaki__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "kisame-hoshigaki-(s)__variant_1",
+          "character": "Kisame Hoshigaki",
+          "technique": "Water Release: Great Shark Bullet",
+          "image": "static/img/jutsu-atlas-v229/crops/kisame-hoshigaki-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "kisame-hoshigaki-(s)__variant_2",
+          "character": "Kisame Hoshigaki",
+          "technique": "Water Prison Shark Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/kisame-hoshigaki-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-022.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "kitsuchi-(s)__variant_1",
+          "character": "Kitsuchi",
+          "technique": "Rock Fist",
+          "image": "static/img/jutsu-atlas-v229/crops/kitsuchi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "kitsuchi-(s)__variant_2",
+          "character": "Kitsuchi",
+          "technique": "Erupt",
+          "image": "static/img/jutsu-atlas-v229/crops/kitsuchi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "konan-(s)__variant_1",
+          "character": "Konan",
+          "technique": "Paper Shuriken",
+          "image": "static/img/jutsu-atlas-v229/crops/konan-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "konan-(s)__variant_2",
+          "character": "Konan",
+          "technique": "Paper Person of God Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/konan-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "konan-of-the-rain-(s)__variant_1",
+          "character": "Konan of the Rain",
+          "technique": "Paper Shuriken",
+          "image": "static/img/jutsu-atlas-v229/crops/konan-of-the-rain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "konan-of-the-rain-(s)__variant_2",
+          "character": "Konan of the Rain",
+          "technique": "Paper Person of God Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/konan-of-the-rain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "konohamaru-sarutobi__variant_1",
+          "character": "Konohamaru Sarutobi",
+          "technique": "Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sarutobi__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "konohamaru-sarutobi__variant_2",
+          "character": "Konohamaru Sarutobi",
+          "technique": "Agile Backflip",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sarutobi__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "konohamaru-sarutobi-(s)__variant_1",
+          "character": "Konohamaru Sarutobi",
+          "technique": "Refocus",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sarutobi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "konohamaru-sarutobi-(s)__variant_2",
+          "character": "Konohamaru Sarutobi",
+          "technique": "Unsexy Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sarutobi-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-023.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "kurenai-yuhi__variant_1",
+          "character": "Kurenai Yuhi",
+          "technique": "Demonic Illusion: Entrap",
+          "image": "static/img/jutsu-atlas-v229/crops/kurenai-yuhi__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "kurenai-yuhi__variant_2",
+          "character": "Kurenai Yuhi",
+          "technique": "Illusory Tree Meld",
+          "image": "static/img/jutsu-atlas-v229/crops/kurenai-yuhi__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "kurotsuchi-(s)__variant_1",
+          "character": "Kurotsuchi",
+          "technique": "Lava Quicklime",
+          "image": "static/img/jutsu-atlas-v229/crops/kurotsuchi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "kurotsuchi-(s)__variant_2",
+          "character": "Kurotsuchi",
+          "technique": "Water Trumpet",
+          "image": "static/img/jutsu-atlas-v229/crops/kurotsuchi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "kushimaru-kuriarare-(r)__variant_1",
+          "character": "Kushimaru Kuriarare",
+          "technique": "Needle Stitching",
+          "image": "static/img/jutsu-atlas-v229/crops/kushimaru-kuriarare-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "kushimaru-kuriarare-(r)__variant_2",
+          "character": "Kushimaru Kuriarare",
+          "technique": "Eviscerate",
+          "image": "static/img/jutsu-atlas-v229/crops/kushimaru-kuriarare-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "kushina-uzumaki__variant_1",
+          "character": "Kushina Uzumaki",
+          "technique": "Double Tetragram Seal",
+          "image": "static/img/jutsu-atlas-v229/crops/kushina-uzumaki__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "kushina-uzumaki__variant_2",
+          "character": "Kushina Uzumaki",
+          "technique": "Life Link",
+          "image": "static/img/jutsu-atlas-v229/crops/kushina-uzumaki__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "madara-uchiha-(s)__variant_1",
+          "character": "Madara Uchiha",
+          "technique": "Fire Release: Great Fire Annihilation",
+          "image": "static/img/jutsu-atlas-v229/crops/madara-uchiha-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "madara-uchiha-(s)__variant_2",
+          "character": "Madara Uchiha",
+          "technique": "Yasaka Magatama",
+          "image": "static/img/jutsu-atlas-v229/crops/madara-uchiha-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-024.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "maki-(s)__variant_1",
+          "character": "Maki",
+          "technique": "Binding Cloth",
+          "image": "static/img/jutsu-atlas-v229/crops/maki-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "maki-(s)__variant_2",
+          "character": "Maki",
+          "technique": "Humidified Cloth",
+          "image": "static/img/jutsu-atlas-v229/crops/maki-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "mangekyo-sasuke-(s)__variant_1",
+          "character": "Mangekyō Sasuke",
+          "technique": "Blaze Release: Kagutsuchi",
+          "image": "static/img/jutsu-atlas-v229/crops/mangekyo-sasuke-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "mangekyo-sasuke-(s)__variant_2",
+          "character": "Mangekyō Sasuke",
+          "technique": "Susanoo: Chidori",
+          "image": "static/img/jutsu-atlas-v229/crops/mangekyo-sasuke-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "masked-man__variant_1",
+          "character": "Masked Man",
+          "technique": "Kusari Chains",
+          "image": "static/img/jutsu-atlas-v229/crops/masked-man__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "masked-man__variant_2",
+          "character": "Masked Man",
+          "technique": "Kamui Banishment",
+          "image": "static/img/jutsu-atlas-v229/crops/masked-man__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "mei-terumi-(s)__variant_1",
+          "character": "Mei Terumi",
+          "technique": "Solid Fog",
+          "image": "static/img/jutsu-atlas-v229/crops/mei-terumi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "mei-terumi-(s)__variant_2",
+          "character": "Mei Terumi",
+          "technique": "Water Bomb",
+          "image": "static/img/jutsu-atlas-v229/crops/mei-terumi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "might-guy__variant_1",
+          "character": "Might Guy",
+          "technique": "Nunchaku",
+          "image": "static/img/jutsu-atlas-v229/crops/might-guy__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "might-guy__variant_2",
+          "character": "Might Guy",
+          "technique": "Fiery Kick",
+          "image": "static/img/jutsu-atlas-v229/crops/might-guy__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-025.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "might-guy-(s)__variant_1",
+          "character": "Might Guy",
+          "technique": "Leaf Hurricane",
+          "image": "static/img/jutsu-atlas-v229/crops/might-guy-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "might-guy-(s)__variant_2",
+          "character": "Might Guy",
+          "technique": "Severe Leaf Hurricane",
+          "image": "static/img/jutsu-atlas-v229/crops/might-guy-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "minato-namikaze__variant_1",
+          "character": "Minato Namikaze",
+          "technique": "Flying Thunder God — Second Step",
+          "image": "static/img/jutsu-atlas-v229/crops/minato-namikaze__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "minato-namikaze__variant_2",
+          "character": "Minato Namikaze",
+          "technique": "Flying Thunder God: Guiding Thunder",
+          "image": "static/img/jutsu-atlas-v229/crops/minato-namikaze__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "minato-namikaze-(r)__variant_1",
+          "character": "Minato Namikaze",
+          "technique": "Flying Thunder God — Second Step",
+          "image": "static/img/jutsu-atlas-v229/crops/minato-namikaze-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "minato-namikaze-(r)__variant_2",
+          "character": "Minato Namikaze",
+          "technique": "Flying Thunder God: Guiding Thunder",
+          "image": "static/img/jutsu-atlas-v229/crops/minato-namikaze-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "misumi-tsurugi__variant_1",
+          "character": "Misumi Tsurugi",
+          "technique": "Flexible Twisting Joints",
+          "image": "static/img/jutsu-atlas-v229/crops/misumi-tsurugi__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "misumi-tsurugi__variant_2",
+          "character": "Misumi Tsurugi",
+          "technique": "Soft Physique Modification",
+          "image": "static/img/jutsu-atlas-v229/crops/misumi-tsurugi__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "mizuki__variant_1",
+          "character": "Mizuki",
+          "technique": "Kunai Assault",
+          "image": "static/img/jutsu-atlas-v229/crops/mizuki__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "mizuki__variant_2",
+          "character": "Mizuki",
+          "technique": "Execution Shuriken",
+          "image": "static/img/jutsu-atlas-v229/crops/mizuki__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-026.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "mu-(r)__variant_1",
+          "character": "Mū",
+          "technique": "Particle Beam",
+          "image": "static/img/jutsu-atlas-v229/crops/mu-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "mu-(r)__variant_2",
+          "character": "Mū",
+          "technique": "Fragmentation",
+          "image": "static/img/jutsu-atlas-v229/crops/mu-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "nagato-(r)__variant_1",
+          "character": "Nagato",
+          "technique": "Shinra Tensei",
+          "image": "static/img/jutsu-atlas-v229/crops/nagato-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "nagato-(r)__variant_2",
+          "character": "Nagato",
+          "technique": "Chibaku Tensei",
+          "image": "static/img/jutsu-atlas-v229/crops/nagato-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "nagato-(s)__variant_1",
+          "character": "Nagato",
+          "technique": "Shinra Tensei",
+          "image": "static/img/jutsu-atlas-v229/crops/nagato-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "nagato-(s)__variant_2",
+          "character": "Nagato",
+          "technique": "Chibaku Tensei",
+          "image": "static/img/jutsu-atlas-v229/crops/nagato-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "naraka-path-pain-(s)__variant_1",
+          "character": "Naraka Path Pain",
+          "technique": "Summoning: King of Hell",
+          "image": "static/img/jutsu-atlas-v229/crops/naraka-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "naraka-path-pain-(s)__variant_2",
+          "character": "Naraka Path Pain",
+          "technique": "Energy Transfer",
+          "image": "static/img/jutsu-atlas-v229/crops/naraka-path-pain-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "naruto-uzumaki-(s)__variant_1",
+          "character": "Naruto Uzumaki",
+          "technique": "Big Ball Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "naruto-uzumaki-(s)__variant_2",
+          "character": "Naruto Uzumaki",
+          "technique": "Multiple Shadow Clone Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-027.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "neji-hyuga-(s)__variant_1",
+          "character": "Neji Hyūga",
+          "technique": "Eight Trigrams Vacuum Palm",
+          "image": "static/img/jutsu-atlas-v229/crops/neji-hyuga-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "neji-hyuga-(s)__variant_2",
+          "character": "Neji Hyūga",
+          "technique": "Eight Trigrams Palms Revolving Heaven",
+          "image": "static/img/jutsu-atlas-v229/crops/neji-hyuga-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "nine-tailed-naruto-(s)__variant_1",
+          "character": "Nine-Tailed Naruto",
+          "technique": "Tailed Beast Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/nine-tailed-naruto-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "nine-tailed-naruto-(s)__variant_2",
+          "character": "Nine-Tailed Naruto",
+          "technique": "Spiralling Strife Spheres",
+          "image": "static/img/jutsu-atlas-v229/crops/nine-tailed-naruto-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "obito-uchiha__variant_1",
+          "character": "Obito Uchiha",
+          "technique": "Kamui",
+          "image": "static/img/jutsu-atlas-v229/crops/obito-uchiha__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "obito-uchiha__variant_2",
+          "character": "Obito Uchiha",
+          "technique": "Uchiha Flame Formation",
+          "image": "static/img/jutsu-atlas-v229/crops/obito-uchiha__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "oboro__variant_1",
+          "character": "Oboro",
+          "technique": "Exploding Kunai",
+          "image": "static/img/jutsu-atlas-v229/crops/oboro__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "oboro__variant_2",
+          "character": "Oboro",
+          "technique": "Underground Move",
+          "image": "static/img/jutsu-atlas-v229/crops/oboro__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "omoi-(s)__variant_1",
+          "character": "Omoi",
+          "technique": "Back Slice",
+          "image": "static/img/jutsu-atlas-v229/crops/omoi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "omoi-(s)__variant_2",
+          "character": "Omoi",
+          "technique": "Crescent Moon Slice",
+          "image": "static/img/jutsu-atlas-v229/crops/omoi-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-028.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "one-tailed-naruto__variant_1",
+          "character": "One-Tailed Naruto",
+          "technique": "Vermilion Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/one-tailed-naruto__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "one-tailed-naruto__variant_2",
+          "character": "One-Tailed Naruto",
+          "technique": "Chakra Arm Barrage",
+          "image": "static/img/jutsu-atlas-v229/crops/one-tailed-naruto__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "onoki-(s)__variant_1",
+          "character": "Ōnoki",
+          "technique": "Earth Golem",
+          "image": "static/img/jutsu-atlas-v229/crops/onoki-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "onoki-(s)__variant_2",
+          "character": "Ōnoki",
+          "technique": "Lightened Boulder",
+          "image": "static/img/jutsu-atlas-v229/crops/onoki-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "orochimaru-(s)__variant_1",
+          "character": "Orochimaru",
+          "technique": "Eight Branches Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/orochimaru-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "orochimaru-(s)__variant_2",
+          "character": "Orochimaru",
+          "technique": "Hidden Shadow Snake Hands",
+          "image": "static/img/jutsu-atlas-v229/crops/orochimaru-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "pakura-(r)__variant_1",
+          "character": "Pakura",
+          "technique": "Scorch Style",
+          "image": "static/img/jutsu-atlas-v229/crops/pakura-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "pakura-(r)__variant_2",
+          "character": "Pakura",
+          "technique": "Searing Combat",
+          "image": "static/img/jutsu-atlas-v229/crops/pakura-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "preta-path-pain-(s)__variant_1",
+          "character": "Preta Path Pain",
+          "technique": "Chakra Shield",
+          "image": "static/img/jutsu-atlas-v229/crops/preta-path-pain-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "preta-path-pain-(s)__variant_2",
+          "character": "Preta Path Pain",
+          "technique": "Preta Drain",
+          "image": "static/img/jutsu-atlas-v229/crops/preta-path-pain-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-029.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "puppet-master-kankuro-(s)__variant_1",
+          "character": "Puppet Master Kankurō",
+          "technique": "Black Secret Technique — Machine One Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/puppet-master-kankuro-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "puppet-master-kankuro-(s)__variant_2",
+          "character": "Puppet Master Kankurō",
+          "technique": "Black Secret Technique — Machine Triple Shot",
+          "image": "static/img/jutsu-atlas-v229/crops/puppet-master-kankuro-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "rasa-(r)__variant_1",
+          "character": "Rasa",
+          "technique": "Magnet Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/rasa-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "rasa-(r)__variant_2",
+          "character": "Rasa",
+          "technique": "Gold Dust Waterfall",
+          "image": "static/img/jutsu-atlas-v229/crops/rasa-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "reanimator-kabuto-(s)__variant_1",
+          "character": "Reanimator Kabuto",
+          "technique": "Reanimated Army",
+          "image": "static/img/jutsu-atlas-v229/crops/reanimator-kabuto-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "reanimator-kabuto-(s)__variant_2",
+          "character": "Reanimator Kabuto",
+          "technique": "Binding Talisman",
+          "image": "static/img/jutsu-atlas-v229/crops/reanimator-kabuto-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "regimental-commander-gaara-(s)__variant_1",
+          "character": "Regimental Commander Gaara",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/regimental-commander-gaara-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "regimental-commander-gaara-(s)__variant_2",
+          "character": "Regimental Commander Gaara",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/regimental-commander-gaara-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "rehabilitated-gaara__variant_1",
+          "character": "Rehabilitated Gaara",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/rehabilitated-gaara__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "rehabilitated-gaara__variant_2",
+          "character": "Rehabilitated Gaara",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/rehabilitated-gaara__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-030.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "rin-nohara__variant_1",
+          "character": "Rin Nohara",
+          "technique": "Pit Trap",
+          "image": "static/img/jutsu-atlas-v229/crops/rin-nohara__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "rin-nohara__variant_2",
+          "character": "Rin Nohara",
+          "technique": "Técnica de Cura",
+          "image": "static/img/jutsu-atlas-v229/crops/rin-nohara__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "rock-lee-(s)__variant_1",
+          "character": "Rock Lee",
+          "technique": "Sixth Gate: Gate of View",
+          "image": "static/img/jutsu-atlas-v229/crops/rock-lee-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "rock-lee-(s)__variant_2",
+          "character": "Rock Lee",
+          "technique": "Reverse Lotus",
+          "image": "static/img/jutsu-atlas-v229/crops/rock-lee-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "sage-mode-jiraiya-(s)__variant_1",
+          "character": "Sage Mode Jiraiya",
+          "technique": "Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-jiraiya-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "sage-mode-jiraiya-(s)__variant_2",
+          "character": "Sage Mode Jiraiya",
+          "technique": "Swamp of the Underworld",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-jiraiya-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "sage-mode-kabuto-(s)__variant_1",
+          "character": "Sage Mode Kabuto",
+          "technique": "Sage Transformation",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-kabuto-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "sage-mode-kabuto-(s)__variant_2",
+          "character": "Sage Mode Kabuto",
+          "technique": "DNA Transmission Shadow",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-kabuto-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "sage-mode-naruto-(s)__variant_1",
+          "character": "Sage Mode Naruto",
+          "technique": "Sage Art: Big Ball Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-naruto-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "sage-mode-naruto-(s)__variant_2",
+          "character": "Sage Mode Naruto",
+          "technique": "Frog Kata",
+          "image": "static/img/jutsu-atlas-v229/crops/sage-mode-naruto-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-031.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "sai-(s)__variant_1",
+          "character": "Sai",
+          "technique": "Super Beast Scroll: Lions",
+          "image": "static/img/jutsu-atlas-v229/crops/sai-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "sai-(s)__variant_2",
+          "character": "Sai",
+          "technique": "Super Beast Scroll: Snake",
+          "image": "static/img/jutsu-atlas-v229/crops/sai-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "sakon-and-ukon__variant_1",
+          "character": "Sakon and Ukon",
+          "technique": "Demon Twin Attack",
+          "image": "static/img/jutsu-atlas-v229/crops/sakon-and-ukon__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "sakon-and-ukon__variant_2",
+          "character": "Sakon and Ukon",
+          "technique": "Demon Parasite",
+          "image": "static/img/jutsu-atlas-v229/crops/sakon-and-ukon__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "sakura-haruno-(s)__variant_1",
+          "character": "Sakura Haruno",
+          "technique": "Cherry Blossom Impact",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "sakura-haruno-(s)__variant_2",
+          "character": "Sakura Haruno",
+          "technique": "Mystical Palm Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "sasori-(r)__variant_1",
+          "character": "Sasori",
+          "technique": "Iron Sand World Method",
+          "image": "static/img/jutsu-atlas-v229/crops/sasori-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "sasori-(r)__variant_2",
+          "character": "Sasori",
+          "technique": "Red Secret Technique: Hundred Puppets",
+          "image": "static/img/jutsu-atlas-v229/crops/sasori-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "sasori-(s)__variant_1",
+          "character": "Sasori",
+          "technique": "Iron Sand World Method",
+          "image": "static/img/jutsu-atlas-v229/crops/sasori-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "sasori-(s)__variant_2",
+          "character": "Sasori",
+          "technique": "Red Secret Technique: Hundred Puppets",
+          "image": "static/img/jutsu-atlas-v229/crops/sasori-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-032.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "sasuke-uchiha-(s)__variant_1",
+          "character": "Sasuke Uchiha",
+          "technique": "Chidori Sharp Spear",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "sasuke-uchiha-(s)__variant_2",
+          "character": "Sasuke Uchiha",
+          "technique": "Chidori Senbon",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "shigure__variant_1",
+          "character": "Shigure",
+          "technique": "Umbrella Toss",
+          "image": "static/img/jutsu-atlas-v229/crops/shigure__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "shigure__variant_2",
+          "character": "Shigure",
+          "technique": "Umbrella Gathering",
+          "image": "static/img/jutsu-atlas-v229/crops/shigure__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "shikaku-nara__variant_1",
+          "character": "Shikaku Nara",
+          "technique": "Shadow Possession",
+          "image": "static/img/jutsu-atlas-v229/crops/shikaku-nara__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "shikaku-nara__variant_2",
+          "character": "Shikaku Nara",
+          "technique": "Shadow Dispersion",
+          "image": "static/img/jutsu-atlas-v229/crops/shikaku-nara__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "shikamaru-nara-(s)__variant_1",
+          "character": "Shikamaru Nara",
+          "technique": "Shadow Sewing Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shikamaru-nara-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "shikamaru-nara-(s)__variant_2",
+          "character": "Shikamaru Nara",
+          "technique": "Shadow–Neck Binding Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shikamaru-nara-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "shino-aburame__variant_1",
+          "character": "Shino Aburame",
+          "technique": "Secret Technique: Insect Sphere",
+          "image": "static/img/jutsu-atlas-v229/crops/shino-aburame__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "shino-aburame__variant_2",
+          "character": "Shino Aburame",
+          "technique": "Insect Clone Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shino-aburame__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-033.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "shino-aburame-(s)__variant_1",
+          "character": "Shino Aburame",
+          "technique": "Secret Technique: Insect Sphere",
+          "image": "static/img/jutsu-atlas-v229/crops/shino-aburame-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "shino-aburame-(s)__variant_2",
+          "character": "Shino Aburame",
+          "technique": "Insect Clone Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/shino-aburame-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "shisui-uchiha-(s)__variant_1",
+          "character": "Shisui Uchiha",
+          "technique": "Susanoo",
+          "image": "static/img/jutsu-atlas-v229/crops/shisui-uchiha-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "shisui-uchiha-(s)__variant_2",
+          "character": "Shisui Uchiha",
+          "technique": "Tsukumo",
+          "image": "static/img/jutsu-atlas-v229/crops/shisui-uchiha-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "shizune__variant_1",
+          "character": "Shizune",
+          "technique": "Poison Needle Volley",
+          "image": "static/img/jutsu-atlas-v229/crops/shizune__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "shizune__variant_2",
+          "character": "Shizune",
+          "technique": "Poison Fog",
+          "image": "static/img/jutsu-atlas-v229/crops/shizune__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "shukaku-gaara__variant_1",
+          "character": "Shukaku Gaara",
+          "technique": "Sand Waterfall Funeral",
+          "image": "static/img/jutsu-atlas-v229/crops/shukaku-gaara__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "shukaku-gaara__variant_2",
+          "character": "Shukaku Gaara",
+          "technique": "Shield of Sand",
+          "image": "static/img/jutsu-atlas-v229/crops/shukaku-gaara__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "suigetsu-hozuki-(s)__variant_1",
+          "character": "Suigetsu Hōzuki",
+          "technique": "Great Water Arm",
+          "image": "static/img/jutsu-atlas-v229/crops/suigetsu-hozuki-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "suigetsu-hozuki-(s)__variant_2",
+          "character": "Suigetsu Hōzuki",
+          "technique": "Demon Wave",
+          "image": "static/img/jutsu-atlas-v229/crops/suigetsu-hozuki-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-034.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "tayuya__variant_1",
+          "character": "Tayuya",
+          "technique": "Summoning: Doki",
+          "image": "static/img/jutsu-atlas-v229/crops/tayuya__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "tayuya__variant_2",
+          "character": "Tayuya",
+          "technique": "Demon Revolution",
+          "image": "static/img/jutsu-atlas-v229/crops/tayuya__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "temari__variant_1",
+          "character": "Temari",
+          "technique": "Great Sickle Weasel Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/temari__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "temari__variant_2",
+          "character": "Temari",
+          "technique": "Summoning: Quick Beheading Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/temari__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "temari-(s)__variant_1",
+          "character": "Temari",
+          "technique": "Great Sickle Weasel Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/temari-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "temari-(s)__variant_2",
+          "character": "Temari",
+          "technique": "Summoning: Quick Beheading Dance",
+          "image": "static/img/jutsu-atlas-v229/crops/temari-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "tenten__variant_1",
+          "character": "Tenten",
+          "technique": "Kunai Grenade",
+          "image": "static/img/jutsu-atlas-v229/crops/tenten__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "tenten__variant_2",
+          "character": "Tenten",
+          "technique": "Tensasai",
+          "image": "static/img/jutsu-atlas-v229/crops/tenten__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "tenten-(s)__variant_1",
+          "character": "Tenten",
+          "technique": "Unsealing Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/tenten-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "tenten-(s)__variant_2",
+          "character": "Tenten",
+          "technique": "Rising Dragon Control",
+          "image": "static/img/jutsu-atlas-v229/crops/tenten-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-035.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "tobi-(s)__variant_1",
+          "character": "Tobi",
+          "technique": "Sharingan",
+          "image": "static/img/jutsu-atlas-v229/crops/tobi-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "tobi-(s)__variant_2",
+          "character": "Tobi",
+          "technique": "Kamui",
+          "image": "static/img/jutsu-atlas-v229/crops/tobi-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "tobirama-senju-(r)__variant_1",
+          "character": "Tobirama Senju",
+          "technique": "Prisão de Água",
+          "image": "static/img/jutsu-atlas-v229/crops/tobirama-senju-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "tobirama-senju-(r)__variant_2",
+          "character": "Tobirama Senju",
+          "technique": "Water Shockwave",
+          "image": "static/img/jutsu-atlas-v229/crops/tobirama-senju-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "toroi-(r)__variant_1",
+          "character": "Toroi",
+          "technique": "Demon Wind Shuriken",
+          "image": "static/img/jutsu-atlas-v229/crops/toroi-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "toroi-(r)__variant_2",
+          "character": "Toroi",
+          "technique": "Magnetic Field",
+          "image": "static/img/jutsu-atlas-v229/crops/toroi-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "torune-aburame-(s)__variant_1",
+          "character": "Torune Aburame",
+          "technique": "Nano-Sized Venomous Beetles",
+          "image": "static/img/jutsu-atlas-v229/crops/torune-aburame-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "torune-aburame-(s)__variant_2",
+          "character": "Torune Aburame",
+          "technique": "Jar of Poison",
+          "image": "static/img/jutsu-atlas-v229/crops/torune-aburame-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "true-form-sasori-(s)__variant_1",
+          "character": "True Form Sasori",
+          "technique": "Iron Sand World Method",
+          "image": "static/img/jutsu-atlas-v229/crops/true-form-sasori-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "true-form-sasori-(s)__variant_2",
+          "character": "True Form Sasori",
+          "technique": "Red Secret Technique: Hundred Puppets",
+          "image": "static/img/jutsu-atlas-v229/crops/true-form-sasori-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-036.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "tsume-inuzuka__variant_1",
+          "character": "Tsume Inuzuka",
+          "technique": "Call Kuromaru",
+          "image": "static/img/jutsu-atlas-v229/crops/tsume-inuzuka__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "tsume-inuzuka__variant_2",
+          "character": "Tsume Inuzuka",
+          "technique": "Fierce Bite",
+          "image": "static/img/jutsu-atlas-v229/crops/tsume-inuzuka__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "tsunade-(s)__variant_1",
+          "character": "Tsunade",
+          "technique": "Creation Rebirth",
+          "image": "static/img/jutsu-atlas-v229/crops/tsunade-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "tsunade-(s)__variant_2",
+          "character": "Tsunade",
+          "technique": "Heavenly Foot of Pain",
+          "image": "static/img/jutsu-atlas-v229/crops/tsunade-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "uchiha-itachi-body-double-(s)__variant_1",
+          "character": "Uchiha Itachi Body Double (shippuden)",
+          "technique": "Genjutsu Reversal",
+          "image": "static/img/jutsu-atlas-v229/crops/uchiha-itachi-body-double-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "uchiha-itachi-body-double-(s)__variant_2",
+          "character": "Uchiha Itachi Body Double (shippuden)",
+          "technique": "Itachi Fireball Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/uchiha-itachi-body-double-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "utakata-(s)__variant_1",
+          "character": "Utakata",
+          "technique": "Soap Bubble",
+          "image": "static/img/jutsu-atlas-v229/crops/utakata-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "utakata-(s)__variant_2",
+          "character": "Utakata",
+          "technique": "Drowning Bubble",
+          "image": "static/img/jutsu-atlas-v229/crops/utakata-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "white-snake-orochimaru-(s)__variant_1",
+          "character": "White Snake Orochimaru",
+          "technique": "Eight Branches Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/white-snake-orochimaru-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "white-snake-orochimaru-(s)__variant_2",
+          "character": "White Snake Orochimaru",
+          "technique": "Hidden Shadow Snake Hands",
+          "image": "static/img/jutsu-atlas-v229/crops/white-snake-orochimaru-(s)__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-037.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "yamato-(s)__variant_1",
+          "character": "Yamato",
+          "technique": "Tenth Edict on Enlightenment",
+          "image": "static/img/jutsu-atlas-v229/crops/yamato-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "yamato-(s)__variant_2",
+          "character": "Yamato",
+          "technique": "Wood Clone",
+          "image": "static/img/jutsu-atlas-v229/crops/yamato-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "yondaime-minato__variant_1",
+          "character": "Yondaime Minato",
+          "technique": "Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/yondaime-minato__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "yondaime-minato__variant_2",
+          "character": "Yondaime Minato",
+          "technique": "Teleportation Barrier",
+          "image": "static/img/jutsu-atlas-v229/crops/yondaime-minato__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "yoroi-akado__variant_1",
+          "character": "Yoroi Akadō",
+          "technique": "Energy Drain",
+          "image": "static/img/jutsu-atlas-v229/crops/yoroi-akado__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "yoroi-akado__variant_2",
+          "character": "Yoroi Akadō",
+          "technique": "Draining Assault",
+          "image": "static/img/jutsu-atlas-v229/crops/yoroi-akado__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "young-kakashi__variant_1",
+          "character": "Young Kakashi",
+          "technique": "White Light Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/young-kakashi__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "young-kakashi__variant_2",
+          "character": "Young Kakashi",
+          "technique": "Lightning Blade",
+          "image": "static/img/jutsu-atlas-v229/crops/young-kakashi__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "yugao-uzuki__variant_1",
+          "character": "Yūgao Uzuki",
+          "technique": "Moonlight Night",
+          "image": "static/img/jutsu-atlas-v229/crops/yugao-uzuki__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "yugao-uzuki__variant_2",
+          "character": "Yūgao Uzuki",
+          "technique": "Moon Haze",
+          "image": "static/img/jutsu-atlas-v229/crops/yugao-uzuki__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-038.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "yugito-nii-(s)__variant_1",
+          "character": "Yugito Nii",
+          "technique": "Two-Tailed Transformation",
+          "image": "static/img/jutsu-atlas-v229/crops/yugito-nii-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "yugito-nii-(s)__variant_2",
+          "character": "Yugito Nii",
+          "technique": "Flaming Cat Roar",
+          "image": "static/img/jutsu-atlas-v229/crops/yugito-nii-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "zabuza-momochi__variant_1",
+          "character": "Zabuza Momochi",
+          "technique": "Water Prison Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/zabuza-momochi__variant_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "zabuza-momochi__variant_2",
+          "character": "Zabuza Momochi",
+          "technique": "Water Release: Great Waterfall Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/zabuza-momochi__variant_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "zabuza-momochi-(r)__variant_1",
+          "character": "Zabuza Momochi",
+          "technique": "Water Prison Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/zabuza-momochi-(r)__variant_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "zabuza-momochi-(r)__variant_2",
+          "character": "Zabuza Momochi",
+          "technique": "Water Release: Great Waterfall Technique",
+          "image": "static/img/jutsu-atlas-v229/crops/zabuza-momochi-(r)__variant_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "zaji__variant_1",
+          "character": "Zaji",
+          "technique": "Kunai Block",
+          "image": "static/img/jutsu-atlas-v229/crops/zaji__variant_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "zaji__variant_2",
+          "character": "Zaji",
+          "technique": "Exploding Chakra Kunai",
+          "image": "static/img/jutsu-atlas-v229/crops/zaji__variant_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "zaku-abumi__variant_1",
+          "character": "Zaku Abumi",
+          "technique": "Slicing Sound Wave",
+          "image": "static/img/jutsu-atlas-v229/crops/zaku-abumi__variant_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "zaku-abumi__variant_2",
+          "character": "Zaku Abumi",
+          "technique": "Wall of Air",
+          "image": "static/img/jutsu-atlas-v229/crops/zaku-abumi__variant_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-039.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "zetsu-(s)__variant_1",
+          "character": "Zetsu",
+          "technique": "Black Zetsu",
+          "image": "static/img/jutsu-atlas-v229/crops/zetsu-(s)__variant_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "zetsu-(s)__variant_2",
+          "character": "Zetsu",
+          "technique": "White Zetsu",
+          "image": "static/img/jutsu-atlas-v229/crops/zetsu-(s)__variant_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "boruto-uzumaki-genin__v21_1",
+          "character": "Boruto Uzumaki",
+          "technique": "Rasengan: Rendan",
+          "image": "static/img/jutsu-atlas-v229/crops/boruto-uzumaki-genin__v21_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "boruto-uzumaki-genin__v21_2",
+          "character": "Boruto Uzumaki",
+          "technique": "Raiton: Jinraisen",
+          "image": "static/img/jutsu-atlas-v229/crops/boruto-uzumaki-genin__v21_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "sarada-uchiha-boruto__v21_1",
+          "character": "Sarada Uchiha",
+          "technique": "Katon: Hōsenka no Jutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/sarada-uchiha-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "sarada-uchiha-boruto__v21_2",
+          "character": "Sarada Uchiha",
+          "technique": "Chidori",
+          "image": "static/img/jutsu-atlas-v229/crops/sarada-uchiha-boruto__v21_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "mitsuki-boruto__v21_1",
+          "character": "Mitsuki",
+          "technique": "Hebi Bunshin no Jutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/mitsuki-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "mitsuki-boruto__v21_2",
+          "character": "Mitsuki",
+          "technique": "Senpō: Jagei Jubaku",
+          "image": "static/img/jutsu-atlas-v229/crops/mitsuki-boruto__v21_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "kawaki-boruto__v21_1",
+          "character": "Kawaki",
+          "technique": "Kagaku Ningu: Kōgeki",
+          "image": "static/img/jutsu-atlas-v229/crops/kawaki-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "kawaki-boruto__v21_2",
+          "character": "Kawaki",
+          "technique": "Kāma: Kyōka",
+          "image": "static/img/jutsu-atlas-v229/crops/kawaki-boruto__v21_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-040.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "naruto-uzumaki-hokage__v21_1",
+          "character": "Naruto Uzumaki — Hokage",
+          "technique": "Fūton: Chō Ōdama Rasenshuriken",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki-hokage__v21_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "naruto-uzumaki-hokage__v21_2",
+          "character": "Naruto Uzumaki — Hokage",
+          "technique": "Kage Bunshin Rendan",
+          "image": "static/img/jutsu-atlas-v229/crops/naruto-uzumaki-hokage__v21_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "sasuke-uchiha-adulto__v21_1",
+          "character": "Sasuke Uchiha — Adulto",
+          "technique": "Chidori Eisō",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha-adulto__v21_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "sasuke-uchiha-adulto__v21_2",
+          "character": "Sasuke Uchiha — Adulto",
+          "technique": "Chidori Senbon",
+          "image": "static/img/jutsu-atlas-v229/crops/sasuke-uchiha-adulto__v21_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "sakura-haruno-adulta__v21_1",
+          "character": "Sakura Haruno — Adulta",
+          "technique": "Sakura Fubuki no Jutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno-adulta__v21_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "sakura-haruno-adulta__v21_2",
+          "character": "Sakura Haruno — Adulta",
+          "technique": "Saisei Nōryoku",
+          "image": "static/img/jutsu-atlas-v229/crops/sakura-haruno-adulta__v21_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "kakashi-hatake-sexto__v21_1",
+          "character": "Kakashi Hatake — Sexto Hokage",
+          "technique": "Raiton: Kage Bunshin no Jutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake-sexto__v21_1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "kakashi-hatake-sexto__v21_2",
+          "character": "Kakashi Hatake — Sexto Hokage",
+          "technique": "Suiton: Suiryūdan no Jutsu",
+          "image": "static/img/jutsu-atlas-v229/crops/kakashi-hatake-sexto__v21_2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "momoshiki-otsutsuki-boruto__v21_1",
+          "character": "Momoshiki Ōtsutsuki",
+          "technique": "Golem de Lava",
+          "image": "static/img/jutsu-atlas-v229/crops/momoshiki-otsutsuki-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "momoshiki-otsutsuki-boruto__v21_2",
+          "character": "Momoshiki Ōtsutsuki",
+          "technique": "Yomotsu Hirasaka",
+          "image": "static/img/jutsu-atlas-v229/crops/momoshiki-otsutsuki-boruto__v21_2.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-041.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "isshiki-otsutsuki-boruto__v21_1",
+          "character": "Isshiki Ōtsutsuki",
+          "technique": "Byakugan",
+          "image": "static/img/jutsu-atlas-v229/crops/isshiki-otsutsuki-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "isshiki-otsutsuki-boruto__v21_2",
+          "character": "Isshiki Ōtsutsuki",
+          "technique": "Daikokuten: Kuroi Hako",
+          "image": "static/img/jutsu-atlas-v229/crops/isshiki-otsutsuki-boruto__v21_2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "jigen-boruto__v21_1",
+          "character": "Jigen",
+          "technique": "Kāma: Zōfuku",
+          "image": "static/img/jutsu-atlas-v229/crops/jigen-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "jigen-boruto__v21_2",
+          "character": "Jigen",
+          "technique": "Jikūkan: Kyūshū",
+          "image": "static/img/jutsu-atlas-v229/crops/jigen-boruto__v21_2.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "konohamaru-sensei-boruto__v21_1",
+          "character": "Konohamaru Sarutobi — Sensei",
+          "technique": "Fūton: Rasengan",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sensei-boruto__v21_1.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "konohamaru-sensei-boruto__v21_2",
+          "character": "Konohamaru Sarutobi — Sensei",
+          "technique": "Katon: Haisekishō",
+          "image": "static/img/jutsu-atlas-v229/crops/konohamaru-sensei-boruto__v21_2.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "base__bijuu-shukaku-event__1",
+          "character": "Shukaku",
+          "technique": "Fūton: Renkūdan",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-shukaku-event__1.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "base__bijuu-shukaku-event__2",
+          "character": "Shukaku",
+          "technique": "Braço Monstruoso de Areia",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-shukaku-event__2.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "base__bijuu-shukaku-event__3",
+          "character": "Shukaku",
+          "technique": "Defesa de Shukaku",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-shukaku-event__3.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "base__bijuu-shukaku-event__4",
+          "character": "Shukaku",
+          "technique": "Liberação Total de Shukaku",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-shukaku-event__4.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-042.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "base__bijuu-matatabi-event__1",
+          "character": "Matatabi",
+          "technique": "Garras da Matatabi",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-matatabi-event__1.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "base__bijuu-matatabi-event__2",
+          "character": "Matatabi",
+          "technique": "Rugido Flamejante",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-matatabi-event__2.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "base__bijuu-matatabi-event__4",
+          "character": "Matatabi",
+          "technique": "Investida da Matatabi",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-matatabi-event__4.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "base__bijuu-gyuki-event__1",
+          "character": "Gyūki",
+          "technique": "Bijūdama",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-gyuki-event__1.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "base__bijuu-gyuki-event__2",
+          "character": "Gyūki",
+          "technique": "Ossos de Chakra",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-gyuki-event__2.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "base__bijuu-gyuki-event__3",
+          "character": "Gyūki",
+          "technique": "Lariat",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-gyuki-event__3.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "base__bijuu-gyuki-event__4",
+          "character": "Gyūki",
+          "technique": "Barreira de Chakra",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-gyuki-event__4.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "base__bijuu-kurama-event__1",
+          "character": "Kurama",
+          "technique": "Bijūdama",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-kurama-event__1.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "base__bijuu-kurama-event__2",
+          "character": "Kurama",
+          "technique": "Bijūdama Massiva",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-kurama-event__2.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "base__bijuu-kurama-event__3",
+          "character": "Kurama",
+          "technique": "Mão de Chakra",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-kurama-event__3.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-043.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "base__bijuu-kurama-event__4",
+          "character": "Kurama",
+          "technique": "Chamas Furiosas",
+          "image": "static/img/jutsu-atlas-v229/crops/base__bijuu-kurama-event__4.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "base__yugito-nii-(s)__4",
+          "character": "Yugito Nii",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__yugito-nii-(s)__4.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "base__itachi-uchiha-(r)__4",
+          "character": "Itachi Uchiha (reanimado)",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__itachi-uchiha-(r)__4.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "base__kabuto-yakushi-(s)__4",
+          "character": "Kabuto Yakushi",
+          "technique": "Esquiva",
+          "image": "static/img/jutsu-atlas-v229/crops/base__kabuto-yakushi-(s)__4.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "base__tsunade-(s)__4",
+          "character": "Tsunade",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__tsunade-(s)__4.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "base__sage-mode-jiraiya-(s)__4",
+          "character": "Sage Mode Jiraiya",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__sage-mode-jiraiya-(s)__4.jpg"
+        },
+        {
+          "panel": 7,
+          "key": "base__yondaime-minato__4",
+          "character": "Yondaime Minato",
+          "technique": "Aparar",
+          "image": "static/img/jutsu-atlas-v229/crops/base__yondaime-minato__4.jpg"
+        },
+        {
+          "panel": 8,
+          "key": "base__young-kakashi__4",
+          "character": "Young Kakashi",
+          "technique": "Aparar",
+          "image": "static/img/jutsu-atlas-v229/crops/base__young-kakashi__4.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "base__temari__4",
+          "character": "Temari",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__temari__4.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "base__sasuke-uchiha__4",
+          "character": "Sasuke Uchiha",
+          "technique": "Bloqueio",
+          "image": "static/img/jutsu-atlas-v229/crops/base__sasuke-uchiha__4.jpg"
+        }
+      ]
+    },
+    {
+      "atlas": "static/img/jutsu-atlas-v229/atlases/atlas-044.jpg",
+      "panels": [
+        {
+          "panel": 1,
+          "key": "icon__sasori-(s)",
+          "character": "Sasori",
+          "technique": "Retrato único do personagem",
+          "image": "static/img/character-corrections-v229/sasori-(s)-icon.jpg"
+        },
+        {
+          "panel": 2,
+          "key": "icon__eight-tailed-b-(s)",
+          "character": "Killer B — Oito Caudas",
+          "technique": "Retrato único do personagem",
+          "image": "static/img/character-corrections-v229/eight-tailed-b-(s)-icon.jpg"
+        },
+        {
+          "panel": 3,
+          "key": "icon__konohamaru-sensei-boruto",
+          "character": "Konohamaru Sensei",
+          "technique": "Retrato único do personagem",
+          "image": "static/img/character-corrections-v229/konohamaru-sensei-boruto-icon.jpg"
+        },
+        {
+          "panel": 4,
+          "key": "npc__narrador",
+          "character": "Narrador da História",
+          "technique": "Retrato único de NPC",
+          "image": "static/img/story-npcs-v229/narrador.jpg"
+        },
+        {
+          "panel": 5,
+          "key": "npc__sistema",
+          "character": "Sistema / Tutorial",
+          "technique": "Retrato único de NPC",
+          "image": "static/img/story-npcs-v229/sistema.jpg"
+        },
+        {
+          "panel": 6,
+          "key": "extra__sasori-(s)",
+          "character": "Sasori",
+          "technique": "Arte extra de personagem",
+          "image": "static/img/character-corrections-v229/extras/sasori-(s).jpg"
+        },
+        {
+          "panel": 7,
+          "key": "extra__eight-tailed-b-(s)",
+          "character": "Eight-Tailed B",
+          "technique": "Arte extra de personagem",
+          "image": "static/img/character-corrections-v229/extras/eight-tailed-b-(s).jpg"
+        },
+        {
+          "panel": 8,
+          "key": "extra__konohamaru-sensei-boruto",
+          "character": "Konohamaru Sarutobi — Sensei",
+          "technique": "Arte extra de personagem",
+          "image": "static/img/character-corrections-v229/extras/konohamaru-sensei-boruto.jpg"
+        },
+        {
+          "panel": 9,
+          "key": "extra__naruto-uzumaki-hokage",
+          "character": "Naruto Uzumaki — Hokage",
+          "technique": "Arte extra de personagem",
+          "image": "static/img/character-corrections-v229/extras/naruto-uzumaki-hokage.jpg"
+        },
+        {
+          "panel": 10,
+          "key": "extra__sarada-uchiha-boruto",
+          "character": "Sarada Uchiha",
+          "technique": "Arte extra de personagem",
+          "image": "static/img/character-corrections-v229/extras/sarada-uchiha-boruto.jpg"
+        }
+      ]
+    }
+  ]
+}
