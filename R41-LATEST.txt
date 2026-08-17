@@ -1,0 +1,3 @@
+Shinobi no Sho R41 • TERION 2D10 • MD operacional aplicado • 32/32 gates R41 • 27/27 regressão R40 • 35/35 regressão R39
+GitHub Pages: /r41-online.html
+Produção: https://naruto-shinobi-r40-online.vercel.app
