@@ -22,7 +22,82 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
       - name: Materialize R41 static game into GitHub
-        run: python3 .r41-seed/materialize_r41.py
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('.r41-seed/materialize_r41.py')
+          s=p.read_text(encoding='utf8')
+          s=s.replace("'.env.local.example','index.html','app.js','styles.css','r31.css','package.json','vercel.json',", "'index.html','app.js','styles.css','r31.css',")
+          p.write_text(s,encoding='utf8')
+          PY
+          python3 .r41-seed/materialize_r41.py
+      - name: Restore exact local R41 deployment examples
+        shell: bash
+        run: |
+          G='R41/Naruto Shinobi no Sho PC/_jogo'
+          cat > "$G/package.json" <<'JSON'
+          {
+            "name": "naruto-shinobi-no-sho-r40",
+            "version": "8.20.0",
+            "private": true,
+            "engines": { "node": ">=20" },
+            "dependencies": { "mongodb": "^6.18.0" }
+          }
+          JSON
+          cat > "$G/vercel.json" <<'JSON'
+          {
+            "$schema": "https://openapi.vercel.sh/vercel.json",
+            "fluid": true,
+            "cleanUrls": false,
+            "headers": [{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"same-origin"}]}],
+            "functions": {
+              "api/ai.js": {"maxDuration":300},
+              "api/v84/world/event.js": {"maxDuration":30},
+              "api/v84/world/tick.js": {"maxDuration":30}
+            }
+          }
+          JSON
+          cat > "$G/.env.local.example" <<'ENV'
+          # R39 — copie somente as chaves que voce realmente possui para .env.local.
+          # O instalador preserva seu .env.local existente e envia as chaves necessarias ao Vercel.
+          VERCEL_TOKEN=
+          VERCEL_TEAM_ID=team_o1RxZX0hDIO9c7SnuFozCmAB
+          VERCEL_TEAM_SLUG=kaalflash12s-projects
+          VERCEL_PROJECT_NAME=mestrerpg
+          MONGODB_URI=
+          MONGODB_DB=naruto_shinobi_no_sho
+          OPENAI_API_KEY=
+          OPENAI_MODEL=gpt-5-mini
+          GEMINI_API_KEY=
+          GEMINI_MODEL=gemini-2.5-flash
+          ANTHROPIC_API_KEY=
+          ANTHROPIC_MODEL=
+          GROQ_API_KEY=
+          GROQ_MODEL=llama-3.3-70b-versatile
+          XAI_API_KEY=
+          XAI_MODEL=
+          OPENROUTER_API_KEY=
+          OPENROUTER_MODEL=
+          AI_API_KEY=
+          AI_BASE_URL=
+          AI_MODEL=
+          NARUTO_WORKER_URL=
+          NARUTO_WORKER_API_KEY=
+          CLOUDFLARE_API_TOKEN=
+          CLOUDFLARE_ACCOUNT_ID=
+          LEON_ACCESS_USERNAME=leon
+          LEON_ACCESS_CODE=
+          AI_COUNCIL_POLICY=critical
+          NARUTO_MONGO_VIA_VERCEL=true
+          MONGODB_COLLECTION=campaign_events
+          AI_COUNCIL_MAX=2
+          AI_COUNCIL_ROLES=rules,progression,mission
+          AI_CLOUD_FIRST=false
+          AI_COUNCIL_INCLUDE_FALLBACK=false
+          NARUTO_VERCEL_URL=
+          CF_EMBEDDING_MODEL=@cf/baai/bge-base-en-v1.5
+          ENV
       - name: Point GitHub Pages root at local R41
         shell: bash
         run: |
@@ -36,6 +111,9 @@ jobs:
           set -euo pipefail
           G='R41/Naruto Shinobi no Sho PC/_jogo'
           test -f "$G/app.js"
+          test -f "$G/package.json"
+          test -f "$G/vercel.json"
+          test -f "$G/.env.local.example"
           test -f "$G/data/r41-gm3-techniques.json"
           grep -q 'R41-MD-OPERACIONAL-APLICADO-2026-08-17' "$G/app.js"
           grep -q 'GitHub' "$G/index.html"
