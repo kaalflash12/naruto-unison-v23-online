@@ -1,0 +1,10 @@
+{
+  "build": "R41-MD-OPERACIONAL-APLICADO-2026-08-17",
+  "staticFilesDownloaded": 5399,
+  "discoveredPaths": 5402,
+  "missingNonSeed": 3,
+  "gm3Techniques": 2792,
+  "staticHostedBy": "GitHub Pages",
+  "apiBackend": "https://naruto-shinobi-r40-online.vercel.app",
+  "note": "Vercel is used only for /api; static game files are materialized in this repository."
+}

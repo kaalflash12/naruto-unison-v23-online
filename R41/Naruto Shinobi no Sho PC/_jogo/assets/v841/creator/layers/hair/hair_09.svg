@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><metadata>{&quot;schema&quot;:&quot;SNS_CREATOR_LAYER_V841&quot;,&quot;kind&quot;:&quot;hair&quot;,&quot;index&quot;:9,&quot;exclusive&quot;:true}</metadata><defs>
+  <linearGradient id="bg-s1dcd3daa" x1="0" y1="0" x2="1" y2="1"><stop stop-color="hsl(238 54% 7%)"/><stop offset=".55" stop-color="hsl(256 62% 12%)"/><stop offset="1" stop-color="#020407"/></linearGradient>
+  <radialGradient id="glow-s1dcd3daa"><stop stop-color="hsl(311 96% 68%)" stop-opacity=".92"/><stop offset=".45" stop-color="hsl(3 94% 60%)" stop-opacity=".30"/><stop offset="1" stop-color="hsl(238 54% 7%)" stop-opacity="0"/></radialGradient>
+  <linearGradient id="metal-s1dcd3daa" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6ead1"/><stop offset=".35" stop-color="hsl(311 96% 68%)"/><stop offset=".7" stop-color="#4a525d"/><stop offset="1" stop-color="#0b1018"/></linearGradient>
+  <pattern id="grid-s1dcd3daa" width="41" height="41" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="hsl(311 96% 68%)" stroke-opacity=".07"/></pattern>
+  <filter id="blur-s1dcd3daa" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+  <clipPath id="clip-s1dcd3daa"><rect width="512" height="512" rx="24"/></clipPath>
+  </defs><path d="M104 225Q84 75 256 35t155 190l-30-84-41 29-22-105-43 93-38-118-38 125-55-66-33 126Z" fill="hsl(330 66% 24%)" stroke="hsl(311 96% 68%)" stroke-opacity=".38" stroke-width="5"/><path d="M151 126Q249 57 356 126M174 158Q255 96 337 157" fill="none" stroke="hsl(311 96% 68%)" stroke-opacity=".16" stroke-width="13" stroke-linecap="round"/></svg>

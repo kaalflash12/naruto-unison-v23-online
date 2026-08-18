@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "fluid": true,
+  "cleanUrls": false,
+  "headers": [{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"same-origin"}]}],
+  "functions": {
+    "api/ai.js": {"maxDuration":300},
+    "api/v84/world/event.js": {"maxDuration":30},
+    "api/v84/world/tick.js": {"maxDuration":30}
+  }
+}

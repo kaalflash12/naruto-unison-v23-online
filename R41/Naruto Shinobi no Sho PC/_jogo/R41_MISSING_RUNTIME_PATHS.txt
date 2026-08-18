@@ -1,0 +1,3 @@
+assets/items_v7/${item.id}.svg	HTTP Error 404: Not Found
+assets/jutsus_v75/${j.id}.svg	HTTP Error 404: Not Found
+assets/leon_tech_v75/${n}.svg	HTTP Error 404: Not Found

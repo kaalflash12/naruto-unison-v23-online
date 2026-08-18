@@ -1,0 +1,7 @@
+{
+  "name": "naruto-shinobi-no-sho-r40",
+  "version": "8.20.0",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "dependencies": { "mongodb": "^6.18.0" }
+}

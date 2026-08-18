@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><radialGradient id="sea"><stop stop-color="#21383a"/><stop offset="1" stop-color="#111d1e"/></radialGradient><linearGradient id="land" x1="0" y1="1"><stop stop-color="#6b6244"/><stop offset="1" stop-color="#394d34"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="9" stdDeviation="8" flood-opacity=".45"/></filter></defs><rect width="1600" height="900" fill="url(#sea)"/>
+<path filter="url(#shadow)" fill="url(#land)" stroke="#b5a479" stroke-width="4" d="M160 250 C220 130 370 110 495 165 C585 98 760 94 865 177 C1010 120 1190 155 1290 270 C1410 333 1415 490 1332 574 C1250 711 1060 752 910 697 C765 795 565 744 476 650 C330 657 194 577 171 459 C92 397 104 302 160 250 Z"/>
+<path fill="#d4c17b" opacity=".20" d="M230 248 Q420 180 553 294 T851 264 T1180 230 Q1090 370 1200 520 T928 656 Q742 571 585 680 Q490 523 300 570 Q365 415 230 248Z"/>
+<g opacity=".28" stroke="#b8d1b0" fill="none" stroke-width="8"><path d="M320 575 Q420 500 520 555 T720 520"/><path d="M975 180 Q1030 280 1008 392 T1110 590"/></g>
+<g fill="#151f22" opacity=".72"><path d="M290 245 l38 -72 38 72z"/><path d="M340 260 l45 -84 45 84z"/><path d="M410 244 l36 -69 36 69z"/><path d="M1080 310 l43 -80 43 80z"/><path d="M1140 326 l48 -89 48 89z"/><path d="M1194 310 l38 -70 38 70z"/></g>
+<text x="78" y="830" fill="#c9b788" font-family="Georgia" font-size="24" opacity=".7">MUNDO SHINOBI • rotas, eventos e encontros</text></svg>

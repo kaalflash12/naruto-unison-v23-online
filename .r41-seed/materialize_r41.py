@@ -15,7 +15,7 @@ QUOTED = re.compile(r'''["'`](?P<p>(?:(?:assets|data|src|content-packs|audio|ima
 CSSURL = re.compile(r'''url\(\s*["']?(?P<p>[^"')?#<>]+?\.'''+FILE_EXT+r''')["']?\s*\)''', re.I)
 HTMLREF = re.compile(r'''(?:src|href)=["'](?P<p>[^"'?#<>]+?\.'''+FILE_EXT+r''')["']''', re.I)
 SEEDS = {
-    '.env.local.example','index.html','app.js','styles.css','r31.css','package.json','vercel.json',
+    'index.html','app.js','styles.css','r31.css',
     'data/catalogo.js','data/catalogo.json','data/conteudo-livros.js','data/v5-content.js','data/v6-content.js','data/v7-content.js',
     'data/v74-content.js','data/v75-content.js','data/v81-leon-content.js','data/v84-visual-manifest.js','data/v84-live-world.js','data/v84-live-world.json',
     'data/r27-canon-events.js','data/r27-downloaded-canon-portraits.js','data/v84-knowledge-catalog.js','data/v84-knowledge-catalog.json',

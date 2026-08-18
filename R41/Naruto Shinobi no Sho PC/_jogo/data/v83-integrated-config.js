@@ -1,0 +1,61 @@
+window.NARUTO_V83 = {
+  version: '8.3.0',
+  stateSchema: 'TERION_MASTER_STATE_V1',
+  techniqueArtFallbacks: {
+    SUIRIN_ALERTA: 'assets/ui_v8/special/suirin_hero.jpg',
+    SUIRIN_MORDIDA: 'assets/enemies_v7/monstro_serpente.svg',
+    SUIRIN_RASTREIO: 'assets/events_v74/pergaminho_mensageiro.svg',
+    SUIRIN_VINCULO: 'assets/events_v74/omamori.svg',
+    KUSENRO_RELOGIO_ESTELAR: 'assets/ui_v8/special/kusenro_hero.jpg',
+    KUSENRO_PASSO_ENTRE_SEGUNDOS: 'assets/rpg_v75/tendo.svg',
+    KUSENRO_POEIRA_DE_CONSTELACAO: 'assets/rpg_v75/chibaku.svg',
+    KUSENRO_ECO_DE_UNIVERSO: 'assets/rpg_v75/rinbo.svg',
+    KUSENRO_ANCORA_DE_EXISTENCIA: 'assets/ui_v8/special/kusenro_biju.jpg',
+    ITEM_KURAI: 'assets/private/kurai.svg',
+    KURAI_CORTE_HORIZONTE: 'assets/jutsus_v75/hiken_tsukikage.svg',
+    KURAI_APARO_FENDA: 'assets/jutsus_v75/iaigiri.svg',
+    KURAI_ANCORA_VAZIO: 'assets/private/kurai_fragmento.svg',
+    KURAI_TRANSFERENCIA_NUCLEO: 'assets/jutsus_v75/kaihou.svg',
+    CLONE_REVEZAMENTO: 'assets/jutsus_v75/kage_bunshin_no_jutsu_i.svg',
+    CLONE_OBSERVADOR: 'assets/jutsus_v75/bunshin_no_jutsu_i.svg',
+    CLONE_ANCORA: 'assets/jutsus_v75/kage_bunshin_no_jutsu_ii.svg',
+    CLONE_COBERTURA: 'assets/jutsus_v75/bunshin_kaiten_kakato_otoshi_i.svg',
+    CLONE_CONVERGENCIA: 'assets/jutsus_v75/tajuu_kage_bunshin_no_jutsu_i.svg',
+    CLONE_RETORNO_SINCRONO: 'assets/jutsus_v75/tajuu_kage_bunshin_no_jutsu_ii.svg',
+    HACHIMON_PORTAO_1: 'assets/jutsus_v75/dynamic_entry.svg',
+    RAITON_RYUGA_COMPRIMIDO: 'assets/jutsus_v75/chokugeki_raikou.svg',
+    RAITON_KURYUGA_ESTABILIZADO: 'assets/jutsus_v75/raiton_raiden.svg',
+    KURAI_BAINHA_NAO_LETAL: 'assets/jutsus_v75/kumoryuu_omotegiri.svg',
+    KURAI_CORTE_CRUZADO_ESPELHO: 'assets/jutsus_v75/kumoryuu_mikazukigiri.svg'
+  },
+  itemArtOverrides: {
+    fuuma_shuriken: 'assets/jutsus_v75/kage_shuriken_no_jutsu.svg',
+    leque_guerra: 'assets/jutsus_v75/gunbai_kaze_aekousha.svg',
+    fio_aco: 'assets/ui_v8/items/cards/item_12.jpg',
+    pergaminho_chakra: 'assets/original/ui/pergaminho.png',
+    armadura_samurai: 'assets/ui_v8/items/cards/item_15.jpg',
+    ramen_especial: 'assets/original/ui/layout_comidas_nissin.jpg',
+    argila_explosiva: 'assets/ui_v8/items/cards/item_04.jpg',
+    tinta_shinobi: 'assets/ui_v8/items/cards/item_20.jpg',
+    veneno_fraco: 'assets/ui_v8/items/cards/item_07.jpg',
+    veneno_paralisante: 'assets/ui_v8/items/cards/item_08.jpg',
+    veneno_letal: 'assets/ui_v8/items/cards/item_16.jpg'
+  },
+  mentorPool: [
+    {id:'gai', name:'Might Guy', specialty:'Taijutsu e Hachimon', location:'folha', image:'assets/events_v74/gai.svg', source:'Save Point v5.2', discovered:true},
+    {id:'kakashi', name:'Kakashi Hatake', specialty:'Raiton, controle e tática', location:'folha', image:'assets/events_v74/kakashi.svg', source:'Save Point v5.2', discovered:true},
+    {id:'anko', name:'Anko Mitarashi', specialty:'Kenjutsu não letal e campo', location:'folha', image:'assets/ui_v8/creator/roster/roster_12.jpg', source:'Save Point v5.2', discovered:true},
+    {id:'iruka', name:'Iruka Umino', specialty:'Fundamentos e controle básico', location:'folha', image:'assets/events_v74/iruka.svg', source:'Academia de Konoha', discovered:true},
+    {id:'mentor_selamento', name:'Especialista de Selamento', specialty:'Fūinjutsu e barreiras', location:'folha', image:'assets/events_v74/pergaminho.svg', source:'Pode surgir em missão', discovered:false},
+    {id:'mentor_sensorial', name:'Batedora Sensorial', specialty:'Rastreio e percepção', location:'folha', image:'assets/events_v74/mensageiro.svg', source:'Pode surgir em missão', discovered:false},
+    {id:'mentor_campo', name:'Instrutor de Campo', specialty:'Sobrevivência e combate tático', location:'folha', image:'assets/ui_v8/creator/roster/roster_08.jpg', source:'Pode surgir em missão', discovered:false},
+    {id:'mentor_viajante', name:'Mestre Viajante', specialty:'Técnicas incomuns e investigação', location:'variavel', image:'assets/ui_v8/creator/roster/roster_15.jpg', source:'Pode surgir em missão', discovered:false}
+  ],
+  masterDirectives: [
+    'Ler o estado antes de narrar e validar intenção, requisitos, oposição e custo.',
+    'Aplicar efeitos, avançar o relógio, executar o tick do mundo e registrar Save Point.',
+    'Nunca liberar técnica apenas porque ela existe no cânone ou na enciclopédia.',
+    'Missão, combate, treino, mentor, rumor e narrativa compartilham o mesmo estado.',
+    'Leon controla somente suas próprias ações; NPCs controlam a si mesmos.'
+  ]
+};

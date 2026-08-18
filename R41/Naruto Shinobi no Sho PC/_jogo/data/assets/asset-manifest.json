@@ -1,0 +1,2231 @@
+{
+  "version": "R40-CORE-ASSET-MANIFEST-2026-08-17",
+  "policy": "Asset local aprovado vence alias, externo e placeholder. Fallback conhecido é telemetrado.",
+  "count": 139,
+  "assets": [
+    {
+      "id": "a_quarto_raikage_portrait_default",
+      "canonicalId": "a_quarto_raikage",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/a-quarto-raikage.webp",
+      "semanticTags": [
+        "a-quarto-raikage",
+        "a quarto raikage"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "akatsuchi_portrait_default",
+      "canonicalId": "akatsuchi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/akatsuchi.webp",
+      "semanticTags": [
+        "akatsuchi",
+        "akatsuchi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ameyuri_ringo_portrait_default",
+      "canonicalId": "ameyuri_ringo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ameyuri-ringo.webp",
+      "semanticTags": [
+        "ameyuri-ringo",
+        "ameyuri ringo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "anko_mitarashi_portrait_default",
+      "canonicalId": "anko_mitarashi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/anko-mitarashi.webp",
+      "semanticTags": [
+        "anko-mitarashi",
+        "anko mitarashi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ao_portrait_default",
+      "canonicalId": "ao",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ao.webp",
+      "semanticTags": [
+        "ao",
+        "ao"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "aoba_yamashiro_portrait_default",
+      "canonicalId": "aoba_yamashiro",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/aoba-yamashiro.webp",
+      "semanticTags": [
+        "aoba-yamashiro",
+        "aoba yamashiro"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "armeira_de_nova_konoha_portrait_default",
+      "canonicalId": "armeira_de_nova_konoha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/armeira-de-nova-konoha.webp",
+      "semanticTags": [
+        "armeira-de-nova-konoha",
+        "armeira de nova konoha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "arquivista_da_vila_portrait_default",
+      "canonicalId": "arquivista_da_vila",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/arquivista-da-vila.webp",
+      "semanticTags": [
+        "arquivista-da-vila",
+        "arquivista da vila"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "asuma_sarutobi_portrait_default",
+      "canonicalId": "asuma_sarutobi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/asuma-sarutobi.webp",
+      "semanticTags": [
+        "asuma-sarutobi",
+        "asuma sarutobi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ayame_portrait_default",
+      "canonicalId": "ayame",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ayame.webp",
+      "semanticTags": [
+        "ayame",
+        "ayame"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "baki_portrait_default",
+      "canonicalId": "baki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/baki.webp",
+      "semanticTags": [
+        "baki",
+        "baki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "balconista_de_missoes_portrait_default",
+      "canonicalId": "balconista_de_missoes",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/balconista-de-missoes.webp",
+      "semanticTags": [
+        "balconista-de-missoes",
+        "balconista de missoes"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "boruto_uzumaki_portrait_default",
+      "canonicalId": "boruto_uzumaki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/boruto-uzumaki.webp",
+      "semanticTags": [
+        "boruto-uzumaki",
+        "boruto uzumaki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "c_portrait_default",
+      "canonicalId": "c",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/c.webp",
+      "semanticTags": [
+        "c",
+        "c"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "capitao_da_guarda_portrait_default",
+      "canonicalId": "capitao_da_guarda",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/capitao-da-guarda.webp",
+      "semanticTags": [
+        "capitao-da-guarda",
+        "capitao da guarda"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "chiyo_portrait_default",
+      "canonicalId": "chiyo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/chiyo.webp",
+      "semanticTags": [
+        "chiyo",
+        "chiyo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "chocho_akimichi_portrait_default",
+      "canonicalId": "chocho_akimichi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/chocho-akimichi.webp",
+      "semanticTags": [
+        "chocho-akimichi",
+        "chocho akimichi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "choji_akimichi_portrait_default",
+      "canonicalId": "choji_akimichi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/choji-akimichi.webp",
+      "semanticTags": [
+        "choji-akimichi",
+        "choji akimichi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "chojuro_portrait_default",
+      "canonicalId": "chojuro",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/chojuro.webp",
+      "semanticTags": [
+        "chojuro",
+        "chojuro"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "comerciante_de_suprimentos_portrait_default",
+      "canonicalId": "comerciante_de_suprimentos",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/comerciante-de-suprimentos.webp",
+      "semanticTags": [
+        "comerciante-de-suprimentos",
+        "comerciante de suprimentos"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "corretor_do_mercado_negro_portrait_default",
+      "canonicalId": "corretor_do_mercado_negro",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/corretor-do-mercado-negro.webp",
+      "semanticTags": [
+        "corretor-do-mercado-negro",
+        "corretor do mercado negro"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "danzo_shimura_portrait_default",
+      "canonicalId": "danzo_shimura",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/danzo-shimura.webp",
+      "semanticTags": [
+        "danzo-shimura",
+        "danzo shimura"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "darui_portrait_default",
+      "canonicalId": "darui",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/darui.webp",
+      "semanticTags": [
+        "darui",
+        "darui"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "deidara_portrait_default",
+      "canonicalId": "deidara",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/deidara.webp",
+      "semanticTags": [
+        "deidara",
+        "deidara"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "denki_kaminarimon_portrait_default",
+      "canonicalId": "denki_kaminarimon",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/denki-kaminarimon.webp",
+      "semanticTags": [
+        "denki-kaminarimon",
+        "denki kaminarimon"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "dona_da_estalagem_portrait_default",
+      "canonicalId": "dona_da_estalagem",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/dona-da-estalagem.webp",
+      "semanticTags": [
+        "dona-da-estalagem",
+        "dona da estalagem"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ebisu_portrait_default",
+      "canonicalId": "ebisu",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ebisu.webp",
+      "semanticTags": [
+        "ebisu",
+        "ebisu"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ferreiro_de_nova_konoha_portrait_default",
+      "canonicalId": "ferreiro_de_nova_konoha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ferreiro-de-nova-konoha.webp",
+      "semanticTags": [
+        "ferreiro-de-nova-konoha",
+        "ferreiro de nova konoha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "fu_yamanaka_portrait_default",
+      "canonicalId": "fu_yamanaka",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/fu-yamanaka.webp",
+      "semanticTags": [
+        "fu-yamanaka",
+        "fu yamanaka"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "fuu_portrait_default",
+      "canonicalId": "fuu",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/fuu.webp",
+      "semanticTags": [
+        "fuu",
+        "fuu"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "gaara_portrait_default",
+      "canonicalId": "gaara",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/gaara.webp",
+      "semanticTags": [
+        "gaara",
+        "gaara"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "genma_shiranui_portrait_default",
+      "canonicalId": "genma_shiranui",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/genma-shiranui.webp",
+      "semanticTags": [
+        "genma-shiranui",
+        "genma shiranui"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "haku_portrait_default",
+      "canonicalId": "haku",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/haku.webp",
+      "semanticTags": [
+        "haku",
+        "haku"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "han_portrait_default",
+      "canonicalId": "han",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/han.webp",
+      "semanticTags": [
+        "han",
+        "han"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hanabi_hyuga_portrait_default",
+      "canonicalId": "hanabi_hyuga",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hanabi-hyuga.webp",
+      "semanticTags": [
+        "hanabi-hyuga",
+        "hanabi hyuga"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hanzo_portrait_default",
+      "canonicalId": "hanzo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hanzo.webp",
+      "semanticTags": [
+        "hanzo",
+        "hanzo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "herbalista_da_vila_portrait_default",
+      "canonicalId": "herbalista_da_vila",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/herbalista-da-vila.webp",
+      "semanticTags": [
+        "herbalista-da-vila",
+        "herbalista da vila"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hiashi_hyuga_portrait_default",
+      "canonicalId": "hiashi_hyuga",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hiashi-hyuga.webp",
+      "semanticTags": [
+        "hiashi-hyuga",
+        "hiashi hyuga"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hidan_portrait_default",
+      "canonicalId": "hidan",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hidan.webp",
+      "semanticTags": [
+        "hidan",
+        "hidan"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "himawari_uzumaki_portrait_default",
+      "canonicalId": "himawari_uzumaki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/himawari-uzumaki.webp",
+      "semanticTags": [
+        "himawari-uzumaki",
+        "himawari uzumaki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hinata_hyuga_portrait_default",
+      "canonicalId": "hinata_hyuga",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hinata-hyuga.webp",
+      "semanticTags": [
+        "hinata-hyuga",
+        "hinata hyuga"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "hiruzen_sarutobi_portrait_default",
+      "canonicalId": "hiruzen_sarutobi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/hiruzen-sarutobi.webp",
+      "semanticTags": [
+        "hiruzen-sarutobi",
+        "hiruzen sarutobi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "homura_mitokado_portrait_default",
+      "canonicalId": "homura_mitokado",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/homura-mitokado.webp",
+      "semanticTags": [
+        "homura-mitokado",
+        "homura mitokado"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ichiraku_ramen_location_default",
+      "canonicalId": "ichiraku_ramen",
+      "type": "location",
+      "entityType": "location",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ichiraku-ramen.webp",
+      "semanticTags": [
+        "ichiraku-ramen",
+        "ichiraku ramen"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "ino_yamanaka_portrait_default",
+      "canonicalId": "ino_yamanaka",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/ino-yamanaka.webp",
+      "semanticTags": [
+        "ino-yamanaka",
+        "ino yamanaka"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "inojin_yamanaka_portrait_default",
+      "canonicalId": "inojin_yamanaka",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/inojin-yamanaka.webp",
+      "semanticTags": [
+        "inojin-yamanaka",
+        "inojin yamanaka"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "instrutor_do_dojo_portrait_default",
+      "canonicalId": "instrutor_do_dojo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/instrutor-do-dojo.webp",
+      "semanticTags": [
+        "instrutor-do-dojo",
+        "instrutor do dojo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "iruka_umino_portrait_default",
+      "canonicalId": "iruka_umino",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/iruka-umino.webp",
+      "semanticTags": [
+        "iruka-umino",
+        "iruka umino"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "itachi_uchiha_portrait_default",
+      "canonicalId": "itachi_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/itachi-uchiha.webp",
+      "semanticTags": [
+        "itachi-uchiha",
+        "itachi uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "iwabe_yuino_portrait_default",
+      "canonicalId": "iwabe_yuino",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/iwabe-yuino.webp",
+      "semanticTags": [
+        "iwabe-yuino",
+        "iwabe yuino"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "izumo_kamizuki_portrait_default",
+      "canonicalId": "izumo_kamizuki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/izumo-kamizuki.webp",
+      "semanticTags": [
+        "izumo-kamizuki",
+        "izumo kamizuki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "jinin_akebino_portrait_default",
+      "canonicalId": "jinin_akebino",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/jinin-akebino.webp",
+      "semanticTags": [
+        "jinin-akebino",
+        "jinin akebino"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "jiraiya_portrait_default",
+      "canonicalId": "jiraiya",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/jiraiya.webp",
+      "semanticTags": [
+        "jiraiya",
+        "jiraiya"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "jugo_portrait_default",
+      "canonicalId": "jugo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/jugo.webp",
+      "semanticTags": [
+        "jugo",
+        "jugo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kabuto_yakushi_portrait_default",
+      "canonicalId": "kabuto_yakushi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kabuto-yakushi.webp",
+      "semanticTags": [
+        "kabuto-yakushi",
+        "kabuto yakushi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kakashi_hatake_portrait_default",
+      "canonicalId": "kakashi_hatake",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kakashi-hatake.webp",
+      "semanticTags": [
+        "kakashi-hatake",
+        "kakashi hatake"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kakuzu_portrait_default",
+      "canonicalId": "kakuzu",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kakuzu.webp",
+      "semanticTags": [
+        "kakuzu",
+        "kakuzu"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kankuro_portrait_default",
+      "canonicalId": "kankuro",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kankuro.webp",
+      "semanticTags": [
+        "kankuro",
+        "kankuro"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "karin_portrait_default",
+      "canonicalId": "karin",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/karin.webp",
+      "semanticTags": [
+        "karin",
+        "karin"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "karui_portrait_default",
+      "canonicalId": "karui",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/karui.webp",
+      "semanticTags": [
+        "karui",
+        "karui"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "karura_portrait_default",
+      "canonicalId": "karura",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/karura.webp",
+      "semanticTags": [
+        "karura",
+        "karura"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kawaki_portrait_default",
+      "canonicalId": "kawaki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kawaki.webp",
+      "semanticTags": [
+        "kawaki",
+        "kawaki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kiba_inuzuka_portrait_default",
+      "canonicalId": "kiba_inuzuka",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kiba-inuzuka.webp",
+      "semanticTags": [
+        "kiba-inuzuka",
+        "kiba inuzuka"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "killer_b_portrait_default",
+      "canonicalId": "killer_b",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/killer-b.webp",
+      "semanticTags": [
+        "killer-b",
+        "killer b"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kimimaro_portrait_default",
+      "canonicalId": "kimimaro",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kimimaro.webp",
+      "semanticTags": [
+        "kimimaro",
+        "kimimaro"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kisame_hoshigaki_portrait_default",
+      "canonicalId": "kisame_hoshigaki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kisame-hoshigaki.webp",
+      "semanticTags": [
+        "kisame-hoshigaki",
+        "kisame hoshigaki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kitsuchi_portrait_default",
+      "canonicalId": "kitsuchi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kitsuchi.webp",
+      "semanticTags": [
+        "kitsuchi",
+        "kitsuchi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "koharu_utatane_portrait_default",
+      "canonicalId": "koharu_utatane",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/koharu-utatane.webp",
+      "semanticTags": [
+        "koharu-utatane",
+        "koharu utatane"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "konan_portrait_default",
+      "canonicalId": "konan",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/konan.webp",
+      "semanticTags": [
+        "konan",
+        "konan"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "konohamaru_sarutobi_adulto_portrait_default",
+      "canonicalId": "konohamaru_sarutobi_adulto",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/konohamaru-sarutobi-adulto.webp",
+      "semanticTags": [
+        "konohamaru-sarutobi-adulto",
+        "konohamaru sarutobi adulto"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "konohamaru_portrait_default",
+      "canonicalId": "konohamaru",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/konohamaru.webp",
+      "semanticTags": [
+        "konohamaru",
+        "konohamaru"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kotetsu_hagane_portrait_default",
+      "canonicalId": "kotetsu_hagane",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kotetsu-hagane.webp",
+      "semanticTags": [
+        "kotetsu-hagane",
+        "kotetsu hagane"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kurai_avatar_entity_default",
+      "canonicalId": "kurai_avatar",
+      "type": "entity",
+      "entityType": "entity",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kurai-avatar.webp",
+      "semanticTags": [
+        "kurai-avatar",
+        "kurai avatar"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kurenai_yuhi_portrait_default",
+      "canonicalId": "kurenai_yuhi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kurenai-yuhi.webp",
+      "semanticTags": [
+        "kurenai-yuhi",
+        "kurenai yuhi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kurotsuchi_portrait_default",
+      "canonicalId": "kurotsuchi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kurotsuchi.webp",
+      "semanticTags": [
+        "kurotsuchi",
+        "kurotsuchi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "kusenro_avatar_entity_default",
+      "canonicalId": "kusenro_avatar",
+      "type": "entity",
+      "entityType": "entity",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/kusenro-avatar.webp",
+      "semanticTags": [
+        "kusenro-avatar",
+        "kusenro avatar"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "leon_kosmo_portrait_default",
+      "canonicalId": "leon_kosmo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/leon-kosmo.webp",
+      "semanticTags": [
+        "leon-kosmo",
+        "leon kosmo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mabui_portrait_default",
+      "canonicalId": "mabui",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mabui.webp",
+      "semanticTags": [
+        "mabui",
+        "mabui"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "madara_uchiha_portrait_default",
+      "canonicalId": "madara_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/madara-uchiha.webp",
+      "semanticTags": [
+        "madara-uchiha",
+        "madara uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mangetsu_hozuki_portrait_default",
+      "canonicalId": "mangetsu_hozuki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mangetsu-hozuki.webp",
+      "semanticTags": [
+        "mangetsu-hozuki",
+        "mangetsu hozuki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "matriz_kosmo_entity_default",
+      "canonicalId": "matriz_kosmo",
+      "type": "entity",
+      "entityType": "entity",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/matriz-kosmo.webp",
+      "semanticTags": [
+        "matriz-kosmo",
+        "matriz kosmo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "medico_da_vila_portrait_default",
+      "canonicalId": "medico_da_vila",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/medico-da-vila.webp",
+      "semanticTags": [
+        "medico-da-vila",
+        "medico da vila"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mei_terumi_portrait_default",
+      "canonicalId": "mei_terumi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mei-terumi.webp",
+      "semanticTags": [
+        "mei-terumi",
+        "mei terumi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mercador_de_pergaminhos_portrait_default",
+      "canonicalId": "mercador_de_pergaminhos",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mercador-de-pergaminhos.webp",
+      "semanticTags": [
+        "mercador-de-pergaminhos",
+        "mercador de pergaminhos"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "metal_lee_portrait_default",
+      "canonicalId": "metal_lee",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/metal-lee.webp",
+      "semanticTags": [
+        "metal-lee",
+        "metal lee"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mifune_portrait_default",
+      "canonicalId": "mifune",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mifune.webp",
+      "semanticTags": [
+        "mifune",
+        "mifune"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "might_guy_portrait_default",
+      "canonicalId": "might_guy",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/might-guy.webp",
+      "semanticTags": [
+        "might-guy",
+        "might guy"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "mitsuki_portrait_default",
+      "canonicalId": "mitsuki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/mitsuki.webp",
+      "semanticTags": [
+        "mitsuki",
+        "mitsuki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "moegi_kazamatsuri_adulta_portrait_default",
+      "canonicalId": "moegi_kazamatsuri_adulta",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/moegi-kazamatsuri-adulta.webp",
+      "semanticTags": [
+        "moegi-kazamatsuri-adulta",
+        "moegi kazamatsuri adulta"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "moegi_portrait_default",
+      "canonicalId": "moegi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/moegi.webp",
+      "semanticTags": [
+        "moegi",
+        "moegi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "nagato_portrait_default",
+      "canonicalId": "nagato",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/nagato.webp",
+      "semanticTags": [
+        "nagato",
+        "nagato"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "naruto_uzumaki_hokage_portrait_default",
+      "canonicalId": "naruto_uzumaki_hokage",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/naruto-uzumaki-hokage.webp",
+      "semanticTags": [
+        "naruto-uzumaki-hokage",
+        "naruto uzumaki hokage"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "naruto_uzumaki_portrait_default",
+      "canonicalId": "naruto_uzumaki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/naruto-uzumaki.webp",
+      "semanticTags": [
+        "naruto-uzumaki",
+        "naruto uzumaki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "navegadora_de_campo_portrait_default",
+      "canonicalId": "navegadora_de_campo",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/navegadora-de-campo.webp",
+      "semanticTags": [
+        "navegadora-de-campo",
+        "navegadora de campo"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "neji_hyuga_portrait_default",
+      "canonicalId": "neji_hyuga",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/neji-hyuga.webp",
+      "semanticTags": [
+        "neji-hyuga",
+        "neji hyuga"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "obito_uchiha_portrait_default",
+      "canonicalId": "obito_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/obito-uchiha.webp",
+      "semanticTags": [
+        "obito-uchiha",
+        "obito uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "omoi_portrait_default",
+      "canonicalId": "omoi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/omoi.webp",
+      "semanticTags": [
+        "omoi",
+        "omoi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "onoki_portrait_default",
+      "canonicalId": "onoki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/onoki.webp",
+      "semanticTags": [
+        "onoki",
+        "onoki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "orochimaru_portrait_default",
+      "canonicalId": "orochimaru",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/orochimaru.webp",
+      "semanticTags": [
+        "orochimaru",
+        "orochimaru"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "pain_portrait_default",
+      "canonicalId": "pain",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/pain.webp",
+      "semanticTags": [
+        "pain",
+        "pain"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "pakura_portrait_default",
+      "canonicalId": "pakura",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/pakura.webp",
+      "semanticTags": [
+        "pakura",
+        "pakura"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "raidou_namiashi_portrait_default",
+      "canonicalId": "raidou_namiashi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/raidou-namiashi.webp",
+      "semanticTags": [
+        "raidou-namiashi",
+        "raidou namiashi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "rasa_portrait_default",
+      "canonicalId": "rasa",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/rasa.webp",
+      "semanticTags": [
+        "rasa",
+        "rasa"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "rock_lee_portrait_default",
+      "canonicalId": "rock_lee",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/rock-lee.webp",
+      "semanticTags": [
+        "rock-lee",
+        "rock lee"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "roshi_portrait_default",
+      "canonicalId": "roshi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/roshi.webp",
+      "semanticTags": [
+        "roshi",
+        "roshi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sai_adulto_portrait_default",
+      "canonicalId": "sai_adulto",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sai-adulto.webp",
+      "semanticTags": [
+        "sai-adulto",
+        "sai adulto"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sai_portrait_default",
+      "canonicalId": "sai",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sai.webp",
+      "semanticTags": [
+        "sai",
+        "sai"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sakura_haruno_portrait_default",
+      "canonicalId": "sakura_haruno",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sakura-haruno.webp",
+      "semanticTags": [
+        "sakura-haruno",
+        "sakura haruno"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sakura_uchiha_portrait_default",
+      "canonicalId": "sakura_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sakura-uchiha.webp",
+      "semanticTags": [
+        "sakura-uchiha",
+        "sakura uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "samui_portrait_default",
+      "canonicalId": "samui",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/samui.webp",
+      "semanticTags": [
+        "samui",
+        "samui"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sarada_uchiha_portrait_default",
+      "canonicalId": "sarada_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sarada-uchiha.webp",
+      "semanticTags": [
+        "sarada-uchiha",
+        "sarada uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sasori_portrait_default",
+      "canonicalId": "sasori",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sasori.webp",
+      "semanticTags": [
+        "sasori",
+        "sasori"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sasuke_uchiha_adulto_portrait_default",
+      "canonicalId": "sasuke_uchiha_adulto",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sasuke-uchiha-adulto.webp",
+      "semanticTags": [
+        "sasuke-uchiha-adulto",
+        "sasuke uchiha adulto"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sasuke_uchiha_portrait_default",
+      "canonicalId": "sasuke_uchiha",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sasuke-uchiha.webp",
+      "semanticTags": [
+        "sasuke-uchiha",
+        "sasuke uchiha"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "shibi_aburame_portrait_default",
+      "canonicalId": "shibi_aburame",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/shibi-aburame.webp",
+      "semanticTags": [
+        "shibi-aburame",
+        "shibi aburame"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "shikadai_nara_portrait_default",
+      "canonicalId": "shikadai_nara",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/shikadai-nara.webp",
+      "semanticTags": [
+        "shikadai-nara",
+        "shikadai nara"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "shikamaru_nara_portrait_default",
+      "canonicalId": "shikamaru_nara",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/shikamaru-nara.webp",
+      "semanticTags": [
+        "shikamaru-nara",
+        "shikamaru nara"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "shino_aburame_portrait_default",
+      "canonicalId": "shino_aburame",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/shino-aburame.webp",
+      "semanticTags": [
+        "shino-aburame",
+        "shino aburame"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "shizune_portrait_default",
+      "canonicalId": "shizune",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/shizune.webp",
+      "semanticTags": [
+        "shizune",
+        "shizune"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "suigetsu_hozuki_portrait_default",
+      "canonicalId": "suigetsu_hozuki",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/suigetsu-hozuki.webp",
+      "semanticTags": [
+        "suigetsu-hozuki",
+        "suigetsu hozuki"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "suirin_entity_default",
+      "canonicalId": "suirin",
+      "type": "entity",
+      "entityType": "entity",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/suirin.webp",
+      "semanticTags": [
+        "suirin",
+        "suirin"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "sumire_kakei_portrait_default",
+      "canonicalId": "sumire_kakei",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/sumire-kakei.webp",
+      "semanticTags": [
+        "sumire-kakei",
+        "sumire kakei"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "temari_portrait_default",
+      "canonicalId": "temari",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/temari.webp",
+      "semanticTags": [
+        "temari",
+        "temari"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "tenten_portrait_default",
+      "canonicalId": "tenten",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/tenten.webp",
+      "semanticTags": [
+        "tenten",
+        "tenten"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "teuchi_portrait_default",
+      "canonicalId": "teuchi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/teuchi.webp",
+      "semanticTags": [
+        "teuchi",
+        "teuchi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "tobi_portrait_default",
+      "canonicalId": "tobi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/tobi.webp",
+      "semanticTags": [
+        "tobi",
+        "tobi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "torune_aburame_portrait_default",
+      "canonicalId": "torune_aburame",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/torune-aburame.webp",
+      "semanticTags": [
+        "torune-aburame",
+        "torune aburame"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "treinador_tatico_portrait_default",
+      "canonicalId": "treinador_tatico",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/treinador-tatico.webp",
+      "semanticTags": [
+        "treinador-tatico",
+        "treinador tatico"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "tsunade_portrait_default",
+      "canonicalId": "tsunade",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/tsunade.webp",
+      "semanticTags": [
+        "tsunade",
+        "tsunade"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "udon_ise_adulto_portrait_default",
+      "canonicalId": "udon_ise_adulto",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/udon-ise-adulto.webp",
+      "semanticTags": [
+        "udon-ise-adulto",
+        "udon ise adulto"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "udon_portrait_default",
+      "canonicalId": "udon",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/udon.webp",
+      "semanticTags": [
+        "udon",
+        "udon"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "utakata_portrait_default",
+      "canonicalId": "utakata",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/utakata.webp",
+      "semanticTags": [
+        "utakata",
+        "utakata"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "vendedor_de_armas_portrait_default",
+      "canonicalId": "vendedor_de_armas",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/vendedor-de-armas.webp",
+      "semanticTags": [
+        "vendedor-de-armas",
+        "vendedor de armas"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "wasabi_izuno_portrait_default",
+      "canonicalId": "wasabi_izuno",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/wasabi-izuno.webp",
+      "semanticTags": [
+        "wasabi-izuno",
+        "wasabi izuno"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "yagura_portrait_default",
+      "canonicalId": "yagura",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/yagura.webp",
+      "semanticTags": [
+        "yagura",
+        "yagura"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "yamato_portrait_default",
+      "canonicalId": "yamato",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/yamato.webp",
+      "semanticTags": [
+        "yamato",
+        "yamato"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "yugito_nii_portrait_default",
+      "canonicalId": "yugito_nii",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/yugito-nii.webp",
+      "semanticTags": [
+        "yugito-nii",
+        "yugito nii"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "zabuza_momochi_portrait_default",
+      "canonicalId": "zabuza_momochi",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/zabuza-momochi.webp",
+      "semanticTags": [
+        "zabuza-momochi",
+        "zabuza momochi"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    },
+    {
+      "id": "zetsu_portrait_default",
+      "canonicalId": "zetsu",
+      "type": "portrait",
+      "entityType": "character_or_npc",
+      "state": "default",
+      "variant": "r40_verified",
+      "file": "assets/r40/atlas_verified/zetsu.webp",
+      "semanticTags": [
+        "zetsu",
+        "zetsu"
+      ],
+      "source": "local-r40-atlas",
+      "license": "project",
+      "approved": true
+    }
+  ]
+}
