@@ -1,13 +1,16 @@
 {
-  "build": "R41-MD-OPERACIONAL-APLICADO-2026-08-17-FULL",
-  "staticFilesDownloaded": 5399,
+  "build": "R41-CORRECAO-INTEGRAL-20260819",
+  "staticFilesMaterialized": 5399,
   "discoveredPaths": 5402,
-  "missingNonSeed": 3,
+  "missingHard": 0,
+  "ignoredDynamicTemplatePaths": 3,
   "gm3Techniques": 2792,
-  "staticHostedBy": "GitHub Pages",
-  "apiBackend": "https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/r41-api-bridge",
-  "dataDelta": "runtime-structural-exact",
-  "appSha256": "88bc3f11ff90d1c0fe792451c4b01c9c36e5e009ff1fdbedc9693179057b0c06",
-  "stylesSha256": "6fd9f955dddb1825f20a4c4779aa4179d8d293db84040bec9098ed6cface55ab",
-  "note": "R41 estática materializada no GitHub Pages; somente /api passa pela ponte Supabase CORS."
+  "staticHostedBy": "Cloudflare Pages",
+  "apiBackend": "Cloudflare Workers + Durable Objects",
+  "persistentStorage": "MongoDB Atlas",
+  "aiRuntime": "Cloudflare Workers AI",
+  "mechanicalAuthority": "TERION 2D10 server-authoritative boundary",
+  "deployment": "Provisioned and live-tested by ATIVAR_R41_CLOUDFLARE_MONGODB.ps1 after official browser authentication",
+  "assetAudit": "tools/audit-r41-assets.mjs",
+  "note": "The three legacy missing paths are dynamic ${...} templates and are not literal files. User-provided semantic assets are overlaid by the Windows installer before the final audit and Pages deployment."
 }
