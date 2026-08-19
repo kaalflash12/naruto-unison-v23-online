@@ -38,12 +38,19 @@ jobs:
           test -f "$G/r41-github-api.js"
           test -f "$G/cloudflare/r41-api/src/index.js"
           test -f "$G/cloudflare/r41-api/src/entry.js"
+          test -f "$G/data/r41-user-visuals.js"
           test -f "$G/data/r41-gm3-techniques.json"
           ! test -f "$G/vercel.json"
           ! grep -R -n -E 'VERCEL_TOKEN|NARUTO_VERCEL_URL|NARUTO_MONGO_VIA_VERCEL' "$G/.env.local.example" "$G/r41-api-config.js" 2>/dev/null
           grep -q 'R41-CLOUDFLARE-MONGODB' "$G/index.html"
-          grep -q 'r41-github-api.js' "$G/index.html"
-          echo 'Runtime materializado sem dependencia Vercel: OK' >> "$GITHUB_STEP_SUMMARY"
+          grep -q 'data/r41-user-visuals.js' "$G/index.html"
+          grep -q 'src/r41-core-bundle.js' "$G/index.html"
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('R41/Naruto Shinobi no Sho PC/_jogo/index.html').read_text(encoding='utf-8')
+          assert s.index('data/r41-user-visuals.js') < s.index('src/r41-core-bundle.js') < s.index('src/r41-canonical-repair.js') < s.index('app.js')
+          PY
+          echo 'Runtime materializado sem dependencia Vercel e com ordem visual correta: OK' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Validate JavaScript syntax
         shell: bash
@@ -53,17 +60,26 @@ jobs:
           node --check "$G/app.js"
           node --check "$G/r41-api-config.js"
           node --check "$G/r41-github-api.js"
+          node --check "$G/data/r41-user-visuals.js"
+          node --check "$G/src/r41-canonical-repair.js"
           node --check "$G/cloudflare/r41-api/src/index.js"
           node --check "$G/cloudflare/r41-api/src/entry.js"
           echo 'JavaScript parse: OK' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Audit literal asset references
+      - name: Audit literal asset references in Git source
         shell: bash
         run: |
           set -euo pipefail
           G='R41/Naruto Shinobi no Sho PC/_jogo'
           cd "$G"
-          node tools/audit-r41-assets.mjs
+          R41_ALLOW_USER_OVERLAY_MISSING=1 node tools/audit-r41-assets.mjs
+          python3 - <<'PY'
+          import json
+          d=json.load(open('audit/r41-assets.json',encoding='utf-8'))
+          assert d['ok'] is True,d
+          assert d['missingHard']==0,d
+          print('User bundle pending in Git:',d['missingExternalUserOverlay'])
+          PY
           cat audit/r41-assets.json >> "$GITHUB_STEP_SUMMARY"
 
       - name: Validate TERION authority and core catalogs
@@ -77,6 +93,7 @@ jobs:
           grep -q '/api/online/create' "$G/app.js"
           grep -q '/api/v84/world/event' "$G/app.js"
           grep -q '/api/v84/world/tick' "$G/cloudflare/r41-api/src/entry.js"
+          grep -q '/api/private/claim-leon' "$G/cloudflare/r41-api/src/entry.js"
           python3 - <<'PY'
           import json
           from pathlib import Path
