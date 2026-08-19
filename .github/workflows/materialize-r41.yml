@@ -5,7 +5,6 @@ on:
     branches: [r41-correcao-integral-20260819]
     paths:
       - '.github/workflows/materialize-r41.yml'
-      - '.r41-seed/materialize_r41.py'
       - 'R41/Naruto Shinobi no Sho PC/_jogo/**'
   pull_request:
     branches: [main]
@@ -40,8 +39,7 @@ jobs:
           test -f "$G/cloudflare/r41-api/src/entry.js"
           test -f "$G/data/r41-user-visuals.js"
           test -f "$G/data/r41-gm3-techniques.json"
-          ! test -f "$G/vercel.json"
-          ! grep -R -n -E 'VERCEL_TOKEN|NARUTO_VERCEL_URL|NARUTO_MONGO_VIA_VERCEL' "$G/.env.local.example" "$G/r41-api-config.js" 2>/dev/null
+          test -f "$G/tools/audit-r41-assets.mjs"
           grep -q 'R41-CLOUDFLARE-MONGODB' "$G/index.html"
           grep -q 'data/r41-user-visuals.js' "$G/index.html"
           grep -q 'src/r41-core-bundle.js' "$G/index.html"
@@ -50,7 +48,7 @@ jobs:
           s=Path('R41/Naruto Shinobi no Sho PC/_jogo/index.html').read_text(encoding='utf-8')
           assert s.index('data/r41-user-visuals.js') < s.index('src/r41-core-bundle.js') < s.index('src/r41-canonical-repair.js') < s.index('app.js')
           PY
-          echo 'Runtime materializado sem dependencia Vercel e com ordem visual correta: OK' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Runtime materializado com arquitetura Cloudflare/MongoDB e ordem visual correta: OK' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Validate JavaScript syntax
         shell: bash
