@@ -5,9 +5,8 @@ const root = path.resolve(process.cwd());
 const outDir = path.join(root, 'audit');
 const outFile = path.join(outDir, 'r41-assets.json');
 const scanExt = new Set(['.js','.mjs','.cjs','.html','.css','.json']);
-const mediaExt = '(?:png|jpe?g|webp|gif|svg|mp3|ogg|wav)';
-const quotedAsset = new RegExp('[\\\'"`]((?:\\./)?assets/[^\\\'"`?#\\n\\r]+?\\.'+mediaExt+')(?=[\\\'"`?#])','gi');
-const cssAsset = new RegExp('url\\(\\s*[\\\'" ]*((?:\\./)?assets/[^\\)\\\'"?#\\n\\r]+?\\.'+mediaExt+')[\\\'" ]*\\)','gi');
+const quotedAsset = /['"`]((?:\.\/)?assets\/[^'"`?#\n\r]+?\.(?:png|jpe?g|webp|gif|svg|mp3|ogg|wav))(?=['"`?#])/gi;
+const cssAsset = /url\(\s*['" ]*((?:\.\/)?assets\/[^\)'"?#\n\r]+?\.(?:png|jpe?g|webp|gif|svg|mp3|ogg|wav))['" ]*\)/gi;
 const skipDirs = new Set(['node_modules','.git','audit']);
 
 function walk(dir, files=[]){
@@ -24,13 +23,10 @@ function cleanRef(ref){
   try{s=decodeURIComponent(s);}catch{}
   return s;
 }
-function isDynamic(ref){
-  return /\$\{|\{\{|<%|\*|\[.+\]/.test(ref);
-}
+function isDynamic(ref){return /\$\{|\{\{|<%|\*|\[.+\]/.test(ref);}
 function addRef(map,ref,source){
   const r=cleanRef(ref);
-  if(!r.startsWith('assets/') || isDynamic(r)) return;
-  if(r.includes('..')) return;
+  if(!r.startsWith('assets/') || isDynamic(r) || r.includes('..')) return;
   const rec=map.get(r)||{path:r,sources:[]};
   const rel=path.relative(root,source).replaceAll('\\','/');
   if(!rec.sources.includes(rel)) rec.sources.push(rel);
@@ -55,17 +51,7 @@ for(const row of rows){
   if(row.exists) row.bytes=fs.statSync(abs).size;
 }
 const missing=rows.filter(x=>!x.exists);
-const report={
-  build:'R41-ASSET-AUDIT-20260819',
-  generatedAt:new Date().toISOString(),
-  root,
-  literalReferences:rows.length,
-  existing:rows.length-missing.length,
-  missing:missing.length,
-  dynamicReferencesIgnored:true,
-  missingFiles:missing,
-  ok:missing.length===0
-};
+const report={build:'R41-ASSET-AUDIT-20260819',generatedAt:new Date().toISOString(),root,literalReferences:rows.length,existing:rows.length-missing.length,missing:missing.length,dynamicReferencesIgnored:true,missingFiles:missing,ok:missing.length===0};
 fs.mkdirSync(outDir,{recursive:true});
 fs.writeFileSync(outFile,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({ok:report.ok,literalReferences:report.literalReferences,existing:report.existing,missing:report.missing,report:path.relative(root,outFile)},null,2));
