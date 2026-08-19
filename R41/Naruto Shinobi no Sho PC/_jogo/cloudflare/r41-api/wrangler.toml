@@ -5,4 +5,15 @@ compatibility_flags = ["nodejs_compat"]
 
 [vars]
 MONGODB_DB = "naruto_shinobi_r41"
-ALLOWED_ORIGIN = "https://kaalflash12.github.io"
+ALLOWED_ORIGINS = "https://kaalflash12.github.io"
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "GAME_ROOMS"
+class_name = "GameRoom"
+
+[exports.GameRoom]
+type = "durable-object"
+storage = "sqlite"
