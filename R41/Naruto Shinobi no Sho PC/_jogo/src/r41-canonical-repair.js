@@ -27,16 +27,16 @@
   }catch(e){console.warn('R41 world patch',e);}
   function slug(v){return String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();}
   const EXACT=Object.freeze({
-    "mireko":"assets/final_generated/final_reg_fix4_katon_goukakyuu_no_jutsu.png",
-    "kurobane":"assets/final_generated/susanoo_regencial.png",
-    "shinrai":"assets/final_generated/final_reg_fix4_raikiri.png",
+    "naruto":"assets/r40/atlas_verified/naruto-uzumaki.webp",
+    "naruto uzumaki":"assets/r40/atlas_verified/naruto-uzumaki.webp",
+    "sasuke":"assets/r40/atlas_verified/sasuke-uchiha.webp",
+    "sasuke uchiha":"assets/r40/atlas_verified/sasuke-uchiha.webp",
+    "kakashi":"assets/r40/atlas_verified/kakashi-hatake.webp",
+    "kakashi hatake":"assets/r40/atlas_verified/kakashi-hatake.webp",
+    "orochimaru":"assets/r40/atlas_verified/orochimaru.webp",
     "dargan":"assets/final_generated/mestre_dargan_saudacao.png",
     "joana":"assets/r40/story/vila_mulher_icone.png",
     "motani":"assets/r40/story/vila_comerciante_icone.png",
-    "naruto":"assets/r29/painel-naruto-unison.png",
-    "sasuke":"assets/final_generated/susanoo_regencial.png",
-    "kakashi":"assets/final_generated/final_reg_fix4_raikiri.png",
-    "orochimaru":"assets/r40/story/vila_orochimaru_icone.png",
     "examiner":"assets/r29/examiner.png",
     "examinador":"assets/r29/examiner.png",
     "dojutsu kugangan":"assets/r29/kugangan.png",
@@ -44,10 +44,14 @@
     "nukenin inimigo":"assets/r29/nukenin-inimigo.png",
     "inimigo":"assets/r29/nukenin-inimigo.png",
     "principal":"assets/r29/from_user/original_interface.png",
-    "jutsus":"assets/r29/from_user/original_panels.png"
+    "jutsus":"assets/user-provided/reference-ui/Interface de Jutsus do Naruto Unison.png",
+    "mapa tatico":"assets/user-provided/maps/Mapa tático da vila ninja dourada.png"
   });
-  window.R41_IMAGE_ALIASES=Object.assign({},window.R41_IMAGE_ALIASES||{},EXACT);
-  window.R41ResolveImage=function(raw){return EXACT[slug(raw)]||"";};
+  const techniqueAliases={};
+  for(const [id,file] of Object.entries(window.R41_USER_VISUALS?.techniques||{})) techniqueAliases[slug(id)]=file;
+  const merged=Object.assign({},EXACT,techniqueAliases);
+  window.R41_IMAGE_ALIASES=Object.assign({},window.R41_IMAGE_ALIASES||{},merged);
+  window.R41ResolveImage=function(raw){return merged[slug(raw)]||"";};
   window.R41ResolveImageStrict=window.R41ResolveImage;
-  window.__R41_CANONICAL_REPAIR_META__={build:"2026-08-19-strict",fallback:"disabled",aliases:Object.keys(EXACT).length};
+  window.__R41_CANONICAL_REPAIR_META__={build:"2026-08-19-integral",fallback:"disabled",aliases:Object.keys(merged).length,wrongPortraitTechniqueAliasesRemoved:true};
 })();
