@@ -1,4 +1,6 @@
-Shinobi no Sho R41 • TERION 2D10 • MD operacional aplicado • 32/32 gates R41 • 27/27 regressão R40 • 35/35 regressão R39
-GitHub Pages: /r41-online.html
-Pacote R41: validado e entregue.
-Vercel público: ainda executa R40 preservado até o deploy integral da árvore R41; não foi substituído por deploy parcial.
+Shinobi no Sho R41 • TERION 2D10 • correção integral 2026-08-19
+Arquitetura operacional: Cloudflare Pages + Cloudflare Workers + Durable Objects + Workers AI + MongoDB Atlas.
+Branch: r41-correcao-integral-20260819
+PR de validação: #8
+Estado: runtime e gates estáticos preparados; o deploy remoto final é validado pelo instalador Windows após autenticação oficial no Cloudflare e MongoDB Atlas.
+Pacote de instalação: ATIVAR_R41_CLOUDFLARE_MONGODB.ps1 + bundle de assets fornecidos pelo usuário.
