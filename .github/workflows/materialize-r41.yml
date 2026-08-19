@@ -21,6 +21,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
       - name: Materialize R41 static game into GitHub
         shell: bash
         run: |
@@ -32,6 +33,7 @@ jobs:
           p.write_text(s,encoding='utf8')
           PY
           python3 .r41-seed/materialize_r41.py
+
       - name: Restore exact local R41 deployment examples
         shell: bash
         run: |
@@ -98,14 +100,69 @@ jobs:
           NARUTO_VERCEL_URL=
           CF_EMBEDDING_MODEL=@cf/baai/bge-base-en-v1.5
           ENV
-      - name: Point GitHub Pages root at local R41
+
+      - name: Finalize exact R41 GitHub runtime wiring
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, re
+
+          G=Path('R41/Naruto Shinobi no Sho PC/_jogo')
+          build='R41-MD-OPERACIONAL-APLICADO-2026-08-17-FULL'
+          bridge='https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/r41-api-bridge'
+
+          api=G/'r41-github-api.js'
+          api.write_text("(()=>{const B='"+bridge+"',f=window.fetch.bind(window);window.__SNS_GITHUB_PAGES__={build:'"+build+"',staticOrigin:location.origin,backend:B};window.fetch=(i,o)=>{let u=typeof i==='string'?i:(i&&i.url)||'';if(u.startsWith('/api/')){const x=Object.assign({},o||{});x.credentials='omit';return f(B+'?path='+encodeURIComponent(u),x)}return f(i,o)}})();\n",encoding='utf8')
+
+          idx=G/'index.html'
+          s=idx.read_text(encoding='utf8')
+          s=s.replace('R41-MD-OPERACIONAL-APLICADO-2026-08-17',build)
+          if 'http-equiv="Cache-Control"' not in s:
+              s=s.replace('<meta name="theme-color"', '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta name="theme-color"')
+          if 'data/r41-data-delta.js' not in s:
+              s=s.replace('<script src="data/r41-verified-visuals.js"></script>', '<script src="data/r41-data-delta.js"></script>\n<script src="data/r41-verified-visuals.js"></script>')
+          def bust(m):
+              attr,url=m.group(1),m.group(2)
+              if '?' not in url:
+                  url += '?v=R41-FULL'
+              return f'{attr}="{url}"'
+          s=re.sub(r'(href|src)="([^"?#]+\.(?:css|js))"',bust,s)
+          idx.write_text(s,encoding='utf8')
+
+          missing=G/'R41_MISSING_RUNTIME_PATHS.txt'
+          raw=[]
+          if missing.exists():
+              raw=[line for line in missing.read_text(encoding='utf8').splitlines() if line.strip()]
+          ignored=[line for line in raw if '${' in line]
+          remaining=[line for line in raw if '${' not in line]
+          missing.write_text(('\n'.join(remaining)+'\n') if remaining else '',encoding='utf8')
+
+          manifest=G/'R41_GITHUB_MATERIALIZATION.json'
+          d=json.loads(manifest.read_text(encoding='utf8'))
+          d.update({
+              'build':build,
+              'missingNonSeed':len(remaining),
+              'ignoredTemplatePaths':len(ignored),
+              'apiBackend':bridge,
+              'dataDelta':'runtime-structural-exact',
+              'appSha256':hashlib.sha256((G/'app.js').read_bytes()).hexdigest(),
+              'stylesSha256':hashlib.sha256((G/'styles.css').read_bytes()).hexdigest(),
+              'note':'R41 estática materializada no GitHub Pages; somente /api passa pela ponte Supabase CORS. Caminhos com ${...} são padrões dinâmicos e não arquivos concretos.'
+          })
+          manifest.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print(json.dumps(d,ensure_ascii=False,indent=2))
+          PY
+
+      - name: Point GitHub Pages root at cache-clean full R41
         shell: bash
         run: |
           touch .nojekyll
           cat > index.html <<'HTML'
-          <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="r41-build" content="R41-MD-OPERACIONAL-APLICADO-2026-08-17"><meta http-equiv="refresh" content="0;url=./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/"><title>Shinobi no Sho R41</title></head><body><h1>Shinobi no Sho R41</h1><p><a href="./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/">Entrar no jogo</a></p></body></html>
+          <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="r41-build" content="R41-MD-OPERACIONAL-APLICADO-2026-08-17-FULL"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta http-equiv="refresh" content="0;url=./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/?v=R41-FULL"><title>Shinobi no Sho R41</title></head><body><h1>Shinobi no Sho R41</h1><p><a href="./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/?v=R41-FULL">Entrar no jogo</a></p></body></html>
           HTML
-      - name: Validate local static ownership
+
+      - name: Validate final static ownership and API wiring
         shell: bash
         run: |
           set -euo pipefail
@@ -115,8 +172,16 @@ jobs:
           test -f "$G/vercel.json"
           test -f "$G/.env.local.example"
           test -f "$G/data/r41-gm3-techniques.json"
+          test -f "$G/data/r41-data-delta.js"
+          test -f "$G/data/r41-verified-visuals.js"
+          test -f "$G/data/r41-exact-visuals.js"
+          test -f "$G/src/r41-core-bundle.js"
+          test -f "$G/src/r41-canonical-repair.js"
           grep -q 'R41-MD-OPERACIONAL-APLICADO-2026-08-17' "$G/app.js"
-          grep -q 'GitHub' "$G/index.html"
+          grep -q 'R41-MD-OPERACIONAL-APLICADO-2026-08-17-FULL' "$G/index.html"
+          grep -q 'data/r41-data-delta.js?v=R41-FULL' "$G/index.html"
+          grep -q 'cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/r41-api-bridge' "$G/r41-github-api.js"
+          ! grep -q "const B='https://naruto-shinobi-r40-online.vercel.app'" "$G/r41-github-api.js"
           ! grep -q '<base href="https://naruto-shinobi-r40-online.vercel.app/' "$G/index.html"
           python3 - <<'PY'
           import json
@@ -124,8 +189,13 @@ jobs:
           d=json.load(open(p,encoding='utf8'))
           assert d['gm3Techniques']==2792,d
           assert d['staticFilesDownloaded']>1000,d
+          assert d['missingNonSeed']==0,d
+          assert d['apiBackend'].endswith('/r41-api-bridge'),d
+          assert len(d['appSha256'])==64 and len(d['stylesSha256'])==64,d
           print(d)
           PY
+          test ! -s "$G/R41_MISSING_RUNTIME_PATHS.txt"
+
       - name: Commit materialized game to source branch
         shell: bash
         run: |
