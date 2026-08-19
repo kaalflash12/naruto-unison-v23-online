@@ -82,7 +82,7 @@ jobs:
           PY
           cat audit/r41-assets.json >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Validate TERION authority and core catalogs
+      - name: Validate TERION authority, API and core catalogs
         shell: bash
         run: |
           set -euo pipefail
@@ -94,6 +94,8 @@ jobs:
           grep -q '/api/v84/world/event' "$G/app.js"
           grep -q '/api/v84/world/tick' "$G/cloudflare/r41-api/src/entry.js"
           grep -q '/api/private/claim-leon' "$G/cloudflare/r41-api/src/entry.js"
+          grep -q '@cf/zai-org/glm-4.7-flash' "$G/cloudflare/r41-api/src/entry.js"
+          grep -q 'TERION é a autoridade mecânica' "$G/cloudflare/r41-api/src/entry.js"
           python3 - <<'PY'
           import json
           from pathlib import Path
@@ -103,4 +105,4 @@ jobs:
           assert len(items)==2792, len(items)
           print('GM3 techniques:',len(items))
           PY
-          echo 'TERION/catalog/API gates: OK' >> "$GITHUB_STEP_SUMMARY"
+          echo 'TERION/catalog/API/Workers AI gates: OK' >> "$GITHUB_STEP_SUMMARY"
