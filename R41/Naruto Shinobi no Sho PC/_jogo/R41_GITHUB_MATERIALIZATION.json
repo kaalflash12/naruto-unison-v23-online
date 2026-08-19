@@ -2,12 +2,13 @@
   "build": "R41-MD-OPERACIONAL-APLICADO-2026-08-17-FULL",
   "staticFilesDownloaded": 5399,
   "discoveredPaths": 5402,
-  "missingNonSeed": 3,
+  "missingNonSeed": 0,
+  "ignoredTemplatePaths": 3,
   "gm3Techniques": 2792,
   "staticHostedBy": "GitHub Pages",
   "apiBackend": "https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/r41-api-bridge",
   "dataDelta": "runtime-structural-exact",
   "appSha256": "88bc3f11ff90d1c0fe792451c4b01c9c36e5e009ff1fdbedc9693179057b0c06",
   "stylesSha256": "6fd9f955dddb1825f20a4c4779aa4179d8d293db84040bec9098ed6cface55ab",
-  "note": "R41 estática materializada no GitHub Pages; somente /api passa pela ponte Supabase CORS."
+  "note": "R41 estática materializada no GitHub Pages; somente /api passa pela ponte Supabase CORS. Os 3 caminhos antes marcados como ausentes continham ${...} e eram padrões dinâmicos de template, não arquivos concretos."
 }
