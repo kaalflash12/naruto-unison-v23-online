@@ -1,5 +1,6 @@
 (function(){
-  // R41 canonical-service repair without replacing the giant V7 catalog.
+  "use strict";
+  window.__R41_CANONICAL_REPAIR__ = true;
   try{
     const v=window.NARUTO_V7;
     if(v&&Array.isArray(v.npcs)){
@@ -24,4 +25,49 @@
       w.r41=w.r41||{};w.r41.storyConsistency={completedArcMandatoryBeatsNormalized:true,normalizedBeats:n,at:new Date().toISOString()};
     }
   }catch(e){console.warn('R41 world patch',e);}
+  function slug(v){return String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();}
+  const EXACT = Object.freeze({
+    "mireko":"assets/final_generated/final_reg_fix4_katon_goukakyuu_no_jutsu.png",
+    "kurobane":"assets/final_generated/susanoo_regencial.png",
+    "shinrai":"assets/final_generated/final_reg_fix4_raikiri.png",
+    "dargan":"assets/final_generated/mestre_dargan_saudacao.png",
+    "joana":"assets/r40/story/vila_mulher_icone.png",
+    "motani":"assets/r40/story/vila_comerciante_icone.png",
+    "naruto":"assets/r29/painel-naruto-unison.png",
+    "sasuke":"assets/final_generated/susanoo_regencial.png",
+    "kakashi":"assets/final_generated/final_reg_fix4_raikiri.png",
+    "orochimaru":"assets/r40/story/vila_orochimaru_icone.png",
+    "examiner":"assets/r29/examiner.png",
+    "examinador":"assets/r29/examiner.png",
+    "dojutsu kugangan":"assets/r29/kugangan.png",
+    "kugangan":"assets/r29/kugangan.png",
+    "nukenin inimigo":"assets/r29/nukenin-inimigo.png",
+    "inimigo":"assets/r29/nukenin-inimigo.png",
+    "principal":"assets/r29/from_user/original_interface.png",
+    "jutsus":"assets/r29/from_user/original_panels.png",
+    "bola de fogo":"assets/r41/user_semantic/jutsus/01_bola_de_fogo.webp",
+    "dragao dagua":"assets/r41/user_semantic/jutsus/02_dragao_dagua.webp",
+    "raio cortante":"assets/r41/user_semantic/jutsus/03_raio_cortante.webp",
+    "muro de terra":"assets/r41/user_semantic/jutsus/04_muro_de_terra.webp",
+    "lamina de vento":"assets/r41/user_semantic/jutsus/05_lamina_de_vento.webp",
+    "clones das sombras":"assets/r41/user_semantic/jutsus/06_clones_das_sombras.webp",
+    "tecnica de transformacao":"assets/r41/user_semantic/jutsus/07_tecnica_de_transformacao.webp",
+    "ilusao genjutsu":"assets/r41/user_semantic/jutsus/08_ilusao_genjutsu.webp",
+    "dojutsu vermelho":"assets/r41/user_semantic/jutsus/09_dojutsu_vermelho.webp",
+    "dojutsu palido":"assets/r41/user_semantic/jutsus/10_dojutsu_palido.webp",
+    "invocacao sapo":"assets/r41/user_semantic/jutsus/11_invocacao_sapo.webp",
+    "chakra medico":"assets/r41/user_semantic/jutsus/12_chakra_medico.webp",
+    "chuva de kunais":"assets/r41/user_semantic/jutsus/13_chuva_de_kunais.webp",
+    "papel explosivo":"assets/r41/user_semantic/jutsus/14_papel_explosivo.webp",
+    "tecnica de fantoches":"assets/r41/user_semantic/jutsus/15_tecnica_de_fantoches.webp",
+    "pergaminho de selamento":"assets/r41/user_semantic/jutsus/16_pergaminho_de_selamento.webp",
+    "chute taijutsu":"assets/r41/user_semantic/jutsus/17_chute_taijutsu.webp",
+    "modo sabio":"assets/r41/user_semantic/jutsus/18_modo_sabio.webp",
+    "push gravitacional":"assets/r41/user_semantic/jutsus/19_push_gravitacional.webp",
+    "distorcao espacial":"assets/r41/user_semantic/jutsus/20_distorcao_espacial.webp"
+  });
+  window.R41_IMAGE_ALIASES=Object.assign({},window.R41_IMAGE_ALIASES||{},EXACT);
+  window.R41ResolveImage=function(raw){return EXACT[slug(raw)]||"";};
+  window.R41ResolveImageStrict=window.R41ResolveImage;
+  window.__R41_CANONICAL_REPAIR_META__={build:"2026-08-19-strict",fallback:"disabled",aliases:Object.keys(EXACT).length};
 })();
