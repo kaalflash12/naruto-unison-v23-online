@@ -1,3 +1,17 @@
-assets/items_v7/${item.id}.svg	HTTP Error 404: Not Found
-assets/jutsus_v75/${j.id}.svg	HTTP Error 404: Not Found
-assets/leon_tech_v75/${n}.svg	HTTP Error 404: Not Found
+R41-CORRECAO-INTEGRAL-20260819
+
+Este arquivo substitui o relatorio antigo que tratava templates dinamicos como arquivos literais ausentes.
+
+IGNORADO_TEMPLATE_DINAMICO	assets/items_v7/${item.id}.svg
+IGNORADO_TEMPLATE_DINAMICO	assets/jutsus_v75/${j.id}.svg
+IGNORADO_TEMPLATE_LEGADO	assets/leon_tech_v75/${n}.svg
+
+Nenhum destes tres textos deve ser testado como caminho literal.
+A verificacao autoritativa de 404 local agora e feita por:
+  tools/audit-r41-assets.mjs
+
+Regra do gate:
+- referencia literal de asset + arquivo inexistente/vazio = FAIL;
+- referencia dinamica com ${...} = nao e resolvida como nome literal;
+- asset do usuario e validado depois do overlay assets-user-provided -> assets/user-provided;
+- personagem/tecnica/local conhecido com asset semantico disponivel nao pode cair em placeholder.
