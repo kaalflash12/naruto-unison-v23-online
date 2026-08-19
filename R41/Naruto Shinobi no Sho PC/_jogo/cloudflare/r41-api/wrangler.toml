@@ -1,0 +1,8 @@
+name = "naruto-shinobi-r41-api"
+main = "src/index.js"
+compatibility_date = "2026-08-19"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+MONGODB_DB = "naruto_shinobi_r41"
+ALLOWED_ORIGIN = "https://kaalflash12.github.io"
