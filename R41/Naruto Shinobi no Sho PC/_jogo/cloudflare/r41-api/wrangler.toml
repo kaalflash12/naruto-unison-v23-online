@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 
 [vars]
 MONGODB_DB = "naruto_shinobi_r41"
-ALLOWED_ORIGINS = "https://kaalflash12.github.io"
+ALLOWED_ORIGINS = "https://kaalflash12.github.io,https://naruto-shinobi-r41-kaalflash12.pages.dev"
 
 [ai]
 binding = "AI"
