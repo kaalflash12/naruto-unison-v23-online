@@ -49,9 +49,24 @@
   });
   const techniqueAliases={};
   for(const [id,file] of Object.entries(window.R41_USER_VISUALS?.techniques||{})) techniqueAliases[slug(id)]=file;
-  const merged=Object.assign({},EXACT,techniqueAliases);
+  const mapAliases={};
+  const maps=window.R41_USER_VISUALS?.maps||{};
+  for(const [name,file] of Object.entries(maps)) mapAliases[slug(name.replace(/\.[a-z0-9]+$/i,''))]=file;
+  const mapSemantic={
+    "arena":"Arena shinobi circular em planta baixa.png",
+    "arena tatica":"Arena shinobi circular em planta baixa.png",
+    "campo de treino":"Campo shinobi na floresta escondida.png",
+    "floresta":"Campo shinobi na floresta escondida.png",
+    "clareira":"Clareira ninja noturna para batalha tática.png",
+    "covil":"Covil shinobi subterrâneo com selos azuis.png",
+    "esconderijo":"Planta baixa do esconderijo shinobi subterrâneo.png",
+    "mapa tatico":"Mapa tático da vila ninja dourada.png",
+    "praca":"Praça shinobi ao entardecer.png"
+  };
+  for(const [alias,name] of Object.entries(mapSemantic)) if(maps[name]) mapAliases[slug(alias)]=maps[name];
+  const merged=Object.assign({},EXACT,mapAliases,techniqueAliases);
   window.R41_IMAGE_ALIASES=Object.assign({},window.R41_IMAGE_ALIASES||{},merged);
-  window.R41ResolveImage=function(raw){return merged[slug(raw)]||"";};
+  window.R41ResolveImage=function(raw){return merged[slug(raw)]||window.R41_IMAGE_ALIASES?.[slug(raw)]||"";};
   window.R41ResolveImageStrict=window.R41ResolveImage;
-  window.__R41_CANONICAL_REPAIR_META__={build:"2026-08-19-integral",fallback:"disabled",aliases:Object.keys(merged).length,wrongPortraitTechniqueAliasesRemoved:true};
+  window.__R41_CANONICAL_REPAIR_META__={build:"2026-08-19-integral",fallback:"disabled",aliases:Object.keys(merged).length,wrongPortraitTechniqueAliasesRemoved:true,userTechniqueAliases:Object.keys(techniqueAliases).length,userMapAliases:Object.keys(mapAliases).length};
 })();
