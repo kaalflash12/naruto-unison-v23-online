@@ -3,118 +3,36 @@ import worker, { GameRoom } from "./index.js";
 export { GameRoom };
 
 const AI_MODEL="@cf/zai-org/glm-4.7-flash";
-function safeEqual(a,b){
-  a=String(a||"");b=String(b||"");
-  if(a.length!==b.length)return false;
-  let d=0;for(let i=0;i<a.length;i++)d|=a.charCodeAt(i)^b.charCodeAt(i);
-  return d===0;
-}
-function cors(req,env){
-  const origin=req.headers.get("origin")||"";
-  const allowed=String(env.ALLOWED_ORIGINS||env.ALLOWED_ORIGIN||"https://kaalflash12.github.io").split(",").map(x=>x.trim()).filter(Boolean);
-  const selected=allowed.includes(origin)?origin:(!origin?(allowed[0]||"*"):"null");
-  return {"content-type":"application/json; charset=utf-8","access-control-allow-origin":selected,"access-control-allow-methods":"GET,POST,PUT,PATCH,DELETE,OPTIONS","access-control-allow-headers":"authorization,content-type,x-r41-revision","cache-control":"no-store","vary":"origin"};
-}
-async function fingerprint(value){
-  const bytes=new TextEncoder().encode(String(value||""));
-  const hash=new Uint8Array(await crypto.subtle.digest("SHA-256",bytes));
-  return [...hash].map(x=>x.toString(16).padStart(2,"0")).join("");
-}
-async function claimLeon(req,env,ctx){
-  if(req.method!=="POST")return new Response(JSON.stringify({ok:false,error:"METHOD_NOT_ALLOWED"}),{status:405,headers:cors(req,env)});
-  if(!env.LEON_PRIVATE_CODE||!env.MONGODB_URI)return new Response(JSON.stringify({ok:false,error:"PRIVATE_CLAIM_NOT_CONFIGURED"}),{status:503,headers:cors(req,env)});
-  let body={};try{body=await req.clone().json();}catch{}
-  if(!safeEqual(String(body.code||""),String(env.LEON_PRIVATE_CODE)))return new Response(JSON.stringify({ok:false,error:"PRIVATE_ACCESS_DENIED"}),{status:403,headers:cors(req,env)});
-
-  const meUrl=new URL(req.url);meUrl.pathname="/api/auth/me";meUrl.search="";
-  const meReq=new Request(meUrl.toString(),{method:"POST",headers:req.headers});
-  const meRes=await worker.fetch(meReq,env,ctx);
-  const me=await meRes.json().catch(()=>({}));
-  if(!meRes.ok||!me.ok||!me.account?.id)return new Response(JSON.stringify({ok:false,error:"UNAUTHORIZED"}),{status:401,headers:cors(req,env)});
-
-  let client;
-  try{
-    client=new MongoClient(env.MONGODB_URI,{maxPoolSize:2,minPoolSize:0,serverSelectionTimeoutMS:6000,connectTimeoutMS:6000});
-    await client.connect();
-    const db=client.db(env.MONGODB_DB||"naruto_shinobi_r41");
-    const fp=await fingerprint(env.LEON_PRIVATE_CODE);
-    const already=await db.collection("private_claims").findOne({type:"leon",fingerprint:fp,redeemed:true});
-    const uid=new ObjectId(String(me.account.id));
-    const current=await db.collection("users").findOne({_id:uid});
-    if(!current)return new Response(JSON.stringify({ok:false,error:"ACCOUNT_NOT_FOUND"}),{status:404,headers:cors(req,env)});
-    if(already&&current.role!=="leon")return new Response(JSON.stringify({ok:false,error:"LEON_CLAIM_ALREADY_USED"}),{status:409,headers:cors(req,env)});
-
-    if(current.role!=="leon"){
-      await db.collection("users").updateMany({role:"leon",_id:{$ne:uid}},{$set:{role:"player",updatedAt:new Date()}});
-      await db.collection("users").updateOne({_id:uid},{$set:{role:"leon",displayName:current.displayName||"Leon",updatedAt:new Date()}});
-      await db.collection("private_claims").updateOne({type:"leon",fingerprint:fp},{$set:{type:"leon",fingerprint:fp,redeemed:true,userId:uid,redeemedAt:new Date()}},{upsert:true});
-      await db.collection("audit_events").insertOne({type:"private.leon.claim",userId:uid,detail:{source:"installer-browser-claim"},createdAt:new Date(),build:"R41-CLOUDFLARE-MONGODB-INTEGRAL-20260819"});
-    }
-    const u=await db.collection("users").findOne({_id:uid});
-    return new Response(JSON.stringify({ok:true,claimed:true,account:{id:String(u._id),username:u.username,displayName:u.displayName||u.username,role:u.role||"player",createdAt:u.createdAt}}),{status:200,headers:cors(req,env)});
-  }catch(e){
-    console.error("LEON_CLAIM_ERROR",e);
-    return new Response(JSON.stringify({ok:false,error:"PRIVATE_CLAIM_FAILED"}),{status:500,headers:cors(req,env)});
-  }finally{try{await client?.close();}catch{}}
+let guardClient=null,guardUri="",guardIndex=null;
+function safeEqual(a,b){a=String(a||"");b=String(b||"");if(a.length!==b.length)return false;let d=0;for(let i=0;i<a.length;i++)d|=a.charCodeAt(i)^b.charCodeAt(i);return d===0;}
+function cors(req,env){const origin=req.headers.get("origin")||"",allowed=String(env.ALLOWED_ORIGINS||env.ALLOWED_ORIGIN||"https://kaalflash12.github.io").split(",").map(x=>x.trim()).filter(Boolean),selected=allowed.includes(origin)?origin:(!origin?(allowed[0]||"*"):"null");return{"content-type":"application/json; charset=utf-8","access-control-allow-origin":selected,"access-control-allow-methods":"GET,POST,PUT,PATCH,DELETE,OPTIONS","access-control-allow-headers":"authorization,content-type,x-r41-revision","cache-control":"no-store","vary":"origin"};}
+function json(req,env,status,body){return new Response(JSON.stringify(body),{status,headers:cors(req,env)});}
+async function fingerprint(value){const bytes=new TextEncoder().encode(String(value||"")),hash=new Uint8Array(await crypto.subtle.digest("SHA-256",bytes));return [...hash].map(x=>x.toString(16).padStart(2,"0")).join("");}
+async function guardDb(env){if(!env.MONGODB_URI)throw new Error("MONGODB_URI_MISSING");if(!guardClient||guardUri!==env.MONGODB_URI){guardUri=env.MONGODB_URI;guardClient=new MongoClient(env.MONGODB_URI,{maxPoolSize:3,minPoolSize:0,maxIdleTimeMS:45000,serverSelectionTimeoutMS:6000,connectTimeoutMS:6000});await guardClient.connect();guardIndex=null;}const db=guardClient.db(env.MONGODB_DB||"naruto_shinobi_r41");if(!guardIndex)guardIndex=db.collection("room_memberships").createIndex({roomId:1,userId:1},{unique:true,name:"uq_room_membership"}).catch(e=>{guardIndex=null;throw e;});await guardIndex;return db;}
+async function currentAccount(req,env,ctx){const u=new URL(req.url);u.pathname="/api/auth/me";u.search="";const r=await worker.fetch(new Request(u.toString(),{method:"POST",headers:req.headers}),env,ctx),d=await r.json().catch(()=>({}));return r.ok&&d.ok&&d.account?.id?d.account:null;}
+async function rememberMembership(env,roomId,userId,mode,role="member"){const db=await guardDb(env),now=new Date();await db.collection("room_memberships").updateOne({roomId:String(roomId),userId:String(userId)},{$set:{mode:String(mode||"online"),role,lastSeen:now,updatedAt:now},$setOnInsert:{roomId:String(roomId),userId:String(userId),joinedAt:now}},{upsert:true});}
+async function hasMembership(env,roomId,userId){const db=await guardDb(env);return !!(await db.collection("room_memberships").findOne({roomId:String(roomId),userId:String(userId)}));}
+async function touchMembership(env,roomId,userId){const db=await guardDb(env);await db.collection("room_memberships").updateOne({roomId:String(roomId),userId:String(userId)},{$set:{lastSeen:new Date(),updatedAt:new Date()}});}
+const MECHANICAL_KEY=/^(damage|dano|hp|pv|health|chakra|stamina|xp|level|nivel|reward|rewards|recompensa|recompensas|ryo|success|sucesso|result|resultado|roll|rolls|rolagem|dice|critical|critico|hit|acerto|miss|falha|ko|dead|death|morte|heal|healing|cura|condition|conditions|condicao|condicoes|resource|resources|state|world|stats|inventory|equipment|unlock|desbloqueio|progress|progresso|cost|custo|cooldown)$/i;
+function mechanicalClaim(value,depth=0){if(depth>8)return true;if(!value||typeof value!=="object")return false;if(Array.isArray(value))return value.some(v=>mechanicalClaim(v,depth+1));for(const [k,v] of Object.entries(value)){if(MECHANICAL_KEY.test(k))return true;if(v&&typeof v==="object"&&mechanicalClaim(v,depth+1))return true;}return false;}
+function actionType(value){if(typeof value==="string")return"free_action";return String(value?.type||value?.action||value?.intent||"action").slice(0,100);}
+function actionLooksLikeOutcome(value){const t=actionType(value);return mechanicalClaim(value)||/(?:^|[_\s-])(damage|dano|heal|cura|reward|recompensa|grant|award|xp|level|nivel|result|resultado|success|sucesso|critical|critico|hit|acerto|ko|death|morte)(?:$|[_\s-])/i.test(t);}
+async function guardedOnline(req,env,ctx,path){const m=path.match(/^\/api\/(online|pvp|coop)\/(create|join|heartbeat|room|message|messages|action|state)$/);if(!m)return null;const [,mode,action]=m,account=await currentAccount(req,env,ctx);if(!account)return json(req,env,401,{ok:false,error:"UNAUTHORIZED"});let body={};try{body=await req.clone().json();}catch{}
+  if(action==="create"||action==="join"){const res=await worker.fetch(req.clone(),env,ctx),data=await res.clone().json().catch(()=>({}));if(res.ok&&data.ok){const roomId=data.roomId||body.roomId;if(roomId)await rememberMembership(env,roomId,account.id,mode,action==="create"?"host":"member");}return res;}
+  const roomId=String(body.roomId||body.room?.roomId||"").trim();
+  if(action==="state"&&!roomId){const db=await guardDb(env),rows=await db.collection("room_memberships").find({userId:String(account.id)}).sort({updatedAt:-1}).limit(50).toArray();return json(req,env,200,{ok:true,state:{rooms:rows.map(x=>({roomId:x.roomId,mode:x.mode,role:x.role,joinedAt:x.joinedAt,lastSeen:x.lastSeen}))}});}
+  if(!roomId)return json(req,env,400,{ok:false,error:"ROOM_ID_REQUIRED"});
+  if(!(await hasMembership(env,roomId,account.id)))return json(req,env,403,{ok:false,error:"ROOM_MEMBERSHIP_REQUIRED"});
+  if(action==="action"){const envelope=body.action??body;if(actionLooksLikeOutcome(envelope))return json(req,env,400,{ok:false,error:"CLIENT_MECHANICAL_RESULT_FORBIDDEN",rule:"online accepts intent only; TERION resolves mechanics"});}
+  if(action==="heartbeat")await touchMembership(env,roomId,account.id);
+  return worker.fetch(req.clone(),env,ctx);
 }
 
-async function aiRoute(req,env){
-  if(req.method!=="POST")return new Response(JSON.stringify({ok:false,error:"METHOD_NOT_ALLOWED"}),{status:405,headers:cors(req,env)});
-  if(!env.AI)return new Response(JSON.stringify({ok:false,error:"WORKERS_AI_NOT_BOUND"}),{status:503,headers:cors(req,env)});
-  let b={};try{b=await req.clone().json();}catch{}
-  const facts=b?.gameContext?.facts||b?.facts||[];
-  const rules=b?.gameContext?.rules||"TERION 2D10 resolve resultados mecânicos antes da narrativa.";
-  const system=`Você é o narrador do Shinobi no Sho. TERION é a autoridade mecânica. Nunca invente sucesso, dano, recompensa, técnica desbloqueada, morte, cura, relação ou mudança de mundo que não esteja nos fatos confirmados. Narre somente consequências dos fatos confirmados e ofereça ações possíveis. ${rules}`;
-  const prompt=JSON.stringify({mode:b.mode||"game_master",intent:b.intent||b.action||b.text||"continuar",facts,director:b.director||{},context:b.gameContext||b.context||{}}).slice(0,90000);
-  try{
-    const result=await env.AI.run(AI_MODEL,{messages:[{role:"system",content:system},{role:"user",content:prompt}],max_completion_tokens:1200});
-    const text=result?.response||result?.result?.response||result?.text||JSON.stringify(result);
-    return new Response(JSON.stringify({ok:true,result:text,provider:"cloudflare-workers-ai",model:AI_MODEL,role:b.mode||"game_master"}),{status:200,headers:cors(req,env)});
-  }catch(e){
-    console.error("R41_AI_ERROR",e);
-    return new Response(JSON.stringify({ok:false,error:"WORKERS_AI_FAILED",detail:String(e?.message||e)}),{status:502,headers:cors(req,env)});
-  }
-}
+async function claimLeon(req,env,ctx){if(req.method!=="POST")return json(req,env,405,{ok:false,error:"METHOD_NOT_ALLOWED"});if(!env.LEON_PRIVATE_CODE||!env.MONGODB_URI)return json(req,env,503,{ok:false,error:"PRIVATE_CLAIM_NOT_CONFIGURED"});let body={};try{body=await req.clone().json();}catch{}if(!safeEqual(String(body.code||""),String(env.LEON_PRIVATE_CODE)))return json(req,env,403,{ok:false,error:"PRIVATE_ACCESS_DENIED"});const me=await currentAccount(req,env,ctx);if(!me)return json(req,env,401,{ok:false,error:"UNAUTHORIZED"});
+  try{const db=await guardDb(env),fp=await fingerprint(env.LEON_PRIVATE_CODE),already=await db.collection("private_claims").findOne({type:"leon",fingerprint:fp,redeemed:true}),uid=new ObjectId(String(me.id)),current=await db.collection("users").findOne({_id:uid});if(!current)return json(req,env,404,{ok:false,error:"ACCOUNT_NOT_FOUND"});if(already&&current.role!=="leon")return json(req,env,409,{ok:false,error:"LEON_CLAIM_ALREADY_USED"});if(current.role!=="leon"){await db.collection("users").updateMany({role:"leon",_id:{$ne:uid}},{$set:{role:"player",updatedAt:new Date()}});await db.collection("users").updateOne({_id:uid},{$set:{role:"leon",displayName:current.displayName||"Leon",updatedAt:new Date()}});await db.collection("private_claims").updateOne({type:"leon",fingerprint:fp},{$set:{type:"leon",fingerprint:fp,redeemed:true,userId:uid,redeemedAt:new Date()}},{upsert:true});await db.collection("audit_events").insertOne({type:"private.leon.claim",userId:uid,detail:{source:"installer-browser-claim"},createdAt:new Date(),build:"R41-CLOUDFLARE-MONGODB-INTEGRAL-20260819"});}const u=await db.collection("users").findOne({_id:uid});return json(req,env,200,{ok:true,claimed:true,account:{id:String(u._id),username:u.username,displayName:u.displayName||u.username,role:u.role||"player",createdAt:u.createdAt}});}catch(e){console.error("LEON_CLAIM_ERROR",e);return json(req,env,500,{ok:false,error:"PRIVATE_CLAIM_FAILED"});}}
 
-async function statusRoute(req,env,ctx){
-  const base=await worker.fetch(req,env,ctx);
-  let data={};try{data=await base.clone().json();}catch{return base;}
-  data.model=env.AI?AI_MODEL:"gerador local";
-  data.aiModel=AI_MODEL;
-  data.privateLeonClaim=!!env.LEON_PRIVATE_CODE;
-  data.routes={...(data.routes||{}),privateLeonClaim:true,worldTick:true};
-  return new Response(JSON.stringify(data),{status:base.status,statusText:base.statusText,headers:cors(req,env)});
-}
+async function aiRoute(req,env){if(req.method!=="POST")return json(req,env,405,{ok:false,error:"METHOD_NOT_ALLOWED"});if(!env.AI)return json(req,env,503,{ok:false,error:"WORKERS_AI_NOT_BOUND"});let b={};try{b=await req.clone().json();}catch{}const facts=b?.gameContext?.facts||b?.facts||[],rules=b?.gameContext?.rules||"TERION 2D10 resolve resultados mecânicos antes da narrativa.",system=`Você é o narrador do Shinobi no Sho. TERION é a autoridade mecânica. Nunca invente sucesso, dano, recompensa, técnica desbloqueada, morte, cura, relação ou mudança de mundo que não esteja nos fatos confirmados. Narre somente consequências dos fatos confirmados e ofereça ações possíveis. ${rules}`,prompt=JSON.stringify({mode:b.mode||"game_master",intent:b.intent||b.action||b.text||"continuar",facts,director:b.director||{},context:b.gameContext||b.context||{}}).slice(0,90000);try{const result=await env.AI.run(AI_MODEL,{messages:[{role:"system",content:system},{role:"user",content:prompt}],max_completion_tokens:1200}),text=result?.response||result?.result?.response||result?.text||JSON.stringify(result);return json(req,env,200,{ok:true,result:text,provider:"cloudflare-workers-ai",model:AI_MODEL,role:b.mode||"game_master"});}catch(e){console.error("R41_AI_ERROR",e);return json(req,env,502,{ok:false,error:"WORKERS_AI_FAILED",detail:String(e?.message||e)});}}
+async function statusRoute(req,env,ctx){const base=await worker.fetch(req,env,ctx);let data={};try{data=await base.clone().json();}catch{return base;}data.model=env.AI?AI_MODEL:"gerador local";data.aiModel=AI_MODEL;data.privateLeonClaim=!!env.LEON_PRIVATE_CODE;data.onlineAuthority="intent-only-boundary";data.routes={...(data.routes||{}),privateLeonClaim:true,worldTick:true,roomMembershipGuard:true,clientMechanicalResultRejected:true};return new Response(JSON.stringify(data),{status:base.status,statusText:base.statusText,headers:cors(req,env)});}
+async function mapWorldTick(req){const url=new URL(req.url);if(url.pathname.replace(/\/+$/g,"")!=="/api/v84/world/tick")return null;let body={};try{body=await req.clone().json();}catch{}const mapped=new URL(req.url);mapped.pathname="/api/v84/world/event";return new Request(mapped.toString(),{method:"POST",headers:req.headers,body:JSON.stringify({type:"world_tick",detail:body,campaignId:body.campaignId||body.detail?.campaignId||"default",minutes:Number(body.minutes??body.deltaMinutes??0),source:"world-tick"})});}
 
-async function mapWorldTick(req){
-  const url = new URL(req.url);
-  if (url.pathname.replace(/\/+$/g, "") !== "/api/v84/world/tick") return null;
-  let body = {};
-  try { body = await req.clone().json(); } catch {}
-  const mapped = new URL(req.url);
-  mapped.pathname = "/api/v84/world/event";
-  const payload = {
-    type: "world_tick",
-    detail: body,
-    campaignId: body.campaignId || body.detail?.campaignId || "default",
-    minutes: Number(body.minutes ?? body.deltaMinutes ?? 0),
-    source: "world-tick"
-  };
-  return new Request(mapped.toString(), {
-    method: "POST",
-    headers: req.headers,
-    body: JSON.stringify(payload)
-  });
-}
-
-export default {
-  async fetch(req, env, ctx) {
-    const url=new URL(req.url),path=url.pathname.replace(/\/+$/g,"")||"/";
-    if(path==="/"||path==="/api/status")return statusRoute(req,env,ctx);
-    if(path==="/api/ai")return aiRoute(req,env);
-    if(path==="/api/private/claim-leon")return claimLeon(req,env,ctx);
-    const mapped = await mapWorldTick(req);
-    if (mapped) return worker.fetch(mapped, env, ctx);
-    return worker.fetch(req, env, ctx);
-  }
-};
+export default {async fetch(req,env,ctx){const url=new URL(req.url),path=url.pathname.replace(/\/+$/g,"")||"/";if(path==="/"||path==="/api/status")return statusRoute(req,env,ctx);if(path==="/api/ai")return aiRoute(req,env);if(path==="/api/private/claim-leon")return claimLeon(req,env,ctx);const online=await guardedOnline(req,env,ctx,path);if(online)return online;const mapped=await mapWorldTick(req);if(mapped)return worker.fetch(mapped,env,ctx);return worker.fetch(req,env,ctx);}};
