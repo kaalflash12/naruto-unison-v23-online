@@ -44,7 +44,10 @@ jobs:
           grep -q '/api/online/create' src/index.js
           grep -q '/api/v84/world/event' src/index.js
           grep -q '/api/v84/world/tick' src/entry.js
-          echo 'Worker syntax/routes: OK' >> "$GITHUB_STEP_SUMMARY"
+          grep -q 'ROOM_MEMBERSHIP_REQUIRED' src/entry.js
+          grep -q 'CLIENT_MECHANICAL_RESULT_FORBIDDEN' src/entry.js
+          grep -q '@cf/zai-org/glm-4.7-flash' src/entry.js
+          echo 'Worker syntax/routes/authority: OK' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check deploy credentials
         id: creds
@@ -80,10 +83,7 @@ jobs:
           cd "$W"
           npx wrangler deploy --config wrangler.toml 2>&1 | tee /tmp/r41-wrangler-deploy.log
           URL="$(grep -Eo 'https://[A-Za-z0-9.-]+\.workers\.dev' /tmp/r41-wrangler-deploy.log | tail -n1 || true)"
-          if [ -z "$URL" ]; then
-            echo 'Worker deployed, but workers.dev URL was not found in CLI output.' >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
+          test -n "$URL"
           echo "url=$URL" >> "$GITHUB_OUTPUT"
           echo "Worker: $URL" >> "$GITHUB_STEP_SUMMARY"
 
@@ -94,10 +94,15 @@ jobs:
           set -euo pipefail
           URL='${{ steps.deploy.outputs.url }}'
           curl --fail --silent --show-error "$URL/api/status" | tee /tmp/r41-status.json
-          node -e "const d=require('/tmp/r41-status.json'); if(!d.ok||!d.configured||!d.routes?.online||!d.routes?.save) process.exit(1); console.log(d.build)"
-          echo 'Live /api/status: OK' >> "$GITHUB_STEP_SUMMARY"
+          node - <<'NODE'
+          const d=require('/tmp/r41-status.json');
+          if(!d.ok||!d.configured||!d.routes?.online||!d.routes?.save||!d.routes?.roomMembershipGuard||!d.routes?.clientMechanicalResultRejected) process.exit(1);
+          if(d.aiModel!=="@cf/zai-org/glm-4.7-flash") process.exit(1);
+          console.log(d.build,d.aiModel,d.onlineAuthority);
+          NODE
+          echo 'Live /api/status authority gates: OK' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Bake API URL into GitHub Pages frontend
+      - name: Bake Worker URL into branch frontend config
         if: steps.creds.outputs.ready == 'true'
         shell: bash
         run: |
