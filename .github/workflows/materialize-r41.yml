@@ -1,138 +1,89 @@
-name: Materialize Shinobi no Sho R41
+name: Validate Shinobi no Sho R41 Materialized Runtime
+
 on:
   push:
-    branches: [main]
+    branches: [r41-correcao-integral-20260819]
     paths:
       - '.github/workflows/materialize-r41.yml'
       - '.r41-seed/materialize_r41.py'
-      - 'r41-live/c*.js'
-      - 'r41-live/r41-run.js'
+      - 'R41/Naruto Shinobi no Sho PC/_jogo/**'
   pull_request:
     branches: [main]
   workflow_dispatch:
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
-  materialize:
+  validate-materialized-r41:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
-      - name: Materialize R41 static game into GitHub
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path('.r41-seed/materialize_r41.py')
-          s=p.read_text(encoding='utf8')
-          s=s.replace("'.env.local.example','index.html','app.js','styles.css','r31.css','package.json','vercel.json',", "'index.html','app.js','styles.css','r31.css',")
-          p.write_text(s,encoding='utf8')
-          PY
-          python3 .r41-seed/materialize_r41.py
-      - name: Restore exact local R41 deployment examples
-        shell: bash
-        run: |
-          G='R41/Naruto Shinobi no Sho PC/_jogo'
-          cat > "$G/package.json" <<'JSON'
-          {
-            "name": "naruto-shinobi-no-sho-r40",
-            "version": "8.20.0",
-            "private": true,
-            "engines": { "node": ">=20" },
-            "dependencies": { "mongodb": "^6.18.0" }
-          }
-          JSON
-          cat > "$G/vercel.json" <<'JSON'
-          {
-            "$schema": "https://openapi.vercel.sh/vercel.json",
-            "fluid": true,
-            "cleanUrls": false,
-            "headers": [{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"same-origin"}]}],
-            "functions": {
-              "api/ai.js": {"maxDuration":300},
-              "api/v84/world/event.js": {"maxDuration":30},
-              "api/v84/world/tick.js": {"maxDuration":30}
-            }
-          }
-          JSON
-          cat > "$G/.env.local.example" <<'ENV'
-          # R39 — copie somente as chaves que voce realmente possui para .env.local.
-          # O instalador preserva seu .env.local existente e envia as chaves necessarias ao Vercel.
-          VERCEL_TOKEN=
-          VERCEL_TEAM_ID=team_o1RxZX0hDIO9c7SnuFozCmAB
-          VERCEL_TEAM_SLUG=kaalflash12s-projects
-          VERCEL_PROJECT_NAME=mestrerpg
-          MONGODB_URI=
-          MONGODB_DB=naruto_shinobi_no_sho
-          OPENAI_API_KEY=
-          OPENAI_MODEL=gpt-5-mini
-          GEMINI_API_KEY=
-          GEMINI_MODEL=gemini-2.5-flash
-          ANTHROPIC_API_KEY=
-          ANTHROPIC_MODEL=
-          GROQ_API_KEY=
-          GROQ_MODEL=llama-3.3-70b-versatile
-          XAI_API_KEY=
-          XAI_MODEL=
-          OPENROUTER_API_KEY=
-          OPENROUTER_MODEL=
-          AI_API_KEY=
-          AI_BASE_URL=
-          AI_MODEL=
-          NARUTO_WORKER_URL=
-          NARUTO_WORKER_API_KEY=
-          CLOUDFLARE_API_TOKEN=
-          CLOUDFLARE_ACCOUNT_ID=
-          LEON_ACCESS_USERNAME=leon
-          LEON_ACCESS_CODE=
-          AI_COUNCIL_POLICY=critical
-          NARUTO_MONGO_VIA_VERCEL=true
-          MONGODB_COLLECTION=campaign_events
-          AI_COUNCIL_MAX=2
-          AI_COUNCIL_ROLES=rules,progression,mission
-          AI_CLOUD_FIRST=false
-          AI_COUNCIL_INCLUDE_FALLBACK=false
-          NARUTO_VERCEL_URL=
-          CF_EMBEDDING_MODEL=@cf/baai/bge-base-en-v1.5
-          ENV
-      - name: Point GitHub Pages root at local R41
-        shell: bash
-        run: |
-          touch .nojekyll
-          cat > index.html <<'HTML'
-          <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="r41-build" content="R41-MD-OPERACIONAL-APLICADO-2026-08-17"><meta http-equiv="refresh" content="0;url=./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/"><title>Shinobi no Sho R41</title></head><body><h1>Shinobi no Sho R41</h1><p><a href="./R41/Naruto%20Shinobi%20no%20Sho%20PC/_jogo/">Entrar no jogo</a></p></body></html>
-          HTML
-      - name: Validate local static ownership
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate materialized runtime ownership
         shell: bash
         run: |
           set -euo pipefail
           G='R41/Naruto Shinobi no Sho PC/_jogo'
+          test -f "$G/index.html"
           test -f "$G/app.js"
-          test -f "$G/package.json"
-          test -f "$G/vercel.json"
-          test -f "$G/.env.local.example"
+          test -f "$G/r41-api-config.js"
+          test -f "$G/r41-github-api.js"
+          test -f "$G/cloudflare/r41-api/src/index.js"
+          test -f "$G/cloudflare/r41-api/src/entry.js"
           test -f "$G/data/r41-gm3-techniques.json"
-          grep -q 'R41-MD-OPERACIONAL-APLICADO-2026-08-17' "$G/app.js"
-          grep -q 'GitHub' "$G/index.html"
-          ! grep -q '<base href="https://naruto-shinobi-r40-online.vercel.app/' "$G/index.html"
-          python3 - <<'PY'
-          import json
-          p='R41/Naruto Shinobi no Sho PC/_jogo/R41_GITHUB_MATERIALIZATION.json'
-          d=json.load(open(p,encoding='utf8'))
-          assert d['gm3Techniques']==2792,d
-          assert d['staticFilesDownloaded']>1000,d
-          print(d)
-          PY
-      - name: Commit materialized game to source branch
+          ! test -f "$G/vercel.json"
+          ! grep -R -n -E 'VERCEL_TOKEN|NARUTO_VERCEL_URL|NARUTO_MONGO_VIA_VERCEL' "$G/.env.local.example" "$G/r41-api-config.js" 2>/dev/null
+          grep -q 'R41-CLOUDFLARE-MONGODB' "$G/index.html"
+          grep -q 'r41-github-api.js' "$G/index.html"
+          echo 'Runtime materializado sem dependencia Vercel: OK' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate JavaScript syntax
         shell: bash
         run: |
-          git config user.name 'kaalflash12'
-          git config user.email 'mestrederpg35@gmail.com'
-          git add -A
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Materialize full R41 runtime on GitHub Pages'
-          TARGET="${GITHUB_HEAD_REF:-main}"
-          git push origin HEAD:"$TARGET"
+          set -euo pipefail
+          G='R41/Naruto Shinobi no Sho PC/_jogo'
+          node --check "$G/app.js"
+          node --check "$G/r41-api-config.js"
+          node --check "$G/r41-github-api.js"
+          node --check "$G/cloudflare/r41-api/src/index.js"
+          node --check "$G/cloudflare/r41-api/src/entry.js"
+          echo 'JavaScript parse: OK' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Audit literal asset references
+        shell: bash
+        run: |
+          set -euo pipefail
+          G='R41/Naruto Shinobi no Sho PC/_jogo'
+          cd "$G"
+          node tools/audit-r41-assets.mjs
+          cat audit/r41-assets.json >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate TERION authority and core catalogs
+        shell: bash
+        run: |
+          set -euo pipefail
+          G='R41/Naruto Shinobi no Sho PC/_jogo'
+          grep -q 'TERION' "$G/app.js"
+          grep -q 'SceneDirector\|sceneDirector\|scene' "$G/app.js"
+          grep -q '/api/account/save' "$G/app.js"
+          grep -q '/api/online/create' "$G/app.js"
+          grep -q '/api/v84/world/event' "$G/app.js"
+          grep -q '/api/v84/world/tick' "$G/cloudflare/r41-api/src/entry.js"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('R41/Naruto Shinobi no Sho PC/_jogo/data/r41-gm3-techniques.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          items=d if isinstance(d,list) else d.get('techniques',d.get('items',[]))
+          assert len(items)==2792, len(items)
+          print('GM3 techniques:',len(items))
+          PY
+          echo 'TERION/catalog/API gates: OK' >> "$GITHUB_STEP_SUMMARY"
