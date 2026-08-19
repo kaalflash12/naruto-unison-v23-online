@@ -2,6 +2,7 @@ import { MongoClient, ObjectId } from "mongodb";
 import worker, { GameRoom } from "./index.js";
 export { GameRoom };
 
+const AI_MODEL="@cf/zai-org/glm-4.7-flash";
 function safeEqual(a,b){
   a=String(a||"");b=String(b||"");
   if(a.length!==b.length)return false;
@@ -57,6 +58,34 @@ async function claimLeon(req,env,ctx){
   }finally{try{await client?.close();}catch{}}
 }
 
+async function aiRoute(req,env){
+  if(req.method!=="POST")return new Response(JSON.stringify({ok:false,error:"METHOD_NOT_ALLOWED"}),{status:405,headers:cors(req,env)});
+  if(!env.AI)return new Response(JSON.stringify({ok:false,error:"WORKERS_AI_NOT_BOUND"}),{status:503,headers:cors(req,env)});
+  let b={};try{b=await req.clone().json();}catch{}
+  const facts=b?.gameContext?.facts||b?.facts||[];
+  const rules=b?.gameContext?.rules||"TERION 2D10 resolve resultados mecânicos antes da narrativa.";
+  const system=`Você é o narrador do Shinobi no Sho. TERION é a autoridade mecânica. Nunca invente sucesso, dano, recompensa, técnica desbloqueada, morte, cura, relação ou mudança de mundo que não esteja nos fatos confirmados. Narre somente consequências dos fatos confirmados e ofereça ações possíveis. ${rules}`;
+  const prompt=JSON.stringify({mode:b.mode||"game_master",intent:b.intent||b.action||b.text||"continuar",facts,director:b.director||{},context:b.gameContext||b.context||{}}).slice(0,90000);
+  try{
+    const result=await env.AI.run(AI_MODEL,{messages:[{role:"system",content:system},{role:"user",content:prompt}],max_completion_tokens:1200});
+    const text=result?.response||result?.result?.response||result?.text||JSON.stringify(result);
+    return new Response(JSON.stringify({ok:true,result:text,provider:"cloudflare-workers-ai",model:AI_MODEL,role:b.mode||"game_master"}),{status:200,headers:cors(req,env)});
+  }catch(e){
+    console.error("R41_AI_ERROR",e);
+    return new Response(JSON.stringify({ok:false,error:"WORKERS_AI_FAILED",detail:String(e?.message||e)}),{status:502,headers:cors(req,env)});
+  }
+}
+
+async function statusRoute(req,env,ctx){
+  const base=await worker.fetch(req,env,ctx);
+  let data={};try{data=await base.clone().json();}catch{return base;}
+  data.model=env.AI?AI_MODEL:"gerador local";
+  data.aiModel=AI_MODEL;
+  data.privateLeonClaim=!!env.LEON_PRIVATE_CODE;
+  data.routes={...(data.routes||{}),privateLeonClaim:true,worldTick:true};
+  return new Response(JSON.stringify(data),{status:base.status,statusText:base.statusText,headers:cors(req,env)});
+}
+
 async function mapWorldTick(req){
   const url = new URL(req.url);
   if (url.pathname.replace(/\/+$/g, "") !== "/api/v84/world/tick") return null;
@@ -81,6 +110,8 @@ async function mapWorldTick(req){
 export default {
   async fetch(req, env, ctx) {
     const url=new URL(req.url),path=url.pathname.replace(/\/+$/g,"")||"/";
+    if(path==="/"||path==="/api/status")return statusRoute(req,env,ctx);
+    if(path==="/api/ai")return aiRoute(req,env);
     if(path==="/api/private/claim-leon")return claimLeon(req,env,ctx);
     const mapped = await mapWorldTick(req);
     if (mapped) return worker.fetch(mapped, env, ctx);
