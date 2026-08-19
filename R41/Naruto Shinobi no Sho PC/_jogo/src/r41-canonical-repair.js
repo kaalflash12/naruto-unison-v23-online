@@ -39,11 +39,11 @@
     "motani":"assets/r40/story/vila_comerciante_icone.png",
     "examiner":"assets/r29/examiner.png",
     "examinador":"assets/r29/examiner.png",
-    "dojutsu kugangan":"assets/r29/kugangan.png",
-    "kugangan":"assets/r29/kugangan.png",
+    "dojutsu kugangan":"assets/user-provided/reference-ui/Kūro - Olho cósmico, marca do vazio.png",
+    "kugangan":"assets/user-provided/reference-ui/Kūro - Olho cósmico, marca do vazio.png",
     "nukenin inimigo":"assets/r29/nukenin-inimigo.png",
     "inimigo":"assets/r29/nukenin-inimigo.png",
-    "principal":"assets/r29/from_user/original_interface.png",
+    "principal":"assets/user-provided/reference-ui/Painel Completo de Naruto Shinobi no Sho.png",
     "jutsus":"assets/user-provided/reference-ui/Interface de Jutsus do Naruto Unison.png",
     "mapa tatico":"assets/user-provided/maps/Mapa tático da vila ninja dourada.png"
   });
