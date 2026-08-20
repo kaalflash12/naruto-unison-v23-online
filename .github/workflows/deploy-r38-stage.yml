@@ -1,0 +1,114 @@
+name: Deploy R38 from staged payload
+
+on:
+  push:
+    branches:
+      - r38-direct-stage
+    paths:
+      - 'r38-payload-v2/**'
+      - '.github/workflows/deploy-r38-stage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+environment:
+  name: github-pages
+
+concurrency:
+  group: r38-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout staged branch
+        uses: actions/checkout@v5
+        with:
+          ref: r38-direct-stage
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Rebuild and verify R38 payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD="$RUNNER_TEMP/r38-virtual.tar.gz"
+          cat r38-payload-v2/chunk-*.txt | base64 --decode > "$PAYLOAD"
+          echo 'e11eee0b1fca4d0babc02ddb01725acb126ddcaf0b5781b5a1cc944774e2dc14  '"$PAYLOAD" | sha256sum -c -
+          OVERLAY="$RUNNER_TEMP/r38-overlay"
+          rm -rf "$OVERLAY"
+          mkdir -p "$OVERLAY"
+          tar -xzf "$PAYLOAD" -C "$OVERLAY"
+          test -f "$OVERLAY/index.html"
+          grep -q 'V23.31-R38' "$OVERLAY/index.html"
+          test "$(find "$OVERLAY" -type f | wc -l)" -eq 312
+
+      - name: Build complete Pages site
+        shell: bash
+        run: |
+          set -euo pipefail
+          SITE="$RUNNER_TEMP/r38-site"
+          OVERLAY="$RUNNER_TEMP/r38-overlay"
+          rm -rf "$SITE"
+          mkdir -p "$SITE"
+          cp -a static "$SITE/"
+          cp -a assets "$SITE/"
+          cp -a "$OVERLAY"/. "$SITE/"
+          test -f "$SITE/static/img/icon.png"
+          grep -q 'V23.31-R38' "$SITE/index.html"
+
+      - name: Synchronize R38 source tree to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          SITE="$RUNNER_TEMP/r38-site"
+          git fetch origin main
+          git checkout -B main origin/main
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name static ! -name assets -exec rm -rf {} +
+          cp -a "$SITE"/. .
+          rm -rf r38-payload r38-payload-v2
+          printf '%s\n' 'Naruto Unison PT-BR V23.31 R38 | GitHub Pages + Supabase' > NARUTO-UNISON-V23-PAGES.txt
+          git config user.name 'Naruto Unison R38 Deploy'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -- index.html manifest.webmanifest sw.js r38-config.json src scenes schemas minigames static/img/equipment-r36 static/img/items-r36 assets/asset-manifest.json assets/ui NARUTO-UNISON-V23-PAGES.txt .nojekyll
+          if git diff --cached --quiet; then
+            echo 'Main already matches R38.'
+          else
+            git commit -m 'Naruto Unison V23.31 R38 direct deploy'
+            git push origin HEAD:main
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/r38-site
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify deployed marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://kaalflash12.github.io/naruto-unison-v23-online/'
+          for i in $(seq 1 30); do
+            BODY=$(curl -fsSL --retry 2 "$URL?r38=$GITHUB_RUN_ID" || true)
+            if printf '%s' "$BODY" | grep -q 'V23.31-R38'; then
+              echo 'R38 marker confirmed on public Pages.'
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'R38 public marker not observed.' >&2
+          exit 1
