@@ -1,12 +1,9 @@
-name: Deploy R38 from staged payload
+name: Deploy Naruto Unison R38 from existing Unison
 
 on:
   push:
     branches:
-      - r38-direct-stage
-    paths:
-      - 'r38-payload-v2/**'
-      - '.github/workflows/deploy-r38-stage.yml'
+      - main
   workflow_dispatch:
 
 permissions:
@@ -23,65 +20,63 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.head_commit.message != 'Naruto Unison V23.31 R38 online update' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout staged branch
+      - name: Checkout existing Unison main
         uses: actions/checkout@v5
         with:
-          ref: r38-direct-stage
+          ref: main
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Rebuild and verify R38 payload
+      - name: Fetch and reconstruct staged R38 overlay
         shell: bash
         run: |
           set -euo pipefail
-          PAYLOAD="$RUNNER_TEMP/r38-virtual.tar.gz"
-          cat r38-payload-v2/chunk-*.txt | base64 --decode > "$PAYLOAD"
-          echo 'e11eee0b1fca4d0babc02ddb01725acb126ddcaf0b5781b5a1cc944774e2dc14  '"$PAYLOAD" | sha256sum -c -
-          OVERLAY="$RUNNER_TEMP/r38-overlay"
-          rm -rf "$OVERLAY"
-          mkdir -p "$OVERLAY"
-          tar -xzf "$PAYLOAD" -C "$OVERLAY"
-          test -f "$OVERLAY/index.html"
-          grep -q 'V23.31-R38' "$OVERLAY/index.html"
-          test "$(find "$OVERLAY" -type f | wc -l)" -eq 312
+          git fetch origin r38-stage-final:r38-stage-final
+          mkdir -p "$RUNNER_TEMP/r38-overlay"
+          git show r38-stage-final:.r38-delta/part-00 > "$RUNNER_TEMP/00"
+          git show r38-stage-final:.r38-delta/part-01 > "$RUNNER_TEMP/01"
+          git show r38-stage-final:.r38-delta/part-02 > "$RUNNER_TEMP/02"
+          git show r38-stage-final:.r38-delta/part-03-05 > "$RUNNER_TEMP/03-05"
+          git show r38-stage-final:.r38-delta/part-06-08 > "$RUNNER_TEMP/06-08"
+          cat "$RUNNER_TEMP/00" "$RUNNER_TEMP/01" "$RUNNER_TEMP/02" "$RUNNER_TEMP/03-05" "$RUNNER_TEMP/06-08" | base64 -d > "$RUNNER_TEMP/r38.tar.xz"
+          tar -xJf "$RUNNER_TEMP/r38.tar.xz" -C "$RUNNER_TEMP/r38-overlay"
+          test -f "$RUNNER_TEMP/r38-overlay/index.html"
+          grep -q 'V23.31-R38' "$RUNNER_TEMP/r38-overlay/index.html"
+          COUNT=$(find "$RUNNER_TEMP/r38-overlay" -type f | wc -l)
+          echo "R38 overlay files: $COUNT"
+          test "$COUNT" -ge 100
 
-      - name: Build complete Pages site
+      - name: Update existing Unison with R38 overlay
         shell: bash
         run: |
           set -euo pipefail
           SITE="$RUNNER_TEMP/r38-site"
-          OVERLAY="$RUNNER_TEMP/r38-overlay"
           rm -rf "$SITE"
           mkdir -p "$SITE"
-          cp -a static "$SITE/"
-          cp -a assets "$SITE/"
-          cp -a "$OVERLAY"/. "$SITE/"
-          test -f "$SITE/static/img/icon.png"
+          git archive HEAD | tar -x -C "$SITE"
+          cp -a "$RUNNER_TEMP/r38-overlay"/. "$SITE/"
+          test -f "$SITE/index.html"
           grep -q 'V23.31-R38' "$SITE/index.html"
 
-      - name: Synchronize R38 source tree to main
+      - name: Commit updated Unison to main
         shell: bash
         run: |
           set -euo pipefail
-          SITE="$RUNNER_TEMP/r38-site"
-          git fetch origin main
-          git checkout -B main origin/main
-          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name static ! -name assets -exec rm -rf {} +
-          cp -a "$SITE"/. .
-          rm -rf r38-payload r38-payload-v2
-          printf '%s\n' 'Naruto Unison PT-BR V23.31 R38 | GitHub Pages + Supabase' > NARUTO-UNISON-V23-PAGES.txt
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/r38-site"/. .
           git config user.name 'Naruto Unison R38 Deploy'
           git config user.email 'actions@users.noreply.github.com'
-          git add -- index.html manifest.webmanifest sw.js r38-config.json src scenes schemas minigames static/img/equipment-r36 static/img/items-r36 assets/asset-manifest.json assets/ui NARUTO-UNISON-V23-PAGES.txt .nojekyll
+          git add -A
           if git diff --cached --quiet; then
-            echo 'Main already matches R38.'
+            echo 'Main already contains the R38 update.'
           else
-            git commit -m 'Naruto Unison V23.31 R38 direct deploy'
+            git commit -m 'Naruto Unison V23.31 R38 online update'
             git push origin HEAD:main
           fi
 
@@ -93,11 +88,11 @@ jobs:
         with:
           path: ${{ runner.temp }}/r38-site
 
-      - name: Deploy Pages
+      - name: Deploy R38 to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Verify deployed marker
+      - name: Verify public R38 marker
         shell: bash
         run: |
           set -euo pipefail
