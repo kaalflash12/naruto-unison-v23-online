@@ -1,9 +1,8 @@
-name: Deploy Naruto Unison R38 from existing Unison
+name: Deploy Naruto Unison R38
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -26,24 +25,23 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout existing Unison main
+      - name: Checkout existing Unison
         uses: actions/checkout@v5
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Fetch and reconstruct staged R38 overlay
+      - name: Reconstruct R38 overlay stored in main
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin r38-stage-final:r38-stage-final
           mkdir -p "$RUNNER_TEMP/r38-overlay"
-          git show r38-stage-final:.r38-delta/part-00 > "$RUNNER_TEMP/00"
-          git show r38-stage-final:.r38-delta/part-01 > "$RUNNER_TEMP/01"
-          git show r38-stage-final:.r38-delta/part-02 > "$RUNNER_TEMP/02"
-          git show r38-stage-final:.r38-delta/part-03-05 > "$RUNNER_TEMP/03-05"
-          git show r38-stage-final:.r38-delta/part-06-08 > "$RUNNER_TEMP/06-08"
+          git show HEAD:.r38-delta/part-00 > "$RUNNER_TEMP/00"
+          git show HEAD:.r38-delta/part-01 > "$RUNNER_TEMP/01"
+          git show HEAD:.r38-delta/part-02 > "$RUNNER_TEMP/02"
+          git show HEAD:.r38-delta/part-03-05 > "$RUNNER_TEMP/03-05"
+          git show HEAD:.r38-delta/part-06-08 > "$RUNNER_TEMP/06-08"
           cat "$RUNNER_TEMP/00" "$RUNNER_TEMP/01" "$RUNNER_TEMP/02" "$RUNNER_TEMP/03-05" "$RUNNER_TEMP/06-08" | base64 -d > "$RUNNER_TEMP/r38.tar.xz"
           tar -xJf "$RUNNER_TEMP/r38.tar.xz" -C "$RUNNER_TEMP/r38-overlay"
           test -f "$RUNNER_TEMP/r38-overlay/index.html"
@@ -52,7 +50,7 @@ jobs:
           echo "R38 overlay files: $COUNT"
           test "$COUNT" -ge 100
 
-      - name: Update existing Unison with R38 overlay
+      - name: Build updated Unison site
         shell: bash
         run: |
           set -euo pipefail
@@ -61,20 +59,22 @@ jobs:
           mkdir -p "$SITE"
           git archive HEAD | tar -x -C "$SITE"
           cp -a "$RUNNER_TEMP/r38-overlay"/. "$SITE/"
+          rm -rf "$SITE/.r38-delta" "$SITE/.git" "$SITE/.github"
           test -f "$SITE/index.html"
           grep -q 'V23.31-R38' "$SITE/index.html"
 
-      - name: Commit updated Unison to main
+      - name: Commit actual R38 site to main
         shell: bash
         run: |
           set -euo pipefail
-          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github -exec rm -rf {} +
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name .r38-delta -exec rm -rf {} +
           cp -a "$RUNNER_TEMP/r38-site"/. .
           git config user.name 'Naruto Unison R38 Deploy'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
+          git reset -- .r38-delta 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo 'Main already contains the R38 update.'
+            echo 'No site changes detected.'
           else
             git commit -m 'Naruto Unison V23.31 R38 online update'
             git push origin HEAD:main
