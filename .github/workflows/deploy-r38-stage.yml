@@ -1,4 +1,4 @@
-name: Deploy Naruto Unison R38.2 to Pages
+name: Publish Naruto Unison R38.2 from staging static
 
 on:
   push:
@@ -7,115 +7,178 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-environment:
-  name: github-pages
 
 concurrency:
-  group: pages-r382
+  group: r382-staging-publish
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  publish:
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[DEPLOY-R382-STAGING]') }}
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout payload
+      - name: Checkout intact staging static
+        uses: actions/checkout@v5
+        with:
+          ref: staging
+          path: source
+          fetch-depth: 1
+
+      - name: Checkout validated R38/R38.2 payloads
+        uses: actions/checkout@v5
+        with:
+          ref: r382-publish-trigger
+          path: payload
+          fetch-depth: 1
+
+      - name: Checkout main publish target
         uses: actions/checkout@v5
         with:
           ref: main
-          fetch-depth: 1
+          path: publish
+          fetch-depth: 0
+          persist-credentials: true
 
-      - name: Reconstruct and validate R38.2 public site
-        id: validate
+      - name: Build and validate R38.2
+        id: build
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
           OUT="$RUNNER_TEMP/r382-site"
-          R38="$RUNNER_TEMP/r38.tar.xz"
-          R382="$RUNNER_TEMP/r382.tar.xz"
+          BASE="$RUNNER_TEMP/r38-base.tar.xz"
+          PATCH="$RUNNER_TEMP/r382-patch.tar.xz"
           rm -rf "$OUT"
           mkdir -p "$OUT"
 
-          mapfile -t BASE_PARTS < <(find .r38-repaired -maxdepth 1 -type f -name 'part-*' | sort -V)
-          test "${#BASE_PARTS[@]}" -ge 1
-          cat "${BASE_PARTS[@]}" | base64 -di > "$R38"
-          xz -t "$R38"
-          tar -xJf "$R38" -C "$OUT"
+          test -d source/static
+          STATIC_FILES="$(find source/static -type f | wc -l | tr -d ' ')"
+          test "$STATIC_FILES" -ge 100
+          cp -a source/static "$OUT/static"
 
-          cp -a .r38-patch/. "$OUT/"
+          cat \
+            payload/.r38-delta/part-00 \
+            payload/.r38-delta/part-01 \
+            payload/.r38-delta/part-02 \
+            payload/.r38-delta/part-03-05 \
+            payload/.r38-delta/part-06-08 \
+            | base64 -d > "$BASE"
+          xz -t "$BASE"
+          tar -xJf "$BASE" -C "$OUT"
+
+          rm -rf "$OUT/static"
+          cp -a source/static "$OUT/static"
+
+          cp -a payload/.r38-patch/. "$OUT/"
           sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
 
-          : > "$R382"
-          for p in part-00 part-01 part-02 part-03 part-04 part-05 part-06; do
-            base64 -di ".r382-delta/$p" >> "$R382"
-          done
-          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$R382" | sha256sum -c -
-          xz -t "$R382"
-          tar -xJf "$R382" -C "$OUT"
+          cat \
+            payload/.r382-delta/part-00 \
+            payload/.r382-delta/part-01 \
+            payload/.r382-delta/part-02 \
+            payload/.r382-delta/part-03 \
+            payload/.r382-delta/part-04 \
+            payload/.r382-delta/part-05 \
+            payload/.r382-delta/part-06 \
+            | base64 -d > "$PATCH"
+          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$PATCH" | sha256sum -c -
+          xz -t "$PATCH"
+          tar -xJf "$PATCH" -C "$OUT"
+
+          printf 'V23.32-R38.2\n' > "$OUT/DEPLOYED-VERSION.txt"
+          printf 'source=staging-static+r38-delta+r38.1-patch+r38.2-delta\nr382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6\n' > "$OUT/R382-BUILD-PROOF.txt"
 
           test -f "$OUT/index.html"
+          test -f "$OUT/sw.js"
+          test -f "$OUT/r38-config.json"
+          test -f "$OUT/src/core/bootstrap.js"
+          test -f "$OUT/src/domains/ranked/ranked-service.js"
+          test -f "$OUT/src/domains/battle/balance-engine.js"
+          test -f "$OUT/src/fx/combat-animation-director.js"
+          test -f "$OUT/src/fx/item-fx-director.js"
           grep -q 'V23.32-R38.2' "$OUT/index.html"
           grep -q 'naruto-unison-v23-32-r38-2' "$OUT/sw.js"
           grep -q 'R38.2' "$OUT/src/core/bootstrap.js"
           grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
-          test -f "$OUT/src/fx/combat-animation-director.js"
-          test -f "$OUT/src/fx/item-fx-director.js"
+          grep -q 'sb_publishable_' "$OUT/r38-config.json"
           test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
+          test "$(find "$OUT/static" -type f | wc -l)" -eq "$STATIC_FILES"
           node --check "$OUT/src/core/bootstrap.js"
           node --check "$OUT/src/fx/animation-profile-registry.js"
           node --check "$OUT/src/fx/combat-animation-director.js"
           node --check "$OUT/src/fx/item-fx-director.js"
+          node --check "$OUT/src/domains/battle/mechanics-engine.js"
 
           FILES="$(find "$OUT" -type f | wc -l | tr -d ' ')"
           BYTES="$(du -sb "$OUT" | cut -f1)"
-          printf 'V23.32-R38.2\n' > "$OUT/DEPLOYED-VERSION.txt"
-          echo "base_parts=${#BASE_PARTS[@]}" >> "$GITHUB_OUTPUT"
+          FX="$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l | tr -d ' ')"
           echo "files=$FILES" >> "$GITHUB_OUTPUT"
           echo "bytes=$BYTES" >> "$GITHUB_OUTPUT"
-          printf 'R38 base parts: %s\nR38.2 files: %s\nR38.2 bytes: %s\n' "${#BASE_PARTS[@]}" "$FILES" "$BYTES"
+          echo "static_files=$STATIC_FILES" >> "$GITHUB_OUTPUT"
+          echo "fx=$FX" >> "$GITHUB_OUTPUT"
+          echo "R38.2 VALIDATED: files=$FILES bytes=$BYTES static=$STATIC_FILES fx=$FX"
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ${{ runner.temp }}/r382-site
-
-      - name: Deploy Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Record successful deployment
+      - name: Publish validated R38.2 site to main
+        if: steps.build.outcome == 'success'
+        id: publish
         shell: bash
         env:
-          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
-          BASE_PARTS: ${{ steps.validate.outputs.base_parts }}
-          FILES: ${{ steps.validate.outputs.files }}
-          BYTES: ${{ steps.validate.outputs.bytes }}
+          FILES: ${{ steps.build.outputs.files }}
+          BYTES: ${{ steps.build.outputs.bytes }}
+          STATIC_FILES: ${{ steps.build.outputs.static_files }}
+          FX: ${{ steps.build.outputs.fx }}
         run: |
           set -euo pipefail
+          cd publish
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name .git \
+            ! -name .github \
+            ! -name .r38-delta \
+            ! -name .r38-patch \
+            ! -name .r382-delta \
+            ! -name .r38-repaired \
+            -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/r382-site"/. .
           {
             echo 'V23.32-R38.2'
-            echo "source_commit=${GITHUB_SHA}"
-            echo "page_url=${PAGE_URL}"
-            echo "base_parts=${BASE_PARTS}"
-            echo "files=${FILES}"
-            echo "bytes=${BYTES}"
+            echo "files=$FILES"
+            echo "bytes=$BYTES"
+            echo "static_files=$STATIC_FILES"
+            echo "fx_families=$FX"
+            echo 'source=staging-static+r38-delta+r38.1-patch+r38.2-delta'
             echo 'r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6'
-            echo "deployed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "built_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } > R382-DEPLOY-VALIDATED.txt
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add R382-DEPLOY-VALIDATED.txt
-          if ! git diff --cached --quiet; then
-            git commit -m 'chore: record successful R38.2 Pages deployment [skip ci]'
+          git config user.name 'Naruto Unison R38.2 Publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git reset -- .r38-delta .r38-patch .r382-delta .r38-repaired 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'Main already matches validated R38.2.'
+          else
+            git commit -m 'Naruto Unison V23.32 R38.2 validated site [skip ci]'
             git push origin HEAD:main
           fi
+
+      - name: Record failed staging reconstruction
+        if: steps.build.outcome != 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd publish
+          git pull --ff-only origin main
+          {
+            echo 'R38.2 STAGING RECONSTRUCTION FAILED'
+            echo "source_commit=${GITHUB_SHA}"
+            echo 'strategy=staging-static+r38-delta+r38.1-patch+r38.2-delta'
+            echo 'r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6'
+            echo "failed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > R382-STAGING-STATUS.txt
+          git config user.name 'Naruto Unison R38.2 Publisher'
+          git config user.email 'actions@users.noreply.github.com'
+          git add R382-STAGING-STATUS.txt
+          git commit -m 'ci: R38.2 staging reconstruction failed [skip ci]' || true
+          git push origin HEAD:main || true
+          exit 1
