@@ -1,4 +1,4 @@
-name: Publish Naruto Unison R38.1 to main
+name: Publish Naruto Unison R38.2 to main
 
 on:
   push:
@@ -24,41 +24,68 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Reconstruct R38 base and apply R38.1 patch
+      - name: Reconstruct and validate R38.2 site
         shell: bash
         run: |
           set -euo pipefail
-          OUT="$RUNNER_TEMP/r381-site"
+          OUT="$RUNNER_TEMP/r382-site"
           mkdir -p "$OUT"
-          git show HEAD:.r38-delta/part-00 > "$RUNNER_TEMP/00"
-          git show HEAD:.r38-delta/part-01 > "$RUNNER_TEMP/01"
-          git show HEAD:.r38-delta/part-02 > "$RUNNER_TEMP/02"
-          git show HEAD:.r38-delta/part-03-05 > "$RUNNER_TEMP/03-05"
-          git show HEAD:.r38-delta/part-06-08 > "$RUNNER_TEMP/06-08"
-          cat "$RUNNER_TEMP/00" "$RUNNER_TEMP/01" "$RUNNER_TEMP/02" "$RUNNER_TEMP/03-05" "$RUNNER_TEMP/06-08" | base64 -d > "$RUNNER_TEMP/r38.tar.xz"
+
+          git show HEAD:.r38-delta/part-00 > "$RUNNER_TEMP/r38-00"
+          git show HEAD:.r38-delta/part-01 > "$RUNNER_TEMP/r38-01"
+          git show HEAD:.r38-delta/part-02 > "$RUNNER_TEMP/r38-02"
+          git show HEAD:.r38-delta/part-03-05 > "$RUNNER_TEMP/r38-03-05"
+          git show HEAD:.r38-delta/part-06-08 > "$RUNNER_TEMP/r38-06-08"
+          cat "$RUNNER_TEMP/r38-00" "$RUNNER_TEMP/r38-01" "$RUNNER_TEMP/r38-02" "$RUNNER_TEMP/r38-03-05" "$RUNNER_TEMP/r38-06-08" | base64 -d > "$RUNNER_TEMP/r38.tar.xz"
           tar -xJf "$RUNNER_TEMP/r38.tar.xz" -C "$OUT"
+
           cp -a .r38-patch/. "$OUT/"
           sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
-          grep -q 'V23.31-R38.1' "$OUT/index.html"
-          test -f "$OUT/src/domains/battle/balance-engine.js"
-          test -f "$OUT/assets/fx-r38/spiral.svg"
-          test "$(find "$OUT" -type f | wc -l)" -ge 100
 
-      - name: Commit complete R38.1 site to main
+          git show HEAD:.r382-delta/part-00 > "$RUNNER_TEMP/r382-00"
+          git show HEAD:.r382-delta/part-01 > "$RUNNER_TEMP/r382-01"
+          git show HEAD:.r382-delta/part-02 > "$RUNNER_TEMP/r382-02"
+          git show HEAD:.r382-delta/part-03 > "$RUNNER_TEMP/r382-03"
+          git show HEAD:.r382-delta/part-04 > "$RUNNER_TEMP/r382-04"
+          git show HEAD:.r382-delta/part-05 > "$RUNNER_TEMP/r382-05"
+          git show HEAD:.r382-delta/part-06 > "$RUNNER_TEMP/r382-06"
+          cat "$RUNNER_TEMP/r382-00" "$RUNNER_TEMP/r382-01" "$RUNNER_TEMP/r382-02" "$RUNNER_TEMP/r382-03" "$RUNNER_TEMP/r382-04" "$RUNNER_TEMP/r382-05" "$RUNNER_TEMP/r382-06" | base64 -d > "$RUNNER_TEMP/r382.tar.xz"
+          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$RUNNER_TEMP/r382.tar.xz" | sha256sum -c -
+          tar -xJf "$RUNNER_TEMP/r382.tar.xz" -C "$OUT"
+
+          grep -q 'V23.32-R38.2' "$OUT/index.html"
+          grep -q 'naruto-unison-v23-32-r38-2' "$OUT/sw.js"
+          grep -q 'R38.2' "$OUT/src/core/bootstrap.js"
+          grep -q 'sb_publishable_4SW2yJ1u14hwcwg_L2Tbrg_D1brVLPA' "$OUT/r38-config.json"
+          grep -q "'/ranked/turn'" "$OUT/src/domains/ranked/ranked-service.js"
+          grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
+          test -f "$OUT/src/domains/battle/balance-engine.js"
+          test -f "$OUT/src/fx/combat-animation-director.js"
+          test -f "$OUT/src/fx/item-fx-director.js"
+          test -f "$OUT/assets/fx-r382/spiral.svg"
+          test -f "$OUT/assets/fx-r382/impact.svg"
+          test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
+          test "$(find "$OUT" -type f | wc -l)" -ge 100
+          node --check "$OUT/src/core/bootstrap.js"
+          node --check "$OUT/src/fx/animation-profile-registry.js"
+          node --check "$OUT/src/fx/combat-animation-director.js"
+          node --check "$OUT/src/fx/item-fx-director.js"
+
+      - name: Commit complete R38.2 site to main
         shell: bash
         run: |
           set -euo pipefail
-          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name .r38-delta ! -name .r38-patch -exec rm -rf {} +
-          cp -a "$RUNNER_TEMP/r381-site"/. .
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name .r38-delta ! -name .r38-patch ! -name .r382-delta -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/r382-site"/. .
           git config user.name 'Naruto Unison R38 Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
-          git reset -- .r38-delta .r38-patch 2>/dev/null || true
+          git reset -- .r38-delta .r38-patch .r382-delta 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'No changes to publish.'
           else
-            git commit -m 'Naruto Unison V23.31 R38.1 online update'
+            git commit -m 'Naruto Unison V23.32 R38.2 online update'
             git push origin HEAD:main
           fi
