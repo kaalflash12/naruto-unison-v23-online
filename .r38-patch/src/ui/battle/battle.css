@@ -9,3 +9,7 @@
 .fighter--cast{animation:fxCast var(--motion-ms,.42s) ease}.fighter--dash,.fighter--lunge,.fighter--combo,.fighter--throw{animation:fxLunge var(--motion-ms,.42s) cubic-bezier(.2,.8,.2,1)}.fighter--blink{animation:fxBlink var(--motion-ms,.42s) ease}.fighter--slam{animation:fxSlam var(--motion-ms,.42s) ease}.fighter--focus,.fighter--charge,.fighter--summon,.fighter--control,.fighter--draw,.fighter--split{animation:fxFocus var(--motion-ms,.42s) ease}
 @keyframes fxLunge{0%{transform:translateX(0)}45%{transform:translateX(var(--lunge,18px)) scale(1.05)}100%{transform:translateX(0)}}@keyframes fxBlink{0%,100%{opacity:1;filter:none}40%{opacity:.15;filter:blur(3px)}55%{opacity:1;filter:brightness(1.6)}}@keyframes fxSlam{0%,100%{transform:translateY(0)}45%{transform:translateY(9px) scale(1.04)}}@keyframes fxFocus{0%,100%{filter:none;transform:scale(1)}50%{filter:brightness(1.35) drop-shadow(0 0 14px #8fd8ff);transform:scale(1.035)}}@keyframes fxCast{0%,100%{transform:scale(1)}50%{transform:scale(1.04);filter:brightness(1.25)}}
 @media(max-width:700px){.fighterCard{grid-template-columns:62px 1fr;min-height:78px}.fighterCard[data-side='ai']{grid-template-columns:1fr 62px}.fighterPortrait{width:62px;height:62px}.battleControls>[data-techniques] img{width:40px;height:40px}}
+
+/* R38.2 motion integrity */
+.fighterCard{transform-origin:center}.fighter--casting{z-index:4}.fighter--advance{z-index:5}.fighter--threatened{z-index:3}
+@media(max-width:700px){.fxAreaWave{width:92vw}.battleTargetPrompt{font-size:12px}}
