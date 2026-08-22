@@ -1,0 +1,3 @@
+V23.32-R38.2
+strategy=staging-static+r38-delta-independent+r38.1-patch+r38.2-delta-independent
+requested=2026-08-22T20:00:00-03:00
