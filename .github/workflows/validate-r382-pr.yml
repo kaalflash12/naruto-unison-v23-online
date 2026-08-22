@@ -1,0 +1,56 @@
+name: Validate R38.2 payload
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Reconstruct R38 repaired base and R38.2 delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/r382-site"
+          R38="$RUNNER_TEMP/r38.tar.xz"
+          R382="$RUNNER_TEMP/r382.tar.xz"
+          mkdir -p "$OUT"
+
+          mapfile -t BASE_PARTS < <(find .r38-repaired -maxdepth 1 -type f -name 'part-*' | sort -V)
+          echo "BASE_PART_COUNT=${#BASE_PARTS[@]}"
+          printf '%s\n' "${BASE_PARTS[@]}"
+          cat "${BASE_PARTS[@]}" | base64 -di > "$R38"
+          echo "R38_SHA256=$(sha256sum "$R38" | cut -d' ' -f1)"
+          echo "R38_BYTES=$(stat -c%s "$R38")"
+          xz -t "$R38"
+          tar -xJf "$R38" -C "$OUT"
+
+          cp -a .r38-patch/. "$OUT/"
+          sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
+          sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
+          sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
+
+          : > "$R382"
+          for p in part-00 part-01 part-02 part-03 part-04 part-05 part-06; do
+            base64 -di ".r382-delta/$p" >> "$R382"
+          done
+          echo "R382_SHA256=$(sha256sum "$R382" | cut -d' ' -f1)"
+          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$R382" | sha256sum -c -
+          xz -t "$R382"
+          tar -xJf "$R382" -C "$OUT"
+
+          grep -q 'V23.32-R38.2' "$OUT/index.html"
+          grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
+          test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
+          node --check "$OUT/src/core/bootstrap.js"
+          node --check "$OUT/src/fx/animation-profile-registry.js"
+          node --check "$OUT/src/fx/combat-animation-director.js"
+          node --check "$OUT/src/fx/item-fx-director.js"
+          echo "OUT_FILES=$(find "$OUT" -type f | wc -l)"
+          echo "OUT_BYTES=$(du -sb "$OUT" | cut -f1)"
