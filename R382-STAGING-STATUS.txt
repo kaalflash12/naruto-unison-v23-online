@@ -1,0 +1,5 @@
+R38.2 STAGING RECONSTRUCTION FAILED
+source_commit=eb9329570781f16a5105ab0b5ad6a939b6bfdb71
+strategy=staging-static+r38-delta+r38.1-patch+r38.2-delta
+r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6
+failed_at=2026-08-22T23:06:01Z
