@@ -1,0 +1,123 @@
+name: Diagnose Naruto Unison R38.2 staging reconstruction
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: ${{ contains(github.event.head_commit.message, '[DIAG-R382]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: staging
+          path: source
+          fetch-depth: 1
+      - uses: actions/checkout@v5
+        with:
+          ref: r382-publish-trigger
+          path: payload
+          fetch-depth: 1
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          path: publish
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Diagnose every reconstruction phase
+        shell: bash
+        run: |
+          set +e
+          OUT="$RUNNER_TEMP/r382-site"
+          BASE="$RUNNER_TEMP/r38-base.tar.xz"
+          PATCH="$RUNNER_TEMP/r382-patch.tar.xz"
+          REPORT="$RUNNER_TEMP/R382-DIAGNOSTIC.txt"
+          rm -rf "$OUT"; mkdir -p "$OUT"; : > "$REPORT"
+          echo 'V23.32-R38.2 DIAGNOSTIC' >> "$REPORT"
+          echo "source_commit=${GITHUB_SHA}" >> "$REPORT"
+
+          if test -d source/static; then
+            STATIC_FILES="$(find source/static -type f | wc -l | tr -d ' ')"
+            echo "staging_static=PASS files=$STATIC_FILES" >> "$REPORT"
+            cp -a source/static "$OUT/static"
+          else
+            echo 'staging_static=FAIL missing source/static' >> "$REPORT"
+            STATIC_FILES=0
+          fi
+
+          : > "$BASE"
+          BASE_DECODE=0
+          for p in part-00 part-01 part-02 part-03-05 part-06-08; do
+            base64 -di "payload/.r38-delta/$p" >> "$BASE" || BASE_DECODE=1
+          done
+          BASE_BYTES="$(wc -c < "$BASE" | tr -d ' ')"
+          BASE_SHA="$(sha256sum "$BASE" | cut -d' ' -f1)"
+          echo "r38_base_decode=$([ "$BASE_DECODE" -eq 0 ] && echo PASS || echo FAIL) bytes=$BASE_BYTES sha256=$BASE_SHA" >> "$REPORT"
+          xz -t "$BASE"; XZ=$?
+          echo "r38_base_xz=$([ "$XZ" -eq 0 ] && echo PASS || echo FAIL) rc=$XZ" >> "$REPORT"
+          if [ "$XZ" -eq 0 ]; then
+            tar -xJf "$BASE" -C "$OUT"; EXT=$?
+            echo "r38_base_extract=$([ "$EXT" -eq 0 ] && echo PASS || echo FAIL) rc=$EXT files=$(find "$OUT" -type f | wc -l | tr -d ' ')" >> "$REPORT"
+          else
+            EXT=1
+            echo 'r38_base_extract=SKIP' >> "$REPORT"
+          fi
+
+          if [ "$EXT" -eq 0 ]; then
+            rm -rf "$OUT/static"; cp -a source/static "$OUT/static"
+            cp -a payload/.r38-patch/. "$OUT/"; R381=$?
+            echo "r381_patch_copy=$([ "$R381" -eq 0 ] && echo PASS || echo FAIL) rc=$R381" >> "$REPORT"
+            if test -f "$OUT/index.html"; then sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"; fi
+            if test -f "$OUT/sw.js"; then sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"; fi
+            if test -f "$OUT/src/core/bootstrap.js"; then sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"; fi
+          else
+            echo 'r381_patch_copy=SKIP' >> "$REPORT"
+          fi
+
+          : > "$PATCH"
+          PDEC=0
+          for p in part-00 part-01 part-02 part-03 part-04 part-05 part-06; do
+            base64 -di "payload/.r382-delta/$p" >> "$PATCH" || PDEC=1
+          done
+          PSHA="$(sha256sum "$PATCH" | cut -d' ' -f1)"
+          PBYTES="$(wc -c < "$PATCH" | tr -d ' ')"
+          echo "r382_decode=$([ "$PDEC" -eq 0 ] && echo PASS || echo FAIL) bytes=$PBYTES sha256=$PSHA" >> "$REPORT"
+          if [ "$PSHA" = 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6' ]; then echo 'r382_sha=PASS' >> "$REPORT"; else echo 'r382_sha=FAIL expected=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6' >> "$REPORT"; fi
+          xz -t "$PATCH"; PXZ=$?
+          echo "r382_xz=$([ "$PXZ" -eq 0 ] && echo PASS || echo FAIL) rc=$PXZ" >> "$REPORT"
+          if [ "$EXT" -eq 0 ] && [ "$PXZ" -eq 0 ]; then
+            tar -xJf "$PATCH" -C "$OUT"; PEXT=$?
+            echo "r382_extract=$([ "$PEXT" -eq 0 ] && echo PASS || echo FAIL) rc=$PEXT" >> "$REPORT"
+          else
+            PEXT=1; echo 'r382_extract=SKIP' >> "$REPORT"
+          fi
+
+          for spec in \
+            'index|index.html|V23.32-R38.2' \
+            'sw|sw.js|naruto-unison-v23-32-r38-2' \
+            'bootstrap|src/core/bootstrap.js|R38.2' \
+            'ranked_submission|src/domains/ranked/ranked-service.js|submissionId' \
+            'config_key|r38-config.json|sb_publishable_'; do
+            NAME="${spec%%|*}"; REST="${spec#*|}"; FILE="${REST%%|*}"; PAT="${REST#*|}"
+            if test -f "$OUT/$FILE" && grep -q "$PAT" "$OUT/$FILE"; then echo "gate_${NAME}=PASS" >> "$REPORT"; else echo "gate_${NAME}=FAIL file=$FILE pattern=$PAT" >> "$REPORT"; fi
+          done
+          for f in src/domains/battle/balance-engine.js src/fx/combat-animation-director.js src/fx/item-fx-director.js; do
+            if test -f "$OUT/$f"; then echo "gate_file_$f=PASS" >> "$REPORT"; else echo "gate_file_$f=FAIL" >> "$REPORT"; fi
+          done
+          FX=0; if test -d "$OUT/assets/fx-r382"; then FX="$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l | tr -d ' ')"; fi
+          echo "gate_fx31=$([ "$FX" -eq 31 ] && echo PASS || echo FAIL) count=$FX" >> "$REPORT"
+          echo "final_files=$(find "$OUT" -type f | wc -l | tr -d ' ')" >> "$REPORT"
+          echo "final_bytes=$(du -sb "$OUT" | cut -f1)" >> "$REPORT"
+          cat "$REPORT"
+
+          cd publish
+          cp "$REPORT" R382-DIAGNOSTIC.txt
+          git config user.name 'Naruto Unison R38.2 Diagnostics'
+          git config user.email 'actions@users.noreply.github.com'
+          git add R382-DIAGNOSTIC.txt
+          git commit -m 'ci: record R38.2 staging diagnostics [skip ci]' || true
+          git push origin HEAD:main || true
