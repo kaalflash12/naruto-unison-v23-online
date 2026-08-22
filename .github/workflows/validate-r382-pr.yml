@@ -13,22 +13,88 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Reconstruct R38 repaired base and R38.2 delta
+      - name: Diagnose and reconstruct R38 base
         shell: bash
         run: |
-          set -euo pipefail
+          set -u -o pipefail
           OUT="$RUNNER_TEMP/r382-site"
           R38="$RUNNER_TEMP/r38.tar.xz"
           R382="$RUNNER_TEMP/r382.tar.xz"
+          rm -rf "$OUT"
           mkdir -p "$OUT"
 
           mapfile -t BASE_PARTS < <(find .r38-repaired -maxdepth 1 -type f -name 'part-*' | sort -V)
           echo "BASE_PART_COUNT=${#BASE_PARTS[@]}"
           printf '%s\n' "${BASE_PARTS[@]}"
-          cat "${BASE_PARTS[@]}" | base64 -di > "$R38"
-          echo "R38_SHA256=$(sha256sum "$R38" | cut -d' ' -f1)"
-          echo "R38_BYTES=$(stat -c%s "$R38")"
-          xz -t "$R38"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          parts=sorted(Path('.r38-repaired').glob('part-*'), key=lambda p:int(p.name.split('-')[1]))
+          alpha=set(b'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\r\n\t ')
+          for p in parts:
+              b=p.read_bytes(); clean=b''.join(b.split())
+              bad=[(i,x) for i,x in enumerate(b) if x not in alpha]
+              pads=[i for i,x in enumerate(clean) if x==61]
+              print(f"PART {p.name} bytes={len(b)} clean={len(clean)} mod4={len(clean)%4} padding={pads[-3:]} bad={bad[:5]}")
+          PY
+
+          VALID_PREFIX=""
+          for ((n=0; n<${#BASE_PARTS[@]}; n++)); do
+            CAND="$RUNNER_TEMP/r38-prefix-$n.tar.xz"
+            if cat "${BASE_PARTS[@]:0:n+1}" | base64 -di > "$CAND" 2>/dev/null && xz -t "$CAND" 2>/dev/null; then
+              echo "VALID_REPAIRED_PREFIX_END=$n bytes=$(stat -c%s "$CAND") sha256=$(sha256sum "$CAND" | cut -d' ' -f1)"
+              VALID_PREFIX="$n"
+              cp "$CAND" "$R38"
+            else
+              echo "INVALID_REPAIRED_PREFIX_END=$n"
+            fi
+          done
+
+          PERPART="$RUNNER_TEMP/r38-perpart.tar.xz"
+          : > "$PERPART"
+          PERPART_OK=1
+          for p in "${BASE_PARTS[@]}"; do
+            if ! base64 -di "$p" >> "$PERPART" 2>/dev/null; then
+              echo "PERPART_DECODE_FAIL=$p"
+              PERPART_OK=0
+              break
+            fi
+          done
+          if [ "$PERPART_OK" -eq 1 ] && xz -t "$PERPART" 2>/dev/null; then
+            echo "VALID_REPAIRED_PERPART bytes=$(stat -c%s "$PERPART") sha256=$(sha256sum "$PERPART" | cut -d' ' -f1)"
+            cp "$PERPART" "$R38"
+          else
+            echo "INVALID_REPAIRED_PERPART"
+          fi
+
+          OLD="$RUNNER_TEMP/r38-old-aggregate.tar.xz"
+          : > "$OLD"
+          OLD_OK=1
+          for p in part-00 part-01 part-02 part-03-05 part-06-08; do
+            if ! base64 -di ".r38-delta/$p" >> "$OLD" 2>/dev/null; then
+              echo "OLD_DECODE_FAIL=$p"
+              OLD_OK=0
+              break
+            fi
+          done
+          if [ "$OLD_OK" -eq 1 ] && xz -t "$OLD" 2>/dev/null; then
+            echo "VALID_OLD_AGGREGATE bytes=$(stat -c%s "$OLD") sha256=$(sha256sum "$OLD" | cut -d' ' -f1)"
+            cp "$OLD" "$R38"
+          else
+            echo "INVALID_OLD_AGGREGATE"
+          fi
+
+          if ! xz -t "$R38" 2>/dev/null; then
+            echo 'NO_VALID_R38_BASE_CANDIDATE'
+            exit 1
+          fi
+
+          echo "SELECTED_R38_BYTES=$(stat -c%s "$R38")"
+          echo "SELECTED_R38_SHA256=$(sha256sum "$R38" | cut -d' ' -f1)"
+          echo 'R38_TAR_HEAD_BEGIN'
+          tar -tJf "$R38" | head -100 || true
+          echo 'R38_TAR_HEAD_END'
           tar -xJf "$R38" -C "$OUT"
 
           cp -a .r38-patch/. "$OUT/"
@@ -45,6 +111,7 @@ jobs:
           xz -t "$R382"
           tar -xJf "$R382" -C "$OUT"
 
+          set -euo pipefail
           grep -q 'V23.32-R38.2' "$OUT/index.html"
           grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
           test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
