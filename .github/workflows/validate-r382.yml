@@ -1,0 +1,40 @@
+name: Validate Naruto Unison R38.2 payload
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Reconstruct and validate
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/r382-site"
+          mkdir -p "$OUT"
+          cat .r38-delta/part-00 .r38-delta/part-01 .r38-delta/part-02 .r38-delta/part-03-05 .r38-delta/part-06-08 | base64 -d > "$RUNNER_TEMP/r38.tar.xz"
+          tar -xJf "$RUNNER_TEMP/r38.tar.xz" -C "$OUT"
+          cp -a .r38-patch/. "$OUT/"
+          sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
+          sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
+          sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
+          cat .r382-delta/part-00 .r382-delta/part-01 .r382-delta/part-02 .r382-delta/part-03 .r382-delta/part-04 .r382-delta/part-05 .r382-delta/part-06 | base64 -d > "$RUNNER_TEMP/r382.tar.xz"
+          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$RUNNER_TEMP/r382.tar.xz" | sha256sum -c -
+          tar -xJf "$RUNNER_TEMP/r382.tar.xz" -C "$OUT"
+          grep -q 'V23.32-R38.2' "$OUT/index.html"
+          grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
+          test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
+          node --check "$OUT/src/core/bootstrap.js"
+          node --check "$OUT/src/fx/combat-animation-director.js"
+          node --check "$OUT/src/fx/item-fx-director.js"
+          echo "VALIDATED R38.2 $(find "$OUT" -type f | wc -l) files"
