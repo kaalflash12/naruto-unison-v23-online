@@ -16,7 +16,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
-      - name: Reconstruct and validate
+      - name: Recover, reconstruct and validate
         shell: bash
         run: |
           set -euo pipefail
@@ -26,40 +26,48 @@ jobs:
 
           python - <<'PY'
           from pathlib import Path
-          import base64,re,lzma
+          import base64,re,lzma,itertools
 
-          def decode_archive(paths,out_path,label):
-              chunks=[]
-              for p in paths:
-                  raw=Path(p).read_bytes()
-                  clean=re.sub(rb'[^A-Za-z0-9+/=]',b'',raw)
-                  print(label,p,'raw',len(raw),'clean',len(clean),'mod4',len(clean)%4,'pads',clean.count(b'='))
-                  chunks.append(clean)
-              def dec(s):
-                  s=s.rstrip(b'=')
-                  s+=b'='*((4-len(s)%4)%4)
-                  return base64.b64decode(s,validate=False)
+          paths=['.r38-delta/part-00','.r38-delta/part-01','.r38-delta/part-02','.r38-delta/part-03-05','.r38-delta/part-06-08']
+          s=b''.join(re.sub(rb'[^A-Za-z0-9+/=]',b'',Path(p).read_bytes()) for p in paths)
+          print('R38 base64 chars',len(s),'mod4',len(s)%4)
+          recovered=None
+          if len(s)%4==0:
+              try:
+                  data=base64.b64decode(s,validate=True); lzma.decompress(data); recovered=data
+                  print('R38 payload already valid')
+              except Exception as e: print('R38 existing decode invalid',repr(e))
+          elif len(s)%4==1:
+              prefix=s[:-1]
+              last=s[-1:]
+              alphabet=b'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
               candidates=[]
-              try: candidates.append(('concat',dec(b''.join(chunks))))
-              except Exception as e: print(label,'concat decode failed',repr(e))
-              try: candidates.append(('parts',b''.join(dec(c) for c in chunks)))
-              except Exception as e: print(label,'parts decode failed',repr(e))
-              for mode,data in candidates:
+              for a in alphabet:
+                for b in alphabet:
+                  for c in alphabet:
+                    q=last+bytes((a,b,c))
+                    try: tail=base64.b64decode(q,validate=True)
+                    except Exception: continue
+                    if tail.endswith(b'YZ'): candidates.append(bytes((a,b,c)))
+              print('XZ footer suffix candidates', [x.decode() for x in candidates])
+              for suf in candidates:
                   try:
+                      data=base64.b64decode(s+suf,validate=True)
                       lzma.decompress(data)
-                      Path(out_path).write_bytes(data)
-                      print(label,'decoded with',mode,'bytes',len(data))
-                      return
-                  except Exception as e:
-                      print(label,mode,'xz invalid',repr(e))
-              raise SystemExit(f'{label}: no valid decode strategy')
+                      recovered=data
+                      print('RECOVERED_R38_SUFFIX='+suf.decode())
+                      break
+                  except Exception: pass
+          if recovered is None: raise SystemExit('R38 payload could not be recovered')
+          Path('/tmp/r38.tar.xz').write_bytes(recovered)
 
-          decode_archive([
-            '.r38-delta/part-00','.r38-delta/part-01','.r38-delta/part-02','.r38-delta/part-03-05','.r38-delta/part-06-08'
-          ],'/tmp/r38.tar.xz','R38')
-          decode_archive([
-            '.r382-delta/part-00','.r382-delta/part-01','.r382-delta/part-02','.r382-delta/part-03','.r382-delta/part-04','.r382-delta/part-05','.r382-delta/part-06'
-          ],'/tmp/r382.tar.xz','R382')
+          p382=['.r382-delta/part-00','.r382-delta/part-01','.r382-delta/part-02','.r382-delta/part-03','.r382-delta/part-04','.r382-delta/part-05','.r382-delta/part-06']
+          s382=b''.join(re.sub(rb'[^A-Za-z0-9+/=]',b'',Path(p).read_bytes()) for p in p382)
+          print('R382 base64 chars',len(s382),'mod4',len(s382)%4)
+          data382=base64.b64decode(s382,validate=True)
+          lzma.decompress(data382)
+          Path('/tmp/r382.tar.xz').write_bytes(data382)
+          print('R382 payload valid bytes',len(data382))
           PY
 
           xz -t /tmp/r38.tar.xz
@@ -68,7 +76,6 @@ jobs:
           sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
-
           xz -t /tmp/r382.tar.xz
           tar -xJf /tmp/r382.tar.xz -C "$OUT"
 
