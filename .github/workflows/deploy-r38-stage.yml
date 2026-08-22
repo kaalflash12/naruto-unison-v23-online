@@ -56,16 +56,17 @@ jobs:
           test "$STATIC_FILES" -ge 100
           cp -a source/static "$OUT/static"
 
-          cat \
-            payload/.r38-delta/part-00 \
-            payload/.r38-delta/part-01 \
-            payload/.r38-delta/part-02 \
-            payload/.r38-delta/part-03-05 \
-            payload/.r38-delta/part-06-08 \
-            | base64 -d > "$BASE"
+          # IMPORTANT: os blocos R38 foram codificados individualmente. Decodificar
+          # cada bloco separadamente evita parar no padding '=' do primeiro bloco.
+          : > "$BASE"
+          for p in part-00 part-01 part-02 part-03-05 part-06-08; do
+            test -s "payload/.r38-delta/$p"
+            base64 -di "payload/.r38-delta/$p" >> "$BASE"
+          done
           xz -t "$BASE"
           tar -xJf "$BASE" -C "$OUT"
 
+          # A pasta static da staging é a fonte íntegra de imagens/assets legados.
           rm -rf "$OUT/static"
           cp -a source/static "$OUT/static"
 
@@ -74,21 +75,18 @@ jobs:
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
 
-          cat \
-            payload/.r382-delta/part-00 \
-            payload/.r382-delta/part-01 \
-            payload/.r382-delta/part-02 \
-            payload/.r382-delta/part-03 \
-            payload/.r382-delta/part-04 \
-            payload/.r382-delta/part-05 \
-            payload/.r382-delta/part-06 \
-            | base64 -d > "$PATCH"
+          # R38.2 também é reconstruída bloco a bloco; o SHA fecha o payload exato.
+          : > "$PATCH"
+          for p in part-00 part-01 part-02 part-03 part-04 part-05 part-06; do
+            test -s "payload/.r382-delta/$p"
+            base64 -di "payload/.r382-delta/$p" >> "$PATCH"
+          done
           echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$PATCH" | sha256sum -c -
           xz -t "$PATCH"
           tar -xJf "$PATCH" -C "$OUT"
 
           printf 'V23.32-R38.2\n' > "$OUT/DEPLOYED-VERSION.txt"
-          printf 'source=staging-static+r38-delta+r38.1-patch+r38.2-delta\nr382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6\n' > "$OUT/R382-BUILD-PROOF.txt"
+          printf 'source=staging-static+r38-delta-independent+r38.1-patch+r38.2-delta-independent\nr382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6\n' > "$OUT/R382-BUILD-PROOF.txt"
 
           test -f "$OUT/index.html"
           test -f "$OUT/sw.js"
@@ -122,7 +120,6 @@ jobs:
 
       - name: Publish validated R38.2 site to main
         if: steps.build.outcome == 'success'
-        id: publish
         shell: bash
         env:
           FILES: ${{ steps.build.outputs.files }}
@@ -139,6 +136,7 @@ jobs:
             ! -name .r38-patch \
             ! -name .r382-delta \
             ! -name .r38-repaired \
+            ! -name .r38-runtime-lite \
             -exec rm -rf {} +
           cp -a "$RUNNER_TEMP/r382-site"/. .
           {
@@ -147,14 +145,15 @@ jobs:
             echo "bytes=$BYTES"
             echo "static_files=$STATIC_FILES"
             echo "fx_families=$FX"
-            echo 'source=staging-static+r38-delta+r38.1-patch+r38.2-delta'
+            echo 'source=staging-static+r38-delta-independent+r38.1-patch+r38.2-delta-independent'
             echo 'r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6'
             echo "built_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } > R382-DEPLOY-VALIDATED.txt
+          rm -f R382-STAGING-STATUS.txt
           git config user.name 'Naruto Unison R38.2 Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
-          git reset -- .r38-delta .r38-patch .r382-delta .r38-repaired 2>/dev/null || true
+          git reset -- .r38-delta .r38-patch .r382-delta .r38-repaired .r38-runtime-lite 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'Main already matches validated R38.2.'
           else
@@ -172,7 +171,7 @@ jobs:
           {
             echo 'R38.2 STAGING RECONSTRUCTION FAILED'
             echo "source_commit=${GITHUB_SHA}"
-            echo 'strategy=staging-static+r38-delta+r38.1-patch+r38.2-delta'
+            echo 'strategy=staging-static+r38-delta-independent+r38.1-patch+r38.2-delta-independent'
             echo 'r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6'
             echo "failed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } > R382-STAGING-STATUS.txt
