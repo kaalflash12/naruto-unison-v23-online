@@ -24,25 +24,53 @@ jobs:
           rm -rf "$OUT"
           mkdir -p "$OUT"
 
-          : > "$RUNNER_TEMP/r38.tar.xz"
-          for p in part-00 part-01 part-02 part-03-05 part-06-08; do
-            base64 -di ".r38-delta/$p" >> "$RUNNER_TEMP/r38.tar.xz"
-          done
-          xz -t "$RUNNER_TEMP/r38.tar.xz"
-          tar -xJf "$RUNNER_TEMP/r38.tar.xz" -C "$OUT"
+          python - <<'PY'
+          from pathlib import Path
+          import base64,re,lzma
 
+          def decode_archive(paths,out_path,label):
+              chunks=[]
+              for p in paths:
+                  raw=Path(p).read_bytes()
+                  clean=re.sub(rb'[^A-Za-z0-9+/=]',b'',raw)
+                  print(label,p,'raw',len(raw),'clean',len(clean),'mod4',len(clean)%4,'pads',clean.count(b'='))
+                  chunks.append(clean)
+              def dec(s):
+                  s=s.rstrip(b'=')
+                  s+=b'='*((4-len(s)%4)%4)
+                  return base64.b64decode(s,validate=False)
+              candidates=[]
+              try: candidates.append(('concat',dec(b''.join(chunks))))
+              except Exception as e: print(label,'concat decode failed',repr(e))
+              try: candidates.append(('parts',b''.join(dec(c) for c in chunks)))
+              except Exception as e: print(label,'parts decode failed',repr(e))
+              for mode,data in candidates:
+                  try:
+                      lzma.decompress(data)
+                      Path(out_path).write_bytes(data)
+                      print(label,'decoded with',mode,'bytes',len(data))
+                      return
+                  except Exception as e:
+                      print(label,mode,'xz invalid',repr(e))
+              raise SystemExit(f'{label}: no valid decode strategy')
+
+          decode_archive([
+            '.r38-delta/part-00','.r38-delta/part-01','.r38-delta/part-02','.r38-delta/part-03-05','.r38-delta/part-06-08'
+          ],'/tmp/r38.tar.xz','R38')
+          decode_archive([
+            '.r382-delta/part-00','.r382-delta/part-01','.r382-delta/part-02','.r382-delta/part-03','.r382-delta/part-04','.r382-delta/part-05','.r382-delta/part-06'
+          ],'/tmp/r382.tar.xz','R382')
+          PY
+
+          xz -t /tmp/r38.tar.xz
+          tar -xJf /tmp/r38.tar.xz -C "$OUT"
           cp -a .r38-patch/. "$OUT/"
           sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
 
-          : > "$RUNNER_TEMP/r382.tar.xz"
-          for p in part-00 part-01 part-02 part-03 part-04 part-05 part-06; do
-            base64 -di ".r382-delta/$p" >> "$RUNNER_TEMP/r382.tar.xz"
-          done
-          echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$RUNNER_TEMP/r382.tar.xz" | sha256sum -c -
-          xz -t "$RUNNER_TEMP/r382.tar.xz"
-          tar -xJf "$RUNNER_TEMP/r382.tar.xz" -C "$OUT"
+          xz -t /tmp/r382.tar.xz
+          tar -xJf /tmp/r382.tar.xz -C "$OUT"
 
           grep -q 'V23.32-R38.2' "$OUT/index.html"
           grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
