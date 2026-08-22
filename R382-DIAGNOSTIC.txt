@@ -1,0 +1,22 @@
+V23.32-R38.2 DIAGNOSTIC
+source_commit=3ab14cbe18ba0bdc18944804d37d83009adf5118
+staging_static=PASS files=2351
+r38_base_decode=FAIL bytes=66081 sha256=13bbcdc2b4a1cce677bda3ed46fc434d783eabc010e9c6b62f633a12e95d5e80
+r38_base_xz=FAIL rc=1
+r38_base_extract=SKIP
+r381_patch_copy=SKIP
+r382_decode=PASS bytes=29640 sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6
+r382_sha=PASS
+r382_xz=PASS rc=0
+r382_extract=SKIP
+gate_index=FAIL file=index.html pattern=V23.32-R38.2
+gate_sw=FAIL file=sw.js pattern=naruto-unison-v23-32-r38-2
+gate_bootstrap=FAIL file=src/core/bootstrap.js pattern=R38.2
+gate_ranked_submission=FAIL file=src/domains/ranked/ranked-service.js pattern=submissionId
+gate_config_key=FAIL file=r38-config.json pattern=sb_publishable_
+gate_file_src/domains/battle/balance-engine.js=FAIL
+gate_file_src/fx/combat-animation-director.js=FAIL
+gate_file_src/fx/item-fx-director.js=FAIL
+gate_fx31=FAIL count=0
+final_files=2351
+final_bytes=73825367
