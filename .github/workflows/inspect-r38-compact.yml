@@ -1,0 +1,60 @@
+name: Inspect legacy R38 compact runtime
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[INSPECT-R38-COMPACT]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: r38-direct-stage
+          path: source
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          path: publish
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Decode and inspect
+        shell: bash
+        run: |
+          set +e
+          OUT="$RUNNER_TEMP/compact.tar.xz"
+          B64="$RUNNER_TEMP/compact.b64"
+          mapfile -t P < <(find source/r38-final-compact -type f -name 'chunk-*.txt' | sort -V)
+          cat "${P[@]}" | tr -cd 'A-Za-z0-9+/=' > "$B64"
+          base64 -d "$B64" > "$OUT" 2>"$RUNNER_TEMP/b64.err"
+          B64RC=$?
+          xz -t "$OUT" 2>"$RUNNER_TEMP/xz.err"; XZRC=$?
+          tar -tJf "$OUT" > "$RUNNER_TEMP/list.txt" 2>"$RUNNER_TEMP/tar.err"; TARRC=$?
+          {
+            echo 'R38 LEGACY COMPACT DIAGNOSTIC'
+            echo "parts=${#P[@]}"
+            echo "b64_chars=$(wc -c < "$B64")"
+            echo "decoded_bytes=$(wc -c < "$OUT")"
+            echo "sha256=$(sha256sum "$OUT"|cut -d' ' -f1)"
+            echo "base64_rc=$B64RC"
+            echo "xz_rc=$XZRC"
+            echo "tar_rc=$TARRC"
+            echo "entries=$(wc -l < "$RUNNER_TEMP/list.txt")"
+            echo '--- errors ---'
+            cat "$RUNNER_TEMP/b64.err" "$RUNNER_TEMP/xz.err" "$RUNNER_TEMP/tar.err"
+            echo '--- first entries ---'
+            head -80 "$RUNNER_TEMP/list.txt"
+            echo '--- required ---'
+            for p in src/core/bootstrap.js src/data/fallback/technique.json src/domains/ranked/ranked-service.js; do grep -E "(^|\\./)$p$" "$RUNNER_TEMP/list.txt" >/dev/null && echo "$p=YES" || echo "$p=NO"; done
+          } > publish/R38-COMPACT-DIAGNOSTIC.txt
+          cd publish
+          git config user.name 'Naruto Unison Compact Inspector'
+          git config user.email 'actions@users.noreply.github.com'
+          git add R38-COMPACT-DIAGNOSTIC.txt
+          git commit -m 'ci: record R38 compact diagnostic [skip ci]' || true
+          git push origin HEAD:main || true
