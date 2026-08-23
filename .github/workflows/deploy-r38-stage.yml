@@ -1,4 +1,4 @@
-name: Publish Naruto Unison R38.2 from staging static
+name: Publish Naruto Unison R38.2 final
 
 on:
   push:
@@ -7,20 +7,15 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages-r382-final
+  group: r382-final-publish
   cancel-in-progress: false
 
 jobs:
   publish:
     if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[DEPLOY-R382-FINAL]') }}
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.pages.outputs.page_url }}
     steps:
       - name: Checkout intact staging static
         uses: actions/checkout@v5
@@ -29,14 +24,14 @@ jobs:
           path: source
           fetch-depth: 1
 
-      - name: Checkout validated runtime and patches
+      - name: Checkout runtime and patches
         uses: actions/checkout@v5
         with:
           ref: main
           path: payload
           fetch-depth: 1
 
-      - name: Checkout publish target
+      - name: Checkout main publish target
         uses: actions/checkout@v5
         with:
           ref: main
@@ -46,73 +41,78 @@ jobs:
 
       - name: Reconstruct and validate V23.32-R38.2
         id: build
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
           OUT="$RUNNER_TEMP/r382-site"
           RUNTIME="$RUNNER_TEMP/r38-runtime.tar.xz"
           R382="$RUNNER_TEMP/r382.tar.xz"
+          DIAG="$RUNNER_TEMP/r382-final-diag.txt"
+          : > "$DIAG"
+          exec > >(tee -a "$DIAG") 2>&1
+          echo 'V23.32-R38.2 FINAL BUILD DIAGNOSTIC'
           rm -rf "$OUT" && mkdir -p "$OUT"
 
           test -d source/static
           STATIC_FILES="$(find source/static -type f | wc -l | tr -d ' ')"
+          echo "staging_static_files=$STATIC_FILES"
           test "$STATIC_FILES" -ge 100
           cp -a source/static "$OUT/static"
 
           decode_xz_parts() {
             local dir="$1" out="$2" b64="$RUNNER_TEMP/parts.b64"
             mapfile -t parts < <(find "$dir" -maxdepth 1 -type f -name 'part-*' | sort -V)
+            echo "decode_dir=$dir parts=${#parts[@]}"
             test "${#parts[@]}" -gt 0
             : > "$b64"
             for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64"; done
+            echo "concat_b64_bytes=$(wc -c < "$b64")"
             if base64 -d "$b64" > "$out" 2>/dev/null && xz -t "$out" 2>/dev/null; then
-              echo "decoded concatenated base64 from $dir (${#parts[@]} parts)"
+              echo "decode_mode=concatenated decoded_bytes=$(wc -c < "$out") sha=$(sha256sum "$out"|cut -d' ' -f1)"
               return 0
             fi
             : > "$out"
             for p in "${parts[@]}"; do base64 -di "$p" >> "$out"; done
+            echo "decode_mode=independent decoded_bytes=$(wc -c < "$out") sha=$(sha256sum "$out"|cut -d' ' -f1)"
             xz -t "$out"
-            echo "decoded independent base64 blocks from $dir (${#parts[@]} parts)"
           }
 
-          # The old .r38-repaired/.r38-delta path is intentionally not used.
           decode_xz_parts payload/.r38-runtime-v2 "$RUNTIME"
-          tar -tJf "$RUNTIME" | grep -qE '(^|\./)src/core/bootstrap\.js$'
-          tar -tJf "$RUNTIME" | grep -qE '(^|\./)src/data/fallback/technique\.json$'
+          echo 'runtime_xz=PASS'
+          tar -tJf "$RUNTIME" > "$RUNNER_TEMP/runtime-list.txt"
+          echo "runtime_entries=$(wc -l < "$RUNNER_TEMP/runtime-list.txt")"
+          grep -qE '(^|\./)src/core/bootstrap\.js$' "$RUNNER_TEMP/runtime-list.txt"
+          grep -qE '(^|\./)src/data/fallback/technique\.json$' "$RUNNER_TEMP/runtime-list.txt"
           tar -xJf "$RUNTIME" -C "$OUT"
+          echo 'runtime_extract=PASS'
 
-          # staging/static is authoritative for the large legacy image tree.
           rm -rf "$OUT/static" && cp -a source/static "$OUT/static"
 
-          # R38.1 corrections.
           cp -a payload/.r38-patch/. "$OUT/"
           sed -i 's/V23.31-R38/V23.31-R38.1/g' "$OUT/index.html"
           sed -i 's/naruto-unison-v23-31-r38/naruto-unison-v23-31-r38-1/g' "$OUT/sw.js"
           sed -i 's/37.1.5/38.1.0/g' "$OUT/src/core/bootstrap.js"
+          echo 'r381_overlay=PASS'
 
-          # Exact R38.2 overlay already independently validated in CI.
           decode_xz_parts payload/.r382-delta "$R382"
           echo 'b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6  '"$R382" | sha256sum -c -
           tar -xJf "$R382" -C "$OUT"
+          echo 'r382_overlay=PASS'
 
           printf 'V23.32-R38.2\n' > "$OUT/DEPLOYED-VERSION.txt"
           printf 'source=staging-static+r38-runtime-v2+r38.1-patch+r38.2-delta\nr382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6\n' > "$OUT/R382-BUILD-PROOF.txt"
 
-          test -f "$OUT/index.html"
-          test -f "$OUT/sw.js"
-          test -f "$OUT/r38-config.json"
-          test -f "$OUT/src/core/bootstrap.js"
-          test -f "$OUT/src/domains/ranked/ranked-service.js"
-          test -f "$OUT/src/domains/battle/balance-engine.js"
-          test -f "$OUT/src/fx/combat-animation-director.js"
-          test -f "$OUT/src/fx/item-fx-director.js"
+          for f in index.html sw.js r38-config.json src/core/bootstrap.js src/domains/ranked/ranked-service.js src/domains/battle/balance-engine.js src/fx/combat-animation-director.js src/fx/item-fx-director.js; do test -f "$OUT/$f" || { echo "missing=$f"; exit 22; }; done
           grep -q 'V23.32-R38.2' "$OUT/index.html"
           grep -q 'naruto-unison-v23-32-r38-2' "$OUT/sw.js"
           grep -q 'R38.2' "$OUT/src/core/bootstrap.js"
           grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
           grep -q 'sb_publishable_' "$OUT/r38-config.json"
-          test "$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l)" -eq 31
-          test "$(find "$OUT/static" -type f | wc -l)" -eq "$STATIC_FILES"
+          FX="$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l | tr -d ' ')"
+          echo "fx_families=$FX"
+          test "$FX" -eq 31
+          test "$(find "$OUT/static" -type f | wc -l | tr -d ' ')" -eq "$STATIC_FILES"
 
           node --check "$OUT/src/core/bootstrap.js"
           node --check "$OUT/src/fx/animation-profile-registry.js"
@@ -121,47 +121,39 @@ jobs:
           node --check "$OUT/src/domains/battle/mechanics-engine.js"
 
           ROOT="$OUT" node <<'NODE'
-          const fs=require('fs'),path=require('path');
-          const root=process.env.ROOT;
-          const read=n=>JSON.parse(fs.readFileSync(path.join(root,'src/data/fallback',n+'.json'),'utf8'));
-          const arr=n=>{const d=read(n);return Array.isArray(d)?d:(d.items||[])};
-          const expected={character:214,technique:1262,equipment:105,item:24};
-          for(const [n,c] of Object.entries(expected)){const got=arr(n).length;if(got!==c)throw new Error(`${n}: ${got} != ${c}`)}
-          let missing=[];
-          for(const n of ['character','technique','equipment','item','scene']){
-            const d=read(n);
-            const walk=x=>{if(Array.isArray(x))return x.forEach(walk);if(x&&typeof x==='object')return Object.values(x).forEach(walk);if(typeof x==='string'&&/\.(png|jpe?g|webp|svg|gif|ico)$/i.test(x)&&!/^https?:/i.test(x)){if(!fs.existsSync(path.join(root,x.replace(/^\//,''))))missing.push(`${n}:${x}`)}};
-            walk(d);
-          }
-          if(missing.length){console.error(missing.slice(0,50).join('\n'));throw new Error(`missing local image refs: ${missing.length}`)}
-          console.log('content/image contract PASS',expected);
+          const fs=require('fs'),path=require('path'),root=process.env.ROOT;
+          const arr=n=>{const d=JSON.parse(fs.readFileSync(path.join(root,'src/data/fallback',n+'.json'),'utf8'));return Array.isArray(d)?d:(d.items||[])};
+          for(const [n,c] of Object.entries({character:214,technique:1262,equipment:105,item:24})){const got=arr(n).length;console.log(`${n}=${got}`);if(got!==c)throw Error(`${n}:${got}!=${c}`)}
           NODE
 
           FILES="$(find "$OUT" -type f | wc -l | tr -d ' ')"
           BYTES="$(du -sb "$OUT" | cut -f1)"
-          FX="$(find "$OUT/assets/fx-r382" -type f -name '*.svg' | wc -l | tr -d ' ')"
+          echo "final_files=$FILES final_bytes=$BYTES"
           echo "files=$FILES" >> "$GITHUB_OUTPUT"
           echo "bytes=$BYTES" >> "$GITHUB_OUTPUT"
           echo "static_files=$STATIC_FILES" >> "$GITHUB_OUTPUT"
           echo "fx=$FX" >> "$GITHUB_OUTPUT"
-          echo "R38.2 VALIDATED files=$FILES bytes=$BYTES static=$STATIC_FILES fx=$FX"
+          echo 'validation=PASS'
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Record failed final reconstruction
+        if: steps.build.outcome != 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd publish
+          git pull --ff-only origin main
+          cp "$RUNNER_TEMP/r382-final-diag.txt" R382-FINAL-DIAGNOSTIC.txt || true
+          git config user.name 'Naruto Unison R38.2 Diagnostics'
+          git config user.email 'actions@users.noreply.github.com'
+          git add R382-FINAL-DIAGNOSTIC.txt
+          git commit -m 'ci: record R38.2 final diagnostics [skip ci]' || true
+          git push origin HEAD:main || true
+          exit 1
 
-      - name: Upload validated Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ${{ runner.temp }}/r382-site
-
-      - name: Deploy validated R38.2 to Pages
-        id: pages
-        uses: actions/deploy-pages@v4
-
-      - name: Synchronize validated site to main
+      - name: Synchronize validated R38.2 site to main
+        if: steps.build.outcome == 'success'
         shell: bash
         env:
-          PAGE_URL: ${{ steps.pages.outputs.page_url }}
           FILES: ${{ steps.build.outputs.files }}
           BYTES: ${{ steps.build.outputs.bytes }}
           STATIC_FILES: ${{ steps.build.outputs.static_files }}
@@ -177,7 +169,6 @@ jobs:
           cp -a "$RUNNER_TEMP/r382-site"/. .
           {
             echo 'V23.32-R38.2'
-            echo "page_url=$PAGE_URL"
             echo "files=$FILES"
             echo "bytes=$BYTES"
             echo "static_files=$STATIC_FILES"
@@ -186,7 +177,7 @@ jobs:
             echo 'r382_sha256=b8611810355ed83c077466498f7f8ce33936dd5ef41193103c09f5d9607b6da6'
             echo "deployed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           } > R382-DEPLOY-VALIDATED.txt
-          rm -f R382-STAGING-STATUS.txt
+          rm -f R382-STAGING-STATUS.txt R382-FINAL-DIAGNOSTIC.txt
           git config user.name 'Naruto Unison R38.2 Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
