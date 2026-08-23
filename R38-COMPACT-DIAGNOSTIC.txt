@@ -1,0 +1,79 @@
+R38 LEGACY COMPACT DIAGNOSTIC
+parts=11
+b64_chars=44000
+decoded_bytes=33000
+sha256=b18a34c2c79b3ffc444d956f77a1d1e971147187f16bc4df1e8cc95251686b9d
+base64_rc=0
+xz_rc=1
+tar_rc=2
+entries=60
+--- errors ---
+xz: /home/runner/work/_temp/compact.tar.xz: Unexpected end of input
+xz: (stdin): Unexpected end of input
+tar: Unexpected EOF in archive
+tar: Error is not recoverable: exiting now
+--- first entries ---
+./
+./src/
+./src/core/
+./src/core/clock.js
+./src/core/bootstrap.js
+./src/core/store.js
+./src/core/id.js
+./src/core/router.js
+./src/core/errors.js
+./src/core/event-bus.js
+./src/core/feature-flags.js
+./src/core/api-client.js
+./src/ui/
+./src/ui/components/
+./src/ui/components/quest-ui.js
+./src/ui/components/story-ui.js
+./src/ui/components/safe-image.js
+./src/ui/components/minigame-adapter.js
+./src/ui/app-shell.css
+./src/ui/pages/
+./src/ui/pages/simple-pages.js
+./src/ui/pages/mastery-page.js
+./src/ui/pages/team-page.js
+./src/ui/pages/missions-page.js
+./src/ui/pages/tasks-page.js
+./src/ui/pages/inventory-page.js
+./src/ui/pages/online-page.js
+./src/ui/pages/admin-page.js
+./src/ui/pages/arsenal-page.js
+./src/ui/pages/profile-page.js
+./src/ui/pages/page-registry.js
+./src/ui/pages/home-page.js
+./src/ui/pages/shop-page.js
+./src/ui/pages/encyclopedia-page.js
+./src/ui/pages/story-page.js
+./src/ui/pages/events-page.js
+./src/ui/tutorial/
+./src/ui/tutorial/tutorial-overlay.js
+./src/ui/auth/
+./src/ui/auth/auth-overlay.js
+./src/ui/fix5.css
+./src/ui/battle/
+./src/ui/battle/raid-battle-ui.js
+./src/ui/battle/battle.css
+./src/ui/battle/battle-ui.js
+./src/domains/
+./src/domains/events/
+./src/domains/events/raid-service.js
+./src/domains/events/event-service.js
+./src/domains/profile/
+./src/domains/profile/profile-service.js
+./src/domains/ai/
+./src/domains/ai/boss-ai.js
+./src/domains/ai/combat-ai.js
+./src/domains/story/
+./src/domains/story/story-engine.js
+./src/domains/tasks/
+./src/domains/tasks/task-service.js
+./src/domains/ranked/
+./src/domains/ranked/ranked-service.js
+--- required ---
+src/core/bootstrap.js=YES
+src/data/fallback/technique.json=NO
+src/domains/ranked/ranked-service.js=YES
