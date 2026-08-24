@@ -9,3 +9,4 @@ mobile_turn_dock=PASS
 online_responsive=PASS
 profile_responsive=PASS
 mastery_inside_jutsus=PASS
+admin_desktop_mobile=PASS
