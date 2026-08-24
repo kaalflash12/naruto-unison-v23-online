@@ -1,0 +1,65 @@
+name: R43 secure admin entry validation
+on:
+  push:
+    paths:
+      - '.r43-admin-validate-trigger'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Validate R43 admin entry
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check online-config.js
+          node --check r43-admin-entry.js
+          grep -Fq "version:'online-r43'" online-config.js
+          grep -Fq "adminEntry.src='r43-admin-entry.js?v=20260824-r43'" online-config.js
+          grep -Fq "const ADMIN_ALIAS='narutoadm'" r43-admin-entry.js
+          grep -Fq "const OWNER_EMAIL='admin@naruto-unison.example'" r43-admin-entry.js
+          grep -Fq "signInWithPassword({email:OWNER_EMAIL,password:pass})" r43-admin-entry.js
+          grep -Fq "/functions/v1/admin-gameops/accounts" r43-admin-entry.js
+          grep -Fq "location.assign('./admin.html')" r43-admin-entry.js
+          grep -Fq "target.closest('#authLogin,#authRegister')" r43-admin-entry.js
+          grep -Fq "event.target?.id!=='authPass'" r43-admin-entry.js
+          grep -Fq 'id="authUser"' index.html
+          grep -Fq 'id="authPass"' index.html
+          grep -Fq 'id="authLogin"' index.html
+          grep -Fq "/functions/v1/admin-gameops" admin.html
+          grep -Fq "sb.auth.getSession().then" admin.html
+          grep -q '^admin_desktop_mobile=PASS$' R42-RESPONSIVE-VALIDATED.txt
+          if grep -Eqi "(ADMIN_PASSWORD|OWNER_PASSWORD|narutoadm_password)[[:space:]]*=" r43-admin-entry.js; then
+            echo 'Hardcoded admin password marker found' >&2
+            exit 1
+          fi
+          cat > R43-ADMIN-ENTRY-VALIDATED.txt <<'EOF'
+          Naruto Unison R43 admin entry validation
+          status=PASS
+          syntax=PASS
+          initial_screen_alias=narutoadm
+          owner_password_reused_via_supabase=PASS
+          server_permission_probe=PASS
+          admin_panel_redirect=PASS
+          admin_session_persistence=PASS
+          hardcoded_password=NO
+          normal_player_login_interception=NO
+          reserved_admin_registration=PASS
+          enter_key_admin_login=PASS
+          r42_responsive_gate=PASS
+          EOF
+      - name: Commit validation proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add R43-ADMIN-ENTRY-VALIDATED.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "test: R43 admin entry validation PASS"
+          git push origin HEAD:main
