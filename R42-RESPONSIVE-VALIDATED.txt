@@ -1,0 +1,11 @@
+R42 RESPONSIVE VALIDATION
+syntax=PASS
+single_battle_controller=PASS
+desktop_layout=PASS
+mobile_layout=PASS
+desktop_native_wheel=PASS
+mobile_battle_scroller=PASS
+mobile_turn_dock=PASS
+online_responsive=PASS
+profile_responsive=PASS
+mastery_inside_jutsus=PASS
