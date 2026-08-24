@@ -1,3 +1,12 @@
-/home/runner/work/_temp/006de104-95be-4cee-af88-8b179eee0c4b.sh: line 11: dir: unbound variable
-decode_dir=payload/.r38-repaired parts=20
-base64: invalid input
+decode_dir=payload/.r38-repaired parts=18 limit=18
+decoded_bytes=241773
+xz: /home/runner/work/_temp/base.tar.xz: Compressed data is corrupt
+xz: (stdin): Compressed data is corrupt
+tar: Unexpected EOF in archive
+tar: Error is not recoverable: exiting now
+archive_entries=139 sha=458480560933fdff7e5783ad3c45522f2ecc2050936a9e1cdb6337cb2f81e915
+chosen_runtime=.r38-repaired[00-17]
+xz: (stdin): Compressed data is corrupt
+tar: Unexpected EOF in archive
+tar: Unexpected EOF in archive
+tar: Error is not recoverable: exiting now
