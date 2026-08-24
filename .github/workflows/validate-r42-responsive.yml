@@ -8,6 +8,7 @@ on:
       - 'r39-live-hotfix.js'
       - 'r40-desktop-overhaul.js'
       - 'online-config.js'
+      - 'admin.html'
       - '.github/workflows/validate-r42-responsive.yml'
 permissions:
   contents: write
@@ -22,6 +23,14 @@ jobs:
           node --check r39-live-hotfix.js
           node --check r40-desktop-overhaul.js
           node --check online-config.js
+          python - <<'PY'
+          import re
+          s=open('admin.html',encoding='utf-8').read()
+          blocks=[x for x in re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',s,re.S|re.I) if x.strip()]
+          assert blocks, 'admin inline script missing'
+          open('/tmp/admin-inline.js','w',encoding='utf-8').write(blocks[-1])
+          PY
+          node --check /tmp/admin-inline.js
       - name: Single battle controller
         shell: bash
         run: |
@@ -41,6 +50,14 @@ jobs:
           grep -q '#onlinePage .onlinePanel' r42-responsive-fix.css
           grep -q '#profilePage' r42-responsive-fix.css
           grep -q '#jutsuHubTabs' r42-responsive-fix.css
+      - name: Admin responsive shell
+        shell: bash
+        run: |
+          grep -q '@media(max-width:640px)' admin.html
+          grep -q 'id="metricAccounts"' admin.html
+          grep -q 'id="metricSeasons"' admin.html
+          grep -q 'id="metricRewards"' admin.html
+          grep -q 'admin-gameops' admin.html
       - name: R42 loaded last and mastery retained in Jutsus
         shell: bash
         run: |
@@ -63,6 +80,7 @@ jobs:
           online_responsive=PASS
           profile_responsive=PASS
           mastery_inside_jutsus=PASS
+          admin_desktop_mobile=PASS
           EOF
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
