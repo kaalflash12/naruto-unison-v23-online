@@ -1,0 +1,7 @@
+Naruto Unison R41 assets validation
+status=PASS
+items=24
+equipment=105
+total=129
+format=svg
+source=v23-data.js + canonical item ids
