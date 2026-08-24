@@ -1,6 +1,5 @@
 NARUTO UNISON FINAL BUILD DIAGNOSTIC
 staging_static_files=2351
-/home/runner/work/_temp/85d6e085-e44f-4d03-8d86-3f664e3fcec0.sh: line 17: dir: unbound variable
 decode_dir=payload/.r382-runtime-final parts=1
 concat_b64_bytes=20013
-base64: invalid input
+decode_failure=no valid XZ candidate
