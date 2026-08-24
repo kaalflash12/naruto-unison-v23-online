@@ -1,0 +1,8 @@
+WINDOWS INSTALLER VALIDATION: PASS
+validated_at=2026-08-24T16:03:08Z
+runner=windows-latest
+powershell_parser=PASS
+game_http=200
+admin_http=200
+recovery_http=200
+public_revision_labels=clean
