@@ -1,1 +1,2 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',hosting:'github-pages',database:'supabase-postgres',version:'r33-unison'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',hosting:'github-pages',database:'supabase-postgres',version:'r38-stage-mobile-battle-guard'};
+(()=>{const s=document.createElement('script');s.src='battle-mobile-guard.js?v=20260823-2117';s.async=false;document.head.appendChild(s)})();
