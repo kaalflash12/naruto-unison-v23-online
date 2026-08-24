@@ -1,0 +1,73 @@
+name: R41 final runtime validation
+on:
+  push:
+    paths:
+      - '.r41-final-validate-trigger'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Validate R41 runtime and assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check online-config.js
+          node --check r40-desktop-overhaul.js
+          node --check r40-battle-guard.js
+          node --check r39-live-hotfix.js
+          test "$(find assets/items -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 24
+          test "$(find assets/equipment -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 105
+          test "$(find assets/items assets/equipment -type f -name '*.svg' | wc -l)" -eq 129
+          grep -q "version:'online-r41'" online-config.js
+          grep -Fq 'assets/items/${id}.svg' r40-desktop-overhaul.js
+          grep -Fq 'assets/equipment/${id}.svg' r40-desktop-overhaul.js
+          ! grep -Fq 'assets/items/${id}.webp' r40-desktop-overhaul.js
+          ! grep -Fq 'assets/equipment/${id}.webp' r40-desktop-overhaul.js
+          ! grep -Fq "battle-mobile-guard.js?v=" online-config.js
+          ! grep -Fq "desktop-overhaul.js?v=" online-config.js
+          grep -Fq "r40-battle-guard.js?v=20260824-r41" online-config.js
+          grep -Fq "r40-desktop-overhaul.js?v=20260824-r41" online-config.js
+          grep -q '^status=PASS$' R40-STABILITY-VALIDATED.txt
+          grep -q '^status=PASS$' R41-ASSETS-VALIDATED.txt
+          node <<'NODE'
+          const fs=require('fs');
+          const dirs=['assets/items','assets/equipment'];
+          let count=0;
+          for(const d of dirs){
+            for(const f of fs.readdirSync(d).filter(x=>x.endsWith('.svg'))){
+              const s=fs.readFileSync(`${d}/${f}`,'utf8');
+              if(!/^<\?xml/.test(s)||!s.includes('<svg')||!s.includes('</svg>')||s.length<900) throw new Error(`SVG inválido: ${d}/${f}`);
+              count++;
+            }
+          }
+          if(count!==129) throw new Error(`total=${count}`);
+          NODE
+          cat > R41-FINAL-VALIDATED.txt <<EOF
+          Naruto Unison R41 final validation
+          status=PASS
+          runtime_syntax=PASS
+          stability_gate=PASS
+          item_assets=24
+          equipment_assets=105
+          total_assets=129
+          asset_paths=PASS
+          old_asset_paths_removed=PASS
+          old_global_observer_loaders_removed=PASS
+          r41_cache_bust=PASS
+          EOF
+      - name: Commit validation proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add R41-FINAL-VALIDATED.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "test: R41 final validation PASS"
+          git push origin HEAD:main
