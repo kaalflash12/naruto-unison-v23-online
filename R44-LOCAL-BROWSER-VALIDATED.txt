@@ -1,0 +1,18 @@
+Naruto Unison R44 local browser smoke
+status=PASS
+scope=admin frontend rendered in Chromium with mocked authenticated API responses
+desktop=1366x768 PASS
+mobile=390x844 PASS
+admin_tabs=6
+accounts_render=PASS
+online_presence_render=PASS
+seasons_structured_ui=PASS
+rewards_item_unlock_fields=PASS
+audit_render=PASS
+raw_json_ui_removed=PASS
+horizontal_overflow_desktop=0
+horizontal_overflow_mobile=0
+browser_page_errors=0
+desktop_screenshot_sha256=e98ba182ab72d399992f986f78441adc12993908b192ac6fb9c8250e31ee3102
+mobile_screenshot_sha256=d8464d935e9382ea0dbc240985fa273417aff1a4ed0e6ddc16ab0cb34538073a
+note=public GitHub Pages browser validation is tracked separately by validate-r44-browser.yml
