@@ -1,0 +1,21 @@
+Naruto Unison R44 admin validation
+status=PASS
+admin_js_syntax=PASS
+responsive_admin_structure=PASS
+raw_json_ui_removed=PASS
+dashboard_status_ui=PASS
+online_presence_ui=PASS
+structured_seasons_ui=PASS
+structured_rewards_ui=PASS
+audit_ui=PASS
+backend_source_review=PASS
+backend_deployed_version=4 ACTIVE
+status_route=PASS
+audit_route=PASS
+auth_item_reward_uses_player_items=PASS
+auth_unlock_reward_uses_player_unlocks=PASS
+owner_principal=ACTIVE
+owner_permissions=PASS
+local_chromium_desktop=PASS
+local_chromium_mobile=PASS
+public_browser_validation=SEPARATE_R44_BROWSER_GATE
