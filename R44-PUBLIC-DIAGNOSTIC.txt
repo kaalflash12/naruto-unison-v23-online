@@ -1,0 +1,11 @@
+Naruto Unison R44 public endpoint diagnostic
+tested_commit=180afe082d6f52c934658f3f0727cda8d7de1448
+admin_curl_rc=0
+admin_http=200
+admin_r44_marker=PASS
+admin_dashboard_marker=PASS
+game_curl_rc=0
+game_http=200
+game_marker=PASS
+backend_curl_rc=0
+backend_anonymous_http=401
