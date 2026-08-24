@@ -1,0 +1,70 @@
+name: Validate final Windows installer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'INSTALAR-NARUTO-UNISON-ONLINE.ps1'
+      - '.github/workflows/validate-final-installer-windows.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse installer with Windows PowerShell engine
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [void][System.Management.Automation.Language.Parser]::ParseFile(
+            (Resolve-Path './INSTALAR-NARUTO-UNISON-ONLINE.ps1'),
+            [ref]$tokens,
+            [ref]$errors
+          )
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.Message }
+            throw "PowerShell parser found $($errors.Count) error(s)."
+          }
+          Write-Host 'PowerShell parser: PASS'
+
+      - name: Verify public production endpoints
+        shell: pwsh
+        run: |
+          $targets = @(
+            'https://kaalflash12.github.io/naruto-unison-v23-online/',
+            'https://kaalflash12.github.io/naruto-unison-v23-online/admin.html',
+            'https://kaalflash12.github.io/naruto-unison-v23-online/recovery.html'
+          )
+          foreach ($url in $targets) {
+            $r = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 30
+            if ([int]$r.StatusCode -ne 200) { throw "$url returned HTTP $($r.StatusCode)" }
+          }
+          $root = (Invoke-WebRequest -Uri $targets[0] -UseBasicParsing -TimeoutSec 30).Content
+          if ($root -match 'V23\.17\s+R33|R33 NARUTO UNISON') { throw 'Old public revision label is still exposed.' }
+          if ($root -notmatch '<title>Naruto Unison PT-BR</title>') { throw 'Unexpected public title.' }
+          Write-Host 'Production endpoints: PASS'
+
+      - name: Record Windows validation
+        shell: pwsh
+        run: |
+          $stamp = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
+          @"
+          WINDOWS INSTALLER VALIDATION: PASS
+          validated_at=$stamp
+          runner=windows-latest
+          powershell_parser=PASS
+          game_http=200
+          admin_http=200
+          recovery_http=200
+          public_revision_labels=clean
+          "@ | Set-Content -Path 'INSTALLER-WINDOWS-VALIDATED.txt' -Encoding UTF8
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add INSTALLER-WINDOWS-VALIDATED.txt
+          git commit -m 'Validate final installer on Windows'
+          git push origin HEAD:main
