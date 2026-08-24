@@ -1,0 +1,3 @@
+/home/runner/work/_temp/08efad10-b3c3-461b-90fb-2429895e17e8.sh: line 11: dir: unbound variable
+decode_dir=payload/.r38-repaired parts=20
+base64: invalid input
