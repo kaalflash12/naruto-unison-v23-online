@@ -1,8 +1,8 @@
-name: Publish item and equipment assets
+name: Generate and publish 129 inventory assets R41
 on:
   push:
     paths:
-      - '.hotfix-assets/part-022'
+      - '.asset-gen-r41-trigger'
 permissions:
   contents: write
 jobs:
@@ -12,19 +12,122 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Rebuild verified asset payload
+          fetch-depth: 0
+
+      - name: Generate assets from game data
+        shell: bash
         run: |
-          test "$(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | wc -l)" -eq 23
-          cat $(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | sort) | base64 -d > /tmp/assets.tar.xz
-          echo '7ca6bfbf10d5eeb079ed44922719db79a01e23eae275890166762dbf353c9358  /tmp/assets.tar.xz' | sha256sum -c -
-          mkdir -p assets
-          tar -xJf /tmp/assets.tar.xz -C assets
-          test "$(find assets/items -type f -name '*.webp' | wc -l)" -eq 24
-          test "$(find assets/equipment -type f -name '*.webp' | wc -l)" -eq 105
-      - name: Commit assets
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const vm=require('vm');
+          const path=require('path');
+
+          const dataSource=fs.readFileSync('v23-data.js','utf8');
+          const sandbox={
+            window:{},
+            console:{log(){},warn(){},error(){}},
+            setTimeout(){},clearTimeout(){},
+            setInterval(){},clearInterval(){}
+          };
+          sandbox.self=sandbox.window;
+          sandbox.globalThis=sandbox;
+          vm.createContext(sandbox);
+          vm.runInContext(dataSource,sandbox,{timeout:20000,filename:'v23-data.js'});
+
+          const gameData=sandbox.window.NARUTO_V23_DATA || sandbox.NARUTO_V23_DATA || sandbox.window.V23_DATA || sandbox.V23_DATA;
+          const equipment=gameData?.equipment;
+          if(!Array.isArray(equipment)) throw new Error('NARUTO_V23_DATA.equipment não encontrado');
+          if(equipment.length!==105) throw new Error(`Esperados 105 equipamentos; encontrados ${equipment.length}`);
+          const equipmentIds=equipment.map(x=>String(x?.id||'').trim());
+          if(equipmentIds.some(x=>!x)) throw new Error('Equipamento sem id');
+          if(new Set(equipmentIds).size!==105) throw new Error('IDs duplicados no catálogo de equipamentos');
+
+          const items=[
+            ['chakraFood','Pílula de Chakra'],['soldierPill','Pílula do Soldado'],['ninScroll','Pergaminho de Ninjutsu'],['genScroll','Pergaminho de Genjutsu'],['taiScroll','Pergaminho de Taijutsu'],['bloodSeal','Selo de Linhagem'],['mixedRation','Ração de Chakra'],['medicalKit','Kit Médico'],['healingOintment','Unguento Medicinal'],['fieldMedicine','Medicamento de Campo'],['antidote','Antídoto'],['smokeBomb','Bomba de Fumaça'],['substitutionScroll','Pergaminho de Substituição'],['guardScroll','Pergaminho de Guarda'],['barrierTag','Selo de Barreira'],['shurikenPack','Pacote de Shuriken'],['kunaiPack','Pacote de Kunai'],['explosiveTag','Selo Explosivo'],['explosiveBundle','Pacote Explosivo'],['senbonPack','Pacote de Senbon'],['poisonBomb','Bomba de Veneno'],['flashBomb','Bomba de Luz'],['paralysisTag','Selo de Paralisia'],['dispelTag','Selo de Dissipação']
+          ];
+          if(items.length!==24 || new Set(items.map(x=>x[0])).size!==24) throw new Error('Catálogo de itens inválido');
+
+          fs.rmSync('assets/items',{recursive:true,force:true});
+          fs.rmSync('assets/equipment',{recursive:true,force:true});
+          fs.mkdirSync('assets/items',{recursive:true});
+          fs.mkdirSync('assets/equipment',{recursive:true});
+
+          const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+          const hash=s=>{let h=2166136261>>>0;for(const ch of String(s)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)>>>0}return h>>>0};
+          const hue=id=>hash(id)%360;
+          const symbolFor=(id,name,slot='')=>{
+            const s=(id+' '+name+' '+slot).toLowerCase();
+            if(s.includes('scroll')||s.includes('pergaminho')) return 'scroll';
+            if(s.includes('bomb')||s.includes('explos')) return 'bomb';
+            if(s.includes('seal')||s.includes('selo')||s.includes('talisman')||s.includes('talism')) return 'tag';
+            if(s.includes('pill')||s.includes('food')||s.includes('ration')||s.includes('medicine')||s.includes('medical')||s.includes('ointment')||s.includes('antid')) return 'medicine';
+            if(s.includes('shuriken')) return 'shuriken';
+            if(s.includes('kunai')||slot==='weapon') return 'weapon';
+            if(slot==='clothing') return 'clothing';
+            if(slot==='footwear') return 'footwear';
+            return 'ninja';
+          };
+          const icon=(kind)=>({
+            scroll:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round"><path d="M-82-52h164v104H-82z"/><path d="M-105-52h23M82-52h23M-105 52h23M82 52h23"/><path d="M-35-15h70M-35 16h70"/></g>`,
+            bomb:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round"><circle r="69"/><path d="M42-55l42-42 25 25M79-94l18-18"/><path d="M-30-18l60 36M30-18l-60 36"/></g>`,
+            tag:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="12" fill="none"><path d="M-58-82h116l25 25v139H-83V-57z"/><circle cy="-32" r="22"/><path d="M0-10v52M-32 18h64M-21 55h42"/></g>`,
+            medicine:`<g transform="translate(256 142) rotate(-32)" stroke="currentColor" stroke-width="13" fill="none"><rect x="-84" y="-42" width="168" height="84" rx="42"/><path d="M0-42v84"/><path d="M-53 0h27M-39-14v28"/></g>`,
+            shuriken:`<g transform="translate(256 142)" fill="currentColor"><path d="M0-98c18 45 37 61 79 69-29 18-42 37-46 76-25-24-46-28-84-14 11-36 6-59-27-84 43-5 62-18 78-47z"/><circle r="18" fill="#171b20"/></g>`,
+            weapon:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="13" fill="none" stroke-linecap="round"><path d="M-88 70L62-80M-61-80L88 70"/><path d="M44-98l39-18-18 39M-83-98l-39-18 18 39"/><path d="M-105 87l34-7-7 34M105 87l-34-7 7 34"/></g>`,
+            clothing:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="12" fill="none"><path d="M-61-75l-46 40 26 45 24-16v89H57V-6l24 16 26-45-46-40-31 27h-60z"/><path d="M0-47v130M-31-18h62"/></g>`,
+            footwear:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="13" fill="none" stroke-linejoin="round"><path d="M-82-78h65v97c20 16 44 29 79 34l28 5v35H-87V20z"/><path d="M-50-36h35M-50-2h35"/></g>`,
+            ninja:`<g transform="translate(256 142)" stroke="currentColor" stroke-width="13" fill="none"><circle cy="-25" r="58"/><path d="M-62-35h124M-35-35v-30h70v30M-86 86c15-55 48-79 86-79s71 24 86 79"/><path d="M-24-10h16M8-10h16"/></g>`
+          }[kind]);
+          function makeSvg(id,name,kind,meta){
+            const h=hue(id),h2=(h+42)%360;
+            return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="512" height="320" viewBox="0 0 512 320" role="img" aria-label="${esc(name)}">\n<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="hsl(${h} 34% 18%)"/><stop offset="1" stop-color="hsl(${h2} 40% 7%)"/></linearGradient><radialGradient id="glow"><stop stop-color="hsl(${h} 82% 68%)" stop-opacity=".32"/><stop offset="1" stop-color="hsl(${h} 82% 30%)" stop-opacity="0"/></radialGradient></defs>\n<rect width="512" height="320" rx="28" fill="url(#bg)"/><rect x="10" y="10" width="492" height="300" rx="22" fill="none" stroke="hsl(${h} 55% 70%)" stroke-opacity=".55" stroke-width="3"/><circle cx="256" cy="136" r="126" fill="url(#glow)"/>\n<g style="color:hsl(${h} 72% 78%)">${icon(kind)}</g>\n<rect x="28" y="238" width="456" height="58" rx="13" fill="#080a0dcc" stroke="hsl(${h} 40% 58%)" stroke-opacity=".5"/>\n<text x="256" y="263" text-anchor="middle" fill="#f7ead2" font-size="20" font-weight="700" font-family="Arial, sans-serif">${esc(name)}</text>\n<text x="256" y="284" text-anchor="middle" fill="#c7b89e" font-size="11" font-family="Arial, sans-serif">${esc(meta)} • ${esc(id)}</text>\n</svg>\n`;
+          }
+
+          for(const [id,name] of items){
+            const kind=symbolFor(id,name,'');
+            fs.writeFileSync(path.join('assets/items',id+'.svg'),makeSvg(id,name,kind,'ITEM NINJA'),'utf8');
+          }
+          for(const eq of equipment){
+            const id=String(eq.id), name=String(eq.name||id), slot=String(eq.slot||'equipment');
+            const kind=symbolFor(id,name,slot);
+            fs.writeFileSync(path.join('assets/equipment',id+'.svg'),makeSvg(id,name,kind,String(slot).toUpperCase()),'utf8');
+          }
+
+          const itemFiles=fs.readdirSync('assets/items').filter(x=>x.endsWith('.svg'));
+          const eqFiles=fs.readdirSync('assets/equipment').filter(x=>x.endsWith('.svg'));
+          if(itemFiles.length!==24) throw new Error(`assets/items=${itemFiles.length}, esperado 24`);
+          if(eqFiles.length!==105) throw new Error(`assets/equipment=${eqFiles.length}, esperado 105`);
+          for(const f of [...itemFiles.map(x=>'assets/items/'+x),...eqFiles.map(x=>'assets/equipment/'+x)]){
+            const txt=fs.readFileSync(f,'utf8');
+            if(!txt.includes('<svg')||txt.length<900) throw new Error(`Asset inválido: ${f}`);
+          }
+          fs.writeFileSync('R41-ASSETS-VALIDATED.txt',[
+            'Naruto Unison R41 assets validation',
+            'status=PASS',
+            'items=24',
+            'equipment=105',
+            'total=129',
+            'format=svg',
+            'source=v23-data.js + canonical item ids'
+          ].join('\n')+'\n');
+          console.log(`PASS: ${itemFiles.length}+${eqFiles.length}=129 assets`);
+          NODE
+
+          test "$(find assets/items -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 24
+          test "$(find assets/equipment -maxdepth 1 -type f -name '*.svg' | wc -l)" -eq 105
+          grep -q '^status=PASS$' R41-ASSETS-VALIDATED.txt
+
+      - name: Commit validated assets
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets
-          git commit -m "fix: publish 129 inventory and shop item assets"
+          git add assets/items assets/equipment R41-ASSETS-VALIDATED.txt
+          if git diff --cached --quiet; then
+            echo 'Assets already current.'
+            exit 0
+          fi
+          git commit -m "fix: publish 129 validated inventory and shop assets R41"
           git push origin HEAD:main
