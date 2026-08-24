@@ -1,0 +1,5 @@
+Naruto Unison R40 stability validation
+status=PASS
+validated_at=2026-08-24T17:30:58Z
+commit=ed9e20d34dcd8894f482f7306d4a24694bb2015d
+checks=node-syntax,global-observers-removed,targeted-battle-observer,r40-loaders
