@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: naruto-unison-clean-final
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   publish:
@@ -47,6 +47,7 @@ jobs:
           DIAG="$RUNNER_TEMP/final-deploy-diagnostic.txt"
           : > "$DIAG"
           exec > >(tee -a "$DIAG") 2>&1
+          echo 'workflow_revision=clean-final-002'
           rm -rf "$OUT" && mkdir -p "$OUT"
 
           decode_parts() {
@@ -145,7 +146,7 @@ jobs:
           git config user.name 'Naruto Unison Diagnostics'
           git config user.email 'actions@users.noreply.github.com'
           git add FINAL-DEPLOY-DIAGNOSTIC.txt
-          git commit -m 'diagnostic: clean final deploy [skip ci]' || true
+          git commit -m 'diagnostic: clean final deploy clean-final-002 [skip ci]' || true
           git push origin HEAD:main || true
           exit 1
 
@@ -158,12 +159,12 @@ jobs:
           git pull --ff-only origin main
           find . -mindepth 1 -maxdepth 1 ! -name '.*' -exec rm -rf {} +
           cp -a "$RUNNER_TEMP/site"/. .
-          printf 'Naruto Unison PT-BR\nvalidated=true\ndeployed_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > DEPLOY-VALIDATED.txt
+          printf 'Naruto Unison PT-BR\nvalidated=true\nworkflow_revision=clean-final-002\ndeployed_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > DEPLOY-VALIDATED.txt
           rm -f FINAL-DEPLOY-DIAGNOSTIC.txt R382-FINAL-DIAGNOSTIC.txt
           git config user.name 'Naruto Unison Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m 'Naruto Unison clean validated public site [skip ci]'
+            git commit -m 'Naruto Unison clean validated public site clean-final-002 [skip ci]'
             git push origin HEAD:main
           fi
