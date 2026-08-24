@@ -2,7 +2,7 @@
 const SIDE_ID={you:'player0',ai:'player1'};
 const KIND_CLASS={attack:'damage',damage:'damage',stun:'stun',dot:'dot',heal:'heal',shield:'shield',invuln:'invuln',status:'status',cleanse:'heal',dispel:'status'};
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-const reducedMotion=()=>!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+const reducedMotion=()=>{try{if(localStorage.getItem('naruto_reduce_motion')==='1')return true}catch(_){}const coarse=!!(window.matchMedia&&(window.matchMedia('(pointer:coarse)').matches||window.matchMedia('(hover:none)').matches));return !!(coarse&&window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)};
 const clamp=(n,min,max)=>Math.max(min,Math.min(max,Number(n)||0));
 
 function snapshot(f){
