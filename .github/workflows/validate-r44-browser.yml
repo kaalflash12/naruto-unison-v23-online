@@ -1,0 +1,162 @@
+name: Validate R44 Public Browser
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'admin.html'
+      - 'supabase/functions/admin-gameops/index.ts'
+      - '.r44-browser-validate-trigger'
+      - '.github/workflows/validate-r44-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Wait for public GitHub Pages R44
+        shell: bash
+        env:
+          ADMIN_URL: https://kaalflash12.github.io/naruto-unison-v23-online/admin.html
+          GAME_URL: https://kaalflash12.github.io/naruto-unison-v23-online/
+        run: |
+          set -euo pipefail
+          ok=0
+          for i in $(seq 1 36); do
+            code=$(curl -L --max-time 20 -sS -o /tmp/admin-live.html -w '%{http_code}' "$ADMIN_URL?r44=${GITHUB_SHA}" || true)
+            game_code=$(curl -L --max-time 20 -sS -o /tmp/game-live.html -w '%{http_code}' "$GAME_URL?r44=${GITHUB_SHA}" || true)
+            if [ "$code" = "200" ] && [ "$game_code" = "200" ] && grep -Fq 'GAMEOPS R44' /tmp/admin-live.html; then
+              ok=1
+              break
+            fi
+            sleep 10
+          done
+          test "$ok" = "1"
+          grep -Fq 'VISÃO GERAL' /tmp/admin-live.html
+          grep -Fq 'OPERAÇÃO ONLINE' /tmp/admin-live.html || grep -Fq 'Operação online' /tmp/admin-live.html
+          ! grep -Fq 'Config JSON' /tmp/admin-live.html
+          ! grep -Fq 'Payload JSON' /tmp/admin-live.html
+          ! grep -Fq '<textarea' /tmp/admin-live.html
+          echo 'PUBLIC_HTML=PASS'
+
+      - name: Browser test desktop and mobile
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/r44-browser.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const base='https://kaalflash12.github.io/naruto-unison-v23-online/';
+          const admin=base+'admin.html?r44='+Date.now();
+          const browser=await chromium.launch({headless:true});
+          const results=[];
+          for (const [name,width,height] of [['desktop',1366,768],['mobile',390,844]]) {
+            const context=await browser.newContext({viewport:{width,height}});
+            const page=await context.newPage();
+            const pageErrors=[];
+            page.on('pageerror',e=>pageErrors.push(String(e)));
+            const response=await page.goto(admin,{waitUntil:'domcontentloaded',timeout:60000});
+            if (!response || response.status()!==200) throw new Error(name+': admin HTTP '+(response?.status()??'none'));
+            await page.waitForSelector('#loginCard',{state:'visible',timeout:30000});
+            await page.waitForFunction(()=>document.body.innerText.includes('GAMEOPS R44'));
+            const data=await page.evaluate(()=>({
+              title:document.title,
+              tabs:[...document.querySelectorAll('.tabs button')].map(x=>x.textContent.trim()),
+              textareas:document.querySelectorAll('textarea').length,
+              loginVisible:getComputedStyle(document.querySelector('#loginCard')).display!=='none',
+              overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth,
+              emailHeight:document.querySelector('#email')?.getBoundingClientRect().height||0,
+              passwordHeight:document.querySelector('#password')?.getBoundingClientRect().height||0,
+              forbidden:/Config JSON|Payload JSON/.test(document.body.innerText)
+            }));
+            if (!data.title.includes('Admin')) throw new Error(name+': título inválido');
+            if (!data.loginVisible) throw new Error(name+': login não visível');
+            if (data.tabs.length!==6) throw new Error(name+': tabs='+data.tabs.length);
+            if (data.textareas!==0 || data.forbidden) throw new Error(name+': UI JSON bruta voltou');
+            if (data.overflow>2) throw new Error(name+': overflow horizontal '+data.overflow);
+            if (data.emailHeight<40 || data.passwordHeight<40) throw new Error(name+': campos de login pequenos');
+            if (pageErrors.length) throw new Error(name+': pageerror '+pageErrors.join(' | '));
+            await page.screenshot({path:`r44-admin-${name}.png`,fullPage:true});
+            results.push({name,...data});
+            await context.close();
+          }
+          const gameContext=await browser.newContext({viewport:{width:1366,height:768}});
+          const gamePage=await gameContext.newPage();
+          const gameResponse=await gamePage.goto(base+'?r44='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});
+          if (!gameResponse || gameResponse.status()!==200) throw new Error('game HTTP '+(gameResponse?.status()??'none'));
+          const gameState=await gamePage.evaluate(()=>({title:document.title,bodyText:(document.body?.innerText||'').trim(),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth}));
+          if (!gameState.bodyText || gameState.bodyText.length<20) throw new Error('game page vazia');
+          await gamePage.screenshot({path:'r44-game-desktop.png',fullPage:true});
+          await gameContext.close();
+          await browser.close();
+          console.log(JSON.stringify({results,gameState},null,2));
+          JS
+          node /tmp/r44-browser.mjs | tee /tmp/r44-browser.json
+          echo 'PUBLIC_BROWSER=PASS'
+
+      - name: Validate live backend rejects anonymous admin access
+        shell: bash
+        run: |
+          set -euo pipefail
+          code=$(curl -L --max-time 25 -sS -o /tmp/admin-noauth.json -w '%{http_code}' 'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/admin-gameops/status' || true)
+          case "$code" in
+            401|403) ;;
+            *) echo "unexpected anonymous admin status: $code"; cat /tmp/admin-noauth.json || true; exit 1;;
+          esac
+          echo "ANONYMOUS_ADMIN_BLOCKED=PASS HTTP=$code"
+
+      - name: Write browser proof
+        shell: bash
+        run: |
+          cat > R44-BROWSER-VALIDATED.txt <<EOF
+          Naruto Unison R44 public browser validation
+          status=PASS
+          public_admin_http=PASS
+          public_game_http=PASS
+          desktop_admin_browser=PASS
+          mobile_admin_browser=PASS
+          horizontal_overflow=PASS
+          admin_login_visible=PASS
+          admin_tabs=6
+          raw_json_ui_removed=PASS
+          browser_page_errors=0
+          anonymous_admin_backend_blocked=PASS
+          tested_commit=${GITHUB_SHA}
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r44-browser-screenshots
+          path: |
+            r44-admin-desktop.png
+            r44-admin-mobile.png
+            r44-game-desktop.png
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Commit browser proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- R44-BROWSER-VALIDATED.txt; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add R44-BROWSER-VALIDATED.txt
+          git commit -m 'test: R44 public browser validation PASS [skip ci]'
+          git push
