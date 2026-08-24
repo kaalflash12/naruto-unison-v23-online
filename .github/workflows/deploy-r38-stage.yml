@@ -47,7 +47,7 @@ jobs:
           DIAG="$RUNNER_TEMP/final-deploy-diagnostic.txt"
           : > "$DIAG"
           exec > >(tee -a "$DIAG") 2>&1
-          echo 'workflow_revision=clean-final-002'
+          echo 'workflow_revision=clean-final-003'
           rm -rf "$OUT" && mkdir -p "$OUT"
 
           decode_parts() {
@@ -55,10 +55,12 @@ jobs:
             local outfile
             local b64file
             local limit
+            local rc
             srcdir="$1"
             outfile="$2"
             limit="${3:-0}"
             b64file="$RUNNER_TEMP/$(basename "$srcdir").b64"
+            rm -f "$outfile" "$b64file"
             if [ "$limit" -gt 0 ]; then
               mapfile -t parts < <(find "$srcdir" -maxdepth 1 -type f -name 'part-*' | sort -V | head -n "$limit")
             else
@@ -68,6 +70,7 @@ jobs:
             [ "${#parts[@]}" -gt 0 ] || return 1
             : > "$b64file"
             for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64file"; done
+            set +e
             B64FILE="$b64file" OUTFILE="$outfile" python - <<'PY'
           import base64,os,sys
           s=open(os.environ['B64FILE'],'r',encoding='ascii').read().strip()
@@ -78,23 +81,27 @@ jobs:
           open(os.environ['OUTFILE'],'wb').write(raw)
           print('decoded_bytes='+str(len(raw)))
           PY
-            xz -t "$outfile"
-            tar -tJf "$outfile" > "$RUNNER_TEMP/archive-list.txt"
+            rc=$?
+            set -e
+            [ "$rc" -eq 0 ] || return 1
+            xz -t "$outfile" || return 1
+            tar -tJf "$outfile" > "$RUNNER_TEMP/archive-list.txt" || return 1
             echo "archive_entries=$(wc -l < "$RUNNER_TEMP/archive-list.txt") sha=$(sha256sum "$outfile"|cut -d' ' -f1)"
+            return 0
           }
 
           BASE="$RUNNER_TEMP/base.tar.xz"
+          CHOSEN=''
           if decode_parts payload/.r38-repaired "$BASE" 18; then
-            echo 'chosen_runtime=.r38-repaired[00-17]'
+            CHOSEN='.r38-repaired[00-17]'
           else
             echo 'repaired_00_17_failed'
-            CHOSEN=''
-            for d in payload/.r38-runtime-clean-v3 payload/.r38-runtime-final payload/.r38-runtime-v2 payload/.r38-runtime-clean payload/.r38-runtime-lite; do
+            for d in payload/.r38-runtime-clean-v3 payload/.r38-runtime-final payload/.r38-runtime-v2 payload/.r38-runtime-clean payload/.r38-runtime-lite payload/.r382-runtime-final-small; do
               if [ -d "$d" ] && decode_parts "$d" "$BASE"; then CHOSEN="$d"; break; fi
             done
-            [ -n "$CHOSEN" ] || { echo 'no_valid_runtime=FAIL'; exit 20; }
-            echo "chosen_runtime=$CHOSEN"
           fi
+          [ -n "$CHOSEN" ] || { echo 'no_valid_runtime=FAIL'; exit 20; }
+          echo "chosen_runtime=$CHOSEN"
 
           TMP="$RUNNER_TEMP/base-extract"
           rm -rf "$TMP" && mkdir -p "$TMP"
@@ -107,7 +114,7 @@ jobs:
           test "$STATIC_FILES" -ge 3000
 
           OVERLAY="$RUNNER_TEMP/overlay.tar.xz"
-          decode_parts payload/.final-overlay-b64 "$OVERLAY"
+          decode_parts payload/.final-overlay-b64 "$OVERLAY" || { echo 'overlay_invalid=FAIL'; exit 24; }
           TMP="$RUNNER_TEMP/overlay-extract"
           rm -rf "$TMP" && mkdir -p "$TMP"
           tar -xJf "$OVERLAY" -C "$TMP"
@@ -146,7 +153,7 @@ jobs:
           git config user.name 'Naruto Unison Diagnostics'
           git config user.email 'actions@users.noreply.github.com'
           git add FINAL-DEPLOY-DIAGNOSTIC.txt
-          git commit -m 'diagnostic: clean final deploy clean-final-002 [skip ci]' || true
+          git commit -m 'diagnostic: clean final deploy clean-final-003 [skip ci]' || true
           git push origin HEAD:main || true
           exit 1
 
@@ -159,12 +166,12 @@ jobs:
           git pull --ff-only origin main
           find . -mindepth 1 -maxdepth 1 ! -name '.*' -exec rm -rf {} +
           cp -a "$RUNNER_TEMP/site"/. .
-          printf 'Naruto Unison PT-BR\nvalidated=true\nworkflow_revision=clean-final-002\ndeployed_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > DEPLOY-VALIDATED.txt
+          printf 'Naruto Unison PT-BR\nvalidated=true\nworkflow_revision=clean-final-003\ndeployed_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > DEPLOY-VALIDATED.txt
           rm -f FINAL-DEPLOY-DIAGNOSTIC.txt R382-FINAL-DIAGNOSTIC.txt
           git config user.name 'Naruto Unison Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m 'Naruto Unison clean validated public site clean-final-002 [skip ci]'
+            git commit -m 'Naruto Unison clean validated public site clean-final-003 [skip ci]'
             git push origin HEAD:main
           fi
