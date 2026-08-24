@@ -1,0 +1,1 @@
+R40 verified asset payload rebuild. Parts in this folder are exact 20,000-character chunks of r39-assets96.b64; final part is 6,376 characters. Workflow validates SHA-256 before publishing assets.
