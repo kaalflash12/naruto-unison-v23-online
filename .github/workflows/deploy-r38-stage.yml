@@ -60,14 +60,56 @@ jobs:
           test "$STATIC_FILES" -ge 100
 
           decode_xz_parts() {
-            local dir="$1" out="$2" b64="$RUNNER_TEMP/$(basename "$dir").b64"
+            local dir out b64
+            dir="$1"
+            out="$2"
+            b64="$RUNNER_TEMP/$(basename "$dir").b64"
             mapfile -t parts < <(find "$dir" -maxdepth 1 -type f -name 'part-*' | sort -V)
             echo "decode_dir=$dir parts=${#parts[@]}"
             test "${#parts[@]}" -gt 0
             : > "$b64"
             for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64"; done
             echo "concat_b64_bytes=$(wc -c < "$b64")"
-            base64 -d "$b64" > "$out"
+            B64="$b64" OUTFILE="$out" python - <<'PY'
+          import base64, lzma, os, sys
+          src=os.environ['B64']; out=os.environ['OUTFILE']
+          s=open(src,'r',encoding='ascii').read().strip()
+          def valid(raw):
+              try:
+                  lzma.decompress(raw, format=lzma.FORMAT_XZ)
+                  return True
+              except Exception:
+                  return False
+          candidates=[]
+          try:
+              candidates.append(('exact',base64.b64decode(s,validate=True)))
+          except Exception:
+              pass
+          rem=len(s)%4
+          if rem in (2,3):
+              try:candidates.append(('padding',base64.b64decode(s+'='*(4-rem),validate=True)))
+              except Exception:pass
+          # Some staged payloads lost the last 3 base64 chars. XZ streams end in bytes 59 5A ("YZ"),
+          # so only the low two bits of the preceding byte are unknown: four deterministic candidates.
+          if rem==1 and s:
+              alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+              v=alphabet.find(s[-1])
+              if v>=0:
+                  prefix=s[:-1]
+                  for low2 in range(4):
+                      tail=bytes([(v<<2)|low2,0x59,0x5A])
+                      enc=base64.b64encode(tail).decode('ascii')
+                      if enc[0]==s[-1]:
+                          try:candidates.append((f'xz-footer-repair-{low2}',base64.b64decode(prefix+enc,validate=True)))
+                          except Exception:pass
+          for mode,raw in candidates:
+              if valid(raw):
+                  open(out,'wb').write(raw)
+                  print(f'decode_mode={mode}')
+                  sys.exit(0)
+          print('decode_failure=no valid XZ candidate',file=sys.stderr)
+          sys.exit(7)
+          PY
             xz -t "$out"
             echo "decoded_bytes=$(wc -c < "$out") sha=$(sha256sum "$out" | cut -d' ' -f1)"
           }
@@ -102,7 +144,6 @@ jobs:
           extract_normalized "$OVERLAY" "$OUT"
           echo 'final_overlay=PASS'
 
-          # Public branding: internal build identifiers must not appear to players.
           node - "$OUT" <<'NODE'
           const fs=require('fs'),path=require('path');
           const root=process.argv[2];
@@ -156,7 +197,6 @@ jobs:
           }
           NODE
 
-          # User-facing gates: no internal release label in page title/manifest/visible shell/balance labels.
           if grep -Eqi 'R38(?:\.[0-9]+)?|V23\.[0-9]+-R38' "$OUT/index.html" "$OUT/manifest.webmanifest"; then
             echo 'public_version_leak=index_or_manifest'; exit 31
           fi
