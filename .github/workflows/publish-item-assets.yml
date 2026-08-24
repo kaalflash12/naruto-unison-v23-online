@@ -1,0 +1,30 @@
+name: Publish item and equipment assets
+on:
+  push:
+    paths:
+      - '.hotfix-assets/part-022'
+permissions:
+  contents: write
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Rebuild verified asset payload
+        run: |
+          test "$(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | wc -l)" -eq 23
+          cat $(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | sort) | base64 -d > /tmp/assets.tar.xz
+          echo '3a09c356fa654f05830ad42ffe409d7bcafe1044573aa11a6f9d056e9ce2f83e  /tmp/assets.tar.xz' | sha256sum -c -
+          mkdir -p assets
+          tar -xJf /tmp/assets.tar.xz -C assets
+          test "$(find assets/items -type f -name '*.webp' | wc -l)" -eq 24
+          test "$(find assets/equipment -type f -name '*.webp' | wc -l)" -eq 105
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "fix: publish 129 inventory and shop item assets"
+          git push origin HEAD:main
