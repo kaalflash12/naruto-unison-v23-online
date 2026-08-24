@@ -16,7 +16,7 @@ permissions:
 jobs:
   browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -24,14 +24,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Playwright Chromium
+      - name: Resolve runner Chrome and install playwright-core
+        id: deps
         shell: bash
         run: |
           set -euo pipefail
-          npm install --no-save playwright@1.55.0
-          npx playwright install --with-deps chromium
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser || true)"
+          test -n "$CHROME_BIN"
+          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+          mkdir -p /tmp/r44-playwright
+          cd /tmp/r44-playwright
+          npm init -y >/dev/null 2>&1
+          npm install --silent playwright-core@1.55.0
+          test -f node_modules/playwright-core/index.mjs
+          "$CHROME_BIN" --version
+          echo 'BROWSER_DEPS=PASS'
 
-      - name: Wait for public GitHub Pages R44
+      - name: Validate public HTML
+        id: html
         shell: bash
         env:
           ADMIN_URL: https://kaalflash12.github.io/naruto-unison-v23-online/admin.html
@@ -39,32 +49,33 @@ jobs:
         run: |
           set -euo pipefail
           ok=0
-          for i in $(seq 1 36); do
+          for i in $(seq 1 18); do
             code=$(curl -L --max-time 20 -sS -o /tmp/admin-live.html -w '%{http_code}' "$ADMIN_URL?r44=${GITHUB_SHA}" || true)
             game_code=$(curl -L --max-time 20 -sS -o /tmp/game-live.html -w '%{http_code}' "$GAME_URL?r44=${GITHUB_SHA}" || true)
             if [ "$code" = "200" ] && [ "$game_code" = "200" ] && grep -Fq 'GAMEOPS R44' /tmp/admin-live.html; then
               ok=1
               break
             fi
-            sleep 10
+            sleep 5
           done
           test "$ok" = "1"
           grep -Fq 'VISÃO GERAL' /tmp/admin-live.html
-          grep -Fq 'OPERAÇÃO ONLINE' /tmp/admin-live.html || grep -Fq 'Operação online' /tmp/admin-live.html
+          grep -Fq 'Operação online' /tmp/admin-live.html
           ! grep -Fq 'Config JSON' /tmp/admin-live.html
           ! grep -Fq 'Payload JSON' /tmp/admin-live.html
           ! grep -Fq '<textarea' /tmp/admin-live.html
           echo 'PUBLIC_HTML=PASS'
 
       - name: Browser test desktop and mobile
+        id: browser
         shell: bash
         run: |
           set -euo pipefail
           cat > /tmp/r44-browser.mjs <<'JS'
-          import { chromium } from 'playwright';
+          import { chromium } from '/tmp/r44-playwright/node_modules/playwright-core/index.mjs';
           const base='https://kaalflash12.github.io/naruto-unison-v23-online/';
           const admin=base+'admin.html?r44='+Date.now();
-          const browser=await chromium.launch({headless:true});
+          const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_BIN,args:['--no-sandbox','--disable-dev-shm-usage']});
           const results=[];
           for (const [name,width,height] of [['desktop',1366,768],['mobile',390,844]]) {
             const context=await browser.newContext({viewport:{width,height}});
@@ -98,10 +109,14 @@ jobs:
           }
           const gameContext=await browser.newContext({viewport:{width:1366,height:768}});
           const gamePage=await gameContext.newPage();
+          const gameErrors=[];
+          gamePage.on('pageerror',e=>gameErrors.push(String(e)));
           const gameResponse=await gamePage.goto(base+'?r44='+Date.now(),{waitUntil:'domcontentloaded',timeout:60000});
           if (!gameResponse || gameResponse.status()!==200) throw new Error('game HTTP '+(gameResponse?.status()??'none'));
+          await gamePage.waitForTimeout(1500);
           const gameState=await gamePage.evaluate(()=>({title:document.title,bodyText:(document.body?.innerText||'').trim(),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth}));
           if (!gameState.bodyText || gameState.bodyText.length<20) throw new Error('game page vazia');
+          if (gameErrors.length) throw new Error('game pageerror '+gameErrors.join(' | '));
           await gamePage.screenshot({path:'r44-game-desktop.png',fullPage:true});
           await gameContext.close();
           await browser.close();
@@ -111,6 +126,7 @@ jobs:
           echo 'PUBLIC_BROWSER=PASS'
 
       - name: Validate live backend rejects anonymous admin access
+        id: backend
         shell: bash
         run: |
           set -euo pipefail
@@ -154,9 +170,35 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- R44-BROWSER-VALIDATED.txt; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add R44-BROWSER-VALIDATED.txt
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m 'test: R44 public browser validation PASS [skip ci]'
+          git push
+
+      - name: Commit failure diagnostic
+        if: failure()
+        env:
+          DEPS_OUTCOME: ${{ steps.deps.outcome }}
+          HTML_OUTCOME: ${{ steps.html.outcome }}
+          BROWSER_OUTCOME: ${{ steps.browser.outcome }}
+          BACKEND_OUTCOME: ${{ steps.backend.outcome }}
+        shell: bash
+        run: |
+          set -e
+          cat > R44-BROWSER-DIAGNOSTIC.txt <<EOF
+          Naruto Unison R44 public browser diagnostic
+          status=FAIL
+          tested_commit=${GITHUB_SHA}
+          deps=${DEPS_OUTCOME}
+          public_html=${HTML_OUTCOME}
+          browser=${BROWSER_OUTCOME}
+          backend=${BACKEND_OUTCOME}
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add R44-BROWSER-DIAGNOSTIC.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'test: R44 public browser diagnostic FAIL [skip ci]'
           git push
