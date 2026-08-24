@@ -1,0 +1,74 @@
+name: Apply mobile battle resume hotfix
+on:
+  push:
+    paths:
+      - '.github/workflows/hotfix-mobile-battle-resume.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Patch battle persistence and mastery return
+        shell: python
+        run: |
+          from pathlib import Path
+          app=Path('app-online.js')
+          s=app.read_text(encoding='utf-8')
+          marker="let viewed=char(S.you[0])||R[0];\nlet pageIndex=0,browseMode='all',pageSize=36,G=null,selected=null,jutsuViewedSlug=null,jutsuDetailSlot=0;"
+          block="""let viewed=char(S.you[0])||R[0];
+          let pageIndex=0,browseMode='all',pageSize=36,G=null,selected=null,jutsuViewedSlug=null,jutsuDetailSlot=0;
+          const BATTLE_SESSION_KEY='naruto_unison_active_battle_v2';
+          function clearBattleSession(){try{sessionStorage.removeItem(BATTLE_SESSION_KEY)}catch(_){}}
+          function persistBattleSession(){try{if(G&&!G.over){sessionStorage.setItem(BATTLE_SESSION_KEY,JSON.stringify({ts:Date.now(),user:ON?.user||null,g:G}))}else clearBattleSession()}catch(_){}}
+          function restoreBattleSession(){try{const raw=sessionStorage.getItem(BATTLE_SESSION_KEY);if(!raw)return false;const snap=JSON.parse(raw);if(!snap?.g||Date.now()-Number(snap.ts||0)>21600000){clearBattleSession();return false}if(snap.user&&ON?.user&&snap.user!==ON.user){clearBattleSession();return false}if(!Array.isArray(snap.g.you)||!Array.isArray(snap.g.ai)){clearBattleSession();return false}G=snap.g;G.animating=false;selected=null;return true}catch(_){clearBattleSession();return false}}
+          async function resumeBattleAfterAuth(){if(!restoreBattleSession())return false;show('battle');const log=document.querySelector('#battlelog');if(log)log.innerHTML='';renderBattle();if(G?.online&&ON?.room){try{await pollRoom()}catch(_){}}setTimeout(()=>window.NarutoBattleMobileGuard?.returnToControls?.(),120);return true}
+          window.NarutoBattleRuntime={persist:persistBattleSession,clear:clearBattleSession,resume:resumeBattleAfterAuth};
+          window.NarutoResumeOnline=()=>pollRoom();"""
+          if marker not in s: raise SystemExit('battle declaration marker not found')
+          s=s.replace(marker,block,1)
+          needle="$$('.face.targetable').forEach(b=>b.onclick=()=>chooseTarget(b.dataset.side,+b.dataset.i))}"
+          repl="$$('.face.targetable').forEach(b=>b.onclick=()=>chooseTarget(b.dataset.side,+b.dataset.i));persistBattleSession();window.NarutoBattleMobileGuard?.updateDock?.()}"
+          if needle not in s: raise SystemExit('renderBattle tail not found')
+          s=s.replace(needle,repl,1)
+          needle="function show(name){\n"
+          repl="function show(name){\n if(name!=='battle'&&name!=='auth'&&!G)clearBattleSession();\n"
+          if needle not in s: raise SystemExit('show function marker not found')
+          s=s.replace(needle,repl,1)
+          needle="S.name=r.user;save();msg('Conta conectada. Progresso carregado do servidor.');if(source==='auth')show('home');else renderOnline()"
+          repl="S.name=r.user;save();msg('Conta conectada. Progresso carregado do servidor.');if(source==='auth'){if(!(await resumeBattleAfterAuth()))show('home')}else renderOnline()"
+          if needle not in s: raise SystemExit('login resume marker not found')
+          s=s.replace(needle,repl,1)
+          needle="if(sess.ok){ON.user=sess.user;saveOnlineSession();if(sess.profile)applyServerProfile(sess.profile,sess.revision);setSaveStatus(`Salvo automaticamente • ${ON.user}`);show('home');return}"
+          repl="if(sess.ok){ON.user=sess.user;saveOnlineSession();if(sess.profile)applyServerProfile(sess.profile,sess.revision);setSaveStatus(`Salvo automaticamente • ${ON.user}`);if(!(await resumeBattleAfterAuth()))show('home');return}"
+          if needle not in s: raise SystemExit('bootstrap resume marker not found')
+          s=s.replace(needle,repl,1)
+          old="function exitBattle(){if(!G)return;const mode=G.masteryTrial?'tasks':G.ninjaMission?'ninjaMissions':G.story?'story':G.eventBoss?'events':G.online?'online':'select';G=null;selected=null;if(ON.poll){clearTimeout(ON.poll);ON.poll=null}show(mode)}"
+          new="function exitBattle(){if(!G)return;const mastery=!!G.masteryTrial,mode=mastery?'jutsus':G.ninjaMission?'ninjaMissions':G.story?'story':G.eventBoss?'events':G.online?'online':'select';G=null;selected=null;clearBattleSession();if(ON.poll){clearTimeout(ON.poll);ON.poll=null}show(mode);if(mastery){renderMissions();setTimeout(()=>window.NarutoDesktopOverhaul?.showTraining?.(),0)}}"
+          if old not in s: raise SystemExit('exitBattle mastery marker not found')
+          s=s.replace(old,new,1)
+          needle="G=null;show('tasks');if(passed)completeMasteryStage(v.id,idx,trial.stages[idx].success);"
+          repl="G=null;clearBattleSession();show('jutsus');renderMissions();setTimeout(()=>window.NarutoDesktopOverhaul?.showTraining?.(),0);if(passed)completeMasteryStage(v.id,idx,trial.stages[idx].success);"
+          if needle not in s: raise SystemExit('finishMasteryBattle return marker not found')
+          s=s.replace(needle,repl,1)
+          # Ensure mastery battle is reachable rather than a forced speed-run.
+          s=s.replace("maxTurns:Number(trial.stages[idx].maxTurns|| (tier===1?7:6))", "maxTurns:Math.max(10,Number(trial.stages[idx].maxTurns||0))")
+          app.write_text(s,encoding='utf-8')
+      - name: Syntax checks
+        run: |
+          node --check app-online.js
+          node --check battle-mobile-guard.js
+          node --check battle-fx.js
+          node --check online-config.js
+          node --check desktop-overhaul.js
+      - name: Commit hotfix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app-online.js
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: restore mobile battle after refresh and return mastery to arsenal"
+          git push origin HEAD:main
