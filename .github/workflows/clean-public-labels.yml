@@ -1,0 +1,47 @@
+name: Clean public revision labels
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/clean-public-labels.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove internal revision labels from public HTML
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+              '<title>Naruto Unison PT-BR — V23.17 R33 NARUTO UNISON</title>': '<title>Naruto Unison PT-BR</title>',
+              'PT-BR • V23.17 R33 NARUTO UNISON': 'PT-BR • ONLINE',
+              'HISTÓRIA • PC + CELULAR • 44 CAPÍTULOS • ERA BORUTO • V23.17 R33 NARUTO UNISON': 'HISTÓRIA • PC + CELULAR • 44 CAPÍTULOS • ERA BORUTO',
+              '?v=r33-unison': '?v=online',
+          }
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No cleanup needed"
+            exit 0
+          fi
+          git commit -m "Remove internal revision labels from public HTML"
+          git push origin HEAD:main
