@@ -1,0 +1,13 @@
+Naruto Unison R44 public browser validation
+status=PASS
+public_admin_http=PASS
+public_game_http=PASS
+desktop_admin_browser=PASS
+mobile_admin_browser=PASS
+horizontal_overflow=PASS
+admin_login_visible=PASS
+admin_tabs=6
+raw_json_ui_removed=PASS
+browser_page_errors=0
+anonymous_admin_backend_blocked=PASS
+tested_commit=2b6a2f5b5b9be19b3b4e6ce4f39bb2a3cee3c57d
