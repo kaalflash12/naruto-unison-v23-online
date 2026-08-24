@@ -208,6 +208,13 @@ S.you=(S.you||[]).filter(s=>S.unlocked.includes(s)).slice(0,3);
 
 let viewed=char(S.you[0])||R[0];
 let pageIndex=0,browseMode='all',pageSize=36,G=null,selected=null,jutsuViewedSlug=null,jutsuDetailSlot=0;
+const BATTLE_SESSION_KEY='naruto_unison_active_battle_v2';
+function clearBattleSession(){try{sessionStorage.removeItem(BATTLE_SESSION_KEY)}catch(_){}}
+function persistBattleSession(){try{if(G&&!G.over){sessionStorage.setItem(BATTLE_SESSION_KEY,JSON.stringify({ts:Date.now(),user:ON?.user||null,g:G}))}else clearBattleSession()}catch(_){}}
+function restoreBattleSession(){try{const raw=sessionStorage.getItem(BATTLE_SESSION_KEY);if(!raw)return false;const snap=JSON.parse(raw);if(!snap?.g||Date.now()-Number(snap.ts||0)>21600000){clearBattleSession();return false}if(snap.user&&ON?.user&&snap.user!==ON.user){clearBattleSession();return false}if(!Array.isArray(snap.g.you)||!Array.isArray(snap.g.ai)){clearBattleSession();return false}G=snap.g;G.animating=false;selected=null;return true}catch(_){clearBattleSession();return false}}
+async function resumeBattleAfterAuth(){if(!restoreBattleSession())return false;show('battle');const log=document.querySelector('#battlelog');if(log)log.innerHTML='';renderBattle();if(G?.online&&ON?.room){try{await pollRoom()}catch(_){}}setTimeout(()=>window.NarutoBattleMobileGuard?.returnToControls?.(),120);return true}
+window.NarutoBattleRuntime={persist:persistBattleSession,clear:clearBattleSession,resume:resumeBattleAfterAuth};
+window.NarutoResumeOnline=()=>pollRoom();
 
 const ONLINE_KEY='naruto_unison_ptbr_online_session_v1';
 let ON={token:null,user:null,room:null,role:null,submittedTurn:null,poll:null,lastEvent:0,resultRoom:null,fxLogKeys:[],fxRoom:null,revision:0};
@@ -908,7 +915,7 @@ async function doLogin(register=false,source='online'){
    if(!r.ok)return msg(r.error||'Falha no login.',true);
    ON.token=r.token;ON.user=r.user;ON.room=null;ON.role=null;ON.revision=Number(r.revision||0);saveOnlineSession();
    if(r.profile)applyServerProfile(r.profile,r.revision);
-   S.name=r.user;save();msg('Conta conectada. Progresso carregado do servidor.');if(source==='auth')show('home');else renderOnline()
+   S.name=r.user;save();msg('Conta conectada. Progresso carregado do servidor.');if(source==='auth'){if(!(await resumeBattleAfterAuth()))show('home')}else renderOnline()
  }finally{if(btn){btn.disabled=false;btn.textContent=oldLabel}}
 }
 $('#onlineLogin').onclick=()=>doLogin(false,'online');
@@ -1189,7 +1196,7 @@ async function legacyR15_useBattleItem(type){
 }
 
 
-function exitBattle(){if(!G)return;const mode=G.masteryTrial?'tasks':G.ninjaMission?'ninjaMissions':G.story?'story':G.eventBoss?'events':G.online?'online':'select';G=null;selected=null;if(ON.poll){clearTimeout(ON.poll);ON.poll=null}show(mode)}
+function exitBattle(){if(!G)return;const mastery=!!G.masteryTrial,mode=mastery?'jutsus':G.ninjaMission?'ninjaMissions':G.story?'story':G.eventBoss?'events':G.online?'online':'select';G=null;selected=null;clearBattleSession();if(ON.poll){clearTimeout(ON.poll);ON.poll=null}show(mode);if(mastery){renderMissions();setTimeout(()=>window.NarutoDesktopOverhaul?.showTraining?.(),0)}}
 
 function legacyR15_renderCenter(){
  let rem=remaining(),waiting=!!(G.online&&ON.submittedTurn!==null),resolving=!!G.animating;
@@ -1203,7 +1210,7 @@ function legacyR15_renderCenter(){
  $('#forfeit').onclick=async()=>{if(!G||battleFxBusy())return;if(G.over){exitBattle();return}if(!confirm('Abandonar a partida atual?'))return;if(G.online){await forfeitOnline();return}await finish(false,true)};
  $$('[data-remove]').forEach(b=>b.onclick=()=>{if(waiting||resolving||battleFxBusy())return;G.acts=G.acts.filter(a=>a.user!==+b.dataset.remove);selected=null;renderBattle()})
 }
-function renderBattle(){if(window.BattleFX)window.BattleFX.cleanup();$('#player0').querySelectorAll('.ninja').forEach(n=>n.remove());$('#player1').querySelectorAll('.ninja').forEach(n=>n.remove());G.you.forEach((f,i)=>$('#player0').insertAdjacentHTML('beforeend',renderNinja(f,i,false)));G.ai.forEach((f,i)=>$('#player1').insertAdjacentHTML('beforeend',renderNinja(f,i,true)));renderCenter();$$('.charmove').forEach(b=>b.onclick=()=>chooseSkill(+b.dataset.ui,+b.dataset.si));$$('.face.targetable').forEach(b=>b.onclick=()=>chooseTarget(b.dataset.side,+b.dataset.i))}
+function renderBattle(){if(window.BattleFX)window.BattleFX.cleanup();$('#player0').querySelectorAll('.ninja').forEach(n=>n.remove());$('#player1').querySelectorAll('.ninja').forEach(n=>n.remove());G.you.forEach((f,i)=>$('#player0').insertAdjacentHTML('beforeend',renderNinja(f,i,false)));G.ai.forEach((f,i)=>$('#player1').insertAdjacentHTML('beforeend',renderNinja(f,i,true)));renderCenter();$$('.charmove').forEach(b=>b.onclick=()=>chooseSkill(+b.dataset.ui,+b.dataset.si));$$('.face.targetable').forEach(b=>b.onclick=()=>chooseTarget(b.dataset.side,+b.dataset.i));persistBattleSession();window.NarutoBattleMobileGuard?.updateDock?.()}
 function hit(t,d){if(t.inv)return 0;d=Math.max(0,Math.round(Number(d||0)-Number(t.damageReduction||0)));let a=Math.min(t.shield,d);t.shield-=a;d-=a;t.hp=Math.max(0,t.hp-d);return d}
 function apply(u,t,sk,ai){
  let before=fighterFxState(t),m=sk.mechanic||{kind:'damage',power:25,target:'enemy'},p=Number(m.power||25),duration=Math.max(0,Number(m.duration||0));
@@ -1417,10 +1424,10 @@ function startMasteryBattle(id){
  const v=JV_BY_ID[id],trial=v?.masteryTrial;if(!v||!trial)return;const st=masteryTrialState(id),idx=Math.min(trial.stages.length-1,Number(st.stage||0));if(trial.stages[idx]?.mechanic!=='battle')return;const tier=Number(v.tier||1),p=AI_PROFILES.find(x=>x.id===(tier<=1?'academia':'equilibrada'))||AI_PROFILES[1],slugs=masteryOwnerTeam(v),you=slugs.map(x=>clone(char(x),false,p.difficulty)),ai=teamForProfile(p).map(c=>clone(c,true,p.difficulty));
  const owner=you.find(x=>x.slug===v.character);if(owner){owner.skills=owner.skills||[];owner.skills[Number(v.slot)]={...v,cd:0,originalName:v.name,masteryTrialTechnique:true}}
  const trialCh=ensureMasteryTechniqueChakra(gain(emptyCh(),8,you),v.cost||[]);
- closeMasteryTrial();G={masteryTrial:{variantId:id,stageIndex:idx,maxTurns:Number(trial.stages[idx].maxTurns|| (tier===1?7:6)),owner:v.character,techniqueUsed:false},turn:1,diff:p.difficulty,profile:{...p,name:`PROVA DE DOMÍNIO — ${v.name}`,plan:trial.stages[idx].prompt},strategy:'smart',you,ai,ch:trialCh,aich:gain(emptyCh(),tier===1?6:8,ai),acts:[],over:false,damage:0,kos:0,aiFocus:null,itemUsedTurn:0,itemUsesTotal:0,itemUsesByType:{},aiState:{defensiveStreak:0,lastKinds:[]}};selected=null;show('battle');$('#battlelog').innerHTML='';$('#player0 .controlTag').textContent='PROVA DE DOMÍNIO — CANDIDATO';$('#player1 .controlTag').textContent='EXAMINADORES — SPARRING';$('#bottomAI').textContent='EXAMINADOR';$('#bottomAIPlan').textContent='PROVA DE DOMÍNIO';$('#view').innerHTML=`<section class="r31MasteryBattleBrief r33NarutoUnisonBrief"><small class="masteryFamilyLine">${masteryFamilyIconHtml(trial,'battle')}<span>PROVA ${String(trial.number).padStart(3,'0')} • ${esc(trial.familyLabel)}</span></small><h4>${esc(v.name)}</h4><p>${esc(trial.intro)}</p><p><b>Obrigatório:</b> usar ${esc(v.name)} pelo menos uma vez, vencer em até ${G.masteryTrial.maxTurns} turnos e manter ${esc(char(v.character)?.name||v.character)} consciente.</p></section>`;log(`Prova de Domínio iniciada: ${v.name}. A técnica foi disponibilizada temporariamente no slot ${Number(v.slot)+1}.`,'info');renderBattle()
+ closeMasteryTrial();G={masteryTrial:{variantId:id,stageIndex:idx,maxTurns:Math.max(10,Number(trial.stages[idx].maxTurns||0)),owner:v.character,techniqueUsed:false},turn:1,diff:p.difficulty,profile:{...p,name:`PROVA DE DOMÍNIO — ${v.name}`,plan:trial.stages[idx].prompt},strategy:'smart',you,ai,ch:trialCh,aich:gain(emptyCh(),tier===1?6:8,ai),acts:[],over:false,damage:0,kos:0,aiFocus:null,itemUsedTurn:0,itemUsesTotal:0,itemUsesByType:{},aiState:{defensiveStreak:0,lastKinds:[]}};selected=null;show('battle');$('#battlelog').innerHTML='';$('#player0 .controlTag').textContent='PROVA DE DOMÍNIO — CANDIDATO';$('#player1 .controlTag').textContent='EXAMINADORES — SPARRING';$('#bottomAI').textContent='EXAMINADOR';$('#bottomAIPlan').textContent='PROVA DE DOMÍNIO';$('#view').innerHTML=`<section class="r31MasteryBattleBrief r33NarutoUnisonBrief"><small class="masteryFamilyLine">${masteryFamilyIconHtml(trial,'battle')}<span>PROVA ${String(trial.number).padStart(3,'0')} • ${esc(trial.familyLabel)}</span></small><h4>${esc(v.name)}</h4><p>${esc(trial.intro)}</p><p><b>Obrigatório:</b> usar ${esc(v.name)} pelo menos uma vez, vencer em até ${G.masteryTrial.maxTurns} turnos e manter ${esc(char(v.character)?.name||v.character)} consciente.</p></section>`;log(`Prova de Domínio iniciada: ${v.name}. A técnica foi disponibilizada temporariamente no slot ${Number(v.slot)+1}.`,'info');renderBattle()
 }
 function finishMasteryBattle(win,quit){
- const info=G?.masteryTrial,v=JV_BY_ID[info?.variantId],trial=v?.masteryTrial,owner=G?.you?.find(x=>x.slug===info?.owner),fast=Number(G?.turn||99)<=Number(info?.maxTurns||6),used=!!info?.techniqueUsed,passed=!!win&&!quit&&used&&!!owner&&Number(owner.hp)>0&&fast;const idx=Number(info?.stageIndex||0);if(G&&!quit){recordBattleMastery(G.you,win);degradeGear(G.you);S.c.battles++;trackPeriodic('battles',1);if(win){S.wins++;S.c.wins++;trackPeriodic('wins',1)}else S.losses++}G=null;show('tasks');if(passed)completeMasteryStage(v.id,idx,trial.stages[idx].success);else{const reason=quit?'Prova de combate abandonada.':!used?`A técnica ${v.name} não foi usada.`:!win?'Sparring perdido.':!owner||owner.hp<=0?'O usuário da técnica foi derrotado.':`Vitória acima do limite de ${Number(info?.maxTurns||6)} turnos.`;failMasteryStage(v.id,`${trial.stages[idx].failure} ${reason}`);renderJutsuMissions();renderMasteryTrialPanel(v.id)}
+ const info=G?.masteryTrial,v=JV_BY_ID[info?.variantId],trial=v?.masteryTrial,owner=G?.you?.find(x=>x.slug===info?.owner),fast=Number(G?.turn||99)<=Number(info?.maxTurns||6),used=!!info?.techniqueUsed,passed=!!win&&!quit&&used&&!!owner&&Number(owner.hp)>0&&fast;const idx=Number(info?.stageIndex||0);if(G&&!quit){recordBattleMastery(G.you,win);degradeGear(G.you);S.c.battles++;trackPeriodic('battles',1);if(win){S.wins++;S.c.wins++;trackPeriodic('wins',1)}else S.losses++}G=null;clearBattleSession();show('jutsus');renderMissions();setTimeout(()=>window.NarutoDesktopOverhaul?.showTraining?.(),0);if(passed)completeMasteryStage(v.id,idx,trial.stages[idx].success);else{const reason=quit?'Prova de combate abandonada.':!used?`A técnica ${v.name} não foi usada.`:!win?'Sparring perdido.':!owner||owner.hp<=0?'O usuário da técnica foi derrotado.':`Vitória acima do limite de ${Number(info?.maxTurns||6)} turnos.`;failMasteryStage(v.id,`${trial.stages[idx].failure} ${reason}`);renderJutsuMissions();renderMasteryTrialPanel(v.id)}
 }
 function renderJutsuMissions(){
  const sel=$('#jutsuMissionCharacter'),box=$('#jutsuMissions');if(!sel||!box)return;const slug=sel.value,c=char(slug);if(!c)return;const variants=variantsFor(slug);
@@ -1757,6 +1764,7 @@ function legacy_R20_UI_MISSIONS_EVENTS_SHOP_renderNinjaMissions(){
 }
 
 function show(name){
+ if(name!=='battle'&&name!=='auth'&&!G)clearBattleSession();
  if(name==='missions')name='tasks';if(name!=='battle'&&window.BattleFX)window.BattleFX.cleanup();
  for(const [n,id] of [['auth','#authPage'],['home','#homePage'],['select','#selectPage'],['jutsus','#jutsuPage'],['battle','#battlePage'],['story','#storyPage'],['online','#onlinePage'],['tasks','#missionPage'],['ninjaMissions','#ninjaMissionPage'],['events','#eventsPage'],['profile','#profilePage'],['shop','#shopPage'],['inventory','#inventoryPage'],['encyclopedia','#encyclopediaPage']]){const el=$(id);if(el)el.classList.toggle('hidden',n!==name)}
  if(name==='home')renderHome();if(name==='jutsus'){renderJutsuPage();renderMissions();}if(name==='tasks')renderMissions();if(name==='ninjaMissions')renderNinjaMissions();if(name==='events')renderEvents();if(name==='profile')renderProfile();if(name==='shop')renderShop();if(name==='inventory')renderInventory();if(name==='encyclopedia')renderEncyclopedia();if(name==='online')renderOnline();if(name==='story')renderStory();if(name==='select')renderRoster()
@@ -2132,7 +2140,7 @@ async function bootstrap(){
  if(ON.token){
    authMsg('Verificando sessão salva (máximo 10s)...');
    const sess=await api('/api/account/session?token='+encodeURIComponent(ON.token),undefined,{timeout:10000});
-   if(sess.ok){ON.user=sess.user;saveOnlineSession();if(sess.profile)applyServerProfile(sess.profile,sess.revision);setSaveStatus(`Salvo automaticamente • ${ON.user}`);show('home');return}
+   if(sess.ok){ON.user=sess.user;saveOnlineSession();if(sess.profile)applyServerProfile(sess.profile,sess.revision);setSaveStatus(`Salvo automaticamente • ${ON.user}`);if(!(await resumeBattleAfterAuth()))show('home');return}
    if([400,401,403].includes(Number(sess.httpStatus||0))){ON.token=null;ON.user=null;ON.revision=0;saveOnlineSession();authMsg('Sessão antiga expirou. Entre novamente.',true)}
    else authMsg((sess.error||'Não foi possível confirmar a sessão salva.')+' Você pode entrar manualmente; a tela não ficará presa.',true);
    return
