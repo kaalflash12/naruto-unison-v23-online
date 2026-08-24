@@ -1,13 +1,20 @@
-workflow_revision=clean-final-002
+workflow_revision=clean-final-003
 decode_dir=payload/.r38-repaired parts=18 limit=18
 decoded_bytes=241773
 xz: /home/runner/work/_temp/base.tar.xz: Compressed data is corrupt
-xz: (stdin): Compressed data is corrupt
-tar: Unexpected EOF in archive
-tar: Error is not recoverable: exiting now
-archive_entries=139 sha=458480560933fdff7e5783ad3c45522f2ecc2050936a9e1cdb6337cb2f81e915
-chosen_runtime=.r38-repaired[00-17]
-xz: (stdin): Compressed data is corrupt
-tar: Unexpected EOF in archive
-tar: Unexpected EOF in archive
-tar: Error is not recoverable: exiting now
+repaired_00_17_failed
+decode_dir=payload/.r38-runtime-clean-v3 parts=19 limit=0
+base64_invalid=Error('Excess data after padding')
+decode_dir=payload/.r38-runtime-final parts=9 limit=0
+base64_invalid=Error('Invalid base64-encoded string: number of data characters (156013) cannot be 1 more than a multiple of 4')
+decode_dir=payload/.r38-runtime-v2 parts=3 limit=0
+base64_invalid=Error('Invalid base64-encoded string: number of data characters (42001) cannot be 1 more than a multiple of 4')
+decode_dir=payload/.r38-runtime-clean parts=13 limit=0
+decoded_bytes=178347
+xz: /home/runner/work/_temp/base.tar.xz: Compressed data is corrupt
+decode_dir=payload/.r38-runtime-lite parts=1 limit=0
+decoded_bytes=15210
+xz: /home/runner/work/_temp/base.tar.xz: Compressed data is corrupt
+decode_dir=payload/.r382-runtime-final-small parts=5 limit=0
+base64_invalid=Error('Invalid base64-encoded string: number of data characters (57981) cannot be 1 more than a multiple of 4')
+no_valid_runtime=FAIL
