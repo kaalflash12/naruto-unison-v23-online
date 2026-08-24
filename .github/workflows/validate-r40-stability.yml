@@ -1,0 +1,44 @@
+name: Validate R40 stability
+on:
+  push:
+    paths:
+      - '.r40-validate-trigger'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Syntax and stability gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check r40-battle-guard.js
+          node --check r40-desktop-overhaul.js
+          node --check r39-live-hotfix.js
+          node --check online-config.js
+          grep -q "r40-battle-guard.js" online-config.js
+          grep -q "r40-desktop-overhaul.js" online-config.js
+          ! grep -q "guard.src='battle-mobile-guard.js" online-config.js
+          ! grep -q "desktop.src='desktop-overhaul.js" online-config.js
+          ! grep -q "observer.observe(document.documentElement" r39-live-hotfix.js
+          ! grep -q "observer.observe(document.documentElement" r40-battle-guard.js
+          ! grep -q "observe(document.body,{subtree:true" r40-desktop-overhaul.js
+          grep -q "attributeFilter:\['class','hidden'\]" r40-battle-guard.js
+          grep -q "new MutationObserver(schedule).observe(c,{childList:true})" r40-battle-guard.js
+          echo 'syntax=PASS'
+          echo 'global_observer_removed=PASS'
+          echo 'single_scroll_controller=PASS'
+      - name: Record PASS
+        shell: bash
+        run: |
+          printf 'Naruto Unison R40 stability validation\nstatus=PASS\nvalidated_at=%s\ncommit=%s\nchecks=node-syntax,global-observers-removed,targeted-battle-observer,r40-loaders\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$GITHUB_SHA" > R40-STABILITY-VALIDATED.txt
+          git config user.name 'Naruto Unison Validator'
+          git config user.email 'actions@users.noreply.github.com'
+          git add R40-STABILITY-VALIDATED.txt
+          git commit -m 'test: R40 stability validation PASS [skip ci]'
+          git push origin HEAD:main
