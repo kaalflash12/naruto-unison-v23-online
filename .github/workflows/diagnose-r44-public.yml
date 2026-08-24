@@ -1,0 +1,60 @@
+name: Diagnose R44 Public Endpoints
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.r44-public-diagnose-trigger'
+      - '.github/workflows/diagnose-r44-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe public endpoints
+        shell: bash
+        run: |
+          set +e
+          ADMIN_URL='https://kaalflash12.github.io/naruto-unison-v23-online/admin.html'
+          GAME_URL='https://kaalflash12.github.io/naruto-unison-v23-online/'
+          admin_code=$(curl -L --max-time 30 -sS -o /tmp/admin.html -w '%{http_code}' "$ADMIN_URL?diag=${GITHUB_SHA}")
+          admin_rc=$?
+          game_code=$(curl -L --max-time 30 -sS -o /tmp/game.html -w '%{http_code}' "$GAME_URL?diag=${GITHUB_SHA}")
+          game_rc=$?
+          backend_code=$(curl -L --max-time 30 -sS -o /tmp/backend.json -w '%{http_code}' 'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/admin-gameops/status')
+          backend_rc=$?
+          grep -Fq 'GAMEOPS R44' /tmp/admin.html 2>/dev/null; admin_r44=$?
+          grep -Fq 'VISÃO GERAL' /tmp/admin.html 2>/dev/null; admin_dashboard=$?
+          grep -Fq 'Naruto Unison' /tmp/game.html 2>/dev/null; game_marker=$?
+          {
+            echo 'Naruto Unison R44 public endpoint diagnostic'
+            echo "tested_commit=${GITHUB_SHA}"
+            echo "admin_curl_rc=$admin_rc"
+            echo "admin_http=$admin_code"
+            echo "admin_r44_marker=$([ $admin_r44 -eq 0 ] && echo PASS || echo FAIL)"
+            echo "admin_dashboard_marker=$([ $admin_dashboard -eq 0 ] && echo PASS || echo FAIL)"
+            echo "game_curl_rc=$game_rc"
+            echo "game_http=$game_code"
+            echo "game_marker=$([ $game_marker -eq 0 ] && echo PASS || echo FAIL)"
+            echo "backend_curl_rc=$backend_rc"
+            echo "backend_anonymous_http=$backend_code"
+          } > R44-PUBLIC-DIAGNOSTIC.txt
+          cat R44-PUBLIC-DIAGNOSTIC.txt
+      - name: Commit diagnostic
+        if: always()
+        shell: bash
+        run: |
+          set -e
+          test -f R44-PUBLIC-DIAGNOSTIC.txt || printf 'Naruto Unison R44 public endpoint diagnostic\nstatus=probe_step_failed_before_output\ntested_commit=%s\n' "$GITHUB_SHA" > R44-PUBLIC-DIAGNOSTIC.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add R44-PUBLIC-DIAGNOSTIC.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'test: R44 public endpoint diagnostic [skip ci]'
+          git push
