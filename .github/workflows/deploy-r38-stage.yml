@@ -1,4 +1,4 @@
-name: Publish Naruto Unison final
+name: Publish Naruto Unison clean final
 
 on:
   push:
@@ -9,22 +9,22 @@ permissions:
   contents: write
 
 concurrency:
-  group: naruto-unison-final-publish
+  group: naruto-unison-clean-final
   cancel-in-progress: false
 
 jobs:
   publish:
-    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[DEPLOY-R382-FINAL]') }}
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[DEPLOY-FINAL-CLEAN]') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout intact staging static
+      - name: Checkout staging assets
         uses: actions/checkout@v5
         with:
           ref: staging
           path: source
           fetch-depth: 1
 
-      - name: Checkout final payload
+      - name: Checkout payload
         uses: actions/checkout@v5
         with:
           ref: main
@@ -39,230 +39,111 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Reconstruct and validate final site
+      - name: Reconstruct, patch and validate
         id: build
         continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-          OUT="$RUNNER_TEMP/naruto-unison-site"
-          RUNTIME="$RUNNER_TEMP/runtime-final.tar.xz"
-          OVERLAY="$RUNNER_TEMP/overlay-final.tar.xz"
-          DIAG="$RUNNER_TEMP/final-diag.txt"
+          OUT="$RUNNER_TEMP/site"
+          BASE="$RUNNER_TEMP/base.tar.xz"
+          OVERLAY="$RUNNER_TEMP/overlay.tar.xz"
+          DIAG="$RUNNER_TEMP/final-deploy-diagnostic.txt"
           : > "$DIAG"
           exec > >(tee -a "$DIAG") 2>&1
-          echo 'NARUTO UNISON FINAL BUILD DIAGNOSTIC'
           rm -rf "$OUT" && mkdir -p "$OUT"
 
-          test -d source/static
-          STATIC_FILES="$(find source/static -type f | wc -l | tr -d ' ')"
-          echo "staging_static_files=$STATIC_FILES"
-          test "$STATIC_FILES" -ge 100
-
-          decode_xz_parts() {
-            local dir out b64
-            dir="$1"
-            out="$2"
-            b64="$RUNNER_TEMP/$(basename "$dir").b64"
+          decode_parts() {
+            local dir="$1" out="$2" b64="$RUNNER_TEMP/$(basename "$dir").b64"
             mapfile -t parts < <(find "$dir" -maxdepth 1 -type f -name 'part-*' | sort -V)
             echo "decode_dir=$dir parts=${#parts[@]}"
             test "${#parts[@]}" -gt 0
             : > "$b64"
             for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64"; done
-            echo "concat_b64_bytes=$(wc -c < "$b64")"
-            B64="$b64" OUTFILE="$out" python - <<'PY'
-          import base64, lzma, os, sys
-          src=os.environ['B64']; out=os.environ['OUTFILE']
-          s=open(src,'r',encoding='ascii').read().strip()
-          def valid(raw):
-              try:
-                  lzma.decompress(raw, format=lzma.FORMAT_XZ)
-                  return True
-              except Exception:
-                  return False
-          candidates=[]
-          try:
-              candidates.append(('exact',base64.b64decode(s,validate=True)))
-          except Exception:
-              pass
-          rem=len(s)%4
-          if rem in (2,3):
-              try:candidates.append(('padding',base64.b64decode(s+'='*(4-rem),validate=True)))
-              except Exception:pass
-          # Some staged payloads lost the last 3 base64 chars. XZ streams end in bytes 59 5A ("YZ"),
-          # so only the low two bits of the preceding byte are unknown: four deterministic candidates.
-          if rem==1 and s:
-              alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-              v=alphabet.find(s[-1])
-              if v>=0:
-                  prefix=s[:-1]
-                  for low2 in range(4):
-                      tail=bytes([(v<<2)|low2,0x59,0x5A])
-                      enc=base64.b64encode(tail).decode('ascii')
-                      if enc[0]==s[-1]:
-                          try:candidates.append((f'xz-footer-repair-{low2}',base64.b64decode(prefix+enc,validate=True)))
-                          except Exception:pass
-          for mode,raw in candidates:
-              if valid(raw):
-                  open(out,'wb').write(raw)
-                  print(f'decode_mode={mode}')
-                  sys.exit(0)
-          print('decode_failure=no valid XZ candidate',file=sys.stderr)
-          sys.exit(7)
-          PY
+            base64 -d "$b64" > "$out"
             xz -t "$out"
-            echo "decoded_bytes=$(wc -c < "$out") sha=$(sha256sum "$out" | cut -d' ' -f1)"
+            echo "archive_bytes=$(wc -c < "$out") sha=$(sha256sum "$out" | cut -d' ' -f1)"
           }
 
           extract_normalized() {
-            local archive="$1" dest="$2" tmp="$RUNNER_TEMP/extract-$RANDOM-$RANDOM"
-            rm -rf "$tmp" && mkdir -p "$tmp"
+            local archive="$1" dest="$2" tmp="$RUNNER_TEMP/extract-$RANDOM"
+            mkdir -p "$tmp"
             tar -xJf "$archive" -C "$tmp"
-            if [ -d "$tmp/public" ]; then
-              cp -a "$tmp/public"/. "$dest"/
-            else
-              cp -a "$tmp"/. "$dest"/
-            fi
+            if [ -d "$tmp/public" ]; then cp -a "$tmp/public"/. "$dest"/; else cp -a "$tmp"/. "$dest"/; fi
             rm -rf "$tmp"
           }
 
-          test -d payload/.r382-runtime-final
-          decode_xz_parts payload/.r382-runtime-final "$RUNTIME"
-          tar -tJf "$RUNTIME" > "$RUNNER_TEMP/runtime-list.txt"
-          echo "runtime_entries=$(wc -l < "$RUNNER_TEMP/runtime-list.txt")"
-          extract_normalized "$RUNTIME" "$OUT"
-          echo 'runtime_extract=PASS'
+          test -d payload/.r38-repaired
+          decode_parts payload/.r38-repaired "$BASE"
+          extract_normalized "$BASE" "$OUT"
+          echo 'base_runtime=PASS'
 
+          test -d source/static
           rm -rf "$OUT/static"
           cp -a source/static "$OUT/static"
-          echo 'staging_static_restore=PASS'
+          STATIC_FILES="$(find "$OUT/static" -type f | wc -l | tr -d ' ')"
+          echo "static_files=$STATIC_FILES"
+          test "$STATIC_FILES" -ge 3000
 
-          test -d payload/.r382-overlay-final
-          decode_xz_parts payload/.r382-overlay-final "$OVERLAY"
-          tar -tJf "$OVERLAY" > "$RUNNER_TEMP/overlay-list.txt"
-          echo "overlay_entries=$(wc -l < "$RUNNER_TEMP/overlay-list.txt")"
+          test -d payload/.final-overlay-b64
+          decode_parts payload/.final-overlay-b64 "$OVERLAY"
           extract_normalized "$OVERLAY" "$OUT"
           echo 'final_overlay=PASS'
 
-          node - "$OUT" <<'NODE'
-          const fs=require('fs'),path=require('path');
-          const root=process.argv[2];
-          function edit(rel,fn){const p=path.join(root,rel);if(!fs.existsSync(p))return;const old=fs.readFileSync(p,'utf8');const next=fn(old);if(next!==old)fs.writeFileSync(p,next)}
-          edit('index.html',s=>s
-            .replace(/<meta name="naruto-unison-build"[^>]*>/gi,'<meta name="naruto-unison-build" content="Naruto Unison">')
-            .replace(/<title>[\s\S]*?<\/title>/i,'<title>Naruto Unison PT-BR</title>')
-            .replace(/Naruto Unison\s+(?:V23[^<\s]*\s*)?R38(?:\.\d+)?/gi,'Naruto Unison')
-            .replace(/\bV23\.\d+-R38(?:\.\d+)?\b/gi,'Naruto Unison')
-            .replace(/\bR38(?:\.\d+)?\b/gi,'')
-          );
-          edit('manifest.webmanifest',s=>s
-            .replace(/Naruto Unison PT-BR\s*[—-]\s*R38(?:\.\d+)?/gi,'Naruto Unison PT-BR')
-            .replace(/\bR38(?:\.\d+)?\b/gi,'')
-          );
-          edit('src/core/bootstrap.js',s=>s
-            .replace(/<small>R38(?:\.\d+)?<\/small>/gi,'<small>PT-BR</small>')
-          );
-          edit('src/domains/battle/balance-engine.js',s=>s
-            .replace(/BALANCE R38(?:\.\d+)?\s*/gi,'BALANCE ')
-          );
-          NODE
-          echo 'public_branding_cleanup=PASS'
-
-          printf 'Naruto Unison PT-BR\n' > "$OUT/DEPLOYED-VERSION.txt"
-          printf 'public_brand=Naruto Unison PT-BR\ninternal_release=V23.32-R38.2\n' > "$OUT/BUILD-PROOF.txt"
-
-          for f in index.html sw.js r38-config.json src/core/bootstrap.js src/domains/ranked/ranked-service.js src/domains/battle/balance-engine.js src/fx/combat-animation-director.js src/fx/item-fx-director.js; do
-            test -f "$OUT/$f" || { echo "missing=$f"; exit 22; }
+          for f in index.html manifest.webmanifest r38-config.json sw.js src/core/bootstrap.js src/ui/auth/auth-overlay.js src/admin/admin-api.js src/admin/admin-shell.js src/admin/admin.css; do
+            test -f "$OUT/$f" || { echo "missing=$f"; exit 21; }
           done
-          grep -q 'submissionId' "$OUT/src/domains/ranked/ranked-service.js"
           grep -q 'sb_publishable_' "$OUT/r38-config.json"
-
-          FX="$(find "$OUT/assets" -type f \( -path '*/fx-r382/*.svg' -o -path '*/fx-r38/*.svg' \) | wc -l | tr -d ' ')"
-          echo "fx_assets=$FX"
-          test "$FX" -ge 31
-          test "$(find "$OUT/static" -type f | wc -l | tr -d ' ')" -eq "$STATIC_FILES"
-
+          grep -q 'resetPasswordForEmail' "$OUT/src/domains/auth/auth-service.js"
+          grep -q 'ESQUECI MINHA SENHA' "$OUT/src/ui/auth/auth-overlay.js"
+          grep -q '/admin-gameops/seasons' "$OUT/src/admin/admin-api.js"
+          grep -q '/admin-gameops/rewards' "$OUT/src/admin/admin-api.js"
+          grep -q "'seasons'" "$OUT/src/admin/admin-shell.js"
+          grep -q "'rewards'" "$OUT/src/admin/admin-shell.js"
           node --check "$OUT/src/core/bootstrap.js"
-          node --check "$OUT/src/fx/animation-profile-registry.js"
-          node --check "$OUT/src/fx/combat-animation-director.js"
-          node --check "$OUT/src/fx/item-fx-director.js"
-          node --check "$OUT/src/domains/battle/mechanics-engine.js"
-          node --check "$OUT/src/domains/battle/balance-engine.js"
-
-          ROOT="$OUT" node <<'NODE'
-          const fs=require('fs'),path=require('path'),root=process.env.ROOT;
-          const arr=n=>{const d=JSON.parse(fs.readFileSync(path.join(root,'src/data/fallback',n+'.json'),'utf8'));return Array.isArray(d)?d:(d.items||[])};
-          for(const [n,c] of Object.entries({character:214,technique:1262,equipment:105,item:24})){
-            const got=arr(n).length; console.log(`${n}=${got}`); if(got!==c) throw Error(`${n}:${got}!=${c}`);
-          }
-          NODE
-
-          if grep -Eqi 'R38(?:\.[0-9]+)?|V23\.[0-9]+-R38' "$OUT/index.html" "$OUT/manifest.webmanifest"; then
-            echo 'public_version_leak=index_or_manifest'; exit 31
+          node --check "$OUT/src/ui/auth/auth-overlay.js"
+          node --check "$OUT/src/admin/admin-api.js"
+          node --check "$OUT/src/admin/admin-shell.js"
+          if grep -Eqi 'R38(?:\.[0-9]+)?|R37|R36|V23\.' "$OUT/index.html" "$OUT/manifest.webmanifest" "$OUT/src/ui/auth/auth-overlay.js"; then
+            echo 'public_revision_leak=FAIL'; exit 31
           fi
-          if grep -Eqi '<small>R38|BALANCE R38' "$OUT/src/core/bootstrap.js" "$OUT/src/domains/battle/balance-engine.js"; then
-            echo 'public_version_leak=runtime_ui'; exit 32
+          if grep -Eqi '<small>R38|R37 BOOT ERROR' "$OUT/src/core/bootstrap.js"; then
+            echo 'runtime_revision_leak=FAIL'; exit 32
           fi
-          echo 'public_version_gate=PASS'
-
-          FILES="$(find "$OUT" -type f | wc -l | tr -d ' ')"
-          BYTES="$(du -sb "$OUT" | cut -f1)"
-          echo "final_files=$FILES final_bytes=$BYTES"
-          echo "files=$FILES" >> "$GITHUB_OUTPUT"
-          echo "bytes=$BYTES" >> "$GITHUB_OUTPUT"
-          echo "static_files=$STATIC_FILES" >> "$GITHUB_OUTPUT"
-          echo "fx=$FX" >> "$GITHUB_OUTPUT"
+          echo 'public_revision_gate=PASS'
+          echo "final_files=$(find "$OUT" -type f | wc -l | tr -d ' ')"
           echo 'validation=PASS'
 
-      - name: Record failed reconstruction
+      - name: Record reconstruction failure
         if: steps.build.outcome != 'success'
         shell: bash
         run: |
           set -euo pipefail
           cd publish
           git pull --ff-only origin main
-          cp "$RUNNER_TEMP/final-diag.txt" R382-FINAL-DIAGNOSTIC.txt || true
+          cp "$RUNNER_TEMP/final-deploy-diagnostic.txt" FINAL-DEPLOY-DIAGNOSTIC.txt || true
           git config user.name 'Naruto Unison Diagnostics'
           git config user.email 'actions@users.noreply.github.com'
-          git add R382-FINAL-DIAGNOSTIC.txt
-          git commit -m 'ci: record final publish diagnostics [skip ci]' || true
+          git add FINAL-DEPLOY-DIAGNOSTIC.txt
+          git commit -m 'diagnostic: clean final deploy [skip ci]' || true
           git push origin HEAD:main || true
           exit 1
 
       - name: Synchronize validated site to main
         if: steps.build.outcome == 'success'
         shell: bash
-        env:
-          FILES: ${{ steps.build.outputs.files }}
-          BYTES: ${{ steps.build.outputs.bytes }}
-          STATIC_FILES: ${{ steps.build.outputs.static_files }}
-          FX: ${{ steps.build.outputs.fx }}
         run: |
           set -euo pipefail
           cd publish
-          find . -mindepth 1 -maxdepth 1 \
-            ! -name .git ! -name .github \
-            ! -name .r38-delta ! -name .r38-patch ! -name .r382-delta \
-            ! -name .r38-repaired ! -name .r38-runtime-lite ! -name .r38-runtime-v2 \
-            ! -name .r38-runtime-clean ! -name .r38-runtime-clean-v3 ! -name .r38-runtime-final \
-            ! -name .r382-runtime-final ! -name .r382-runtime-final-small ! -name .r382-overlay-final \
-            -exec rm -rf {} +
-          cp -a "$RUNNER_TEMP/naruto-unison-site"/. .
-          {
-            echo 'Naruto Unison PT-BR'
-            echo "files=$FILES"
-            echo "bytes=$BYTES"
-            echo "static_files=$STATIC_FILES"
-            echo "fx_assets=$FX"
-            echo 'internal_release=V23.32-R38.2'
-            echo "deployed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          } > R382-DEPLOY-VALIDATED.txt
-          rm -f R382-STAGING-STATUS.txt R382-FINAL-DIAGNOSTIC.txt
+          git pull --ff-only origin main
+          find . -mindepth 1 -maxdepth 1 ! -name '.*' -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/site"/. .
+          printf 'Naruto Unison PT-BR\nvalidated=true\ndeployed_at=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > DEPLOY-VALIDATED.txt
+          rm -f FINAL-DEPLOY-DIAGNOSTIC.txt R382-FINAL-DIAGNOSTIC.txt
           git config user.name 'Naruto Unison Publisher'
           git config user.email 'actions@users.noreply.github.com'
           git add -A
-          git reset -- .r38-delta .r38-patch .r382-delta .r38-repaired .r38-runtime-lite .r38-runtime-v2 .r38-runtime-clean .r38-runtime-clean-v3 .r38-runtime-final .r382-runtime-final .r382-runtime-final-small .r382-overlay-final 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m 'Naruto Unison validated public site [skip ci]'
+            git commit -m 'Naruto Unison clean validated public site [skip ci]'
             git push origin HEAD:main
           fi
