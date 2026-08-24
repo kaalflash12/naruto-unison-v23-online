@@ -29,10 +29,10 @@ jobs:
           grep -Fq 'assets/equipment/${id}.svg' r40-desktop-overhaul.js
           ! grep -Fq 'assets/items/${id}.webp' r40-desktop-overhaul.js
           ! grep -Fq 'assets/equipment/${id}.webp' r40-desktop-overhaul.js
-          ! grep -Fq "battle-mobile-guard.js?v=" online-config.js
-          ! grep -Fq "desktop-overhaul.js?v=" online-config.js
-          grep -Fq "r40-battle-guard.js?v=20260824-r41" online-config.js
-          grep -Fq "r40-desktop-overhaul.js?v=20260824-r41" online-config.js
+          ! grep -Fq "guard.src='battle-mobile-guard.js" online-config.js
+          ! grep -Fq "desktop.src='desktop-overhaul.js" online-config.js
+          grep -Fq "guard.src='r40-battle-guard.js?v=20260824-r41'" online-config.js
+          grep -Fq "desktop.src='r40-desktop-overhaul.js?v=20260824-r41'" online-config.js
           grep -q '^status=PASS$' R40-STABILITY-VALIDATED.txt
           grep -q '^status=PASS$' R41-ASSETS-VALIDATED.txt
           node <<'NODE'
