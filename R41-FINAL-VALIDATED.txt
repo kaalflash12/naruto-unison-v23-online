@@ -1,0 +1,11 @@
+Naruto Unison R41 final validation
+status=PASS
+runtime_syntax=PASS
+stability_gate=PASS
+item_assets=24
+equipment_assets=105
+total_assets=129
+asset_paths=PASS
+old_asset_paths_removed=PASS
+old_global_observer_loaders_removed=PASS
+r41_cache_bust=PASS
