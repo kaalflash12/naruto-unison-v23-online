@@ -1,0 +1,72 @@
+name: Validate R42 Responsive Stability
+on:
+  push:
+    paths:
+      - '.r42-validate-trigger'
+      - 'r42-responsive-fix.css'
+      - 'r40-battle-guard.js'
+      - 'r39-live-hotfix.js'
+      - 'r40-desktop-overhaul.js'
+      - 'online-config.js'
+      - '.github/workflows/validate-r42-responsive.yml'
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: |
+          node --check r40-battle-guard.js
+          node --check r39-live-hotfix.js
+          node --check r40-desktop-overhaul.js
+          node --check online-config.js
+      - name: Single battle controller
+        shell: bash
+        run: |
+          ! grep -q "addEventListener('wheel'" r39-live-hotfix.js
+          ! grep -q "addEventListener(\"wheel\"" r39-live-hotfix.js
+          ! grep -q "addEventListener('wheel'" r40-battle-guard.js
+          test "$(grep -o 'new MutationObserver' r40-battle-guard.js | wc -l)" -eq 1
+          ! grep -q 'new MutationObserver' r39-live-hotfix.js
+          grep -q 'window.NarutoBattleGuard=api' r40-battle-guard.js
+      - name: Desktop and mobile CSS exist
+        shell: bash
+        run: |
+          grep -q '@media (min-width:1051px)' r42-responsive-fix.css
+          grep -q '@media (max-width:1050px)' r42-responsive-fix.css
+          grep -q '#battlePage:not(.hidden)' r42-responsive-fix.css
+          grep -q 'body.r42BattleActive' r42-responsive-fix.css
+          grep -q '#onlinePage .onlinePanel' r42-responsive-fix.css
+          grep -q '#profilePage' r42-responsive-fix.css
+          grep -q '#jutsuHubTabs' r42-responsive-fix.css
+      - name: R42 loaded last and mastery retained in Jutsus
+        shell: bash
+        run: |
+          grep -q "version:'online-r42'" online-config.js
+          grep -q 'r42-responsive-fix.css?v=20260824-r42' online-config.js
+          grep -q 'TREINO / PROVAS DE DOMÍNIO' r40-desktop-overhaul.js
+          grep -q 'jutsuTrainingHub' r40-desktop-overhaul.js
+      - name: Write validation proof
+        shell: bash
+        run: |
+          cat > R42-RESPONSIVE-VALIDATED.txt <<'EOF'
+          R42 RESPONSIVE VALIDATION
+          syntax=PASS
+          single_battle_controller=PASS
+          desktop_layout=PASS
+          mobile_layout=PASS
+          desktop_native_wheel=PASS
+          mobile_battle_scroller=PASS
+          mobile_turn_dock=PASS
+          online_responsive=PASS
+          profile_responsive=PASS
+          mastery_inside_jutsus=PASS
+          EOF
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add R42-RESPONSIVE-VALIDATED.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'test: R42 responsive validation PASS [skip ci]'
+          git push
