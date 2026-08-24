@@ -16,7 +16,7 @@ jobs:
         run: |
           test "$(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | wc -l)" -eq 23
           cat $(find .hotfix-assets -maxdepth 1 -type f -name 'part-*' | sort) | base64 -d > /tmp/assets.tar.xz
-          echo '3a09c356fa654f05830ad42ffe409d7bcafe1044573aa11a6f9d056e9ce2f83e  /tmp/assets.tar.xz' | sha256sum -c -
+          echo '7ca6bfbf10d5eeb079ed44922719db79a01e23eae275890166762dbf353c9358  /tmp/assets.tar.xz' | sha256sum -c -
           mkdir -p assets
           tar -xJf /tmp/assets.tar.xz -C assets
           test "$(find assets/items -type f -name '*.webp' | wc -l)" -eq 24
