@@ -1,0 +1,48 @@
+name: Apply desktop and mastery controller hotfix
+on:
+  push:
+    paths:
+      - '.github/workflows/hotfix-desktop-jutsu-controller.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Patch runtime controller
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          app=Path('app-online.js')
+          s=app.read_text(encoding='utf-8')
+          old=s
+          s,n=re.subn(r"if\(name==='jutsus'\)renderJutsuPage\(\);", "if(name==='jutsus'){renderJutsuPage();renderMissions();}", s)
+          if n < 1: raise SystemExit('jutsus navigation hook not found')
+          s,n2=re.subn(r"const tier=Number\(v\.tier\|\|1\),turns=tier===1\?7:6;", "const tier=Number(v.tier||1),turns=Math.max(10,Number(stage.maxTurns||0));", s)
+          if n2 < 1: raise SystemExit('masteryBattleHtml turn rule not found')
+          s,n3=re.subn(r"AI_PROFILES\.find\(x=>x\.id===\(tier===1\?'equilibrada':'anbu'\)\)", "AI_PROFILES.find(x=>x.id===(tier<=1?'academia':'equilibrada'))", s)
+          if n3 < 1: raise SystemExit('mastery AI profile rule not found')
+          app.write_text(s,encoding='utf-8')
+          fx=Path('battle-fx.js'); f=fx.read_text(encoding='utf-8')
+          needle="const reducedMotion=()=>!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);"
+          repl="const reducedMotion=()=>{try{if(localStorage.getItem('naruto_reduce_motion')==='1')return true}catch(_){}const coarse=!!(window.matchMedia&&(window.matchMedia('(pointer:coarse)').matches||window.matchMedia('(hover:none)').matches));return !!(coarse&&window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)};"
+          if needle not in f: raise SystemExit('battle reducedMotion hook not found')
+          fx.write_text(f.replace(needle,repl,1),encoding='utf-8')
+      - name: Syntax checks
+        run: |
+          node --check app-online.js
+          node --check battle-fx.js
+          node --check online-config.js
+          node --check desktop-overhaul.js
+      - name: Commit hotfix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app-online.js battle-fx.js
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: desktop battle FX and jutsu mastery controller"
+          git push origin HEAD:main
