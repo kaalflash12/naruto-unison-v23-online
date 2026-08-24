@@ -1,4 +1,4 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',hosting:'github-pages',database:'supabase-postgres',version:'online-r41'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',hosting:'github-pages',database:'supabase-postgres',version:'online-r42'};
 
 (()=>{
   const originalFetch=window.fetch.bind(window);
@@ -17,10 +17,11 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
   document.title='Naruto Unison PT-BR';
   const clean=()=>{const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const n of nodes){let t=n.nodeValue||'';t=t.replace(/\s*•?\s*V23\.17\s+R33\s+NARUTO\s+UNISON/gi,'').replace(/\bV23\.17\s+R33\b/gi,'').replace(/\bR33\b/gi,'');n.nodeValue=t.replace(/\s+•\s*$/,'').replace(/•\s*•/g,'•')}};
   if(document.body)clean();else document.addEventListener('DOMContentLoaded',clean,{once:true});
-  const css=document.createElement('link');css.rel='stylesheet';css.href='desktop-overhaul.css?v=20260824-r41';document.head.appendChild(css);
-  const r39css=document.createElement('link');r39css.rel='stylesheet';r39css.href='r39-live-hotfix.css?v=20260824-r41';document.head.appendChild(r39css);
-  const recovery=document.createElement('script');recovery.src='account-recovery.js?v=20260824-r41';recovery.async=false;document.head.appendChild(recovery);
-  const guard=document.createElement('script');guard.src='r40-battle-guard.js?v=20260824-r41';guard.async=false;document.head.appendChild(guard);
-  const desktop=document.createElement('script');desktop.src='r40-desktop-overhaul.js?v=20260824-r41';desktop.async=false;document.head.appendChild(desktop);
-  const r39=document.createElement('script');r39.src='r39-live-hotfix.js?v=20260824-r41';r39.async=false;document.head.appendChild(r39);
+  const css=document.createElement('link');css.rel='stylesheet';css.href='desktop-overhaul.css?v=20260824-r42';document.head.appendChild(css);
+  const r39css=document.createElement('link');r39css.rel='stylesheet';r39css.href='r39-live-hotfix.css?v=20260824-r42';document.head.appendChild(r39css);
+  const r42css=document.createElement('link');r42css.rel='stylesheet';r42css.href='r42-responsive-fix.css?v=20260824-r42';document.head.appendChild(r42css);
+  const recovery=document.createElement('script');recovery.src='account-recovery.js?v=20260824-r42';recovery.async=false;document.head.appendChild(recovery);
+  const guard=document.createElement('script');guard.src='r40-battle-guard.js?v=20260824-r42';guard.async=false;document.head.appendChild(guard);
+  const desktop=document.createElement('script');desktop.src='r40-desktop-overhaul.js?v=20260824-r42';desktop.async=false;document.head.appendChild(desktop);
+  const r39=document.createElement('script');r39.src='r39-live-hotfix.js?v=20260824-r42';r39.async=false;document.head.appendChild(r39);
 })();
