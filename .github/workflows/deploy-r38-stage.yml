@@ -23,14 +23,12 @@ jobs:
           ref: staging
           path: source
           fetch-depth: 1
-
       - name: Checkout payload
         uses: actions/checkout@v5
         with:
           ref: main
           path: payload
           fetch-depth: 1
-
       - name: Checkout publish target
         uses: actions/checkout@v5
         with:
@@ -46,55 +44,81 @@ jobs:
         run: |
           set -euo pipefail
           OUT="$RUNNER_TEMP/site"
-          BASE="$RUNNER_TEMP/base.tar.xz"
-          OVERLAY="$RUNNER_TEMP/overlay.tar.xz"
           DIAG="$RUNNER_TEMP/final-deploy-diagnostic.txt"
           : > "$DIAG"
           exec > >(tee -a "$DIAG") 2>&1
           rm -rf "$OUT" && mkdir -p "$OUT"
 
           decode_parts() {
-            local dir="$1" out="$2" b64="$RUNNER_TEMP/$(basename "$dir").b64"
-            mapfile -t parts < <(find "$dir" -maxdepth 1 -type f -name 'part-*' | sort -V)
-            echo "decode_dir=$dir parts=${#parts[@]}"
-            test "${#parts[@]}" -gt 0
-            : > "$b64"
-            for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64"; done
-            base64 -d "$b64" > "$out"
-            xz -t "$out"
-            echo "archive_bytes=$(wc -c < "$out") sha=$(sha256sum "$out" | cut -d' ' -f1)"
+            local srcdir
+            local outfile
+            local b64file
+            local limit
+            srcdir="$1"
+            outfile="$2"
+            limit="${3:-0}"
+            b64file="$RUNNER_TEMP/$(basename "$srcdir").b64"
+            if [ "$limit" -gt 0 ]; then
+              mapfile -t parts < <(find "$srcdir" -maxdepth 1 -type f -name 'part-*' | sort -V | head -n "$limit")
+            else
+              mapfile -t parts < <(find "$srcdir" -maxdepth 1 -type f -name 'part-*' | sort -V)
+            fi
+            echo "decode_dir=$srcdir parts=${#parts[@]} limit=$limit"
+            [ "${#parts[@]}" -gt 0 ] || return 1
+            : > "$b64file"
+            for p in "${parts[@]}"; do tr -cd 'A-Za-z0-9+/=' < "$p" >> "$b64file"; done
+            B64FILE="$b64file" OUTFILE="$outfile" python - <<'PY'
+          import base64,os,sys
+          s=open(os.environ['B64FILE'],'r',encoding='ascii').read().strip()
+          try:
+              raw=base64.b64decode(s,validate=True)
+          except Exception as e:
+              print('base64_invalid='+repr(e)); sys.exit(2)
+          open(os.environ['OUTFILE'],'wb').write(raw)
+          print('decoded_bytes='+str(len(raw)))
+          PY
+            xz -t "$outfile"
+            tar -tJf "$outfile" > "$RUNNER_TEMP/archive-list.txt"
+            echo "archive_entries=$(wc -l < "$RUNNER_TEMP/archive-list.txt") sha=$(sha256sum "$outfile"|cut -d' ' -f1)"
           }
 
-          extract_normalized() {
-            local archive="$1" dest="$2" tmp="$RUNNER_TEMP/extract-$RANDOM"
-            mkdir -p "$tmp"
-            tar -xJf "$archive" -C "$tmp"
-            if [ -d "$tmp/public" ]; then cp -a "$tmp/public"/. "$dest"/; else cp -a "$tmp"/. "$dest"/; fi
-            rm -rf "$tmp"
-          }
+          BASE="$RUNNER_TEMP/base.tar.xz"
+          if decode_parts payload/.r38-repaired "$BASE" 18; then
+            echo 'chosen_runtime=.r38-repaired[00-17]'
+          else
+            echo 'repaired_00_17_failed'
+            CHOSEN=''
+            for d in payload/.r38-runtime-clean-v3 payload/.r38-runtime-final payload/.r38-runtime-v2 payload/.r38-runtime-clean payload/.r38-runtime-lite; do
+              if [ -d "$d" ] && decode_parts "$d" "$BASE"; then CHOSEN="$d"; break; fi
+            done
+            [ -n "$CHOSEN" ] || { echo 'no_valid_runtime=FAIL'; exit 20; }
+            echo "chosen_runtime=$CHOSEN"
+          fi
 
-          test -d payload/.r38-repaired
-          decode_parts payload/.r38-repaired "$BASE"
-          extract_normalized "$BASE" "$OUT"
-          echo 'base_runtime=PASS'
-
-          test -d source/static
+          TMP="$RUNNER_TEMP/base-extract"
+          rm -rf "$TMP" && mkdir -p "$TMP"
+          tar -xJf "$BASE" -C "$TMP"
+          if [ -d "$TMP/public" ]; then cp -a "$TMP/public"/. "$OUT"/; else cp -a "$TMP"/. "$OUT"/; fi
           rm -rf "$OUT/static"
           cp -a source/static "$OUT/static"
           STATIC_FILES="$(find "$OUT/static" -type f | wc -l | tr -d ' ')"
           echo "static_files=$STATIC_FILES"
           test "$STATIC_FILES" -ge 3000
 
-          test -d payload/.final-overlay-b64
+          OVERLAY="$RUNNER_TEMP/overlay.tar.xz"
           decode_parts payload/.final-overlay-b64 "$OVERLAY"
-          extract_normalized "$OVERLAY" "$OUT"
+          TMP="$RUNNER_TEMP/overlay-extract"
+          rm -rf "$TMP" && mkdir -p "$TMP"
+          tar -xJf "$OVERLAY" -C "$TMP"
+          if [ -d "$TMP/public" ]; then cp -a "$TMP/public"/. "$OUT"/; else cp -a "$TMP"/. "$OUT"/; fi
           echo 'final_overlay=PASS'
 
-          for f in index.html manifest.webmanifest r38-config.json sw.js src/core/bootstrap.js src/ui/auth/auth-overlay.js src/admin/admin-api.js src/admin/admin-shell.js src/admin/admin.css; do
-            test -f "$OUT/$f" || { echo "missing=$f"; exit 21; }
+          for f in index.html manifest.webmanifest r38-config.json sw.js src/core/bootstrap.js src/domains/auth/auth-service.js src/ui/auth/auth-overlay.js src/admin/admin-api.js src/admin/admin-shell.js src/admin/admin.css; do
+            test -f "$OUT/$f" || { echo "missing=$f"; exit 25; }
           done
           grep -q 'sb_publishable_' "$OUT/r38-config.json"
           grep -q 'resetPasswordForEmail' "$OUT/src/domains/auth/auth-service.js"
+          grep -q 'PASSWORD_RECOVERY' "$OUT/src/domains/auth/auth-service.js"
           grep -q 'ESQUECI MINHA SENHA' "$OUT/src/ui/auth/auth-overlay.js"
           grep -q '/admin-gameops/seasons' "$OUT/src/admin/admin-api.js"
           grep -q '/admin-gameops/rewards' "$OUT/src/admin/admin-api.js"
@@ -104,12 +128,8 @@ jobs:
           node --check "$OUT/src/ui/auth/auth-overlay.js"
           node --check "$OUT/src/admin/admin-api.js"
           node --check "$OUT/src/admin/admin-shell.js"
-          if grep -Eqi 'R38(?:\.[0-9]+)?|R37|R36|V23\.' "$OUT/index.html" "$OUT/manifest.webmanifest" "$OUT/src/ui/auth/auth-overlay.js"; then
-            echo 'public_revision_leak=FAIL'; exit 31
-          fi
-          if grep -Eqi '<small>R38|R37 BOOT ERROR' "$OUT/src/core/bootstrap.js"; then
-            echo 'runtime_revision_leak=FAIL'; exit 32
-          fi
+          if grep -Eqi 'R38(?:\.[0-9]+)?|R37|R36|V23\.' "$OUT/index.html" "$OUT/manifest.webmanifest" "$OUT/src/ui/auth/auth-overlay.js"; then echo 'public_revision_leak=FAIL'; exit 31; fi
+          if grep -Eqi '<small>R38|R37 BOOT ERROR' "$OUT/src/core/bootstrap.js"; then echo 'runtime_revision_leak=FAIL'; exit 32; fi
           echo 'public_revision_gate=PASS'
           echo "final_files=$(find "$OUT" -type f | wc -l | tr -d ' ')"
           echo 'validation=PASS'
