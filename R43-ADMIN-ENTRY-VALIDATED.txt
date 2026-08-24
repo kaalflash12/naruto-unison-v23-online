@@ -1,0 +1,13 @@
+Naruto Unison R43 admin entry validation
+status=PASS
+syntax=PASS
+initial_screen_alias=narutoadm
+owner_password_reused_via_supabase=PASS
+server_permission_probe=PASS
+admin_panel_redirect=PASS
+admin_session_persistence=PASS
+hardcoded_password=NO
+normal_player_login_interception=NO
+reserved_admin_registration=PASS
+enter_key_admin_login=PASS
+r42_responsive_gate=PASS
