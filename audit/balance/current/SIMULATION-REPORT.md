@@ -1,6 +1,6 @@
 # Simulação de balanceamento — runtime atual
 
-Gerado em: 2026-08-25T23:40:44.079Z
+Gerado em: 2026-08-25T23:47:44.638Z
 
 ## Modelo aplicado
 
@@ -15,61 +15,61 @@ Gerado em: 2026-08-25T23:40:44.079Z
 
 | Personagem | Win 3x3 | IC95 | Win duelo | 1º age | 2º age | Flags |
 |---|---:|---|---:|---:|---:|---|
-| Kushimaru Kuriarare | 88.3% | 86.0–90.3% | 60.7% | 75.4% | 46.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Fukasaku and Shima | 85.4% | 82.9–87.6% | 84.7% | 95.0% | 74.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| White Snake Orochimaru | 82.6% | 79.9–85.0% | 92.0% | 98.9% | 85.2% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Oboro | 82.5% | 79.8–84.9% | 75.1% | 86.8% | 63.5% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Shikaku Nara | 80.4% | 77.5–83.0% | 61.1% | 72.7% | 49.5% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Sasuke Uchiha | 76.1% | 73.1–78.9% | 86.1% | 92.7% | 79.5% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Kushimaru Kuriarare | 89.2% | 86.9–91.1% | 64.1% | 70.9% | 57.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Fukasaku and Shima | 87.4% | 85.0–89.5% | 87.1% | 94.8% | 79.3% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Oboro | 83.3% | 80.7–85.6% | 78.3% | 85.6% | 71.0% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| White Snake Orochimaru | 81.0% | 78.2–83.5% | 92.0% | 98.9% | 85.2% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Shikaku Nara | 80.0% | 77.2–82.6% | 60.4% | 71.3% | 49.5% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Tsume Inuzuka | 75.9% | 72.9–78.6% | 91.7% | 99.5% | 84.0% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Sasuke Uchiha | 75.8% | 72.7–78.5% | 86.1% | 92.4% | 79.7% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
 | Sage Mode Naruto | 75.0% | 72.0–77.8% | 91.4% | 98.9% | 83.9% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Tsume Inuzuka | 74.9% | 71.9–77.7% | 91.4% | 99.5% | 83.2% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Shukaku | 74.4% | 71.4–77.1% | 88.0% | 95.2% | 80.8% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Kurama | 73.8% | 70.8–76.7% | 82.9% | 90.9% | 75.0% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Shikamaru Nara | 73.8% | 70.6–76.7% | 51.2% | 67.8% | 34.6% | team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Tayuya | 70.6% | 67.4–73.6% | 38.0% | 48.4% | 27.6% | duel_winrate_baixo, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Izumo and Kotetsu | 70.4% | 67.4–73.3% | 89.5% | 96.8% | 82.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Shikamaru Nara | 70.1% | 67.0–73.0% | 88.4% | 95.7% | 81.0% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Hanabi Hyūga | 68.6% | 65.5–71.5% | 88.7% | 96.8% | 80.7% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Zaku Abumi | 68.4% | 65.3–71.4% | 58.7% | 72.2% | 45.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Chūkichi | 66.9% | 63.7–70.0% | 48.0% | 67.9% | 28.0% | team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Dodai | 66.5% | 63.1–69.7% | 88.8% | 97.1% | 80.5% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Jigen | 66.2% | 62.9–69.3% | 88.4% | 95.4% | 81.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Demon Brothers | 65.2% | 62.0–68.3% | 86.1% | 94.5% | 77.6% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Zetsu | 64.6% | 61.3–67.8% | 26.4% | 34.8% | 18.1% | duel_winrate_baixo, team_winrate_alto, sensivel_a_ordem_de_acao, sensivel_a_politica, matchup_muito_exploravel |
-| Young Kakashi | 64.3% | 61.0–67.5% | 87.0% | 95.5% | 78.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Gyūki | 64.2% | 60.9–67.3% | 76.2% | 84.1% | 68.3% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Ino Yamanaka | 63.6% | 60.3–66.8% | 84.5% | 92.9% | 76.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
-| Kakuzu | 63.5% | 60.3–66.6% | 85.4% | 92.5% | 78.3% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Shikamaru Nara | 74.8% | 71.7–77.6% | 52.5% | 61.9% | 43.1% | team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Shukaku | 74.4% | 71.4–77.1% | 88.0% | 95.0% | 81.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Kurama | 72.6% | 69.5–75.4% | 82.7% | 90.4% | 75.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Shikamaru Nara | 71.4% | 68.4–74.3% | 88.9% | 95.7% | 82.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Hanabi Hyūga | 70.3% | 67.2–73.2% | 89.2% | 96.7% | 81.8% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Izumo and Kotetsu | 69.8% | 66.7–72.6% | 89.4% | 96.8% | 82.1% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Dodai | 69.7% | 66.4–72.7% | 89.7% | 97.1% | 82.3% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Tayuya | 69.3% | 66.0–72.3% | 36.4% | 40.4% | 32.5% | duel_winrate_baixo, team_winrate_alto, matchup_muito_exploravel |
+| Zaku Abumi | 67.7% | 64.6–70.8% | 57.7% | 63.9% | 51.5% | team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Chūkichi | 67.3% | 64.1–70.3% | 54.4% | 59.6% | 49.1% | team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Jigen | 66.1% | 62.8–69.2% | 88.6% | 95.3% | 81.9% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Young Kakashi | 65.1% | 61.8–68.3% | 87.6% | 95.1% | 80.2% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Kakuzu | 64.5% | 61.2–67.5% | 85.3% | 92.1% | 78.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Gyūki | 64.1% | 60.8–67.2% | 76.1% | 82.6% | 69.6% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Demon Brothers | 63.8% | 60.6–66.9% | 86.0% | 94.4% | 77.6% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Might Guy | 63.4% | 60.1–66.7% | 82.1% | 90.7% | 73.4% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
+| Ino Yamanaka | 62.9% | 59.6–66.1% | 84.4% | 92.6% | 76.3% | duel_winrate_alto, team_winrate_alto, sensivel_a_ordem_de_acao |
 
 ## Mais fracos no 3x3 simulado
 
 | Personagem | Win 3x3 | IC95 | Win duelo | Flags |
 |---|---:|---|---:|---|
-| Haku | 13.2% | 11.1–15.7% | 1.2% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Masked Man | 22.8% | 20.2–25.7% | 7.6% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Ino Yamanaka | 27.5% | 24.7–30.6% | 14.6% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Puppet Master Kankurō | 30.1% | 27.2–33.2% | 13.0% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Torune Aburame | 30.1% | 27.1–33.3% | 1.5% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Haku | 30.2% | 27.2–33.4% | 3.4% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Zabuza Momochi | 30.5% | 27.5–33.6% | 4.9% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Tsunade | 31.4% | 28.4–34.6% | 3.9% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Konohamaru Sarutobi | 32.6% | 29.5–35.9% | 10.0% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Sasori | 32.6% | 29.5–35.9% | 3.9% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Ittan | 32.9% | 30.0–35.9% | 25.8% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Konohamaru Sarutobi | 33.0% | 30.0–36.2% | 17.8% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Suigetsu Hōzuki | 33.3% | 30.2–36.5% | 36.8% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, sensivel_a_politica, matchup_muito_exploravel |
-| Hiruzen Sarutobi | 33.4% | 30.5–36.6% | 47.2% | team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Mei Terumi | 33.5% | 30.4–36.7% | 11.5% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Rasa | 33.6% | 30.5–36.7% | 20.5% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Toroi | 33.9% | 30.9–37.1% | 1.6% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
-| Hinata Hyūga | 34.2% | 31.1–37.5% | 17.8% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Danzō Shimura | 34.4% | 31.2–37.6% | 18.5% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Kimimaro | 34.4% | 31.4–37.6% | 46.2% | team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Kidōmaru | 34.7% | 31.6–37.8% | 41.3% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Hashirama Senju | 34.9% | 31.8–38.1% | 24.9% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Rock Lee | 35.0% | 31.9–38.2% | 9.3% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Kiba Inuzuka | 35.0% | 32.0–38.3% | 23.3% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
-| Aoba Yamashiro | 35.4% | 32.3–38.6% | 28.7% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, sensivel_a_politica, matchup_muito_exploravel |
+| Haku | 12.3% | 10.3–14.7% | 1.7% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Masked Man | 21.3% | 18.7–24.1% | 7.2% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Ino Yamanaka | 25.6% | 22.8–28.6% | 10.5% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Haku | 27.5% | 24.6–30.6% | 3.4% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Zabuza Momochi | 29.5% | 26.6–32.7% | 4.5% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Torune Aburame | 29.6% | 26.7–32.8% | 1.1% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Puppet Master Kankurō | 29.8% | 26.9–32.8% | 11.8% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Tsunade | 30.2% | 27.2–33.3% | 4.2% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Suigetsu Hōzuki | 31.3% | 28.2–34.4% | 39.1% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, sensivel_a_politica, matchup_muito_exploravel |
+| Rasa | 31.7% | 28.7–34.8% | 16.2% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Mei Terumi | 31.8% | 28.8–34.9% | 10.2% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Sasori | 31.9% | 28.8–35.2% | 4.0% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Hiruzen Sarutobi | 32.0% | 29.1–35.1% | 45.2% | team_winrate_baixo, matchup_muito_exploravel |
+| Danzō Shimura | 32.1% | 29.1–35.3% | 16.3% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Ittan | 32.3% | 29.4–35.3% | 27.5% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Konohamaru Sarutobi | 32.5% | 29.4–35.6% | 16.9% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Toroi | 32.5% | 29.5–35.6% | 1.4% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Kidōmaru | 32.6% | 29.6–35.7% | 38.8% | duel_winrate_baixo, team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Hashirama Senju | 33.5% | 30.5–36.7% | 25.8% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Konohamaru Sarutobi | 33.6% | 30.4–36.9% | 7.1% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Kimimaro | 34.0% | 30.9–37.2% | 42.4% | team_winrate_baixo, sensivel_a_ordem_de_acao, matchup_muito_exploravel |
+| Rock Lee | 34.1% | 31.0–37.3% | 6.5% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Kiba Inuzuka | 34.1% | 31.1–37.3% | 19.6% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Regimental Commander Gaara | 34.2% | 31.1–37.4% | 13.1% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
+| Mizuki | 34.3% | 31.3–37.6% | 13.3% | duel_winrate_baixo, team_winrate_baixo, matchup_muito_exploravel |
 
 ## Interpretação
 

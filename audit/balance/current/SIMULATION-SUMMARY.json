@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T23:40:44.079Z",
+  "generatedAt": "2026-08-25T23:47:44.638Z",
   "characters": 209,
   "jutsusObserved": 836,
   "jutsusNeverSelected": 10,
@@ -21,8 +21,8 @@
     "damageVariance": "±10%",
     "dotDamagePerTick": 7,
     "cooldown": "decrementa no tick do mesmo turno em que a técnica é usada",
-    "shield": "pool único; duração só controla expiração",
-    "invulnerability": "bloqueia hit/DOT enquanto ativa",
+    "shield": "pool único; duração decrementa depois da fase adversária",
+    "invulnerability": "bloqueia hit/DOT enquanto ativa e decrementa depois da fase adversária",
     "actionOrder": "lado definido como first resolve toda a fila antes do outro; duelos são espelhados para remover viés"
   },
   "externalPatternsApplied": [
@@ -33,12 +33,12 @@
     "separação entre inventário estático e resultado simulado"
   ],
   "flagCounts": {
-    "duel_winrate_alto": 74,
-    "team_winrate_alto": 59,
-    "sensivel_a_ordem_de_acao": 196,
+    "duel_winrate_alto": 73,
+    "team_winrate_alto": 57,
+    "sensivel_a_ordem_de_acao": 140,
     "matchup_muito_exploravel": 193,
-    "duel_winrate_baixo": 79,
-    "sensivel_a_politica": 17,
-    "team_winrate_baixo": 75
+    "duel_winrate_baixo": 86,
+    "sensivel_a_politica": 16,
+    "team_winrate_baixo": 79
   }
 }
