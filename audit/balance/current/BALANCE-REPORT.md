@@ -1,6 +1,6 @@
 # Auditoria de personagens, jutsus e balanceamento
 
-Gerado em: 2026-08-25T20:22:43.716Z
+Gerado em: 2026-08-25T23:40:16.511Z
 
 ## Escopo
 

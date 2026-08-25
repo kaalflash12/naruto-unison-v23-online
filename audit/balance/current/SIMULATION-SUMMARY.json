@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-08-25T23:40:44.079Z",
+  "characters": 209,
+  "jutsusObserved": 836,
+  "jutsusNeverSelected": 10,
+  "duelSeedsPerOrderPolicy": 2,
+  "duelPolicies": [
+    "balanced",
+    "aggressive",
+    "control",
+    "support"
+  ],
+  "teamBattles": 30000,
+  "maxTurns": 35,
+  "runtimeModel": {
+    "baseHp": 100,
+    "initialChakra": 6,
+    "turnChakraGain": 3,
+    "maxChakraPerType": 8,
+    "maxChakraTotal": 24,
+    "damageVariance": "±10%",
+    "dotDamagePerTick": 7,
+    "cooldown": "decrementa no tick do mesmo turno em que a técnica é usada",
+    "shield": "pool único; duração só controla expiração",
+    "invulnerability": "bloqueia hit/DOT enquanto ativa",
+    "actionOrder": "lado definido como first resolve toda a fila antes do outro; duelos são espelhados para remover viés"
+  },
+  "externalPatternsApplied": [
+    "Monte Carlo com seeds reproduzíveis",
+    "TTK/turnos e intervalos de confiança",
+    "self-play com múltiplas políticas",
+    "matriz de matchups e pior confronto como proxy de exploitability",
+    "separação entre inventário estático e resultado simulado"
+  ],
+  "flagCounts": {
+    "duel_winrate_alto": 74,
+    "team_winrate_alto": 59,
+    "sensivel_a_ordem_de_acao": 196,
+    "matchup_muito_exploravel": 193,
+    "duel_winrate_baixo": 79,
+    "sensivel_a_politica": 17,
+    "team_winrate_baixo": 75
+  }
+}
