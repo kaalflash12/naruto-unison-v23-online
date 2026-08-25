@@ -1279,13 +1279,17 @@ function legacyR15_aiActs(){
  }
  const kinds=acts.map(a=>skillKind(G.ai[a.user].skills[a.skill]));G.aiState.lastKinds=kinds;G.aiState.defensiveStreak=kinds.length&&kinds.every(k=>['heal','shield','invuln'].includes(k))?Math.min(3,Number(G.aiState.defensiveStreak||0)+1):0;return acts
 }
+function expireDefenseAfterOpponentPhase(team){
+ for(const f of(team||[])){
+  if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}
+  if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}
+ }
+}
 async function tick(){
  const effects=[];
  for(const [side,team] of [['you',G.you],['ai',G.ai]])for(let index=0;index<team.length;index++){
   const f=team[index];if(f.hp>0&&Number(f.turnRegen||0)>0&&f.hp<f.maxHp){const old=f.hp;f.hp=Math.min(f.maxHp,f.hp+Number(f.turnRegen));if(f.hp>old)log(`${f.name} recupera ${f.hp-old} PV pelo equipamento.`,'info')}const before=f.hp&&f.dot&&f.dotTurns>0?fighterFxState(f):null;
   if(before){hit(f,f.dot);f.dotTurns--;if(f.dotTurns<=0)f.dot=0}
-  if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}
-  if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}
   for(const s of f.skills)if(s.cd)s.cd--;
   if(before)effects.push({target:{side,index},kind:'dot',before,after:fighterFxState(f),label:'DANO CONTÍNUO'})
  }
@@ -1299,9 +1303,11 @@ async function execute(){
  try{
  const usedActs=G.acts.map(a=>({...a}));
  let ch={...G.ch};for(const a of G.acts){let sk=G.you[a.user].skills[a.skill];if(canPay(ch,sk.cost)){pay(ch,sk.cost);await perform(a,false)}}G.ch=ch;
+ expireDefenseAfterOpponentPhase(G.ai);
  recordJutsuUses(usedActs,G.you);
  if(!alive(G.ai).length)return finish(true,false);
  for(const a of aiActs())await perform(a,true);
+ expireDefenseAfterOpponentPhase(G.you);
  if(!alive(G.you).length)return finish(false,false);
  if(G.story&&!storyProtectedAlive())return finish(false,false);
  await tick();
@@ -1507,7 +1513,7 @@ async function skipTurn(){
  if(!G||G.over||G.animating||battleFxBusy())return;if(G.acts?.length&&!confirm('Você já colocou técnicas na fila. Remover a fila e pular o turno?'))return;G.acts=[];selected=null;
  if(G.online){const turn=G.turn,r=await api('/api/room/submit',{token:ON.token,code:ON.room,turn,acts:[]});if(!r.ok)return log(r.error||'Falha ao pular turno.','bad');ON.submittedTurn=turn;renderBattle();$('#instruction').textContent='Turno pulado. Aguardando o adversário...';ON.poll=setTimeout(pollRoom,500);return}
  if(G.eventBoss?.serverAuthoritative){G.animating=true;renderBattle();try{const r=await api('/api/account/bijuu-turn',{token:ON.token,challengeToken:G.eventBoss.challengeToken,turn:G.turn,acts:[]});if(!r.ok){log(r.error||'Falha ao pular turno da Raid.','bad');return}applyBijuuServerGame(r.game);if(r.profile)applyServerProfile(r.profile,r.revision);if(Array.isArray(r.game?.log))for(const e of r.game.log)log(e.text||e,e.kind||'info');if(r.game?.winner)return finish(r.game.winner==='player',false,true)}finally{if(G){G.animating=false;renderBattle()}}return}
- G.animating=true;renderBattle();try{log(`${S.name} pulou o turno.`,'info');for(const a of aiActs())await perform(a,true);if(!alive(G.you).length)return finish(false,false);if(G.story&&!storyProtectedAlive())return finish(false,false);await tick();if(!alive(G.ai).length)return finish(true,false);if(!alive(G.you).length)return finish(false,false);if(G.story&&storyRoundComplete())return;G.turn++;gain(G.ch,CHAKRA_RULES.turnGain,G.you);gain(G.aich,CHAKRA_RULES.turnGain,G.ai);log(`— Turno ${G.turn} —`,'info')}finally{if(G){G.animating=false;renderBattle()}}
+ G.animating=true;renderBattle();try{log(`${S.name} pulou o turno.`,'info');expireDefenseAfterOpponentPhase(G.ai);for(const a of aiActs())await perform(a,true);expireDefenseAfterOpponentPhase(G.you);if(!alive(G.you).length)return finish(false,false);if(G.story&&!storyProtectedAlive())return finish(false,false);await tick();if(!alive(G.ai).length)return finish(true,false);if(!alive(G.you).length)return finish(false,false);if(G.story&&storyRoundComplete())return;G.turn++;gain(G.ch,CHAKRA_RULES.turnGain,G.you);gain(G.aich,CHAKRA_RULES.turnGain,G.ai);log(`— Turno ${G.turn} —`,'info')}finally{if(G){G.animating=false;renderBattle()}}
 }
 
 function legacy_R16_GAMEPLAY_OVERHAUL_renderCenter(){
