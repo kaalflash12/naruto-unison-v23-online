@@ -7,6 +7,7 @@ on:
       - 'roster.js'
       - 'jutsu-variants.js'
       - 'tools/audit-balance.mjs'
+      - 'tools/simulate-balance.mjs'
       - '.github/workflows/balance-audit.yml'
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,6 +32,7 @@ jobs:
           node --check roster.js
           node --check jutsu-variants.js
           node --check tools/audit-balance.mjs
+          node --check tools/simulate-balance.mjs
           node tools/audit-balance.mjs | tee /tmp/balance-summary.json
           test -s audit/balance/current/SUMMARY.json
           test -s audit/balance/current/CHARACTERS.json
@@ -39,18 +41,34 @@ jobs:
           test -s audit/balance/current/CHARACTER-BALANCE.json
           test -s audit/balance/current/DUPLICATE-JUTSU-NAMES.json
           test -s audit/balance/current/BALANCE-REPORT.md
-      - name: Enforce inventory integrity
+      - name: Run seeded runtime combat simulation
+        env:
+          BALANCE_DUEL_SEEDS: '2'
+          BALANCE_TEAM_BATTLES: '30000'
+          BALANCE_MAX_TURNS: '35'
+        run: |
+          set -euo pipefail
+          node tools/simulate-balance.mjs | tee /tmp/balance-simulation-summary.json
+          test -s audit/balance/current/SIMULATION-SUMMARY.json
+          test -s audit/balance/current/CHARACTER-SIMULATION.json
+          test -s audit/balance/current/JUTSU-SIMULATION.json
+          test -s audit/balance/current/SIMULATION-REPORT.md
+      - name: Enforce inventory and simulation integrity
         run: |
           node - <<'JS'
           const fs=require('fs');
           const s=JSON.parse(fs.readFileSync('audit/balance/current/SUMMARY.json','utf8'));
+          const sim=JSON.parse(fs.readFileSync('audit/balance/current/SIMULATION-SUMMARY.json','utf8'));
           if(!(s.characters>0)) throw new Error('characters=0');
           if(!(s.jutsus>0)) throw new Error('jutsus=0');
           if(s.links!==s.jutsus) throw new Error(`links ${s.links} != jutsus ${s.jutsus}`);
           if(s.characterSkillFields?.skills!==s.characters) throw new Error(`characters using skills=${s.characterSkillFields?.skills} != characters=${s.characters}`);
           if(s.charactersWithoutFourJutsu!==0) throw new Error(`charactersWithoutFourJutsu=${s.charactersWithoutFourJutsu}`);
           if(s.jutsus!==s.characters*4) throw new Error(`jutsus=${s.jutsus} != characters*4=${s.characters*4}`);
-          console.log('BALANCE_INVENTORY_INTEGRITY=PASS',s);
+          if(sim.characters!==s.characters) throw new Error(`simulation characters=${sim.characters} != inventory=${s.characters}`);
+          if(sim.jutsusObserved!==s.jutsus) throw new Error(`simulation jutsus=${sim.jutsusObserved} != inventory=${s.jutsus}`);
+          if(sim.teamBattles<30000) throw new Error(`teamBattles=${sim.teamBattles}`);
+          console.log('BALANCE_INVENTORY_AND_SIMULATION_INTEGRITY=PASS',{inventory:s,simulation:sim});
           JS
       - uses: actions/upload-artifact@v4
         with:
@@ -65,6 +83,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add audit/balance/current
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'audit: refresh character and jutsu balance inventory [skip ci]'
+          git commit -m 'audit: refresh character, jutsu and simulated balance inventory [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
