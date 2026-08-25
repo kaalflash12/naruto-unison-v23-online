@@ -18,7 +18,7 @@ function loadRoster(){
   if(team.some(x=>!x))throw new Error('starter team incompleto');
   return team.map(ch=>({slug:ch.slug,name:ch.name,icon:ch.icon,skills:(ch.skills||[]).map(sk=>({name:sk.name,originalName:sk.originalName||sk.name,desc:sk.desc,effectText:sk.effectText,cost:sk.cost,cooldown:sk.cooldown,mechanic:sk.mechanic}))}));
 }
-const team=loadRoster();
+const team=loadRoster(),teamBySlug=new Map(team.map(c=>[c.slug,c]));
 
 async function call(path,data=undefined){
   const opt=data===undefined?{cache:'no-store'}:{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data),cache:'no-store'};
@@ -34,9 +34,14 @@ function payPlan(ch,cost){
   const spent=[];for(let i=0;i<wild;i++){const candidates=chakraTypes().filter(k=>t[k]>0).sort((a,b)=>t[b]-t[a]);if(!candidates.length)return null;const k=candidates[0];t[k]--;spent.push(k)}
   return {after:t,wildSpent:spent};
 }
-function alive(team){return (team||[]).map((f,i)=>({f,i})).filter(x=>Number(x.f?.hp||0)>0)}
+function alive(list){return (list||[]).map((f,i)=>({f,i})).filter(x=>Number(x.f?.hp||0)>0)}
+function hydratedSkills(f){
+  const base=teamBySlug.get(f?.slug)?.skills||[];
+  const cds=Array.isArray(f?.cds)?f.cds:[];
+  return base.map((s,i)=>({...s,cd:Number(cds[i]||0)}));
+}
 function summarizeGame(g){
-  const fighter=f=>({slug:f?.slug,name:f?.name,hp:Number(f?.hp||0),maxHp:Number(f?.maxHp||100),shield:Number(f?.shield||0),shieldTurns:Number(f?.shieldTurns||0),stun:Number(f?.stun||0),stunTurns:Number(f?.stunTurns||0),dot:Number(f?.dot||0),dotTurns:Number(f?.dotTurns||0),inv:Number(f?.inv||0),invTurns:Number(f?.invTurns||0),cd:(f?.skills||[]).map(s=>Number(s?.cd||0))});
+  const fighter=f=>({slug:f?.slug,hp:Number(f?.hp||0),maxHp:Number(f?.maxHp||100),shield:Number(f?.shield||0),shieldTurns:Number(f?.shieldTurns||0),stun:Number(f?.stun||0),stunTurns:Number(f?.stunTurns||0),dot:Number(f?.dot||0),dotTurns:Number(f?.dotTurns||0),inv:Number(f?.inv||0),invTurns:Number(f?.invTurns||0),cds:Array.isArray(f?.cds)?f.cds.map(Number):[],loadout:f?.loadout||null});
   return {turn:Number(g?.turn||0),winner:g?.winner??null,hostCh:g?.hostCh??null,guestCh:g?.guestCh??null,host:(g?.host||[]).map(fighter),guest:(g?.guest||[]).map(fighter),log:Array.isArray(g?.log)?g.log.slice(-15):[]};
 }
 let sideState={game:null};
@@ -45,14 +50,17 @@ function actionCandidates(side,preference){
   const foe=side==='host'?sideState.game.guest:sideState.game.host;
   const ch=side==='host'?sideState.game.hostCh:sideState.game.guestCh;
   const out=[];
-  for(const {f,i:user} of alive(own))for(let skill=0;skill<(f.skills||[]).length;skill++){
-    const sk=f.skills[skill],m=sk?.mechanic||{},kind=String(m.kind||'damage');
-    if(Number(sk?.cd||0)>0||!payPlan(ch,sk?.cost||[]))continue;
-    let targetSide=m.target==='enemy'?'opponent':'self',target=0;
-    if(m.target==='self')target=user;
-    else if(m.target==='enemy')target=alive(foe)[0]?.i??0;
-    else target=alive(own).sort((a,b)=>Number(a.f.hp||0)-Number(b.f.hp||0))[0]?.i??user;
-    const p=preference.indexOf(kind);out.push({user,skill,targetSide,target,kind,name:sk.name,cost:sk.cost||[],score:p<0?99:p});
+  for(const {f,i:user} of alive(own)){
+    const skills=hydratedSkills(f);
+    for(let skill=0;skill<skills.length;skill++){
+      const sk=skills[skill],m=sk?.mechanic||{},kind=String(m.kind||'damage');
+      if(Number(sk?.cd||0)>0||!payPlan(ch,sk?.cost||[]))continue;
+      let targetSide=m.target==='enemy'?'opponent':'self',target=0;
+      if(m.target==='self')target=user;
+      else if(m.target==='enemy')target=alive(foe)[0]?.i??0;
+      else target=alive(own).sort((a,b)=>Number(a.f.hp||0)-Number(b.f.hp||0))[0]?.i??user;
+      const p=preference.indexOf(kind);out.push({user,skill,targetSide,target,kind,name:sk.name,cost:sk.cost||[],score:p<0?99:p});
+    }
   }
   return out.sort((a,b)=>a.score-b.score||a.user-b.user||a.skill-b.skill);
 }
@@ -89,7 +97,7 @@ try{
     if(sideState.game.winner)break;
     const before=summarizeGame(sideState.game),turn=Number(sideState.game.turn||0);
     const ha=actionCandidates('host',hostPrefs)[0],ga=actionCandidates('guest',guestPrefs)[0];
-    if(!ha||!ga){result.errors.push({turn,error:'no_payable_action',host:!!ha,guest:!!ga});break}
+    if(!ha||!ga){result.errors.push({turn,error:'no_payable_action',host:!!ha,guest:!!ga,hostCh:sideState.game.hostCh,guestCh:sideState.game.guestCh});break}
     result.observedKinds.add(ha.kind);result.observedKinds.add(ga.kind);
     await call('/api/room/submit',{token:creds[1].token,code:roomCode,turn,acts:[{user:ga.user,skill:ga.skill,targetSide:ga.targetSide,target:ga.target}]});
     await call('/api/room/submit',{token:creds[0].token,code:roomCode,turn,acts:[{user:ha.user,skill:ha.skill,targetSide:ha.targetSide,target:ha.target}]});
