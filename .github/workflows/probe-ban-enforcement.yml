@@ -1,0 +1,47 @@
+name: Probe BAN Enforcement
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/probe-ban-enforcement.mjs'
+      - '.github/workflows/probe-ban-enforcement.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: node --check tools/probe-ban-enforcement.mjs
+      - name: Run live BAN enforcement probe
+        run: node tools/probe-ban-enforcement.mjs
+      - name: Validate proof
+        if: always()
+        run: |
+          test -s audit/security/ban-enforcement-proof.json
+          test -s audit/security/ban-enforcement-cleanup.json
+          node - <<'JS'
+          const fs=require('fs');
+          const p=JSON.parse(fs.readFileSync('audit/security/ban-enforcement-proof.json','utf8'));
+          if(!p.ok) throw new Error('BAN enforcement failed: '+JSON.stringify(p.errors));
+          if(!p.preBan?.sessionAllowed) throw new Error('pre-ban token was not valid');
+          if(p.postBan?.sessionAllowed!==false) throw new Error('pre-ban token stayed usable after ban');
+          if(p.postBan?.loginAllowed!==false) throw new Error('new login stayed usable after ban');
+          console.log('BAN_ENFORCEMENT=PASS',{sessionStatus:p.postBan.sessionStatus,loginStatus:p.postBan.loginStatus});
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ban-enforcement-${{ github.run_id }}
+          path: audit/security
+          if-no-files-found: warn
+          retention-days: 7
