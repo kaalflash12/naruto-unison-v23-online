@@ -194,12 +194,9 @@ Deno.serve(async (req: Request) => {
     }
 
     if (p === "/world/create") {
+      if (b.code !== undefined && b.code !== null && b.code !== "") return json(req, 400, { ok: false, error: "world_code_server_generated" });
       if (await rateLimited(admin, userId, "world_create", 6, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "world_create" });
-      let code = randomWorldCode();
-      if (b.code !== undefined && b.code !== null && b.code !== "") {
-        code = text(b.code, "code", 24).toUpperCase();
-        if (!WORLD_CODE_RE.test(code)) return json(req, 400, { ok: false, error: "world_code_invalid_format" });
-      }
+      const code = randomWorldCode();
       const state = b.state === undefined ? {} : bodyObject(b.state);
       const { data, error } = await admin.rpc("r41_create_world_v1", { p_code: code, p_owner_account_id: userId, p_state: state });
       if (error) return json(req, dbErrorStatus(error.message), { ok: false, error: "world_create_failed", detail: error.message });
