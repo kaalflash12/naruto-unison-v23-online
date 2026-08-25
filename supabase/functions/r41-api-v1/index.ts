@@ -5,6 +5,8 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const MAX_BODY_BYTES = 5 * 1024 * 1024;
+const WORLD_CODE_RE = /^WORLD-[A-F0-9]{18}$/;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 const ALLOWED_ORIGINS = new Set([
   "https://kaalflash12.github.io",
@@ -48,11 +50,28 @@ function text(v: unknown, field: string, max = 160) {
   return out;
 }
 
+function uuid(v: unknown, field: string) {
+  const out = text(v, field, 36);
+  if (!UUID_RE.test(out)) throw new Error(field + "_invalid");
+  return out;
+}
+
 function intOrNull(v: unknown) {
   if (v === null || v === undefined || v === "") return null;
   const n = Number(v);
   if (!Number.isSafeInteger(n) || n < 0) throw new Error("invalid_revision");
   return n;
+}
+
+function randomWorldCode() {
+  const bytes = new Uint8Array(9);
+  crypto.getRandomValues(bytes);
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("").toUpperCase();
+  return `WORLD-${hex}`;
+}
+
+function dbErrorStatus(message: string) {
+  return message.includes("too_large") ? 413 : 500;
 }
 
 async function parseBody(req: Request) {
@@ -68,7 +87,7 @@ async function parseBody(req: Request) {
   }
 }
 
-type R41RateAction = "world_create" | "world_join" | "world_claim";
+type R41RateAction = "world_create" | "world_join" | "world_claim" | "state_save" | "event_append" | "world_action";
 
 async function rateLimited(
   db: ReturnType<typeof createClient>,
@@ -139,6 +158,7 @@ Deno.serve(async (req: Request) => {
     }
 
     if (p === "/state/save") {
+      if (await rateLimited(admin, userId, "state_save", 120, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "state_save" });
       const slot = text(b.slot ?? "default", "slot", 80).replace(/[^a-zA-Z0-9_.:-]/g, "_");
       const state = bodyObject(b.state);
       const expected = intOrNull(b.expected_revision);
@@ -151,11 +171,12 @@ Deno.serve(async (req: Request) => {
         p_character_id: null,
         p_world_id: null
       });
-      if (error) return json(req, 500, { ok: false, error: "state_save_failed", detail: error.message });
+      if (error) return json(req, dbErrorStatus(error.message), { ok: false, error: "state_save_failed", detail: error.message });
       return json(req, data?.ok === false ? 409 : 200, data);
     }
 
     if (p === "/event") {
+      if (await rateLimited(admin, userId, "event_append", 240, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "event_append" });
       const eventType = text(b.event_type, "event_type", 100);
       const payload = b.payload === undefined ? {} : bodyObject(b.payload);
       const slot = text(b.slot ?? "default", "slot", 80).replace(/[^a-zA-Z0-9_.:-]/g, "_");
@@ -168,84 +189,62 @@ Deno.serve(async (req: Request) => {
         p_character_id: null,
         p_world_id: null
       });
-      if (error) return json(req, 500, { ok: false, error: "event_append_failed", detail: error.message });
+      if (error) return json(req, dbErrorStatus(error.message), { ok: false, error: "event_append_failed", detail: error.message });
       return json(req, 200, data);
     }
 
     if (p === "/world/create") {
-      const code = text(b.code, "code", 40).toUpperCase().replace(/[^A-Z0-9_-]/g, "");
-      if (!code) throw new Error("world_code_required");
-      const state = b.state === undefined ? {} : bodyObject(b.state);
-      if (await rateLimited(admin, userId, "world_create", 6, 60000)) {
-        return json(req, 429, { ok: false, error: "rate_limited", action: "world_create" });
+      if (await rateLimited(admin, userId, "world_create", 6, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "world_create" });
+      let code = randomWorldCode();
+      if (b.code !== undefined && b.code !== null && b.code !== "") {
+        code = text(b.code, "code", 24).toUpperCase();
+        if (!WORLD_CODE_RE.test(code)) return json(req, 400, { ok: false, error: "world_code_invalid_format" });
       }
-      const { data, error } = await admin.rpc("r41_create_world_v1", {
-        p_code: code,
-        p_owner_account_id: userId,
-        p_state: state
-      });
-      if (error) return json(req, 500, { ok: false, error: "world_create_failed", detail: error.message });
-      return json(req, data?.ok === false ? 409 : 200, data);
+      const state = b.state === undefined ? {} : bodyObject(b.state);
+      const { data, error } = await admin.rpc("r41_create_world_v1", { p_code: code, p_owner_account_id: userId, p_state: state });
+      if (error) return json(req, dbErrorStatus(error.message), { ok: false, error: "world_create_failed", detail: error.message });
+      const status = data?.ok === false ? (data.error === "world_code_invalid" ? 400 : 409) : 200;
+      return json(req, status, data);
     }
 
     if (p === "/world/join") {
-      const code = text(b.code, "code", 40).toUpperCase().replace(/[^A-Z0-9_-]/g, "");
-      if (await rateLimited(admin, userId, "world_join", 12, 60000)) {
-        return json(req, 429, { ok: false, error: "rate_limited", action: "world_join" });
-      }
-      const characterId = typeof b.character_id === "string" && b.character_id ? b.character_id : null;
-      const { data, error } = await admin.rpc("r41_join_world_v1", {
-        p_code: code,
-        p_account_id: userId,
-        p_character_id: characterId
-      });
+      if (b.character_id !== undefined && b.character_id !== null && b.character_id !== "") return json(req, 400, { ok: false, error: "character_binding_unsupported" });
+      const code = text(b.code, "code", 24).toUpperCase();
+      if (!WORLD_CODE_RE.test(code)) return json(req, 400, { ok: false, error: "world_code_invalid_format" });
+      if (await rateLimited(admin, userId, "world_join", 12, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "world_join" });
+      const { data, error } = await admin.rpc("r41_join_world_v1", { p_code: code, p_account_id: userId, p_character_id: null });
       if (error) return json(req, 500, { ok: false, error: "world_join_failed", detail: error.message });
-      return json(req, data?.ok === false ? 404 : 200, data);
+      const status = data?.ok === false ? (data.error === "world_code_invalid" ? 400 : 404) : 200;
+      return json(req, status, data);
     }
 
     if (p === "/world/claim") {
-      const worldId = text(b.world_id, "world_id", 40);
+      const worldId = uuid(b.world_id, "world_id");
       const actorKey = text(b.actor_key, "actor_key", 120);
       const ttl = Math.min(3600, Math.max(15, Number.isFinite(Number(b.ttl_seconds)) ? Math.floor(Number(b.ttl_seconds)) : 120));
-      if (await rateLimited(admin, userId, "world_claim", 30, 60000)) {
-        return json(req, 429, { ok: false, error: "rate_limited", action: "world_claim" });
-      }
-      const { data, error } = await admin.rpc("r41_claim_actor_v1", {
-        p_world_id: worldId,
-        p_actor_key: actorKey,
-        p_account_id: userId,
-        p_ttl_seconds: ttl
-      });
+      if (await rateLimited(admin, userId, "world_claim", 30, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "world_claim" });
+      const { data, error } = await admin.rpc("r41_claim_actor_v1", { p_world_id: worldId, p_actor_key: actorKey, p_account_id: userId, p_ttl_seconds: ttl });
       if (error) return json(req, 500, { ok: false, error: "actor_claim_failed", detail: error.message });
       const status = data?.ok === false ? (data.error === "not_world_member" ? 403 : 409) : 200;
       return json(req, status, data);
     }
 
     if (p === "/world/release") {
-      const worldId = text(b.world_id, "world_id", 40);
+      const worldId = uuid(b.world_id, "world_id");
       const actorKey = text(b.actor_key, "actor_key", 120);
-      const { data, error } = await admin.rpc("r41_release_actor_v1", {
-        p_world_id: worldId,
-        p_actor_key: actorKey,
-        p_account_id: userId
-      });
+      const { data, error } = await admin.rpc("r41_release_actor_v1", { p_world_id: worldId, p_actor_key: actorKey, p_account_id: userId });
       if (error) return json(req, 500, { ok: false, error: "actor_release_failed", detail: error.message });
       return json(req, 200, data);
     }
 
     if (p === "/world/action") {
-      const worldId = text(b.world_id, "world_id", 40);
+      if (await rateLimited(admin, userId, "world_action", 240, 60000)) return json(req, 429, { ok: false, error: "rate_limited", action: "world_action" });
+      const worldId = uuid(b.world_id, "world_id");
       const actorKey = text(b.actor_key, "actor_key", 120);
       const action = bodyObject(b.action);
       const expected = intOrNull(b.expected_revision);
-      const { data, error } = await admin.rpc("r41_apply_action_v2", {
-        p_world_id: worldId,
-        p_account_id: userId,
-        p_actor_key: actorKey,
-        p_action: action,
-        p_expected_revision: expected
-      });
-      if (error) return json(req, 500, { ok: false, error: "world_action_failed", detail: error.message });
+      const { data, error } = await admin.rpc("r41_apply_action_v2", { p_world_id: worldId, p_account_id: userId, p_actor_key: actorKey, p_action: action, p_expected_revision: expected });
+      if (error) return json(req, dbErrorStatus(error.message), { ok: false, error: "world_action_failed", detail: error.message });
       const status = data?.ok === false ? (data.error === "revision_conflict" || data.error === "actor_not_claimed" ? 409 : 403) : 200;
       return json(req, status, data);
     }
