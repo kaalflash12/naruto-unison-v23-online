@@ -30,12 +30,13 @@ async function accountFromToken(req:Request){
   return a||null;
 }
 async function issueSession(accountId:string){const raw=random64(36),tokenHash=await hex(raw),expires=new Date(Date.now()+1000*60*60*24*30).toISOString();await supa().from('sns_sessions').insert({token_hash:tokenHash,account_id:accountId,expires_at:expires});return {token:raw,expires_at:expires}}
+async function legacyBanned(key:string){const {data,error}=await supa().from('naruto_accounts').select('banned').eq('user_key',key).maybeSingle();if(error)throw error;return !!data?.banned}
 async function importLegacyIfValid(username:string,password:string){
-  const db=supa(),key=userKey(username);const {data:l}=await db.from('naruto_accounts').select('user_name,user_key,kdf,iterations,salt,pass_hash').eq('user_key',key).maybeSingle();
-  if(!l)return null;const algo=String(l.kdf||'').toLowerCase().includes('sha1')?'SHA-1':'SHA-256';const got=await derive(password,l.salt,Number(l.iterations||120000),algo);if(!safeEq(got,String(l.pass_hash||'')))return null;
+  const db=supa(),key=userKey(username);const {data:l,error:legacyError}=await db.from('naruto_accounts').select('user_name,user_key,kdf,iterations,salt,pass_hash,banned,ban_saved_pass_hash').eq('user_key',key).maybeSingle();
+  if(legacyError)throw legacyError;if(!l)return {account:null,banned:false};const algo=String(l.kdf||'').toLowerCase().includes('sha1')?'SHA-1':'SHA-256';const got=await derive(password,l.salt,Number(l.iterations||120000),algo);const expected=String(l.banned?(l.ban_saved_pass_hash||''):(l.pass_hash||''));if(!expected||!safeEq(got,expected))return {account:null,banned:false};if(l.banned)return {account:null,banned:true};
   const salt=random64(18),iterations=210000,passHash=await derive(password,salt,iterations,'SHA-256');
   const {data:a,error}=await db.from('sns_accounts').insert({username:l.user_name||username,username_key:key,display_name:l.user_name||username,password_salt:salt,password_hash:passHash,password_iterations:iterations,leon_entitled:key==='kaalflash'}).select('id,username,display_name,leon_entitled').single();
-  if(error)throw error;return a;
+  if(error)throw error;return {account:a,banned:false};
 }
 Deno.serve(async(req:Request)=>{
   if(req.method==='OPTIONS')return new Response('',{status:204,headers:cors});
@@ -53,7 +54,7 @@ Deno.serve(async(req:Request)=>{
       const b=await body(req),username=String(b.username||'').trim(),key=userKey(username),password=String(b.password||'');
       if(key.length<3||!password)return json({ok:false,error:'Usuário e senha são obrigatórios.'},400);
       const db=supa();let {data:a}=await db.from('sns_accounts').select('id,username,display_name,leon_entitled,password_salt,password_hash,password_iterations').eq('username_key',key).maybeSingle();
-      if(!a){const imported=await importLegacyIfValid(username,password);if(!imported)return json({ok:false,error:'Usuário ou senha inválidos.'},401);a=imported as any}else{const got=await derive(password,a.password_salt,Number(a.password_iterations||210000),'SHA-256');if(!safeEq(got,String(a.password_hash||'')))return json({ok:false,error:'Usuário ou senha inválidos.'},401)}
+      if(!a){const imported=await importLegacyIfValid(username,password);if(imported.banned)return json({ok:false,error:'Conta banida.'},403);if(!imported.account)return json({ok:false,error:'Usuário ou senha inválidos.'},401);a=imported.account as any}else{const got=await derive(password,a.password_salt,Number(a.password_iterations||210000),'SHA-256');if(!safeEq(got,String(a.password_hash||'')))return json({ok:false,error:'Usuário ou senha inválidos.'},401);if(await legacyBanned(key))return json({ok:false,error:'Conta banida.'},403)}
       const s=await issueSession(a.id);const {data:chars}=await db.from('sns_characters').select('id,slot_key,name,is_leon,revision,updated_at').eq('account_id',a.id).order('updated_at',{ascending:false});
       return json({ok:true,account:{id:a.id,username:a.username,display_name:a.display_name,leon_entitled:!!a.leon_entitled},characters:chars||[],...s});
     }
