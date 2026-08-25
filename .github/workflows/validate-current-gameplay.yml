@@ -51,7 +51,7 @@ jobs:
           test -s index.html
           test -s admin.html
           test -s admin-combat-reset.html
-          grep -Fq 'skillCards' roster.js
+          grep -Fq '"skills"' roster.js
           grep -Fq 'admin_reset_combat_history' admin-combat-reset.html
           grep -Fq 'RESETAR HISTÓRICO DE TODAS AS CONTAS' admin-combat-reset.html
           echo 'CURRENT_RUNTIME_SYNTAX=PASS'
@@ -111,11 +111,12 @@ jobs:
               body:(document.body?.innerText||'').trim(),
               roster:Array.isArray(window.NARUTO_ROSTER)?window.NARUTO_ROSTER.length:0,
               rosterKeys:Array.isArray(window.NARUTO_ROSTER)&&window.NARUTO_ROSTER[0]?Object.keys(window.NARUTO_ROSTER[0]).sort():[],
+              firstCharacterSkills:Array.isArray(window.NARUTO_ROSTER)&&window.NARUTO_ROSTER[0]&&Array.isArray(window.NARUTO_ROSTER[0].skills)?window.NARUTO_ROSTER[0].skills.length:0,
               dataGlobals:Object.keys(window).filter(k=>/jutsu|skill|roster/i.test(k)).sort().slice(0,40),
               overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-window.innerWidth
             }));
             if (state.body.length<40) throw new Error(label+': game body empty');
-            if (state.roster<1) throw new Error(label+': roster not loaded '+JSON.stringify(state));
+            if (state.roster<1 || state.firstCharacterSkills<1) throw new Error(label+': roster/skills not loaded '+JSON.stringify(state));
             if (errors.length) throw new Error(label+': page errors '+errors.join(' | '));
             proof.push({label,...state,body:state.body.slice(0,120)});
             await ctx.close();
