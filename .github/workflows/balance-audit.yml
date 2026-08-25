@@ -1,3 +1,4 @@
+# Post-fix gate: validates phase-aware shield/invulnerability expiry against the full simulation.
 name: Balance Audit — Characters and Jutsu
 
 on:
@@ -52,6 +53,7 @@ jobs:
           test -s audit/balance/current/SIMULATION-SUMMARY.json
           test -s audit/balance/current/CHARACTER-SIMULATION.json
           test -s audit/balance/current/JUTSU-SIMULATION.json
+          test -s audit/balance/current/UNUSED-JUTSUS.json
           test -s audit/balance/current/SIMULATION-REPORT.md
       - name: Enforce inventory and simulation integrity
         run: |
