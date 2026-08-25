@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-08-25T23:33:54.368Z",
+  "engine": "current-six-kind deterministic approximation",
+  "characters": 203,
+  "pairs": 20503,
+  "gamesPerPair": 8,
+  "totalGames": 164024,
+  "seeds": 2,
+  "policies": [
+    "balanced",
+    "aggressive"
+  ],
+  "maxTurns": 30,
+  "teamMethod": "mesmos dois anchors em ambos os lados; apenas focal muda; ordem A/B espelhada",
+  "medianScore": 0.5659,
+  "outliers": 178,
+  "top": [
+    {
+      "slug": "sage-mode-naruto-(s)",
+      "name": "Sage Mode Naruto",
+      "score": 0.9567,
+      "ci": [
+        0.9456,
+        0.9656
+      ]
+    },
+    {
+      "slug": "shikaku-nara",
+      "name": "Shikaku Nara",
+      "score": 0.9276,
+      "ci": [
+        0.9139,
+        0.9392
+      ]
+    },
+    {
+      "slug": "white-snake-orochimaru-(s)",
+      "name": "White Snake Orochimaru",
+      "score": 0.9208,
+      "ci": [
+        0.9066,
+        0.933
+      ]
+    },
+    {
+      "slug": "oboro",
+      "name": "Oboro",
+      "score": 0.742,
+      "ci": [
+        0.7201,
+        0.7627
+      ]
+    },
+    {
+      "slug": "rock-lee",
+      "name": "Rock Lee",
+      "score": 0.724,
+      "ci": [
+        0.7017,
+        0.7453
+      ]
+    },
+    {
+      "slug": "zaku-abumi",
+      "name": "Zaku Abumi",
+      "score": 0.6999,
+      "ci": [
+        0.6771,
+        0.7217
+      ]
+    },
+    {
+      "slug": "sasuke-uchiha-(s)",
+      "name": "Sasuke Uchiha",
+      "score": 0.6887,
+      "ci": [
+        0.6657,
+        0.7108
+      ]
+    },
+    {
+      "slug": "shikamaru-nara-(s)",
+      "name": "Shikamaru Nara",
+      "score": 0.6559,
+      "ci": [
+        0.6324,
+        0.6787
+      ]
+    },
+    {
+      "slug": "kushimaru-kuriarare-(r)",
+      "name": "Kushimaru Kuriarare",
+      "score": 0.646,
+      "ci": [
+        0.6224,
+        0.669
+      ]
+    },
+    {
+      "slug": "might-guy",
+      "name": "Might Guy",
+      "score": 0.6448,
+      "ci": [
+        0.6212,
+        0.6678
+      ]
+    }
+  ],
+  "bottom": [
+    {
+      "slug": "tobi-(s)",
+      "name": "Tobi",
+      "score": 0.147,
+      "ci": [
+        0.1303,
+        0.1648
+      ]
+    },
+    {
+      "slug": "zabuza-momochi-(r)",
+      "name": "Zabuza Momochi",
+      "score": 0.1334,
+      "ci": [
+        0.1174,
+        0.1506
+      ]
+    },
+    {
+      "slug": "regimental-commander-gaara-(s)",
+      "name": "Regimental Commander Gaara",
+      "score": 0.1275,
+      "ci": [
+        0.1121,
+        0.1446
+      ]
+    },
+    {
+      "slug": "utakata-(s)",
+      "name": "Utakata",
+      "score": 0.1207,
+      "ci": [
+        0.1057,
+        0.1375
+      ]
+    },
+    {
+      "slug": "toroi-(r)",
+      "name": "Toroi",
+      "score": 0.1151,
+      "ci": [
+        0.1004,
+        0.1316
+      ]
+    },
+    {
+      "slug": "true-form-sasori-(s)",
+      "name": "True Form Sasori",
+      "score": 0.0947,
+      "ci": [
+        0.0813,
+        0.1099
+      ]
+    },
+    {
+      "slug": "yugao-uzuki",
+      "name": "Yūgao Uzuki",
+      "score": 0.0752,
+      "ci": [
+        0.0631,
+        0.0888
+      ]
+    },
+    {
+      "slug": "sasori-(s)",
+      "name": "Sasori",
+      "score": 0.0693,
+      "ci": [
+        0.0579,
+        0.0827
+      ]
+    },
+    {
+      "slug": "torune-aburame-(s)",
+      "name": "Torune Aburame",
+      "score": 0.0579,
+      "ci": [
+        0.0472,
+        0.07
+      ]
+    },
+    {
+      "slug": "tsunade-(s)",
+      "name": "Tsunade",
+      "score": 0.052,
+      "ci": [
+        0.0422,
+        0.0639
+      ]
+    }
+  ],
+  "limitations": [
+    "motor composto/debuffs ainda não implementado; técnicas comprimidas podem distorcer resultado",
+    "sem equipamento/loadout/pergaminhos",
+    "focal medido com anchors iguais, não cobre todas as sinergias de trio",
+    "empates no limite de turnos são decididos por PV agregado quando diferentes"
+  ]
+}
