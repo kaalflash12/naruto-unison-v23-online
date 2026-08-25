@@ -37,6 +37,7 @@ jobs:
           test -s audit/balance/current/JUTSUS.json
           test -s audit/balance/current/CHARACTER-JUTSU-MAP.json
           test -s audit/balance/current/CHARACTER-BALANCE.json
+          test -s audit/balance/current/DUPLICATE-JUTSU-NAMES.json
           test -s audit/balance/current/BALANCE-REPORT.md
       - name: Enforce inventory integrity
         run: |
@@ -46,7 +47,9 @@ jobs:
           if(!(s.characters>0)) throw new Error('characters=0');
           if(!(s.jutsus>0)) throw new Error('jutsus=0');
           if(s.links!==s.jutsus) throw new Error(`links ${s.links} != jutsus ${s.jutsus}`);
-          if(s.duplicateSlots!==0) throw new Error(`duplicateSlots=${s.duplicateSlots}`);
+          if(s.characterSkillFields?.skills!==s.characters) throw new Error(`characters using skills=${s.characterSkillFields?.skills} != characters=${s.characters}`);
+          if(s.charactersWithoutFourJutsu!==0) throw new Error(`charactersWithoutFourJutsu=${s.charactersWithoutFourJutsu}`);
+          if(s.jutsus!==s.characters*4) throw new Error(`jutsus=${s.jutsus} != characters*4=${s.characters*4}`);
           console.log('BALANCE_INVENTORY_INTEGRITY=PASS',s);
           JS
       - uses: actions/upload-artifact@v4
@@ -63,4 +66,5 @@ jobs:
           git add audit/balance/current
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'audit: refresh character and jutsu balance inventory [skip ci]'
+          git pull --rebase origin main
           git push origin HEAD:main
