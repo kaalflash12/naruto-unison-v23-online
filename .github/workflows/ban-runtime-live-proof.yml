@@ -1,10 +1,6 @@
 name: BAN Runtime Live Proof
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/ban-runtime-live-proof.yml'
   workflow_dispatch:
 
 permissions:
@@ -22,7 +18,7 @@ jobs:
         run: |
           set -euo pipefail
           USERNAME="banprobe${GITHUB_RUN_ID}a${GITHUB_RUN_ATTEMPT}"
-          PASSWORD="Bp${GITHUB_RUN_ID}x${GITHUB_RUN_ATTEMPT}Z9!"
+          PASSWORD="$(openssl rand -hex 24)"
           printf '%s' "$USERNAME" > /tmp/banprobe-user
           printf '%s' "$PASSWORD" > /tmp/banprobe-pass
 
