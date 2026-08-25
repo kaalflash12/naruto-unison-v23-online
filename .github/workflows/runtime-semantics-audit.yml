@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -20,6 +20,9 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -41,6 +44,7 @@ jobs:
           if(s.characters!==209) throw new Error('characters='+s.characters);
           if(s.jutsus!==836) throw new Error('jutsus='+s.jutsus);
           if(s.standardCharacters+s.eventCharacters+s.specialReviewCharacters!==s.characters) throw new Error('classificação incompleta');
+          if(s.warnings.critical<1) throw new Error('critical backlog unexpectedly empty');
           console.log('RUNTIME_SEMANTICS_AUDIT=PASS',s);
           JS
       - uses: actions/upload-artifact@v4
@@ -49,3 +53,16 @@ jobs:
           path: audit/balance/runtime
           if-no-files-found: error
           retention-days: 30
+      - name: Persist runtime audit on main
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/runtime
+          if git diff --cached --quiet; then
+            echo 'RUNTIME_AUDIT_ALREADY_CURRENT=PASS'
+            exit 0
+          fi
+          git commit -m 'audit: refresh runtime semantic backlog [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
