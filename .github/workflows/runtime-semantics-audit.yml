@@ -8,6 +8,7 @@ on:
       - 'jutsu-variants.js'
       - 'app-online.js'
       - 'tools/audit-runtime-semantics.mjs'
+      - 'tools/classify-critical-runtime.mjs'
       - '.github/workflows/runtime-semantics-audit.yml'
   workflow_dispatch:
 
@@ -30,22 +31,24 @@ jobs:
         run: |
           set -euo pipefail
           node --check tools/audit-runtime-semantics.mjs
+          node --check tools/classify-critical-runtime.mjs
           node tools/audit-runtime-semantics.mjs | tee /tmp/runtime-summary.json
-          test -s audit/balance/runtime/SUMMARY.json
-          test -s audit/balance/runtime/JUTSU-RUNTIME.json
-          test -s audit/balance/runtime/SEMANTIC-REVIEW.json
-          test -s audit/balance/runtime/CHARACTER-RUNTIME.json
-          test -s audit/balance/runtime/RUNTIME-REPORT.md
+          node tools/classify-critical-runtime.mjs | tee /tmp/critical-summary.json
+          for f in SUMMARY.json JUTSU-RUNTIME.json SEMANTIC-REVIEW.json CHARACTER-RUNTIME.json RUNTIME-REPORT.md CRITICAL-BACKLOG.json CRITICAL-SUMMARY.json CRITICAL-REPORT.md; do
+            test -s "audit/balance/runtime/$f"
+          done
       - name: Integrity
         run: |
           node - <<'JS'
           const fs=require('fs');
           const s=JSON.parse(fs.readFileSync('audit/balance/runtime/SUMMARY.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('audit/balance/runtime/CRITICAL-SUMMARY.json','utf8'));
           if(s.characters!==209) throw new Error('characters='+s.characters);
           if(s.jutsus!==836) throw new Error('jutsus='+s.jutsus);
           if(s.standardCharacters+s.eventCharacters+s.specialReviewCharacters!==s.characters) throw new Error('classificação incompleta');
-          if(s.warnings.critical<1) throw new Error('critical backlog unexpectedly empty');
-          console.log('RUNTIME_SEMANTICS_AUDIT=PASS',s);
+          if(s.warnings.critical!==41) throw new Error('critical warnings='+s.warnings.critical);
+          if(c.criticalJutsus<1||c.criticalJutsus>41) throw new Error('critical jutsus='+c.criticalJutsus);
+          console.log('RUNTIME_SEMANTICS_AUDIT=PASS',s,c);
           JS
       - uses: actions/upload-artifact@v4
         with:
