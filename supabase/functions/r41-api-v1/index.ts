@@ -68,6 +68,36 @@ async function parseBody(req: Request) {
   }
 }
 
+type R41RateAction = "world_create" | "world_join" | "world_claim";
+
+async function rateLimited(
+  db: ReturnType<typeof createClient>,
+  accountId: string,
+  action: R41RateAction,
+  limit: number,
+  windowMs: number
+) {
+  const now = Date.now();
+  const cutoff = new Date(now - windowMs).toISOString();
+  const stale = new Date(now - 3600000).toISOString();
+  const { error: insertError } = await db.from("r41_rate_limit_events").insert({ account_id: accountId, action });
+  if (insertError) throw insertError;
+  const { count, error: countError } = await db
+    .from("r41_rate_limit_events")
+    .select("id", { count: "exact", head: true })
+    .eq("account_id", accountId)
+    .eq("action", action)
+    .gte("created_at", cutoff);
+  if (countError) throw countError;
+  await db
+    .from("r41_rate_limit_events")
+    .delete()
+    .eq("account_id", accountId)
+    .eq("action", action)
+    .lt("created_at", stale);
+  return Number(count || 0) > limit;
+}
+
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(req) });
   if (!ALLOWED_ORIGINS.has(req.headers.get("origin") || "") && req.headers.has("origin")) {
@@ -146,6 +176,9 @@ Deno.serve(async (req: Request) => {
       const code = text(b.code, "code", 40).toUpperCase().replace(/[^A-Z0-9_-]/g, "");
       if (!code) throw new Error("world_code_required");
       const state = b.state === undefined ? {} : bodyObject(b.state);
+      if (await rateLimited(admin, userId, "world_create", 6, 60000)) {
+        return json(req, 429, { ok: false, error: "rate_limited", action: "world_create" });
+      }
       const { data, error } = await admin.rpc("r41_create_world_v1", {
         p_code: code,
         p_owner_account_id: userId,
@@ -157,6 +190,9 @@ Deno.serve(async (req: Request) => {
 
     if (p === "/world/join") {
       const code = text(b.code, "code", 40).toUpperCase().replace(/[^A-Z0-9_-]/g, "");
+      if (await rateLimited(admin, userId, "world_join", 12, 60000)) {
+        return json(req, 429, { ok: false, error: "rate_limited", action: "world_join" });
+      }
       const characterId = typeof b.character_id === "string" && b.character_id ? b.character_id : null;
       const { data, error } = await admin.rpc("r41_join_world_v1", {
         p_code: code,
@@ -171,6 +207,9 @@ Deno.serve(async (req: Request) => {
       const worldId = text(b.world_id, "world_id", 40);
       const actorKey = text(b.actor_key, "actor_key", 120);
       const ttl = Math.min(3600, Math.max(15, Number.isFinite(Number(b.ttl_seconds)) ? Math.floor(Number(b.ttl_seconds)) : 120));
+      if (await rateLimited(admin, userId, "world_claim", 30, 60000)) {
+        return json(req, 429, { ok: false, error: "rate_limited", action: "world_claim" });
+      }
       const { data, error } = await admin.rpc("r41_claim_actor_v1", {
         p_world_id: worldId,
         p_actor_key: actorKey,
