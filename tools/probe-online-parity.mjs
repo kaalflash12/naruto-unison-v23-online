@@ -3,9 +3,9 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 
 const API='https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api';
-const run=String(process.env.GITHUB_RUN_ID||Date.now()).replace(/\D/g,'').slice(-12);
+const run=String(process.env.GITHUB_RUN_ID||Date.now()).replace(/\D/g,'').slice(-10);
 const users=[`ciparity${run}a`,`ciparity${run}b`];
-const password=()=>`Ci!${crypto.randomBytes(12).toString('hex')}Aa9`;
+const password=()=>`Ci!${crypto.randomBytes(10).toString('hex')}9a`;
 const result={generatedAt:new Date().toISOString(),runId:run,users,steps:[],turns:[],observedKinds:new Set(),errors:[]};
 
 function loadRoster(){
@@ -20,12 +20,12 @@ function loadRoster(){
 }
 const team=loadRoster();
 
-async function call(path,{token=null,method='GET',body=null}={}){
-  const headers={'content-type':'application/json'};if(token)headers['x-naruto-token']=token;
-  const res=await fetch(API+path,{method,headers,body:body==null?undefined:JSON.stringify(body)});
-  const text=await res.text();let data;try{data=JSON.parse(text)}catch{data={raw:text.slice(0,500)}}
-  if(!res.ok||data?.ok===false){const e=new Error(`${method} ${path} -> HTTP ${res.status}: ${data?.error||data?.message||text.slice(0,200)}`);e.status=res.status;e.data=data;throw e}
-  return data;
+async function call(path,data=undefined){
+  const opt=data===undefined?{cache:'no-store'}:{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(data),cache:'no-store'};
+  const res=await fetch(API+path,opt);
+  const text=await res.text();let body;try{body=JSON.parse(text)}catch{body={raw:text.slice(0,500)}}
+  if(!res.ok||body?.ok===false){const e=new Error(`${opt.method||'GET'} ${path} -> HTTP ${res.status}: ${body?.error||body?.message||text.slice(0,200)}`);e.status=res.status;e.data=body;throw e}
+  return body;
 }
 function chakraTypes(){return ['Blood','Gen','Nin','Tai']}
 function payPlan(ch,cost){
@@ -39,6 +39,7 @@ function summarizeGame(g){
   const fighter=f=>({slug:f?.slug,name:f?.name,hp:Number(f?.hp||0),maxHp:Number(f?.maxHp||100),shield:Number(f?.shield||0),shieldTurns:Number(f?.shieldTurns||0),stun:Number(f?.stun||0),stunTurns:Number(f?.stunTurns||0),dot:Number(f?.dot||0),dotTurns:Number(f?.dotTurns||0),inv:Number(f?.inv||0),invTurns:Number(f?.invTurns||0),cd:(f?.skills||[]).map(s=>Number(s?.cd||0))});
   return {turn:Number(g?.turn||0),winner:g?.winner??null,hostCh:g?.hostCh??null,guestCh:g?.guestCh??null,host:(g?.host||[]).map(fighter),guest:(g?.guest||[]).map(fighter),log:Array.isArray(g?.log)?g.log.slice(-15):[]};
 }
+let sideState={game:null};
 function actionCandidates(side,preference){
   const own=side==='host'?sideState.game.host:sideState.game.guest;
   const foe=side==='host'?sideState.game.guest:sideState.game.host;
@@ -55,31 +56,33 @@ function actionCandidates(side,preference){
   }
   return out.sort((a,b)=>a.score-b.score||a.user-b.user||a.skill-b.skill);
 }
-let sideState={game:null};
 async function waitState(token,code,pred,tries=30){
-  for(let i=0;i<tries;i++){const r=await call(`/api/room/state?code=${encodeURIComponent(code)}`,{token});const g=r.game||r.room?.game||r.room?.data?.game;if(g&&pred(g))return {raw:r,game:g};await new Promise(r=>setTimeout(r,600))}
+  for(let i=0;i<tries;i++){
+    const r=await call(`/api/room/state?code=${encodeURIComponent(code)}&token=${encodeURIComponent(token)}`);
+    const g=r.game||r.room?.game||r.room?.data?.game;
+    if(g&&pred(g))return {raw:r,game:g};
+    await new Promise(r=>setTimeout(r,600));
+  }
   throw new Error('timeout aguardando estado da sala');
 }
 
-const creds=users.map(u=>({username:u,password:password(),token:null}));
+const creds=users.map(u=>({user:u,pass:password(),token:null}));
 let roomCode=null;
 try{
   await call('/api/ping');result.steps.push('ping_ok');
   for(const c of creds){
-    const r=await call('/api/account/register',{method:'POST',body:{username:c.username,password:c.password}});
-    c.token=r.token||r.session?.token||r.account?.session_token||null;
-    if(!c.token)throw new Error(`registro ${c.username} não devolveu token`);
+    const r=await call('/api/account/register',{user:c.user,pass:c.pass});
+    c.token=r.token||null;
+    if(!c.token)throw new Error(`registro ${c.user} não devolveu token`);
   }
   result.steps.push('two_ephemeral_accounts_registered');
-  let create=await call('/api/room/create',{token:creds[0].token,method:'POST',body:{team,ranked:false,quick:false,starter:true}});
-  if(create.token)creds[0].token=create.token;
-  roomCode=create.room?.code||create.code;if(!roomCode)throw new Error('room/create sem code');
+  const create=await call('/api/room/create',{token:creds[0].token,team});
+  roomCode=create.code||create.room?.code;if(!roomCode)throw new Error('room/create sem code');
   result.roomCode=roomCode;result.steps.push('room_created');
-  let join=await call('/api/room/join',{token:creds[1].token,method:'POST',body:{code:roomCode,team}});
-  if(join.token)creds[1].token=join.token;
+  await call('/api/room/join',{token:creds[1].token,code:roomCode,team});
   result.steps.push('room_joined');
-  let state=await waitState(creds[0].token,roomCode,g=>Array.isArray(g.host)&&g.host.length===3&&Array.isArray(g.guest)&&g.guest.length===3);
-  sideState=state;result.initial=summarizeGame(state.game);
+  sideState=await waitState(creds[0].token,roomCode,g=>Array.isArray(g.host)&&g.host.length===3&&Array.isArray(g.guest)&&g.guest.length===3);
+  result.initial=summarizeGame(sideState.game);
   const hostPrefs=['stun','damage','shield','invuln','heal','dot'];
   const guestPrefs=['shield','invuln','heal','damage','stun','dot'];
   for(let round=0;round<6;round++){
@@ -88,14 +91,13 @@ try{
     const ha=actionCandidates('host',hostPrefs)[0],ga=actionCandidates('guest',guestPrefs)[0];
     if(!ha||!ga){result.errors.push({turn,error:'no_payable_action',host:!!ha,guest:!!ga});break}
     result.observedKinds.add(ha.kind);result.observedKinds.add(ga.kind);
-    await call('/api/room/submit',{token:creds[1].token,method:'POST',body:{code:roomCode,turn,acts:[{user:ga.user,skill:ga.skill,targetSide:ga.targetSide,target:ga.target}]}});
-    await call('/api/room/submit',{token:creds[0].token,method:'POST',body:{code:roomCode,turn,acts:[{user:ha.user,skill:ha.skill,targetSide:ha.targetSide,target:ha.target}]}});
+    await call('/api/room/submit',{token:creds[1].token,code:roomCode,turn,acts:[{user:ga.user,skill:ga.skill,targetSide:ga.targetSide,target:ga.target}]});
+    await call('/api/room/submit',{token:creds[0].token,code:roomCode,turn,acts:[{user:ha.user,skill:ha.skill,targetSide:ha.targetSide,target:ha.target}]});
     sideState=await waitState(creds[0].token,roomCode,g=>Number(g.turn||0)>turn||g.winner);
-    const after=summarizeGame(sideState.game);
-    result.turns.push({turn,before,hostAction:{...ha,cost:ha.cost},guestAction:{...ga,cost:ga.cost},after});
+    result.turns.push({turn,before,hostAction:{...ha,cost:ha.cost},guestAction:{...ga,cost:ga.cost},after:summarizeGame(sideState.game)});
   }
   result.final=summarizeGame(sideState.game);
-  try{if(!sideState.game.winner)await call('/api/room/forfeit',{token:creds[0].token,method:'POST',body:{code:roomCode}});result.steps.push('room_closed')}catch(e){result.errors.push({cleanupRoom:String(e.message)})}
+  try{if(!sideState.game.winner)await call('/api/room/forfeit',{token:creds[0].token,code:roomCode});result.steps.push('room_closed')}catch(e){result.errors.push({cleanupRoom:String(e.message)})}
   result.ok=result.turns.length>0;
   result.observedKinds=[...result.observedKinds];
   if(!result.ok)throw new Error('nenhum turno autoritativo foi resolvido');
