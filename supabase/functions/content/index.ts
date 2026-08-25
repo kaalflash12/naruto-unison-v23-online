@@ -31,6 +31,13 @@ function reply(status: number, body: unknown) {
   return new Response(JSON.stringify(body), { status, headers: HEADERS });
 }
 
+function routePath(u: URL) {
+  const segments = u.pathname.split("/").filter(Boolean);
+  const marker = segments.lastIndexOf("content");
+  if (marker >= 0) return segments.slice(marker + 1).join("/");
+  return segments.at(-1) || "";
+}
+
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: HEADERS });
   if (req.method !== "GET") return reply(405, { ok: false, error: "method_not_allowed" });
@@ -40,7 +47,7 @@ Deno.serve(async (req: Request) => {
       auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
     });
     const u = new URL(req.url);
-    const path = u.pathname.replace(/^\/functions\/v1\/content\/?/, "");
+    const path = routePath(u);
 
     if (path === "manifest") {
       const [{ data: publication, error: publicationError }, { data: types, error: typesError }] = await Promise.all([
