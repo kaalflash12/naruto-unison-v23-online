@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-08-25T23:55:43.637Z",
+  "characters": 209,
+  "jutsus": 836,
+  "standardCharacters": 203,
+  "eventCharacters": 4,
+  "specialReviewCharacters": 2,
+  "warningJutsus": 379,
+  "warnings": {
+    "critical": 41,
+    "high": 200,
+    "medium": 176,
+    "low": 0
+  },
+  "runtimeRules": {
+    "damage": "power com rolagem uniforme aproximada de 90% a 110%; duration ignorada",
+    "stun": "mesmo dano imediato de damage + perda de ação por max(1,duration)",
+    "dot": "mesmo dano imediato + 7 por turno por max(1,duration)",
+    "heal": "cura power, limitada ao maxHp",
+    "shield": "adiciona power ao pool; duration 0 persiste até quebrar, duration >0 expira em ticks",
+    "invuln": "power ignorado; bloqueia hit por max(1,duration)",
+    "aoe": "efeito repetido em cada alvo vivo elegível; impacto depende de 1/2/3 alvos",
+    "cooldown": "decrementa no tick ao final da rodada",
+    "cost": "tipos específicos + Rand pago pelo chakra real mais abundante disponível"
+  }
+}
