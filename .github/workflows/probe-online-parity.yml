@@ -1,0 +1,49 @@
+name: Probe Online Combat Parity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/probe-online-parity.mjs'
+      - '.github/workflows/probe-online-parity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax
+        run: |
+          node --check roster.js
+          node --check tools/probe-online-parity.mjs
+      - name: Run real unranked room against authoritative backend
+        run: node tools/probe-online-parity.mjs
+      - name: Validate proof
+        if: always()
+        run: |
+          test -s audit/online/online-parity-proof.json
+          test -s audit/online/online-parity-cleanup.json
+          node - <<'JS'
+          const fs=require('fs');
+          const p=JSON.parse(fs.readFileSync('audit/online/online-parity-proof.json','utf8'));
+          if(!p.ok) throw new Error('online parity probe failed: '+JSON.stringify(p.errors));
+          if(!Array.isArray(p.turns)||p.turns.length<1) throw new Error('no authoritative turn resolved');
+          if(!Array.isArray(p.initial?.host)||p.initial.host.length!==3) throw new Error('host team invalid');
+          if(!Array.isArray(p.initial?.guest)||p.initial.guest.length!==3) throw new Error('guest team invalid');
+          console.log('ONLINE_PARITY_CONTRACT=PASS', {turns:p.turns.length,kinds:p.observedKinds});
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: online-parity-${{ github.run_id }}
+          path: audit/online
+          if-no-files-found: warn
+          retention-days: 7
