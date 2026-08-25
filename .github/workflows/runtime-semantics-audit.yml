@@ -1,0 +1,51 @@
+name: Runtime Semantics Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'roster.js'
+      - 'jutsu-variants.js'
+      - 'app-online.js'
+      - 'tools/audit-runtime-semantics.mjs'
+      - '.github/workflows/runtime-semantics-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate runtime-accurate audit
+        run: |
+          set -euo pipefail
+          node --check tools/audit-runtime-semantics.mjs
+          node tools/audit-runtime-semantics.mjs | tee /tmp/runtime-summary.json
+          test -s audit/balance/runtime/SUMMARY.json
+          test -s audit/balance/runtime/JUTSU-RUNTIME.json
+          test -s audit/balance/runtime/SEMANTIC-REVIEW.json
+          test -s audit/balance/runtime/CHARACTER-RUNTIME.json
+          test -s audit/balance/runtime/RUNTIME-REPORT.md
+      - name: Integrity
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/runtime/SUMMARY.json','utf8'));
+          if(s.characters!==209) throw new Error('characters='+s.characters);
+          if(s.jutsus!==836) throw new Error('jutsus='+s.jutsus);
+          if(s.standardCharacters+s.eventCharacters+s.specialReviewCharacters!==s.characters) throw new Error('classificação incompleta');
+          console.log('RUNTIME_SEMANTICS_AUDIT=PASS',s);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: runtime-semantics-${{ github.sha }}
+          path: audit/balance/runtime
+          if-no-files-found: error
+          retention-days: 30
