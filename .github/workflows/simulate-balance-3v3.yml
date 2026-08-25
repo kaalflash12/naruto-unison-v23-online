@@ -1,0 +1,74 @@
+name: Balance Simulation — Deterministic 3v3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'roster.js'
+      - 'jutsu-variants.js'
+      - 'tools/simulate-balance-3v3.mjs'
+      - '.github/workflows/simulate-balance-3v3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SIM_SEEDS: '2'
+      SIM_MAX_TURNS: '30'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and roster integrity
+        run: |
+          set -euo pipefail
+          node --check roster.js
+          node --check tools/simulate-balance-3v3.mjs
+      - name: Run complete focal matchup matrix
+        run: |
+          set -euo pipefail
+          node tools/simulate-balance-3v3.mjs | tee /tmp/simulation-summary.json
+          test -s audit/balance/simulation/SUMMARY.json
+          test -s audit/balance/simulation/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation/OUTLIERS.json
+          test -s audit/balance/simulation/MATCHUPS.json
+          test -s audit/balance/simulation/SIMULATION-REPORT.md
+      - name: Validate matrix coverage
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/simulation/SUMMARY.json','utf8'));
+          const expected=s.characters*(s.characters-1)/2;
+          if(s.pairs!==expected) throw new Error(`pairs=${s.pairs} expected=${expected}`);
+          if(s.totalGames!==s.pairs*s.gamesPerPair) throw new Error(`totalGames=${s.totalGames} expected=${s.pairs*s.gamesPerPair}`);
+          if(s.gamesPerPair<8) throw new Error(`gamesPerPair=${s.gamesPerPair} < 8`);
+          console.log('BALANCE_3V3_MATRIX=PASS',s);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balance-3v3-${{ github.sha }}
+          path: audit/balance/simulation
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit compact simulation reports
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/simulation/SUMMARY.json \
+                  audit/balance/simulation/CHARACTER-RATINGS.json \
+                  audit/balance/simulation/OUTLIERS.json \
+                  audit/balance/simulation/SIMULATION-REPORT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit: refresh deterministic 3v3 balance report [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
