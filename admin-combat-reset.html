@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1215">
+<title>Reset de Lutas — Naruto Unison</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;background:#080c0e;color:#f2e9dc;font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.wrap{width:min(1180px,calc(100% - 24px));margin:auto;padding:18px 0 40px}.card{background:#11181c;border:1px solid #4d4034;border-radius:12px;padding:16px;margin:10px 0}.top,.row,.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.top{justify-content:space-between}.row{justify-content:space-between}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:9px}.account{border:1px solid #40362d;border-radius:10px;background:#090e11;padding:12px}.name{font-weight:900;font-size:16px}.id{font-size:10px;color:#9d8e7a;overflow-wrap:anywhere}.muted{color:#b7aa98}.ok{color:#9bd59c}.bad{color:#ffaaa5}.warn{color:#f4ca75}input{width:100%;padding:10px 11px;border:1px solid #5f4a36;border-radius:8px;background:#080c0e;color:#fff}button,a.btn{border:1px solid #765b40;background:#211912;color:#fff;border-radius:8px;padding:9px 12px;cursor:pointer;text-decoration:none;font-weight:850}button.danger{border-color:#9a4138;background:#3a1815}button:disabled{opacity:.5;cursor:not-allowed}.pill{display:inline-block;padding:3px 8px;border:1px solid #70533a;border-radius:999px;font-size:10px;color:#e8d4b6}.hidden{display:none!important}.dangerZone{border-color:#8c372f;background:#1b0f0e}@media(max-width:640px){.wrap{width:100%;padding:7px}.row{align-items:flex-start}.actions button,.actions a{flex:1 1 auto}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+<main class="wrap">
+<section class="card top"><div><b>NARUTO UNISON — GAMEOPS</b><div class="muted">Reset seguro de histórico de lutas</div></div><div class="actions"><a class="btn" href="./admin.html">ADMIN</a><a class="btn" href="./">JOGO</a><button id="logout" class="hidden">SAIR</button></div></section>
+<section id="loginCard" class="card"><h1>Acesso administrativo</h1><p class="muted">A função exige a permissão <code>ranked.admin</code>. A conta e o progresso não são apagados.</p><div class="grid"><label>E-mail<input id="email" type="email" autocomplete="username"></label><label>Senha<input id="password" type="password" autocomplete="current-password"></label></div><div class="actions" style="margin-top:12px"><button id="login">ENTRAR</button><span id="loginMsg" class="muted"></span></div></section>
+<section id="app" class="hidden">
+<section class="card"><div class="row"><div><h2 style="margin:0">Contas</h2><p class="muted">Zera somente histórico/placar de combate. Preserva identidade, personagens, desbloqueios, jutsus/maestria, inventário, equipamento, XP, Ryō, história e missões.</p></div><button id="refresh">ATUALIZAR</button></div><input id="search" placeholder="Buscar usuário" style="margin:8px 0"><p id="msg" class="muted"></p><div id="accounts" class="grid"></div></section>
+<section class="card dangerZone"><h2 style="margin-top:0">Reset global</h2><p class="warn">Esta ação zera o histórico de lutas de todas as contas. Um backup auditável é criado antes do reset.</p><button id="resetAll" class="danger">RESETAR HISTÓRICO DE TODAS AS CONTAS</button></section>
+</section>
+</main>
+<script>
+(()=>{'use strict';
+const URL='https://cpdgkszviwrgrwsltbyk.supabase.co',KEY='sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K';
+const sb=window.supabase.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}),$=id=>document.getElementById(id);
+let rows=[];
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function message(text,bad=false){$('msg').textContent=text;$('msg').className=bad?'bad':'ok'}
+async function api(path){const {data}=await sb.auth.getSession();const tok=data.session?.access_token;if(!tok)throw new Error('Sessão expirada.');const r=await fetch(URL+'/functions/v1/admin-gameops'+path,{headers:{apikey:KEY,authorization:'Bearer '+tok}}),b=await r.json().catch(()=>({}));if(!r.ok||b.ok===false)throw new Error(b.error||b.code||('HTTP '+r.status));return b}
+async function resetRpc(account,reason){const args={p_legacy_account_id:null,p_user_id:null,p_reset_all:false,p_reason:reason};if(account.targetKind==='LEGACY')args.p_legacy_account_id=account.targetId;else if(account.targetKind==='AUTH')args.p_user_id=account.targetId;else throw new Error('Tipo de conta inválido.');const {data,error}=await sb.rpc('admin_reset_combat_history',args);if(error)throw error;return data}
+async function load(){const q=$('search').value.trim(),b=await api('/accounts'+(q?'?q='+encodeURIComponent(q):''));rows=b.accounts||[];$('accounts').innerHTML=rows.length?rows.map(a=>`<article class="account"><div class="row"><div><div class="name">${esc(a.username)}</div><div class="id">${esc(a.targetId)}</div></div><span class="pill">${esc(a.targetKind)}</span></div><div class="actions" style="margin-top:12px"><button class="danger" data-reset="${esc(a.id)}">RESETAR LUTAS</button></div></article>`).join(''):'<div class="muted">Nenhuma conta encontrada.</div>';$('accounts').querySelectorAll('[data-reset]').forEach(btn=>btn.onclick=()=>resetOne(btn.dataset.reset));message(rows.length+' conta(s) carregada(s).');}
+async function resetOne(id){const account=rows.find(a=>a.id===id);if(!account)return;const reason=prompt('Motivo do reset de '+account.username+':','Reset administrativo de histórico de lutas');if(reason===null)return;if(!confirm('Confirmar reset do histórico de lutas de '+account.username+'? A conta e o progresso serão preservados.'))return;try{message('Executando reset...');const r=await resetRpc(account,reason.slice(0,500));message(`Reset concluído. Lote ${r.batchId||'—'} • replays ${r.battleReplaysDeleted||0} • partidas ${r.rankedMatchesDeleted||0}.`);await load()}catch(e){message(e.message,true)}}
+$('resetAll').onclick=async()=>{const typed=prompt('Digite exatamente RESETAR LUTAS para confirmar o reset global:','');if(typed!=='RESETAR LUTAS')return;const reason=prompt('Motivo do reset global:','Reset administrativo global de histórico de lutas');if(reason===null)return;try{$('resetAll').disabled=true;message('Executando reset global...');const {data,error}=await sb.rpc('admin_reset_combat_history',{p_legacy_account_id:null,p_user_id:null,p_reset_all:true,p_reason:reason.slice(0,500)});if(error)throw error;message(`Reset global concluído. Lote ${data.batchId||'—'} • contas legadas ${data.legacyAccountsReset||0} • replays ${data.battleReplaysDeleted||0} • partidas ${data.rankedMatchesDeleted||0}.`);await load()}catch(e){message(e.message,true)}finally{$('resetAll').disabled=false}};
+$('refresh').onclick=()=>load().catch(e=>message(e.message,true));$('search').addEventListener('keydown',e=>{if(e.key==='Enter')load().catch(x=>message(x.message,true))});
+$('login').onclick=async()=>{$('loginMsg').textContent='Autenticando...';const {error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error){$('loginMsg').textContent=error.message;$('loginMsg').className='bad';return}await enter()};
+$('password').addEventListener('keydown',e=>{if(e.key==='Enter')$('login').click()});$('logout').onclick=async()=>{await sb.auth.signOut();location.reload()};
+async function enter(){try{const {data,error}=await sb.auth.getUser();if(error||!data.user)throw new Error('Sessão inválida.');$('loginCard').classList.add('hidden');$('app').classList.remove('hidden');$('logout').classList.remove('hidden');await load()}catch(e){$('loginCard').classList.remove('hidden');$('app').classList.add('hidden');$('loginMsg').textContent=e.message;$('loginMsg').className='bad'}}
+sb.auth.getSession().then(({data})=>{if(data.session)enter()});
+})();
+</script>
+</body>
+</html>
