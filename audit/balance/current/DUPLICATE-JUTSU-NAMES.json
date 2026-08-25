@@ -1,0 +1,1790 @@
+[
+  {
+    "normalizedName": "rasengan",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "naruto-uzumaki:2",
+        "character": "Naruto Uzumaki",
+        "name": "Rasengan",
+        "originalName": "Rasengan"
+      },
+      {
+        "jutsuId": "konohamaru-sarutobi-(s):1",
+        "character": "Konohamaru Sarutobi",
+        "name": "Rasengan",
+        "originalName": "Rasengan"
+      },
+      {
+        "jutsuId": "yondaime-minato:1",
+        "character": "Yondaime Minato",
+        "name": "Rasengan",
+        "originalName": "Rasengan"
+      },
+      {
+        "jutsuId": "konohamaru-sensei-boruto:1",
+        "character": "Konohamaru Sarutobi — Sensei",
+        "name": "Rasengan",
+        "originalName": "Rasengan"
+      }
+    ]
+  },
+  {
+    "normalizedName": "chidori",
+    "count": 5,
+    "uses": [
+      {
+        "jutsuId": "sasuke-uchiha:2",
+        "character": "Sasuke Uchiha",
+        "name": "Chidori",
+        "originalName": "Chidori"
+      },
+      {
+        "jutsuId": "curse-mark-sasuke:1",
+        "character": "Curse Mark Sasuke",
+        "name": "Chidori",
+        "originalName": "Chidori"
+      },
+      {
+        "jutsuId": "curse-mark-sasuke-(s):4",
+        "character": "Curse Mark Sasuke (shippuden)",
+        "name": "Chidori",
+        "originalName": "Chidori"
+      },
+      {
+        "jutsuId": "mangekyo-sasuke-(s):2",
+        "character": "Mangekyō Sasuke",
+        "name": "Chidori",
+        "originalName": "Chidori"
+      },
+      {
+        "jutsuId": "sasuke-uchiha-adulto:1",
+        "character": "Sasuke Uchiha — Adulto",
+        "name": "Chidori",
+        "originalName": "Chidori"
+      }
+    ]
+  },
+  {
+    "normalizedName": "sharingan",
+    "count": 7,
+    "uses": [
+      {
+        "jutsuId": "sasuke-uchiha:3",
+        "character": "Sasuke Uchiha",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "kakashi-hatake:1",
+        "character": "Kakashi Hatake",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "curse-mark-sasuke-(s):3",
+        "character": "Curse Mark Sasuke (shippuden)",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "obito-uchiha:3",
+        "character": "Obito Uchiha",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "tobi-(s):1",
+        "character": "Tobi",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "young-kakashi:3",
+        "character": "Young Kakashi",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      },
+      {
+        "jutsuId": "sarada-uchiha-boruto:2",
+        "character": "Sarada Uchiha",
+        "name": "Sharingan",
+        "originalName": "Sharingan"
+      }
+    ]
+  },
+  {
+    "normalizedName": "block",
+    "count": 18,
+    "uses": [
+      {
+        "jutsuId": "sasuke-uchiha:4",
+        "character": "Sasuke Uchiha",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "hinata-hyuga:4",
+        "character": "Hinata Hyūga",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "ao-(s):4",
+        "character": "Ao",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "choza-akimichi:4",
+        "character": "Chōza Akimichi",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "curse-mark-jugo-(s):4",
+        "character": "Curse Mark Jūgo",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "darui-(s):4",
+        "character": "Darui",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "fuguki-suikazan-(r):4",
+        "character": "Fuguki Suikazan",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "itachi-uchiha-(r):4",
+        "character": "Itachi Uchiha (reanimado)",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "kimimaro-(r):4",
+        "character": "Kimimaro",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "kushimaru-kuriarare-(r):4",
+        "character": "Kushimaru Kuriarare",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "misumi-tsurugi:4",
+        "character": "Misumi Tsurugi",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "pakura-(r):4",
+        "character": "Pakura",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "sage-mode-jiraiya-(s):4",
+        "character": "Sage Mode Jiraiya",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "sasori-(r):4",
+        "character": "Sasori",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "temari:4",
+        "character": "Temari",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "tsunade-(s):4",
+        "character": "Tsunade",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "yugito-nii-(s):4",
+        "character": "Yugito Nii",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      },
+      {
+        "jutsuId": "zabuza-momochi-(r):4",
+        "character": "Zabuza Momochi",
+        "name": "Bloqueio",
+        "originalName": "Block"
+      }
+    ]
+  },
+  {
+    "normalizedName": "healing technique",
+    "count": 5,
+    "uses": [
+      {
+        "jutsuId": "sakura-haruno:2",
+        "character": "Sakura Haruno",
+        "name": "Técnica de Cura",
+        "originalName": "Healing Technique"
+      },
+      {
+        "jutsuId": "c-(s):2",
+        "character": "C",
+        "name": "Técnica de Cura",
+        "originalName": "Healing Technique"
+      },
+      {
+        "jutsuId": "kabuto-yakushi-(s):3",
+        "character": "Kabuto Yakushi",
+        "name": "Técnica de Cura",
+        "originalName": "Healing Technique"
+      },
+      {
+        "jutsuId": "rin-nohara:2",
+        "character": "Rin Nohara",
+        "name": "Técnica de Cura",
+        "originalName": "Healing Technique"
+      },
+      {
+        "jutsuId": "sakura-haruno-(s):2",
+        "character": "Sakura Haruno",
+        "name": "Técnica de Cura",
+        "originalName": "Healing Technique"
+      }
+    ]
+  },
+  {
+    "normalizedName": "substitution technique",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "sakura-haruno:4",
+        "character": "Sakura Haruno",
+        "name": "Técnica de Substituição",
+        "originalName": "Substitution Technique"
+      },
+      {
+        "jutsuId": "kankuro:4",
+        "character": "Kankurō",
+        "name": "Técnica de Substituição",
+        "originalName": "Substitution Technique"
+      }
+    ]
+  },
+  {
+    "normalizedName": "lightning blade",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kakashi-hatake:3",
+        "character": "Kakashi Hatake",
+        "name": "Lightning Blade",
+        "originalName": "Lightning Blade"
+      },
+      {
+        "jutsuId": "young-kakashi:2",
+        "character": "Young Kakashi",
+        "name": "Lightning Blade",
+        "originalName": "Lightning Blade"
+      }
+    ]
+  },
+  {
+    "normalizedName": "hide",
+    "count": 9,
+    "uses": [
+      {
+        "jutsuId": "kakashi-hatake:4",
+        "character": "Kakashi Hatake",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "shikamaru-nara:4",
+        "character": "Shikamaru Nara",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "chukichi-(r):4",
+        "character": "Chūkichi",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "corrupted-obito:1",
+        "character": "Corrupted Obito",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "ino-yamanaka-(s):4",
+        "character": "Ino Yamanaka",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "jugo-(s):4",
+        "character": "Jūgo",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "konohamaru-sarutobi-(s):4",
+        "character": "Konohamaru Sarutobi",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "oboro:4",
+        "character": "Oboro",
+        "name": "Hide",
+        "originalName": "Hide"
+      },
+      {
+        "jutsuId": "shino-aburame:4",
+        "character": "Shino Aburame",
+        "name": "Hide",
+        "originalName": "Hide"
+      }
+    ]
+  },
+  {
+    "normalizedName": "gentle fist",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "neji-hyuga:1",
+        "character": "Neji Hyūga",
+        "name": "Punho Gentil",
+        "originalName": "Gentle Fist"
+      },
+      {
+        "jutsuId": "hinata-hyuga:1",
+        "character": "Hinata Hyūga",
+        "name": "Punho Gentil",
+        "originalName": "Gentle Fist"
+      },
+      {
+        "jutsuId": "hanabi-hyuga:1",
+        "character": "Hanabi Hyūga",
+        "name": "Punho Gentil",
+        "originalName": "Gentle Fist"
+      },
+      {
+        "jutsuId": "hiashi-hyuga:1",
+        "character": "Hiashi Hyūga",
+        "name": "Punho Gentil",
+        "originalName": "Gentle Fist"
+      }
+    ]
+  },
+  {
+    "normalizedName": "eight trigrams palm rotation",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "neji-hyuga:2",
+        "character": "Neji Hyūga",
+        "name": "Eight Trigrams Palm Rotation",
+        "originalName": "Eight Trigrams Palm Rotation"
+      },
+      {
+        "jutsuId": "hanabi-hyuga:2",
+        "character": "Hanabi Hyūga",
+        "name": "Eight Trigrams Palm Rotation",
+        "originalName": "Eight Trigrams Palm Rotation"
+      },
+      {
+        "jutsuId": "hiashi-hyuga:2",
+        "character": "Hiashi Hyūga",
+        "name": "Eight Trigrams Palm Rotation",
+        "originalName": "Eight Trigrams Palm Rotation"
+      }
+    ]
+  },
+  {
+    "normalizedName": "eight trigrams sixty-four palms",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "neji-hyuga:3",
+        "character": "Neji Hyūga",
+        "name": "Eight Trigrams Sixty-Four Palms",
+        "originalName": "Eight Trigrams Sixty-Four Palms"
+      },
+      {
+        "jutsuId": "hinata-hyuga:2",
+        "character": "Hinata Hyūga",
+        "name": "Eight Trigrams Sixty-Four Palms",
+        "originalName": "Eight Trigrams Sixty-Four Palms"
+      },
+      {
+        "jutsuId": "hinata-hyuga-(s):3",
+        "character": "Hinata Hyūga",
+        "name": "Eight Trigrams Sixty-Four Palms",
+        "originalName": "Eight Trigrams Sixty-Four Palms"
+      },
+      {
+        "jutsuId": "neji-hyuga-(s):3",
+        "character": "Neji Hyūga",
+        "name": "Eight Trigrams Sixty-Four Palms",
+        "originalName": "Eight Trigrams Sixty-Four Palms"
+      }
+    ]
+  },
+  {
+    "normalizedName": "byakugan foresight",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "neji-hyuga:4",
+        "character": "Neji Hyūga",
+        "name": "Byakugan Foresight",
+        "originalName": "Byakugan Foresight"
+      },
+      {
+        "jutsuId": "hanabi-hyuga:4",
+        "character": "Hanabi Hyūga",
+        "name": "Byakugan Foresight",
+        "originalName": "Byakugan Foresight"
+      },
+      {
+        "jutsuId": "hiashi-hyuga:4",
+        "character": "Hiashi Hyūga",
+        "name": "Byakugan Foresight",
+        "originalName": "Byakugan Foresight"
+      },
+      {
+        "jutsuId": "hinata-hyuga-(s):4",
+        "character": "Hinata Hyūga",
+        "name": "Byakugan Foresight",
+        "originalName": "Byakugan Foresight"
+      }
+    ]
+  },
+  {
+    "normalizedName": "byakugan",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "hinata-hyuga:3",
+        "character": "Hinata Hyūga",
+        "name": "Byakugan",
+        "originalName": "Byakugan"
+      },
+      {
+        "jutsuId": "ao-(s):1",
+        "character": "Ao",
+        "name": "Byakugan",
+        "originalName": "Byakugan"
+      }
+    ]
+  },
+  {
+    "normalizedName": "shadow possession",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "shikamaru-nara:3",
+        "character": "Shikamaru Nara",
+        "name": "Shadow Possession",
+        "originalName": "Shadow Possession"
+      },
+      {
+        "jutsuId": "shikaku-nara:1",
+        "character": "Shikaku Nara",
+        "name": "Shadow Possession",
+        "originalName": "Shadow Possession"
+      }
+    ]
+  },
+  {
+    "normalizedName": "susanoo",
+    "count": 7,
+    "uses": [
+      {
+        "jutsuId": "itachi-uchiha-(s):1",
+        "character": "Itachi Uchiha",
+        "name": "Susanoo Esquelético",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "itachi-uchiha-(s):2",
+        "character": "Itachi Uchiha",
+        "name": "Susanoo Armadurado",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "itachi-uchiha-(r):3",
+        "character": "Itachi Uchiha (reanimado)",
+        "name": "Susanoo",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "madara-uchiha-(s):3",
+        "character": "Madara Uchiha",
+        "name": "Susanoo",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "mangekyo-sasuke-(s):1",
+        "character": "Mangekyō Sasuke",
+        "name": "Susanoo",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "shisui-uchiha-(s):1",
+        "character": "Shisui Uchiha",
+        "name": "Susanoo",
+        "originalName": "Susanoo"
+      },
+      {
+        "jutsuId": "sasuke-uchiha-adulto:4",
+        "character": "Sasuke Uchiha — Adulto",
+        "name": "Susanoo",
+        "originalName": "Susanoo"
+      }
+    ]
+  },
+  {
+    "normalizedName": "amaterasu",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "itachi-uchiha-(s):3",
+        "character": "Itachi Uchiha",
+        "name": "Amaterasu",
+        "originalName": "Amaterasu"
+      },
+      {
+        "jutsuId": "itachi-uchiha:3",
+        "character": "Itachi Uchiha",
+        "name": "Amaterasu",
+        "originalName": "Amaterasu"
+      },
+      {
+        "jutsuId": "mangekyo-sasuke-(s):4",
+        "character": "Mangekyō Sasuke",
+        "name": "Amaterasu",
+        "originalName": "Amaterasu"
+      }
+    ]
+  },
+  {
+    "normalizedName": "giant flame bomb",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "jiraiya:1",
+        "character": "Jiraiya",
+        "name": "Giant Flame Bomb",
+        "originalName": "Giant Flame Bomb"
+      },
+      {
+        "jutsuId": "jiraiya-(s):1",
+        "character": "Jiraiya",
+        "name": "Giant Flame Bomb",
+        "originalName": "Giant Flame Bomb"
+      }
+    ]
+  },
+  {
+    "normalizedName": "toad oil bomb",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "jiraiya:4",
+        "character": "Jiraiya",
+        "name": "Toad Oil Bomb",
+        "originalName": "Toad Oil Bomb"
+      },
+      {
+        "jutsuId": "jiraiya-(s):2",
+        "character": "Jiraiya",
+        "name": "Toad Oil Bomb",
+        "originalName": "Toad Oil Bomb"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kusanagi",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "orochimaru:1",
+        "character": "Orochimaru",
+        "name": "Kusanagi",
+        "originalName": "Kusanagi"
+      },
+      {
+        "jutsuId": "orochimaru-(s):3",
+        "character": "Orochimaru",
+        "name": "Kusanagi",
+        "originalName": "Kusanagi"
+      },
+      {
+        "jutsuId": "sasuke-uchiha-(s):2",
+        "character": "Sasuke Uchiha",
+        "name": "Kusanagi",
+        "originalName": "Kusanagi"
+      },
+      {
+        "jutsuId": "white-snake-orochimaru-(s):2",
+        "character": "White Snake Orochimaru",
+        "name": "Kusanagi",
+        "originalName": "Kusanagi"
+      }
+    ]
+  },
+  {
+    "normalizedName": "curse mark",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "orochimaru:2",
+        "character": "Orochimaru",
+        "name": "Curse Mark",
+        "originalName": "Curse Mark"
+      },
+      {
+        "jutsuId": "curse-mark-sasuke:3",
+        "character": "Curse Mark Sasuke",
+        "name": "Curse Mark",
+        "originalName": "Curse Mark"
+      }
+    ]
+  },
+  {
+    "normalizedName": "dodge",
+    "count": 17,
+    "uses": [
+      {
+        "jutsuId": "akatsuchi-(s):4",
+        "character": "Akatsuchi",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "dodai-(s):4",
+        "character": "Dodai",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "dosu-kinuta:4",
+        "character": "Dosu Kinuta",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "drunken-lee:4",
+        "character": "Drunken Lee",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "eight-gates-guy-(s):4",
+        "character": "Eight-Gates Guy",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "fukai-(r):4",
+        "character": "Fukai",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "gari-(r):4",
+        "character": "Gari",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "hayate-gekko:4",
+        "character": "Hayate Gekkō",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "jinin-akebino-(r):4",
+        "character": "Jinin Akebino",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "kabuto-yakushi-(s):4",
+        "character": "Kabuto Yakushi",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "karin-(s):4",
+        "character": "Karin",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "kurotsuchi-(s):4",
+        "character": "Kurotsuchi",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "mizuki:4",
+        "character": "Mizuki",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "one-tailed-naruto:4",
+        "character": "One-Tailed Naruto",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "rock-lee-(s):4",
+        "character": "Rock Lee",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "shizune:4",
+        "character": "Shizune",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      },
+      {
+        "jutsuId": "torune-aburame-(s):4",
+        "character": "Torune Aburame",
+        "name": "Esquiva",
+        "originalName": "Dodge"
+      }
+    ]
+  },
+  {
+    "normalizedName": "parry",
+    "count": 11,
+    "uses": [
+      {
+        "jutsuId": "ameyuri-ringo-(r):4",
+        "character": "Ameyuri Ringo",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "atsui-(s):4",
+        "character": "Atsui",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "c-(s):4",
+        "character": "C",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "ginkaku-(r):4",
+        "character": "Ginkaku",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "haku:4",
+        "character": "Haku",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "iruka-umino:4",
+        "character": "Iruka Umino",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "kinkaku-(r):4",
+        "character": "Kinkaku",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "suigetsu-hozuki-(s):4",
+        "character": "Suigetsu Hōzuki",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "yondaime-minato:4",
+        "character": "Yondaime Minato",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "young-kakashi:4",
+        "character": "Young Kakashi",
+        "name": "Aparar",
+        "originalName": "Parry"
+      },
+      {
+        "jutsuId": "yugao-uzuki:4",
+        "character": "Yūgao Uzuki",
+        "name": "Aparar",
+        "originalName": "Parry"
+      }
+    ]
+  },
+  {
+    "normalizedName": "dragon flame",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "anko-mitarashi:2",
+        "character": "Anko Mitarashi",
+        "name": "Dragon Flame",
+        "originalName": "Dragon Flame"
+      },
+      {
+        "jutsuId": "sasuke-uchiha-(s):3",
+        "character": "Sasuke Uchiha",
+        "name": "Dragon Flame",
+        "originalName": "Dragon Flame"
+      }
+    ]
+  },
+  {
+    "normalizedName": "striking shadow snakes",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "anko-mitarashi:4",
+        "character": "Anko Mitarashi",
+        "name": "Striking Shadow Snakes",
+        "originalName": "Striking Shadow Snakes"
+      },
+      {
+        "jutsuId": "kabuto-yakushi-(s):2",
+        "character": "Kabuto Yakushi",
+        "name": "Striking Shadow Snakes",
+        "originalName": "Striking Shadow Snakes"
+      }
+    ]
+  },
+  {
+    "normalizedName": "sensory technique",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "ao-(s):2",
+        "character": "Ao",
+        "name": "Técnica Sensorial",
+        "originalName": "Sensory Technique"
+      },
+      {
+        "jutsuId": "c-(s):1",
+        "character": "C",
+        "name": "Técnica Sensorial",
+        "originalName": "Sensory Technique"
+      },
+      {
+        "jutsuId": "dodai-(s):2",
+        "character": "Dodai",
+        "name": "Técnica Sensorial",
+        "originalName": "Sensory Technique"
+      },
+      {
+        "jutsuId": "minato-namikaze:2",
+        "character": "Minato Namikaze",
+        "name": "Técnica Sensorial",
+        "originalName": "Sensory Technique"
+      }
+    ]
+  },
+  {
+    "normalizedName": "ten puppets collection",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "chiyo-(r):1",
+        "character": "Chiyo",
+        "name": "Ten Puppets Collection",
+        "originalName": "Ten Puppets Collection"
+      },
+      {
+        "jutsuId": "chiyo-(s):3",
+        "character": "Chiyo",
+        "name": "Ten Puppets Collection",
+        "originalName": "Ten Puppets Collection"
+      }
+    ]
+  },
+  {
+    "normalizedName": "partial expansion",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "choji-akimichi:3",
+        "character": "Chōji Akimichi",
+        "name": "Partial Expansion",
+        "originalName": "Partial Expansion"
+      },
+      {
+        "jutsuId": "choza-akimichi:3",
+        "character": "Chōza Akimichi",
+        "name": "Partial Expansion",
+        "originalName": "Partial Expansion"
+      }
+    ]
+  },
+  {
+    "normalizedName": "silent killing",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "chukichi-(r):3",
+        "character": "Chūkichi",
+        "name": "Silent Killing",
+        "originalName": "Silent Killing"
+      },
+      {
+        "jutsuId": "zabuza-momochi:1",
+        "character": "Zabuza Momochi",
+        "name": "Silent Killing",
+        "originalName": "Silent Killing"
+      }
+    ]
+  },
+  {
+    "normalizedName": "mangekyo sharingan",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "corrupted-obito:4",
+        "character": "Corrupted Obito",
+        "name": "Mangekyo Sharingan",
+        "originalName": "Mangekyo Sharingan"
+      },
+      {
+        "jutsuId": "itachi-uchiha:1",
+        "character": "Itachi Uchiha",
+        "name": "Mangekyō Sharingan: Previsão",
+        "originalName": "Mangekyō Sharingan"
+      },
+      {
+        "jutsuId": "itachi-uchiha:2",
+        "character": "Itachi Uchiha",
+        "name": "Mangekyō Sharingan: Pressão",
+        "originalName": "Mangekyō Sharingan"
+      },
+      {
+        "jutsuId": "madara-uchiha-(s):1",
+        "character": "Madara Uchiha",
+        "name": "Mangekyō Sharingan",
+        "originalName": "Mangekyō Sharingan"
+      }
+    ]
+  },
+  {
+    "normalizedName": "izanagi",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "danzo-shimura-(s):1",
+        "character": "Danzō Shimura",
+        "name": "Izanagi: Ativação",
+        "originalName": "Izanagi"
+      },
+      {
+        "jutsuId": "danzo-shimura-(s):2",
+        "character": "Danzō Shimura",
+        "name": "Izanagi: Contra-ataque",
+        "originalName": "Izanagi"
+      },
+      {
+        "jutsuId": "tobi-(s):4",
+        "character": "Tobi",
+        "name": "Izanagi",
+        "originalName": "Izanagi"
+      }
+    ]
+  },
+  {
+    "normalizedName": "water wall",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "darui-(s):2",
+        "character": "Darui",
+        "name": "Water Wall",
+        "originalName": "Water Wall"
+      },
+      {
+        "jutsuId": "tobirama-senju-(r):4",
+        "character": "Tobirama Senju",
+        "name": "Water Wall",
+        "originalName": "Water Wall"
+      }
+    ]
+  },
+  {
+    "normalizedName": "lariat",
+    "count": 4,
+    "uses": [
+      {
+        "jutsuId": "eight-tailed-b-(s):2",
+        "character": "Eight-Tailed B",
+        "name": "Lariat",
+        "originalName": "Lariat"
+      },
+      {
+        "jutsuId": "fukai-(r):3",
+        "character": "Fukai",
+        "name": "Lariat",
+        "originalName": "Lariat"
+      },
+      {
+        "jutsuId": "killer-b-(s):2",
+        "character": "Killer B",
+        "name": "Lariat",
+        "originalName": "Lariat"
+      },
+      {
+        "jutsuId": "bijuu-gyuki-event:3",
+        "character": "Gyūki",
+        "name": "Lariat",
+        "originalName": "Lariat"
+      }
+    ]
+  },
+  {
+    "normalizedName": "tailed beast bomb",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "eight-tailed-b-(s):3",
+        "character": "Eight-Tailed B",
+        "name": "Tailed Beast Bomb",
+        "originalName": "Tailed Beast Bomb"
+      },
+      {
+        "jutsuId": "four-tailed-naruto-(s):1",
+        "character": "Four Tailed Naruto (shippuden)",
+        "name": "Tailed Beast Bomb",
+        "originalName": "Tailed Beast Bomb"
+      }
+    ]
+  },
+  {
+    "normalizedName": "mind transfer",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "fu-yamanaka-(s):2",
+        "character": "Fū Yamanaka",
+        "name": "Transferência Mental",
+        "originalName": "Mind Transfer"
+      },
+      {
+        "jutsuId": "ino-yamanaka:2",
+        "character": "Ino Yamanaka",
+        "name": "Transferência Mental",
+        "originalName": "Mind Transfer"
+      }
+    ]
+  },
+  {
+    "normalizedName": "needle senbon",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "fuguki-suikazan-(r):1",
+        "character": "Fuguki Suikazan",
+        "name": "Needle Senbon",
+        "originalName": "Needle Senbon"
+      },
+      {
+        "jutsuId": "sage-mode-jiraiya-(s):2",
+        "character": "Sage Mode Jiraiya",
+        "name": "Needle Senbon",
+        "originalName": "Needle Senbon"
+      }
+    ]
+  },
+  {
+    "normalizedName": "thousand needles of death",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "haku:1",
+        "character": "Haku",
+        "name": "Thousand Needles of Death",
+        "originalName": "Thousand Needles of Death"
+      },
+      {
+        "jutsuId": "haku-(r):1",
+        "character": "Haku",
+        "name": "Thousand Needles of Death",
+        "originalName": "Thousand Needles of Death"
+      }
+    ]
+  },
+  {
+    "normalizedName": "acupuncture",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "haku:2",
+        "character": "Haku",
+        "name": "Acupuncture",
+        "originalName": "Acupuncture"
+      },
+      {
+        "jutsuId": "haku-(r):2",
+        "character": "Haku",
+        "name": "Acupuncture",
+        "originalName": "Acupuncture"
+      }
+    ]
+  },
+  {
+    "normalizedName": "crystal ice mirrors",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "haku:3",
+        "character": "Haku",
+        "name": "Crystal Ice Mirrors",
+        "originalName": "Crystal Ice Mirrors"
+      },
+      {
+        "jutsuId": "haku-(r):3",
+        "character": "Haku",
+        "name": "Crystal Ice Mirrors",
+        "originalName": "Crystal Ice Mirrors"
+      }
+    ]
+  },
+  {
+    "normalizedName": "poison fog",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "hanzo-(r):2",
+        "character": "Hanzō",
+        "name": "Poison Fog",
+        "originalName": "Poison Fog"
+      },
+      {
+        "jutsuId": "shizune:2",
+        "character": "Shizune",
+        "name": "Poison Fog",
+        "originalName": "Poison Fog"
+      }
+    ]
+  },
+  {
+    "normalizedName": "foresight",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "hashirama-senju:4",
+        "character": "Hashirama Senju",
+        "name": "Foresight",
+        "originalName": "Foresight"
+      },
+      {
+        "jutsuId": "kin-tsuchi:4",
+        "character": "Kin Tsuchi",
+        "name": "Foresight",
+        "originalName": "Foresight"
+      },
+      {
+        "jutsuId": "tayuya:4",
+        "character": "Tayuya",
+        "name": "Foresight",
+        "originalName": "Foresight"
+      }
+    ]
+  },
+  {
+    "normalizedName": "pressure point strike",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "hinata-hyuga-(s):1",
+        "character": "Hinata Hyūga",
+        "name": "Pressure Point Strike",
+        "originalName": "Pressure Point Strike"
+      },
+      {
+        "jutsuId": "neji-hyuga-(s):4",
+        "character": "Neji Hyūga",
+        "name": "Pressure Point Strike",
+        "originalName": "Pressure Point Strike"
+      }
+    ]
+  },
+  {
+    "normalizedName": "reaper death seal",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "hiruzen-sarutobi:2",
+        "character": "Hiruzen Sarutobi",
+        "name": "Reaper Death Seal",
+        "originalName": "Reaper Death Seal"
+      },
+      {
+        "jutsuId": "yondaime-minato:3",
+        "character": "Yondaime Minato",
+        "name": "Reaper Death Seal",
+        "originalName": "Reaper Death Seal"
+      }
+    ]
+  },
+  {
+    "normalizedName": "rinnegan foresight",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "human-path-pain-(s):4",
+        "character": "Human Path Pain",
+        "name": "Rinnegan Foresight",
+        "originalName": "Rinnegan Foresight"
+      },
+      {
+        "jutsuId": "preta-path-pain-(s):4",
+        "character": "Preta Path Pain",
+        "name": "Rinnegan Foresight",
+        "originalName": "Rinnegan Foresight"
+      }
+    ]
+  },
+  {
+    "normalizedName": "mind destruction",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "ino-yamanaka:1",
+        "character": "Ino Yamanaka",
+        "name": "Mind Destruction",
+        "originalName": "Mind Destruction"
+      },
+      {
+        "jutsuId": "ino-yamanaka-(s):1",
+        "character": "Ino Yamanaka",
+        "name": "Mind Destruction",
+        "originalName": "Mind Destruction"
+      }
+    ]
+  },
+  {
+    "normalizedName": "sphere of graves",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "jirobo:2",
+        "character": "Jirōbō",
+        "name": "Sphere of Graves",
+        "originalName": "Sphere of Graves"
+      },
+      {
+        "jutsuId": "jirobo-(r):2",
+        "character": "Jirōbō",
+        "name": "Sphere of Graves",
+        "originalName": "Sphere of Graves"
+      }
+    ]
+  },
+  {
+    "normalizedName": "earth dome prison",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "jirobo:3",
+        "character": "Jirōbō",
+        "name": "Earth Dome Prison",
+        "originalName": "Earth Dome Prison"
+      },
+      {
+        "jutsuId": "jirobo-(r):3",
+        "character": "Jirōbō",
+        "name": "Earth Dome Prison",
+        "originalName": "Earth Dome Prison"
+      }
+    ]
+  },
+  {
+    "normalizedName": "sage transformation",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "jugo-(s):2",
+        "character": "Jūgo",
+        "name": "Sage Transformation",
+        "originalName": "Sage Transformation"
+      },
+      {
+        "jutsuId": "sage-mode-kabuto-(s):1",
+        "character": "Sage Mode Kabuto",
+        "name": "Sage Transformation",
+        "originalName": "Sage Transformation"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kamui",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kakashi-hatake-(s):3",
+        "character": "Kakashi Hatake",
+        "name": "Kamui",
+        "originalName": "Kamui"
+      },
+      {
+        "jutsuId": "tobi-(s):2",
+        "character": "Tobi",
+        "name": "Kamui",
+        "originalName": "Kamui"
+      }
+    ]
+  },
+  {
+    "normalizedName": "iron maiden",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kankuro:1",
+        "character": "Kankurō",
+        "name": "Iron Maiden",
+        "originalName": "Iron Maiden"
+      },
+      {
+        "jutsuId": "puppet-master-kankuro-(s):4",
+        "character": "Puppet Master Kankurō",
+        "name": "Iron Maiden",
+        "originalName": "Iron Maiden"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kuroari trap",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kankuro-(s):1",
+        "character": "Kankurō",
+        "name": "Kuroari Trap",
+        "originalName": "Kuroari Trap"
+      },
+      {
+        "jutsuId": "puppet-master-kankuro-(s):3",
+        "character": "Puppet Master Kankurō",
+        "name": "Kuroari Trap",
+        "originalName": "Kuroari Trap"
+      }
+    ]
+  },
+  {
+    "normalizedName": "monstrous sand arm",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kazekage-gaara-(s):1",
+        "character": "Kazekage Gaara",
+        "name": "Monstrous Sand Arm",
+        "originalName": "Monstrous Sand Arm"
+      },
+      {
+        "jutsuId": "shukaku-gaara:2",
+        "character": "Shukaku Gaara",
+        "name": "Monstrous Sand Arm",
+        "originalName": "Monstrous Sand Arm"
+      }
+    ]
+  },
+  {
+    "normalizedName": "clematis dance",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kimimaro:2",
+        "character": "Kimimaro",
+        "name": "Clematis Dance",
+        "originalName": "Clematis Dance"
+      },
+      {
+        "jutsuId": "kimimaro-(r):1",
+        "character": "Kimimaro",
+        "name": "Clematis Dance",
+        "originalName": "Clematis Dance"
+      }
+    ]
+  },
+  {
+    "normalizedName": "scroll of fire",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kinkaku-(r):3",
+        "character": "Kinkaku",
+        "name": "Scroll of Fire",
+        "originalName": "Scroll of Fire"
+      },
+      {
+        "jutsuId": "tenten-(s):3",
+        "character": "Tenten",
+        "name": "Scroll of Fire",
+        "originalName": "Scroll of Fire"
+      }
+    ]
+  },
+  {
+    "normalizedName": "paper bomb",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "konan-of-the-rain-(s):3",
+        "character": "Konan of the Rain",
+        "name": "Paper Bomb",
+        "originalName": "Paper Bomb"
+      },
+      {
+        "jutsuId": "omoi-(s):4",
+        "character": "Omoi",
+        "name": "Paper Bomb",
+        "originalName": "Paper Bomb"
+      }
+    ]
+  },
+  {
+    "normalizedName": "flee",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "mei-terumi-(s):4",
+        "character": "Mei Terumi",
+        "name": "Flee",
+        "originalName": "Flee"
+      },
+      {
+        "jutsuId": "obito-uchiha:4",
+        "character": "Obito Uchiha",
+        "name": "Flee",
+        "originalName": "Flee"
+      },
+      {
+        "jutsuId": "rin-nohara:4",
+        "character": "Rin Nohara",
+        "name": "Flee",
+        "originalName": "Flee"
+      }
+    ]
+  },
+  {
+    "normalizedName": "leaf hurricane",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "might-guy:1",
+        "character": "Might Guy",
+        "name": "Leaf Hurricane",
+        "originalName": "Leaf Hurricane"
+      },
+      {
+        "jutsuId": "rock-lee-(s):2",
+        "character": "Rock Lee",
+        "name": "Leaf Hurricane",
+        "originalName": "Leaf Hurricane"
+      }
+    ]
+  },
+  {
+    "normalizedName": "space-time marking",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "minato-namikaze:3",
+        "character": "Minato Namikaze",
+        "name": "Space-Time Marking",
+        "originalName": "Space-Time Marking"
+      },
+      {
+        "jutsuId": "minato-namikaze-(r):1",
+        "character": "Minato Namikaze",
+        "name": "Space-Time Marking",
+        "originalName": "Space-Time Marking"
+      }
+    ]
+  },
+  {
+    "normalizedName": "atomic dismantling",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "mu-(r):3",
+        "character": "Mū",
+        "name": "Atomic Dismantling",
+        "originalName": "Atomic Dismantling"
+      },
+      {
+        "jutsuId": "onoki-(s):3",
+        "character": "Ōnoki",
+        "name": "Atomic Dismantling",
+        "originalName": "Atomic Dismantling"
+      }
+    ]
+  },
+  {
+    "normalizedName": "rasen shuriken",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "naruto-uzumaki-(s):2",
+        "character": "Naruto Uzumaki",
+        "name": "Rasen Shuriken",
+        "originalName": "Rasen Shuriken"
+      },
+      {
+        "jutsuId": "sage-mode-naruto-(s):2",
+        "character": "Sage Mode Naruto",
+        "name": "Rasen Shuriken",
+        "originalName": "Rasen Shuriken"
+      }
+    ]
+  },
+  {
+    "normalizedName": "six-tailed transformation",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "nine-tailed-naruto-(s):2",
+        "character": "Nine-Tailed Naruto",
+        "name": "Six-Tailed Transformation",
+        "originalName": "Six-Tailed Transformation"
+      },
+      {
+        "jutsuId": "utakata-(s):3",
+        "character": "Utakata",
+        "name": "Six-Tailed Transformation",
+        "originalName": "Six-Tailed Transformation"
+      }
+    ]
+  },
+  {
+    "normalizedName": "binding talisman",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "reanimator-kabuto-(s):2",
+        "character": "Reanimator Kabuto",
+        "name": "Binding Talisman",
+        "originalName": "Binding Talisman"
+      },
+      {
+        "jutsuId": "reanimator-kabuto-(s):3",
+        "character": "Reanimator Kabuto",
+        "name": "Summoning: Reanimation",
+        "originalName": "Binding Talisman"
+      }
+    ]
+  },
+  {
+    "normalizedName": "strength of one hundred seal",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "sakura-haruno-(s):3",
+        "character": "Sakura Haruno",
+        "name": "Strength of One Hundred Seal",
+        "originalName": "Strength of One Hundred Seal"
+      },
+      {
+        "jutsuId": "tsunade-(s):3",
+        "character": "Tsunade",
+        "name": "Strength of One Hundred Seal",
+        "originalName": "Strength of One Hundred Seal"
+      }
+    ]
+  },
+  {
+    "normalizedName": "chakra leech",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "shino-aburame:1",
+        "character": "Shino Aburame",
+        "name": "Chakra Leech",
+        "originalName": "Chakra Leech"
+      },
+      {
+        "jutsuId": "shino-aburame-(s):2",
+        "character": "Shino Aburame",
+        "name": "Chakra Leech",
+        "originalName": "Chakra Leech"
+      }
+    ]
+  },
+  {
+    "normalizedName": "deflect",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "yoroi-akado:4",
+        "character": "Yoroi Akadō",
+        "name": "Deflect",
+        "originalName": "Deflect"
+      },
+      {
+        "jutsuId": "zaku-abumi:4",
+        "character": "Zaku Abumi",
+        "name": "Deflect",
+        "originalName": "Deflect"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kage bunshin no jutsu",
+    "count": 3,
+    "uses": [
+      {
+        "jutsuId": "boruto-uzumaki-genin:2",
+        "character": "Boruto Uzumaki",
+        "name": "Kage Bunshin no Jutsu",
+        "originalName": "Kage Bunshin no Jutsu"
+      },
+      {
+        "jutsuId": "kakashi-hatake-sexto:4",
+        "character": "Kakashi Hatake — Sexto Hokage",
+        "name": "Kage Bunshin no Jutsu",
+        "originalName": "Kage Bunshin no Jutsu"
+      },
+      {
+        "jutsuId": "konohamaru-sensei-boruto:2",
+        "character": "Konohamaru Sarutobi — Sensei",
+        "name": "Kage Bunshin no Jutsu",
+        "originalName": "Kage Bunshin no Jutsu"
+      }
+    ]
+  },
+  {
+    "normalizedName": "katon: gokakyu no jutsu",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "sarada-uchiha-boruto:1",
+        "character": "Sarada Uchiha",
+        "name": "Katon: Gōkakyū no Jutsu",
+        "originalName": "Katon: Gōkakyū no Jutsu"
+      },
+      {
+        "jutsuId": "konohamaru-sensei-boruto:3",
+        "character": "Konohamaru Sarutobi — Sensei",
+        "name": "Katon: Gōkakyū no Jutsu",
+        "originalName": "Katon: Gōkakyū no Jutsu"
+      }
+    ]
+  },
+  {
+    "normalizedName": "okasho",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "sarada-uchiha-boruto:3",
+        "character": "Sarada Uchiha",
+        "name": "Ōkashō",
+        "originalName": "Ōkashō"
+      },
+      {
+        "jutsuId": "sakura-haruno-adulta:1",
+        "character": "Sakura Haruno — Adulta",
+        "name": "Ōkashō",
+        "originalName": "Ōkashō"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kama",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "kawaki-boruto:1",
+        "character": "Kawaki",
+        "name": "Kāma",
+        "originalName": "Kāma"
+      },
+      {
+        "jutsuId": "jigen-boruto:1",
+        "character": "Jigen",
+        "name": "Kāma",
+        "originalName": "Kāma"
+      }
+    ]
+  },
+  {
+    "normalizedName": "daikokuten",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "isshiki-otsutsuki-boruto:2",
+        "character": "Isshiki Ōtsutsuki",
+        "name": "Daikokuten",
+        "originalName": "Daikokuten"
+      },
+      {
+        "jutsuId": "jigen-boruto:4",
+        "character": "Jigen",
+        "name": "Daikokuten",
+        "originalName": "Daikokuten"
+      }
+    ]
+  },
+  {
+    "normalizedName": "kokuyo no bo",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "isshiki-otsutsuki-boruto:3",
+        "character": "Isshiki Ōtsutsuki",
+        "name": "Kokuyō no Bō",
+        "originalName": "Kokuyō no Bō"
+      },
+      {
+        "jutsuId": "jigen-boruto:2",
+        "character": "Jigen",
+        "name": "Kokuyō no Bō",
+        "originalName": "Kokuyō no Bō"
+      }
+    ]
+  },
+  {
+    "normalizedName": "bijudama",
+    "count": 2,
+    "uses": [
+      {
+        "jutsuId": "bijuu-gyuki-event:1",
+        "character": "Gyūki",
+        "name": "Bijūdama",
+        "originalName": "Bijūdama"
+      },
+      {
+        "jutsuId": "bijuu-kurama-event:1",
+        "character": "Kurama",
+        "name": "Bijūdama",
+        "originalName": "Bijūdama"
+      }
+    ]
+  }
+]

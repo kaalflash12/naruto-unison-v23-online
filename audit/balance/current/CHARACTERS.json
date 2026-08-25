@@ -1,0 +1,2928 @@
+[
+  {
+    "characterId": "naruto-uzumaki",
+    "name": "Naruto Uzumaki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/naruto-uzumaki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "naruto-uzumaki:1",
+      "naruto-uzumaki:2",
+      "naruto-uzumaki:3",
+      "naruto-uzumaki:4"
+    ]
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "name": "Sasuke Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sasuke-uchiha/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sasuke-uchiha:1",
+      "sasuke-uchiha:2",
+      "sasuke-uchiha:3",
+      "sasuke-uchiha:4"
+    ]
+  },
+  {
+    "characterId": "sakura-haruno",
+    "name": "Sakura Haruno",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sakura-haruno/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sakura-haruno:1",
+      "sakura-haruno:2",
+      "sakura-haruno:3",
+      "sakura-haruno:4"
+    ]
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "name": "Kakashi Hatake",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kakashi-hatake/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kakashi-hatake:1",
+      "kakashi-hatake:2",
+      "kakashi-hatake:3",
+      "kakashi-hatake:4"
+    ]
+  },
+  {
+    "characterId": "rock-lee",
+    "name": "Rock Lee",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/rock-lee/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "rock-lee:1",
+      "rock-lee:2",
+      "rock-lee:3",
+      "rock-lee:4"
+    ]
+  },
+  {
+    "characterId": "neji-hyuga",
+    "name": "Neji Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/neji-hyuga/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "neji-hyuga:1",
+      "neji-hyuga:2",
+      "neji-hyuga:3",
+      "neji-hyuga:4"
+    ]
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "name": "Hinata Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hinata-hyuga/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hinata-hyuga:1",
+      "hinata-hyuga:2",
+      "hinata-hyuga:3",
+      "hinata-hyuga:4"
+    ]
+  },
+  {
+    "characterId": "gaara",
+    "name": "Gaara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/gaara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "gaara:1",
+      "gaara:2",
+      "gaara:3",
+      "gaara:4"
+    ]
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "name": "Shikamaru Nara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shikamaru-nara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shikamaru-nara:1",
+      "shikamaru-nara:2",
+      "shikamaru-nara:3",
+      "shikamaru-nara:4"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "name": "Itachi Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/itachi-uchiha-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "itachi-uchiha-(s):1",
+      "itachi-uchiha-(s):2",
+      "itachi-uchiha-(s):3",
+      "itachi-uchiha-(s):4"
+    ]
+  },
+  {
+    "characterId": "jiraiya",
+    "name": "Jiraiya",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jiraiya/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jiraiya:1",
+      "jiraiya:2",
+      "jiraiya:3",
+      "jiraiya:4"
+    ]
+  },
+  {
+    "characterId": "tsunade",
+    "name": "Tsunade",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tsunade/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tsunade:1",
+      "tsunade:2",
+      "tsunade:3",
+      "tsunade:4"
+    ]
+  },
+  {
+    "characterId": "orochimaru",
+    "name": "Orochimaru",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/orochimaru/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "orochimaru:1",
+      "orochimaru:2",
+      "orochimaru:3",
+      "orochimaru:4"
+    ]
+  },
+  {
+    "characterId": "SasoriSOld",
+    "name": "Sasori Antigo",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/SasoriSOld/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "SasoriSOld:1",
+      "SasoriSOld:2",
+      "SasoriSOld:3",
+      "SasoriSOld:4"
+    ]
+  },
+  {
+    "characterId": "a-(r)",
+    "name": "A",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/a-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "a-(r):1",
+      "a-(r):2",
+      "a-(r):3",
+      "a-(r):4"
+    ]
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "name": "Akatsuchi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/akatsuchi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "akatsuchi-(s):1",
+      "akatsuchi-(s):2",
+      "akatsuchi-(s):3",
+      "akatsuchi-(s):4"
+    ]
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "name": "Ameyuri Ringo",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ameyuri-ringo-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ameyuri-ringo-(r):1",
+      "ameyuri-ringo-(r):2",
+      "ameyuri-ringo-(r):3",
+      "ameyuri-ringo-(r):4"
+    ]
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "name": "Animal Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/animal-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "animal-path-pain-(s):1",
+      "animal-path-pain-(s):2",
+      "animal-path-pain-(s):3",
+      "animal-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "name": "Anko Mitarashi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/anko-mitarashi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "anko-mitarashi:1",
+      "anko-mitarashi:2",
+      "anko-mitarashi:3",
+      "anko-mitarashi:4"
+    ]
+  },
+  {
+    "characterId": "ao-(s)",
+    "name": "Ao",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ao-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ao-(s):1",
+      "ao-(s):2",
+      "ao-(s):3",
+      "ao-(s):4"
+    ]
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "name": "Aoba Yamashiro",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/aoba-yamashiro/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "aoba-yamashiro:1",
+      "aoba-yamashiro:2",
+      "aoba-yamashiro:3",
+      "aoba-yamashiro:4"
+    ]
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "name": "Asuma Sarutobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/asuma-sarutobi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "asuma-sarutobi:1",
+      "asuma-sarutobi:2",
+      "asuma-sarutobi:3",
+      "asuma-sarutobi:4"
+    ]
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "name": "Asuma Sarutobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/asuma-sarutobi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "asuma-sarutobi-(s):1",
+      "asuma-sarutobi-(s):2",
+      "asuma-sarutobi-(s):3",
+      "asuma-sarutobi-(s):4"
+    ]
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "name": "Asura Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/asura-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "asura-path-pain-(s):1",
+      "asura-path-pain-(s):2",
+      "asura-path-pain-(s):3",
+      "asura-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "atsui-(s)",
+    "name": "Atsui",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/atsui-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "atsui-(s):1",
+      "atsui-(s):2",
+      "atsui-(s):3",
+      "atsui-(s):4"
+    ]
+  },
+  {
+    "characterId": "baki",
+    "name": "Baki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/baki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "baki:1",
+      "baki:2",
+      "baki:3",
+      "baki:4"
+    ]
+  },
+  {
+    "characterId": "c-(s)",
+    "name": "C",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/c-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "c-(s):1",
+      "c-(s):2",
+      "c-(s):3",
+      "c-(s):4"
+    ]
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "name": "Chiyo",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/chiyo-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "chiyo-(r):1",
+      "chiyo-(r):2",
+      "chiyo-(r):3",
+      "chiyo-(r):4"
+    ]
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "name": "Chiyo",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/chiyo-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "chiyo-(s):1",
+      "chiyo-(s):2",
+      "chiyo-(s):3",
+      "chiyo-(s):4"
+    ]
+  },
+  {
+    "characterId": "choji-akimichi",
+    "name": "Chōji Akimichi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/choji-akimichi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "choji-akimichi:1",
+      "choji-akimichi:2",
+      "choji-akimichi:3",
+      "choji-akimichi:4"
+    ]
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "name": "Chōji Akimichi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/choji-akimichi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "choji-akimichi-(s):1",
+      "choji-akimichi-(s):2",
+      "choji-akimichi-(s):3",
+      "choji-akimichi-(s):4"
+    ]
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "name": "Chōjūrō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/chojuro-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "chojuro-(s):1",
+      "chojuro-(s):2",
+      "chojuro-(s):3",
+      "chojuro-(s):4"
+    ]
+  },
+  {
+    "characterId": "choza-akimichi",
+    "name": "Chōza Akimichi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/choza-akimichi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "choza-akimichi:1",
+      "choza-akimichi:2",
+      "choza-akimichi:3",
+      "choza-akimichi:4"
+    ]
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "name": "Chūkichi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/chukichi-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "chukichi-(r):1",
+      "chukichi-(r):2",
+      "chukichi-(r):3",
+      "chukichi-(r):4"
+    ]
+  },
+  {
+    "characterId": "corrupted-obito",
+    "name": "Corrupted Obito",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/corrupted-obito/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "corrupted-obito:1",
+      "corrupted-obito:2",
+      "corrupted-obito:3",
+      "corrupted-obito:4"
+    ]
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "name": "Curse Mark Jūgo",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/curse-mark-jugo-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "curse-mark-jugo-(s):1",
+      "curse-mark-jugo-(s):2",
+      "curse-mark-jugo-(s):3",
+      "curse-mark-jugo-(s):4"
+    ]
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "name": "Curse Mark Sasuke",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/curse-mark-sasuke/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "curse-mark-sasuke:1",
+      "curse-mark-sasuke:2",
+      "curse-mark-sasuke:3",
+      "curse-mark-sasuke:4"
+    ]
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "name": "Curse Mark Sasuke (shippuden)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/curse-mark-sasuke-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "curse-mark-sasuke-(s):1",
+      "curse-mark-sasuke-(s):2",
+      "curse-mark-sasuke-(s):3",
+      "curse-mark-sasuke-(s):4"
+    ]
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "name": "Danzō Shimura",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/danzo-shimura-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "danzo-shimura-(s):1",
+      "danzo-shimura-(s):2",
+      "danzo-shimura-(s):3",
+      "danzo-shimura-(s):4"
+    ]
+  },
+  {
+    "characterId": "darui-(s)",
+    "name": "Darui",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/darui-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "darui-(s):1",
+      "darui-(s):2",
+      "darui-(s):3",
+      "darui-(s):4"
+    ]
+  },
+  {
+    "characterId": "deidara-(r)",
+    "name": "Deidara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/deidara-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "deidara-(r):1",
+      "deidara-(r):2",
+      "deidara-(r):3",
+      "deidara-(r):4"
+    ]
+  },
+  {
+    "characterId": "deidara-(s)",
+    "name": "Deidara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/deidara-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "deidara-(s):1",
+      "deidara-(s):2",
+      "deidara-(s):3",
+      "deidara-(s):4"
+    ]
+  },
+  {
+    "characterId": "demon-brothers",
+    "name": "Demon Brothers",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/demon-brothers/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "demon-brothers:1",
+      "demon-brothers:2",
+      "demon-brothers:3",
+      "demon-brothers:4"
+    ]
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "name": "Deva Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/deva-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "deva-path-pain-(s):1",
+      "deva-path-pain-(s):2",
+      "deva-path-pain-(s):3",
+      "deva-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "dodai-(s)",
+    "name": "Dodai",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/dodai-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "dodai-(s):1",
+      "dodai-(s):2",
+      "dodai-(s):3",
+      "dodai-(s):4"
+    ]
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "name": "Dosu Kinuta",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/dosu-kinuta/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "dosu-kinuta:1",
+      "dosu-kinuta:2",
+      "dosu-kinuta:3",
+      "dosu-kinuta:4"
+    ]
+  },
+  {
+    "characterId": "drunken-lee",
+    "name": "Drunken Lee",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/drunken-lee/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "drunken-lee:1",
+      "drunken-lee:2",
+      "drunken-lee:3",
+      "drunken-lee:4"
+    ]
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "name": "Eight-Gates Guy",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/eight-gates-guy-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "eight-gates-guy-(s):1",
+      "eight-gates-guy-(s):2",
+      "eight-gates-guy-(s):3",
+      "eight-gates-guy-(s):4"
+    ]
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "name": "Eight-Tailed B",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/character-corrections-v229/eight-tailed-b-(s)-icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "eight-tailed-b-(s):1",
+      "eight-tailed-b-(s):2",
+      "eight-tailed-b-(s):3",
+      "eight-tailed-b-(s):4"
+    ]
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "name": "Four Tailed Naruto (shippuden)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/character-corrections-r30/four-tailed-naruto-(s).jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "four-tailed-naruto-(s):1",
+      "four-tailed-naruto-(s):2",
+      "four-tailed-naruto-(s):3",
+      "four-tailed-naruto-(s):4"
+    ]
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "name": "Fū Yamanaka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/fu-yamanaka-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "fu-yamanaka-(s):1",
+      "fu-yamanaka-(s):2",
+      "fu-yamanaka-(s):3",
+      "fu-yamanaka-(s):4"
+    ]
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "name": "Fuguki Suikazan",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/fuguki-suikazan-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "fuguki-suikazan-(r):1",
+      "fuguki-suikazan-(r):2",
+      "fuguki-suikazan-(r):3",
+      "fuguki-suikazan-(r):4"
+    ]
+  },
+  {
+    "characterId": "fukai-(r)",
+    "name": "Fukai",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/fukai-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "fukai-(r):1",
+      "fukai-(r):2",
+      "fukai-(r):3",
+      "fukai-(r):4"
+    ]
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "name": "Fukasaku and Shima",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/fukasaku-and-shima-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "fukasaku-and-shima-(s):1",
+      "fukasaku-and-shima-(s):2",
+      "fukasaku-and-shima-(s):3",
+      "fukasaku-and-shima-(s):4"
+    ]
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "name": "Gaara Of The Funk",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/character-corrections-r30/gaara-of-the-funk.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "gaara-of-the-funk:1",
+      "gaara-of-the-funk:2",
+      "gaara-of-the-funk:3",
+      "gaara-of-the-funk:4"
+    ]
+  },
+  {
+    "characterId": "gari-(r)",
+    "name": "Gari",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/gari-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "gari-(r):1",
+      "gari-(r):2",
+      "gari-(r):3",
+      "gari-(r):4"
+    ]
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "name": "Gengetsu Hōzuki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/gengetsu-hozuki-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "gengetsu-hozuki-(r):1",
+      "gengetsu-hozuki-(r):2",
+      "gengetsu-hozuki-(r):3",
+      "gengetsu-hozuki-(r):4"
+    ]
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "name": "Ginkaku",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ginkaku-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ginkaku-(r):1",
+      "ginkaku-(r):2",
+      "ginkaku-(r):3",
+      "ginkaku-(r):4"
+    ]
+  },
+  {
+    "characterId": "haku",
+    "name": "Haku",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/character-corrections-r28/haku-face.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "haku:1",
+      "haku:2",
+      "haku:3",
+      "haku:4"
+    ]
+  },
+  {
+    "characterId": "haku-(r)",
+    "name": "Haku",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/haku-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "haku-(r):1",
+      "haku-(r):2",
+      "haku-(r):3",
+      "haku-(r):4"
+    ]
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "name": "Hanabi Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hanabi-hyuga/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hanabi-hyuga:1",
+      "hanabi-hyuga:2",
+      "hanabi-hyuga:3",
+      "hanabi-hyuga:4"
+    ]
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "name": "Hanzō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hanzo-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hanzo-(r):1",
+      "hanzo-(r):2",
+      "hanzo-(r):3",
+      "hanzo-(r):4"
+    ]
+  },
+  {
+    "characterId": "hashirama-senju",
+    "name": "Hashirama Senju",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hashirama-senju/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hashirama-senju:1",
+      "hashirama-senju:2",
+      "hashirama-senju:3",
+      "hashirama-senju:4"
+    ]
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "name": "Hashirama Senju",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hashirama-senju-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hashirama-senju-(r):1",
+      "hashirama-senju-(r):2",
+      "hashirama-senju-(r):3",
+      "hashirama-senju-(r):4"
+    ]
+  },
+  {
+    "characterId": "hayate-gekko",
+    "name": "Hayate Gekkō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hayate-gekko/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hayate-gekko:1",
+      "hayate-gekko:2",
+      "hayate-gekko:3",
+      "hayate-gekko:4"
+    ]
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "name": "Hiashi Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hiashi-hyuga/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hiashi-hyuga:1",
+      "hiashi-hyuga:2",
+      "hiashi-hyuga:3",
+      "hiashi-hyuga:4"
+    ]
+  },
+  {
+    "characterId": "hidan-(s)",
+    "name": "Hidan",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hidan-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hidan-(s):1",
+      "hidan-(s):2",
+      "hidan-(s):3",
+      "hidan-(s):4"
+    ]
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "name": "Hinata Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hinata-hyuga-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hinata-hyuga-(s):1",
+      "hinata-hyuga-(s):2",
+      "hinata-hyuga-(s):3",
+      "hinata-hyuga-(s):4"
+    ]
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "name": "Hiruko Sasori (shippuden)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/hiruko-sasori-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hiruko-sasori-(s):1",
+      "hiruko-sasori-(s):2",
+      "hiruko-sasori-(s):3",
+      "hiruko-sasori-(s):4"
+    ]
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "name": "Hiruzen Sarutobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/hiruzen-sarutobi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hiruzen-sarutobi:1",
+      "hiruzen-sarutobi:2",
+      "hiruzen-sarutobi:3",
+      "hiruzen-sarutobi:4"
+    ]
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "name": "Hoshigaki Kisame Body Double (shippuden)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/hoshigaki-kisame-body-double-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "hoshigaki-kisame-body-double-(s):1",
+      "hoshigaki-kisame-body-double-(s):2",
+      "hoshigaki-kisame-body-double-(s):3",
+      "hoshigaki-kisame-body-double-(s):4"
+    ]
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "name": "Human Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/human-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "human-path-pain-(s):1",
+      "human-path-pain-(s):2",
+      "human-path-pain-(s):3",
+      "human-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "ibiki-morino",
+    "name": "Ibiki Morino",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ibiki-morino/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ibiki-morino:1",
+      "ibiki-morino:2",
+      "ibiki-morino:3",
+      "ibiki-morino:4"
+    ]
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "name": "Ino Yamanaka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ino-yamanaka/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ino-yamanaka:1",
+      "ino-yamanaka:2",
+      "ino-yamanaka:3",
+      "ino-yamanaka:4"
+    ]
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "name": "Ino Yamanaka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ino-yamanaka-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ino-yamanaka-(s):1",
+      "ino-yamanaka-(s):2",
+      "ino-yamanaka-(s):3",
+      "ino-yamanaka-(s):4"
+    ]
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "name": "Inoichi Yamanaka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/inoichi-yamanaka/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "inoichi-yamanaka:1",
+      "inoichi-yamanaka:2",
+      "inoichi-yamanaka:3",
+      "inoichi-yamanaka:4"
+    ]
+  },
+  {
+    "characterId": "iruka-umino",
+    "name": "Iruka Umino",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/iruka-umino/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "iruka-umino:1",
+      "iruka-umino:2",
+      "iruka-umino:3",
+      "iruka-umino:4"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "name": "Itachi Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/itachi-uchiha/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "itachi-uchiha:1",
+      "itachi-uchiha:2",
+      "itachi-uchiha:3",
+      "itachi-uchiha:4"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "name": "Itachi Uchiha (reanimado)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/itachi-uchiha-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "itachi-uchiha-(r):1",
+      "itachi-uchiha-(r):2",
+      "itachi-uchiha-(r):3",
+      "itachi-uchiha-(r):4"
+    ]
+  },
+  {
+    "characterId": "ittan-(s)",
+    "name": "Ittan",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/ittan-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "ittan-(s):1",
+      "ittan-(s):2",
+      "ittan-(s):3",
+      "ittan-(s):4"
+    ]
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "name": "Izumo and Kotetsu",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/izumo-and-kotetsu/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "izumo-and-kotetsu:1",
+      "izumo-and-kotetsu:2",
+      "izumo-and-kotetsu:3",
+      "izumo-and-kotetsu:4"
+    ]
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "name": "Jinin Akebino",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jinin-akebino-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jinin-akebino-(r):1",
+      "jinin-akebino-(r):2",
+      "jinin-akebino-(r):3",
+      "jinin-akebino-(r):4"
+    ]
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "name": "Jinpachi Munashi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jinpachi-munashi-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jinpachi-munashi-(r):1",
+      "jinpachi-munashi-(r):2",
+      "jinpachi-munashi-(r):3",
+      "jinpachi-munashi-(r):4"
+    ]
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "name": "Jiraiya",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jiraiya-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jiraiya-(s):1",
+      "jiraiya-(s):2",
+      "jiraiya-(s):3",
+      "jiraiya-(s):4"
+    ]
+  },
+  {
+    "characterId": "jirobo",
+    "name": "Jirōbō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jirobo/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jirobo:1",
+      "jirobo:2",
+      "jirobo:3",
+      "jirobo:4"
+    ]
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "name": "Jirōbō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jirobo-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jirobo-(r):1",
+      "jirobo-(r):2",
+      "jirobo-(r):3",
+      "jirobo-(r):4"
+    ]
+  },
+  {
+    "characterId": "jugo-(s)",
+    "name": "Jūgo",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/jugo-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jugo-(s):1",
+      "jugo-(s):2",
+      "jugo-(s):3",
+      "jugo-(s):4"
+    ]
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "name": "Kabuto Yakushi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kabuto-yakushi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kabuto-yakushi:1",
+      "kabuto-yakushi:2",
+      "kabuto-yakushi:3",
+      "kabuto-yakushi:4"
+    ]
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "name": "Kabuto Yakushi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kabuto-yakushi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kabuto-yakushi-(s):1",
+      "kabuto-yakushi-(s):2",
+      "kabuto-yakushi-(s):3",
+      "kabuto-yakushi-(s):4"
+    ]
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "name": "Kakashi Hatake",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kakashi-hatake-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kakashi-hatake-(s):1",
+      "kakashi-hatake-(s):2",
+      "kakashi-hatake-(s):3",
+      "kakashi-hatake-(s):4"
+    ]
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "name": "Kakuzu",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kakuzu-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kakuzu-(s):1",
+      "kakuzu-(s):2",
+      "kakuzu-(s):3",
+      "kakuzu-(s):4"
+    ]
+  },
+  {
+    "characterId": "kankuro",
+    "name": "Kankurō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kankuro/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kankuro:1",
+      "kankuro:2",
+      "kankuro:3",
+      "kankuro:4"
+    ]
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "name": "Kankurō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kankuro-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kankuro-(s):1",
+      "kankuro-(s):2",
+      "kankuro-(s):3",
+      "kankuro-(s):4"
+    ]
+  },
+  {
+    "characterId": "karin-(s)",
+    "name": "Karin",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/karin-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "karin-(s):1",
+      "karin-(s):2",
+      "karin-(s):3",
+      "karin-(s):4"
+    ]
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "name": "Kazekage Gaara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kazekage-gaara-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kazekage-gaara-(s):1",
+      "kazekage-gaara-(s):2",
+      "kazekage-gaara-(s):3",
+      "kazekage-gaara-(s):4"
+    ]
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "name": "Kiba Inuzuka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kiba-inuzuka/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kiba-inuzuka:1",
+      "kiba-inuzuka:2",
+      "kiba-inuzuka:3",
+      "kiba-inuzuka:4"
+    ]
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "name": "Kiba Inuzuka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kiba-inuzuka-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kiba-inuzuka-(s):1",
+      "kiba-inuzuka-(s):2",
+      "kiba-inuzuka-(s):3",
+      "kiba-inuzuka-(s):4"
+    ]
+  },
+  {
+    "characterId": "kidomaru",
+    "name": "Kidōmaru",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kidomaru/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kidomaru:1",
+      "kidomaru:2",
+      "kidomaru:3",
+      "kidomaru:4"
+    ]
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "name": "Killer B",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/killer-b-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "killer-b-(s):1",
+      "killer-b-(s):2",
+      "killer-b-(s):3",
+      "killer-b-(s):4"
+    ]
+  },
+  {
+    "characterId": "kimimaro",
+    "name": "Kimimaro",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kimimaro/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kimimaro:1",
+      "kimimaro:2",
+      "kimimaro:3",
+      "kimimaro:4"
+    ]
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "name": "Kimimaro",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kimimaro-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kimimaro-(r):1",
+      "kimimaro-(r):2",
+      "kimimaro-(r):3",
+      "kimimaro-(r):4"
+    ]
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "name": "Kin Tsuchi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kin-tsuchi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kin-tsuchi:1",
+      "kin-tsuchi:2",
+      "kin-tsuchi:3",
+      "kin-tsuchi:4"
+    ]
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "name": "Kinkaku",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kinkaku-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kinkaku-(r):1",
+      "kinkaku-(r):2",
+      "kinkaku-(r):3",
+      "kinkaku-(r):4"
+    ]
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "name": "Kisame Hoshigaki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kisame-hoshigaki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kisame-hoshigaki:1",
+      "kisame-hoshigaki:2",
+      "kisame-hoshigaki:3",
+      "kisame-hoshigaki:4"
+    ]
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "name": "Kisame Hoshigaki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kisame-hoshigaki-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kisame-hoshigaki-(s):1",
+      "kisame-hoshigaki-(s):2",
+      "kisame-hoshigaki-(s):3",
+      "kisame-hoshigaki-(s):4"
+    ]
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "name": "Kitsuchi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kitsuchi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kitsuchi-(s):1",
+      "kitsuchi-(s):2",
+      "kitsuchi-(s):3",
+      "kitsuchi-(s):4"
+    ]
+  },
+  {
+    "characterId": "konan-(s)",
+    "name": "Konan",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/konan-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "konan-(s):1",
+      "konan-(s):2",
+      "konan-(s):3",
+      "konan-(s):4"
+    ]
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "name": "Konan of the Rain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/konan-of-the-rain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "konan-of-the-rain-(s):1",
+      "konan-of-the-rain-(s):2",
+      "konan-of-the-rain-(s):3",
+      "konan-of-the-rain-(s):4"
+    ]
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "name": "Konohamaru Sarutobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/konohamaru-sarutobi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "konohamaru-sarutobi:1",
+      "konohamaru-sarutobi:2",
+      "konohamaru-sarutobi:3",
+      "konohamaru-sarutobi:4"
+    ]
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "name": "Konohamaru Sarutobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/konohamaru-sarutobi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "konohamaru-sarutobi-(s):1",
+      "konohamaru-sarutobi-(s):2",
+      "konohamaru-sarutobi-(s):3",
+      "konohamaru-sarutobi-(s):4"
+    ]
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "name": "Kurenai Yuhi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kurenai-yuhi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kurenai-yuhi:1",
+      "kurenai-yuhi:2",
+      "kurenai-yuhi:3",
+      "kurenai-yuhi:4"
+    ]
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "name": "Kurotsuchi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kurotsuchi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kurotsuchi-(s):1",
+      "kurotsuchi-(s):2",
+      "kurotsuchi-(s):3",
+      "kurotsuchi-(s):4"
+    ]
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "name": "Kushimaru Kuriarare",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kushimaru-kuriarare-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kushimaru-kuriarare-(r):1",
+      "kushimaru-kuriarare-(r):2",
+      "kushimaru-kuriarare-(r):3",
+      "kushimaru-kuriarare-(r):4"
+    ]
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "name": "Kushina Uzumaki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/kushina-uzumaki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kushina-uzumaki:1",
+      "kushina-uzumaki:2",
+      "kushina-uzumaki:3",
+      "kushina-uzumaki:4"
+    ]
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "name": "Madara Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/madara-uchiha-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "madara-uchiha-(s):1",
+      "madara-uchiha-(s):2",
+      "madara-uchiha-(s):3",
+      "madara-uchiha-(s):4"
+    ]
+  },
+  {
+    "characterId": "maki-(s)",
+    "name": "Maki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/maki-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "maki-(s):1",
+      "maki-(s):2",
+      "maki-(s):3",
+      "maki-(s):4"
+    ]
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "name": "Mangekyō Sasuke",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/mangekyo-sasuke-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "mangekyo-sasuke-(s):1",
+      "mangekyo-sasuke-(s):2",
+      "mangekyo-sasuke-(s):3",
+      "mangekyo-sasuke-(s):4"
+    ]
+  },
+  {
+    "characterId": "masked-man",
+    "name": "Masked Man",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/masked-man/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "masked-man:1",
+      "masked-man:2",
+      "masked-man:3",
+      "masked-man:4"
+    ]
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "name": "Mei Terumi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/mei-terumi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "mei-terumi-(s):1",
+      "mei-terumi-(s):2",
+      "mei-terumi-(s):3",
+      "mei-terumi-(s):4"
+    ]
+  },
+  {
+    "characterId": "might-guy",
+    "name": "Might Guy",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/might-guy/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "might-guy:1",
+      "might-guy:2",
+      "might-guy:3",
+      "might-guy:4"
+    ]
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "name": "Might Guy",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/might-guy-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "might-guy-(s):1",
+      "might-guy-(s):2",
+      "might-guy-(s):3",
+      "might-guy-(s):4"
+    ]
+  },
+  {
+    "characterId": "minato-namikaze",
+    "name": "Minato Namikaze",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/minato-namikaze/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "minato-namikaze:1",
+      "minato-namikaze:2",
+      "minato-namikaze:3",
+      "minato-namikaze:4"
+    ]
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "name": "Minato Namikaze",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/minato-namikaze-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "minato-namikaze-(r):1",
+      "minato-namikaze-(r):2",
+      "minato-namikaze-(r):3",
+      "minato-namikaze-(r):4"
+    ]
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "name": "Misumi Tsurugi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/misumi-tsurugi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "misumi-tsurugi:1",
+      "misumi-tsurugi:2",
+      "misumi-tsurugi:3",
+      "misumi-tsurugi:4"
+    ]
+  },
+  {
+    "characterId": "mizuki",
+    "name": "Mizuki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/mizuki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "mizuki:1",
+      "mizuki:2",
+      "mizuki:3",
+      "mizuki:4"
+    ]
+  },
+  {
+    "characterId": "mu-(r)",
+    "name": "Mū",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/mu-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "mu-(r):1",
+      "mu-(r):2",
+      "mu-(r):3",
+      "mu-(r):4"
+    ]
+  },
+  {
+    "characterId": "nagato-(r)",
+    "name": "Nagato",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/nagato-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "nagato-(r):1",
+      "nagato-(r):2",
+      "nagato-(r):3",
+      "nagato-(r):4"
+    ]
+  },
+  {
+    "characterId": "nagato-(s)",
+    "name": "Nagato",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/nagato-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "nagato-(s):1",
+      "nagato-(s):2",
+      "nagato-(s):3",
+      "nagato-(s):4"
+    ]
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "name": "Naraka Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/naraka-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "naraka-path-pain-(s):1",
+      "naraka-path-pain-(s):2",
+      "naraka-path-pain-(s):3",
+      "naraka-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "name": "Naruto Uzumaki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/naruto-uzumaki-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "naruto-uzumaki-(s):1",
+      "naruto-uzumaki-(s):2",
+      "naruto-uzumaki-(s):3",
+      "naruto-uzumaki-(s):4"
+    ]
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "name": "Neji Hyūga",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/neji-hyuga-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "neji-hyuga-(s):1",
+      "neji-hyuga-(s):2",
+      "neji-hyuga-(s):3",
+      "neji-hyuga-(s):4"
+    ]
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "name": "Nine-Tailed Naruto",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/nine-tailed-naruto-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "nine-tailed-naruto-(s):1",
+      "nine-tailed-naruto-(s):2",
+      "nine-tailed-naruto-(s):3",
+      "nine-tailed-naruto-(s):4"
+    ]
+  },
+  {
+    "characterId": "obito-uchiha",
+    "name": "Obito Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/obito-uchiha/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "obito-uchiha:1",
+      "obito-uchiha:2",
+      "obito-uchiha:3",
+      "obito-uchiha:4"
+    ]
+  },
+  {
+    "characterId": "oboro",
+    "name": "Oboro",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/oboro/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "oboro:1",
+      "oboro:2",
+      "oboro:3",
+      "oboro:4"
+    ]
+  },
+  {
+    "characterId": "omoi-(s)",
+    "name": "Omoi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/omoi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "omoi-(s):1",
+      "omoi-(s):2",
+      "omoi-(s):3",
+      "omoi-(s):4"
+    ]
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "name": "One-Tailed Naruto",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/one-tailed-naruto/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "one-tailed-naruto:1",
+      "one-tailed-naruto:2",
+      "one-tailed-naruto:3",
+      "one-tailed-naruto:4"
+    ]
+  },
+  {
+    "characterId": "onoki-(s)",
+    "name": "Ōnoki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/onoki-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "onoki-(s):1",
+      "onoki-(s):2",
+      "onoki-(s):3",
+      "onoki-(s):4"
+    ]
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "name": "Orochimaru",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/orochimaru-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "orochimaru-(s):1",
+      "orochimaru-(s):2",
+      "orochimaru-(s):3",
+      "orochimaru-(s):4"
+    ]
+  },
+  {
+    "characterId": "pakura-(r)",
+    "name": "Pakura",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/pakura-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "pakura-(r):1",
+      "pakura-(r):2",
+      "pakura-(r):3",
+      "pakura-(r):4"
+    ]
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "name": "Preta Path Pain",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/preta-path-pain-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "preta-path-pain-(s):1",
+      "preta-path-pain-(s):2",
+      "preta-path-pain-(s):3",
+      "preta-path-pain-(s):4"
+    ]
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "name": "Puppet Master Kankurō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/puppet-master-kankuro-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "puppet-master-kankuro-(s):1",
+      "puppet-master-kankuro-(s):2",
+      "puppet-master-kankuro-(s):3",
+      "puppet-master-kankuro-(s):4"
+    ]
+  },
+  {
+    "characterId": "rasa-(r)",
+    "name": "Rasa",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/rasa-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "rasa-(r):1",
+      "rasa-(r):2",
+      "rasa-(r):3",
+      "rasa-(r):4"
+    ]
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "name": "Reanimator Kabuto",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/reanimator-kabuto-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "reanimator-kabuto-(s):1",
+      "reanimator-kabuto-(s):2",
+      "reanimator-kabuto-(s):3",
+      "reanimator-kabuto-(s):4"
+    ]
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "name": "Regimental Commander Gaara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/regimental-commander-gaara-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "regimental-commander-gaara-(s):1",
+      "regimental-commander-gaara-(s):2",
+      "regimental-commander-gaara-(s):3",
+      "regimental-commander-gaara-(s):4"
+    ]
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "name": "Rehabilitated Gaara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/rehabilitated-gaara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "rehabilitated-gaara:1",
+      "rehabilitated-gaara:2",
+      "rehabilitated-gaara:3",
+      "rehabilitated-gaara:4"
+    ]
+  },
+  {
+    "characterId": "rin-nohara",
+    "name": "Rin Nohara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/rin-nohara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "rin-nohara:1",
+      "rin-nohara:2",
+      "rin-nohara:3",
+      "rin-nohara:4"
+    ]
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "name": "Rock Lee",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/rock-lee-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "rock-lee-(s):1",
+      "rock-lee-(s):2",
+      "rock-lee-(s):3",
+      "rock-lee-(s):4"
+    ]
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "name": "Sage Mode Jiraiya",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sage-mode-jiraiya-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sage-mode-jiraiya-(s):1",
+      "sage-mode-jiraiya-(s):2",
+      "sage-mode-jiraiya-(s):3",
+      "sage-mode-jiraiya-(s):4"
+    ]
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "name": "Sage Mode Kabuto",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sage-mode-kabuto-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sage-mode-kabuto-(s):1",
+      "sage-mode-kabuto-(s):2",
+      "sage-mode-kabuto-(s):3",
+      "sage-mode-kabuto-(s):4"
+    ]
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "name": "Sage Mode Naruto",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sage-mode-naruto-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sage-mode-naruto-(s):1",
+      "sage-mode-naruto-(s):2",
+      "sage-mode-naruto-(s):3",
+      "sage-mode-naruto-(s):4"
+    ]
+  },
+  {
+    "characterId": "sai-(s)",
+    "name": "Sai",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sai-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sai-(s):1",
+      "sai-(s):2",
+      "sai-(s):3",
+      "sai-(s):4"
+    ]
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "name": "Sakon and Ukon",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sakon-and-ukon/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sakon-and-ukon:1",
+      "sakon-and-ukon:2",
+      "sakon-and-ukon:3",
+      "sakon-and-ukon:4"
+    ]
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "name": "Sakura Haruno",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sakura-haruno-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sakura-haruno-(s):1",
+      "sakura-haruno-(s):2",
+      "sakura-haruno-(s):3",
+      "sakura-haruno-(s):4"
+    ]
+  },
+  {
+    "characterId": "sasori-(r)",
+    "name": "Sasori",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sasori-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sasori-(r):1",
+      "sasori-(r):2",
+      "sasori-(r):3",
+      "sasori-(r):4"
+    ]
+  },
+  {
+    "characterId": "sasori-(s)",
+    "name": "Sasori",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/character-corrections-v229/sasori-(s)-icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sasori-(s):1",
+      "sasori-(s):2",
+      "sasori-(s):3",
+      "sasori-(s):4"
+    ]
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "name": "Sasuke Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/sasuke-uchiha-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sasuke-uchiha-(s):1",
+      "sasuke-uchiha-(s):2",
+      "sasuke-uchiha-(s):3",
+      "sasuke-uchiha-(s):4"
+    ]
+  },
+  {
+    "characterId": "shigure",
+    "name": "Shigure",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shigure/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shigure:1",
+      "shigure:2",
+      "shigure:3",
+      "shigure:4"
+    ]
+  },
+  {
+    "characterId": "shikaku-nara",
+    "name": "Shikaku Nara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shikaku-nara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shikaku-nara:1",
+      "shikaku-nara:2",
+      "shikaku-nara:3",
+      "shikaku-nara:4"
+    ]
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "name": "Shikamaru Nara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shikamaru-nara-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shikamaru-nara-(s):1",
+      "shikamaru-nara-(s):2",
+      "shikamaru-nara-(s):3",
+      "shikamaru-nara-(s):4"
+    ]
+  },
+  {
+    "characterId": "shino-aburame",
+    "name": "Shino Aburame",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shino-aburame/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shino-aburame:1",
+      "shino-aburame:2",
+      "shino-aburame:3",
+      "shino-aburame:4"
+    ]
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "name": "Shino Aburame",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shino-aburame-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shino-aburame-(s):1",
+      "shino-aburame-(s):2",
+      "shino-aburame-(s):3",
+      "shino-aburame-(s):4"
+    ]
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "name": "Shisui Uchiha",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shisui-uchiha-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shisui-uchiha-(s):1",
+      "shisui-uchiha-(s):2",
+      "shisui-uchiha-(s):3",
+      "shisui-uchiha-(s):4"
+    ]
+  },
+  {
+    "characterId": "shizune",
+    "name": "Shizune",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shizune/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shizune:1",
+      "shizune:2",
+      "shizune:3",
+      "shizune:4"
+    ]
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "name": "Shukaku Gaara",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/shukaku-gaara/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "shukaku-gaara:1",
+      "shukaku-gaara:2",
+      "shukaku-gaara:3",
+      "shukaku-gaara:4"
+    ]
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "name": "Suigetsu Hōzuki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/suigetsu-hozuki-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "suigetsu-hozuki-(s):1",
+      "suigetsu-hozuki-(s):2",
+      "suigetsu-hozuki-(s):3",
+      "suigetsu-hozuki-(s):4"
+    ]
+  },
+  {
+    "characterId": "tayuya",
+    "name": "Tayuya",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tayuya/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tayuya:1",
+      "tayuya:2",
+      "tayuya:3",
+      "tayuya:4"
+    ]
+  },
+  {
+    "characterId": "temari",
+    "name": "Temari",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/temari/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "temari:1",
+      "temari:2",
+      "temari:3",
+      "temari:4"
+    ]
+  },
+  {
+    "characterId": "temari-(s)",
+    "name": "Temari",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/temari-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "temari-(s):1",
+      "temari-(s):2",
+      "temari-(s):3",
+      "temari-(s):4"
+    ]
+  },
+  {
+    "characterId": "tenten",
+    "name": "Tenten",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tenten/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tenten:1",
+      "tenten:2",
+      "tenten:3",
+      "tenten:4"
+    ]
+  },
+  {
+    "characterId": "tenten-(s)",
+    "name": "Tenten",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tenten-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tenten-(s):1",
+      "tenten-(s):2",
+      "tenten-(s):3",
+      "tenten-(s):4"
+    ]
+  },
+  {
+    "characterId": "tobi-(s)",
+    "name": "Tobi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tobi-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tobi-(s):1",
+      "tobi-(s):2",
+      "tobi-(s):3",
+      "tobi-(s):4"
+    ]
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "name": "Tobirama Senju",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tobirama-senju-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tobirama-senju-(r):1",
+      "tobirama-senju-(r):2",
+      "tobirama-senju-(r):3",
+      "tobirama-senju-(r):4"
+    ]
+  },
+  {
+    "characterId": "toroi-(r)",
+    "name": "Toroi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/toroi-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "toroi-(r):1",
+      "toroi-(r):2",
+      "toroi-(r):3",
+      "toroi-(r):4"
+    ]
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "name": "Torune Aburame",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/torune-aburame-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "torune-aburame-(s):1",
+      "torune-aburame-(s):2",
+      "torune-aburame-(s):3",
+      "torune-aburame-(s):4"
+    ]
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "name": "True Form Sasori",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/true-form-sasori-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "true-form-sasori-(s):1",
+      "true-form-sasori-(s):2",
+      "true-form-sasori-(s):3",
+      "true-form-sasori-(s):4"
+    ]
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "name": "Tsume Inuzuka",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tsume-inuzuka/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tsume-inuzuka:1",
+      "tsume-inuzuka:2",
+      "tsume-inuzuka:3",
+      "tsume-inuzuka:4"
+    ]
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "name": "Tsunade",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/tsunade-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "tsunade-(s):1",
+      "tsunade-(s):2",
+      "tsunade-(s):3",
+      "tsunade-(s):4"
+    ]
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "name": "Uchiha Itachi Body Double (shippuden)",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/uchiha-itachi-body-double-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "uchiha-itachi-body-double-(s):1",
+      "uchiha-itachi-body-double-(s):2",
+      "uchiha-itachi-body-double-(s):3",
+      "uchiha-itachi-body-double-(s):4"
+    ]
+  },
+  {
+    "characterId": "utakata-(s)",
+    "name": "Utakata",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/utakata-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "utakata-(s):1",
+      "utakata-(s):2",
+      "utakata-(s):3",
+      "utakata-(s):4"
+    ]
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "name": "White Snake Orochimaru",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/white-snake-orochimaru-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "white-snake-orochimaru-(s):1",
+      "white-snake-orochimaru-(s):2",
+      "white-snake-orochimaru-(s):3",
+      "white-snake-orochimaru-(s):4"
+    ]
+  },
+  {
+    "characterId": "yamato-(s)",
+    "name": "Yamato",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/yamato-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "yamato-(s):1",
+      "yamato-(s):2",
+      "yamato-(s):3",
+      "yamato-(s):4"
+    ]
+  },
+  {
+    "characterId": "yondaime-minato",
+    "name": "Yondaime Minato",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/yondaime-minato/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "yondaime-minato:1",
+      "yondaime-minato:2",
+      "yondaime-minato:3",
+      "yondaime-minato:4"
+    ]
+  },
+  {
+    "characterId": "yoroi-akado",
+    "name": "Yoroi Akadō",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/yoroi-akado/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "yoroi-akado:1",
+      "yoroi-akado:2",
+      "yoroi-akado:3",
+      "yoroi-akado:4"
+    ]
+  },
+  {
+    "characterId": "young-kakashi",
+    "name": "Young Kakashi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/young-kakashi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "young-kakashi:1",
+      "young-kakashi:2",
+      "young-kakashi:3",
+      "young-kakashi:4"
+    ]
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "name": "Yūgao Uzuki",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/yugao-uzuki/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "yugao-uzuki:1",
+      "yugao-uzuki:2",
+      "yugao-uzuki:3",
+      "yugao-uzuki:4"
+    ]
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "name": "Yugito Nii",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/yugito-nii-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "yugito-nii-(s):1",
+      "yugito-nii-(s):2",
+      "yugito-nii-(s):3",
+      "yugito-nii-(s):4"
+    ]
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "name": "Zabuza Momochi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/zabuza-momochi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "zabuza-momochi:1",
+      "zabuza-momochi:2",
+      "zabuza-momochi:3",
+      "zabuza-momochi:4"
+    ]
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "name": "Zabuza Momochi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/zabuza-momochi-(r)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "zabuza-momochi-(r):1",
+      "zabuza-momochi-(r):2",
+      "zabuza-momochi-(r):3",
+      "zabuza-momochi-(r):4"
+    ]
+  },
+  {
+    "characterId": "zaji",
+    "name": "Zaji",
+    "bio": "Personagem presente nos recursos do projeto original.",
+    "image": "static/img/ninja/zaji/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "zaji:1",
+      "zaji:2",
+      "zaji:3",
+      "zaji:4"
+    ]
+  },
+  {
+    "characterId": "zaku-abumi",
+    "name": "Zaku Abumi",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/zaku-abumi/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "zaku-abumi:1",
+      "zaku-abumi:2",
+      "zaku-abumi:3",
+      "zaku-abumi:4"
+    ]
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "name": "Zetsu",
+    "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+    "image": "static/img/ninja/zetsu-(s)/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "zetsu-(s):1",
+      "zetsu-(s):2",
+      "zetsu-(s):3",
+      "zetsu-(s):4"
+    ]
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "name": "Boruto Uzumaki",
+    "bio": "Genin de Konoha da nova geração, versátil em clones, vento e Rasengan.",
+    "image": "static/img/boruto/boruto-uzumaki-genin/icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "boruto-uzumaki-genin:1",
+      "boruto-uzumaki-genin:2",
+      "boruto-uzumaki-genin:3",
+      "boruto-uzumaki-genin:4"
+    ]
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "name": "Sarada Uchiha",
+    "bio": "Kunoichi de Konoha que combina Sharingan, Katon, shurikenjutsu e força concentrada.",
+    "image": "static/img/character-corrections-v229/extras/sarada-uchiha-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sarada-uchiha-boruto:1",
+      "sarada-uchiha-boruto:2",
+      "sarada-uchiha-boruto:3",
+      "sarada-uchiha-boruto:4"
+    ]
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "name": "Mitsuki",
+    "bio": "Shinobi sintético de Konoha, especialista em serpentes, Raiton, Fūton e Senjutsu.",
+    "image": "static/img/character-corrections-r30/mitsuki-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "mitsuki-boruto:1",
+      "mitsuki-boruto:2",
+      "mitsuki-boruto:3",
+      "mitsuki-boruto:4"
+    ]
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "name": "Kawaki",
+    "bio": "Portador do Kāma e usuário de modificações corporais científicas.",
+    "image": "static/img/character-corrections-r30/kawaki-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kawaki-boruto:1",
+      "kawaki-boruto:2",
+      "kawaki-boruto:3",
+      "kawaki-boruto:4"
+    ]
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "name": "Naruto Uzumaki — Hokage",
+    "bio": "Sétimo Hokage de Konoha, em sua fase adulta.",
+    "image": "static/img/character-corrections-v229/extras/naruto-uzumaki-hokage.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "naruto-uzumaki-hokage:1",
+      "naruto-uzumaki-hokage:2",
+      "naruto-uzumaki-hokage:3",
+      "naruto-uzumaki-hokage:4"
+    ]
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "name": "Sasuke Uchiha — Adulto",
+    "bio": "Sasuke em sua fase adulta, combinando Sharingan, Rinnegan e Raiton.",
+    "image": "static/img/character-corrections-r29/sasuke-uchiha-adulto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sasuke-uchiha-adulto:1",
+      "sasuke-uchiha-adulto:2",
+      "sasuke-uchiha-adulto:3",
+      "sasuke-uchiha-adulto:4"
+    ]
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "name": "Sakura Haruno — Adulta",
+    "bio": "Médica-nin veterana de Konoha com controle de chakra e força extraordinários.",
+    "image": "static/img/character-corrections-r29/sakura-haruno-adulta.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "sakura-haruno-adulta:1",
+      "sakura-haruno-adulta:2",
+      "sakura-haruno-adulta:3",
+      "sakura-haruno-adulta:4"
+    ]
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "name": "Kakashi Hatake — Sexto Hokage",
+    "bio": "Kakashi em sua fase posterior à guerra, com amplo repertório elemental.",
+    "image": "static/img/character-corrections-r28/kakashi-sexto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kakashi-hatake-sexto:1",
+      "kakashi-hatake-sexto:2",
+      "kakashi-hatake-sexto:3",
+      "kakashi-hatake-sexto:4"
+    ]
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "name": "Momoshiki Ōtsutsuki",
+    "bio": "Ōtsutsuki que absorve ninjutsu e devolve a energia amplificada.",
+    "image": "static/img/character-corrections-r30/momoshiki-otsutsuki-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "momoshiki-otsutsuki-boruto:1",
+      "momoshiki-otsutsuki-boruto:2",
+      "momoshiki-otsutsuki-boruto:3",
+      "momoshiki-otsutsuki-boruto:4"
+    ]
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "name": "Isshiki Ōtsutsuki",
+    "bio": "Ōtsutsuki de poder extremo, capaz de alterar a escala de matéria e armazená-la em outra dimensão.",
+    "image": "static/img/character-corrections-r30/isshiki-otsutsuki-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "isshiki-otsutsuki-boruto:1",
+      "isshiki-otsutsuki-boruto:2",
+      "isshiki-otsutsuki-boruto:3",
+      "isshiki-otsutsuki-boruto:4"
+    ]
+  },
+  {
+    "characterId": "jigen-boruto",
+    "name": "Jigen",
+    "bio": "Líder da Kara e receptáculo de Isshiki, usuário do Kāma e de técnicas espaço-temporais.",
+    "image": "static/img/character-corrections-r30/jigen-boruto.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "jigen-boruto:1",
+      "jigen-boruto:2",
+      "jigen-boruto:3",
+      "jigen-boruto:4"
+    ]
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "name": "Konohamaru Sarutobi — Sensei",
+    "bio": "Jōnin responsável pelo novo Time 7, combinando Rasengan, Katon e experiência tática.",
+    "image": "static/img/character-corrections-v229/konohamaru-sensei-boruto-icon.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "konohamaru-sensei-boruto:1",
+      "konohamaru-sensei-boruto:2",
+      "konohamaru-sensei-boruto:3",
+      "konohamaru-sensei-boruto:4"
+    ]
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "name": "Shukaku",
+    "bio": "Bijū de Uma Cauda. Personagem secreto temporário de evento.",
+    "image": "static/img/ninja/shukaku-gaara/iconsandtransformation.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "bijuu-shukaku-event:1",
+      "bijuu-shukaku-event:2",
+      "bijuu-shukaku-event:3",
+      "bijuu-shukaku-event:4"
+    ]
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "name": "Matatabi",
+    "bio": "Bijū de Duas Caudas. Personagem secreto temporário de evento.",
+    "image": "static/img/ninja/yugito-nii-(s)/icontwotailedtransformation.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "bijuu-matatabi-event:1",
+      "bijuu-matatabi-event:2",
+      "bijuu-matatabi-event:3",
+      "bijuu-matatabi-event:4"
+    ]
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "name": "Gyūki",
+    "bio": "Bijū de Oito Caudas. Personagem secreto temporário de evento.",
+    "image": "static/img/bijuu-events/gyuki-boss-icon-v229.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "bijuu-gyuki-event:1",
+      "bijuu-gyuki-event:2",
+      "bijuu-gyuki-event:3",
+      "bijuu-gyuki-event:4"
+    ]
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "name": "Kurama",
+    "bio": "Bijū de Nove Caudas. Personagem secreto temporário de evento.",
+    "image": "static/img/ninja/nine-tailed-naruto-(s)/iconninetailedtransformation.jpg",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "bijuu-kurama-event:1",
+      "bijuu-kurama-event:2",
+      "bijuu-kurama-event:3",
+      "bijuu-kurama-event:4"
+    ]
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "name": "Kaguya Ōtsutsuki",
+    "bio": "Progenitora do chakra que emerge no clímax da Quarta Guerra Ninja. Chefe exclusivo da História V23.",
+    "image": "https://static.wikia.nocookie.net/naruto/images/b/b4/Kaguya_revivida.PNG/revision/latest/scale-to-width-down/360?cb=20160428184516&path-prefix=pt-br",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "kaguya-otsutsuki-(s):1",
+      "kaguya-otsutsuki-(s):2",
+      "kaguya-otsutsuki-(s):3",
+      "kaguya-otsutsuki-(s):4"
+    ]
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "name": "Toneri Ōtsutsuki",
+    "bio": "Herdeiro lunar do clã Ōtsutsuki e ameaça central de The Last. Chefe exclusivo da História V23.",
+    "image": "https://static.wikia.nocookie.net/naruto/images/6/65/Toneri_%C5%8Ctsutsuki.PNG/revision/latest/scale-to-width-down/360?cb=20160831101917&path-prefix=pt-br",
+    "skillField": "skills",
+    "jutsuCount": 4,
+    "jutsuIds": [
+      "toneri-otsutsuki-the-last:1",
+      "toneri-otsutsuki-the-last:2",
+      "toneri-otsutsuki-the-last:3",
+      "toneri-otsutsuki-the-last:4"
+    ]
+  }
+]

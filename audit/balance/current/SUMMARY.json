@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-25T20:22:43.716Z",
+  "sourceFiles": [
+    "roster.js",
+    "jutsu-variants.js"
+  ],
+  "characters": 209,
+  "jutsus": 836,
+  "links": 836,
+  "characterSkillFields": {
+    "skills": 209
+  },
+  "mechanicKinds": {
+    "damage": 397,
+    "dot": 62,
+    "heal": 12,
+    "invuln": 179,
+    "shield": 88,
+    "stun": 98
+  },
+  "duplicateJutsuNames": 71,
+  "charactersWithoutFourJutsu": 0,
+  "descriptionWarnings": 110,
+  "jutsuBalanceFlags": 278,
+  "characterBalanceFlags": 104,
+  "methodology": {
+    "offenseScore": "dano estruturado × fator de área (1.75 para AoE)",
+    "sustainScore": "0.8×cura + 0.45×defesa acumulada; AoE recebe fator 1.75",
+    "utilityScore": "peso por tipo de controle × duração (máximo 4) × fator de área",
+    "damageEfficiency": "dano / (max(1,custo em unidades) × (cooldown+1))",
+    "powerEfficiency": "(ofensa+sustentação+utilidade) / (max(1,custo) × (cooldown+1))",
+    "outliers": "robust z-score baseado em mediana/MAD; triagem somente, nunca nerf/buff automático"
+  }
+}

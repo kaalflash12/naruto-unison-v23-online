@@ -1,0 +1,6690 @@
+[
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki:1",
+    "slot": 1,
+    "name": "Naruto Uzumaki Barrage",
+    "originalName": "Naruto Uzumaki Barrage"
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki:2",
+    "slot": 2,
+    "name": "Rasengan",
+    "originalName": "Rasengan"
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki:3",
+    "slot": 3,
+    "name": "Clones das Sombras",
+    "originalName": "Shadow Clones"
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki:4",
+    "slot": 4,
+    "name": "Sexy Technique",
+    "originalName": "Sexy Technique"
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha:1",
+    "slot": 1,
+    "name": "Lions Barrage",
+    "originalName": "Lions Barrage"
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha:2",
+    "slot": 2,
+    "name": "Chidori",
+    "originalName": "Chidori"
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha:3",
+    "slot": 3,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha:4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "sakura-haruno",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno:1",
+    "slot": 1,
+    "name": "KO Punch",
+    "originalName": "KO Punch"
+  },
+  {
+    "characterId": "sakura-haruno",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno:2",
+    "slot": 2,
+    "name": "Técnica de Cura",
+    "originalName": "Healing Technique"
+  },
+  {
+    "characterId": "sakura-haruno",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno:3",
+    "slot": 3,
+    "name": "Inner Sakura",
+    "originalName": "Inner Sakura"
+  },
+  {
+    "characterId": "sakura-haruno",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno:4",
+    "slot": 4,
+    "name": "Técnica de Substituição",
+    "originalName": "Substitution Technique"
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake:1",
+    "slot": 1,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake:2",
+    "slot": 2,
+    "name": "Summoning: Ninja Hounds",
+    "originalName": "Summoning: Ninja Hounds"
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake:3",
+    "slot": 3,
+    "name": "Lightning Blade",
+    "originalName": "Lightning Blade"
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake:4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "rock-lee",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee:1",
+    "slot": 1,
+    "name": "Ferocious Fist",
+    "originalName": "Ferocious Fist"
+  },
+  {
+    "characterId": "rock-lee",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee:2",
+    "slot": 2,
+    "name": "Lótus Primária",
+    "originalName": "Primary Lotus"
+  },
+  {
+    "characterId": "rock-lee",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee:3",
+    "slot": 3,
+    "name": "Fifth Gate Opening",
+    "originalName": "Fifth Gate Opening"
+  },
+  {
+    "characterId": "rock-lee",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee:4",
+    "slot": 4,
+    "name": "Lótus Oculta",
+    "originalName": "Hidden Lotus"
+  },
+  {
+    "characterId": "neji-hyuga",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga:1",
+    "slot": 1,
+    "name": "Punho Gentil",
+    "originalName": "Gentle Fist"
+  },
+  {
+    "characterId": "neji-hyuga",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga:2",
+    "slot": 2,
+    "name": "Eight Trigrams Palm Rotation",
+    "originalName": "Eight Trigrams Palm Rotation"
+  },
+  {
+    "characterId": "neji-hyuga",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga:3",
+    "slot": 3,
+    "name": "Eight Trigrams Sixty-Four Palms",
+    "originalName": "Eight Trigrams Sixty-Four Palms"
+  },
+  {
+    "characterId": "neji-hyuga",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga:4",
+    "slot": 4,
+    "name": "Byakugan Foresight",
+    "originalName": "Byakugan Foresight"
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga:1",
+    "slot": 1,
+    "name": "Punho Gentil",
+    "originalName": "Gentle Fist"
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga:2",
+    "slot": 2,
+    "name": "Eight Trigrams Sixty-Four Palms",
+    "originalName": "Eight Trigrams Sixty-Four Palms"
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga:3",
+    "slot": 3,
+    "name": "Byakugan",
+    "originalName": "Byakugan"
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga:4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "gaara",
+    "characterName": "Gaara",
+    "jutsuId": "gaara:1",
+    "slot": 1,
+    "name": "Sand Coffin",
+    "originalName": "Sand Coffin"
+  },
+  {
+    "characterId": "gaara",
+    "characterName": "Gaara",
+    "jutsuId": "gaara:2",
+    "slot": 2,
+    "name": "Sand Burial",
+    "originalName": "Sand Burial"
+  },
+  {
+    "characterId": "gaara",
+    "characterName": "Gaara",
+    "jutsuId": "gaara:3",
+    "slot": 3,
+    "name": "Sand Clone",
+    "originalName": "Sand Clone"
+  },
+  {
+    "characterId": "gaara",
+    "characterName": "Gaara",
+    "jutsuId": "gaara:4",
+    "slot": 4,
+    "name": "Sand Armor",
+    "originalName": "Sand Armor"
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara:1",
+    "slot": 1,
+    "name": "Meditate",
+    "originalName": "Meditate"
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara:2",
+    "slot": 2,
+    "name": "Shadow Strangle",
+    "originalName": "Shadow Strangle"
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara:3",
+    "slot": 3,
+    "name": "Shadow Possession",
+    "originalName": "Shadow Possession"
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara:4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha-(s):1",
+    "slot": 1,
+    "name": "Susanoo Esquelético",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha-(s):2",
+    "slot": 2,
+    "name": "Susanoo Armadurado",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha-(s):3",
+    "slot": 3,
+    "name": "Amaterasu",
+    "originalName": "Amaterasu"
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha-(s):4",
+    "slot": 4,
+    "name": "Totsuka Blade",
+    "originalName": "Totsuka Blade"
+  },
+  {
+    "characterId": "jiraiya",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya:1",
+    "slot": 1,
+    "name": "Giant Flame Bomb",
+    "originalName": "Giant Flame Bomb"
+  },
+  {
+    "characterId": "jiraiya",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya:2",
+    "slot": 2,
+    "name": "Summoning: Toad Mouth Trap",
+    "originalName": "Summoning: Toad Mouth Trap"
+  },
+  {
+    "characterId": "jiraiya",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya:3",
+    "slot": 3,
+    "name": "Major Summoning: Gamabunta",
+    "originalName": "Major Summoning: Gamabunta"
+  },
+  {
+    "characterId": "jiraiya",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya:4",
+    "slot": 4,
+    "name": "Toad Oil Bomb",
+    "originalName": "Toad Oil Bomb"
+  },
+  {
+    "characterId": "tsunade",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade:1",
+    "slot": 1,
+    "name": "Heavenly Kick of Pain",
+    "originalName": "Heavenly Kick of Pain"
+  },
+  {
+    "characterId": "tsunade",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade:2",
+    "slot": 2,
+    "name": "Mitotic Regeneration",
+    "originalName": "Mitotic Regeneration"
+  },
+  {
+    "characterId": "tsunade",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade:3",
+    "slot": 3,
+    "name": "Major Summoning: Katsuyu",
+    "originalName": "Major Summoning: Katsuyu"
+  },
+  {
+    "characterId": "tsunade",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade:4",
+    "slot": 4,
+    "name": "Slug Division",
+    "originalName": "Slug Division"
+  },
+  {
+    "characterId": "orochimaru",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru:1",
+    "slot": 1,
+    "name": "Kusanagi",
+    "originalName": "Kusanagi"
+  },
+  {
+    "characterId": "orochimaru",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru:2",
+    "slot": 2,
+    "name": "Curse Mark",
+    "originalName": "Curse Mark"
+  },
+  {
+    "characterId": "orochimaru",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru:3",
+    "slot": 3,
+    "name": "Major Summoning: Manda",
+    "originalName": "Major Summoning: Manda"
+  },
+  {
+    "characterId": "orochimaru",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru:4",
+    "slot": 4,
+    "name": "Paralyzing Bite",
+    "originalName": "Paralyzing Bite"
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "jutsuId": "SasoriSOld:1",
+    "slot": 1,
+    "name": "Puppet Techniques",
+    "originalName": "Puppet Techniques"
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "jutsuId": "SasoriSOld:2",
+    "slot": 2,
+    "name": "Puppet Specialties",
+    "originalName": "Puppet Specialties"
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "jutsuId": "SasoriSOld:3",
+    "slot": 3,
+    "name": "Puppet Mastery",
+    "originalName": "Puppet Mastery"
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "jutsuId": "SasoriSOld:4",
+    "slot": 4,
+    "name": "Body Switch",
+    "originalName": "Body Switch"
+  },
+  {
+    "characterId": "a-(r)",
+    "characterName": "A",
+    "jutsuId": "a-(r):1",
+    "slot": 1,
+    "name": "Piercing Four-Fingered",
+    "originalName": "Piercing Four-Fingered"
+  },
+  {
+    "characterId": "a-(r)",
+    "characterName": "A",
+    "jutsuId": "a-(r):2",
+    "slot": 2,
+    "name": "Three-Fingered Assault",
+    "originalName": "Three-Fingered Assault"
+  },
+  {
+    "characterId": "a-(r)",
+    "characterName": "A",
+    "jutsuId": "a-(r):3",
+    "slot": 3,
+    "name": "One-Fingered Assault",
+    "originalName": "One-Fingered Assault"
+  },
+  {
+    "characterId": "a-(r)",
+    "characterName": "A",
+    "jutsuId": "a-(r):4",
+    "slot": 4,
+    "name": "Lightning Armor",
+    "originalName": "Lightning Armor"
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "characterName": "Akatsuchi",
+    "jutsuId": "akatsuchi-(s):1",
+    "slot": 1,
+    "name": "High-Speed Assault",
+    "originalName": "High-Speed Assault"
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "characterName": "Akatsuchi",
+    "jutsuId": "akatsuchi-(s):2",
+    "slot": 2,
+    "name": "Stone Golem",
+    "originalName": "Stone Golem"
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "characterName": "Akatsuchi",
+    "jutsuId": "akatsuchi-(s):3",
+    "slot": 3,
+    "name": "Chakra Devour",
+    "originalName": "Chakra Devour"
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "characterName": "Akatsuchi",
+    "jutsuId": "akatsuchi-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "characterName": "Ameyuri Ringo",
+    "jutsuId": "ameyuri-ringo-(r):1",
+    "slot": 1,
+    "name": "Lightning Fang",
+    "originalName": "Lightning Fang"
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "characterName": "Ameyuri Ringo",
+    "jutsuId": "ameyuri-ringo-(r):2",
+    "slot": 2,
+    "name": "Depth Charge",
+    "originalName": "Depth Charge"
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "characterName": "Ameyuri Ringo",
+    "jutsuId": "ameyuri-ringo-(r):3",
+    "slot": 3,
+    "name": "Thunder Gate",
+    "originalName": "Thunder Gate"
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "characterName": "Ameyuri Ringo",
+    "jutsuId": "ameyuri-ringo-(r):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "characterName": "Animal Path Pain",
+    "jutsuId": "animal-path-pain-(s):1",
+    "slot": 1,
+    "name": "Summoning: Giant Centipede",
+    "originalName": "Summoning: Giant Centipede"
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "characterName": "Animal Path Pain",
+    "jutsuId": "animal-path-pain-(s):2",
+    "slot": 2,
+    "name": "Summoning: Giant Crustacean",
+    "originalName": "Summoning: Giant Crustacean"
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "characterName": "Animal Path Pain",
+    "jutsuId": "animal-path-pain-(s):3",
+    "slot": 3,
+    "name": "Summoning: Giant Panda",
+    "originalName": "Summoning: Giant Panda"
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "characterName": "Animal Path Pain",
+    "jutsuId": "animal-path-pain-(s):4",
+    "slot": 4,
+    "name": "Summoning: Giant Multi-Headed Dog",
+    "originalName": "Summoning: Giant Multi-Headed Dog"
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "characterName": "Anko Mitarashi",
+    "jutsuId": "anko-mitarashi:1",
+    "slot": 1,
+    "name": "Dual Pin",
+    "originalName": "Dual Pin"
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "characterName": "Anko Mitarashi",
+    "jutsuId": "anko-mitarashi:2",
+    "slot": 2,
+    "name": "Dragon Flame",
+    "originalName": "Dragon Flame"
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "characterName": "Anko Mitarashi",
+    "jutsuId": "anko-mitarashi:3",
+    "slot": 3,
+    "name": "Twin Snake Sacrifice",
+    "originalName": "Twin Snake Sacrifice"
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "characterName": "Anko Mitarashi",
+    "jutsuId": "anko-mitarashi:4",
+    "slot": 4,
+    "name": "Striking Shadow Snakes",
+    "originalName": "Striking Shadow Snakes"
+  },
+  {
+    "characterId": "ao-(s)",
+    "characterName": "Ao",
+    "jutsuId": "ao-(s):1",
+    "slot": 1,
+    "name": "Byakugan",
+    "originalName": "Byakugan"
+  },
+  {
+    "characterId": "ao-(s)",
+    "characterName": "Ao",
+    "jutsuId": "ao-(s):2",
+    "slot": 2,
+    "name": "Técnica Sensorial",
+    "originalName": "Sensory Technique"
+  },
+  {
+    "characterId": "ao-(s)",
+    "characterName": "Ao",
+    "jutsuId": "ao-(s):3",
+    "slot": 3,
+    "name": "Barrier Talisman",
+    "originalName": "Barrier Talisman"
+  },
+  {
+    "characterId": "ao-(s)",
+    "characterName": "Ao",
+    "jutsuId": "ao-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "jutsuId": "aoba-yamashiro:1",
+    "slot": 1,
+    "name": "Scattering Crow Swarm",
+    "originalName": "Scattering Crow Swarm"
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "jutsuId": "aoba-yamashiro:2",
+    "slot": 2,
+    "name": "Revenge of the Murder",
+    "originalName": "Revenge of the Murder"
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "jutsuId": "aoba-yamashiro:3",
+    "slot": 3,
+    "name": "Converging Murder",
+    "originalName": "Converging Murder"
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "jutsuId": "aoba-yamashiro:4",
+    "slot": 4,
+    "name": "Crow Barrier",
+    "originalName": "Crow Barrier"
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi:1",
+    "slot": 1,
+    "name": "Flying Swallow",
+    "originalName": "Flying Swallow"
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi:2",
+    "slot": 2,
+    "name": "Finishing Blow",
+    "originalName": "Finishing Blow"
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi:3",
+    "slot": 3,
+    "name": "Sharpen Blades",
+    "originalName": "Sharpen Blades"
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi:4",
+    "slot": 4,
+    "name": "Flying Kick",
+    "originalName": "Flying Kick"
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi-(s):1",
+    "slot": 1,
+    "name": "Thousand Hand Strike",
+    "originalName": "Thousand Hand Strike"
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi-(s):2",
+    "slot": 2,
+    "name": "Kannon Strike",
+    "originalName": "Kannon Strike"
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi-(s):3",
+    "slot": 3,
+    "name": "Burning Ash",
+    "originalName": "Burning Ash"
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "characterName": "Asuma Sarutobi",
+    "jutsuId": "asuma-sarutobi-(s):4",
+    "slot": 4,
+    "name": "Burning Ash: Ignite",
+    "originalName": "Burning Ash: Ignite"
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "characterName": "Asura Path Pain",
+    "jutsuId": "asura-path-pain-(s):1",
+    "slot": 1,
+    "name": "Metal Blade",
+    "originalName": "Metal Blade"
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "characterName": "Asura Path Pain",
+    "jutsuId": "asura-path-pain-(s):2",
+    "slot": 2,
+    "name": "Missile Salvo",
+    "originalName": "Missile Salvo"
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "characterName": "Asura Path Pain",
+    "jutsuId": "asura-path-pain-(s):3",
+    "slot": 3,
+    "name": "Head Cannon",
+    "originalName": "Head Cannon"
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "characterName": "Asura Path Pain",
+    "jutsuId": "asura-path-pain-(s):4",
+    "slot": 4,
+    "name": "Guided Missile",
+    "originalName": "Guided Missile"
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "jutsuId": "atsui-(s):1",
+    "slot": 1,
+    "name": "Burning Blade",
+    "originalName": "Burning Blade"
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "jutsuId": "atsui-(s):2",
+    "slot": 2,
+    "name": "Fire Wall",
+    "originalName": "Fire Wall"
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "jutsuId": "atsui-(s):3",
+    "slot": 3,
+    "name": "Flame Slice",
+    "originalName": "Flame Slice"
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "jutsuId": "atsui-(s):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "baki",
+    "characterName": "Baki",
+    "jutsuId": "baki:1",
+    "slot": 1,
+    "name": "Sudden Strike",
+    "originalName": "Sudden Strike"
+  },
+  {
+    "characterId": "baki",
+    "characterName": "Baki",
+    "jutsuId": "baki:2",
+    "slot": 2,
+    "name": "Wind Sword",
+    "originalName": "Wind Sword"
+  },
+  {
+    "characterId": "baki",
+    "characterName": "Baki",
+    "jutsuId": "baki:3",
+    "slot": 3,
+    "name": "Flak Jacket",
+    "originalName": "Flak Jacket"
+  },
+  {
+    "characterId": "baki",
+    "characterName": "Baki",
+    "jutsuId": "baki:4",
+    "slot": 4,
+    "name": "Teleport",
+    "originalName": "Teleport"
+  },
+  {
+    "characterId": "c-(s)",
+    "characterName": "C",
+    "jutsuId": "c-(s):1",
+    "slot": 1,
+    "name": "Técnica Sensorial",
+    "originalName": "Sensory Technique"
+  },
+  {
+    "characterId": "c-(s)",
+    "characterName": "C",
+    "jutsuId": "c-(s):2",
+    "slot": 2,
+    "name": "Técnica de Cura",
+    "originalName": "Healing Technique"
+  },
+  {
+    "characterId": "c-(s)",
+    "characterName": "C",
+    "jutsuId": "c-(s):3",
+    "slot": 3,
+    "name": "Flash Pillar",
+    "originalName": "Flash Pillar"
+  },
+  {
+    "characterId": "c-(s)",
+    "characterName": "C",
+    "jutsuId": "c-(s):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(r):1",
+    "slot": 1,
+    "name": "Ten Puppets Collection",
+    "originalName": "Ten Puppets Collection"
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(r):2",
+    "slot": 2,
+    "name": "Possum",
+    "originalName": "Possum"
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(r):3",
+    "slot": 3,
+    "name": "Army of Illusions",
+    "originalName": "Army of Illusions"
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(r):4",
+    "slot": 4,
+    "name": "Puppet Distraction",
+    "originalName": "Puppet Distraction"
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(s):1",
+    "slot": 1,
+    "name": "Assault Blade",
+    "originalName": "Assault Blade"
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(s):2",
+    "slot": 2,
+    "name": "Three Treasure Suction Crush",
+    "originalName": "Three Treasure Suction Crush"
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(s):3",
+    "slot": 3,
+    "name": "Ten Puppets Collection",
+    "originalName": "Ten Puppets Collection"
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "characterName": "Chiyo",
+    "jutsuId": "chiyo-(s):4",
+    "slot": 4,
+    "name": "Lion Roar Sealing",
+    "originalName": "Lion Roar Sealing"
+  },
+  {
+    "characterId": "choji-akimichi",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi:1",
+    "slot": 1,
+    "name": "Spinach Pill",
+    "originalName": "Spinach Pill"
+  },
+  {
+    "characterId": "choji-akimichi",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi:2",
+    "slot": 2,
+    "name": "Obstructing Tackle",
+    "originalName": "Obstructing Tackle"
+  },
+  {
+    "characterId": "choji-akimichi",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi:3",
+    "slot": 3,
+    "name": "Partial Expansion",
+    "originalName": "Partial Expansion"
+  },
+  {
+    "characterId": "choji-akimichi",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi:4",
+    "slot": 4,
+    "name": "Justice Punch",
+    "originalName": "Justice Punch"
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi-(s):1",
+    "slot": 1,
+    "name": "Butterfly Bombing",
+    "originalName": "Butterfly Bombing"
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi-(s):2",
+    "slot": 2,
+    "name": "Spiky Human Boulder",
+    "originalName": "Spiky Human Boulder"
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi-(s):3",
+    "slot": 3,
+    "name": "Butterfly Mode",
+    "originalName": "Butterfly Mode"
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "characterName": "Chōji Akimichi",
+    "jutsuId": "choji-akimichi-(s):4",
+    "slot": 4,
+    "name": "Super-Slam",
+    "originalName": "Super-Slam"
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "characterName": "Chōjūrō",
+    "jutsuId": "chojuro-(s):1",
+    "slot": 1,
+    "name": "Hiramekarei Longsword",
+    "originalName": "Hiramekarei Longsword"
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "characterName": "Chōjūrō",
+    "jutsuId": "chojuro-(s):2",
+    "slot": 2,
+    "name": "Hiramekarei Hammer",
+    "originalName": "Hiramekarei Hammer"
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "characterName": "Chōjūrō",
+    "jutsuId": "chojuro-(s):3",
+    "slot": 3,
+    "name": "Hiramekarei Twinswords",
+    "originalName": "Hiramekarei Twinswords"
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "characterName": "Chōjūrō",
+    "jutsuId": "chojuro-(s):4",
+    "slot": 4,
+    "name": "Dodge ",
+    "originalName": "Dodge "
+  },
+  {
+    "characterId": "choza-akimichi",
+    "characterName": "Chōza Akimichi",
+    "jutsuId": "choza-akimichi:1",
+    "slot": 1,
+    "name": "Chain Bind",
+    "originalName": "Chain Bind"
+  },
+  {
+    "characterId": "choza-akimichi",
+    "characterName": "Chōza Akimichi",
+    "jutsuId": "choza-akimichi:2",
+    "slot": 2,
+    "name": "Human Boulder",
+    "originalName": "Human Boulder"
+  },
+  {
+    "characterId": "choza-akimichi",
+    "characterName": "Chōza Akimichi",
+    "jutsuId": "choza-akimichi:3",
+    "slot": 3,
+    "name": "Partial Expansion",
+    "originalName": "Partial Expansion"
+  },
+  {
+    "characterId": "choza-akimichi",
+    "characterName": "Chōza Akimichi",
+    "jutsuId": "choza-akimichi:4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "characterName": "Chūkichi",
+    "jutsuId": "chukichi-(r):1",
+    "slot": 1,
+    "name": "Hidden Frost",
+    "originalName": "Hidden Frost"
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "characterName": "Chūkichi",
+    "jutsuId": "chukichi-(r):2",
+    "slot": 2,
+    "name": "Psychic Jamming",
+    "originalName": "Psychic Jamming"
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "characterName": "Chūkichi",
+    "jutsuId": "chukichi-(r):3",
+    "slot": 3,
+    "name": "Silent Killing",
+    "originalName": "Silent Killing"
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "characterName": "Chūkichi",
+    "jutsuId": "chukichi-(r):4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "jutsuId": "corrupted-obito:1",
+    "slot": 1,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "jutsuId": "corrupted-obito:2",
+    "slot": 2,
+    "name": "Murderous Resolve",
+    "originalName": "Murderous Resolve"
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "jutsuId": "corrupted-obito:3",
+    "slot": 3,
+    "name": "Cutting Sprigs",
+    "originalName": "Cutting Sprigs"
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "jutsuId": "corrupted-obito:4",
+    "slot": 4,
+    "name": "Mangekyo Sharingan",
+    "originalName": "Mangekyo Sharingan"
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "characterName": "Curse Mark Jūgo",
+    "jutsuId": "curse-mark-jugo-(s):1",
+    "slot": 1,
+    "name": "Psychotic Break",
+    "originalName": "Psychotic Break"
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "characterName": "Curse Mark Jūgo",
+    "jutsuId": "curse-mark-jugo-(s):2",
+    "slot": 2,
+    "name": "Connected Cannons",
+    "originalName": "Connected Cannons"
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "characterName": "Curse Mark Jūgo",
+    "jutsuId": "curse-mark-jugo-(s):3",
+    "slot": 3,
+    "name": "Cellular Absorption",
+    "originalName": "Cellular Absorption"
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "characterName": "Curse Mark Jūgo",
+    "jutsuId": "curse-mark-jugo-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "characterName": "Curse Mark Sasuke",
+    "jutsuId": "curse-mark-sasuke:1",
+    "slot": 1,
+    "name": "Chidori",
+    "originalName": "Chidori"
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "characterName": "Curse Mark Sasuke",
+    "jutsuId": "curse-mark-sasuke:2",
+    "slot": 2,
+    "name": "Dark Void",
+    "originalName": "Dark Void"
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "characterName": "Curse Mark Sasuke",
+    "jutsuId": "curse-mark-sasuke:3",
+    "slot": 3,
+    "name": "Curse Mark",
+    "originalName": "Curse Mark"
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "characterName": "Curse Mark Sasuke",
+    "jutsuId": "curse-mark-sasuke:4",
+    "slot": 4,
+    "name": "Sharingan Foresight",
+    "originalName": "Sharingan Foresight"
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "jutsuId": "curse-mark-sasuke-(s):1",
+    "slot": 1,
+    "name": "Snake Shedding",
+    "originalName": "Snake Shedding"
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "jutsuId": "curse-mark-sasuke-(s):2",
+    "slot": 2,
+    "name": "Sharingan Genjutsu",
+    "originalName": "Sharingan Genjutsu"
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "jutsuId": "curse-mark-sasuke-(s):3",
+    "slot": 3,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "jutsuId": "curse-mark-sasuke-(s):4",
+    "slot": 4,
+    "name": "Chidori",
+    "originalName": "Chidori"
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "jutsuId": "danzo-shimura-(s):1",
+    "slot": 1,
+    "name": "Izanagi: Ativação",
+    "originalName": "Izanagi"
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "jutsuId": "danzo-shimura-(s):2",
+    "slot": 2,
+    "name": "Izanagi: Contra-ataque",
+    "originalName": "Izanagi"
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "jutsuId": "danzo-shimura-(s):3",
+    "slot": 3,
+    "name": "Reverse Tetragram Sealing",
+    "originalName": "Reverse Tetragram Sealing"
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "jutsuId": "danzo-shimura-(s):4",
+    "slot": 4,
+    "name": "Vacuum Bullets",
+    "originalName": "Vacuum Bullets"
+  },
+  {
+    "characterId": "darui-(s)",
+    "characterName": "Darui",
+    "jutsuId": "darui-(s):1",
+    "slot": 1,
+    "name": "Laser Circus",
+    "originalName": "Laser Circus"
+  },
+  {
+    "characterId": "darui-(s)",
+    "characterName": "Darui",
+    "jutsuId": "darui-(s):2",
+    "slot": 2,
+    "name": "Water Wall",
+    "originalName": "Water Wall"
+  },
+  {
+    "characterId": "darui-(s)",
+    "characterName": "Darui",
+    "jutsuId": "darui-(s):3",
+    "slot": 3,
+    "name": "Black Panther",
+    "originalName": "Black Panther"
+  },
+  {
+    "characterId": "darui-(s)",
+    "characterName": "Darui",
+    "jutsuId": "darui-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "deidara-(r)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(r):1",
+    "slot": 1,
+    "name": "Detonating Clay",
+    "originalName": "Detonating Clay"
+  },
+  {
+    "characterId": "deidara-(r)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(r):2",
+    "slot": 2,
+    "name": "Chakra Clay Trap",
+    "originalName": "Chakra Clay Trap"
+  },
+  {
+    "characterId": "deidara-(r)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(r):3",
+    "slot": 3,
+    "name": "Sonar Bat Bombs",
+    "originalName": "Sonar Bat Bombs"
+  },
+  {
+    "characterId": "deidara-(r)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(r):4",
+    "slot": 4,
+    "name": "Jellyfish Explosives",
+    "originalName": "Jellyfish Explosives"
+  },
+  {
+    "characterId": "deidara-(s)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(s):1",
+    "slot": 1,
+    "name": "C1: Bird Bomb",
+    "originalName": "C1: Bird Bomb"
+  },
+  {
+    "characterId": "deidara-(s)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(s):2",
+    "slot": 2,
+    "name": "C3: Megaton Sculpture",
+    "originalName": "C3: Megaton Sculpture"
+  },
+  {
+    "characterId": "deidara-(s)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(s):3",
+    "slot": 3,
+    "name": "C2: Dragon Missile",
+    "originalName": "C2: Dragon Missile"
+  },
+  {
+    "characterId": "deidara-(s)",
+    "characterName": "Deidara",
+    "jutsuId": "deidara-(s):4",
+    "slot": 4,
+    "name": "C2: Clay Dragon",
+    "originalName": "C2: Clay Dragon"
+  },
+  {
+    "characterId": "demon-brothers",
+    "characterName": "Demon Brothers",
+    "jutsuId": "demon-brothers:1",
+    "slot": 1,
+    "name": "Chain Wrap",
+    "originalName": "Chain Wrap"
+  },
+  {
+    "characterId": "demon-brothers",
+    "characterName": "Demon Brothers",
+    "jutsuId": "demon-brothers:2",
+    "slot": 2,
+    "name": "Chain Shred",
+    "originalName": "Chain Shred"
+  },
+  {
+    "characterId": "demon-brothers",
+    "characterName": "Demon Brothers",
+    "jutsuId": "demon-brothers:3",
+    "slot": 3,
+    "name": "Poison Gauntlet",
+    "originalName": "Poison Gauntlet"
+  },
+  {
+    "characterId": "demon-brothers",
+    "characterName": "Demon Brothers",
+    "jutsuId": "demon-brothers:4",
+    "slot": 4,
+    "name": "Water Melding",
+    "originalName": "Water Melding"
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "jutsuId": "deva-path-pain-(s):1",
+    "slot": 1,
+    "name": "Shinra Tensei",
+    "originalName": "Almighty Push"
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "jutsuId": "deva-path-pain-(s):2",
+    "slot": 2,
+    "name": "Chibaku Tensei",
+    "originalName": "Planetary Devastation"
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "jutsuId": "deva-path-pain-(s):3",
+    "slot": 3,
+    "name": "Atração Universal",
+    "originalName": "Universal Pull"
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "jutsuId": "deva-path-pain-(s):4",
+    "slot": 4,
+    "name": "Chakra Receiver",
+    "originalName": "Chakra Receiver"
+  },
+  {
+    "characterId": "dodai-(s)",
+    "characterName": "Dodai",
+    "jutsuId": "dodai-(s):1",
+    "slot": 1,
+    "name": "Rubber Wall",
+    "originalName": "Rubber Wall"
+  },
+  {
+    "characterId": "dodai-(s)",
+    "characterName": "Dodai",
+    "jutsuId": "dodai-(s):2",
+    "slot": 2,
+    "name": "Técnica Sensorial",
+    "originalName": "Sensory Technique"
+  },
+  {
+    "characterId": "dodai-(s)",
+    "characterName": "Dodai",
+    "jutsuId": "dodai-(s):3",
+    "slot": 3,
+    "name": "Rubber Sphere and Rope",
+    "originalName": "Rubber Sphere and Rope"
+  },
+  {
+    "characterId": "dodai-(s)",
+    "characterName": "Dodai",
+    "jutsuId": "dodai-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "characterName": "Dosu Kinuta",
+    "jutsuId": "dosu-kinuta:1",
+    "slot": 1,
+    "name": "Resonating Echo Drill",
+    "originalName": "Resonating Echo Drill"
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "characterName": "Dosu Kinuta",
+    "jutsuId": "dosu-kinuta:2",
+    "slot": 2,
+    "name": "Sound Manipulation",
+    "originalName": "Sound Manipulation"
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "characterName": "Dosu Kinuta",
+    "jutsuId": "dosu-kinuta:3",
+    "slot": 3,
+    "name": "Echo Speaker Tuning",
+    "originalName": "Echo Speaker Tuning"
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "characterName": "Dosu Kinuta",
+    "jutsuId": "dosu-kinuta:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "drunken-lee",
+    "characterName": "Drunken Lee",
+    "jutsuId": "drunken-lee:1",
+    "slot": 1,
+    "name": "Unpredictable Assault",
+    "originalName": "Unpredictable Assault"
+  },
+  {
+    "characterId": "drunken-lee",
+    "characterName": "Drunken Lee",
+    "jutsuId": "drunken-lee:2",
+    "slot": 2,
+    "name": "Drunken Counter",
+    "originalName": "Drunken Counter"
+  },
+  {
+    "characterId": "drunken-lee",
+    "characterName": "Drunken Lee",
+    "jutsuId": "drunken-lee:3",
+    "slot": 3,
+    "name": "Drunken Fist",
+    "originalName": "Drunken Fist"
+  },
+  {
+    "characterId": "drunken-lee",
+    "characterName": "Drunken Lee",
+    "jutsuId": "drunken-lee:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "characterName": "Eight-Gates Guy",
+    "jutsuId": "eight-gates-guy-(s):1",
+    "slot": 1,
+    "name": "Evening Elephant",
+    "originalName": "Evening Elephant"
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "characterName": "Eight-Gates Guy",
+    "jutsuId": "eight-gates-guy-(s):2",
+    "slot": 2,
+    "name": "Battle Stance",
+    "originalName": "Battle Stance"
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "characterName": "Eight-Gates Guy",
+    "jutsuId": "eight-gates-guy-(s):3",
+    "slot": 3,
+    "name": "Night Guy",
+    "originalName": "Night Guy"
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "characterName": "Eight-Gates Guy",
+    "jutsuId": "eight-gates-guy-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "characterName": "Eight-Tailed B",
+    "jutsuId": "eight-tailed-b-(s):1",
+    "slot": 1,
+    "name": "Chakra Bones",
+    "originalName": "Chakra Bones"
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "characterName": "Eight-Tailed B",
+    "jutsuId": "eight-tailed-b-(s):2",
+    "slot": 2,
+    "name": "Lariat",
+    "originalName": "Lariat"
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "characterName": "Eight-Tailed B",
+    "jutsuId": "eight-tailed-b-(s):3",
+    "slot": 3,
+    "name": "Tailed Beast Bomb",
+    "originalName": "Tailed Beast Bomb"
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "characterName": "Eight-Tailed B",
+    "jutsuId": "eight-tailed-b-(s):4",
+    "slot": 4,
+    "name": "Chakra Barrier",
+    "originalName": "Chakra Barrier"
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "jutsuId": "four-tailed-naruto-(s):1",
+    "slot": 1,
+    "name": "Tailed Beast Bomb",
+    "originalName": "Tailed Beast Bomb"
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "jutsuId": "four-tailed-naruto-(s):2",
+    "slot": 2,
+    "name": "Chakra Slam",
+    "originalName": "Chakra Slam"
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "jutsuId": "four-tailed-naruto-(s):3",
+    "slot": 3,
+    "name": "Kyuubi Skin Block",
+    "originalName": "Kyuubi Skin Block"
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "jutsuId": "four-tailed-naruto-(s):4",
+    "slot": 4,
+    "name": "Fourth Tail Manifestation",
+    "originalName": "Fourth Tail Manifestation"
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "characterName": "Fū Yamanaka",
+    "jutsuId": "fu-yamanaka-(s):1",
+    "slot": 1,
+    "name": "Tantō Slash",
+    "originalName": "Tantō Slash"
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "characterName": "Fū Yamanaka",
+    "jutsuId": "fu-yamanaka-(s):2",
+    "slot": 2,
+    "name": "Transferência Mental",
+    "originalName": "Mind Transfer"
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "characterName": "Fū Yamanaka",
+    "jutsuId": "fu-yamanaka-(s):3",
+    "slot": 3,
+    "name": "Mind Transfer Puppet Curse",
+    "originalName": "Mind Transfer Puppet Curse"
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "characterName": "Fū Yamanaka",
+    "jutsuId": "fu-yamanaka-(s):4",
+    "slot": 4,
+    "name": "Puppet Curse: Attack",
+    "originalName": "Puppet Curse: Attack"
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "characterName": "Fuguki Suikazan",
+    "jutsuId": "fuguki-suikazan-(r):1",
+    "slot": 1,
+    "name": "Needle Senbon",
+    "originalName": "Needle Senbon"
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "characterName": "Fuguki Suikazan",
+    "jutsuId": "fuguki-suikazan-(r):2",
+    "slot": 2,
+    "name": "Chakra Weave",
+    "originalName": "Chakra Weave"
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "characterName": "Fuguki Suikazan",
+    "jutsuId": "fuguki-suikazan-(r):3",
+    "slot": 3,
+    "name": "Sharp Hair Spear",
+    "originalName": "Sharp Hair Spear"
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "characterName": "Fuguki Suikazan",
+    "jutsuId": "fuguki-suikazan-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "fukai-(r)",
+    "characterName": "Fukai",
+    "jutsuId": "fukai-(r):1",
+    "slot": 1,
+    "name": "Chakra Arms",
+    "originalName": "Chakra Arms"
+  },
+  {
+    "characterId": "fukai-(r)",
+    "characterName": "Fukai",
+    "jutsuId": "fukai-(r):2",
+    "slot": 2,
+    "name": "Tailed Beast Bomb Barrage",
+    "originalName": "Tailed Beast Bomb Barrage"
+  },
+  {
+    "characterId": "fukai-(r)",
+    "characterName": "Fukai",
+    "jutsuId": "fukai-(r):3",
+    "slot": 3,
+    "name": "Lariat",
+    "originalName": "Lariat"
+  },
+  {
+    "characterId": "fukai-(r)",
+    "characterName": "Fukai",
+    "jutsuId": "fukai-(r):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "characterName": "Fukasaku and Shima",
+    "jutsuId": "fukasaku-and-shima-(s):1",
+    "slot": 1,
+    "name": "Frog Song",
+    "originalName": "Frog Song"
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "characterName": "Fukasaku and Shima",
+    "jutsuId": "fukasaku-and-shima-(s):2",
+    "slot": 2,
+    "name": "Sand Dust",
+    "originalName": "Sand Dust"
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "characterName": "Fukasaku and Shima",
+    "jutsuId": "fukasaku-and-shima-(s):3",
+    "slot": 3,
+    "name": "Demonic Illusion: Gamarinsho",
+    "originalName": "Demonic Illusion: Gamarinsho"
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "characterName": "Fukasaku and Shima",
+    "jutsuId": "fukasaku-and-shima-(s):4",
+    "slot": 4,
+    "name": "Reverse Summoning",
+    "originalName": "Reverse Summoning"
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "jutsuId": "gaara-of-the-funk:1",
+    "slot": 1,
+    "name": "Funk Coffin",
+    "originalName": "Funk Coffin"
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "jutsuId": "gaara-of-the-funk:2",
+    "slot": 2,
+    "name": "Couldve Hada V8",
+    "originalName": "Couldve Hada V8"
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "jutsuId": "gaara-of-the-funk:3",
+    "slot": 3,
+    "name": "Nchk Nchk Nchk Nchk",
+    "originalName": "Nchk Nchk Nchk Nchk"
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "jutsuId": "gaara-of-the-funk:4",
+    "slot": 4,
+    "name": "Dance Dance Resurrection",
+    "originalName": "Dance Dance Resurrection"
+  },
+  {
+    "characterId": "gari-(r)",
+    "characterName": "Gari",
+    "jutsuId": "gari-(r):1",
+    "slot": 1,
+    "name": "Exploding Palm",
+    "originalName": "Exploding Palm"
+  },
+  {
+    "characterId": "gari-(r)",
+    "characterName": "Gari",
+    "jutsuId": "gari-(r):2",
+    "slot": 2,
+    "name": "Ground Pound",
+    "originalName": "Ground Pound"
+  },
+  {
+    "characterId": "gari-(r)",
+    "characterName": "Gari",
+    "jutsuId": "gari-(r):3",
+    "slot": 3,
+    "name": "Landmine Fist",
+    "originalName": "Landmine Fist"
+  },
+  {
+    "characterId": "gari-(r)",
+    "characterName": "Gari",
+    "jutsuId": "gari-(r):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "characterName": "Gengetsu Hōzuki",
+    "jutsuId": "gengetsu-hozuki-(r):1",
+    "slot": 1,
+    "name": "Major Summoning: Giant Clam",
+    "originalName": "Major Summoning: Giant Clam"
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "characterName": "Gengetsu Hōzuki",
+    "jutsuId": "gengetsu-hozuki-(r):2",
+    "slot": 2,
+    "name": "Water Pistol",
+    "originalName": "Water Pistol"
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "characterName": "Gengetsu Hōzuki",
+    "jutsuId": "gengetsu-hozuki-(r):3",
+    "slot": 3,
+    "name": "Steaming Danger Tyranny Boy",
+    "originalName": "Steaming Danger Tyranny Boy"
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "characterName": "Gengetsu Hōzuki",
+    "jutsuId": "gengetsu-hozuki-(r):4",
+    "slot": 4,
+    "name": "Mirage",
+    "originalName": "Mirage"
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "characterName": "Ginkaku",
+    "jutsuId": "ginkaku-(r):1",
+    "slot": 1,
+    "name": "Seven Stars Blade",
+    "originalName": "Seven Stars Blade"
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "characterName": "Ginkaku",
+    "jutsuId": "ginkaku-(r):2",
+    "slot": 2,
+    "name": "Amber Purification Jar",
+    "originalName": "Amber Purification Jar"
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "characterName": "Ginkaku",
+    "jutsuId": "ginkaku-(r):3",
+    "slot": 3,
+    "name": "Benihisago",
+    "originalName": "Benihisago"
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "characterName": "Ginkaku",
+    "jutsuId": "ginkaku-(r):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "haku",
+    "characterName": "Haku",
+    "jutsuId": "haku:1",
+    "slot": 1,
+    "name": "Thousand Needles of Death",
+    "originalName": "Thousand Needles of Death"
+  },
+  {
+    "characterId": "haku",
+    "characterName": "Haku",
+    "jutsuId": "haku:2",
+    "slot": 2,
+    "name": "Acupuncture",
+    "originalName": "Acupuncture"
+  },
+  {
+    "characterId": "haku",
+    "characterName": "Haku",
+    "jutsuId": "haku:3",
+    "slot": 3,
+    "name": "Crystal Ice Mirrors",
+    "originalName": "Crystal Ice Mirrors"
+  },
+  {
+    "characterId": "haku",
+    "characterName": "Haku",
+    "jutsuId": "haku:4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "haku-(r)",
+    "characterName": "Haku",
+    "jutsuId": "haku-(r):1",
+    "slot": 1,
+    "name": "Thousand Needles of Death",
+    "originalName": "Thousand Needles of Death"
+  },
+  {
+    "characterId": "haku-(r)",
+    "characterName": "Haku",
+    "jutsuId": "haku-(r):2",
+    "slot": 2,
+    "name": "Acupuncture",
+    "originalName": "Acupuncture"
+  },
+  {
+    "characterId": "haku-(r)",
+    "characterName": "Haku",
+    "jutsuId": "haku-(r):3",
+    "slot": 3,
+    "name": "Crystal Ice Mirrors",
+    "originalName": "Crystal Ice Mirrors"
+  },
+  {
+    "characterId": "haku-(r)",
+    "characterName": "Haku",
+    "jutsuId": "haku-(r):4",
+    "slot": 4,
+    "name": "Ice Dome",
+    "originalName": "Ice Dome"
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "characterName": "Hanabi Hyūga",
+    "jutsuId": "hanabi-hyuga:1",
+    "slot": 1,
+    "name": "Punho Gentil",
+    "originalName": "Gentle Fist"
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "characterName": "Hanabi Hyūga",
+    "jutsuId": "hanabi-hyuga:2",
+    "slot": 2,
+    "name": "Eight Trigrams Palm Rotation",
+    "originalName": "Eight Trigrams Palm Rotation"
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "characterName": "Hanabi Hyūga",
+    "jutsuId": "hanabi-hyuga:3",
+    "slot": 3,
+    "name": "Unyielding Tenacity",
+    "originalName": "Unyielding Tenacity"
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "characterName": "Hanabi Hyūga",
+    "jutsuId": "hanabi-hyuga:4",
+    "slot": 4,
+    "name": "Byakugan Foresight",
+    "originalName": "Byakugan Foresight"
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "characterName": "Hanzō",
+    "jutsuId": "hanzo-(r):1",
+    "slot": 1,
+    "name": "Major Summoning: Ibuse",
+    "originalName": "Major Summoning: Ibuse"
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "characterName": "Hanzō",
+    "jutsuId": "hanzo-(r):2",
+    "slot": 2,
+    "name": "Poison Fog",
+    "originalName": "Poison Fog"
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "characterName": "Hanzō",
+    "jutsuId": "hanzo-(r):3",
+    "slot": 3,
+    "name": "Sickle Dance",
+    "originalName": "Sickle Dance"
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "characterName": "Hanzō",
+    "jutsuId": "hanzo-(r):4",
+    "slot": 4,
+    "name": "Venom Sac",
+    "originalName": "Venom Sac"
+  },
+  {
+    "characterId": "hashirama-senju",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju:1",
+    "slot": 1,
+    "name": "Wooden Dragon",
+    "originalName": "Wooden Dragon"
+  },
+  {
+    "characterId": "hashirama-senju",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju:2",
+    "slot": 2,
+    "name": "Wood Golem",
+    "originalName": "Wood Golem"
+  },
+  {
+    "characterId": "hashirama-senju",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju:3",
+    "slot": 3,
+    "name": "Veritable 1000-Armed Kannon",
+    "originalName": "Veritable 1000-Armed Kannon"
+  },
+  {
+    "characterId": "hashirama-senju",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju:4",
+    "slot": 4,
+    "name": "Foresight",
+    "originalName": "Foresight"
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju-(r):1",
+    "slot": 1,
+    "name": "Tree Wave Destruction",
+    "originalName": "Tree Wave Destruction"
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju-(r):2",
+    "slot": 2,
+    "name": "Tree Strangulation",
+    "originalName": "Tree Strangulation"
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju-(r):3",
+    "slot": 3,
+    "name": "Deep Forest Creation",
+    "originalName": "Deep Forest Creation"
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "characterName": "Hashirama Senju",
+    "jutsuId": "hashirama-senju-(r):4",
+    "slot": 4,
+    "name": "Deep Forest Flourishing",
+    "originalName": "Deep Forest Flourishing"
+  },
+  {
+    "characterId": "hayate-gekko",
+    "characterName": "Hayate Gekkō",
+    "jutsuId": "hayate-gekko:1",
+    "slot": 1,
+    "name": "Secret Sword",
+    "originalName": "Secret Sword"
+  },
+  {
+    "characterId": "hayate-gekko",
+    "characterName": "Hayate Gekkō",
+    "jutsuId": "hayate-gekko:2",
+    "slot": 2,
+    "name": "Crescent Moon Dance",
+    "originalName": "Crescent Moon Dance"
+  },
+  {
+    "characterId": "hayate-gekko",
+    "characterName": "Hayate Gekkō",
+    "jutsuId": "hayate-gekko:3",
+    "slot": 3,
+    "name": "Transparency Technique",
+    "originalName": "Transparency Technique"
+  },
+  {
+    "characterId": "hayate-gekko",
+    "characterName": "Hayate Gekkō",
+    "jutsuId": "hayate-gekko:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "characterName": "Hiashi Hyūga",
+    "jutsuId": "hiashi-hyuga:1",
+    "slot": 1,
+    "name": "Punho Gentil",
+    "originalName": "Gentle Fist"
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "characterName": "Hiashi Hyūga",
+    "jutsuId": "hiashi-hyuga:2",
+    "slot": 2,
+    "name": "Eight Trigrams Palm Rotation",
+    "originalName": "Eight Trigrams Palm Rotation"
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "characterName": "Hiashi Hyūga",
+    "jutsuId": "hiashi-hyuga:3",
+    "slot": 3,
+    "name": "Eight Trigrams Air Palm Wall",
+    "originalName": "Eight Trigrams Air Palm Wall"
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "characterName": "Hiashi Hyūga",
+    "jutsuId": "hiashi-hyuga:4",
+    "slot": 4,
+    "name": "Byakugan Foresight",
+    "originalName": "Byakugan Foresight"
+  },
+  {
+    "characterId": "hidan-(s)",
+    "characterName": "Hidan",
+    "jutsuId": "hidan-(s):1",
+    "slot": 1,
+    "name": "Jashin Sigil",
+    "originalName": "Jashin Sigil"
+  },
+  {
+    "characterId": "hidan-(s)",
+    "characterName": "Hidan",
+    "jutsuId": "hidan-(s):2",
+    "slot": 2,
+    "name": "First Blood",
+    "originalName": "First Blood"
+  },
+  {
+    "characterId": "hidan-(s)",
+    "characterName": "Hidan",
+    "jutsuId": "hidan-(s):3",
+    "slot": 3,
+    "name": "Blood Curse",
+    "originalName": "Blood Curse"
+  },
+  {
+    "characterId": "hidan-(s)",
+    "characterName": "Hidan",
+    "jutsuId": "hidan-(s):4",
+    "slot": 4,
+    "name": "Death Blow",
+    "originalName": "Death Blow"
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga-(s):1",
+    "slot": 1,
+    "name": "Pressure Point Strike",
+    "originalName": "Pressure Point Strike"
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga-(s):2",
+    "slot": 2,
+    "name": "Gentle Step Twin Lion Fists",
+    "originalName": "Gentle Step Twin Lion Fists"
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga-(s):3",
+    "slot": 3,
+    "name": "Eight Trigrams Sixty-Four Palms",
+    "originalName": "Eight Trigrams Sixty-Four Palms"
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "characterName": "Hinata Hyūga",
+    "jutsuId": "hinata-hyuga-(s):4",
+    "slot": 4,
+    "name": "Byakugan Foresight",
+    "originalName": "Byakugan Foresight"
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "jutsuId": "hiruko-sasori-(s):1",
+    "slot": 1,
+    "name": "Defensive Puppeteering",
+    "originalName": "Defensive Puppeteering"
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "jutsuId": "hiruko-sasori-(s):2",
+    "slot": 2,
+    "name": "Scorpion Tail Constriction",
+    "originalName": "Scorpion Tail Constriction"
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "jutsuId": "hiruko-sasori-(s):3",
+    "slot": 3,
+    "name": "Tail Block",
+    "originalName": "Tail Block"
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "jutsuId": "hiruko-sasori-(s):4",
+    "slot": 4,
+    "name": "Scorpion Tail Strike",
+    "originalName": "Scorpion Tail Strike"
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "characterName": "Hiruzen Sarutobi",
+    "jutsuId": "hiruzen-sarutobi:1",
+    "slot": 1,
+    "name": "Dragon Flame Bomb",
+    "originalName": "Dragon Flame Bomb"
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "characterName": "Hiruzen Sarutobi",
+    "jutsuId": "hiruzen-sarutobi:2",
+    "slot": 2,
+    "name": "Reaper Death Seal",
+    "originalName": "Reaper Death Seal"
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "characterName": "Hiruzen Sarutobi",
+    "jutsuId": "hiruzen-sarutobi:3",
+    "slot": 3,
+    "name": "Major Summoning: Enma",
+    "originalName": "Major Summoning: Enma"
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "characterName": "Hiruzen Sarutobi",
+    "jutsuId": "hiruzen-sarutobi:4",
+    "slot": 4,
+    "name": "Adamantine Prison",
+    "originalName": "Adamantine Prison"
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "jutsuId": "hoshigaki-kisame-body-double-(s):1",
+    "slot": 1,
+    "name": "Triple Water Prison",
+    "originalName": "Triple Water Prison"
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "jutsuId": "hoshigaki-kisame-body-double-(s):2",
+    "slot": 2,
+    "name": "5 Man Eating Sharks",
+    "originalName": "5 Man Eating Sharks"
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "jutsuId": "hoshigaki-kisame-body-double-(s):3",
+    "slot": 3,
+    "name": "Water Waterfall Wave",
+    "originalName": "Water Waterfall Wave"
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "jutsuId": "hoshigaki-kisame-body-double-(s):4",
+    "slot": 4,
+    "name": "Kisame Water Clone",
+    "originalName": "Kisame Water Clone"
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "characterName": "Human Path Pain",
+    "jutsuId": "human-path-pain-(s):1",
+    "slot": 1,
+    "name": "Mind Invasion",
+    "originalName": "Mind Invasion"
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "characterName": "Human Path Pain",
+    "jutsuId": "human-path-pain-(s):2",
+    "slot": 2,
+    "name": "Spirit Absorption",
+    "originalName": "Spirit Absorption"
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "characterName": "Human Path Pain",
+    "jutsuId": "human-path-pain-(s):3",
+    "slot": 3,
+    "name": "Soul Rip",
+    "originalName": "Soul Rip"
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "characterName": "Human Path Pain",
+    "jutsuId": "human-path-pain-(s):4",
+    "slot": 4,
+    "name": "Rinnegan Foresight",
+    "originalName": "Rinnegan Foresight"
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "jutsuId": "ibiki-morino:1",
+    "slot": 1,
+    "name": "Biding Time",
+    "originalName": "Biding Time"
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "jutsuId": "ibiki-morino:2",
+    "slot": 2,
+    "name": "Payback",
+    "originalName": "Payback"
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "jutsuId": "ibiki-morino:3",
+    "slot": 3,
+    "name": "Summoning: Iron Maiden",
+    "originalName": "Summoning: Iron Maiden"
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "jutsuId": "ibiki-morino:4",
+    "slot": 4,
+    "name": "Summoning: Torture Chamber",
+    "originalName": "Summoning: Torture Chamber"
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka:1",
+    "slot": 1,
+    "name": "Mind Destruction",
+    "originalName": "Mind Destruction"
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka:2",
+    "slot": 2,
+    "name": "Transferência Mental",
+    "originalName": "Mind Transfer"
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka:3",
+    "slot": 3,
+    "name": "Art of the Valentine",
+    "originalName": "Art of the Valentine"
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka:4",
+    "slot": 4,
+    "name": "Chakra Hair Trap",
+    "originalName": "Chakra Hair Trap"
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka-(s):1",
+    "slot": 1,
+    "name": "Mind Destruction",
+    "originalName": "Mind Destruction"
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka-(s):2",
+    "slot": 2,
+    "name": "Proxy Surveillance",
+    "originalName": "Proxy Surveillance"
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka-(s):3",
+    "slot": 3,
+    "name": "Mind Transfer Clone",
+    "originalName": "Mind Transfer Clone"
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "characterName": "Ino Yamanaka",
+    "jutsuId": "ino-yamanaka-(s):4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "characterName": "Inoichi Yamanaka",
+    "jutsuId": "inoichi-yamanaka:1",
+    "slot": 1,
+    "name": "Psycho Mind Transmission",
+    "originalName": "Psycho Mind Transmission"
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "characterName": "Inoichi Yamanaka",
+    "jutsuId": "inoichi-yamanaka:2",
+    "slot": 2,
+    "name": "Sensory Radar",
+    "originalName": "Sensory Radar"
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "characterName": "Inoichi Yamanaka",
+    "jutsuId": "inoichi-yamanaka:3",
+    "slot": 3,
+    "name": "Sensory Radar: Collate",
+    "originalName": "Sensory Radar: Collate"
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "characterName": "Inoichi Yamanaka",
+    "jutsuId": "inoichi-yamanaka:4",
+    "slot": 4,
+    "name": "Mental Invasion",
+    "originalName": "Mental Invasion"
+  },
+  {
+    "characterId": "iruka-umino",
+    "characterName": "Iruka Umino",
+    "jutsuId": "iruka-umino:1",
+    "slot": 1,
+    "name": "Shuriken Throw",
+    "originalName": "Shuriken Throw"
+  },
+  {
+    "characterId": "iruka-umino",
+    "characterName": "Iruka Umino",
+    "jutsuId": "iruka-umino:2",
+    "slot": 2,
+    "name": "Ally Shield",
+    "originalName": "Ally Shield"
+  },
+  {
+    "characterId": "iruka-umino",
+    "characterName": "Iruka Umino",
+    "jutsuId": "iruka-umino:3",
+    "slot": 3,
+    "name": "Capture and Arrest",
+    "originalName": "Capture and Arrest"
+  },
+  {
+    "characterId": "iruka-umino",
+    "characterName": "Iruka Umino",
+    "jutsuId": "iruka-umino:4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha:1",
+    "slot": 1,
+    "name": "Mangekyō Sharingan: Previsão",
+    "originalName": "Mangekyō Sharingan"
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha:2",
+    "slot": 2,
+    "name": "Mangekyō Sharingan: Pressão",
+    "originalName": "Mangekyō Sharingan"
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha:3",
+    "slot": 3,
+    "name": "Amaterasu",
+    "originalName": "Amaterasu"
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "jutsuId": "itachi-uchiha:4",
+    "slot": 4,
+    "name": "Tsukuyomi",
+    "originalName": "Tsukuyomi"
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "jutsuId": "itachi-uchiha-(r):1",
+    "slot": 1,
+    "name": "Phoenix Flower",
+    "originalName": "Phoenix Flower"
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "jutsuId": "itachi-uchiha-(r):2",
+    "slot": 2,
+    "name": "Izanami",
+    "originalName": "Izanami"
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "jutsuId": "itachi-uchiha-(r):3",
+    "slot": 3,
+    "name": "Susanoo",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "jutsuId": "itachi-uchiha-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "ittan-(s)",
+    "characterName": "Ittan",
+    "jutsuId": "ittan-(s):1",
+    "slot": 1,
+    "name": "Battlefield Trenches",
+    "originalName": "Battlefield Trenches"
+  },
+  {
+    "characterId": "ittan-(s)",
+    "characterName": "Ittan",
+    "jutsuId": "ittan-(s):2",
+    "slot": 2,
+    "name": "Mobile Core",
+    "originalName": "Mobile Core"
+  },
+  {
+    "characterId": "ittan-(s)",
+    "characterName": "Ittan",
+    "jutsuId": "ittan-(s):3",
+    "slot": 3,
+    "name": "Earth Dome",
+    "originalName": "Earth Dome"
+  },
+  {
+    "characterId": "ittan-(s)",
+    "characterName": "Ittan",
+    "jutsuId": "ittan-(s):4",
+    "slot": 4,
+    "name": "Trench Defense",
+    "originalName": "Trench Defense"
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "jutsuId": "izumo-and-kotetsu:1",
+    "slot": 1,
+    "name": "Mace Crush",
+    "originalName": "Mace Crush"
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "jutsuId": "izumo-and-kotetsu:2",
+    "slot": 2,
+    "name": "Syrup Trap",
+    "originalName": "Syrup Trap"
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "jutsuId": "izumo-and-kotetsu:3",
+    "slot": 3,
+    "name": "Devastate",
+    "originalName": "Devastate"
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "jutsuId": "izumo-and-kotetsu:4",
+    "slot": 4,
+    "name": "Annihilate",
+    "originalName": "Annihilate"
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "characterName": "Jinin Akebino",
+    "jutsuId": "jinin-akebino-(r):1",
+    "slot": 1,
+    "name": "Axe Chop",
+    "originalName": "Axe Chop"
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "characterName": "Jinin Akebino",
+    "jutsuId": "jinin-akebino-(r):2",
+    "slot": 2,
+    "name": "Hammer Bash",
+    "originalName": "Hammer Bash"
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "characterName": "Jinin Akebino",
+    "jutsuId": "jinin-akebino-(r):3",
+    "slot": 3,
+    "name": "Helm-Splitter",
+    "originalName": "Helm-Splitter"
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "characterName": "Jinin Akebino",
+    "jutsuId": "jinin-akebino-(r):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "characterName": "Jinpachi Munashi",
+    "jutsuId": "jinpachi-munashi-(r):1",
+    "slot": 1,
+    "name": "Splatter",
+    "originalName": "Splatter"
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "characterName": "Jinpachi Munashi",
+    "jutsuId": "jinpachi-munashi-(r):2",
+    "slot": 2,
+    "name": "Bomb Reload",
+    "originalName": "Bomb Reload"
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "characterName": "Jinpachi Munashi",
+    "jutsuId": "jinpachi-munashi-(r):3",
+    "slot": 3,
+    "name": "Scroll Unraveling",
+    "originalName": "Scroll Unraveling"
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "characterName": "Jinpachi Munashi",
+    "jutsuId": "jinpachi-munashi-(r):4",
+    "slot": 4,
+    "name": "Multiple Explosions of Death",
+    "originalName": "Multiple Explosions of Death"
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya-(s):1",
+    "slot": 1,
+    "name": "Giant Flame Bomb",
+    "originalName": "Giant Flame Bomb"
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya-(s):2",
+    "slot": 2,
+    "name": "Toad Oil Bomb",
+    "originalName": "Toad Oil Bomb"
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya-(s):3",
+    "slot": 3,
+    "name": "Toad Subjugation Shadow Manipulation",
+    "originalName": "Toad Subjugation Shadow Manipulation"
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "characterName": "Jiraiya",
+    "jutsuId": "jiraiya-(s):4",
+    "slot": 4,
+    "name": "Raging Lion's Mane",
+    "originalName": "Raging Lion's Mane"
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo:1",
+    "slot": 1,
+    "name": "Crushing Palm",
+    "originalName": "Crushing Palm"
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo:2",
+    "slot": 2,
+    "name": "Sphere of Graves",
+    "originalName": "Sphere of Graves"
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo:3",
+    "slot": 3,
+    "name": "Earth Dome Prison",
+    "originalName": "Earth Dome Prison"
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo:4",
+    "slot": 4,
+    "name": "Terra Shield",
+    "originalName": "Terra Shield"
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo-(r):1",
+    "slot": 1,
+    "name": "Rivalry",
+    "originalName": "Rivalry"
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo-(r):2",
+    "slot": 2,
+    "name": "Sphere of Graves",
+    "originalName": "Sphere of Graves"
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo-(r):3",
+    "slot": 3,
+    "name": "Earth Dome Prison",
+    "originalName": "Earth Dome Prison"
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "characterName": "Jirōbō",
+    "jutsuId": "jirobo-(r):4",
+    "slot": 4,
+    "name": "Summoning: Earth Prison Golem",
+    "originalName": "Summoning: Earth Prison Golem"
+  },
+  {
+    "characterId": "jugo-(s)",
+    "characterName": "Jūgo",
+    "jutsuId": "jugo-(s):1",
+    "slot": 1,
+    "name": "Piston Fist",
+    "originalName": "Piston Fist"
+  },
+  {
+    "characterId": "jugo-(s)",
+    "characterName": "Jūgo",
+    "jutsuId": "jugo-(s):2",
+    "slot": 2,
+    "name": "Sage Transformation",
+    "originalName": "Sage Transformation"
+  },
+  {
+    "characterId": "jugo-(s)",
+    "characterName": "Jūgo",
+    "jutsuId": "jugo-(s):3",
+    "slot": 3,
+    "name": "Cellular Regeneration",
+    "originalName": "Cellular Regeneration"
+  },
+  {
+    "characterId": "jugo-(s)",
+    "characterName": "Jūgo",
+    "jutsuId": "jugo-(s):4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi:1",
+    "slot": 1,
+    "name": "Chakra Scalpel",
+    "originalName": "Chakra Scalpel"
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi:2",
+    "slot": 2,
+    "name": "Pre-Healing Technique",
+    "originalName": "Pre-Healing Technique"
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi:3",
+    "slot": 3,
+    "name": "Temple of Nirvana",
+    "originalName": "Temple of Nirvana"
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi:4",
+    "slot": 4,
+    "name": "Dead Soul Technique",
+    "originalName": "Dead Soul Technique"
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi-(s):1",
+    "slot": 1,
+    "name": "Chakra Absorbing Snakes",
+    "originalName": "Chakra Absorbing Snakes"
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi-(s):2",
+    "slot": 2,
+    "name": "Striking Shadow Snakes",
+    "originalName": "Striking Shadow Snakes"
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi-(s):3",
+    "slot": 3,
+    "name": "Técnica de Cura",
+    "originalName": "Healing Technique"
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "jutsuId": "kabuto-yakushi-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake-(s):1",
+    "slot": 1,
+    "name": "Lightning Beast Fang",
+    "originalName": "Lightning Beast Fang"
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake-(s):2",
+    "slot": 2,
+    "name": "Lightning Blade Finisher",
+    "originalName": "Lightning Blade Finisher"
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake-(s):3",
+    "slot": 3,
+    "name": "Kamui",
+    "originalName": "Kamui"
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "characterName": "Kakashi Hatake",
+    "jutsuId": "kakashi-hatake-(s):4",
+    "slot": 4,
+    "name": "Team Tactics",
+    "originalName": "Team Tactics"
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "characterName": "Kakuzu",
+    "jutsuId": "kakuzu-(s):1",
+    "slot": 1,
+    "name": "Pressure Damage",
+    "originalName": "Pressure Damage"
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "characterName": "Kakuzu",
+    "jutsuId": "kakuzu-(s):2",
+    "slot": 2,
+    "name": "Searing Migraine",
+    "originalName": "Searing Migraine"
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "characterName": "Kakuzu",
+    "jutsuId": "kakuzu-(s):3",
+    "slot": 3,
+    "name": "False Darkness",
+    "originalName": "False Darkness"
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "characterName": "Kakuzu",
+    "jutsuId": "kakuzu-(s):4",
+    "slot": 4,
+    "name": "Blast Flames",
+    "originalName": "Blast Flames"
+  },
+  {
+    "characterId": "kankuro",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro:1",
+    "slot": 1,
+    "name": "Iron Maiden",
+    "originalName": "Iron Maiden"
+  },
+  {
+    "characterId": "kankuro",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro:2",
+    "slot": 2,
+    "name": "Poison Bomb",
+    "originalName": "Poison Bomb"
+  },
+  {
+    "characterId": "kankuro",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro:3",
+    "slot": 3,
+    "name": "Puppet Technique",
+    "originalName": "Puppet Technique"
+  },
+  {
+    "characterId": "kankuro",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro:4",
+    "slot": 4,
+    "name": "Técnica de Substituição",
+    "originalName": "Substitution Technique"
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro-(s):1",
+    "slot": 1,
+    "name": "Kuroari Trap",
+    "originalName": "Kuroari Trap"
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro-(s):2",
+    "slot": 2,
+    "name": "Karasu Knives",
+    "originalName": "Karasu Knives"
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro-(s):3",
+    "slot": 3,
+    "name": "Sanshōuo Shield",
+    "originalName": "Sanshōuo Shield"
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "characterName": "Kankurō",
+    "jutsuId": "kankuro-(s):4",
+    "slot": 4,
+    "name": "Salamander Puppet",
+    "originalName": "Salamander Puppet"
+  },
+  {
+    "characterId": "karin-(s)",
+    "characterName": "Karin",
+    "jutsuId": "karin-(s):1",
+    "slot": 1,
+    "name": "Mind's Eye",
+    "originalName": "Mind's Eye"
+  },
+  {
+    "characterId": "karin-(s)",
+    "characterName": "Karin",
+    "jutsuId": "karin-(s):2",
+    "slot": 2,
+    "name": "Adamantine Attacking Chains",
+    "originalName": "Adamantine Attacking Chains"
+  },
+  {
+    "characterId": "karin-(s)",
+    "characterName": "Karin",
+    "jutsuId": "karin-(s):3",
+    "slot": 3,
+    "name": "Heal Bite",
+    "originalName": "Heal Bite"
+  },
+  {
+    "characterId": "karin-(s)",
+    "characterName": "Karin",
+    "jutsuId": "karin-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "characterName": "Kazekage Gaara",
+    "jutsuId": "kazekage-gaara-(s):1",
+    "slot": 1,
+    "name": "Monstrous Sand Arm",
+    "originalName": "Monstrous Sand Arm"
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "characterName": "Kazekage Gaara",
+    "jutsuId": "kazekage-gaara-(s):2",
+    "slot": 2,
+    "name": "Sand Prison",
+    "originalName": "Sand Prison"
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "characterName": "Kazekage Gaara",
+    "jutsuId": "kazekage-gaara-(s):3",
+    "slot": 3,
+    "name": "Sand Summoning",
+    "originalName": "Sand Summoning"
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "characterName": "Kazekage Gaara",
+    "jutsuId": "kazekage-gaara-(s):4",
+    "slot": 4,
+    "name": "Levitating Sand Shield",
+    "originalName": "Levitating Sand Shield"
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka:1",
+    "slot": 1,
+    "name": "Wolf Fang Over Fang",
+    "originalName": "Wolf Fang Over Fang"
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka:2",
+    "slot": 2,
+    "name": "Two-Headed Wolf",
+    "originalName": "Two-Headed Wolf"
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka:3",
+    "slot": 3,
+    "name": "Dynamic Marking",
+    "originalName": "Dynamic Marking"
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka:4",
+    "slot": 4,
+    "name": "Bomba de Fumaça",
+    "originalName": "Smoke Bomb"
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka-(s):1",
+    "slot": 1,
+    "name": "Man-Beast Clone",
+    "originalName": "Man-Beast Clone"
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka-(s):2",
+    "slot": 2,
+    "name": "Three-Headed Wolf",
+    "originalName": "Three-Headed Wolf"
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka-(s):3",
+    "slot": 3,
+    "name": "Tail Chasing Rotating Fang",
+    "originalName": "Tail Chasing Rotating Fang"
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "characterName": "Kiba Inuzuka",
+    "jutsuId": "kiba-inuzuka-(s):4",
+    "slot": 4,
+    "name": "Rotating Fang",
+    "originalName": "Rotating Fang"
+  },
+  {
+    "characterId": "kidomaru",
+    "characterName": "Kidōmaru",
+    "jutsuId": "kidomaru:1",
+    "slot": 1,
+    "name": "Spider War Bow",
+    "originalName": "Spider War Bow"
+  },
+  {
+    "characterId": "kidomaru",
+    "characterName": "Kidōmaru",
+    "jutsuId": "kidomaru:2",
+    "slot": 2,
+    "name": "Summoning: Kyodaigumo",
+    "originalName": "Summoning: Kyodaigumo"
+  },
+  {
+    "characterId": "kidomaru",
+    "characterName": "Kidōmaru",
+    "jutsuId": "kidomaru:3",
+    "slot": 3,
+    "name": "Spiral Web",
+    "originalName": "Spiral Web"
+  },
+  {
+    "characterId": "kidomaru",
+    "characterName": "Kidōmaru",
+    "jutsuId": "kidomaru:4",
+    "slot": 4,
+    "name": "Spider Thread Armor",
+    "originalName": "Spider Thread Armor"
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "characterName": "Killer B",
+    "jutsuId": "killer-b-(s):1",
+    "slot": 1,
+    "name": "Acrobat",
+    "originalName": "Acrobat"
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "characterName": "Killer B",
+    "jutsuId": "killer-b-(s):2",
+    "slot": 2,
+    "name": "Lariat",
+    "originalName": "Lariat"
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "characterName": "Killer B",
+    "jutsuId": "killer-b-(s):3",
+    "slot": 3,
+    "name": "Octopus Hold",
+    "originalName": "Octopus Hold"
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "characterName": "Killer B",
+    "jutsuId": "killer-b-(s):4",
+    "slot": 4,
+    "name": "Octopus Leg Clone",
+    "originalName": "Octopus Leg Clone"
+  },
+  {
+    "characterId": "kimimaro",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro:1",
+    "slot": 1,
+    "name": "Camellia Dance",
+    "originalName": "Camellia Dance"
+  },
+  {
+    "characterId": "kimimaro",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro:2",
+    "slot": 2,
+    "name": "Clematis Dance",
+    "originalName": "Clematis Dance"
+  },
+  {
+    "characterId": "kimimaro",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro:3",
+    "slot": 3,
+    "name": "Bracken Dance",
+    "originalName": "Bracken Dance"
+  },
+  {
+    "characterId": "kimimaro",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro:4",
+    "slot": 4,
+    "name": "Larch Dance",
+    "originalName": "Larch Dance"
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro-(r):1",
+    "slot": 1,
+    "name": "Clematis Dance",
+    "originalName": "Clematis Dance"
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro-(r):2",
+    "slot": 2,
+    "name": "Macabre Bone Pulse",
+    "originalName": "Macabre Bone Pulse"
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro-(r):3",
+    "slot": 3,
+    "name": "Digital Shrapnel",
+    "originalName": "Digital Shrapnel"
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "characterName": "Kimimaro",
+    "jutsuId": "kimimaro-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "characterName": "Kin Tsuchi",
+    "jutsuId": "kin-tsuchi:1",
+    "slot": 1,
+    "name": "Bell Ring Illusion",
+    "originalName": "Bell Ring Illusion"
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "characterName": "Kin Tsuchi",
+    "jutsuId": "kin-tsuchi:2",
+    "slot": 2,
+    "name": "Shadow Senbon",
+    "originalName": "Shadow Senbon"
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "characterName": "Kin Tsuchi",
+    "jutsuId": "kin-tsuchi:3",
+    "slot": 3,
+    "name": "Unnerving Bells",
+    "originalName": "Unnerving Bells"
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "characterName": "Kin Tsuchi",
+    "jutsuId": "kin-tsuchi:4",
+    "slot": 4,
+    "name": "Foresight",
+    "originalName": "Foresight"
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "characterName": "Kinkaku",
+    "jutsuId": "kinkaku-(r):1",
+    "slot": 1,
+    "name": "Leaf Fan",
+    "originalName": "Leaf Fan"
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "characterName": "Kinkaku",
+    "jutsuId": "kinkaku-(r):2",
+    "slot": 2,
+    "name": "Gold Rope",
+    "originalName": "Gold Rope"
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "characterName": "Kinkaku",
+    "jutsuId": "kinkaku-(r):3",
+    "slot": 3,
+    "name": "Scroll of Fire",
+    "originalName": "Scroll of Fire"
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "characterName": "Kinkaku",
+    "jutsuId": "kinkaku-(r):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki:1",
+    "slot": 1,
+    "name": "Samehada Slash",
+    "originalName": "Samehada Slash"
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki:2",
+    "slot": 2,
+    "name": "Samehada Shred",
+    "originalName": "Samehada Shred"
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki:3",
+    "slot": 3,
+    "name": "Super Shark Bomb",
+    "originalName": "Super Shark Bomb"
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki:4",
+    "slot": 4,
+    "name": "Scale Shield",
+    "originalName": "Scale Shield"
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki-(s):1",
+    "slot": 1,
+    "name": "Thousand Hungry Sharks",
+    "originalName": "Thousand Hungry Sharks"
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki-(s):2",
+    "slot": 2,
+    "name": "Man-Eating Sharks",
+    "originalName": "Man-Eating Sharks"
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki-(s):3",
+    "slot": 3,
+    "name": "Exploding Water Shockwave",
+    "originalName": "Exploding Water Shockwave"
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "jutsuId": "kisame-hoshigaki-(s):4",
+    "slot": 4,
+    "name": "Shark Dance",
+    "originalName": "Shark Dance"
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "characterName": "Kitsuchi",
+    "jutsuId": "kitsuchi-(s):1",
+    "slot": 1,
+    "name": "Rock Fist",
+    "originalName": "Rock Fist"
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "characterName": "Kitsuchi",
+    "jutsuId": "kitsuchi-(s):2",
+    "slot": 2,
+    "name": "Erupt",
+    "originalName": "Erupt"
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "characterName": "Kitsuchi",
+    "jutsuId": "kitsuchi-(s):3",
+    "slot": 3,
+    "name": "Sandwiching Mountain",
+    "originalName": "Sandwiching Mountain"
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "characterName": "Kitsuchi",
+    "jutsuId": "kitsuchi-(s):4",
+    "slot": 4,
+    "name": "Rock Shelter",
+    "originalName": "Rock Shelter"
+  },
+  {
+    "characterId": "konan-(s)",
+    "characterName": "Konan",
+    "jutsuId": "konan-(s):1",
+    "slot": 1,
+    "name": "Paper Cut",
+    "originalName": "Paper Cut"
+  },
+  {
+    "characterId": "konan-(s)",
+    "characterName": "Konan",
+    "jutsuId": "konan-(s):2",
+    "slot": 2,
+    "name": "Dance of the Shikigami",
+    "originalName": "Dance of the Shikigami"
+  },
+  {
+    "characterId": "konan-(s)",
+    "characterName": "Konan",
+    "jutsuId": "konan-(s):3",
+    "slot": 3,
+    "name": "Paper Shower",
+    "originalName": "Paper Shower"
+  },
+  {
+    "characterId": "konan-(s)",
+    "characterName": "Konan",
+    "jutsuId": "konan-(s):4",
+    "slot": 4,
+    "name": "Paper Clone",
+    "originalName": "Paper Clone"
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "characterName": "Konan of the Rain",
+    "jutsuId": "konan-of-the-rain-(s):1",
+    "slot": 1,
+    "name": "Paper Chakram",
+    "originalName": "Paper Chakram"
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "characterName": "Konan of the Rain",
+    "jutsuId": "konan-of-the-rain-(s):2",
+    "slot": 2,
+    "name": "Sacred Paper Emissary",
+    "originalName": "Sacred Paper Emissary"
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "characterName": "Konan of the Rain",
+    "jutsuId": "konan-of-the-rain-(s):3",
+    "slot": 3,
+    "name": "Paper Bomb",
+    "originalName": "Paper Bomb"
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "characterName": "Konan of the Rain",
+    "jutsuId": "konan-of-the-rain-(s):4",
+    "slot": 4,
+    "name": "Paper Shuriken",
+    "originalName": "Paper Shuriken"
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi:1",
+    "slot": 1,
+    "name": "Refocus",
+    "originalName": "Refocus"
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi:2",
+    "slot": 2,
+    "name": "Unsexy Technique",
+    "originalName": "Unsexy Technique"
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi:3",
+    "slot": 3,
+    "name": "Throw a Fit",
+    "originalName": "Throw a Fit"
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi:4",
+    "slot": 4,
+    "name": "Throw a Shuriken",
+    "originalName": "Throw a Shuriken"
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi-(s):1",
+    "slot": 1,
+    "name": "Rasengan",
+    "originalName": "Rasengan"
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi-(s):2",
+    "slot": 2,
+    "name": "Agile Backflip",
+    "originalName": "Agile Backflip"
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi-(s):3",
+    "slot": 3,
+    "name": "Quick Recovery",
+    "originalName": "Quick Recovery"
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "characterName": "Konohamaru Sarutobi",
+    "jutsuId": "konohamaru-sarutobi-(s):4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "characterName": "Kurenai Yuhi",
+    "jutsuId": "kurenai-yuhi:1",
+    "slot": 1,
+    "name": "Demonic Illusion: Entrap",
+    "originalName": "Demonic Illusion: Entrap"
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "characterName": "Kurenai Yuhi",
+    "jutsuId": "kurenai-yuhi:2",
+    "slot": 2,
+    "name": "Illusory Tree Meld",
+    "originalName": "Illusory Tree Meld"
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "characterName": "Kurenai Yuhi",
+    "jutsuId": "kurenai-yuhi:3",
+    "slot": 3,
+    "name": "Demonic Illusion: Sylvan Fetters",
+    "originalName": "Demonic Illusion: Sylvan Fetters"
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "characterName": "Kurenai Yuhi",
+    "jutsuId": "kurenai-yuhi:4",
+    "slot": 4,
+    "name": "Sylvan Fetters Attack",
+    "originalName": "Sylvan Fetters Attack"
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "characterName": "Kurotsuchi",
+    "jutsuId": "kurotsuchi-(s):1",
+    "slot": 1,
+    "name": "Lava Quicklime",
+    "originalName": "Lava Quicklime"
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "characterName": "Kurotsuchi",
+    "jutsuId": "kurotsuchi-(s):2",
+    "slot": 2,
+    "name": "Water Trumpet",
+    "originalName": "Water Trumpet"
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "characterName": "Kurotsuchi",
+    "jutsuId": "kurotsuchi-(s):3",
+    "slot": 3,
+    "name": "Falling Earth Spears",
+    "originalName": "Falling Earth Spears"
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "characterName": "Kurotsuchi",
+    "jutsuId": "kurotsuchi-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "characterName": "Kushimaru Kuriarare",
+    "jutsuId": "kushimaru-kuriarare-(r):1",
+    "slot": 1,
+    "name": "Needle Stitching",
+    "originalName": "Needle Stitching"
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "characterName": "Kushimaru Kuriarare",
+    "jutsuId": "kushimaru-kuriarare-(r):2",
+    "slot": 2,
+    "name": "Eviscerate",
+    "originalName": "Eviscerate"
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "characterName": "Kushimaru Kuriarare",
+    "jutsuId": "kushimaru-kuriarare-(r):3",
+    "slot": 3,
+    "name": "Wire Crucifixion",
+    "originalName": "Wire Crucifixion"
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "characterName": "Kushimaru Kuriarare",
+    "jutsuId": "kushimaru-kuriarare-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "characterName": "Kushina Uzumaki",
+    "jutsuId": "kushina-uzumaki:1",
+    "slot": 1,
+    "name": "Double Tetragram Seal",
+    "originalName": "Double Tetragram Seal"
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "characterName": "Kushina Uzumaki",
+    "jutsuId": "kushina-uzumaki:2",
+    "slot": 2,
+    "name": "Life Link",
+    "originalName": "Life Link"
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "characterName": "Kushina Uzumaki",
+    "jutsuId": "kushina-uzumaki:3",
+    "slot": 3,
+    "name": "Life Transfer",
+    "originalName": "Life Transfer"
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "characterName": "Kushina Uzumaki",
+    "jutsuId": "kushina-uzumaki:4",
+    "slot": 4,
+    "name": "Adamantine Sealing Chains",
+    "originalName": "Adamantine Sealing Chains"
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "characterName": "Madara Uchiha",
+    "jutsuId": "madara-uchiha-(s):1",
+    "slot": 1,
+    "name": "Mangekyō Sharingan",
+    "originalName": "Mangekyō Sharingan"
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "characterName": "Madara Uchiha",
+    "jutsuId": "madara-uchiha-(s):2",
+    "slot": 2,
+    "name": "Eternal Mangekyō Sharingan",
+    "originalName": "Eternal Mangekyō Sharingan"
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "characterName": "Madara Uchiha",
+    "jutsuId": "madara-uchiha-(s):3",
+    "slot": 3,
+    "name": "Susanoo",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "characterName": "Madara Uchiha",
+    "jutsuId": "madara-uchiha-(s):4",
+    "slot": 4,
+    "name": "Armored Susanoo Assault",
+    "originalName": "Armored Susanoo Assault"
+  },
+  {
+    "characterId": "maki-(s)",
+    "characterName": "Maki",
+    "jutsuId": "maki-(s):1",
+    "slot": 1,
+    "name": "Binding Cloth",
+    "originalName": "Binding Cloth"
+  },
+  {
+    "characterId": "maki-(s)",
+    "characterName": "Maki",
+    "jutsuId": "maki-(s):2",
+    "slot": 2,
+    "name": "Humidified Cloth",
+    "originalName": "Humidified Cloth"
+  },
+  {
+    "characterId": "maki-(s)",
+    "characterName": "Maki",
+    "jutsuId": "maki-(s):3",
+    "slot": 3,
+    "name": "Cloth Paralysis",
+    "originalName": "Cloth Paralysis"
+  },
+  {
+    "characterId": "maki-(s)",
+    "characterName": "Maki",
+    "jutsuId": "maki-(s):4",
+    "slot": 4,
+    "name": "Cloth Shield",
+    "originalName": "Cloth Shield"
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "characterName": "Mangekyō Sasuke",
+    "jutsuId": "mangekyo-sasuke-(s):1",
+    "slot": 1,
+    "name": "Susanoo",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "characterName": "Mangekyō Sasuke",
+    "jutsuId": "mangekyo-sasuke-(s):2",
+    "slot": 2,
+    "name": "Chidori",
+    "originalName": "Chidori"
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "characterName": "Mangekyō Sasuke",
+    "jutsuId": "mangekyo-sasuke-(s):3",
+    "slot": 3,
+    "name": "Blazing Arrow",
+    "originalName": "Blazing Arrow"
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "characterName": "Mangekyō Sasuke",
+    "jutsuId": "mangekyo-sasuke-(s):4",
+    "slot": 4,
+    "name": "Amaterasu",
+    "originalName": "Amaterasu"
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "jutsuId": "masked-man:1",
+    "slot": 1,
+    "name": "Kusari Chains",
+    "originalName": "Kusari Chains"
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "jutsuId": "masked-man:2",
+    "slot": 2,
+    "name": "Kamui Banishment",
+    "originalName": "Kamui Banishment"
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "jutsuId": "masked-man:3",
+    "slot": 3,
+    "name": "Major Summoning: Kurama",
+    "originalName": "Major Summoning: Kurama"
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "jutsuId": "masked-man:4",
+    "slot": 4,
+    "name": "Kamui Phase",
+    "originalName": "Kamui Phase"
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "characterName": "Mei Terumi",
+    "jutsuId": "mei-terumi-(s):1",
+    "slot": 1,
+    "name": "Solid Fog",
+    "originalName": "Solid Fog"
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "characterName": "Mei Terumi",
+    "jutsuId": "mei-terumi-(s):2",
+    "slot": 2,
+    "name": "Water Bomb",
+    "originalName": "Water Bomb"
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "characterName": "Mei Terumi",
+    "jutsuId": "mei-terumi-(s):3",
+    "slot": 3,
+    "name": "Lava Monster",
+    "originalName": "Lava Monster"
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "characterName": "Mei Terumi",
+    "jutsuId": "mei-terumi-(s):4",
+    "slot": 4,
+    "name": "Flee",
+    "originalName": "Flee"
+  },
+  {
+    "characterId": "might-guy",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy:1",
+    "slot": 1,
+    "name": "Leaf Hurricane",
+    "originalName": "Leaf Hurricane"
+  },
+  {
+    "characterId": "might-guy",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy:2",
+    "slot": 2,
+    "name": "Severe Leaf Hurricane",
+    "originalName": "Severe Leaf Hurricane"
+  },
+  {
+    "characterId": "might-guy",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy:3",
+    "slot": 3,
+    "name": "Sixth Gate Opening",
+    "originalName": "Sixth Gate Opening"
+  },
+  {
+    "characterId": "might-guy",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy:4",
+    "slot": 4,
+    "name": "Counter Punch",
+    "originalName": "Counter Punch"
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy-(s):1",
+    "slot": 1,
+    "name": "Nunchaku",
+    "originalName": "Nunchaku"
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy-(s):2",
+    "slot": 2,
+    "name": "Fiery Kick",
+    "originalName": "Fiery Kick"
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy-(s):3",
+    "slot": 3,
+    "name": "Asakujaku",
+    "originalName": "Asakujaku"
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "characterName": "Might Guy",
+    "jutsuId": "might-guy-(s):4",
+    "slot": 4,
+    "name": "Hirudora",
+    "originalName": "Hirudora"
+  },
+  {
+    "characterId": "minato-namikaze",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze:1",
+    "slot": 1,
+    "name": "Flying Raijin",
+    "originalName": "Flying Raijin"
+  },
+  {
+    "characterId": "minato-namikaze",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze:2",
+    "slot": 2,
+    "name": "Técnica Sensorial",
+    "originalName": "Sensory Technique"
+  },
+  {
+    "characterId": "minato-namikaze",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze:3",
+    "slot": 3,
+    "name": "Space-Time Marking",
+    "originalName": "Space-Time Marking"
+  },
+  {
+    "characterId": "minato-namikaze",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze:4",
+    "slot": 4,
+    "name": "Flying Light",
+    "originalName": "Flying Light"
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze-(r):1",
+    "slot": 1,
+    "name": "Space-Time Marking",
+    "originalName": "Space-Time Marking"
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze-(r):2",
+    "slot": 2,
+    "name": "Reciprocal Round-Robin",
+    "originalName": "Reciprocal Round-Robin"
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze-(r):3",
+    "slot": 3,
+    "name": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "originalName": "Rasen-Flash Super-Circle Dance Howl (Stage III)"
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "jutsuId": "minato-namikaze-(r):4",
+    "slot": 4,
+    "name": "Chakra-Arm Raijin",
+    "originalName": "Chakra-Arm Raijin"
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "characterName": "Misumi Tsurugi",
+    "jutsuId": "misumi-tsurugi:1",
+    "slot": 1,
+    "name": "Flexible Twisting Joints",
+    "originalName": "Flexible Twisting Joints"
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "characterName": "Misumi Tsurugi",
+    "jutsuId": "misumi-tsurugi:2",
+    "slot": 2,
+    "name": "Soft Physique Modification",
+    "originalName": "Soft Physique Modification"
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "characterName": "Misumi Tsurugi",
+    "jutsuId": "misumi-tsurugi:3",
+    "slot": 3,
+    "name": "Tighten Joints",
+    "originalName": "Tighten Joints"
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "characterName": "Misumi Tsurugi",
+    "jutsuId": "misumi-tsurugi:4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "mizuki",
+    "characterName": "Mizuki",
+    "jutsuId": "mizuki:1",
+    "slot": 1,
+    "name": "Kunai Assault",
+    "originalName": "Kunai Assault"
+  },
+  {
+    "characterId": "mizuki",
+    "characterName": "Mizuki",
+    "jutsuId": "mizuki:2",
+    "slot": 2,
+    "name": "Execution Shuriken",
+    "originalName": "Execution Shuriken"
+  },
+  {
+    "characterId": "mizuki",
+    "characterName": "Mizuki",
+    "jutsuId": "mizuki:3",
+    "slot": 3,
+    "name": "Genjutsu Ambush Tactics",
+    "originalName": "Genjutsu Ambush Tactics"
+  },
+  {
+    "characterId": "mizuki",
+    "characterName": "Mizuki",
+    "jutsuId": "mizuki:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "mu-(r)",
+    "characterName": "Mū",
+    "jutsuId": "mu-(r):1",
+    "slot": 1,
+    "name": "Particle Beam",
+    "originalName": "Particle Beam"
+  },
+  {
+    "characterId": "mu-(r)",
+    "characterName": "Mū",
+    "jutsuId": "mu-(r):2",
+    "slot": 2,
+    "name": "Fragmentation",
+    "originalName": "Fragmentation"
+  },
+  {
+    "characterId": "mu-(r)",
+    "characterName": "Mū",
+    "jutsuId": "mu-(r):3",
+    "slot": 3,
+    "name": "Atomic Dismantling",
+    "originalName": "Atomic Dismantling"
+  },
+  {
+    "characterId": "mu-(r)",
+    "characterName": "Mū",
+    "jutsuId": "mu-(r):4",
+    "slot": 4,
+    "name": "Dustless Bewildering Cover",
+    "originalName": "Dustless Bewildering Cover"
+  },
+  {
+    "characterId": "nagato-(r)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(r):1",
+    "slot": 1,
+    "name": "Deva Path",
+    "originalName": "Deva Path"
+  },
+  {
+    "characterId": "nagato-(r)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(r):2",
+    "slot": 2,
+    "name": "Human Path",
+    "originalName": "Human Path"
+  },
+  {
+    "characterId": "nagato-(r)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(r):3",
+    "slot": 3,
+    "name": "Naraka Path",
+    "originalName": "Naraka Path"
+  },
+  {
+    "characterId": "nagato-(r)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(r):4",
+    "slot": 4,
+    "name": "Preta Path",
+    "originalName": "Preta Path"
+  },
+  {
+    "characterId": "nagato-(s)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(s):1",
+    "slot": 1,
+    "name": "Summoning: Gedo Statue",
+    "originalName": "Summoning: Gedo Statue"
+  },
+  {
+    "characterId": "nagato-(s)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(s):2",
+    "slot": 2,
+    "name": "Control",
+    "originalName": "Control"
+  },
+  {
+    "characterId": "nagato-(s)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(s):3",
+    "slot": 3,
+    "name": "Phantom Dragon",
+    "originalName": "Phantom Dragon"
+  },
+  {
+    "characterId": "nagato-(s)",
+    "characterName": "Nagato",
+    "jutsuId": "nagato-(s):4",
+    "slot": 4,
+    "name": "Rinne Rebirth",
+    "originalName": "Rinne Rebirth"
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "characterName": "Naraka Path Pain",
+    "jutsuId": "naraka-path-pain-(s):1",
+    "slot": 1,
+    "name": "Summoning: King of Hell",
+    "originalName": "Summoning: King of Hell"
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "characterName": "Naraka Path Pain",
+    "jutsuId": "naraka-path-pain-(s):2",
+    "slot": 2,
+    "name": "Energy Transfer",
+    "originalName": "Energy Transfer"
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "characterName": "Naraka Path Pain",
+    "jutsuId": "naraka-path-pain-(s):3",
+    "slot": 3,
+    "name": "Choke Hold",
+    "originalName": "Choke Hold"
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "characterName": "Naraka Path Pain",
+    "jutsuId": "naraka-path-pain-(s):4",
+    "slot": 4,
+    "name": "Judgment",
+    "originalName": "Judgment"
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki-(s):1",
+    "slot": 1,
+    "name": "Giant Rasengan",
+    "originalName": "Giant Rasengan"
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki-(s):2",
+    "slot": 2,
+    "name": "Rasen Shuriken",
+    "originalName": "Rasen Shuriken"
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki-(s):3",
+    "slot": 3,
+    "name": "Multi Shadow Clone",
+    "originalName": "Multi Shadow Clone"
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "characterName": "Naruto Uzumaki",
+    "jutsuId": "naruto-uzumaki-(s):4",
+    "slot": 4,
+    "name": "Chakra Boost",
+    "originalName": "Chakra Boost"
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga-(s):1",
+    "slot": 1,
+    "name": "Eight Trigrams Air Palm",
+    "originalName": "Eight Trigrams Air Palm"
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga-(s):2",
+    "slot": 2,
+    "name": "Eight Trigrams Hazan Strike",
+    "originalName": "Eight Trigrams Hazan Strike"
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga-(s):3",
+    "slot": 3,
+    "name": "Eight Trigrams Sixty-Four Palms",
+    "originalName": "Eight Trigrams Sixty-Four Palms"
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "jutsuId": "neji-hyuga-(s):4",
+    "slot": 4,
+    "name": "Pressure Point Strike",
+    "originalName": "Pressure Point Strike"
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "characterName": "Nine-Tailed Naruto",
+    "jutsuId": "nine-tailed-naruto-(s):1",
+    "slot": 1,
+    "name": "Four-Tailed Transformation",
+    "originalName": "Four-Tailed Transformation"
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "characterName": "Nine-Tailed Naruto",
+    "jutsuId": "nine-tailed-naruto-(s):2",
+    "slot": 2,
+    "name": "Six-Tailed Transformation",
+    "originalName": "Six-Tailed Transformation"
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "characterName": "Nine-Tailed Naruto",
+    "jutsuId": "nine-tailed-naruto-(s):3",
+    "slot": 3,
+    "name": "Nine-Tailed Transformation",
+    "originalName": "Nine-Tailed Transformation"
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "characterName": "Nine-Tailed Naruto",
+    "jutsuId": "nine-tailed-naruto-(s):4",
+    "slot": 4,
+    "name": "Raging Flames",
+    "originalName": "Raging Flames"
+  },
+  {
+    "characterId": "obito-uchiha",
+    "characterName": "Obito Uchiha",
+    "jutsuId": "obito-uchiha:1",
+    "slot": 1,
+    "name": "Piercing Stab",
+    "originalName": "Piercing Stab"
+  },
+  {
+    "characterId": "obito-uchiha",
+    "characterName": "Obito Uchiha",
+    "jutsuId": "obito-uchiha:2",
+    "slot": 2,
+    "name": "Grand Fireball",
+    "originalName": "Grand Fireball"
+  },
+  {
+    "characterId": "obito-uchiha",
+    "characterName": "Obito Uchiha",
+    "jutsuId": "obito-uchiha:3",
+    "slot": 3,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "obito-uchiha",
+    "characterName": "Obito Uchiha",
+    "jutsuId": "obito-uchiha:4",
+    "slot": 4,
+    "name": "Flee",
+    "originalName": "Flee"
+  },
+  {
+    "characterId": "oboro",
+    "characterName": "Oboro",
+    "jutsuId": "oboro:1",
+    "slot": 1,
+    "name": "Exploding Kunai",
+    "originalName": "Exploding Kunai"
+  },
+  {
+    "characterId": "oboro",
+    "characterName": "Oboro",
+    "jutsuId": "oboro:2",
+    "slot": 2,
+    "name": "Underground Move",
+    "originalName": "Underground Move"
+  },
+  {
+    "characterId": "oboro",
+    "characterName": "Oboro",
+    "jutsuId": "oboro:3",
+    "slot": 3,
+    "name": "Fog Clone",
+    "originalName": "Fog Clone"
+  },
+  {
+    "characterId": "oboro",
+    "characterName": "Oboro",
+    "jutsuId": "oboro:4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "omoi-(s)",
+    "characterName": "Omoi",
+    "jutsuId": "omoi-(s):1",
+    "slot": 1,
+    "name": "Back Slice",
+    "originalName": "Back Slice"
+  },
+  {
+    "characterId": "omoi-(s)",
+    "characterName": "Omoi",
+    "jutsuId": "omoi-(s):2",
+    "slot": 2,
+    "name": "Crescent Moon Slice",
+    "originalName": "Crescent Moon Slice"
+  },
+  {
+    "characterId": "omoi-(s)",
+    "characterName": "Omoi",
+    "jutsuId": "omoi-(s):3",
+    "slot": 3,
+    "name": "Thunderbolt",
+    "originalName": "Thunderbolt"
+  },
+  {
+    "characterId": "omoi-(s)",
+    "characterName": "Omoi",
+    "jutsuId": "omoi-(s):4",
+    "slot": 4,
+    "name": "Paper Bomb",
+    "originalName": "Paper Bomb"
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "characterName": "One-Tailed Naruto",
+    "jutsuId": "one-tailed-naruto:1",
+    "slot": 1,
+    "name": "Tailed Beast Rasengan",
+    "originalName": "Tailed Beast Rasengan"
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "characterName": "One-Tailed Naruto",
+    "jutsuId": "one-tailed-naruto:2",
+    "slot": 2,
+    "name": "Tailed Beast Chakra Arms",
+    "originalName": "Tailed Beast Chakra Arms"
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "characterName": "One-Tailed Naruto",
+    "jutsuId": "one-tailed-naruto:3",
+    "slot": 3,
+    "name": "Inner Chakra Mode",
+    "originalName": "Inner Chakra Mode"
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "characterName": "One-Tailed Naruto",
+    "jutsuId": "one-tailed-naruto:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "jutsuId": "onoki-(s):1",
+    "slot": 1,
+    "name": "Earth Golem",
+    "originalName": "Earth Golem"
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "jutsuId": "onoki-(s):2",
+    "slot": 2,
+    "name": "Lightened Boulder",
+    "originalName": "Lightened Boulder"
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "jutsuId": "onoki-(s):3",
+    "slot": 3,
+    "name": "Atomic Dismantling",
+    "originalName": "Atomic Dismantling"
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "jutsuId": "onoki-(s):4",
+    "slot": 4,
+    "name": "Flight",
+    "originalName": "Flight"
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru-(s):1",
+    "slot": 1,
+    "name": "Body Replacement Substitution",
+    "originalName": "Body Replacement Substitution"
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru-(s):2",
+    "slot": 2,
+    "name": "Ten Thousand Snakes Wave",
+    "originalName": "Ten Thousand Snakes Wave"
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru-(s):3",
+    "slot": 3,
+    "name": "Kusanagi",
+    "originalName": "Kusanagi"
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "characterName": "Orochimaru",
+    "jutsuId": "orochimaru-(s):4",
+    "slot": 4,
+    "name": "Summoning: Triple Rashōmon",
+    "originalName": "Summoning: Triple Rashōmon"
+  },
+  {
+    "characterId": "pakura-(r)",
+    "characterName": "Pakura",
+    "jutsuId": "pakura-(r):1",
+    "slot": 1,
+    "name": "Scorch Style",
+    "originalName": "Scorch Style"
+  },
+  {
+    "characterId": "pakura-(r)",
+    "characterName": "Pakura",
+    "jutsuId": "pakura-(r):2",
+    "slot": 2,
+    "name": "Searing Combat",
+    "originalName": "Searing Combat"
+  },
+  {
+    "characterId": "pakura-(r)",
+    "characterName": "Pakura",
+    "jutsuId": "pakura-(r):3",
+    "slot": 3,
+    "name": "Super Steam Kill",
+    "originalName": "Super Steam Kill"
+  },
+  {
+    "characterId": "pakura-(r)",
+    "characterName": "Pakura",
+    "jutsuId": "pakura-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "characterName": "Preta Path Pain",
+    "jutsuId": "preta-path-pain-(s):1",
+    "slot": 1,
+    "name": "Chakra Shield",
+    "originalName": "Chakra Shield"
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "characterName": "Preta Path Pain",
+    "jutsuId": "preta-path-pain-(s):2",
+    "slot": 2,
+    "name": "Preta Drain",
+    "originalName": "Preta Drain"
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "characterName": "Preta Path Pain",
+    "jutsuId": "preta-path-pain-(s):3",
+    "slot": 3,
+    "name": "Ninjutsu Absorption",
+    "originalName": "Ninjutsu Absorption"
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "characterName": "Preta Path Pain",
+    "jutsuId": "preta-path-pain-(s):4",
+    "slot": 4,
+    "name": "Rinnegan Foresight",
+    "originalName": "Rinnegan Foresight"
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "characterName": "Puppet Master Kankurō",
+    "jutsuId": "puppet-master-kankuro-(s):1",
+    "slot": 1,
+    "name": "Sasori Surrogate",
+    "originalName": "Sasori Surrogate"
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "characterName": "Puppet Master Kankurō",
+    "jutsuId": "puppet-master-kankuro-(s):2",
+    "slot": 2,
+    "name": "Hidden Coil Strike",
+    "originalName": "Hidden Coil Strike"
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "characterName": "Puppet Master Kankurō",
+    "jutsuId": "puppet-master-kankuro-(s):3",
+    "slot": 3,
+    "name": "Kuroari Trap",
+    "originalName": "Kuroari Trap"
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "characterName": "Puppet Master Kankurō",
+    "jutsuId": "puppet-master-kankuro-(s):4",
+    "slot": 4,
+    "name": "Iron Maiden",
+    "originalName": "Iron Maiden"
+  },
+  {
+    "characterId": "rasa-(r)",
+    "characterName": "Rasa",
+    "jutsuId": "rasa-(r):1",
+    "slot": 1,
+    "name": "Magnet Technique",
+    "originalName": "Magnet Technique"
+  },
+  {
+    "characterId": "rasa-(r)",
+    "characterName": "Rasa",
+    "jutsuId": "rasa-(r):2",
+    "slot": 2,
+    "name": "Gold Dust Waterfall",
+    "originalName": "Gold Dust Waterfall"
+  },
+  {
+    "characterId": "rasa-(r)",
+    "characterName": "Rasa",
+    "jutsuId": "rasa-(r):3",
+    "slot": 3,
+    "name": "24-Karat Barricade",
+    "originalName": "24-Karat Barricade"
+  },
+  {
+    "characterId": "rasa-(r)",
+    "characterName": "Rasa",
+    "jutsuId": "rasa-(r):4",
+    "slot": 4,
+    "name": "Gold Dust Shield",
+    "originalName": "Gold Dust Shield"
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "jutsuId": "reanimator-kabuto-(s):1",
+    "slot": 1,
+    "name": "Reanimated Army",
+    "originalName": "Reanimated Army"
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "jutsuId": "reanimator-kabuto-(s):2",
+    "slot": 2,
+    "name": "Binding Talisman",
+    "originalName": "Binding Talisman"
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "jutsuId": "reanimator-kabuto-(s):3",
+    "slot": 3,
+    "name": "Summoning: Reanimation",
+    "originalName": "Binding Talisman"
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "jutsuId": "reanimator-kabuto-(s):4",
+    "slot": 4,
+    "name": "Reanimation Scroll",
+    "originalName": "Reanimation Scroll"
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "characterName": "Regimental Commander Gaara",
+    "jutsuId": "regimental-commander-gaara-(s):1",
+    "slot": 1,
+    "name": "Sand Grasp",
+    "originalName": "Sand Grasp"
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "characterName": "Regimental Commander Gaara",
+    "jutsuId": "regimental-commander-gaara-(s):2",
+    "slot": 2,
+    "name": "Mother's Embrace",
+    "originalName": "Mother's Embrace"
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "characterName": "Regimental Commander Gaara",
+    "jutsuId": "regimental-commander-gaara-(s):3",
+    "slot": 3,
+    "name": "Sand Mausoleum Seal",
+    "originalName": "Sand Mausoleum Seal"
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "characterName": "Regimental Commander Gaara",
+    "jutsuId": "regimental-commander-gaara-(s):4",
+    "slot": 4,
+    "name": "Escudo de Areia",
+    "originalName": "Sand Shield"
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "characterName": "Rehabilitated Gaara",
+    "jutsuId": "rehabilitated-gaara:1",
+    "slot": 1,
+    "name": "Sand Shower",
+    "originalName": "Sand Shower"
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "characterName": "Rehabilitated Gaara",
+    "jutsuId": "rehabilitated-gaara:2",
+    "slot": 2,
+    "name": "Sand Burial Prison",
+    "originalName": "Sand Burial Prison"
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "characterName": "Rehabilitated Gaara",
+    "jutsuId": "rehabilitated-gaara:3",
+    "slot": 3,
+    "name": "Giant Sand Burial",
+    "originalName": "Giant Sand Burial"
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "characterName": "Rehabilitated Gaara",
+    "jutsuId": "rehabilitated-gaara:4",
+    "slot": 4,
+    "name": "Sand Tsunami",
+    "originalName": "Sand Tsunami"
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "jutsuId": "rin-nohara:1",
+    "slot": 1,
+    "name": "Pit Trap",
+    "originalName": "Pit Trap"
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "jutsuId": "rin-nohara:2",
+    "slot": 2,
+    "name": "Técnica de Cura",
+    "originalName": "Healing Technique"
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "jutsuId": "rin-nohara:3",
+    "slot": 3,
+    "name": "Medical Kit",
+    "originalName": "Medical Kit"
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "jutsuId": "rin-nohara:4",
+    "slot": 4,
+    "name": "Flee",
+    "originalName": "Flee"
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee-(s):1",
+    "slot": 1,
+    "name": "Leaf Rising Wind",
+    "originalName": "Leaf Rising Wind"
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee-(s):2",
+    "slot": 2,
+    "name": "Leaf Hurricane",
+    "originalName": "Leaf Hurricane"
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee-(s):3",
+    "slot": 3,
+    "name": "Full Power of Youth",
+    "originalName": "Full Power of Youth"
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "characterName": "Rock Lee",
+    "jutsuId": "rock-lee-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "characterName": "Sage Mode Jiraiya",
+    "jutsuId": "sage-mode-jiraiya-(s):1",
+    "slot": 1,
+    "name": "Bath of Burning Oil",
+    "originalName": "Bath of Burning Oil"
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "characterName": "Sage Mode Jiraiya",
+    "jutsuId": "sage-mode-jiraiya-(s):2",
+    "slot": 2,
+    "name": "Needle Senbon",
+    "originalName": "Needle Senbon"
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "characterName": "Sage Mode Jiraiya",
+    "jutsuId": "sage-mode-jiraiya-(s):3",
+    "slot": 3,
+    "name": "Massive Rasengan",
+    "originalName": "Massive Rasengan"
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "characterName": "Sage Mode Jiraiya",
+    "jutsuId": "sage-mode-jiraiya-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "characterName": "Sage Mode Kabuto",
+    "jutsuId": "sage-mode-kabuto-(s):1",
+    "slot": 1,
+    "name": "Sage Transformation",
+    "originalName": "Sage Transformation"
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "characterName": "Sage Mode Kabuto",
+    "jutsuId": "sage-mode-kabuto-(s):2",
+    "slot": 2,
+    "name": "DNA Transmission Shadow",
+    "originalName": "DNA Transmission Shadow"
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "characterName": "Sage Mode Kabuto",
+    "jutsuId": "sage-mode-kabuto-(s):3",
+    "slot": 3,
+    "name": "Inorganic Animation",
+    "originalName": "Inorganic Animation"
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "characterName": "Sage Mode Kabuto",
+    "jutsuId": "sage-mode-kabuto-(s):4",
+    "slot": 4,
+    "name": "Transfusion",
+    "originalName": "Transfusion"
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "characterName": "Sage Mode Naruto",
+    "jutsuId": "sage-mode-naruto-(s):1",
+    "slot": 1,
+    "name": "Frog Kumite",
+    "originalName": "Frog Kumite"
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "characterName": "Sage Mode Naruto",
+    "jutsuId": "sage-mode-naruto-(s):2",
+    "slot": 2,
+    "name": "Rasen Shuriken",
+    "originalName": "Rasen Shuriken"
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "characterName": "Sage Mode Naruto",
+    "jutsuId": "sage-mode-naruto-(s):3",
+    "slot": 3,
+    "name": "Sage Mode",
+    "originalName": "Sage Mode"
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "characterName": "Sage Mode Naruto",
+    "jutsuId": "sage-mode-naruto-(s):4",
+    "slot": 4,
+    "name": "Natural Energy Assault",
+    "originalName": "Natural Energy Assault"
+  },
+  {
+    "characterId": "sai-(s)",
+    "characterName": "Sai",
+    "jutsuId": "sai-(s):1",
+    "slot": 1,
+    "name": "Super Beast Scroll: Lions",
+    "originalName": "Super Beast Scroll: Lions"
+  },
+  {
+    "characterId": "sai-(s)",
+    "characterName": "Sai",
+    "jutsuId": "sai-(s):2",
+    "slot": 2,
+    "name": "Super Beast Scroll: Snake",
+    "originalName": "Super Beast Scroll: Snake"
+  },
+  {
+    "characterId": "sai-(s)",
+    "characterName": "Sai",
+    "jutsuId": "sai-(s):3",
+    "slot": 3,
+    "name": "Super Beast Scroll: Bird",
+    "originalName": "Super Beast Scroll: Bird"
+  },
+  {
+    "characterId": "sai-(s)",
+    "characterName": "Sai",
+    "jutsuId": "sai-(s):4",
+    "slot": 4,
+    "name": "Ink Mist",
+    "originalName": "Ink Mist"
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "characterName": "Sakon and Ukon",
+    "jutsuId": "sakon-and-ukon:1",
+    "slot": 1,
+    "name": "Demon Twin Attack",
+    "originalName": "Demon Twin Attack"
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "characterName": "Sakon and Ukon",
+    "jutsuId": "sakon-and-ukon:2",
+    "slot": 2,
+    "name": "Demon Parasite",
+    "originalName": "Demon Parasite"
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "characterName": "Sakon and Ukon",
+    "jutsuId": "sakon-and-ukon:3",
+    "slot": 3,
+    "name": "Regeneration",
+    "originalName": "Regeneration"
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "characterName": "Sakon and Ukon",
+    "jutsuId": "sakon-and-ukon:4",
+    "slot": 4,
+    "name": "Summoning: Rashōmon",
+    "originalName": "Summoning: Rashōmon"
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno-(s):1",
+    "slot": 1,
+    "name": "Cherry Blossom Clash",
+    "originalName": "Cherry Blossom Clash"
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno-(s):2",
+    "slot": 2,
+    "name": "Técnica de Cura",
+    "originalName": "Healing Technique"
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno-(s):3",
+    "slot": 3,
+    "name": "Strength of One Hundred Seal",
+    "originalName": "Strength of One Hundred Seal"
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "characterName": "Sakura Haruno",
+    "jutsuId": "sakura-haruno-(s):4",
+    "slot": 4,
+    "name": "Seal Release",
+    "originalName": "Seal Release"
+  },
+  {
+    "characterId": "sasori-(r)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(r):1",
+    "slot": 1,
+    "name": "Chakra Threads",
+    "originalName": "Chakra Threads"
+  },
+  {
+    "characterId": "sasori-(r)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(r):2",
+    "slot": 2,
+    "name": "Ally Control",
+    "originalName": "Ally Control"
+  },
+  {
+    "characterId": "sasori-(r)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(r):3",
+    "slot": 3,
+    "name": "Puppet Manipulation",
+    "originalName": "Puppet Manipulation"
+  },
+  {
+    "characterId": "sasori-(r)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "sasori-(s)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(s):1",
+    "slot": 1,
+    "name": "Kazekage Puppet Summoning",
+    "originalName": "Kazekage Puppet Summoning"
+  },
+  {
+    "characterId": "sasori-(s)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(s):2",
+    "slot": 2,
+    "name": "Iron Sand: World Order",
+    "originalName": "Iron Sand: World Order"
+  },
+  {
+    "characterId": "sasori-(s)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(s):3",
+    "slot": 3,
+    "name": "Poison Blade Assault",
+    "originalName": "Poison Blade Assault"
+  },
+  {
+    "characterId": "sasori-(s)",
+    "characterName": "Sasori",
+    "jutsuId": "sasori-(s):4",
+    "slot": 4,
+    "name": "Thousand Arms",
+    "originalName": "Thousand Arms"
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha-(s):1",
+    "slot": 1,
+    "name": "Chidori Stream",
+    "originalName": "Chidori Stream"
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha-(s):2",
+    "slot": 2,
+    "name": "Kusanagi",
+    "originalName": "Kusanagi"
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha-(s):3",
+    "slot": 3,
+    "name": "Dragon Flame",
+    "originalName": "Dragon Flame"
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "characterName": "Sasuke Uchiha",
+    "jutsuId": "sasuke-uchiha-(s):4",
+    "slot": 4,
+    "name": "Kirin",
+    "originalName": "Kirin"
+  },
+  {
+    "characterId": "shigure",
+    "characterName": "Shigure",
+    "jutsuId": "shigure:1",
+    "slot": 1,
+    "name": "Umbrella Toss",
+    "originalName": "Umbrella Toss"
+  },
+  {
+    "characterId": "shigure",
+    "characterName": "Shigure",
+    "jutsuId": "shigure:2",
+    "slot": 2,
+    "name": "Umbrella Gathering",
+    "originalName": "Umbrella Gathering"
+  },
+  {
+    "characterId": "shigure",
+    "characterName": "Shigure",
+    "jutsuId": "shigure:3",
+    "slot": 3,
+    "name": "Senbon Shower",
+    "originalName": "Senbon Shower"
+  },
+  {
+    "characterId": "shigure",
+    "characterName": "Shigure",
+    "jutsuId": "shigure:4",
+    "slot": 4,
+    "name": "Senbon Barrage",
+    "originalName": "Senbon Barrage"
+  },
+  {
+    "characterId": "shikaku-nara",
+    "characterName": "Shikaku Nara",
+    "jutsuId": "shikaku-nara:1",
+    "slot": 1,
+    "name": "Shadow Possession",
+    "originalName": "Shadow Possession"
+  },
+  {
+    "characterId": "shikaku-nara",
+    "characterName": "Shikaku Nara",
+    "jutsuId": "shikaku-nara:2",
+    "slot": 2,
+    "name": "Shadow Dispersion",
+    "originalName": "Shadow Dispersion"
+  },
+  {
+    "characterId": "shikaku-nara",
+    "characterName": "Shikaku Nara",
+    "jutsuId": "shikaku-nara:3",
+    "slot": 3,
+    "name": "Black Spider Lily",
+    "originalName": "Black Spider Lily"
+  },
+  {
+    "characterId": "shikaku-nara",
+    "characterName": "Shikaku Nara",
+    "jutsuId": "shikaku-nara:4",
+    "slot": 4,
+    "name": "Problem Analysis",
+    "originalName": "Problem Analysis"
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara-(s):1",
+    "slot": 1,
+    "name": "Shadow Sewing",
+    "originalName": "Shadow Sewing"
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara-(s):2",
+    "slot": 2,
+    "name": "Shadow Sewing: Hold",
+    "originalName": "Shadow Sewing: Hold"
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara-(s):3",
+    "slot": 3,
+    "name": "Long-Range Tactics",
+    "originalName": "Long-Range Tactics"
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "characterName": "Shikamaru Nara",
+    "jutsuId": "shikamaru-nara-(s):4",
+    "slot": 4,
+    "name": "Final Explosion",
+    "originalName": "Final Explosion"
+  },
+  {
+    "characterId": "shino-aburame",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame:1",
+    "slot": 1,
+    "name": "Chakra Leech",
+    "originalName": "Chakra Leech"
+  },
+  {
+    "characterId": "shino-aburame",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame:2",
+    "slot": 2,
+    "name": "Parasite",
+    "originalName": "Parasite"
+  },
+  {
+    "characterId": "shino-aburame",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame:3",
+    "slot": 3,
+    "name": "Wall of Insects",
+    "originalName": "Wall of Insects"
+  },
+  {
+    "characterId": "shino-aburame",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame:4",
+    "slot": 4,
+    "name": "Hide",
+    "originalName": "Hide"
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame-(s):1",
+    "slot": 1,
+    "name": "Insect Swarm",
+    "originalName": "Insect Swarm"
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame-(s):2",
+    "slot": 2,
+    "name": "Chakra Leech",
+    "originalName": "Chakra Leech"
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame-(s):3",
+    "slot": 3,
+    "name": "Insect Barricade",
+    "originalName": "Insect Barricade"
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "characterName": "Shino Aburame",
+    "jutsuId": "shino-aburame-(s):4",
+    "slot": 4,
+    "name": "Gigantic Beetle Infestation",
+    "originalName": "Gigantic Beetle Infestation"
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "characterName": "Shisui Uchiha",
+    "jutsuId": "shisui-uchiha-(s):1",
+    "slot": 1,
+    "name": "Susanoo",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "characterName": "Shisui Uchiha",
+    "jutsuId": "shisui-uchiha-(s):2",
+    "slot": 2,
+    "name": "Tsukumo",
+    "originalName": "Tsukumo"
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "characterName": "Shisui Uchiha",
+    "jutsuId": "shisui-uchiha-(s):3",
+    "slot": 3,
+    "name": "Teleportation Technique",
+    "originalName": "Teleportation Technique"
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "characterName": "Shisui Uchiha",
+    "jutsuId": "shisui-uchiha-(s):4",
+    "slot": 4,
+    "name": "Kotoamatsukami",
+    "originalName": "Kotoamatsukami"
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "jutsuId": "shizune:1",
+    "slot": 1,
+    "name": "Poison Needle Volley",
+    "originalName": "Poison Needle Volley"
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "jutsuId": "shizune:2",
+    "slot": 2,
+    "name": "Poison Fog",
+    "originalName": "Poison Fog"
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "jutsuId": "shizune:3",
+    "slot": 3,
+    "name": "Regenerative Healing Technique",
+    "originalName": "Regenerative Healing Technique"
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "jutsuId": "shizune:4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "characterName": "Shukaku Gaara",
+    "jutsuId": "shukaku-gaara:1",
+    "slot": 1,
+    "name": "Desert Hand",
+    "originalName": "Desert Hand"
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "characterName": "Shukaku Gaara",
+    "jutsuId": "shukaku-gaara:2",
+    "slot": 2,
+    "name": "Monstrous Sand Arm",
+    "originalName": "Monstrous Sand Arm"
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "characterName": "Shukaku Gaara",
+    "jutsuId": "shukaku-gaara:3",
+    "slot": 3,
+    "name": "Wind Bullet",
+    "originalName": "Wind Bullet"
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "characterName": "Shukaku Gaara",
+    "jutsuId": "shukaku-gaara:4",
+    "slot": 4,
+    "name": "Sand Transformation",
+    "originalName": "Sand Transformation"
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "characterName": "Suigetsu Hōzuki",
+    "jutsuId": "suigetsu-hozuki-(s):1",
+    "slot": 1,
+    "name": "Great Water Arm",
+    "originalName": "Great Water Arm"
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "characterName": "Suigetsu Hōzuki",
+    "jutsuId": "suigetsu-hozuki-(s):2",
+    "slot": 2,
+    "name": "Demon Wave",
+    "originalName": "Demon Wave"
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "characterName": "Suigetsu Hōzuki",
+    "jutsuId": "suigetsu-hozuki-(s):3",
+    "slot": 3,
+    "name": "Liquefy",
+    "originalName": "Liquefy"
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "characterName": "Suigetsu Hōzuki",
+    "jutsuId": "suigetsu-hozuki-(s):4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "tayuya",
+    "characterName": "Tayuya",
+    "jutsuId": "tayuya:1",
+    "slot": 1,
+    "name": "Summoning: Doki",
+    "originalName": "Summoning: Doki"
+  },
+  {
+    "characterId": "tayuya",
+    "characterName": "Tayuya",
+    "jutsuId": "tayuya:2",
+    "slot": 2,
+    "name": "Demon Revolution",
+    "originalName": "Demon Revolution"
+  },
+  {
+    "characterId": "tayuya",
+    "characterName": "Tayuya",
+    "jutsuId": "tayuya:3",
+    "slot": 3,
+    "name": "Chains of Fantasia",
+    "originalName": "Chains of Fantasia"
+  },
+  {
+    "characterId": "tayuya",
+    "characterName": "Tayuya",
+    "jutsuId": "tayuya:4",
+    "slot": 4,
+    "name": "Foresight",
+    "originalName": "Foresight"
+  },
+  {
+    "characterId": "temari",
+    "characterName": "Temari",
+    "jutsuId": "temari:1",
+    "slot": 1,
+    "name": "Cyclone Scythe",
+    "originalName": "Cyclone Scythe"
+  },
+  {
+    "characterId": "temari",
+    "characterName": "Temari",
+    "jutsuId": "temari:2",
+    "slot": 2,
+    "name": "Summoning: Blade Dance",
+    "originalName": "Summoning: Blade Dance"
+  },
+  {
+    "characterId": "temari",
+    "characterName": "Temari",
+    "jutsuId": "temari:3",
+    "slot": 3,
+    "name": "Sandstorm",
+    "originalName": "Sandstorm"
+  },
+  {
+    "characterId": "temari",
+    "characterName": "Temari",
+    "jutsuId": "temari:4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "temari-(s)",
+    "characterName": "Temari",
+    "jutsuId": "temari-(s):1",
+    "slot": 1,
+    "name": "First Moon",
+    "originalName": "First Moon"
+  },
+  {
+    "characterId": "temari-(s)",
+    "characterName": "Temari",
+    "jutsuId": "temari-(s):2",
+    "slot": 2,
+    "name": "Second Moon",
+    "originalName": "Second Moon"
+  },
+  {
+    "characterId": "temari-(s)",
+    "characterName": "Temari",
+    "jutsuId": "temari-(s):3",
+    "slot": 3,
+    "name": "Third Moon",
+    "originalName": "Third Moon"
+  },
+  {
+    "characterId": "temari-(s)",
+    "characterName": "Temari",
+    "jutsuId": "temari-(s):4",
+    "slot": 4,
+    "name": "Gale Raging Wall",
+    "originalName": "Gale Raging Wall"
+  },
+  {
+    "characterId": "tenten",
+    "characterName": "Tenten",
+    "jutsuId": "tenten:1",
+    "slot": 1,
+    "name": "Unsealing Technique",
+    "originalName": "Unsealing Technique"
+  },
+  {
+    "characterId": "tenten",
+    "characterName": "Tenten",
+    "jutsuId": "tenten:2",
+    "slot": 2,
+    "name": "Rising Dragon Control",
+    "originalName": "Rising Dragon Control"
+  },
+  {
+    "characterId": "tenten",
+    "characterName": "Tenten",
+    "jutsuId": "tenten:3",
+    "slot": 3,
+    "name": "Rising Twin Dragons",
+    "originalName": "Rising Twin Dragons"
+  },
+  {
+    "characterId": "tenten",
+    "characterName": "Tenten",
+    "jutsuId": "tenten:4",
+    "slot": 4,
+    "name": "Spiked Boulder Shield",
+    "originalName": "Spiked Boulder Shield"
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "jutsuId": "tenten-(s):1",
+    "slot": 1,
+    "name": "Kunai Grenade",
+    "originalName": "Kunai Grenade"
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "jutsuId": "tenten-(s):2",
+    "slot": 2,
+    "name": "Tensasai",
+    "originalName": "Tensasai"
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "jutsuId": "tenten-(s):3",
+    "slot": 3,
+    "name": "Scroll of Fire",
+    "originalName": "Scroll of Fire"
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "jutsuId": "tenten-(s):4",
+    "slot": 4,
+    "name": "Chain Spin",
+    "originalName": "Chain Spin"
+  },
+  {
+    "characterId": "tobi-(s)",
+    "characterName": "Tobi",
+    "jutsuId": "tobi-(s):1",
+    "slot": 1,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "tobi-(s)",
+    "characterName": "Tobi",
+    "jutsuId": "tobi-(s):2",
+    "slot": 2,
+    "name": "Kamui",
+    "originalName": "Kamui"
+  },
+  {
+    "characterId": "tobi-(s)",
+    "characterName": "Tobi",
+    "jutsuId": "tobi-(s):3",
+    "slot": 3,
+    "name": "Kamui Strike",
+    "originalName": "Kamui Strike"
+  },
+  {
+    "characterId": "tobi-(s)",
+    "characterName": "Tobi",
+    "jutsuId": "tobi-(s):4",
+    "slot": 4,
+    "name": "Izanagi",
+    "originalName": "Izanagi"
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "characterName": "Tobirama Senju",
+    "jutsuId": "tobirama-senju-(r):1",
+    "slot": 1,
+    "name": "Prisão de Água",
+    "originalName": "Water Prison"
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "characterName": "Tobirama Senju",
+    "jutsuId": "tobirama-senju-(r):2",
+    "slot": 2,
+    "name": "Water Shockwave",
+    "originalName": "Water Shockwave"
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "characterName": "Tobirama Senju",
+    "jutsuId": "tobirama-senju-(r):3",
+    "slot": 3,
+    "name": "Infinite Darkness",
+    "originalName": "Infinite Darkness"
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "characterName": "Tobirama Senju",
+    "jutsuId": "tobirama-senju-(r):4",
+    "slot": 4,
+    "name": "Water Wall",
+    "originalName": "Water Wall"
+  },
+  {
+    "characterId": "toroi-(r)",
+    "characterName": "Toroi",
+    "jutsuId": "toroi-(r):1",
+    "slot": 1,
+    "name": "Demon Wind Shuriken",
+    "originalName": "Demon Wind Shuriken"
+  },
+  {
+    "characterId": "toroi-(r)",
+    "characterName": "Toroi",
+    "jutsuId": "toroi-(r):2",
+    "slot": 2,
+    "name": "Magnetic Field",
+    "originalName": "Magnetic Field"
+  },
+  {
+    "characterId": "toroi-(r)",
+    "characterName": "Toroi",
+    "jutsuId": "toroi-(r):3",
+    "slot": 3,
+    "name": "Conserving Bee Twin Blades",
+    "originalName": "Conserving Bee Twin Blades"
+  },
+  {
+    "characterId": "toroi-(r)",
+    "characterName": "Toroi",
+    "jutsuId": "toroi-(r):4",
+    "slot": 4,
+    "name": "Magnetic Current",
+    "originalName": "Magnetic Current"
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "characterName": "Torune Aburame",
+    "jutsuId": "torune-aburame-(s):1",
+    "slot": 1,
+    "name": "Nano-Sized Venomous Beetles",
+    "originalName": "Nano-Sized Venomous Beetles"
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "characterName": "Torune Aburame",
+    "jutsuId": "torune-aburame-(s):2",
+    "slot": 2,
+    "name": "Jar of Poison",
+    "originalName": "Jar of Poison"
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "characterName": "Torune Aburame",
+    "jutsuId": "torune-aburame-(s):3",
+    "slot": 3,
+    "name": "Venom Explosion",
+    "originalName": "Venom Explosion"
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "characterName": "Torune Aburame",
+    "jutsuId": "torune-aburame-(s):4",
+    "slot": 4,
+    "name": "Esquiva",
+    "originalName": "Dodge"
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "characterName": "True Form Sasori",
+    "jutsuId": "true-form-sasori-(s):1",
+    "slot": 1,
+    "name": "Poisonous Chain Skewer",
+    "originalName": "Poisonous Chain Skewer"
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "characterName": "True Form Sasori",
+    "jutsuId": "true-form-sasori-(s):2",
+    "slot": 2,
+    "name": "Impale",
+    "originalName": "Impale"
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "characterName": "True Form Sasori",
+    "jutsuId": "true-form-sasori-(s):3",
+    "slot": 3,
+    "name": "Flamethrower Jets",
+    "originalName": "Flamethrower Jets"
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "characterName": "True Form Sasori",
+    "jutsuId": "true-form-sasori-(s):4",
+    "slot": 4,
+    "name": "Cutting Water Jets",
+    "originalName": "Cutting Water Jets"
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "characterName": "Tsume Inuzuka",
+    "jutsuId": "tsume-inuzuka:1",
+    "slot": 1,
+    "name": "Call Kuromaru",
+    "originalName": "Call Kuromaru"
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "characterName": "Tsume Inuzuka",
+    "jutsuId": "tsume-inuzuka:2",
+    "slot": 2,
+    "name": "Fierce Bite",
+    "originalName": "Fierce Bite"
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "characterName": "Tsume Inuzuka",
+    "jutsuId": "tsume-inuzuka:3",
+    "slot": 3,
+    "name": "Tunneling Fang",
+    "originalName": "Tunneling Fang"
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "characterName": "Tsume Inuzuka",
+    "jutsuId": "tsume-inuzuka:4",
+    "slot": 4,
+    "name": "Light Bomb",
+    "originalName": "Light Bomb"
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade-(s):1",
+    "slot": 1,
+    "name": "Heaven Spear Kick",
+    "originalName": "Heaven Spear Kick"
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade-(s):2",
+    "slot": 2,
+    "name": "Healing Wave",
+    "originalName": "Healing Wave"
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade-(s):3",
+    "slot": 3,
+    "name": "Strength of One Hundred Seal",
+    "originalName": "Strength of One Hundred Seal"
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "characterName": "Tsunade",
+    "jutsuId": "tsunade-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "jutsuId": "uchiha-itachi-body-double-(s):1",
+    "slot": 1,
+    "name": "Genjutsu Reversal",
+    "originalName": "Genjutsu Reversal"
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "jutsuId": "uchiha-itachi-body-double-(s):2",
+    "slot": 2,
+    "name": "Itachi Fireball Technique",
+    "originalName": "Itachi Fireball Technique"
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "jutsuId": "uchiha-itachi-body-double-(s):3",
+    "slot": 3,
+    "name": "Finger Genjutsu",
+    "originalName": "Finger Genjutsu"
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "jutsuId": "uchiha-itachi-body-double-(s):4",
+    "slot": 4,
+    "name": "Illusionary Crows",
+    "originalName": "Illusionary Crows"
+  },
+  {
+    "characterId": "utakata-(s)",
+    "characterName": "Utakata",
+    "jutsuId": "utakata-(s):1",
+    "slot": 1,
+    "name": "Soap Bubble",
+    "originalName": "Soap Bubble"
+  },
+  {
+    "characterId": "utakata-(s)",
+    "characterName": "Utakata",
+    "jutsuId": "utakata-(s):2",
+    "slot": 2,
+    "name": "Drowning Bubble",
+    "originalName": "Drowning Bubble"
+  },
+  {
+    "characterId": "utakata-(s)",
+    "characterName": "Utakata",
+    "jutsuId": "utakata-(s):3",
+    "slot": 3,
+    "name": "Six-Tailed Transformation",
+    "originalName": "Six-Tailed Transformation"
+  },
+  {
+    "characterId": "utakata-(s)",
+    "characterName": "Utakata",
+    "jutsuId": "utakata-(s):4",
+    "slot": 4,
+    "name": "Bubble Dome",
+    "originalName": "Bubble Dome"
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "characterName": "White Snake Orochimaru",
+    "jutsuId": "white-snake-orochimaru-(s):1",
+    "slot": 1,
+    "name": "Regenerative Bite",
+    "originalName": "Regenerative Bite"
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "characterName": "White Snake Orochimaru",
+    "jutsuId": "white-snake-orochimaru-(s):2",
+    "slot": 2,
+    "name": "Kusanagi",
+    "originalName": "Kusanagi"
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "characterName": "White Snake Orochimaru",
+    "jutsuId": "white-snake-orochimaru-(s):3",
+    "slot": 3,
+    "name": "Immortality Transference",
+    "originalName": "Immortality Transference"
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "characterName": "White Snake Orochimaru",
+    "jutsuId": "white-snake-orochimaru-(s):4",
+    "slot": 4,
+    "name": "Eight-Headed Serpent",
+    "originalName": "Eight-Headed Serpent"
+  },
+  {
+    "characterId": "yamato-(s)",
+    "characterName": "Yamato",
+    "jutsuId": "yamato-(s):1",
+    "slot": 1,
+    "name": "Tenth Edict on Enlightenment",
+    "originalName": "Tenth Edict on Enlightenment"
+  },
+  {
+    "characterId": "yamato-(s)",
+    "characterName": "Yamato",
+    "jutsuId": "yamato-(s):2",
+    "slot": 2,
+    "name": "Wood Clone",
+    "originalName": "Wood Clone"
+  },
+  {
+    "characterId": "yamato-(s)",
+    "characterName": "Yamato",
+    "jutsuId": "yamato-(s):3",
+    "slot": 3,
+    "name": "Four-Pillar Architecture",
+    "originalName": "Four-Pillar Architecture"
+  },
+  {
+    "characterId": "yamato-(s)",
+    "characterName": "Yamato",
+    "jutsuId": "yamato-(s):4",
+    "slot": 4,
+    "name": "Wood Wall",
+    "originalName": "Wood Wall"
+  },
+  {
+    "characterId": "yondaime-minato",
+    "characterName": "Yondaime Minato",
+    "jutsuId": "yondaime-minato:1",
+    "slot": 1,
+    "name": "Rasengan",
+    "originalName": "Rasengan"
+  },
+  {
+    "characterId": "yondaime-minato",
+    "characterName": "Yondaime Minato",
+    "jutsuId": "yondaime-minato:2",
+    "slot": 2,
+    "name": "Teleportation Barrier",
+    "originalName": "Teleportation Barrier"
+  },
+  {
+    "characterId": "yondaime-minato",
+    "characterName": "Yondaime Minato",
+    "jutsuId": "yondaime-minato:3",
+    "slot": 3,
+    "name": "Reaper Death Seal",
+    "originalName": "Reaper Death Seal"
+  },
+  {
+    "characterId": "yondaime-minato",
+    "characterName": "Yondaime Minato",
+    "jutsuId": "yondaime-minato:4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "yoroi-akado",
+    "characterName": "Yoroi Akadō",
+    "jutsuId": "yoroi-akado:1",
+    "slot": 1,
+    "name": "Energy Drain",
+    "originalName": "Energy Drain"
+  },
+  {
+    "characterId": "yoroi-akado",
+    "characterName": "Yoroi Akadō",
+    "jutsuId": "yoroi-akado:2",
+    "slot": 2,
+    "name": "Draining Assault",
+    "originalName": "Draining Assault"
+  },
+  {
+    "characterId": "yoroi-akado",
+    "characterName": "Yoroi Akadō",
+    "jutsuId": "yoroi-akado:3",
+    "slot": 3,
+    "name": "Chakra Focus",
+    "originalName": "Chakra Focus"
+  },
+  {
+    "characterId": "yoroi-akado",
+    "characterName": "Yoroi Akadō",
+    "jutsuId": "yoroi-akado:4",
+    "slot": 4,
+    "name": "Deflect",
+    "originalName": "Deflect"
+  },
+  {
+    "characterId": "young-kakashi",
+    "characterName": "Young Kakashi",
+    "jutsuId": "young-kakashi:1",
+    "slot": 1,
+    "name": "White Light Blade",
+    "originalName": "White Light Blade"
+  },
+  {
+    "characterId": "young-kakashi",
+    "characterName": "Young Kakashi",
+    "jutsuId": "young-kakashi:2",
+    "slot": 2,
+    "name": "Lightning Blade",
+    "originalName": "Lightning Blade"
+  },
+  {
+    "characterId": "young-kakashi",
+    "characterName": "Young Kakashi",
+    "jutsuId": "young-kakashi:3",
+    "slot": 3,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "young-kakashi",
+    "characterName": "Young Kakashi",
+    "jutsuId": "young-kakashi:4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "characterName": "Yūgao Uzuki",
+    "jutsuId": "yugao-uzuki:1",
+    "slot": 1,
+    "name": "Moonlight Night",
+    "originalName": "Moonlight Night"
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "characterName": "Yūgao Uzuki",
+    "jutsuId": "yugao-uzuki:2",
+    "slot": 2,
+    "name": "Moon Haze",
+    "originalName": "Moon Haze"
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "characterName": "Yūgao Uzuki",
+    "jutsuId": "yugao-uzuki:3",
+    "slot": 3,
+    "name": "Sealing Technique",
+    "originalName": "Sealing Technique"
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "characterName": "Yūgao Uzuki",
+    "jutsuId": "yugao-uzuki:4",
+    "slot": 4,
+    "name": "Aparar",
+    "originalName": "Parry"
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "jutsuId": "yugito-nii-(s):1",
+    "slot": 1,
+    "name": "Two-Tailed Transformation",
+    "originalName": "Two-Tailed Transformation"
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "jutsuId": "yugito-nii-(s):2",
+    "slot": 2,
+    "name": "Flaming Cat Roar",
+    "originalName": "Flaming Cat Roar"
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "jutsuId": "yugito-nii-(s):3",
+    "slot": 3,
+    "name": "Cat Claws",
+    "originalName": "Cat Claws"
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "jutsuId": "yugito-nii-(s):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi:1",
+    "slot": 1,
+    "name": "Silent Killing",
+    "originalName": "Silent Killing"
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi:2",
+    "slot": 2,
+    "name": "Water Dragon",
+    "originalName": "Water Dragon"
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi:3",
+    "slot": 3,
+    "name": "Hidden Mist",
+    "originalName": "Hidden Mist"
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi:4",
+    "slot": 4,
+    "name": "Water Clone",
+    "originalName": "Water Clone"
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi-(r):1",
+    "slot": 1,
+    "name": "Demon Shroud",
+    "originalName": "Demon Shroud"
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi-(r):2",
+    "slot": 2,
+    "name": "Blood Harvest",
+    "originalName": "Blood Harvest"
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi-(r):3",
+    "slot": 3,
+    "name": "Executioner's Butchering",
+    "originalName": "Executioner's Butchering"
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "jutsuId": "zabuza-momochi-(r):4",
+    "slot": 4,
+    "name": "Bloqueio",
+    "originalName": "Block"
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "jutsuId": "zaji:1",
+    "slot": 1,
+    "name": "Kunai Block",
+    "originalName": "Kunai Block"
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "jutsuId": "zaji:2",
+    "slot": 2,
+    "name": "Exploding Chakra Kunai",
+    "originalName": "Exploding Chakra Kunai"
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "jutsuId": "zaji:3",
+    "slot": 3,
+    "name": "Chakra Sense",
+    "originalName": "Chakra Sense"
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "jutsuId": "zaji:4",
+    "slot": 4,
+    "name": "Momemtum Reversal",
+    "originalName": "Momemtum Reversal"
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "jutsuId": "zaku-abumi:1",
+    "slot": 1,
+    "name": "Slicing Sound Wave",
+    "originalName": "Slicing Sound Wave"
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "jutsuId": "zaku-abumi:2",
+    "slot": 2,
+    "name": "Wall of Air",
+    "originalName": "Wall of Air"
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "jutsuId": "zaku-abumi:3",
+    "slot": 3,
+    "name": "Supersonic Slicing Wave",
+    "originalName": "Supersonic Slicing Wave"
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "jutsuId": "zaku-abumi:4",
+    "slot": 4,
+    "name": "Deflect",
+    "originalName": "Deflect"
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "characterName": "Zetsu",
+    "jutsuId": "zetsu-(s):1",
+    "slot": 1,
+    "name": "Black Zetsu",
+    "originalName": "Black Zetsu"
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "characterName": "Zetsu",
+    "jutsuId": "zetsu-(s):2",
+    "slot": 2,
+    "name": "White Zetsu",
+    "originalName": "White Zetsu"
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "characterName": "Zetsu",
+    "jutsuId": "zetsu-(s):3",
+    "slot": 3,
+    "name": "Underground Roots",
+    "originalName": "Underground Roots"
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "characterName": "Zetsu",
+    "jutsuId": "zetsu-(s):4",
+    "slot": 4,
+    "name": "White Army",
+    "originalName": "White Army"
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "jutsuId": "boruto-uzumaki-genin:1",
+    "slot": 1,
+    "name": "Boruto Sutoraiku",
+    "originalName": "Boruto Sutoraiku"
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "jutsuId": "boruto-uzumaki-genin:2",
+    "slot": 2,
+    "name": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu"
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "jutsuId": "boruto-uzumaki-genin:3",
+    "slot": 3,
+    "name": "Fūton: Reppūshō",
+    "originalName": "Fūton: Reppūshō"
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "jutsuId": "boruto-uzumaki-genin:4",
+    "slot": 4,
+    "name": "Kieru Rasengan",
+    "originalName": "Kieru Rasengan"
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "jutsuId": "sarada-uchiha-boruto:1",
+    "slot": 1,
+    "name": "Katon: Gōkakyū no Jutsu",
+    "originalName": "Katon: Gōkakyū no Jutsu"
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "jutsuId": "sarada-uchiha-boruto:2",
+    "slot": 2,
+    "name": "Sharingan",
+    "originalName": "Sharingan"
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "jutsuId": "sarada-uchiha-boruto:3",
+    "slot": 3,
+    "name": "Ōkashō",
+    "originalName": "Ōkashō"
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "jutsuId": "sarada-uchiha-boruto:4",
+    "slot": 4,
+    "name": "Shurikenjutsu: Uchiha",
+    "originalName": "Shurikenjutsu: Uchiha"
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "jutsuId": "mitsuki-boruto:1",
+    "slot": 1,
+    "name": "Senei Jashu",
+    "originalName": "Senei Jashu"
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "jutsuId": "mitsuki-boruto:2",
+    "slot": 2,
+    "name": "Raiton: Hebi Mikazuchi",
+    "originalName": "Raiton: Hebi Mikazuchi"
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "jutsuId": "mitsuki-boruto:3",
+    "slot": 3,
+    "name": "Fūton: Toppa",
+    "originalName": "Fūton: Toppa"
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "jutsuId": "mitsuki-boruto:4",
+    "slot": 4,
+    "name": "Senjutsu",
+    "originalName": "Senjutsu"
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "jutsuId": "kawaki-boruto:1",
+    "slot": 1,
+    "name": "Kāma",
+    "originalName": "Kāma"
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "jutsuId": "kawaki-boruto:2",
+    "slot": 2,
+    "name": "Kāma: Hōsha",
+    "originalName": "Kāma: Hōsha"
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "jutsuId": "kawaki-boruto:3",
+    "slot": 3,
+    "name": "Kagaku Ningu: Henshitsu",
+    "originalName": "Kagaku Ningu: Henshitsu"
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "jutsuId": "kawaki-boruto:4",
+    "slot": 4,
+    "name": "Kāma: Kyūshū",
+    "originalName": "Kāma: Kyūshū"
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "jutsuId": "naruto-uzumaki-hokage:1",
+    "slot": 1,
+    "name": "Chō Ōdama Rasengan",
+    "originalName": "Chō Ōdama Rasengan"
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "jutsuId": "naruto-uzumaki-hokage:2",
+    "slot": 2,
+    "name": "Tajū Kage Bunshin no Jutsu",
+    "originalName": "Tajū Kage Bunshin no Jutsu"
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "jutsuId": "naruto-uzumaki-hokage:3",
+    "slot": 3,
+    "name": "Fūton: Rasenshuriken",
+    "originalName": "Fūton: Rasenshuriken"
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "jutsuId": "naruto-uzumaki-hokage:4",
+    "slot": 4,
+    "name": "Kurama Chakra Mōdo",
+    "originalName": "Kurama Chakra Mōdo"
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "jutsuId": "sasuke-uchiha-adulto:1",
+    "slot": 1,
+    "name": "Chidori",
+    "originalName": "Chidori"
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "jutsuId": "sasuke-uchiha-adulto:2",
+    "slot": 2,
+    "name": "Amenotejikara",
+    "originalName": "Amenotejikara"
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "jutsuId": "sasuke-uchiha-adulto:3",
+    "slot": 3,
+    "name": "Enton: Kagutsuchi",
+    "originalName": "Enton: Kagutsuchi"
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "jutsuId": "sasuke-uchiha-adulto:4",
+    "slot": 4,
+    "name": "Susanoo",
+    "originalName": "Susanoo"
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "jutsuId": "sakura-haruno-adulta:1",
+    "slot": 1,
+    "name": "Ōkashō",
+    "originalName": "Ōkashō"
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "jutsuId": "sakura-haruno-adulta:2",
+    "slot": 2,
+    "name": "Shōsen Jutsu",
+    "originalName": "Shōsen Jutsu"
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "jutsuId": "sakura-haruno-adulta:3",
+    "slot": 3,
+    "name": "Byakugō no Jutsu",
+    "originalName": "Byakugō no Jutsu"
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "jutsuId": "sakura-haruno-adulta:4",
+    "slot": 4,
+    "name": "Katsuyu: Mōryōjika",
+    "originalName": "Katsuyu: Mōryōjika"
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "jutsuId": "kakashi-hatake-sexto:1",
+    "slot": 1,
+    "name": "Shiden",
+    "originalName": "Shiden"
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "jutsuId": "kakashi-hatake-sexto:2",
+    "slot": 2,
+    "name": "Raiton: Raijū Tsuiga",
+    "originalName": "Raiton: Raijū Tsuiga"
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "jutsuId": "kakashi-hatake-sexto:3",
+    "slot": 3,
+    "name": "Doton: Doryūheki",
+    "originalName": "Doton: Doryūheki"
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "jutsuId": "kakashi-hatake-sexto:4",
+    "slot": 4,
+    "name": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu"
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "jutsuId": "momoshiki-otsutsuki-boruto:1",
+    "slot": 1,
+    "name": "Takamimusubinokami",
+    "originalName": "Takamimusubinokami"
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "jutsuId": "momoshiki-otsutsuki-boruto:2",
+    "slot": 2,
+    "name": "Inukaitakerunomikoto",
+    "originalName": "Inukaitakerunomikoto"
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "jutsuId": "momoshiki-otsutsuki-boruto:3",
+    "slot": 3,
+    "name": "Rinnegan: Kyūshū",
+    "originalName": "Rinnegan: Kyūshū"
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "jutsuId": "momoshiki-otsutsuki-boruto:4",
+    "slot": 4,
+    "name": "Chakra Edan",
+    "originalName": "Chakra Edan"
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "jutsuId": "isshiki-otsutsuki-boruto:1",
+    "slot": 1,
+    "name": "Sukunahikona",
+    "originalName": "Sukunahikona"
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "jutsuId": "isshiki-otsutsuki-boruto:2",
+    "slot": 2,
+    "name": "Daikokuten",
+    "originalName": "Daikokuten"
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "jutsuId": "isshiki-otsutsuki-boruto:3",
+    "slot": 3,
+    "name": "Kokuyō no Bō",
+    "originalName": "Kokuyō no Bō"
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "jutsuId": "isshiki-otsutsuki-boruto:4",
+    "slot": 4,
+    "name": "Jikūkan Idō",
+    "originalName": "Jikūkan Idō"
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "jutsuId": "jigen-boruto:1",
+    "slot": 1,
+    "name": "Kāma",
+    "originalName": "Kāma"
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "jutsuId": "jigen-boruto:2",
+    "slot": 2,
+    "name": "Kokuyō no Bō",
+    "originalName": "Kokuyō no Bō"
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "jutsuId": "jigen-boruto:3",
+    "slot": 3,
+    "name": "Jikūkan Ninjutsu",
+    "originalName": "Jikūkan Ninjutsu"
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "jutsuId": "jigen-boruto:4",
+    "slot": 4,
+    "name": "Daikokuten",
+    "originalName": "Daikokuten"
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "jutsuId": "konohamaru-sensei-boruto:1",
+    "slot": 1,
+    "name": "Rasengan",
+    "originalName": "Rasengan"
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "jutsuId": "konohamaru-sensei-boruto:2",
+    "slot": 2,
+    "name": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu"
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "jutsuId": "konohamaru-sensei-boruto:3",
+    "slot": 3,
+    "name": "Katon: Gōkakyū no Jutsu",
+    "originalName": "Katon: Gōkakyū no Jutsu"
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "jutsuId": "konohamaru-sensei-boruto:4",
+    "slot": 4,
+    "name": "Shuriken Kage Bunshin no Jutsu",
+    "originalName": "Shuriken Kage Bunshin no Jutsu"
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "jutsuId": "bijuu-shukaku-event:1",
+    "slot": 1,
+    "name": "Fūton: Renkūdan",
+    "originalName": "Fūton: Renkūdan"
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "jutsuId": "bijuu-shukaku-event:2",
+    "slot": 2,
+    "name": "Braço Monstruoso de Areia",
+    "originalName": "Braço Monstruoso de Areia"
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "jutsuId": "bijuu-shukaku-event:3",
+    "slot": 3,
+    "name": "Defesa de Shukaku",
+    "originalName": "Defesa de Shukaku"
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "jutsuId": "bijuu-shukaku-event:4",
+    "slot": 4,
+    "name": "Liberação Total de Shukaku",
+    "originalName": "Liberação Total de Shukaku"
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "jutsuId": "bijuu-matatabi-event:1",
+    "slot": 1,
+    "name": "Garras da Matatabi",
+    "originalName": "Garras da Matatabi"
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "jutsuId": "bijuu-matatabi-event:2",
+    "slot": 2,
+    "name": "Rugido Flamejante",
+    "originalName": "Rugido Flamejante"
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "jutsuId": "bijuu-matatabi-event:3",
+    "slot": 3,
+    "name": "Manto de Duas Caudas",
+    "originalName": "Manto de Duas Caudas"
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "jutsuId": "bijuu-matatabi-event:4",
+    "slot": 4,
+    "name": "Investida da Matatabi",
+    "originalName": "Investida da Matatabi"
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "jutsuId": "bijuu-gyuki-event:1",
+    "slot": 1,
+    "name": "Bijūdama",
+    "originalName": "Bijūdama"
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "jutsuId": "bijuu-gyuki-event:2",
+    "slot": 2,
+    "name": "Ossos de Chakra",
+    "originalName": "Ossos de Chakra"
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "jutsuId": "bijuu-gyuki-event:3",
+    "slot": 3,
+    "name": "Lariat",
+    "originalName": "Lariat"
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "jutsuId": "bijuu-gyuki-event:4",
+    "slot": 4,
+    "name": "Barreira de Chakra",
+    "originalName": "Barreira de Chakra"
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "jutsuId": "bijuu-kurama-event:1",
+    "slot": 1,
+    "name": "Bijūdama",
+    "originalName": "Bijūdama"
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "jutsuId": "bijuu-kurama-event:2",
+    "slot": 2,
+    "name": "Bijūdama Massiva",
+    "originalName": "Bijūdama Massiva"
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "jutsuId": "bijuu-kurama-event:3",
+    "slot": 3,
+    "name": "Mão de Chakra",
+    "originalName": "Mão de Chakra"
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "jutsuId": "bijuu-kurama-event:4",
+    "slot": 4,
+    "name": "Chamas Furiosas",
+    "originalName": "Chamas Furiosas"
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "jutsuId": "kaguya-otsutsuki-(s):1",
+    "slot": 1,
+    "name": "Yomotsu Hirasaka",
+    "originalName": "Yomotsu Hirasaka"
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "jutsuId": "kaguya-otsutsuki-(s):2",
+    "slot": 2,
+    "name": "Tomogoroshi no Haikotsu",
+    "originalName": "All-Killing Ash Bones"
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "jutsuId": "kaguya-otsutsuki-(s):3",
+    "slot": 3,
+    "name": "Expansive Truth-Seeking Ball",
+    "originalName": "Expansive Truth-Seeking Ball"
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "jutsuId": "kaguya-otsutsuki-(s):4",
+    "slot": 4,
+    "name": "Dimensão de Gelo",
+    "originalName": "Ice Dimension"
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "jutsuId": "toneri-otsutsuki-the-last:1",
+    "slot": 1,
+    "name": "Tenseigan",
+    "originalName": "Tenseigan"
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "jutsuId": "toneri-otsutsuki-the-last:2",
+    "slot": 2,
+    "name": "Golden Wheel Reincarnation Explosion",
+    "originalName": "Golden Wheel Reincarnation Explosion"
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "jutsuId": "toneri-otsutsuki-the-last:3",
+    "slot": 3,
+    "name": "Silver Wheel Reincarnation Explosion",
+    "originalName": "Silver Wheel Reincarnation Explosion"
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "jutsuId": "toneri-otsutsuki-the-last:4",
+    "slot": 4,
+    "name": "Manto de Chakra do Tenseigan",
+    "originalName": "Tenseigan Chakra Mode"
+  }
+]
