@@ -18,106 +18,122 @@ if(!Array.isArray(roster)||!roster.length) throw new Error('window.NARUTO_ROSTER
 
 const num=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const safe=v=>v===undefined?null:v;
-const pct=v=>{const x=num(v,0);return x>1?Math.min(1,x/100):Math.max(0,x)};
+const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
+const round=(x,n=3)=>Number(Number(x||0).toFixed(n));
 const median=a=>{const s=a.filter(Number.isFinite).sort((x,y)=>x-y);if(!s.length)return 0;const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2};
 const mad=a=>{const m=median(a);return median(a.map(x=>Math.abs(x-m)))||1};
 const robustZ=(x,a)=>{const m=median(a),d=mad(a);return 0.6745*(x-m)/d};
-const round=(x,n=3)=>Number(Number(x||0).toFixed(n));
-const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
+const groupBy=(items,keyFn)=>{const m=new Map();for(const item of items){const k=keyFn(item);if(!m.has(k))m.set(k,[]);m.get(k).push(item)}return m};
 
-const statusWeights={
- stun:10,stunned:10,paralyze:10,paralyzed:10,paralisado:10,paralisia:10,
- silence:9,silenced:9,seal:9,sealed:9,selado:9,
- sleep:10,asleep:10,sono:10,
- poison:5,poisoned:5,veneno:5,bleed:5,bleeding:5,sangramento:5,burn:5,burning:5,queimadura:5,
- slow:4,slowed:4,lentidao:4,blind:6,blinded:6,cegueira:6,
- weaken:4,weakened:4,weak:4,fragil:4,defdown:5,atkdown:5,
- shield:5,barrier:5,barreira:5,guard:5,protecao:5,
- heal:4,regen:4,regeneration:4,regeneracao:4
+const DAMAGE_KINDS=new Set(['damage','stun','afflict','pierce','drain','bleed','burn','poison']);
+const HEAL_KINDS=new Set(['heal','regen','regenerate','healing']);
+const DEFENSE_KINDS=new Set(['shield','defend','reduce','invuln','invulnerable','guard','barrier']);
+const CONTROL_WEIGHTS={
+  stun:12,silence:11,seal:10,snare:7,slow:6,weaken:6,expose:8,taunt:7,
+  disable:11,blind:7,paralyze:12,paralysis:12,poison:5,bleed:5,burn:5,afflict:5,
+  drain:6,reflect:9,counter:9,invuln:0,shield:0,heal:0,damage:0,pierce:2
 };
-function statusScore(skill){
-  const statuses=arr(skill.status).filter(Boolean).map(String);
-  const chance=skill.statusChance==null?(statuses.length?1:0):pct(skill.statusChance);
-  const turns=Math.max(1,num(skill.statusTurns,1));
-  return statuses.reduce((s,x)=>s+(statusWeights[norm(x)]??3),0)*chance*Math.min(turns,4);
+
+function skillShape(c){
+  if(Array.isArray(c.skills)) return {field:'skills',skills:c.skills};
+  if(Array.isArray(c.skillCards)) return {field:'skillCards',skills:c.skillCards};
+  return {field:null,skills:[]};
 }
-function damage(skill){
-  if(Number.isFinite(Number(skill.damage))) return Math.max(0,Number(skill.damage));
-  const lo=Number(skill.damageMin),hi=Number(skill.damageMax);
-  if(Number.isFinite(lo)||Number.isFinite(hi)){
-    const a=Number.isFinite(lo)?lo:hi,b=Number.isFinite(hi)?hi:lo;
-    return Math.max(0,(a+b)/2);
+function mechanicOf(s){return s&&typeof s.mechanic==='object'&&s.mechanic?s.mechanic:{}};
+function kindOf(s){return norm(mechanicOf(s).kind||s.type||'unknown').replace(/\s+/g,'-')||'unknown'}
+function durationOf(s){return Math.max(0,num(mechanicOf(s).duration,s.statusTurns??0))}
+function costParts(s){return arr(s.cost).filter(x=>String(x).trim()!=='').map(String)}
+function costUnits(s){const c=costParts(s);return c.length||Math.max(0,num(s.cost,0))}
+function cooldownOf(s){return Math.max(0,num(s.cooldown,s.cd??0))}
+function rawPower(s){return Math.max(0,num(mechanicOf(s).power,s.damage??0))}
+function damageOf(s){
+  const k=kindOf(s),p=rawPower(s);
+  if(DAMAGE_KINDS.has(k)) return p;
+  if(Number.isFinite(Number(s.damage))) return Math.max(0,Number(s.damage));
+  if(Number.isFinite(Number(s.damageMin))||Number.isFinite(Number(s.damageMax))){
+    const lo=Number.isFinite(Number(s.damageMin))?Number(s.damageMin):Number(s.damageMax);
+    const hi=Number.isFinite(Number(s.damageMax))?Number(s.damageMax):Number(s.damageMin);
+    return Math.max(0,(lo+hi)/2);
   }
   return 0;
 }
-function detectEffects(skill){
-  const effects=new Set();
-  for(const st of arr(skill.status).filter(Boolean)) effects.add('status:'+String(st));
-  if(num(skill.healSelf)>0) effects.add('healSelf');
-  if(num(skill.heal)>0) effects.add('heal');
-  if(skill.bonusVsStatus) effects.add('bonusVsStatus:'+String(skill.bonusVsStatus));
-  if(num(skill.bonusMultiplier)>0) effects.add('bonusMultiplier');
-  if(skill.condition) effects.add('condition:'+String(skill.condition));
-  if(skill.conditionTarget) effects.add('conditionTarget:'+String(skill.conditionTarget));
-  for(const [k,v] of Object.entries(skill)){
-    if(v==null||v===false||v===0||['slot','name','type','cost','cd','desc','icon','fx','sfx','damage','damageMin','damageMax','status','statusTurns','statusChance','bonusVsStatus','bonusMultiplier','condition','conditionTarget','healSelf','heal','hit'].includes(k)) continue;
-    if(/shield|guard|protect|invul|dodge|evade|reflect|drain|steal|chakra|cleanse|dispel|buff|debuff|counter|taunt|mark|dot|hot|pierce|ignore|crit|cooldown|stun|silence|poison|bleed|burn|slow/i.test(k)) effects.add(k+':'+String(v));
-  }
-  return [...effects];
+function healingOf(s){const k=kindOf(s);return HEAL_KINDS.has(k)?rawPower(s):Math.max(0,num(s.healSelf)+num(s.heal))}
+function defenseOf(s){const k=kindOf(s);if(k==='invuln'||k==='invulnerable') return 25*Math.max(1,durationOf(s));return DEFENSE_KINDS.has(k)?rawPower(s)*Math.max(1,Math.min(4,durationOf(s)||1)):0}
+function controlOf(s){
+  const k=kindOf(s),dur=Math.max(1,Math.min(4,durationOf(s)||1));
+  let score=(CONTROL_WEIGHTS[k]??0)*dur;
+  const text=norm(`${s.desc??''} ${s.effectText??''}`);
+  if(k==='damage'&&/atord|stun/.test(text))score=Math.max(score,12*dur);
+  if(/silenc/.test(text))score=Math.max(score,11*dur);
+  if(/invulner|invulneravel/.test(text)&&!DEFENSE_KINDS.has(k))score+=8*dur;
+  return score;
 }
-function descriptionFlags(skill){
-  const d=norm(skill.desc);
-  const warnings=[];
-  const hasStatus=arr(skill.status).filter(Boolean).length>0;
-  const statusWords=/(paralis|atordo|stun|silenc|selad|sono|dorm|venen|sangr|queim|lent|ceg|fraqu|reduz)/.test(d);
-  if(statusWords&&!hasStatus) warnings.push('descricao_indica_status_sem_status_estruturado');
-  if(hasStatus&&!statusWords) warnings.push('status_estruturado_nao_explicitado_na_descricao');
-  const heal=num(skill.healSelf)+num(skill.heal);
-  const healWords=/(cura|curar|recuper|regenera|restaura.*vida|hp|pv)/.test(d);
-  if(heal>0&&!healWords) warnings.push('cura_estruturada_nao_explicitada_na_descricao');
-  if(healWords&&heal<=0&&!/roub|dren/.test(d)) warnings.push('descricao_indica_cura_sem_valor_estruturado');
-  const dmg=damage(skill);
-  if(dmg<=0&&/(causa|inflige|dano|damage)/.test(d)) warnings.push('descricao_indica_dano_sem_dano_estruturado');
-  if(dmg>0&&!/(dano|damage|causa|inflige|atinge|golpe|ataca)/.test(d)) warnings.push('dano_estruturado_pouco_explicito_na_descricao');
-  if(!String(skill.desc??'').trim()) warnings.push('descricao_vazia');
-  return warnings;
+function aoeFactor(s){return mechanicOf(s).aoe===true?1.75:1}
+function targetOf(s){return String(mechanicOf(s).target??'unknown')}
+function effectsOf(s){
+  const m=mechanicOf(s),out=[];
+  out.push(`kind:${kindOf(s)}`);
+  if(m.target!=null)out.push(`target:${m.target}`);
+  if(m.aoe===true)out.push('aoe:true');
+  if(num(m.duration)>0)out.push(`duration:${num(m.duration)}`);
+  if(m.power!=null)out.push(`power:${m.power}`);
+  for(const [k,v] of Object.entries(s)){
+    if(['name','originalName','desc','effectText','cost','cooldown','image','mechanic'].includes(k)||v==null||v===false||v==='')continue;
+    if(/status|chance|condition|bonus|heal|shield|guard|protect|invul|reflect|drain|steal|cleanse|dispel|buff|debuff|counter|taunt|mark|pierce|ignore|crit|hit/i.test(k))out.push(`${k}:${typeof v==='object'?JSON.stringify(v):String(v)}`);
+  }
+  return out;
+}
+function descriptionWarnings(s){
+  const m=mechanicOf(s),k=kindOf(s),p=rawPower(s),dur=durationOf(s);
+  const text=norm(`${s.desc??''} ${s.effectText??''}`);
+  const w=[];
+  if(!String(s.name??'').trim())w.push('nome_vazio');
+  if(!String(s.desc??'').trim())w.push('descricao_vazia');
+  if(!String(s.effectText??'').trim())w.push('effectText_vazio');
+  if(!s.image)w.push('imagem_ausente');
+  if(!m.kind)w.push('mechanic_kind_ausente');
+  if(m.target==null)w.push('mechanic_target_ausente');
+  if(DAMAGE_KINDS.has(k)&&p>0&&!/(dano|damage|causa|inflige|atinge)/.test(text))w.push('dano_mecanico_nao_explicito');
+  if(HEAL_KINDS.has(k)&&p>0&&!/(cura|recuper|restaura|heal|pv|vida)/.test(text))w.push('cura_mecanica_nao_explicita');
+  if((k==='shield'||k==='defend'||k==='reduce')&&p>0&&!/(defesa|reduz|proteg|escudo|shield|defense)/.test(text))w.push('defesa_mecanica_nao_explicita');
+  if((k==='invuln'||k==='invulnerable')&&!/invulner|protege|dano e efeitos hostis/.test(text))w.push('invulnerabilidade_nao_explicita');
+  if(k==='stun'&&!/(atord|stun)/.test(text))w.push('stun_nao_explicito');
+  if(m.aoe===true&&!/(todos|todas|equipe|all |aoe|área|area)/.test(text))w.push('aoe_nao_explicito');
+  if(p>1&&!text.includes(String(p)))w.push('valor_de_power_nao_aparece_no_texto');
+  if(dur>1&&!text.includes(String(dur)))w.push('duracao_nao_aparece_no_texto');
+  if(/causa\s+\d+\s+de\s+dano/.test(text)&&damageOf(s)<=0)w.push('texto_indica_dano_mas_kind_nao_ofensivo');
+  return [...new Set(w)];
 }
 
 const characters=[];
 const jutsus=[];
 const links=[];
-const duplicateSlots=[];
 for(const c of roster){
-  const cards=Array.isArray(c.skillCards)?c.skillCards:[];
-  const seen=new Set();
-  for(let i=0;i<cards.length;i++){
-    const s=cards[i]||{};
-    const slot=s.slot??i;
-    if(seen.has(String(slot))) duplicateSlots.push({characterId:c.id,characterName:c.name,slot});
-    seen.add(String(slot));
-    const jid=`${c.id}:${slot}`;
-    const rawDamage=damage(s),cost=Math.max(0,num(s.cost)),cd=Math.max(0,num(s.cd));
-    const utility=statusScore(s);
-    const healing=Math.max(0,num(s.healSelf)+num(s.heal));
-    const efficiency=rawDamage/(Math.max(1,cost)*(cd+1));
-    const power=rawDamage + utility + healing*0.8 + (s.bonusMultiplier?Math.max(0,num(s.bonusMultiplier)-1)*rawDamage*0.35:0);
+  const id=String(c.slug??c.id??norm(c.name).replace(/[^a-z0-9]+/g,'-'));
+  const shape=skillShape(c),skills=shape.skills;
+  for(let i=0;i<skills.length;i++){
+    const s=skills[i]||{},slot=i+1,jutsuId=`${id}:${slot}`;
+    const damage=damageOf(s),heal=healingOf(s),defense=defenseOf(s),control=controlOf(s),cost=costUnits(s),cd=cooldownOf(s),aoe=aoeFactor(s);
+    const offense=damage*aoe;
+    const sustain=(heal*0.8+defense*0.45)*aoe;
+    const utility=control*aoe;
+    const denominator=Math.max(1,cost)*(cd+1);
+    const rawPowerIndex=offense+sustain+utility;
     const row={
-      jutsuId:jid,characterId:c.id,characterName:c.name,characterRole:c.role??null,element:c.element??null,
-      slot,name:s.name??`Slot ${slot}`,type:s.type??null,cost,cd,description:s.desc??'',
-      damage:round(rawDamage),damageMin:safe(s.damageMin),damageMax:safe(s.damageMax),hit:safe(s.hit),
-      status:safe(s.status),statusChance:safe(s.statusChance),statusTurns:safe(s.statusTurns),
-      healSelf:safe(s.healSelf),heal:safe(s.heal),bonusVsStatus:safe(s.bonusVsStatus),bonusMultiplier:safe(s.bonusMultiplier),
-      condition:safe(s.condition),conditionTarget:safe(s.conditionTarget),effects:detectEffects(s),descriptionWarnings:descriptionFlags(s),
-      metrics:{utilityScore:round(utility),healingScore:round(healing),damageEfficiency:round(efficiency),rawPowerIndex:round(power)},
-      sourceKeys:Object.keys(s).sort()
+      jutsuId,characterId:id,characterName:c.name??id,slot,
+      name:s.name??`Slot ${slot}`,originalName:s.originalName??null,description:s.desc??'',effectText:s.effectText??'',image:s.image??null,
+      cost:costParts(s),costUnits:cost,cooldown:cd,
+      mechanic:{kind:kindOf(s),power:rawPower(s),target:targetOf(s),aoe:mechanicOf(s).aoe===true,duration:durationOf(s)},
+      damage:round(damage),healing:round(heal),defenseScore:round(defense),controlScore:round(control),
+      effects:effectsOf(s),descriptionWarnings:descriptionWarnings(s),sourceKeys:Object.keys(s).sort(),
+      metrics:{offenseScore:round(offense),sustainScore:round(sustain),utilityScore:round(utility),damageEfficiency:round(damage/denominator),powerEfficiency:round(rawPowerIndex/denominator),rawPowerIndex:round(rawPowerIndex)}
     };
     jutsus.push(row);
-    links.push({characterId:c.id,characterName:c.name,jutsuId:jid,slot,name:row.name});
+    links.push({characterId:id,characterName:c.name??id,jutsuId,slot,name:row.name,originalName:row.originalName});
   }
   characters.push({
-    characterId:c.id,name:c.name??c.id,game:c.game??null,role:c.role??null,element:c.element??null,image:c.img??null,
-    jutsuCount:cards.length,jutsuIds:cards.map((s,i)=>`${c.id}:${s?.slot??i}`)
+    characterId:id,name:c.name??id,bio:c.bio??'',image:c.icon??c.img??null,skillField:shape.field,jutsuCount:skills.length,
+    jutsuIds:skills.map((_,i)=>`${id}:${i+1}`)
   });
 }
 
@@ -129,70 +145,77 @@ for(const j of jutsus){
   j.metrics.efficiencyRobustZ=round(robustZ(j.metrics.damageEfficiency,effValues));
   j.metrics.powerRobustZ=round(robustZ(j.metrics.rawPowerIndex,powerValues));
   j.balanceFlags=[];
-  if(j.damage>0&&Math.abs(j.metrics.damageRobustZ)>=2.5) j.balanceFlags.push(j.metrics.damageRobustZ>0?'dano_outlier_alto':'dano_outlier_baixo');
-  if(j.damage>0&&Math.abs(j.metrics.efficiencyRobustZ)>=2.5) j.balanceFlags.push(j.metrics.efficiencyRobustZ>0?'eficiencia_outlier_alta':'eficiencia_outlier_baixa');
-  if(Math.abs(j.metrics.powerRobustZ)>=3) j.balanceFlags.push(j.metrics.powerRobustZ>0?'indice_poder_outlier_alto':'indice_poder_outlier_baixo');
-  if(j.cost===0&&j.damage>0) j.balanceFlags.push('dano_com_custo_zero');
-  if(j.cd===0&&j.metrics.utilityScore>=10) j.balanceFlags.push('controle_forte_sem_cooldown');
-  if(j.descriptionWarnings.length) j.balanceFlags.push('descricao_mecanica_revisar');
+  if(j.damage>0&&Math.abs(j.metrics.damageRobustZ)>=2.5)j.balanceFlags.push(j.metrics.damageRobustZ>0?'dano_outlier_alto':'dano_outlier_baixo');
+  if(j.damage>0&&Math.abs(j.metrics.efficiencyRobustZ)>=2.5)j.balanceFlags.push(j.metrics.efficiencyRobustZ>0?'eficiencia_dano_outlier_alta':'eficiencia_dano_outlier_baixa');
+  if(Math.abs(j.metrics.powerRobustZ)>=3)j.balanceFlags.push(j.metrics.powerRobustZ>0?'indice_poder_outlier_alto':'indice_poder_outlier_baixo');
+  if(j.costUnits===0&&(j.damage>0||j.controlScore>0||j.healing>0||j.defenseScore>0))j.balanceFlags.push('efeito_relevante_sem_custo');
+  if(j.cooldown===0&&j.controlScore>=10)j.balanceFlags.push('controle_forte_sem_cooldown');
+  if(j.mechanic.kind==='invuln'&&j.mechanic.duration>1)j.balanceFlags.push('invulnerabilidade_multiturno_revisar');
+  if(j.descriptionWarnings.length)j.balanceFlags.push('descricao_mecanica_revisar');
 }
 
-const byChar=new Map();
-for(const j of jutsus){if(!byChar.has(j.characterId))byChar.set(j.characterId,[]);byChar.get(j.characterId).push(j)}
-const charMetrics=[];
-for(const c of characters){
+const byChar=groupBy(jutsus,j=>j.characterId);
+const characterBalance=characters.map(c=>{
   const js=byChar.get(c.characterId)||[];
-  const m={
-    characterId:c.characterId,name:c.name,role:c.role,element:c.element,jutsuCount:js.length,
+  return {
+    characterId:c.characterId,name:c.name,jutsuCount:js.length,
     avgDamage:round(js.reduce((s,j)=>s+j.damage,0)/Math.max(1,js.length)),
     maxDamage:round(Math.max(0,...js.map(j=>j.damage))),
     totalDamageBudget:round(js.reduce((s,j)=>s+j.damage,0)),
-    avgCost:round(js.reduce((s,j)=>s+j.cost,0)/Math.max(1,js.length)),
-    avgCooldown:round(js.reduce((s,j)=>s+j.cd,0)/Math.max(1,js.length)),
+    avgCostUnits:round(js.reduce((s,j)=>s+j.costUnits,0)/Math.max(1,js.length)),
+    avgCooldown:round(js.reduce((s,j)=>s+j.cooldown,0)/Math.max(1,js.length)),
+    offenseScore:round(js.reduce((s,j)=>s+j.metrics.offenseScore,0)),
+    sustainScore:round(js.reduce((s,j)=>s+j.metrics.sustainScore,0)),
     utilityScore:round(js.reduce((s,j)=>s+j.metrics.utilityScore,0)),
-    healingScore:round(js.reduce((s,j)=>s+j.metrics.healingScore,0)),
     rawPowerIndex:round(js.reduce((s,j)=>s+j.metrics.rawPowerIndex,0)),
     descriptionWarnings:js.reduce((s,j)=>s+j.descriptionWarnings.length,0),
     jutsuBalanceFlags:js.reduce((s,j)=>s+j.balanceFlags.length,0)
   };
-  charMetrics.push(m);
-}
-const charPower=charMetrics.map(c=>c.rawPowerIndex);
-for(const c of charMetrics){
-  c.powerRobustZ=round(robustZ(c.rawPowerIndex,charPower));
+});
+const characterPower=characterBalance.map(c=>c.rawPowerIndex);
+for(const c of characterBalance){
+  c.powerRobustZ=round(robustZ(c.rawPowerIndex,characterPower));
   c.balanceFlags=[];
   if(Math.abs(c.powerRobustZ)>=2.5)c.balanceFlags.push(c.powerRobustZ>0?'personagem_power_outlier_alto':'personagem_power_outlier_baixo');
   if(c.jutsuCount!==4)c.balanceFlags.push('quantidade_jutsus_diferente_de_4');
   if(c.descriptionWarnings)c.balanceFlags.push('possui_descricao_mecanica_inconsistente');
 }
 
-const duplicateNames=[...Map.groupBy(jutsus,j=>norm(j.name))].filter(([,v])=>v.length>1).map(([name,v])=>({normalizedName:name,count:v.length,uses:v.map(x=>({jutsuId:x.jutsuId,character:x.characterName,name:x.name}))}));
+const duplicateNames=[...groupBy(jutsus,j=>norm(j.originalName||j.name))].filter(([,v])=>v.length>1).map(([name,v])=>({normalizedName:name,count:v.length,uses:v.map(x=>({jutsuId:x.jutsuId,character:x.characterName,name:x.name,originalName:x.originalName}))}));
+const kindCounts=Object.fromEntries([...groupBy(jutsus,j=>j.mechanic.kind)].map(([k,v])=>[k,v.length]).sort((a,b)=>a[0].localeCompare(b[0])));
+const countByField=Object.fromEntries([...groupBy(characters,c=>c.skillField||'none')].map(([k,v])=>[k,v.length]));
 const summary={
   generatedAt:new Date().toISOString(),sourceFiles:['roster.js','jutsu-variants.js'],characters:characters.length,jutsus:jutsus.length,links:links.length,
-  roles:[...new Set(characters.map(x=>x.role).filter(Boolean))].sort(),elements:[...new Set(characters.map(x=>x.element).filter(Boolean))].sort(),
-  duplicateSlots:duplicateSlots.length,duplicateJutsuNames:duplicateNames.length,
-  descriptionWarnings:jutsus.reduce((s,j)=>s+j.descriptionWarnings.length,0),jutsuBalanceFlags:jutsus.reduce((s,j)=>s+j.balanceFlags.length,0),
-  characterBalanceFlags:charMetrics.reduce((s,c)=>s+c.balanceFlags.length,0),
+  characterSkillFields:countByField,mechanicKinds:kindCounts,duplicateJutsuNames:duplicateNames.length,
+  charactersWithoutFourJutsu:characterBalance.filter(c=>c.jutsuCount!==4).length,
+  descriptionWarnings:jutsus.reduce((s,j)=>s+j.descriptionWarnings.length,0),jutsuBalanceFlags:jutsus.reduce((s,j)=>s+j.balanceFlags.length,0),characterBalanceFlags:characterBalance.reduce((s,c)=>s+c.balanceFlags.length,0),
   methodology:{
-    statusScore:'peso por tipo × chance × duração limitada a 4 turnos',
-    damageEfficiency:'dano médio / (max(1,custo) × (cooldown+1))',
-    rawPowerIndex:'dano + utilidade + 0.8×cura + bônus condicional estimado',
-    outliers:'robust z-score baseado em mediana/MAD; triagem, não nerf/buff automático'
+    offenseScore:'dano estruturado × fator de área (1.75 para AoE)',
+    sustainScore:'0.8×cura + 0.45×defesa acumulada; AoE recebe fator 1.75',
+    utilityScore:'peso por tipo de controle × duração (máximo 4) × fator de área',
+    damageEfficiency:'dano / (max(1,custo em unidades) × (cooldown+1))',
+    powerEfficiency:'(ofensa+sustentação+utilidade) / (max(1,custo) × (cooldown+1))',
+    outliers:'robust z-score baseado em mediana/MAD; triagem somente, nunca nerf/buff automático'
   }
 };
 
 const write=(name,data)=>fs.writeFileSync(path.join(outDir,name),JSON.stringify(data,null,2)+'\n');
-write('SUMMARY.json',summary);write('CHARACTERS.json',characters);write('JUTSUS.json',jutsus);write('CHARACTER-JUTSU-MAP.json',links);write('CHARACTER-BALANCE.json',charMetrics);write('DUPLICATE-JUTSU-NAMES.json',duplicateNames);
+write('SUMMARY.json',summary);
+write('CHARACTERS.json',characters);
+write('JUTSUS.json',jutsus);
+write('CHARACTER-JUTSU-MAP.json',links);
+write('CHARACTER-BALANCE.json',characterBalance);
+write('DUPLICATE-JUTSU-NAMES.json',duplicateNames);
 
 const esc=s=>String(s??'').replace(/\|/g,'\\|').replace(/\n/g,' ');
-const topJ=[...jutsus].sort((a,b)=>Math.abs(b.metrics.powerRobustZ)-Math.abs(a.metrics.powerRobustZ)).slice(0,40);
-const topC=[...charMetrics].sort((a,b)=>Math.abs(b.powerRobustZ)-Math.abs(a.powerRobustZ)).slice(0,40);
-let md=`# Auditoria de personagens, jutsus e balanceamento\n\nGerado em: ${summary.generatedAt}\n\n## Escopo e contagem\n\n- Personagens jogáveis encontrados: **${summary.characters}**\n- Jutsus ligados aos personagens: **${summary.jutsus}**\n- Ligações personagem↔jutsu: **${summary.links}**\n- Alertas descrição↔mecânica: **${summary.descriptionWarnings}**\n- Flags de balanceamento de jutsu: **${summary.jutsuBalanceFlags}**\n- Flags de personagem: **${summary.characterBalanceFlags}**\n- Slots duplicados dentro do mesmo personagem: **${summary.duplicateSlots}**\n\n## Critério\n\nO índice abaixo é **triagem**, não uma decisão automática de balanceamento. Ele compara dano, custo, cooldown, controle, cura e bônus condicionais. A decisão final precisa considerar o motor real, alvo, duração, ação/economia de chakra, sinergias e matriz de confrontos.\n\n## Personagens com maior desvio do elenco\n\n| Personagem | Papel | Jutsus | Dano médio | Custo médio | CD médio | Utilidade | Cura | Índice | z robusto | Alertas |\n|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|\n`;
-for(const c of topC)md+=`| ${esc(c.name)} | ${esc(c.role)} | ${c.jutsuCount} | ${c.avgDamage} | ${c.avgCost} | ${c.avgCooldown} | ${c.utilityScore} | ${c.healingScore} | ${c.rawPowerIndex} | ${c.powerRobustZ} | ${esc(c.balanceFlags.join(', '))} |\n`;
-md+=`\n## Jutsus com maior desvio\n\n| Personagem | Jutsu | Custo | CD | Dano | Utilidade | Cura | Eficiência | z poder | Alertas |\n|---|---|---:|---:|---:|---:|---:|---:|---:|---|\n`;
-for(const j of topJ)md+=`| ${esc(j.characterName)} | ${esc(j.name)} | ${j.cost} | ${j.cd} | ${j.damage} | ${j.metrics.utilityScore} | ${j.metrics.healingScore} | ${j.metrics.damageEfficiency} | ${j.metrics.powerRobustZ} | ${esc([...j.balanceFlags,...j.descriptionWarnings].join(', '))} |\n`;
-md+=`\n## Arquivos detalhados\n\n- \`CHARACTERS.json\`: levantamento de cada personagem.\n- \`JUTSUS.json\`: levantamento de cada jutsu, descrição, dano, efeitos, custo, cooldown e flags.\n- \`CHARACTER-JUTSU-MAP.json\`: linkagem completa personagem↔jutsu.\n- \`CHARACTER-BALANCE.json\`: comparação de kits por personagem.\n- \`DUPLICATE-JUTSU-NAMES.json\`: nomes repetidos para revisão de identidade/versão.\n- \`SUMMARY.json\`: contagens e metodologia.\n\n## O que ainda exige simulação antes de alterar números\n\n1. Confirmar no motor como \`hit\`, bônus, defesa, alvo, duração e efeitos por turno entram no dano efetivo.\n2. Executar confrontos repetidos personagem×personagem com sementes reproduzíveis.\n3. Separar força do kit de força da política de IA/jogador.\n4. Medir taxa de vitória, duração, chakra restante, dano e controle por matchup.\n5. Ajustar em pequenos lotes e repetir a matriz após cada alteração.\n`;
+const topJ=[...jutsus].sort((a,b)=>Math.abs(b.metrics.powerRobustZ)-Math.abs(a.metrics.powerRobustZ)).slice(0,50);
+const topC=[...characterBalance].sort((a,b)=>Math.abs(b.powerRobustZ)-Math.abs(a.powerRobustZ)).slice(0,50);
+let md=`# Auditoria de personagens, jutsus e balanceamento\n\nGerado em: ${summary.generatedAt}\n\n## Escopo\n\n- Personagens: **${summary.characters}**\n- Jutsus: **${summary.jutsus}**\n- Ligações personagem↔jutsu: **${summary.links}**\n- Personagens sem exatamente 4 jutsus: **${summary.charactersWithoutFourJutsu}**\n- Alertas descrição↔mecânica: **${summary.descriptionWarnings}**\n- Flags de jutsu: **${summary.jutsuBalanceFlags}**\n- Flags de personagem: **${summary.characterBalanceFlags}**\n\n## Tipos mecânicos encontrados\n\n\`${JSON.stringify(summary.mechanicKinds)}\`\n\n## Critério\n\nOs índices são **triagem comparativa**. Nenhum valor deve ser alterado só porque apareceu como outlier. Antes de nerf/buff é obrigatório confirmar o motor real, economia de chakra, alvo/área, duração, sinergias, requisitos e taxa de vitória por confronto.\n\n## Personagens com maior desvio estático\n\n| Personagem | Jutsus | Dano médio | Máx dano | Custo méd. | CD méd. | Ofensa | Sustentação | Utilidade | Índice | z robusto | Alertas |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|\n`;
+for(const c of topC)md+=`| ${esc(c.name)} | ${c.jutsuCount} | ${c.avgDamage} | ${c.maxDamage} | ${c.avgCostUnits} | ${c.avgCooldown} | ${c.offenseScore} | ${c.sustainScore} | ${c.utilityScore} | ${c.rawPowerIndex} | ${c.powerRobustZ} | ${esc(c.balanceFlags.join(', '))} |\n`;
+md+=`\n## Jutsus com maior desvio estático\n\n| Personagem | Jutsu | Tipo | Custo | CD | Dano | Sust. | Controle | Índice | z robusto | Alertas |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|\n`;
+for(const j of topJ)md+=`| ${esc(j.characterName)} | ${esc(j.name)} | ${esc(j.mechanic.kind)} | ${j.costUnits} | ${j.cooldown} | ${j.damage} | ${round(j.metrics.sustainScore)} | ${round(j.metrics.utilityScore)} | ${j.metrics.rawPowerIndex} | ${j.metrics.powerRobustZ} | ${esc([...j.balanceFlags,...j.descriptionWarnings].join(', '))} |\n`;
+md+=`\n## Arquivos produzidos\n\n- \`CHARACTERS.json\`: levantamento de cada personagem.\n- \`JUTSUS.json\`: cada jutsu, descrição, custo, cooldown, dano, mecânica e efeitos.\n- \`CHARACTER-JUTSU-MAP.json\`: linkagem completa personagem↔jutsu.\n- \`CHARACTER-BALANCE.json\`: comparação agregada de cada kit.\n- \`DUPLICATE-JUTSU-NAMES.json\`: técnicas de mesmo nome usadas por múltiplos personagens/versões.\n- \`SUMMARY.json\`: contagens, tipos mecânicos e metodologia.\n\n## Próximo gate antes de alterar números\n\n1. Comparar jutsus com o repositório canônico Naruto Unison quando houver correspondência pelo nome original.\n2. Confirmar no motor como dano, defesa, invulnerabilidade, alvo, AoE, duração, requisitos e chakra são resolvidos.\n3. Rodar matriz personagem×personagem com sementes reproduzíveis e várias políticas de IA.\n4. Medir win rate, TTK, dano, chakra restante, controle e taxa de uso por jutsu.\n5. Corrigir primeiro inconsistências descrição↔mecânica; depois números em lotes pequenos; repetir a matriz após cada lote.\n`;
 fs.writeFileSync(path.join(outDir,'BALANCE-REPORT.md'),md);
 
 console.log(JSON.stringify(summary,null,2));
-if(summary.characters<1||summary.jutsus<1||summary.links!==summary.jutsus||summary.duplicateSlots>0) process.exitCode=2;
+if(summary.characters<1||summary.jutsus<1||summary.links!==summary.jutsus||summary.charactersWithoutFourJutsu>0)process.exitCode=2;
