@@ -46,7 +46,10 @@ for(let i=0;i<shardCount;i++)if(Number(candidates[i]?.summary?.shard?.index)!==i
 
 const fields=['engine','engineVersion','mode','scope','seeds','policies','totalRoster','eligibleRoster','roster','excludedCharacters','expectedGamesPerPair','v2NativeSkills','legacyFallbackSkills','effectTypes'];
 for(const field of fields)assertSame(field,candidates.map(x=>x.summary[field]));
-assertSame('override configuration',candidates.map(x=>({schemaVersion:x.overrides.schemaVersion,upstream:x.overrides.upstream,overridesConfigured:x.overrides.overridesConfigured,batches:x.overrides.batches,keys:x.overrides.keys,publicRosterMutated:x.overrides.publicRosterMutated,scope:x.overrides.scope,sourceRuntime:x.overrides.sourceRuntime})));
+const canonicalOverrideState=assertSame('override configuration',candidates.map(x=>({schemaVersion:x.overrides.schemaVersion,upstream:x.overrides.upstream,overridesConfigured:x.overrides.overridesConfigured,batches:x.overrides.batches,keys:x.overrides.keys,publicRosterMutated:x.overrides.publicRosterMutated,scope:x.overrides.scope,sourceRuntime:x.overrides.sourceRuntime})));
+if(Number(canonicalOverrideState.overridesConfigured)!==13)throw new Error(`overrides canônicos=${canonicalOverrideState.overridesConfigured} esperados=13`);
+if(canonicalOverrideState.publicRosterMutated!==false)throw new Error('publicRosterMutated precisa permanecer false');
+if(canonicalOverrideState.scope!=='analysis-only')throw new Error(`override scope inválido: ${canonicalOverrideState.scope}`);
 
 const first=candidates[0].summary;
 if(first.mode!=='standard')throw new Error(`merge canônico exige mode=standard, recebido ${first.mode}`);
@@ -105,14 +108,14 @@ const summary={
   matchups:totalGames,
   expectedGamesPerPair,
   shard:{merged:true,count:shardCount,strategy:'pair-index-modulo',globalPairs:expectedPairs,sourceShardIndices:candidates.map(x=>Number(x.summary.shard.index))},
-  canonicalOverrides:{overridesConfigured:Number(candidates[0].overrides.overridesConfigured),batches:candidates[0].overrides.batches,keys:candidates[0].overrides.keys,publicRosterMutated:candidates[0].overrides.publicRosterMutated,scope:candidates[0].overrides.scope},
+  canonicalOverrides:{overridesConfigured:Number(canonicalOverrideState.overridesConfigured),batches:canonicalOverrideState.batches,keys:canonicalOverrideState.keys,publicRosterMutated:canonicalOverrideState.publicRosterMutated,scope:canonicalOverrideState.scope},
   avgBattleTurns:round(matchups.reduce((n,x)=>n+Number(x.turns||0),0)/Math.max(1,totalGames),2),
   v2NativeSkills:first.v2NativeSkills,
   legacyFallbackSkills:first.legacyFallbackSkills,
   effectTypes:first.effectTypes,
   top:ratings[0]||null,
   bottom:ratings.at(-1)||null,
-  methodology:[...(first.methodology||[]),'strict deterministic shard merge','unique pair coverage gate','exact games-per-pair gate']
+  methodology:[...(first.methodology||[]),'strict deterministic shard merge','unique pair coverage gate','exact games-per-pair gate','canonical override integrity gate']
 };
 
 fs.rmSync(outDir,{recursive:true,force:true});
