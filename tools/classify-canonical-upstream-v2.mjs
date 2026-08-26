@@ -142,7 +142,7 @@ function values(block, re) {
 function upstreamFacts(block, helper = null) {
   const cats = [];
   const tests = [
-    ['damage', /\bdamage\b|\bdamages\b|\bpierce\b/i],
+    ['damage', /\bdamage\b(?!\s+reduction)|\bdamages\b|\bpierce\b/i],
     ['heal', /\bheal\b|\bhealing\b/i],
     ['defense', /\bdefend\b|\bDefense\b/i],
     ['reduction', /\bReduce\b|damage reduction/i],
@@ -184,7 +184,7 @@ function upstreamFacts(block, helper = null) {
     afflict: values(block, /\bafflict\s+(-?\d+)/g),
     heal: values(block, /\bheal\s+(-?\d+)/gi),
     defend: values(block, /\bdefend(?:'|With)?(?:\s+\w+)?\s+(-?\d+)/g),
-    reduce: values(block, /\bReduce[^\]]*?Flat\s+(\d+)/g),
+    reduce: values(block, /\bReduce\s+\[[^\]]*\]\s+Flat\s+(-?\d+)/g),
     executeThresholds: values(block, /\bexecuteAt\s+(-?\d+)/g),
     durations: uniq(values(block, /\bapply(?:With\s*\[[^\]]*\])?\s+(\d+)\b/g).concat(values(block, /\bControl\s+(\d+)\b/g))),
     targets: targetFacts(block)
@@ -646,6 +646,8 @@ function selfTest() {
   if(!dotMismatch.classifications.includes('EFEITO_ERRADO')||!dotMismatch.evidence.effectNumeric?.dot)throw new Error('SELFTEST_DOT_NUMERIC');
   const defenseMismatch=classifyTechnique({published:{description:'defesa',chakraCost:[],cooldown:0,mechanics:[{op:'shield',amount:20,turns:2,target:'self'}]},upstream:{categories:['defense'],damage:[],pierce:[],afflict:[],heal:[],defend:[30],reduce:[],executeThresholds:[],targets:['self'],cost:[],cooldown:0,durations:[2]}});
   if(!defenseMismatch.classifications.includes('EFEITO_ERRADO')||!defenseMismatch.evidence.effectNumeric?.defense)throw new Error('SELFTEST_DEFENSE_NUMERIC');
+  const reductionFacts=upstreamFacts('Skill.desc = "Naruto gains damage reduction."\nSkill.effects = [ To Self $ apply 4 skillName [Reduce [All] Flat 15] ]');
+  if(reductionFacts.categories.includes('damage')||!reductionFacts.categories.includes('reduction')||JSON.stringify(reductionFacts.reduce)!==JSON.stringify([15])||!reductionFacts.durations.includes(4))throw new Error('SELFTEST_REDUCTION_PARSER');
   const executeMismatch=classifyTechnique({published:{description:'execute',chakraCost:[],cooldown:0,mechanics:[{op:'execute',threshold:20,target:'primary'}]},upstream:{categories:['damage','execute'],damage:[],pierce:[],afflict:[],heal:[],defend:[],reduce:[],executeThresholds:[25],targets:['enemy'],cost:[],cooldown:0,durations:[]}});
   if(!executeMismatch.classifications.includes('EFEITO_ERRADO')||!executeMismatch.evidence.effectNumeric?.execute)throw new Error('SELFTEST_EXECUTE_NUMERIC');
   const supportedGap = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'redirect'] } });
