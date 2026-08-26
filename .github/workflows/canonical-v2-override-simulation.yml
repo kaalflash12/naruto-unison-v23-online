@@ -73,3 +73,5 @@ jobs:
           path: audit/balance/simulation-v2-overrides
           if-no-files-found: error
           retention-days: 30
+
+# rerun after combat-v2 triggerTarget/excludeClasses patch
