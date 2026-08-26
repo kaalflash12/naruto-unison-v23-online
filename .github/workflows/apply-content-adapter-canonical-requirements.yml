@@ -1,0 +1,48 @@
+name: Apply Canonical Requirement And Flat Bonus Adapter Patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-content-adapter-canonical-requirements.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Apply canonical adapter patch
+        run: node tools/patch-content-adapter-canonical-requirements.mjs
+      - name: Syntax and contract
+        run: |
+          set -euo pipefail
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-content-mechanics-v2.cjs
+          node tools/test-content-mechanics-v2.cjs
+          grep -Fq 'bonusAmount' combat-content-adapter-v2.js
+          grep -Fq 'requirements:statusRequirement(technique.requires)' combat-content-adapter-v2.js
+          echo 'CANONICAL_REQUIREMENT_FLAT_BONUS_ADAPTER=PASS'
+      - name: Commit proven patch
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- combat-content-adapter-v2.js tools/test-content-mechanics-v2.cjs; then
+            echo 'PATCH_ALREADY_APPLIED=true'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add combat-content-adapter-v2.js tools/test-content-mechanics-v2.cjs
+          git commit -m 'feat(combat): support canonical requirements and flat conditional bonuses'
+          git pull --rebase origin main
+          git push origin HEAD:main
