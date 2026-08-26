@@ -1,118 +1,68 @@
-# Triggered 2026-08-25 to apply the verified phase-aware defense-expiry patch.
-name: One-off Balance Fix — Phase-aware Defense Expiry
+name: Validate Phase-aware Defense Expiry
 
 on:
   push:
     branches: [main]
     paths:
+      - 'app-online.js'
+      - 'tools/simulate-balance.mjs'
       - '.github/workflows/phase-defense-balance-fix.yml'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  patch:
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply exact phase-expiry patch
+      - name: Prove phase-aware defense semantics are installed
+        shell: bash
         run: |
+          set -euo pipefail
+          node --check app-online.js
+          node --check tools/simulate-balance.mjs
           node - <<'JS'
           const fs=require('fs');
-          function replaceOne(text,before,after,label){
-            const count=text.split(before).length-1;
-            if(count!==1) throw new Error(`${label}: expected exactly 1 match, found ${count}`);
-            return text.replace(before,after);
+          const app=fs.readFileSync('app-online.js','utf8');
+          const sim=fs.readFileSync('tools/simulate-balance.mjs','utf8');
+          const requiredApp=[
+            'function expireDefenseAfterOpponentPhase(team)',
+            'expireDefenseAfterOpponentPhase(G.ai);',
+            'expireDefenseAfterOpponentPhase(G.you);'
+          ];
+          for(const marker of requiredApp){
+            if(!app.includes(marker)) throw new Error('app-online.js missing marker: '+marker);
           }
-
-          let app=fs.readFileSync('app-online.js','utf8');
-          app=replaceOne(
-            app,
-            'async function tick(){',
-            "function expireDefenseAfterOpponentPhase(team){\n for(const f of(team||[])){\n  if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}\n  if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}\n }\n}\nasync function tick(){",
-            'app: inject expireDefenseAfterOpponentPhase'
-          );
-          app=replaceOne(
-            app,
-            "  if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}\n  if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}\n  for(const s of f.skills)if(s.cd)s.cd--;",
-            "  for(const s of f.skills)if(s.cd)s.cd--;",
-            'app: remove global defense expiry from tick'
-          );
-          app=replaceOne(
-            app,
-            "}G.ch=ch;\n recordJutsuUses(usedActs,G.you);",
-            "}G.ch=ch;\n expireDefenseAfterOpponentPhase(G.ai);\n recordJutsuUses(usedActs,G.you);",
-            'app: expire AI defenses after player phase'
-          );
-          app=replaceOne(
-            app,
-            "for(const a of aiActs())await perform(a,true);\n if(!alive(G.you).length)return finish(false,false);",
-            "for(const a of aiActs())await perform(a,true);\n expireDefenseAfterOpponentPhase(G.you);\n if(!alive(G.you).length)return finish(false,false);",
-            'app: expire player defenses after AI phase'
-          );
-          app=replaceOne(
-            app,
-            "try{log(`${S.name} pulou o turno.`,'info');for(const a of aiActs())await perform(a,true);if(!alive(G.you).length)return finish(false,false);",
-            "try{log(`${S.name} pulou o turno.`,'info');expireDefenseAfterOpponentPhase(G.ai);for(const a of aiActs())await perform(a,true);expireDefenseAfterOpponentPhase(G.you);if(!alive(G.you).length)return finish(false,false);",
-            'app: phase expiry while skipping turn'
-          );
-          fs.writeFileSync('app-online.js',app);
-
-          let sim=fs.readFileSync('tools/simulate-balance.mjs','utf8');
-          sim=replaceOne(
-            sim,
-            'function tick(teams,skillStats){',
-            "function expireDefenseAfterOpponentPhase(team){for(const f of team){if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}}}\nfunction tick(teams,skillStats){",
-            'sim: inject phase expiry'
-          );
-          sim=replaceOne(
-            sim,
-            "if(f.inv){f.invTurns=Math.max(0,(f.invTurns||1)-1);if(f.invTurns<=0)f.inv=0}if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}for(const s of f.skills)if(s.cd)s.cd--",
-            "for(const s of f.skills)if(s.cd)s.cd--",
-            'sim: remove global defense expiry from tick'
-          );
-          sim=replaceOne(
-            sim,
-            "if(first==='A'){step(A,B,chA,policyA);if(!alive(B).length)return{winner:'A',turns:turn};step(B,A,chB,policyB)}else{step(B,A,chB,policyB);if(!alive(A).length)return{winner:'B',turns:turn};step(A,B,chA,policyA)}",
-            "if(first==='A'){step(A,B,chA,policyA);expireDefenseAfterOpponentPhase(B);if(!alive(B).length)return{winner:'A',turns:turn};step(B,A,chB,policyB);expireDefenseAfterOpponentPhase(A)}else{step(B,A,chB,policyB);expireDefenseAfterOpponentPhase(A);if(!alive(A).length)return{winner:'B',turns:turn};step(A,B,chA,policyA);expireDefenseAfterOpponentPhase(B)}",
-            'sim: expire defenses after opposing phase'
-          );
-          sim=replaceOne(
-            sim,
-            "shield:'pool único; duração só controla expiração',invulnerability:'bloqueia hit/DOT enquanto ativa'",
-            "shield:'pool único; duração decrementa depois da fase adversária',invulnerability:'bloqueia hit/DOT enquanto ativa e decrementa depois da fase adversária'",
-            'sim: document runtime defense expiry'
-          );
-          fs.writeFileSync('tools/simulate-balance.mjs',sim);
+          const helperCount=(app.match(/function expireDefenseAfterOpponentPhase\(team\)/g)||[]).length;
+          if(helperCount!==1) throw new Error('app helper count='+helperCount);
+          const aiCalls=(app.match(/expireDefenseAfterOpponentPhase\(G\.ai\);/g)||[]).length;
+          const youCalls=(app.match(/expireDefenseAfterOpponentPhase\(G\.you\);/g)||[]).length;
+          if(aiCalls<2||youCalls<2) throw new Error(`phase calls insufficient ai=${aiCalls} you=${youCalls}`);
+          const tickStart=app.indexOf('async function tick(){');
+          const tickEnd=app.indexOf('\n}',tickStart);
+          const tick=app.slice(tickStart,tickEnd+2);
+          if(/invTurns|shieldTurns/.test(tick)) throw new Error('global tick still decrements phase defenses');
+          if(!sim.includes('function expireDefenseAfterOpponentPhase(team)')) throw new Error('sim helper missing');
+          if(!sim.includes('step(A,B,chA,policyA);expireDefenseAfterOpponentPhase(B)')) throw new Error('sim A→B phase expiry missing');
+          if(!sim.includes('step(B,A,chB,policyB);expireDefenseAfterOpponentPhase(A)')) throw new Error('sim B→A phase expiry missing');
+          console.log('PHASE_DEFENSE_MARKERS=PASS',{helperCount,aiCalls,youCalls});
           JS
-      - name: Validate patched runtime and simulator
+      - name: Run reduced deterministic simulator smoke
         env:
           BALANCE_DUEL_SEEDS: '1'
           BALANCE_TEAM_BATTLES: '1000'
           BALANCE_MAX_TURNS: '20'
         run: |
           set -euo pipefail
-          node --check app-online.js
-          node --check tools/simulate-balance.mjs
-          node tools/simulate-balance.mjs > /tmp/phase-fix-smoke.json
-          grep -q '"characters": 209' /tmp/phase-fix-smoke.json
-          grep -q '"jutsusObserved": 836' /tmp/phase-fix-smoke.json
+          node tools/simulate-balance.mjs > /tmp/phase-defense-smoke.json
+          grep -q '"characters": 209' /tmp/phase-defense-smoke.json
+          grep -q '"jutsusObserved": 836' /tmp/phase-defense-smoke.json
           git restore audit/balance/current
-      - name: Commit verified phase-expiry fix
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add app-online.js tools/simulate-balance.mjs
-          git diff --cached --check
-          git diff --cached --quiet && { echo 'No changes to commit'; exit 1; }
-          git commit -m 'fix(balance): make shield and invulnerability phase-aware'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          test -z "$(git status --porcelain)"
+          echo 'PHASE_DEFENSE_SIMULATION=PASS'
