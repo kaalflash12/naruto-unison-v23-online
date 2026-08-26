@@ -9,6 +9,9 @@ const PARALLEL=Math.max(1,Math.min(SHARD_COUNT,Number(process.env.SIM_SHARD_PARA
 const shardRoot=path.join(root,'audit','balance','canonical-v2-shards');
 const finalDir=path.join(root,'audit','balance','canonical-v2-full');
 const analysisDir=path.join(root,'audit','balance','analysis-v2','all');
+const publishedDir=path.join(root,'audit','balance','published-v2');
+const publishedSummaryPath=path.join(publishedDir,'SUMMARY.json');
+const canonicalRosterPath=path.join(publishedDir,'CANONICAL-ROSTER-209x4.js');
 
 function copyPath(src,dst){
   if(!fs.existsSync(src)) throw new Error(`Fonte ausente: ${src}`);
@@ -23,6 +26,21 @@ function runNode(args,{cwd=root,env={}}={}){
   });
 }
 function readJson(p){return JSON.parse(fs.readFileSync(p,'utf8'))}
+function assertNativeV2(summary,label){
+  if(summary.v2NativeSkills!==836||summary.legacyFallbackSkills!==0){
+    throw new Error(`${label}: fonte mecânica inválida v2NativeSkills=${summary.v2NativeSkills} legacyFallbackSkills=${summary.legacyFallbackSkills}`);
+  }
+}
+
+// Rebuild the only accepted 209-character source from the published content API.
+// The audit adapts each of the 836 linked techniques through combat-content-adapter-v2.
+await runNode(['tools/audit-published-techniques-v2.mjs']);
+if(!fs.existsSync(publishedSummaryPath)||!fs.existsSync(canonicalRosterPath)) throw new Error('roster canônico publicado V2 não foi gerado');
+const published=readJson(publishedSummaryPath);
+if(published.gate!=='PASS'||published.canonicalPlayableCharacters!==209||published.canonicalLinks!==836){
+  throw new Error(`gate do conteúdo publicado inválido: ${JSON.stringify({gate:published.gate,characters:published.canonicalPlayableCharacters,links:published.canonicalLinks})}`);
+}
+console.log('CANONICAL_PUBLISHED_V2_SOURCE=PASS',JSON.stringify({characters:published.canonicalPlayableCharacters,links:published.canonicalLinks,adapterVersion:published.adapterVersion,rulesVersion:published.rulesVersion}));
 
 fs.rmSync(shardRoot,{recursive:true,force:true});
 fs.rmSync(finalDir,{recursive:true,force:true});
@@ -32,7 +50,9 @@ fs.mkdirSync(shardRoot,{recursive:true});
 async function runShard(index){
   const tmp=fs.mkdtempSync(path.join(os.tmpdir(),`naruto-v2-shard-${index}-`));
   try{
-    for(const rel of ['roster.js','combat-rules-v2.js','jutsu-variants.js','tools','balance']){
+    // Never use the legacy public roster as the mechanical source for the canonical matrix.
+    copyPath(canonicalRosterPath,path.join(tmp,'roster.js'));
+    for(const rel of ['combat-rules-v2.js','jutsu-variants.js','tools','balance']){
       const src=path.join(root,rel);
       if(fs.existsSync(src)) copyPath(src,path.join(tmp,rel));
     }
@@ -46,11 +66,12 @@ async function runShard(index){
     const summary=readJson(path.join(result,'SUMMARY.json'));
     const matchups=readJson(path.join(result,'MATCHUPS.json'));
     if(summary.totalRoster!==209||summary.eligibleRoster!==209||summary.roster!==209||summary.scope!=='all') throw new Error(`shard ${index}: cobertura inválida`);
+    assertNativeV2(summary,`shard ${index}`);
     if(summary.shard?.count!==SHARD_COUNT||summary.shard?.index!==index||summary.shard?.globalPairs!==21736) throw new Error(`shard ${index}: metadados inválidos`);
     if(summary.expectedGamesPerPair!==8||summary.matchups!==matchups.length*8||matchups.some(x=>x.games!==8)) throw new Error(`shard ${index}: jogos/par inválidos`);
     const out=path.join(shardRoot,`shard-${index}`);
     fs.cpSync(result,out,{recursive:true});
-    console.log(`CANONICAL_209_SHARD_${index}=PASS pairs=${matchups.length} games=${summary.matchups}`);
+    console.log(`CANONICAL_209_SHARD_${index}=PASS pairs=${matchups.length} games=${summary.matchups} native=${summary.v2NativeSkills} fallback=${summary.legacyFallbackSkills}`);
   }finally{
     fs.rmSync(tmp,{recursive:true,force:true});
   }
@@ -73,11 +94,16 @@ const matchups=readJson(path.join(finalDir,'MATCHUPS.json'));
 const overrides=readJson(path.join(finalDir,'OVERRIDE-APPLICATION.json'));
 if(merged.engineVersion!==2||merged.mode!=='standard'||merged.scope!=='all') throw new Error('engine/mode/scope final inválido');
 if(merged.totalRoster!==209||merged.eligibleRoster!==209||merged.roster!==209||ratings.length!==209) throw new Error('cobertura final 209 inválida');
+assertNativeV2(merged,'merge final');
 if(merged.pairs!==21736||matchups.length!==21736) throw new Error(`pares finais=${merged.pairs}/${matchups.length}`);
 if(merged.matchups!==173888||merged.expectedGamesPerPair!==8||matchups.some(x=>x.games!==8)) throw new Error('matriz final de batalhas inválida');
 if(new Set(matchups.map(x=>`${x.a}\u0000${x.b}`)).size!==21736) throw new Error('pares duplicados no merge final');
 if(merged.shard?.merged!==true||merged.shard?.count!==8||merged.shard?.globalPairs!==21736) throw new Error('metadados de merge inválidos');
 if(overrides.overridesConfigured!==13||overrides.publicRosterMutated!==false||overrides.scope!=='analysis-only') throw new Error('guardas de override inválidas');
+const battleCounts=ratings.map(x=>Number(x.matches||0));
+const minBattlesPerCharacter=Math.min(...battleCounts);
+const maxBattlesPerCharacter=Math.max(...battleCounts);
+if(minBattlesPerCharacter!==1664||maxBattlesPerCharacter!==1664) throw new Error(`batalhas/personagem inválidas min=${minBattlesPerCharacter} max=${maxBattlesPerCharacter}`);
 
 await runNode(['tools/analyze-balance-v2.mjs'],{env:{SIM_DIR:'audit/balance/canonical-v2-full'}});
 const analysis=readJson(path.join(analysisDir,'SUMMARY.json'));
@@ -85,4 +111,8 @@ const characters=readJson(path.join(analysisDir,'CHARACTER-ANALYSIS.json'));
 if(analysis.scope!=='all'||analysis.characters!==209||characters.length!==209) throw new Error('análise 209 inválida');
 if(analysis.pairs!==21736||analysis.games!==173888) throw new Error('matriz da análise inválida');
 
-console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',JSON.stringify({characters:ratings.length,pairs:matchups.length,battles:merged.matchups,gamesPerPair:merged.expectedGamesPerPair,shards:merged.shard.count,parallel:PARALLEL,overrides:overrides.overridesConfigured,actions:analysis.actionCounts,health:analysis.health}));
+console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',JSON.stringify({
+  characters:ratings.length,pairs:matchups.length,battles:merged.matchups,gamesPerPair:merged.expectedGamesPerPair,
+  minBattlesPerCharacter,maxBattlesPerCharacter,nativeSkills:merged.v2NativeSkills,legacyFallbackSkills:merged.legacyFallbackSkills,
+  shards:merged.shard.count,parallel:PARALLEL,overrides:overrides.overridesConfigured,actions:analysis.actionCounts,health:analysis.health
+}));
