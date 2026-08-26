@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-08-26T19:28:53.574Z",
+  "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "totalTechniques": 836,
+  "comparable": 719,
+  "justifiedExcluded": 117,
+  "correct": 4,
+  "actionable": 715,
+  "safeStructural": 7,
+  "complexEffect": 708,
+  "manualReview": 0,
+  "descriptionAfterMechanics": 710,
+  "classificationCounts": {
+    "CORRETA": 4,
+    "DESCRIÇÃO_ERRADA": 710,
+    "DANO_ERRADO": 54,
+    "EFEITO_ERRADO": 699,
+    "ALVO_ERRADO": 289,
+    "CUSTO_ERRADO": 267,
+    "COOLDOWN_ERRADO": 160,
+    "DURAÇÃO_ERRADA": 254,
+    "MOTOR_INSUFICIENTE": 0
+  },
+  "safeStructuralDimensions": {
+    "CUSTO_ERRADO": 2,
+    "COOLDOWN_ERRADO": 4,
+    "DANO_ERRADO": 0,
+    "ALVO_ERRADO": 1,
+    "DURAÇÃO_ERRADA": 2
+  },
+  "complexBlockerCounts": {
+    "alternate": 88,
+    "bomb": 42,
+    "channel": 111,
+    "charges": 15,
+    "dynamic-change": 54,
+    "interrupt": 2,
+    "redirect": 3,
+    "reflect": 6,
+    "requirement": 59,
+    "sacrifice": 19,
+    "stack": 85,
+    "trap-counter": 108
+  },
+  "gate": "PASS"
+}

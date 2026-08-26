@@ -1,0 +1,318 @@
+[
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "slot": 3,
+    "techniqueId": "atsui-(s)__base_3",
+    "techniqueName": "Flame Slice",
+    "originalName": "Flame Slice",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Atsui",
+    "upstreamTechnique": "Flame Slice",
+    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 1,
+        "upstream": 0
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "dot"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "slot": 2,
+    "techniqueId": "kabuto-yakushi__base_2",
+    "techniqueName": "Pre-Healing Technique",
+    "originalName": "Pre-Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamTechnique": "Pre-Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "ally",
+          "enemy"
+        ],
+        "upstream": [
+          "self"
+        ]
+      },
+      "duration": {
+        "local": [
+          2
+        ],
+        "upstream": [
+          5
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "DURAÇÃO_ERRADA"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "slot": 3,
+    "techniqueId": "kabuto-yakushi-(s)__base_3",
+    "techniqueName": "Técnica de Cura",
+    "originalName": "Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamTechnique": "Healing Technique",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 2,
+        "upstream": 1
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "slot": 4,
+    "techniqueId": "masked-man__base_4",
+    "techniqueName": "Kamui Phase",
+    "originalName": "Kamui Phase",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Masked Man",
+    "upstreamTechnique": "Kamui Phase",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cost": {
+        "local": [
+          "blood",
+          "nin"
+        ],
+        "upstream": [
+          "chakra"
+        ]
+      },
+      "cooldown": {
+        "local": 4,
+        "upstream": 0
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "CUSTO_ERRADO",
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "invulnerable"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "slot": 2,
+    "techniqueId": "rin-nohara__base_2",
+    "techniqueName": "Técnica de Cura",
+    "originalName": "Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Rin Nohara",
+    "upstreamTechnique": "Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 2,
+        "upstream": 0
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "slot": 3,
+    "techniqueId": "shizune__base_3",
+    "techniqueName": "Regenerative Healing Technique",
+    "originalName": "Regenerative Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Shizune",
+    "upstreamTechnique": "Regenerative Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
+    "classifications": [
+      "CUSTO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cost": {
+        "local": [
+          "nin",
+          "nin"
+        ],
+        "upstream": [
+          "rand",
+          "rand"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "CUSTO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "slot": 3,
+    "techniqueId": "tenten-(s)__base_3",
+    "techniqueName": "Scroll of Fire",
+    "originalName": "Scroll of Fire",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Tenten",
+    "upstreamTechnique": "Scroll of Fire",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
+    "classifications": [
+      "DURAÇÃO_ERRADA",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "duration": {
+        "local": [
+          2
+        ],
+        "upstream": [
+          3
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "DURAÇÃO_ERRADA"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "dot"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  }
+]

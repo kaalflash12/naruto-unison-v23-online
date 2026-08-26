@@ -1,0 +1,116 @@
+[
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "slot": 3,
+    "techniqueId": "aoba-yamashiro__base_3",
+    "techniqueName": "Converging Murder",
+    "originalName": "Converging Murder",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Aoba Yamashiro",
+    "upstreamTechnique": "Converging Murder",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "blockers": [
+      "stack"
+    ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "slot": 3,
+    "techniqueId": "izumo-and-kotetsu__base_3",
+    "techniqueName": "Devastate",
+    "originalName": "Devastate",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Izumo and Kotetsu",
+    "upstreamTechnique": "Devastate",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "blockers": [
+      "stack"
+    ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "slot": 4,
+    "techniqueId": "izumo-and-kotetsu__base_4",
+    "techniqueName": "Annihilate",
+    "originalName": "Annihilate",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Izumo and Kotetsu",
+    "upstreamTechnique": "Annihilate",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "blockers": [
+      "stack"
+    ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "slot": 3,
+    "techniqueId": "zabuza-momochi-(r)__base_3",
+    "techniqueName": "Executioner's Butchering",
+    "originalName": "Executioner's Butchering",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Zabuza Momochi",
+    "upstreamTechnique": "Executioner's Butchering",
+    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack",
+      "requirement"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "blockers": [
+      "stack",
+      "requirement"
+    ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  }
+]
