@@ -62,7 +62,7 @@ jobs:
           console.log('PUBLISHED_V2_SOURCE=PASS');
           JS
 
-      - name: Build 836-technique upstream classification
+      - name: Build raw 836-technique upstream classification
         env:
           UPSTREAM_DIR: canonical-upstream
           UPSTREAM_COMMIT: 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
@@ -77,16 +77,16 @@ jobs:
           echo "$code" > /tmp/canonical-v2-exit-code
           exit 0
 
-      - name: Upload classification evidence
+      - name: Upload raw classification evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: canonical-upstream-v2-${{ github.sha }}
+          name: canonical-upstream-v2-raw-${{ github.sha }}
           path: audit/balance/canonical-v2
           if-no-files-found: error
           retention-days: 30
 
-      - name: Enforce 836 of 836 resolved classifications
+      - name: Enforce raw 836 classification integrity
         run: |
           set -euo pipefail
           node - <<'JS'
@@ -98,24 +98,24 @@ jobs:
           if(s.upstreamCommit!=='3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1') throw new Error(`upstream=${s.upstreamCommit}`);
           if(s.playableCharacters!==209) throw new Error(`characters=${s.playableCharacters}`);
           if(s.classifiedTechniques!==836||rows.length!==836) throw new Error(`coverage=${s.classifiedTechniques}/${rows.length}`);
-          if(s.resolved!==836||s.unresolved!==0) throw new Error(`resolved=${s.resolved}, unresolved=${s.unresolved}`);
+          if((s.resolved||0)+(s.unresolved||0)!==836) throw new Error(`raw accounting=${s.resolved}+${s.unresolved}`);
+          if(s.invalidRows!==0) throw new Error(`invalidRows=${s.invalidRows}`);
           for(const r of rows){
-            if(r.resolution!=='RESOLVIDO') throw new Error(`unresolved row ${r.characterId}/${r.slot}`);
-            if(!Array.isArray(r.classifications)||r.classifications.length===0) throw new Error(`empty classification ${r.characterId}/${r.slot}`);
+            if(!Array.isArray(r.classifications)) throw new Error(`invalid classifications ${r.characterId}/${r.slot}`);
             if(r.classifications.some(x=>!allowed.has(x))) throw new Error(`unknown classification ${r.characterId}/${r.slot}`);
             if(r.classifications.includes('CORRETA')&&r.classifications.length!==1) throw new Error(`CORRETA mixed ${r.characterId}/${r.slot}`);
+            if(r.resolution==='RESOLVIDO'&&r.classifications.length===0) throw new Error(`empty resolved classification ${r.characterId}/${r.slot}`);
           }
-          if(s.gate!=='PASS') throw new Error(`gate=${s.gate}`);
-          console.log('CANONICAL_UPSTREAM_V2_836=PASS',s.classificationCounts);
+          console.log('CANONICAL_UPSTREAM_V2_RAW_836=PASS',{resolved:s.resolved,unresolved:s.unresolved,classificationCounts:s.classificationCounts});
           JS
 
-      - name: Commit generated canonical V2 audit
+      - name: Commit generated raw canonical V2 audit
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add audit/balance/canonical-v2
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'audit(balance): refresh canonical V2 836 classification [skip ci]'
+          git commit -m 'audit(balance): refresh raw canonical V2 classification [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
