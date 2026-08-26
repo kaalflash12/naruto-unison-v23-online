@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-26T08:20:37.410Z",
+  "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "upstreamSkills": 895,
+  "characters": 209,
+  "localJutsu": 836,
+  "matchStatus": {
+    "AMBIGUOUS": 63,
+    "EXACT_CHARACTER": 676,
+    "MISSING_UPSTREAM": 97
+  },
+  "severity": {
+    "CRITICAL": 270,
+    "HIGH": 83,
+    "MEDIUM": 99,
+    "OK": 384
+  },
+  "issueCounts": {
+    "EFFECT_FAMILY_MISMATCH": 186,
+    "COST_MISMATCH": 157,
+    "ENGINE_V2_MIGRATION_NEEDED": 346,
+    "TARGET_MISMATCH": 137,
+    "DESCRIPTION_VALUE_REVIEW": 41,
+    "DAMAGE_VALUE_MISMATCH": 13,
+    "COOLDOWN_MISMATCH": 2
+  },
+  "matched": 676,
+  "unmatched": 160
+}
