@@ -4,8 +4,11 @@ on:
   push:
     branches: [main]
     paths:
+      - 'balance/canonical-v2-overrides.json'
       - 'combat-rules-v2.js'
       - 'combat-content-adapter-v2.js'
+      - 'roster.js'
+      - 'jutsu-variants.js'
       - 'tools/test-content-mechanics-v2.cjs'
       - 'tools/semantic-ai-v2.mjs'
       - 'tools/test-semantic-ai-v2.mjs'
@@ -14,6 +17,10 @@ on:
       - 'tools/validate-published-roster-coverage-v2.mjs'
       - 'tools/simulate-published-balance-3v3-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
+      - 'tools/analyze-balance-v2.mjs'
+      - 'tools/run-balance-v2-with-overrides.mjs'
+      - 'tools/merge-balance-v2-shards.mjs'
+      - 'tools/run-canonical-209-shards.mjs'
       - 'supabase/functions/content/index.ts'
       - '.github/workflows/validate-content-mechanics-v2.yml'
   workflow_dispatch:
@@ -43,6 +50,10 @@ jobs:
           node --check tools/validate-published-roster-coverage-v2.mjs
           node --check tools/simulate-published-balance-3v3-v2.mjs
           node --check tools/simulate-balance-3v3-v2.mjs
+          node --check tools/analyze-balance-v2.mjs
+          node --check tools/run-balance-v2-with-overrides.mjs
+          node --check tools/merge-balance-v2-shards.mjs
+          node --check tools/run-canonical-209-shards.mjs
       - name: Canonical mechanics contract
         run: node tools/test-content-mechanics-v2.cjs
       - name: Semantic AI decision contract
@@ -121,3 +132,55 @@ jobs:
           path: audit/balance/published-coverage-v2/
           if-no-files-found: warn
           retention-days: 14
+
+  canonical-209:
+    needs: mechanics-v2
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Canonical 209 syntax gate
+        run: |
+          set -euo pipefail
+          node --check tools/simulate-balance-3v3-v2.mjs
+          node --check tools/analyze-balance-v2.mjs
+          node --check tools/run-balance-v2-with-overrides.mjs
+          node --check tools/merge-balance-v2-shards.mjs
+          node --check tools/run-canonical-209-shards.mjs
+      - name: Run isolated canonical 209 shards and strict merge
+        env:
+          SIM_SHARD_PARALLEL: '4'
+        run: |
+          set -euo pipefail
+          node tools/run-canonical-209-shards.mjs | tee /tmp/canonical-v2-209.log
+      - name: Prove exact canonical matrix
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const d='audit/balance/canonical-v2-full';
+          const a='audit/balance/analysis-v2/all';
+          const s=JSON.parse(fs.readFileSync(`${d}/SUMMARY.json`,'utf8'));
+          const r=JSON.parse(fs.readFileSync(`${d}/CHARACTER-RATINGS.json`,'utf8'));
+          const m=JSON.parse(fs.readFileSync(`${d}/MATCHUPS.json`,'utf8'));
+          const o=JSON.parse(fs.readFileSync(`${d}/OVERRIDE-APPLICATION.json`,'utf8'));
+          const an=JSON.parse(fs.readFileSync(`${a}/SUMMARY.json`,'utf8'));
+          const chars=JSON.parse(fs.readFileSync(`${a}/CHARACTER-ANALYSIS.json`,'utf8'));
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.roster!==209||r.length!==209) throw new Error('209 coverage failed');
+          if(s.scope!=='all'||s.pairs!==21736||m.length!==21736||s.matchups!==173888||s.expectedGamesPerPair!==8) throw new Error('full matrix mismatch');
+          if(m.some(x=>x.games!==8)||new Set(m.map(x=>`${x.a}\0${x.b}`)).size!==21736) throw new Error('pair uniqueness/games gate failed');
+          if(s.shard?.merged!==true||s.shard?.count!==8||s.shard?.globalPairs!==21736) throw new Error('shard merge gate failed');
+          if(o.overridesConfigured!==13||o.publicRosterMutated!==false||o.scope!=='analysis-only') throw new Error('override guard failed');
+          if(an.scope!=='all'||an.characters!==209||chars.length!==209||an.pairs!==21736||an.games!==173888) throw new Error('analysis 209 gate failed');
+          console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',{characters:r.length,pairs:m.length,battles:s.matchups,gamesPerPair:s.expectedGamesPerPair,shards:s.shard.count,overrides:o.overridesConfigured,actions:an.actionCounts,health:an.health});
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-full-209
+          path: |
+            audit/balance/canonical-v2-full
+            audit/balance/analysis-v2/all
+          if-no-files-found: error
+          retention-days: 30
