@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-08-26T10:02:52.133Z",
+  "rows": 836,
+  "laneCounts": {
+    "VERIFIED_NO_CORE_CHANGE": 50,
+    "ENGINE_EXPANSION": 641,
+    "CORE_PATCHABLE": 35,
+    "UNRESOLVED": 110
+  },
+  "severityByLane": {
+    "VERIFIED_NO_CORE_CHANGE": {
+      "OK": 50
+    },
+    "ENGINE_EXPANSION": {
+      "HIGH": 341,
+      "OK": 115,
+      "CRITICAL": 178,
+      "MEDIUM": 7
+    },
+    "CORE_PATCHABLE": {
+      "CRITICAL": 24,
+      "OK": 2,
+      "MEDIUM": 9
+    },
+    "UNRESOLVED": {
+      "UNRESOLVED": 110
+    }
+  },
+  "corePatchableCritical": 24,
+  "engineExpansionCritical": 178,
+  "policy": "CORE_PATCHABLE only means core fields are inferable from upstream without compound/dynamic semantics. It is NOT permission to deploy local-only: authoritative naruto-api parity remains mandatory."
+}
