@@ -37,6 +37,13 @@ function requirementMet(req,actor,target){
 }
 function statusValue(e,d,a,{actor,target}={}){
   const s=String(e.status||'status').toLowerCase();
+  const setup=e.mark===true||s.includes('mark')||s.includes('setup')||s.includes('read');
+  if(setup){
+    const followups=arr(actor?.metadata?.skills).filter(sk=>arr(sk?.mechanic?.effects).some(x=>x?.requirements?.type==='statusPresent'&&String(x.requirements.status)===s)).length;
+    let value=Math.max(6,a)*d*.50+14*d+followups*10;
+    if(target&&statusPresent(target,s))value*=.35;
+    return value;
+  }
   if(s==='vulnerable')return Math.max(14,a*100)*d*.70;
   if(s==='evasion')return Math.max(16,a*100)*d*.75;
   if(s==='counter')return Math.max(16,a*100)*d*.80;
@@ -47,10 +54,6 @@ function statusValue(e,d,a,{actor,target}={}){
   if(s==='invuln')return 24*d;
   if(s.startsWith('form:'))return 18*d;
   let value=Math.max(6,a)*d*.50;
-  if(e.mark===true||s.includes('mark')||String(s).includes('setup')||String(s).includes('read')){
-    const followups=arr(actor?.metadata?.skills).filter(sk=>arr(sk?.mechanic?.effects).some(x=>x?.requirements?.type==='statusPresent'&&String(x.requirements.status)===s)).length;
-    value+=14*d+followups*10;
-  }
   if(target&&statusPresent(target,s))value*=.35;
   return value;
 }
