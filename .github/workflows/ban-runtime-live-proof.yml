@@ -1,5 +1,6 @@
 name: BAN Runtime Live Proof
 
+# live-proof-trigger: 2026-08-26-ban-session-gate
 on:
   workflow_dispatch:
   push:
