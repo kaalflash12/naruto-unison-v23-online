@@ -16,6 +16,19 @@ const COMPARABLE=new Set(['RESOLVIDO','RESOLVIDO_POR_NOME_ATUAL_EXATO']);
 const STRUCTURAL=['CUSTO_ERRADO','COOLDOWN_ERRADO','DANO_ERRADO','ALVO_ERRADO','DURAÇÃO_ERRADA'];
 const COMPLEX_BLOCKERS=new Set(['dynamic-change','alternate','channel','trap-counter','reflect','redirect','bomb','sacrifice','interrupt','stack','requirement','charges']);
 const EVIDENCE_KEY={CUSTO_ERRADO:'cost',COOLDOWN_ERRADO:'cooldown',DANO_ERRADO:'damage',ALVO_ERRADO:'target',DURAÇÃO_ERRADA:'duration'};
+const SUPPORTED_COST=new Set(['blood','gen','nin','tai','rand']);
+const SUPPORTED_TARGET=new Set(['self','enemy','enemies','ally','allies']);
+
+function representableDimension(row,classification){
+  const ev=row.evidence?.[EVIDENCE_KEY[classification]];
+  if(ev==null)return false;
+  if(classification==='CUSTO_ERRADO')return arr(ev.upstream).length>0&&arr(ev.upstream).every(x=>SUPPORTED_COST.has(String(x).toLowerCase()));
+  if(classification==='COOLDOWN_ERRADO')return Number.isInteger(Number(ev.upstream))&&Number(ev.upstream)>=0;
+  if(classification==='DANO_ERRADO')return Number.isFinite(Number(ev.upstream))&&Number(ev.upstream)>=0;
+  if(classification==='ALVO_ERRADO')return arr(ev.upstream).length>0&&arr(ev.upstream).every(x=>SUPPORTED_TARGET.has(String(x).toLowerCase()));
+  if(classification==='DURAÇÃO_ERRADA')return arr(ev.upstream).length>0&&arr(ev.upstream).every(x=>Number.isInteger(Number(x))&&Number(x)>0);
+  return false;
+}
 
 function analyze(row){
   const cls=arr(row.classifications);
@@ -26,9 +39,12 @@ function analyze(row){
   const hasComplexEffect=cls.includes('EFEITO_ERRADO')||blockers.length>0;
   const hasUnsupported=cls.includes('MOTOR_INSUFICIENTE');
   const nonStructuralMechanic=cls.filter(x=>!STRUCTURAL.includes(x)&&!['DESCRIÇÃO_ERRADA','CORRETA'].includes(x));
-  const safeStructural=structural.length>0&&!hasComplexEffect&&!hasUnsupported&&nonStructuralMechanic.length===0&&missingEvidence.length===0;
-  const tier=cls.includes('CORRETA')?'CORRETA':hasComplexEffect||hasUnsupported?'COMPLEX_EFFECT':safeStructural?'SAFE_STRUCTURAL':cls.includes('DESCRIÇÃO_ERRADA')?'DESCRIPTION_AFTER_MECHANICS':'MANUAL_REVIEW';
-  return{tier,structuralDimensions:structural,blockers:uniq(blockers),missingEvidence,requiresManualSemantics:hasComplexEffect||hasUnsupported,descriptionAfterMechanics:cls.includes('DESCRIÇÃO_ERRADA')};
+  const dimensionSafeBase=!hasComplexEffect&&!hasUnsupported&&nonStructuralMechanic.length===0;
+  const safeStructuralDimensions=dimensionSafeBase?structural.filter(x=>!missingEvidence.includes(x)&&representableDimension(row,x)):[];
+  const heldStructuralDimensions=structural.filter(x=>!safeStructuralDimensions.includes(x));
+  const safeStructural=safeStructuralDimensions.length>0;
+  const tier=cls.includes('CORRETA')?'CORRETA':hasComplexEffect||hasUnsupported?'COMPLEX_EFFECT':safeStructural?'SAFE_STRUCTURAL':structural.length>0?'MANUAL_REVIEW':cls.includes('DESCRIÇÃO_ERRADA')?'DESCRIPTION_AFTER_MECHANICS':'MANUAL_REVIEW';
+  return{tier,structuralDimensions:structural,safeStructuralDimensions,heldStructuralDimensions,blockers:uniq(blockers),missingEvidence,requiresManualSemantics:hasComplexEffect||hasUnsupported,descriptionAfterMechanics:cls.includes('DESCRIÇÃO_ERRADA')};
 }
 
 function record(row,a){
@@ -39,8 +55,9 @@ function record(row,a){
     upstreamCharacter:row.upstreamCharacter,upstreamTechnique:row.upstreamTechnique,upstreamSource:row.upstreamSource,
     classifications:row.classifications,evidence:row.evidence,
     upstreamCategories:arr(row.upstream?.categories),
-    tier:a.tier,structuralDimensions:a.structuralDimensions,blockers:a.blockers,
-    requiresManualSemantics:a.requiresManualSemantics,descriptionAfterMechanics:a.descriptionAfterMechanics
+    tier:a.tier,structuralDimensions:a.structuralDimensions,
+    safeStructuralDimensions:a.safeStructuralDimensions,heldStructuralDimensions:a.heldStructuralDimensions,
+    blockers:a.blockers,requiresManualSemantics:a.requiresManualSemantics,descriptionAfterMechanics:a.descriptionAfterMechanics
   };
 }
 
@@ -65,9 +82,10 @@ function build(rows,summary){
   const complex=actionable.filter(x=>x.a.tier==='COMPLEX_EFFECT').map(x=>record(x.row,x.a));
   const description=actionable.filter(x=>x.a.descriptionAfterMechanics).map(x=>record(x.row,x.a));
   const manual=actionable.filter(x=>x.a.tier==='MANUAL_REVIEW').map(x=>record(x.row,x.a));
+  const held=actionable.filter(x=>x.a.heldStructuralDimensions.length).map(x=>record(x.row,x.a));
   const missingEvidence=actionable.filter(x=>x.a.missingEvidence.length).map(x=>({characterId:x.row.characterId,slot:x.row.slot,techniqueId:x.row.techniqueId,missing:x.a.missingEvidence}));
   const leakedJustified=actionable.filter(x=>String(x.row.resolution||'').startsWith('JUSTIFICADO_'));
-  const unsafeSafe=safe.filter(r=>r.requiresManualSemantics||r.blockers.length||r.classifications.includes('EFEITO_ERRADO')||r.classifications.includes('MOTOR_INSUFICIENTE'));
+  const unsafeSafe=safe.filter(r=>r.requiresManualSemantics||r.blockers.length||r.classifications.includes('EFEITO_ERRADO')||r.classifications.includes('MOTOR_INSUFICIENTE')||!r.safeStructuralDimensions.length);
   if(leakedJustified.length)throw new Error(`JUSTIFIED_LEAK=${leakedJustified.length}`);
   if(unsafeSafe.length)throw new Error(`UNSAFE_SAFE_ROWS=${unsafeSafe.length}`);
   if(missingEvidence.length)throw new Error(`STRUCTURAL_EVIDENCE_MISSING=${missingEvidence.length}`);
@@ -79,17 +97,21 @@ function build(rows,summary){
     generatedAt:new Date().toISOString(),sourceUpstreamCommit:summary.upstreamCommit||null,
     totalTechniques:836,comparable:719,justifiedExcluded:117,correct:correct.length,actionable:actionable.length,
     safeStructural:safe.length,complexEffect:complex.length,manualReview:manual.length,descriptionAfterMechanics:description.length,
+    heldStructuralRows:held.length,heldStructuralDimensions:held.reduce((n,r)=>n+r.heldStructuralDimensions.length,0),
     classificationCounts:counts,
-    safeStructuralDimensions:Object.fromEntries(STRUCTURAL.map(k=>[k,safe.filter(r=>r.structuralDimensions.includes(k)).length])),
+    safeStructuralDimensions:Object.fromEntries(STRUCTURAL.map(k=>[k,safe.filter(r=>r.safeStructuralDimensions.includes(k)).length])),
+    heldStructuralDimensionCounts:Object.fromEntries(STRUCTURAL.map(k=>[k,held.filter(r=>r.heldStructuralDimensions.includes(k)).length])),
     complexBlockerCounts:Object.fromEntries([...COMPLEX_BLOCKERS].sort().map(k=>[k,complex.filter(r=>r.blockers.includes(k)).length])),
     gate:'PASS'
   };
-  return{result,safe,complex,description,manual,correct:correct.map(x=>record(x.row,x.a)),justified};
+  return{result,safe,complex,description,manual,held,correct:correct.map(x=>record(x.row,x.a)),justified};
 }
 
 function runSelfTest(){
   const base={characterId:'c',characterName:'C',slot:1,techniqueId:'t',techniqueName:'T',resolution:'RESOLVIDO',matchSource:'X',upstreamCharacter:'C',upstreamTechnique:'T',upstreamSource:'x.hs',published:{},upstream:{categories:['damage']},evidence:{cost:{local:['nin'],upstream:['tai']}},classifications:['CUSTO_ERRADO']};
-  const a=analyze(base);if(a.tier!=='SAFE_STRUCTURAL')throw new Error(`SELFTEST_SAFE=${a.tier}`);
+  const a=analyze(base);if(a.tier!=='SAFE_STRUCTURAL'||a.safeStructuralDimensions[0]!=='CUSTO_ERRADO')throw new Error(`SELFTEST_SAFE=${JSON.stringify(a)}`);
+  const unsupportedCost=structuredClone(base);unsupportedCost.evidence.cost.upstream=['chakra'];const u=analyze(unsupportedCost);if(u.tier!=='MANUAL_REVIEW'||!u.heldStructuralDimensions.includes('CUSTO_ERRADO'))throw new Error(`SELFTEST_UNREPRESENTABLE_COST=${JSON.stringify(u)}`);
+  const mixed=structuredClone(base);mixed.classifications=['CUSTO_ERRADO','COOLDOWN_ERRADO'];mixed.evidence.cooldown={local:4,upstream:0};mixed.evidence.cost.upstream=['chakra'];const m=analyze(mixed);if(m.tier!=='SAFE_STRUCTURAL'||!m.safeStructuralDimensions.includes('COOLDOWN_ERRADO')||!m.heldStructuralDimensions.includes('CUSTO_ERRADO'))throw new Error(`SELFTEST_MIXED=${JSON.stringify(m)}`);
   const complex=structuredClone(base);complex.upstream.categories=['damage','dynamic-change'];if(analyze(complex).tier!=='COMPLEX_EFFECT')throw new Error('SELFTEST_DYNAMIC_BLOCK');
   const effect=structuredClone(base);effect.classifications=['EFEITO_ERRADO'];if(analyze(effect).tier!=='COMPLEX_EFFECT')throw new Error('SELFTEST_EFFECT_BLOCK');
   const correct=structuredClone(base);correct.classifications=['CORRETA'];correct.evidence={};if(analyze(correct).tier!=='CORRETA')throw new Error('SELFTEST_CORRETA');
@@ -106,6 +128,7 @@ write('SAFE-STRUCTURAL.json',built.safe);
 write('COMPLEX-EFFECT.json',built.complex);
 write('DESCRIPTION-AFTER-MECHANICS.json',built.description);
 write('MANUAL-REVIEW.json',built.manual);
+write('HELD-STRUCTURAL-DIMENSIONS.json',built.held);
 write('CORRECT.json',built.correct);
 const report=[
   '# Fila de correções canônicas V2','',
@@ -117,11 +140,14 @@ const report=[
   `- SAFE_STRUCTURAL: **${built.result.safeStructural}**`,
   `- COMPLEX_EFFECT: **${built.result.complexEffect}**`,
   `- MANUAL_REVIEW: **${built.result.manualReview}**`,
+  `- Dimensões estruturais retidas: **${built.result.heldStructuralDimensions}**`,
   `- DESCRIPTION_AFTER_MECHANICS: **${built.result.descriptionAfterMechanics}**`,
   `- Gate: **${built.result.gate}**`,'',
   '## Regra','',
   '- Nenhuma das 117 técnicas justificadas entra na fila.',
-  '- SAFE_STRUCTURAL exige evidência exata e ausência de semântica dinâmica/complexa.',
+  '- SAFE_STRUCTURAL é calculado por dimensão, exige evidência exata e valor representável pelo schema publicado.',
+  '- O patch automático futuro só pode consumir safeStructuralDimensions; classifications não é autorização de escrita.',
+  '- Dimensões não representáveis ficam em heldStructuralDimensions.',
   '- EFEITO_ERRADO e categorias dinâmicas nunca são auto-corrigidas por este estágio.',
   '- DESCRIÇÃO_ERRADA é corrigida somente depois da mecânica correspondente.',
   '- Este estágio é fidelidade canônica; não aplica buff/nerf de balanceamento.'
