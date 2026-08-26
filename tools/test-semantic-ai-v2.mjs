@@ -1,3 +1,4 @@
+// CI trigger: canonical 209 matrix transported by the active content-mechanics gate.
 import assert from 'node:assert/strict';
 import * as ai from './semantic-ai-v2.mjs';
 
