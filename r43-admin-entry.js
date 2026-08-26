@@ -73,8 +73,8 @@
       const {data,error}=await sb.auth.signInWithPassword({email:OWNER_EMAIL,password:pass});
       if(error||!data?.session)throw new Error(error?.message||'Senha administrativa inválida.');
       await verifyAdminSession(sb,data.session.access_token);
-      setMessage('OWNER validado. Abrindo o painel administrativo...');
-      location.assign('./admin.html');
+      setMessage('OWNER validado. Abrindo o Admin Studio...');
+      location.assign('./admin-studio.html');
     }catch(error){
       try{if(client)await client.auth.signOut();}catch(_){ }
       setMessage(error?.message||'Falha ao abrir o painel administrativo.',true);
