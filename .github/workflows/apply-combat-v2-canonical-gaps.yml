@@ -76,19 +76,56 @@ jobs:
           if(s.unsupported!==0||s.runtimeFailures!==0||s.unknownCosts!==0||s.noops!==0) throw new Error('published V2 semantic regression');
           console.log('COMBAT_V2_CANONICAL_GAPS_REGRESSION=PASS');
           JS
-      - name: Verify new canonical gap contracts exist
+      - name: Prove canonical gap semantics at runtime
         run: |
           set -euo pipefail
-          grep -q "function applySkillChanges" combat-rules-v2.js
-          grep -q "function reflectRatio" combat-rules-v2.js
-          grep -q "function redirectTarget" combat-rules-v2.js
-          grep -q "type==='bomb'" combat-rules-v2.js
-          grep -q "type==='sacrifice'" combat-rules-v2.js
-          grep -q "type==='channel'" combat-rules-v2.js
-          grep -q "type==='interrupt'" combat-rules-v2.js
-          grep -q "tickChannels" combat-rules-v2.js
-          grep -q "applySkillChanges" tools/test-combat-rules-v2.mjs
-          echo COMBAT_V2_CANONICAL_GAPS=PASS
+          node - <<'JS'
+          const fs=require('fs');
+          const vm=require('vm');
+          const assert=require('node:assert/strict');
+          const ctx={console};ctx.globalThis=ctx;vm.createContext(ctx);
+          vm.runInContext(fs.readFileSync('combat-rules-v2.js','utf8'),ctx,{filename:'combat-rules-v2.js'});
+          const R=ctx.NARUTO_COMBAT_RULES_V2;
+          for(const name of ['applySkillChanges','reflectRatio','redirectTarget','tickChannels']) assert.equal(typeof R[name],'function',`${name} not exported`);
+          const fighter=(id,side)=>({id,side,hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}});
+          const state=()=>R.createState([fighter('A','A'),fighter('B','B'),fighter('C','B')],{seed:123});
+          const get=(s,id)=>R.getFighter(s,id);
+
+          {
+            const s=state();
+            const skill={id:'dynamic-cost',name:'Dynamic Cost',cost:['Nin'],classes:['nin'],mechanic:{version:2,target:'enemy',changes:[{type:'setCost',cost:[]}],effects:[{type:'damage',amount:1,variance:0}]}};
+            const gate=R.canUseSkill(s,'A',skill,'B');
+            assert.equal(gate.ok,true);assert.equal(gate.cost.length,0);assert.equal(gate.skill.cost.length,0);
+          }
+          {
+            const s=state();R.applyEffect(s,get(s,'B'),get(s,'B'),{type:'reflect',ratio:.5,duration:2,classes:['all']});
+            const r=R.applyDamage(s,get(s,'A'),get(s,'B'),{type:'damage',amount:20,variance:0,classes:['all']});
+            assert.equal(r.dealt,20);assert.equal(r.reflected,10);assert.equal(get(s,'A').hp,90);
+          }
+          {
+            const s=state();R.applyEffect(s,get(s,'C'),get(s,'B'),{type:'redirect',redirectToId:'C',duration:2,classes:['all']});
+            const r=R.applyDamage(s,get(s,'A'),get(s,'B'),{type:'damage',amount:20,variance:0,classes:['all']});
+            assert.equal(r.redirectedTo,'C');assert.equal(get(s,'B').hp,100);assert.equal(get(s,'C').hp,80);
+          }
+          {
+            const s=state();R.applyEffect(s,get(s,'A'),get(s,'B'),{type:'bomb',duration:1,durationUnit:'ownerPhases',effects:[{type:'damage',amount:7,variance:0}]});
+            R.endPhase(s,'B');assert.equal(get(s,'B').hp,93);assert.equal(get(s,'B').traps.length,0);
+          }
+          {
+            const s=state();get(s,'B').hp=10;const r=R.applyEffect(s,get(s,'B'),get(s,'B'),{type:'sacrifice',amount:20,minHp:1});
+            assert.equal(r.lost,9);assert.equal(get(s,'B').hp,1);
+          }
+          {
+            const s=state();R.applyEffect(s,get(s,'A'),get(s,'B'),{type:'channel',id:'ch',duration:1,durationUnit:'ownerPhases',tickEffects:[{type:'damage',amount:5,variance:0}]});
+            assert.equal(get(s,'B').channels.length,1);R.endPhase(s,'B');assert.equal(get(s,'B').hp,95);assert.equal(get(s,'B').channels.length,0);
+          }
+          {
+            const s=state();R.applyEffect(s,get(s,'A'),get(s,'B'),{type:'channel',id:'ch2',duration:3,durationUnit:'ownerPhases',tickEffects:[{type:'damage',amount:5,variance:0}]});
+            const r=R.applyEffect(s,get(s,'A'),get(s,'B'),{type:'interrupt',channelId:'ch2',classes:['all']});
+            assert.equal(r.interrupted,1);assert.equal(get(s,'B').channels.length,0);
+          }
+          console.log('COMBAT_V2_CANONICAL_GAPS_RUNTIME=PASS');
+          JS
       - name: Commit proven engine patch and repaired patcher
         run: |
           set -euo pipefail
