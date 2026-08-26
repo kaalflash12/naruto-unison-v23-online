@@ -1,0 +1,52 @@
+name: Apply Combat V2 Trigger Patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-combat-v2-trigger-patch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply and verify patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -Fq 'excludeClasses:arr(effect.excludeClasses).map(normClass)' combat-rules-v2.js && grep -Fq 'triggerTarget=String(effect.triggerTarget' combat-rules-v2.js; then
+            echo 'COMBAT_V2_TRIGGER_PATCH=ALREADY_APPLIED'
+            exit 0
+          fi
+          node tools/patch-combat-rules-v2-triggers.mjs
+          grep -Fq 'excludeClasses:arr(effect.excludeClasses).map(normClass)' combat-rules-v2.js
+          grep -Fq 'triggerTarget=String(effect.triggerTarget' combat-rules-v2.js
+          grep -Fq 'if(arr(trap.excludeClasses).length&&intersects(trap.excludeClasses,incomingClasses))continue' combat-rules-v2.js
+          node --check combat-rules-v2.js
+          echo 'COMBAT_V2_TRIGGER_PATCH=PASS'
+      - name: Commit patched engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add combat-rules-v2.js
+          if git diff --cached --quiet; then
+            echo 'No engine diff to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix(combat-v2): apply trap and counter targeting'
+          git pull --rebase origin main
+          git push origin HEAD:main
