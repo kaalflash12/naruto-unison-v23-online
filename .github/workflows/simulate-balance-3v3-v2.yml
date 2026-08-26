@@ -189,3 +189,5 @@ jobs:
             audit/balance/analysis-v2/all
           if-no-files-found: error
           retention-days: 30
+
+# reindex-trigger=2026-08-26T15:31Z
