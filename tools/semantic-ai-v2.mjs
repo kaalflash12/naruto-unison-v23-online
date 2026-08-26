@@ -14,25 +14,28 @@ const chakraTotal=f=>Object.values(f?.chakra||{}).reduce((n,x)=>n+Math.max(0,num
 const cooldownLoad=f=>Object.values(f?.cooldowns||{}).reduce((n,x)=>n+Math.max(0,num(x)),0);
 const positiveCount=f=>activeStatuses(f).filter(s=>s.positive===true||POSITIVE.has(String(s.type||s.status))).length+arr(f?.defense).filter(x=>num(x?.amount)>0).length;
 const negativeCount=f=>activeStatuses(f).filter(s=>s.negative===true||NEGATIVE.has(String(s.type||s.status))).length+arr(f?.dots).filter(x=>num(x?.duration,1)!==0).length;
+const historyFor=(state,actorId)=>arr(state?.history).filter(h=>String(h?.actorId)===String(actorId));
+function consecutiveUses(state,actorId,skillId){const h=historyFor(state,actorId);let n=0;for(let i=h.length-1;i>=0;i--){if(String(h[i]?.skillId)===String(skillId))n++;else break}return n}
+function chargeCount(actor,skill){if(skill?.charges==null)return Infinity;const key=String(skill.id||skill.name||'');return actor?.skillCharges?.[key]==null?Math.max(0,num(skill.charges)):Math.max(0,num(actor.skillCharges[key]))}
 
-function requirementMet(req,actor,target){
+function requirementMet(req,actor,target,ctx={}){
   if(!req)return true;
-  if(Array.isArray(req))return req.every(x=>requirementMet(x,actor,target));
-  if(req.any)return arr(req.any).some(x=>requirementMet(x,actor,target));
-  if(req.not)return !requirementMet(req.not,actor,target);
-  const who=req.target==='target'?target:actor;
+  if(Array.isArray(req))return req.every(x=>requirementMet(x,actor,target,ctx));
+  if(req.any)return arr(req.any).some(x=>requirementMet(x,actor,target,ctx));
+  if(req.not)return !requirementMet(req.not,actor,target,ctx);
+  const who=req.target==='target'?target:actor,state=ctx.state||null,skill=ctx.skill||null;
   switch(String(req.type||'')){
     case'statusPresent':return statusPresent(who,req.status);
-    case'statusAbsent':return !statusPresent(who,req.status);
+    case'statusAbsent':return Boolean(who&&!statusPresent(who,req.status));
     case'hpBelow':return Boolean(who&&num(who.hp)/Math.max(1,num(who.maxHp,100))<num(req.ratio,.5));
     case'hpAtMost':return Boolean(who&&num(who.hp)<=num(req.amount));
     case'stackAtLeast':return num(who?.stacks?.[req.key])>=num(req.amount,1);
     case'stackAtMost':return num(who?.stacks?.[req.key])<=num(req.amount,0);
-    case'alternateActive':return String(who?.alternates?.[req.key])===String(req.value);
-    case'chargeAtLeast':return true;
-    case'consecutiveUses':return true;
-    case'previousSkill':return true;
-    default:return true;
+    case'alternateActive':return String(actor?.alternates?.[req.key])===String(req.value);
+    case'chargeAtLeast':return chargeCount(actor,skill)>=num(req.amount,1);
+    case'consecutiveUses':return Boolean(state&&skill&&consecutiveUses(state,actor?.id,skill.id)>=Math.max(0,num(req.count,1)-1));
+    case'previousSkill':{const h=historyFor(state,actor?.id);return Boolean(h.length&&String(h[h.length-1]?.skillId)===String(req.skillId||req.name));}
+    default:return false;
   }
 }
 function statusValue(e,d,a,{actor,target}={}){
@@ -60,7 +63,7 @@ function statusValue(e,d,a,{actor,target}={}){
 function effectValue(e,ctx={}){
   const t=String(e?.type||'noop'),raw=num(e?.amount,e?.value??0),a=Math.abs(raw),d=e?.duration==='permanent'?5:Math.max(1,num(e?.duration,1));
   const target=ctx.target||null,actor=ctx.actor||null;
-  if(!requirementMet(e?.requirements,actor,target))return 0;
+  if(!requirementMet(e?.requirements,actor,target,ctx))return 0;
   if(t==='damage'){
     let v=a;
     if(target){const effectiveHp=Math.max(1,num(target.hp)+defenseTotal(target));if(a>=effectiveHp)v+=18;if(statusPresent(target,'vulnerable'))v*=1.15;}
@@ -108,14 +111,14 @@ function targetsFor(spec,actor,own,other,target){
     default:return target?[target]:enemies;
   }
 }
-function skillScore({actor,own,other,skill,policy='balanced',target=null}={}){
+function skillScore({state=null,actor,own,other,skill,policy='balanced',target=null}={}){
   const m=skill?.mechanic||{},effects=arr(m.effects);let score=0;
   for(const e of effects){
     const spec=String(e?.target||m.target||'enemy'),targets=targetsFor(spec,actor,own,other,target);
-    if(!targets.length){score+=effectValue(e,{actor,target:null,own,other,skill,policy});continue;}
+    if(!targets.length){score+=effectValue(e,{state,actor,target:null,own,other,skill,policy});continue;}
     if(['ally','enemy','self','randomEnemy'].includes(spec)){
-      const chosen=target||targets[0];score+=effectValue(e,{actor,target:chosen,own,other,skill,policy});
-    }else for(const x of targets)score+=effectValue(e,{actor,target:x,own,other,skill,policy});
+      const chosen=target||targets[0];score+=effectValue(e,{state,actor,target:chosen,own,other,skill,policy});
+    }else for(const x of targets)score+=effectValue(e,{state,actor,target:x,own,other,skill,policy});
   }
   const hasHeal=effects.some(e=>e.type==='heal'),hasSupport=effects.some(e=>SUPPORT.has(String(e.type))),hasAttack=effects.some(e=>OFFENSE.has(String(e.type)));
   if(hasHeal&&arr(own).every(x=>missingHp(x)<=0))score-=500;
@@ -132,12 +135,12 @@ function candidateTargets(actor,own,other,skill){
   if(spec==='enemy'||spec==='randomEnemy')return arr(other).filter(alive);
   return [];
 }
-function chooseTarget({actor,own,other,skill,policy='balanced'}={}){
+function chooseTarget({state=null,actor,own,other,skill,policy='balanced'}={}){
   const spec=String(skill?.mechanic?.target||'enemy');
   if(spec==='self')return actor;
   if(['allies','enemies','everyone'].includes(spec))return null;
   const candidates=candidateTargets(actor,own,other,skill);if(!candidates.length)return null;
-  const ranked=candidates.map(target=>({target,score:skillScore({actor,own,other,skill,policy,target})})).sort((a,b)=>b.score-a.score||((a.target.hp||0)-(b.target.hp||0))||String(a.target.id).localeCompare(String(b.target.id)));
+  const ranked=candidates.map(target=>({target,score:skillScore({state,actor,own,other,skill,policy,target})})).sort((a,b)=>b.score-a.score||((a.target.hp||0)-(b.target.hp||0))||String(a.target.id).localeCompare(String(b.target.id)));
   return ranked[0].target;
 }
-export{NEGATIVE,POSITIVE,requirementMet,statusValue,effectValue,skillScore,chooseTarget,negativeCount,positiveCount,cooldownLoad,missingHp,defenseTotal};
+export{NEGATIVE,POSITIVE,requirementMet,statusValue,effectValue,skillScore,chooseTarget,negativeCount,positiveCount,cooldownLoad,missingHp,defenseTotal,historyFor,consecutiveUses,chargeCount};
