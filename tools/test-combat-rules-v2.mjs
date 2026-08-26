@@ -1,3 +1,4 @@
+// CI trigger: validate the full 209-character matrix from the published V2 roster with zero legacy fallback.
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
