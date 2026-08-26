@@ -9,6 +9,7 @@ on:
       - 'roster.js'
       - 'tools/simulate-balance-3v3-v2.mjs'
       - 'tools/run-balance-v2-with-overrides.mjs'
+      - 'tools/compare-balance-v2-runs.mjs'
       - '.github/workflows/canonical-v2-full-simulation.yml'
   workflow_dispatch:
 
@@ -25,7 +26,20 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Run complete pair matrix with canonical overrides
+      - name: Generate deterministic baseline
+        env:
+          SIM_MODE: standard
+          SIM_SEEDS: '2'
+          SIM_MAX_TURNS: '30'
+        run: |
+          set -euo pipefail
+          rm -rf audit/balance/simulation-v2 audit/balance/simulation-v2-overrides
+          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/baseline-v2-summary.json
+          test -s audit/balance/simulation-v2/SUMMARY.json
+          test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation-v2/MATCHUPS.json
+
+      - name: Run same matrix with canonical overrides
         env:
           SIM_MODE: standard
           SIM_SEEDS: '2'
@@ -34,7 +48,30 @@ jobs:
           set -euo pipefail
           node tools/run-balance-v2-with-overrides.mjs | tee /tmp/canonical-v2-full-state.json
           test -s audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json
-          find audit/balance/simulation-v2-overrides -type f -maxdepth 1 -print
+          test -s audit/balance/simulation-v2-overrides/SUMMARY.json
+          test -s audit/balance/simulation-v2-overrides/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation-v2-overrides/MATCHUPS.json
+
+      - name: Compare baseline and canonical mechanics
+        run: |
+          set -euo pipefail
+          node --check tools/compare-balance-v2-runs.mjs
+          node tools/compare-balance-v2-runs.mjs | tee /tmp/canonical-v2-comparison.json
+          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json
+          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.md
+          node - <<'JS'
+          const fs=require('fs');
+          const c=JSON.parse(fs.readFileSync('audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json','utf8'));
+          if(c.overridesConfigured!==8) throw new Error('expected 8 overrides');
+          if(c.affectedCharacters!==5) throw new Error('expected 5 affected characters, got '+c.affectedCharacters);
+          for(const [k,v] of Object.entries(c.comparability)){
+            if(k.startsWith('same')&&v!==true) throw new Error('comparison mismatch '+k+'='+v);
+          }
+          for(const slug of ['naruto-uzumaki','sasuke-uchiha','hinata-hyuga','fukasaku-and-shima-(s)','white-snake-orochimaru-(s)']){
+            if(!c.affected.some(x=>x.slug===slug)) throw new Error('missing affected '+slug);
+          }
+          console.log('CANONICAL_V2_BASELINE_COMPARISON=PASS',c.global);
+          JS
 
       - name: Validate full coverage
         run: |
@@ -42,16 +79,20 @@ jobs:
           const fs=require('fs'),path=require('path');
           const d='audit/balance/simulation-v2-overrides';
           const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
+          const summary=JSON.parse(fs.readFileSync(path.join(d,'SUMMARY.json'),'utf8'));
           if(state.overridesConfigured!==8) throw new Error('expected 8 overrides');
-          const candidates=['SUMMARY.json','SIMULATION-SUMMARY.json','CHARACTER-SIMULATION.json','RESULTS.json','CHARACTERS.json'];
-          const present=candidates.filter(x=>fs.existsSync(path.join(d,x)));
-          if(!present.length) throw new Error('full simulator produced no recognized summary/results file');
-          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,present});
+          if(summary.roster!==209) throw new Error('roster='+summary.roster);
+          if(!(summary.pairs>20000)) throw new Error('pair matrix incomplete: '+summary.pairs);
+          if(!(summary.matchups>80000)) throw new Error('matchups incomplete: '+summary.matchups);
+          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,roster:summary.roster,pairs:summary.pairs,matchups:summary.matchups});
           JS
 
       - uses: actions/upload-artifact@v4
         with:
           name: canonical-v2-full-simulation-${{ github.sha }}
-          path: audit/balance/simulation-v2-overrides
+          path: |
+            audit/balance/simulation-v2/SUMMARY.json
+            audit/balance/simulation-v2/CHARACTER-RATINGS.json
+            audit/balance/simulation-v2-overrides
           if-no-files-found: error
           retention-days: 30
