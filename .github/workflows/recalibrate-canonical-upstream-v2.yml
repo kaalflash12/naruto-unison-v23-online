@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tools/patch-canonical-invuln-helper-v2.mjs'
+      - 'tools/patch-canonical-defaults-v2.mjs'
       - '.github/workflows/recalibrate-canonical-upstream-v2.yml'
   workflow_dispatch:
 
@@ -32,14 +33,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply and verify canonical invuln helper parser
+      - name: Apply and verify canonical parser contracts
         run: |
           set -euo pipefail
           node --check tools/patch-canonical-invuln-helper-v2.mjs
+          node --check tools/patch-canonical-defaults-v2.mjs
           node tools/patch-canonical-invuln-helper-v2.mjs
+          node tools/patch-canonical-defaults-v2.mjs
           node --check tools/classify-canonical-upstream-v2.mjs
           grep -F "cost: [], cooldown: 4" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "durations: [1], targets: ['self']" tools/classify-canonical-upstream-v2.mjs >/dev/null
+          grep -F "SELFTEST_ZERO_DEFAULTS" tools/classify-canonical-upstream-v2.mjs >/dev/null
+          grep -F "SELFTEST_EXTRA_TARGET" tools/classify-canonical-upstream-v2.mjs >/dev/null
       - name: Verify current comparator and queue
         run: |
           set -euo pipefail
@@ -69,7 +74,7 @@ jobs:
           set -euo pipefail
           node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/final-live.json
           node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/queue-live.json
-      - name: Enforce Kamui Phase canonical helper correction and accounting
+      - name: Enforce canonical defaults and Kamui correction
         run: |
           set -euo pipefail
           node - <<'JS'
@@ -95,10 +100,12 @@ jobs:
           const kamui=rows.find(r=>r.techniqueId==='masked-man__base_4');
           if(!kamui) throw new Error('KAMUI_CLASSIFICATION_MISSING');
           if(kamui.classifications.length!==1||kamui.classifications[0]!=='CORRETA') throw new Error(`KAMUI_NOT_CORRECT:${JSON.stringify(kamui.classifications)}`);
-          console.log('KAMUI_PHASE_CANONICAL_HELPER_CORRECTION=PASS',{
-            cooldown:kamuiPub.cooldown,
-            cost:kamuiPub.cost,
-            classifications:kamui.classifications,
+          const naruto=rows.find(r=>r.techniqueId==='naruto-uzumaki__base_4');
+          if(!naruto) throw new Error('NARUTO_DEFENSE_CLASSIFICATION_MISSING');
+          if(!naruto.classifications.includes('CUSTO_ERRADO')) throw new Error(`ZERO_COST_DEFAULT_NOT_ENFORCED:${JSON.stringify(naruto.classifications)}`);
+          console.log('CANONICAL_DEFAULT_CONTRACTS=PASS',{
+            kamui:kamui.classifications,
+            naruto:naruto.classifications,
             accounted:fin.accounted
           });
           JS
@@ -113,7 +120,7 @@ jobs:
             audit/balance/canonical-v2-corrections
           if-no-files-found: error
           retention-days: 30
-      - name: Commit proven live-content audit and comparator fix
+      - name: Commit proven live-content audit and comparator fixes
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
@@ -125,6 +132,6 @@ jobs:
             git status --short
             exit 1
           fi
-          git commit -m 'audit(balance): fix invuln helper semantics and verify Kamui [skip ci]'
+          git commit -m 'audit(balance): enforce canonical zero defaults and target parity [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
