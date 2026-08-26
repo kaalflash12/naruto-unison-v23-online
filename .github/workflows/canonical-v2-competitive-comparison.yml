@@ -1,0 +1,89 @@
+name: Canonical V2 Competitive Comparison — 203 Standard Characters
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  competitive-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SIM_SCOPE: competitive
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate deterministic competitive baseline
+        env:
+          SIM_MODE: standard
+          SIM_SEEDS: '2'
+          SIM_MAX_TURNS: '30'
+        run: |
+          set -euo pipefail
+          rm -rf audit/balance/simulation-v2 audit/balance/simulation-v2-overrides
+          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/baseline-v2-summary.json
+          test -s audit/balance/simulation-v2/SUMMARY.json
+          test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation-v2/MATCHUPS.json
+
+      - name: Run same competitive matrix with canonical overrides
+        env:
+          SIM_MODE: standard
+          SIM_SEEDS: '2'
+          SIM_MAX_TURNS: '30'
+        run: |
+          set -euo pipefail
+          node tools/run-balance-v2-with-overrides.mjs | tee /tmp/canonical-v2-competitive-state.json
+          test -s audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json
+          test -s audit/balance/simulation-v2-overrides/SUMMARY.json
+          test -s audit/balance/simulation-v2-overrides/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation-v2-overrides/MATCHUPS.json
+
+      - name: Compare baseline and canonical mechanics
+        run: |
+          set -euo pipefail
+          node --check tools/compare-balance-v2-runs.mjs
+          node tools/compare-balance-v2-runs.mjs | tee /tmp/canonical-v2-comparison.json
+          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json
+          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.md
+          node - <<'JS'
+          const fs=require('fs');
+          const c=JSON.parse(fs.readFileSync('audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json','utf8'));
+          if(c.overridesConfigured!==13) throw new Error('expected 13 overrides');
+          if(c.affectedCharacters!==7) throw new Error('expected 7 affected characters, got '+c.affectedCharacters);
+          for(const [k,v] of Object.entries(c.comparability)) if(k.startsWith('same')&&v!==true) throw new Error('comparison mismatch '+k+'='+v);
+          for(const slug of ['naruto-uzumaki','sasuke-uchiha','hinata-hyuga','fukasaku-and-shima-(s)','white-snake-orochimaru-(s)','oboro','tsume-inuzuka']) if(!c.affected.some(x=>x.slug===slug)) throw new Error('missing affected '+slug);
+          console.log('CANONICAL_V2_COMPETITIVE_COMPARISON=PASS',c.global);
+          JS
+
+      - name: Validate 203-character competitive coverage
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),path=require('path');
+          const d='audit/balance/simulation-v2-overrides';
+          const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
+          const summary=JSON.parse(fs.readFileSync(path.join(d,'SUMMARY.json'),'utf8'));
+          if(state.overridesConfigured!==13) throw new Error('expected 13 overrides');
+          if(summary.totalRoster!==209||summary.eligibleRoster!==209) throw new Error(`coverage total=${summary.totalRoster} eligible=${summary.eligibleRoster}`);
+          if(summary.scope!=='competitive'||summary.roster!==203) throw new Error(`scope=${summary.scope} roster=${summary.roster}`);
+          if(!Array.isArray(summary.excludedCharacters)||summary.excludedCharacters.length!==6) throw new Error('excluded='+JSON.stringify(summary.excludedCharacters));
+          const expectedPairs=203*202/2;
+          if(summary.pairs!==expectedPairs) throw new Error(`pairs=${summary.pairs} expected=${expectedPairs}`);
+          if(summary.matchups!==expectedPairs*8) throw new Error(`matchups=${summary.matchups} expected=${expectedPairs*8}`);
+          console.log('CANONICAL_V2_COMPETITIVE_203=PASS',{overrides:state.overridesConfigured,competitive:summary.roster,pairs:summary.pairs,battles:summary.matchups});
+          JS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-competitive-comparison-${{ github.sha }}
+          path: |
+            audit/balance/simulation-v2/SUMMARY.json
+            audit/balance/simulation-v2/CHARACTER-RATINGS.json
+            audit/balance/simulation-v2-overrides
+          if-no-files-found: error
+          retention-days: 30
