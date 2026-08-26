@@ -4,13 +4,19 @@ on:
   push:
     branches: [main]
     paths:
+      - 'balance/canonical-v2-overrides.json'
       - 'combat-rules-v2.js'
       - 'roster.js'
       - 'jutsu-variants.js'
       - 'tools/test-combat-rules-v2.mjs'
+      - 'tools/semantic-ai-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
       - 'tools/analyze-balance-v2.mjs'
+      - 'tools/run-balance-v2-with-overrides.mjs'
+      - 'tools/merge-balance-v2-shards.mjs'
+      - 'tools/run-canonical-209-shards.mjs'
       - '.github/workflows/simulate-balance-3v3-v2.yml'
+      - '.balance-v2-run-trigger'
   workflow_dispatch:
 
 permissions:
@@ -37,8 +43,12 @@ jobs:
           node --check combat-rules-v2.js
           node --check roster.js
           node --check tools/test-combat-rules-v2.mjs
+          node --check tools/semantic-ai-v2.mjs
           node --check tools/simulate-balance-3v3-v2.mjs
           node --check tools/analyze-balance-v2.mjs
+          node --check tools/run-balance-v2-with-overrides.mjs
+          node --check tools/merge-balance-v2-shards.mjs
+          node --check tools/run-canonical-209-shards.mjs
       - name: Deterministic combat semantics
         run: |
           set -euo pipefail
@@ -112,9 +122,9 @@ jobs:
           const s=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/competitive/SUMMARY.json','utf8'));
           const c=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/competitive/CHARACTER-ANALYSIS.json','utf8'));
           if(s.scope!=='competitive'||s.characters!==203||c.length!==203) throw new Error('competitive analysis coverage failed');
-          if(!s.methodReferences.some(x=>x.repository==='google-deepmind/open_spiel')) throw new Error('OpenSpiel method missing');
-          if(!s.methodReferences.some(x=>x.repository==='sublee/trueskill')) throw new Error('TrueSkill method missing');
-          if(!s.methodReferences.some(x=>x.repository==='EbTech/Elo-MMR')) throw new Error('Elo-MMR method missing');
+          for(const repo of ['google-deepmind/open_spiel','sublee/trueskill','Elo/Bradley-Terry family','nianticlabs/metagame-balance']){
+            if(!s.methodReferences.some(x=>x.repository===repo)) throw new Error('method missing: '+repo);
+          }
           console.log('V2_COMPETITIVE_ANALYSIS=PASS',s.actionCounts,s.health,s.concentration);
           JS
       - uses: actions/upload-artifact@v4
@@ -135,3 +145,47 @@ jobs:
           git commit -m 'audit(balance): refresh combat-rules-v2 competitive analysis [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
+
+  canonical-209:
+    needs: smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run isolated canonical 209 shards and strict merge
+        env:
+          SIM_SHARD_PARALLEL: '4'
+        run: |
+          set -euo pipefail
+          node tools/run-canonical-209-shards.mjs | tee /tmp/canonical-v2-209.log
+      - name: Prove exact 209-character matrix
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const d='audit/balance/canonical-v2-full';
+          const a='audit/balance/analysis-v2/all';
+          const s=JSON.parse(fs.readFileSync(`${d}/SUMMARY.json`,'utf8'));
+          const r=JSON.parse(fs.readFileSync(`${d}/CHARACTER-RATINGS.json`,'utf8'));
+          const m=JSON.parse(fs.readFileSync(`${d}/MATCHUPS.json`,'utf8'));
+          const o=JSON.parse(fs.readFileSync(`${d}/OVERRIDE-APPLICATION.json`,'utf8'));
+          const an=JSON.parse(fs.readFileSync(`${a}/SUMMARY.json`,'utf8'));
+          const chars=JSON.parse(fs.readFileSync(`${a}/CHARACTER-ANALYSIS.json`,'utf8'));
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.roster!==209||r.length!==209) throw new Error('209 coverage failed');
+          if(s.scope!=='all'||s.pairs!==21736||m.length!==21736||s.matchups!==173888||s.expectedGamesPerPair!==8) throw new Error('full matrix mismatch');
+          if(m.some(x=>x.games!==8)||new Set(m.map(x=>`${x.a}\0${x.b}`)).size!==21736) throw new Error('pair uniqueness/games gate failed');
+          if(s.shard?.merged!==true||s.shard?.count!==8||s.shard?.globalPairs!==21736) throw new Error('shard merge gate failed');
+          if(o.overridesConfigured!==13||o.publicRosterMutated!==false||o.scope!=='analysis-only') throw new Error('override guard failed');
+          if(an.scope!=='all'||an.characters!==209||chars.length!==209||an.pairs!==21736||an.games!==173888) throw new Error('analysis 209 gate failed');
+          console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',{characters:r.length,pairs:m.length,battles:s.matchups,gamesPerPair:s.expectedGamesPerPair,shards:s.shard.count,overrides:o.overridesConfigured,actions:an.actionCounts,health:an.health});
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-full-209-${{ github.sha }}
+          path: |
+            audit/balance/canonical-v2-full
+            audit/balance/analysis-v2/all
+          if-no-files-found: error
+          retention-days: 30
