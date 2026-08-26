@@ -21,11 +21,8 @@ adapter=replaceOnce('FLAT_CONDITIONAL_BONUS',adapter,
       if(req&&bonus>0)effects.push({type:'damage',target,amount:bonus,damageClass:'normal',variance:0,bypassDefense:Boolean(m.ignoreShield),requirements:req,conditionalBonus:true})`);
 
 adapter=replaceOnce('TECHNIQUE_REQUIREMENT',adapter,
-`    charges:technique.charges==null?null:Math.max(0,num(technique.charges)),
-    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}`,
-`    charges:technique.charges==null?null:Math.max(0,num(technique.charges)),
-    requirements:statusRequirement(technique.requires),
-    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}`);
+`    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}`,
+`    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),requirements:statusRequirement(technique.requires),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}`);
 
 const conditionalAnchor=`assert.deepEqual(conditional.mechanic.effects[1].requirements,{type:'statusPresent',target:'target',status:'wind-cut'});`;
 const conditionalInsert=`assert.deepEqual(conditional.mechanic.effects[1].requirements,{type:'statusPresent',target:'target',status:'wind-cut'});
@@ -41,7 +38,7 @@ const helperInsert=`function tech(id,mechanics,extra={}){return adapter.adaptTec
 {
   const s=state();
   const required=adapter.adaptTechnique({id:'required-shadow-clones',chakraCost:[],requires:{selfHas:'shadow-clones'},mechanics:[{op:'damage',amount:20,target:'primary'}]});
-  assert.deepEqual(required.requirements,{type:'statusPresent',status:'shadow-clones'});
+  assert.deepEqual(required.mechanic.requirements,{type:'statusPresent',status:'shadow-clones'});
   assert.equal(rules.canUseSkill(s,'a',required,'b').ok,false,'requisito canônico deve bloquear uso sem setup');
   rules.applyEffect(s,rules.getFighter(s,'a'),rules.getFighter(s,'a'),{type:'status',status:'shadow-clones',duration:4,durationUnit:'ownerPhases',positive:true});
   assert.equal(rules.canUseSkill(s,'a',required,'b').ok,true,'requisito canônico deve liberar uso após setup');
