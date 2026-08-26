@@ -1,0 +1,47 @@
+name: Validate Admin Studio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'admin-studio.html'
+      - 'admin-studio.css'
+      - 'admin-studio.js'
+      - 'r43-admin-entry.js'
+      - '.github/workflows/validate-admin-studio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: |
+          node --check admin-studio.js
+          node --check r43-admin-entry.js
+      - name: Studio contract
+        run: |
+          test -s admin-studio.html
+          test -s admin-studio.css
+          test -s admin-studio.js
+          grep -Fq 'admin-studio.js' admin-studio.html
+          grep -Fq 'admin-studio.css' admin-studio.html
+          grep -Fq 'location.assign('\''./admin-studio.html'\'')' r43-admin-entry.js
+          grep -Fq '/content/validate' admin-studio.js
+          grep -Fq '/content/publish' admin-studio.js
+          grep -Fq '/content/rollback' admin-studio.js
+          grep -Fq '/functions/v1/ai-event-director' admin-studio.js
+          for token in character technique mission story_chapter equipment boss event location scene ai_profile animation_profile; do grep -Fq "$token" admin-studio.js; done
+      - name: Public backend smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsS 'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/content/manifest' > manifest.json
+          grep -Fq '"ok":true' manifest.json
+          code=$(curl -sS -o admin-anon.json -w '%{http_code}' 'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/admin/status' || true)
+          test "$code" = '401' -o "$code" = '403'
+          echo "ADMIN_STUDIO_VALIDATION=PASS"
