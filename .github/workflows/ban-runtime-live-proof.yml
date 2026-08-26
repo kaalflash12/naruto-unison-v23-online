@@ -2,6 +2,10 @@ name: BAN Runtime Live Proof
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ban-runtime-live-proof.yml'
 
 permissions:
   contents: read
