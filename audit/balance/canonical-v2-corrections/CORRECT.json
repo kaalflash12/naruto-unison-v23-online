@@ -23,6 +23,7 @@
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [],
     "blockers": [],
+    "dimensionBlockers": {},
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": false
   },
@@ -54,6 +55,7 @@
     "blockers": [
       "requirement"
     ],
+    "dimensionBlockers": {},
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": false
   },
@@ -81,6 +83,7 @@
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [],
     "blockers": [],
+    "dimensionBlockers": {},
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": false
   },
@@ -108,6 +111,7 @@
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [],
     "blockers": [],
+    "dimensionBlockers": {},
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": false
   },
@@ -138,6 +142,7 @@
     "blockers": [
       "stack"
     ],
+    "dimensionBlockers": {},
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": false
   },
@@ -168,6 +173,7 @@
     "blockers": [
       "stack"
     ],
+    "dimensionBlockers": {},
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": false
   },
@@ -198,6 +204,7 @@
     "blockers": [
       "stack"
     ],
+    "dimensionBlockers": {},
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": false
   },
@@ -225,6 +232,7 @@
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [],
     "blockers": [],
+    "dimensionBlockers": {},
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": false
   },
@@ -257,6 +265,7 @@
       "stack",
       "requirement"
     ],
+    "dimensionBlockers": {},
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": false
   }
