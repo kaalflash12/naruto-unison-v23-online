@@ -38,7 +38,7 @@ jobs:
         run: |
           set -euo pipefail
           node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/canonical-v2-correction-queue.json
-      - name: Enforce final accounting and queue safety
+      - name: Enforce final accounting and per-dimension queue safety
         run: |
           set -euo pipefail
           node - <<'JS'
@@ -47,16 +47,25 @@ jobs:
           const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
           const safe=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SAFE-STRUCTURAL.json','utf8'));
           const complex=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/COMPLEX-EFFECT.json','utf8'));
+          const manual=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/MANUAL-REVIEW.json','utf8'));
+          const allowed=new Set(['CUSTO_ERRADO','COOLDOWN_ERRADO','DANO_ERRADO','ALVO_ERRADO','DURAÇÃO_ERRADA']);
           if(source.upstreamCommit!=='3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1') throw new Error(`upstream=${source.upstreamCommit}`);
           if(source.totalTechniques!==836||source.comparable!==719||source.justified!==117||source.accounted!==836||source.unaccounted!==0||source.gate!=='PASS') throw new Error(`source=${JSON.stringify(source)}`);
           if((source.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error('MOTOR_INSUFICIENTE must remain zero');
           if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.justifiedExcluded!==117) throw new Error(`queue=${JSON.stringify(q)}`);
           if(q.actionable+q.correct!==719) throw new Error(`queue partition=${q.actionable}+${q.correct}`);
+          if(safe.length!==q.safeStructural) throw new Error(`safe count=${safe.length}/${q.safeStructural}`);
+          if(safe.length+complex.length+manual.length!==q.actionable) throw new Error(`tier coverage=${safe.length}+${complex.length}+${manual.length}/${q.actionable}`);
           for(const r of safe){
             if(String(r.resolution).startsWith('JUSTIFICADO_')) throw new Error(`justified leaked ${r.characterId}/${r.slot}`);
-            if(r.requiresManualSemantics||r.blockers.length) throw new Error(`unsafe SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
-            if(r.classifications.includes('EFEITO_ERRADO')||r.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error(`complex SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
-            if(!r.structuralDimensions.length) throw new Error(`empty SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
+            if(r.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error(`motor leaked ${r.characterId}/${r.slot}`);
+            if(!Array.isArray(r.safeStructuralDimensions)||!r.safeStructuralDimensions.length) throw new Error(`empty SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
+            for(const dim of r.safeStructuralDimensions){
+              if(!allowed.has(dim)) throw new Error(`unknown safe dimension ${dim} ${r.characterId}/${r.slot}`);
+              if(!r.structuralDimensions.includes(dim)) throw new Error(`dimension not classified ${dim} ${r.characterId}/${r.slot}`);
+              if((r.dimensionBlockers?.[dim]||[]).length) throw new Error(`blocked safe dimension ${dim} ${r.characterId}/${r.slot}`);
+              if(r.heldStructuralDimensions.includes(dim)) throw new Error(`safe also held ${dim} ${r.characterId}/${r.slot}`);
+            }
           }
           for(const r of complex) if(String(r.resolution).startsWith('JUSTIFICADO_')) throw new Error(`justified complex leak ${r.characterId}/${r.slot}`);
           console.log('CANONICAL_V2_CORRECTION_QUEUE=PASS',q);
@@ -76,5 +85,7 @@ jobs:
           git add audit/balance/canonical-v2-corrections
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'audit(balance): record guarded canonical V2 correction queue [skip ci]'
+          git reset --hard HEAD
+          git clean -fd
           git pull --rebase origin main
           git push origin HEAD:main
