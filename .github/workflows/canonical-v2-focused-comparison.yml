@@ -1,0 +1,93 @@
+name: Canonical V2 Focused Comparison
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'balance/canonical-v2-overrides.json'
+      - 'combat-rules-v2.js'
+      - 'roster.js'
+      - 'tools/simulate-balance-3v3-v2.mjs'
+      - 'tools/run-balance-v2-with-overrides.mjs'
+      - 'tools/patch-balance-v2-focus.mjs'
+      - 'tools/compare-focused-v2-runs.mjs'
+      - '.github/workflows/canonical-v2-focused-comparison.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SIM_MODE: standard
+      SIM_SEEDS: '2'
+      SIM_MAX_TURNS: '30'
+      SIM_FOCUS_SLUGS: naruto-uzumaki,sasuke-uchiha,hinata-hyuga,fukasaku-and-shima-(s),white-snake-orochimaru-(s),oboro,tsume-inuzuka
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Patch pair matrix to affected characters only
+        run: |
+          set -euo pipefail
+          cp tools/simulate-balance-3v3-v2.mjs /tmp/simulate-balance-3v3-v2.mjs
+          node --check tools/patch-balance-v2-focus.mjs
+          node tools/patch-balance-v2-focus.mjs
+          node --check tools/simulate-balance-3v3-v2.mjs
+
+      - name: Run focused baseline
+        run: |
+          set -euo pipefail
+          rm -rf audit/balance/simulation-v2 audit/balance/simulation-v2-overrides
+          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/focused-baseline.json
+          test -s audit/balance/simulation-v2/SUMMARY.json
+          test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
+          node - <<'JS'
+          const fs=require('fs'); const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
+          if(s.roster!==209) throw new Error('roster='+s.roster);
+          if(s.pairs<1400||s.pairs>1500) throw new Error('focused pairs='+s.pairs);
+          if(s.matchups!==s.pairs*8) throw new Error(`matchups ${s.matchups} != pairs*8 ${s.pairs*8}`);
+          console.log('FOCUSED_BASELINE=PASS',s.pairs,s.matchups);
+          JS
+
+      - name: Run focused canonical overrides
+        run: |
+          set -euo pipefail
+          node tools/run-balance-v2-with-overrides.mjs | tee /tmp/focused-canonical.json
+          test -s audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json
+          test -s audit/balance/simulation-v2-overrides/CHARACTER-RATINGS.json
+
+      - name: Compare affected characters
+        run: |
+          set -euo pipefail
+          node --check tools/compare-focused-v2-runs.mjs
+          node tools/compare-focused-v2-runs.mjs | tee /tmp/focused-comparison.json
+          test -s audit/balance/simulation-v2-overrides/FOCUSED-COMPARISON.json
+          node - <<'JS'
+          const fs=require('fs'); const c=JSON.parse(fs.readFileSync('audit/balance/simulation-v2-overrides/FOCUSED-COMPARISON.json','utf8'));
+          if(c.focusCharacters!==7) throw new Error('focusCharacters='+c.focusCharacters);
+          if(c.overrides!==13) throw new Error('overrides='+c.overrides);
+          if(c.affected.length!==7) throw new Error('affected='+c.affected.length);
+          if(!Object.values(c.comparability).every(Boolean)) throw new Error('comparability failed');
+          if(!c.affected.every(x=>x.matches>1500)) throw new Error('insufficient games per affected character');
+          console.log('FOCUSED_CANONICAL_COMPARISON=PASS',c.affected.map(x=>({name:x.name,delta:x.delta})));
+          JS
+
+      - name: Restore simulator and prove analysis-only
+        if: always()
+        run: |
+          cp /tmp/simulate-balance-3v3-v2.mjs tools/simulate-balance-3v3-v2.mjs
+          git diff --exit-code -- roster.js combat-rules-v2.js tools/simulate-balance-3v3-v2.mjs
+          echo 'PUBLIC_RUNTIME_UNCHANGED=PASS'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-focused-${{ github.sha }}
+          path: audit/balance/simulation-v2-overrides
+          if-no-files-found: error
+          retention-days: 30
