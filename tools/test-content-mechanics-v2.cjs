@@ -49,31 +49,33 @@ function state(hpB=100){return rules.createState([
   {id:'ally',side:'A',hp:50,maxHp:100,chakra:{Blood:0,Gen:0,Nin:0,Tai:0,Rand:0}},
   {id:'b',side:'B',hp:hpB,maxHp:100,chakra:{Blood:2,Gen:2,Nin:2,Tai:2,Rand:0}}
 ],{seed:123});}
-function use(s,skill,target='b'){const r=rules.resolveSkill(s,'a',skill,target,{payCost:false});assert.equal(r.ok,true,JSON.stringify(r));return r}
+function useAs(s,actorId,skill,target=null){const r=rules.resolveSkill(s,actorId,skill,target,{payCost:false});assert.equal(r.ok,true,JSON.stringify(r));return r}
+function use(s,skill,target='b'){return useAs(s,'a',skill,target)}
+function tech(id,mechanics,extra={}){return adapter.adaptTechnique({id,chakraCost:[],cooldown:0,mechanics,...extra})}
 
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'dmg',chakraCost:[],mechanics:[{op:'damage',amount:30,target:'primary'}]}));
+  use(s,tech('dmg',[{op:'damage',amount:30,target:'primary'}]));
   assert.equal(rules.getFighter(s,'b').hp,70,'dano simples');
 }
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'mh',chakraCost:[],mechanics:[{op:'multi-hit',amount:34,hits:3,target:'primary'}]}));
+  use(s,tech('mh',[{op:'multi-hit',amount:34,hits:3,target:'primary'}]));
   assert.equal(rules.getFighter(s,'b').hp,66,'multi-hit deve somar 34');
 }
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'shield',chakraCost:[],mechanics:[{op:'shield',amount:20,turns:2,target:'self'}]}),'a');
+  use(s,tech('shield',[{op:'shield',amount:20,turns:2,target:'self'}]),'a');
   assert.equal(rules.getFighter(s,'a').defense.reduce((n,x)=>n+x.amount,0),20,'escudo');
 }
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'heal',chakraCost:[],mechanics:[{op:'heal',amount:20,target:'primary'}]}),'ally');
+  use(s,tech('heal',[{op:'heal',amount:20,target:'primary'}]),'ally');
   assert.equal(rules.getFighter(s,'ally').hp,70,'cura primária deve mirar aliado');
 }
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'mark',chakraCost:[],mechanics:[{op:'mark',mark:'wind-cut',turns:2,target:'primary'}]}));
+  use(s,tech('mark',[{op:'mark',mark:'wind-cut',turns:2,target:'primary'}]));
   assert.ok(rules.getFighter(s,'b').statuses.some(x=>x.type==='wind-cut'),'mark não persistiu');
   use(s,conditional);
   assert.equal(rules.getFighter(s,'b').hp,70,'bonusIf targetHas deveria causar 20+10');
@@ -90,13 +92,85 @@ function use(s,skill,target='b'){const r=rules.resolveSkill(s,'a',skill,target,{
 }
 {
   const s=state();
-  use(s,adapter.adaptTechnique({id:'gain',chakraCost:[],mechanics:[{op:'chakra-gain',amount:2,target:'self'}]}),'a');
+  use(s,tech('gain',[{op:'chakra-gain',amount:2,target:'self'}]),'a');
   assert.equal(rules.getFighter(s,'a').chakra.Rand,2,'chakra gain');
   const before=Object.values(rules.getFighter(s,'b').chakra).reduce((a,b)=>a+b,0);
-  use(s,adapter.adaptTechnique({id:'drain',chakraCost:[],mechanics:[{op:'chakra-drain',amount:2,target:'primary'}]}),'b');
+  use(s,tech('chakra-drain',[{op:'chakra-drain',amount:2,target:'primary'}]),'b');
   const after=Object.values(rules.getFighter(s,'b').chakra).reduce((a,b)=>a+b,0);
   assert.equal(before-after,2,'chakra drain');
 }
+{
+  const s=state();
+  use(s,tech('buff-atk',[{op:'buff',stat:'attack',amount:5,turns:2,target:'self'}]),'a');
+  use(s,tech('buff-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,75,'buff de ataque +5 deve aumentar dano em 5');
+}
+{
+  const s=state();
+  use(s,tech('debuff-def',[{op:'debuff',stat:'defense',amount:4,turns:2,target:'primary'}]));
+  use(s,tech('exposed-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,76,'debuff de defesa 4 deve aumentar dano em 4');
+}
+{
+  const s=state();
+  useAs(s,'b',tech('buff-def',[{op:'buff',stat:'defense',amount:5,turns:2,target:'self'}]),'b');
+  use(s,tech('reduced-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,85,'buff de defesa 5 deve reduzir dano em 5');
+}
+{
+  const s=state();
+  use(s,tech('vulnerable',[{op:'status',status:'vulnerable',turns:2,value:.5,target:'primary'}]));
+  use(s,tech('vuln-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,70,'vulnerabilidade 50% deve amplificar 20 para 30');
+}
+{
+  const s=state();
+  rules.applyEffect(s,rules.getFighter(s,'b'),rules.getFighter(s,'b'),{type:'status',status:'evasion',duration:1,durationUnit:'ownerPhases',value:1,positive:true});
+  use(s,tech('evasion-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,100,'evasão 100% deve bloquear dano');
+}
+{
+  const s=state();
+  rules.applyEffect(s,rules.getFighter(s,'b'),rules.getFighter(s,'b'),{type:'status',status:'counter',duration:2,durationUnit:'ownerPhases',value:.5,positive:true});
+  use(s,tech('counter-hit',[{op:'damage',amount:20,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,80,'counter não pode impedir o dano recebido');
+  assert.equal(rules.getFighter(s,'a').hp,90,'counter 50% deve devolver 10');
+}
+{
+  const s=state();const a=rules.getFighter(s,'a');a.hp=80;
+  rules.applyEffect(s,a,a,{type:'status',status:'regen',duration:2,durationUnit:'ownerPhases',value:5,positive:true});
+  rules.endPhase(s,'A');assert.equal(a.hp,85,'regen deve curar no fim da fase do dono');
+  rules.endPhase(s,'B');assert.equal(a.hp,85,'regen não deve curar na fase adversária');
+  rules.endPhase(s,'A');assert.equal(a.hp,90,'regen deve repetir pelo número de turnos');
+  assert.equal(a.statuses.some(x=>x.type==='regen'),false,'regen deve expirar');
+}
+{
+  const s=state();const a=rules.getFighter(s,'a');a.cooldowns={x:3,y:1};
+  use(s,tech('cooldown-self',[{op:'cooldown',amount:-1,target:'self'}]),'a');
+  assert.deepEqual(a.cooldowns,{x:2,y:0},'redução de recarga deve alterar recargas existentes');
+}
+{
+  const s=state();const a=rules.getFighter(s,'a');
+  rules.applyEffect(s,a,a,{type:'status',status:'poison',duration:3,durationUnit:'ownerPhases',negative:true});
+  a.dots.push({id:'poison-dot',status:'poison',amount:4,duration:3,damageClass:'normal',classes:['all'],sourceId:'b',variance:0});
+  use(s,tech('cleanse',[{op:'cleanse',count:1,target:'self'}]),'a');
+  assert.equal(a.statuses.some(x=>x.type==='poison'),false,'cleanse deve remover status negativo');
+  assert.equal(a.dots.some(x=>x.status==='poison'),false,'cleanse deve remover DOT associado');
+}
+{
+  const s=state();const b=rules.getFighter(s,'b');
+  rules.applyEffect(s,b,b,{type:'strengthen',amount:5,duration:2,durationUnit:'ownerPhases',positive:true});
+  b.defense.push({id:'shield-x',amount:20,duration:2,durationUnit:'ownerPhases',classes:['all']});
+  use(s,tech('dispel',[{op:'dispel',count:1,target:'primary'}]));
+  assert.equal(b.statuses.some(x=>x.type==='strengthen'),false,'dispel deve remover benefício primeiro');
+  assert.equal(b.defense.length,1,'dispel count=1 não deve remover benefício adicional');
+}
+{
+  const s=state();const a=rules.getFighter(s,'a');a.hp=70;
+  use(s,tech('life-drain',[{op:'drain',amount:20,ratio:.5,target:'primary'}]));
+  assert.equal(rules.getFighter(s,'b').hp,80,'drain deve causar dano');
+  assert.equal(a.hp,80,'drain ratio .5 deve curar metade do dano');
+}
 
 assert.throws(()=>adapter.adaptTechnique({mechanics:[{op:'unknown-op'}]}),/UNSUPPORTED_CONTENT_OP/);
-console.log(JSON.stringify({ok:true,adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,ops:adapter.OPS.length,runtimeCases:8}));
+console.log(JSON.stringify({ok:true,adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,ops:adapter.OPS.length,runtimeCases:19}));
