@@ -1,6 +1,7 @@
 const UPSTREAM = "https://naruto-shinobi-r40-online.vercel.app";
 const MAX_PATH_CHARS = 2048;
 const MAX_BODY_BYTES = 5 * 1024 * 1024;
+const UPSTREAM_TIMEOUT_MS = 30_000;
 const BODY_METHODS = new Set(["POST", "PUT", "PATCH", "DELETE"]);
 const ALLOWED_METHODS = new Set(["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE"]);
 const ALLOWED = new Set([
@@ -23,7 +24,13 @@ function cors(origin: string | null) {
 function json(origin: string | null, status: number, body: unknown) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...cors(origin), "Content-Type": "application/json; charset=utf-8", "x-r41-bridge": "1" }
+    headers: {
+      ...cors(origin),
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "x-r41-bridge": "1"
+    }
   });
 }
 
@@ -61,7 +68,12 @@ Deno.serve(async (req: Request) => {
     if (accept) headers.set("accept", accept);
     headers.set("user-agent", "Shinobi-no-Sho-R41-GitHub-Bridge");
 
-    const init: RequestInit = { method: req.method, headers, redirect: "manual" };
+    const init: RequestInit = {
+      method: req.method,
+      headers,
+      redirect: "manual",
+      signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS)
+    };
     if (BODY_METHODS.has(req.method)) {
       const declared = Number(req.headers.get("content-length") || "0");
       if (Number.isFinite(declared) && declared > MAX_BODY_BYTES) return json(origin, 413, { error: "body_too_large" });
@@ -76,10 +88,12 @@ Deno.serve(async (req: Request) => {
     const cache = upstream.headers.get("cache-control");
     if (upstreamType) out.set("content-type", upstreamType);
     if (cache) out.set("cache-control", cache);
+    out.set("X-Content-Type-Options", "nosniff");
     out.set("x-r41-bridge", "1");
 
     return new Response(upstream.body, { status: upstream.status, headers: out });
   } catch (error) {
-    return json(origin, 502, { error: "bridge_error", message: String((error as Error)?.message || error) });
+    console.error("r41-api-bridge upstream failure", error);
+    return json(origin, 502, { error: "bridge_error" });
   }
 });
