@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+const file='tools/simulate-balance-3v3-v2.mjs';
+let src=fs.readFileSync(file,'utf8');
+const replace=(from,to,label)=>{if(!src.includes(from))throw new Error(`SEMANTIC_AI_PATCH_MISSING:${label}`);src=src.replace(from,to)};
+if(!src.includes("import * as semanticAI from './semantic-ai-v2.mjs';")){
+  replace("import path from 'node:path';","import path from 'node:path';\nimport * as semanticAI from './semantic-ai-v2.mjs';",'import');
+}
+const oldEffect="function effectValue(e){const t=String(e.type||'noop'),a=Math.max(0,Number(e.amount||0)),d=e.duration==='permanent'?5:Math.max(1,Number(e.duration||1));if(t==='damage')return a;if(t==='dot')return a*d*.8;if(t==='heal')return a*.9;if(t==='leech')return a*1.4;if(t==='defense')return a*.75;if(t==='invulnerable')return 24*d;if(['stun','disable','silence'].includes(t))return 22*d;if(t==='reduction')return a*d*.7;if(t==='expose')return 16*d;if(t==='focus')return 18*d;if(['weaken','strengthen'].includes(t))return Math.max(8,a)*d*.55;if(t==='exhaust')return Math.max(12,a*10)*d;if(['cleanse','cure','demolish'].includes(t))return 22;if(t==='chakra')return Math.max(10,a*12);if(['trap','counter'].includes(t))return 24*d;if(['stack','alternate'].includes(t))return 12;return 0}";
+if(src.includes(oldEffect))replace(oldEffect,"function effectValue(e,ctx={}){return semanticAI.effectValue(e,ctx)}",'effectValue');
+const oldScore="function skillScore(actor,own,other,sk,policy){const n=rules.normalizeSkill(sk),m=n.mechanic||{},effects=m.effects||[];let score=0;for(const e of effects){const spec=String(e.target||m.target||'enemy');score+=effectValue(e)*Math.max(1,targetCount(spec,own,other))}const missing=alive(own).reduce((n,f)=>n+(f.maxHp-f.hp),0),hasHeal=effects.some(e=>e.type==='heal'),hasSupport=effects.some(e=>['defense','invulnerable','reduction','focus','cleanse','cure'].includes(e.type)),hasAttack=effects.some(e=>['damage','dot','stun','disable','silence','expose','demolish','weaken','exhaust'].includes(e.type));if(hasHeal){if(!missing)score-=500;else score+=Math.min(120,missing)*(policy==='balanced'?.7:.25)}if(hasSupport&&policy==='balanced')score*=1.15;if(hasAttack&&policy==='aggressive')score*=1.18;score-=n.cooldown*1.7;score-=n.cost.length*2.7;return score}";
+if(src.includes(oldScore))replace(oldScore,"function skillScore(actor,own,other,sk,policy,target=null){const n=rules.normalizeSkill(sk);return semanticAI.skillScore({actor,own,other,skill:n,policy,target})}",'skillScore');
+const oldTarget="function chooseTarget(actor,own,other,sk,policy){const n=rules.normalizeSkill(sk),m=n.mechanic||{},spec=String(m.target||'enemy'),effects=m.effects||[];if(spec==='self')return actor;if(['enemies','allies','everyone','randomEnemy'].includes(spec))return null;const list=spec==='ally'?alive(own):alive(other);if(!list.length)return null;if(spec==='ally')return weakest(list);return policy==='aggressive'?weakest(list):effects.some(e=>e.type==='dot')?strongest(list):weakest(list)}";
+if(src.includes(oldTarget))replace(oldTarget,"function chooseTarget(actor,own,other,sk,policy){const n=rules.normalizeSkill(sk);return semanticAI.chooseTarget({actor,own,other,skill:n,policy})}",'chooseTarget');
+const oldPlanScore="score:skillScore(actor,own,other,sk,policy),cost:gate.cost,pp";
+if(src.includes(oldPlanScore))replace(oldPlanScore,"score:skillScore(actor,own,other,sk,policy,target),cost:gate.cost,pp",'plan-score-target');
+for(const guard of ["import * as semanticAI from './semantic-ai-v2.mjs';","semanticAI.skillScore","semanticAI.chooseTarget","policy,target"]){if(!src.includes(guard))throw new Error('SEMANTIC_AI_PATCH_GUARD:'+guard)}
+fs.writeFileSync(file,src);
+console.log(JSON.stringify({ok:true,file,semanticAI:true}));
