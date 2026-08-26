@@ -1,0 +1,66 @@
+name: Canonical Correction Queue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'audit/balance/current/CANONICAL-UPSTREAM-REFINED.json'
+      - 'tools/build-canonical-correction-queue.mjs'
+      - '.github/workflows/canonical-correction-queue.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build correction queue
+        run: |
+          set -euo pipefail
+          node --check tools/build-canonical-correction-queue.mjs
+          node tools/build-canonical-correction-queue.mjs | tee /tmp/canonical-correction-queue.json
+          test -s audit/balance/current/CANONICAL-CORRECTION-QUEUE.json
+          test -s audit/balance/current/CANONICAL-CORRECTION-QUEUE-SUMMARY.json
+          test -s audit/balance/current/CANONICAL-CORRECTION-QUEUE.md
+      - name: Enforce full coverage and lane integrity
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const q=JSON.parse(fs.readFileSync('audit/balance/current/CANONICAL-CORRECTION-QUEUE.json','utf8'));
+          const s=JSON.parse(fs.readFileSync('audit/balance/current/CANONICAL-CORRECTION-QUEUE-SUMMARY.json','utf8'));
+          if(q.length!==836||s.rows!==836)throw new Error(`coverage=${q.length}/${s.rows}`);
+          const lanes=new Set(['CORE_PATCHABLE','ENGINE_EXPANSION','UNRESOLVED','MANUAL_CANONICAL_REVIEW','VERIFIED_NO_CORE_CHANGE']);
+          if(q.some(x=>!lanes.has(x.lane)))throw new Error('unknown lane');
+          if(q.some(x=>x.lane==='CORE_PATCHABLE'&&(!x.suggestedCorePatch||Object.keys(x.suggestedCorePatch).length===0)))throw new Error('empty CORE_PATCHABLE');
+          if(q.some(x=>x.lane==='ENGINE_EXPANSION'&&(!Array.isArray(x.reasons)||x.reasons.length===0)))throw new Error('ENGINE_EXPANSION without reason');
+          console.log('CANONICAL_CORRECTION_QUEUE=PASS',s);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-correction-queue-${{ github.sha }}
+          path: |
+            audit/balance/current/CANONICAL-CORRECTION-QUEUE.json
+            audit/balance/current/CANONICAL-CORRECTION-QUEUE-SUMMARY.json
+            audit/balance/current/CANONICAL-CORRECTION-QUEUE.md
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated queue
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/current/CANONICAL-CORRECTION-QUEUE.json audit/balance/current/CANONICAL-CORRECTION-QUEUE-SUMMARY.json audit/balance/current/CANONICAL-CORRECTION-QUEUE.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): refresh canonical correction queue [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
