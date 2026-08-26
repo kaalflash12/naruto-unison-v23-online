@@ -1,0 +1,76 @@
+name: Balance Simulation — Duel and 3v3
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'roster.js'
+      - 'jutsu-variants.js'
+      - 'tools/simulate-balance.mjs'
+      - '.github/workflows/balance-simulation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BALANCE_DUEL_SEEDS: '1'
+      BALANCE_TEAM_BATTLES: '12000'
+      BALANCE_MAX_TURNS: '40'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate simulator and combat data
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check roster.js
+          node --check jutsu-variants.js
+          node --check tools/simulate-balance.mjs
+          grep -Fq 'chakraDemand' tools/simulate-balance.mjs
+          grep -Fq "target.dot = 7" tools/simulate-balance.mjs
+          grep -Fq 'Wilson 95%' tools/simulate-balance.mjs
+
+      - name: Run full duel gauntlet and 3v3 Monte Carlo sample
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/simulate-balance.mjs | tee /tmp/balance-simulation-summary.json
+          test -s audit/balance/simulation/SUMMARY.json
+          test -s audit/balance/simulation/DUEL-GAUNTLET.json
+          test -s audit/balance/simulation/TEAM-3V3-GAUNTLET.json
+          test -s audit/balance/simulation/CHARACTER-SIMULATION.json
+          test -s audit/balance/simulation/JUTSU-SIMULATION.json
+          test -s audit/balance/simulation/SIMULATION-REPORT.md
+
+      - name: Validate result coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/simulation/SUMMARY.json','utf8'));
+          const chars=JSON.parse(fs.readFileSync('audit/balance/simulation/CHARACTER-SIMULATION.json','utf8'));
+          const j=JSON.parse(fs.readFileSync('audit/balance/simulation/JUTSU-SIMULATION.json','utf8'));
+          if(s.roster!==209) throw new Error(`roster=${s.roster}`);
+          if(s.jutsus!==836) throw new Error(`jutsus=${s.jutsus}`);
+          if(chars.length!==209) throw new Error(`character simulation=${chars.length}`);
+          if(j.length!==836) throw new Error(`jutsu simulation=${j.length}`);
+          if(s.battles<200000) throw new Error(`battles=${s.battles}`);
+          console.log('BALANCE_SIMULATION_COVERAGE=PASS', JSON.stringify(s));
+          NODE
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balance-simulation-${{ github.sha }}
+          path: audit/balance/simulation
+          if-no-files-found: error
+          retention-days: 30
