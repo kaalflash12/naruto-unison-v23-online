@@ -1,0 +1,70 @@
+name: Meta Balance Analysis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/meta-balance-analysis.mjs'
+      - 'audit/balance/current/CHARACTER-SIMULATION.json'
+      - 'audit/balance/current/SIMULATION-SUMMARY.json'
+      - '.github/workflows/meta-balance-analysis.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run meta balance analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check tools/meta-balance-analysis.mjs
+          test -s audit/balance/current/CHARACTER-SIMULATION.json
+          test -s audit/balance/current/SIMULATION-SUMMARY.json
+          node tools/meta-balance-analysis.mjs | tee /tmp/meta-balance-summary.json
+          test -s audit/balance/current/META-BALANCE.json
+          test -s audit/balance/current/META-BALANCE-REPORT.md
+      - name: Validate generated metrics
+        shell: bash
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const m=JSON.parse(fs.readFileSync('audit/balance/current/META-BALANCE.json','utf8'));
+          if(m.characters!==209) throw new Error(`characters=${m.characters}`);
+          if(!(m.concentration.normalizedEntropy>=0 && m.concentration.normalizedEntropy<=1)) throw new Error('entropy out of range');
+          if(!(m.concentration.hhi>0 && m.concentration.hhi<=1)) throw new Error('HHI out of range');
+          if(!Array.isArray(m.priorities)||m.priorities.length!==209) throw new Error('priorities incomplete');
+          const actions=new Set(m.priorities.map(x=>x.action));
+          if(!actions.has('NERF_CANDIDATE')||!actions.has('BUFF_CANDIDATE')) throw new Error('expected intervention classes missing');
+          console.log('META_BALANCE_METRICS=PASS',m.concentration,m.health,m.interventionCounts);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: meta-balance-${{ github.sha }}
+          path: |
+            audit/balance/current/META-BALANCE.json
+            audit/balance/current/META-BALANCE-REPORT.md
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated meta analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/current/META-BALANCE.json audit/balance/current/META-BALANCE-REPORT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): refresh meta analysis [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
