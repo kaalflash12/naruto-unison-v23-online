@@ -1,0 +1,2302 @@
+{
+  "generatedAt": "2026-08-26T06:09:42.666Z",
+  "sourceMetaGeneratedAt": "2026-08-26T06:06:13.242Z",
+  "selectionRule": "top 5 BUFF_CANDIDATE + top 5 NERF_CANDIDATE por priority; nenhum valor alterado",
+  "characters": [
+    {
+      "characterId": "haku-(r)",
+      "name": "Haku",
+      "action": "BUFF_CANDIDATE",
+      "priority": 168.05,
+      "meta": {
+        "teamWinRate": 0.1229,
+        "duelWinRate": 0.0171,
+        "teamWinRate95": [
+          0.1025,
+          0.1468
+        ],
+        "duelWinRate95": [
+          0.0132,
+          0.0221
+        ],
+        "orderGap": 0.0054,
+        "policyRange": 0.0108,
+        "teamDuelGap": 0.1058,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1159,
+        "duelEloEquivalent": 796
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/haku-(r)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Thousand Needles of Death",
+          "originalName": "Thousand Needles of Death",
+          "desc": "Thousand Needles of Death combina impacto e interrupção; causa 10 de dano e atordoa todos os aliados por 1 turno(s).",
+          "effectText": "Causa 10 de dano e atordoa todos os aliados por 1 turno(s).",
+          "cost": [
+            "Blood"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/haku-(r)/ThousandNeedlesofDeath.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 10,
+            "target": "ally",
+            "aoe": true,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Acupuncture",
+          "originalName": "Acupuncture",
+          "desc": "Acupuncture é uma resposta defensiva de curta duração; torna todos os aliados invulnerável por 2 turno(s).",
+          "effectText": "Torna todos os aliados invulnerável por 2 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 2,
+          "image": "static/img/ninja/haku-(r)/Acupuncture.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": true,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Crystal Ice Mirrors",
+          "originalName": "Crystal Ice Mirrors",
+          "desc": "Crystal Ice Mirrors reforça a defesa durante a troca de golpes; concede 20 de Defesa ao próprio usuário por 3 turno(s).",
+          "effectText": "Concede 20 de Defesa ao próprio usuário por 3 turno(s).",
+          "cost": [
+            "Blood",
+            "Nin"
+          ],
+          "cooldown": 6,
+          "image": "static/img/ninja/haku-(r)/CrystalIceMirrors.jpg",
+          "mechanic": {
+            "kind": "shield",
+            "power": 20,
+            "target": "self",
+            "aoe": false,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Ice Dome",
+          "originalName": "Ice Dome",
+          "desc": "Ice Dome é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/haku-(r)/IceDome.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sasuke-uchiha",
+          "opponentName": "Sasuke Uchiha",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sakura-haruno",
+          "opponentName": "Sakura Haruno",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "kakashi-hatake",
+          "opponentName": "Kakashi Hatake",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "rock-lee",
+          "opponentName": "Rock Lee",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "hidan-(s)",
+          "opponentName": "Hidan",
+          "w": 15,
+          "l": 1,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.9375
+        },
+        {
+          "opponentId": "torune-aburame-(s)",
+          "opponentName": "Torune Aburame",
+          "w": 10,
+          "l": 5,
+          "d": 1,
+          "n": 16,
+          "winRate": 0.625
+        },
+        {
+          "opponentId": "toroi-(r)",
+          "opponentName": "Toroi",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "rock-lee-(s)",
+          "opponentName": "Rock Lee",
+          "w": 4,
+          "l": 12,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.25
+        },
+        {
+          "opponentId": "konohamaru-sarutobi-(s)",
+          "opponentName": "Konohamaru Sarutobi",
+          "w": 4,
+          "l": 10,
+          "d": 2,
+          "n": 16,
+          "winRate": 0.25
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 18,
+          "l": 799,
+          "d": 15,
+          "n": 832,
+          "winRate": 0.0216
+        },
+        "aggressive": {
+          "w": 10,
+          "l": 822,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.012
+        },
+        "control": {
+          "w": 10,
+          "l": 822,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.012
+        },
+        "support": {
+          "w": 19,
+          "l": 784,
+          "d": 29,
+          "n": 832,
+          "winRate": 0.0228
+        }
+      }
+    },
+    {
+      "characterId": "masked-man",
+      "name": "Masked Man",
+      "action": "BUFF_CANDIDATE",
+      "priority": 144.01,
+      "meta": {
+        "teamWinRate": 0.2128,
+        "duelWinRate": 0.0721,
+        "teamWinRate95": [
+          0.1872,
+          0.2408
+        ],
+        "duelWinRate95": [
+          0.0638,
+          0.0814
+        ],
+        "orderGap": 0.0096,
+        "policyRange": 0.03,
+        "teamDuelGap": 0.1407,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1273,
+        "duelEloEquivalent": 1056
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/masked-man/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Kusari Chains",
+          "originalName": "Kusari Chains",
+          "desc": "Kusari Chains é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 2,
+          "image": "static/img/ninja/masked-man/KusariChains.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Kamui Banishment",
+          "originalName": "Kamui Banishment",
+          "desc": "Kamui Banishment é a opção ofensiva de Masked Man nesta configuração; causa 20 de dano em um inimigo.",
+          "effectText": "Causa 20 de dano em um inimigo.",
+          "cost": [
+            "Blood",
+            "Gen"
+          ],
+          "cooldown": 1,
+          "image": "static/img/ninja/masked-man/KamuiBanishment.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 20,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Major Summoning: Kurama",
+          "originalName": "Major Summoning: Kurama",
+          "desc": "Major Summoning: Kurama é a opção ofensiva de Masked Man nesta configuração; causa 25 de dano em todos os aliados.",
+          "effectText": "Causa 25 de dano em todos os aliados.",
+          "cost": [
+            "Blood",
+            "Gen",
+            "Tai"
+          ],
+          "cooldown": 5,
+          "image": "static/img/ninja/masked-man/MajorSummoningKurama.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "ally",
+            "aoe": true,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Kamui Phase",
+          "originalName": "Kamui Phase",
+          "desc": "Kamui Phase é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Blood",
+            "Nin"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/masked-man/KamuiPhase.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sasuke-uchiha",
+          "opponentName": "Sasuke Uchiha",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sakura-haruno",
+          "opponentName": "Sakura Haruno",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "kakashi-hatake",
+          "opponentName": "Kakashi Hatake",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "hinata-hyuga",
+          "opponentName": "Hinata Hyūga",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "torune-aburame-(s)",
+          "opponentName": "Torune Aburame",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "toroi-(r)",
+          "opponentName": "Toroi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "konohamaru-sarutobi-(s)",
+          "opponentName": "Konohamaru Sarutobi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "hidan-(s)",
+          "opponentName": "Hidan",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "haku",
+          "opponentName": "Haku",
+          "w": 15,
+          "l": 1,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.9375
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 59,
+          "l": 770,
+          "d": 3,
+          "n": 832,
+          "winRate": 0.0709
+        },
+        "aggressive": {
+          "w": 58,
+          "l": 770,
+          "d": 4,
+          "n": 832,
+          "winRate": 0.0697
+        },
+        "control": {
+          "w": 49,
+          "l": 781,
+          "d": 2,
+          "n": 832,
+          "winRate": 0.0589
+        },
+        "support": {
+          "w": 74,
+          "l": 741,
+          "d": 17,
+          "n": 832,
+          "winRate": 0.0889
+        }
+      }
+    },
+    {
+      "characterId": "haku",
+      "name": "Haku",
+      "action": "BUFF_CANDIDATE",
+      "priority": 137.51,
+      "meta": {
+        "teamWinRate": 0.2754,
+        "duelWinRate": 0.0337,
+        "teamWinRate95": [
+          0.2465,
+          0.3062
+        ],
+        "duelWinRate95": [
+          0.028,
+          0.0403
+        ],
+        "orderGap": 0.0036,
+        "policyRange": 0.0193,
+        "teamDuelGap": 0.2417,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1332,
+        "duelEloEquivalent": 917
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/character-corrections-r28/haku-face.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Thousand Needles of Death",
+          "originalName": "Thousand Needles of Death",
+          "desc": "Thousand Needles of Death é a opção ofensiva de Haku nesta configuração; causa 30 de dano em todos os inimigos.",
+          "effectText": "Causa 30 de dano em todos os inimigos.",
+          "cost": [
+            "Blood",
+            "Rand"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/haku/ThousandNeedlesofDeath.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 30,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Acupuncture",
+          "originalName": "Acupuncture",
+          "desc": "Acupuncture combina impacto e interrupção; causa 10 de dano e atordoa todos os aliados por 1 turno(s).",
+          "effectText": "Causa 10 de dano e atordoa todos os aliados por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 1,
+          "image": "static/img/ninja/haku/Acupuncture.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 10,
+            "target": "ally",
+            "aoe": true,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Crystal Ice Mirrors",
+          "originalName": "Crystal Ice Mirrors",
+          "desc": "Crystal Ice Mirrors é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 3 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 3 turno(s).",
+          "cost": [
+            "Blood",
+            "Nin"
+          ],
+          "cooldown": 6,
+          "image": "static/img/ninja/haku/CrystalIceMirrors.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Aparar",
+          "originalName": "Parry",
+          "desc": "Aparar é uma técnica usada por Haku. Protege o próprio usuário contra dano e efeitos hostis por 1 turno(s). Recarga: 4 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/haku/Parry.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sasuke-uchiha",
+          "opponentName": "Sasuke Uchiha",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sakura-haruno",
+          "opponentName": "Sakura Haruno",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "kakashi-hatake",
+          "opponentName": "Kakashi Hatake",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "rock-lee",
+          "opponentName": "Rock Lee",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "haku-(r)",
+          "opponentName": "Haku",
+          "w": 15,
+          "l": 0,
+          "d": 1,
+          "n": 16,
+          "winRate": 0.9375
+        },
+        {
+          "opponentId": "toroi-(r)",
+          "opponentName": "Toroi",
+          "w": 14,
+          "l": 2,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.875
+        },
+        {
+          "opponentId": "hidan-(s)",
+          "opponentName": "Hidan",
+          "w": 14,
+          "l": 2,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.875
+        },
+        {
+          "opponentId": "torune-aburame-(s)",
+          "opponentName": "Torune Aburame",
+          "w": 13,
+          "l": 2,
+          "d": 1,
+          "n": 16,
+          "winRate": 0.8125
+        },
+        {
+          "opponentId": "ino-yamanaka-(s)",
+          "opponentName": "Ino Yamanaka",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 37,
+          "l": 789,
+          "d": 6,
+          "n": 832,
+          "winRate": 0.0445
+        },
+        "aggressive": {
+          "w": 21,
+          "l": 811,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.0252
+        },
+        "control": {
+          "w": 21,
+          "l": 811,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.0252
+        },
+        "support": {
+          "w": 33,
+          "l": 794,
+          "d": 5,
+          "n": 832,
+          "winRate": 0.0397
+        }
+      }
+    },
+    {
+      "characterId": "torune-aburame-(s)",
+      "name": "Torune Aburame",
+      "action": "BUFF_CANDIDATE",
+      "priority": 136.68,
+      "meta": {
+        "teamWinRate": 0.2965,
+        "duelWinRate": 0.0114,
+        "teamWinRate95": [
+          0.2665,
+          0.3284
+        ],
+        "duelWinRate95": [
+          0.0083,
+          0.0156
+        ],
+        "orderGap": 0.0024,
+        "policyRange": 0.012,
+        "teamDuelGap": 0.2851,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1350,
+        "duelEloEquivalent": 725
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/torune-aburame-(s)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Nano-Sized Venomous Beetles",
+          "originalName": "Nano-Sized Venomous Beetles",
+          "desc": "Nano-Sized Venomous Beetles mantém pressão depois do impacto inicial; causa 5 de dano inicial e aplica Aflição de 7 de dano por turno durante 5 turno(s) em o próprio usuário.",
+          "effectText": "Causa 5 de dano inicial e aplica Aflição de 7 de dano por turno durante 5 turno(s) em o próprio usuário.",
+          "cost": [
+            "Blood"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/torune-aburame-(s)/NanoSizedVenomousBeetles.jpg",
+          "mechanic": {
+            "kind": "dot",
+            "power": 5,
+            "target": "self",
+            "aoe": false,
+            "duration": 5
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Jar of Poison",
+          "originalName": "Jar of Poison",
+          "desc": "Jar of Poison mantém pressão depois do impacto inicial; causa 5 de dano inicial e aplica Aflição de 7 de dano por turno durante 5 turno(s) em o próprio usuário.",
+          "effectText": "Causa 5 de dano inicial e aplica Aflição de 7 de dano por turno durante 5 turno(s) em o próprio usuário.",
+          "cost": [
+            "Blood",
+            "Blood"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/torune-aburame-(s)/JarofPoison.jpg",
+          "mechanic": {
+            "kind": "dot",
+            "power": 5,
+            "target": "self",
+            "aoe": false,
+            "duration": 5
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Venom Explosion",
+          "originalName": "Venom Explosion",
+          "desc": "Venom Explosion é a opção ofensiva de Torune Aburame nesta configuração; causa 25 de dano em um inimigo.",
+          "effectText": "Causa 25 de dano em um inimigo.",
+          "cost": [
+            "Blood",
+            "Blood",
+            "Rand"
+          ],
+          "cooldown": 2,
+          "image": "static/img/ninja/torune-aburame-(s)/VenomExplosion.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Esquiva",
+          "originalName": "Dodge",
+          "desc": "Esquiva é uma técnica usada por Torune Aburame. Protege o próprio usuário contra dano e efeitos hostis por 1 turno(s). Recarga: 4 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Blood"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/torune-aburame-(s)/Dodge.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sasuke-uchiha",
+          "opponentName": "Sasuke Uchiha",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sakura-haruno",
+          "opponentName": "Sakura Haruno",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "kakashi-hatake",
+          "opponentName": "Kakashi Hatake",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "rock-lee",
+          "opponentName": "Rock Lee",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "hidan-(s)",
+          "opponentName": "Hidan",
+          "w": 13,
+          "l": 3,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.8125
+        },
+        {
+          "opponentId": "toroi-(r)",
+          "opponentName": "Toroi",
+          "w": 6,
+          "l": 10,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.375
+        },
+        {
+          "opponentId": "haku-(r)",
+          "opponentName": "Haku",
+          "w": 5,
+          "l": 10,
+          "d": 1,
+          "n": 16,
+          "winRate": 0.3125
+        },
+        {
+          "opponentId": "kushina-uzumaki",
+          "opponentName": "Kushina Uzumaki",
+          "w": 3,
+          "l": 13,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.1875
+        },
+        {
+          "opponentId": "shikaku-nara",
+          "opponentName": "Shikaku Nara",
+          "w": 2,
+          "l": 14,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.125
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 5,
+          "l": 823,
+          "d": 4,
+          "n": 832,
+          "winRate": 0.006
+        },
+        "aggressive": {
+          "w": 15,
+          "l": 815,
+          "d": 2,
+          "n": 832,
+          "winRate": 0.018
+        },
+        "control": {
+          "w": 10,
+          "l": 819,
+          "d": 3,
+          "n": 832,
+          "winRate": 0.012
+        },
+        "support": {
+          "w": 8,
+          "l": 819,
+          "d": 5,
+          "n": 832,
+          "winRate": 0.0096
+        }
+      }
+    },
+    {
+      "characterId": "ino-yamanaka-(s)",
+      "name": "Ino Yamanaka",
+      "action": "BUFF_CANDIDATE",
+      "priority": 132.69,
+      "meta": {
+        "teamWinRate": 0.2557,
+        "duelWinRate": 0.1055,
+        "teamWinRate95": [
+          0.2279,
+          0.2856
+        ],
+        "duelWinRate95": [
+          0.0955,
+          0.1164
+        ],
+        "orderGap": 0.0331,
+        "policyRange": 0.0313,
+        "teamDuelGap": 0.1502,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1314,
+        "duelEloEquivalent": 1129
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/ino-yamanaka-(s)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Mind Destruction",
+          "originalName": "Mind Destruction",
+          "desc": "Mind Destruction é uma técnica usada por Ino Yamanaka. Atinge um inimigo e causa 25 de dano. Recarga: 1 turno(s).",
+          "effectText": "Causa 25 de dano em um inimigo.",
+          "cost": [
+            "Gen"
+          ],
+          "cooldown": 1,
+          "image": "static/img/ninja/ino-yamanaka-(s)/MindDestruction.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Proxy Surveillance",
+          "originalName": "Proxy Surveillance",
+          "desc": "Proxy Surveillance é uma técnica usada por Ino Yamanaka. Atinge todos os aliados e causa 25 de dano. Recarga: 3 turno(s).",
+          "effectText": "Causa 25 de dano em todos os aliados.",
+          "cost": [
+            "Blood"
+          ],
+          "cooldown": 3,
+          "image": "static/img/ninja/ino-yamanaka-(s)/ProxySurveillance.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "ally",
+            "aoe": true,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Mind Transfer Clone",
+          "originalName": "Mind Transfer Clone",
+          "desc": "Mind Transfer Clone é uma técnica usada por Ino Yamanaka. Atinge um inimigo e causa 25 de dano. Recarga: 2 turno(s).",
+          "effectText": "Causa 25 de dano em um inimigo.",
+          "cost": [
+            "Gen"
+          ],
+          "cooldown": 2,
+          "image": "static/img/ninja/ino-yamanaka-(s)/MindTransferClone.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Hide",
+          "originalName": "Hide",
+          "desc": "Hide é uma técnica usada por Ino Yamanaka. Protege o próprio usuário contra dano e efeitos hostis por 1 turno(s). Recarga: 4 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Blood"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/ino-yamanaka-(s)/Hide.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sasuke-uchiha",
+          "opponentName": "Sasuke Uchiha",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "sakura-haruno",
+          "opponentName": "Sakura Haruno",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "kakashi-hatake",
+          "opponentName": "Kakashi Hatake",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "shikamaru-nara",
+          "opponentName": "Shikamaru Nara",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "torune-aburame-(s)",
+          "opponentName": "Torune Aburame",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "hidan-(s)",
+          "opponentName": "Hidan",
+          "w": 15,
+          "l": 1,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.9375
+        },
+        {
+          "opponentId": "toroi-(r)",
+          "opponentName": "Toroi",
+          "w": 14,
+          "l": 2,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.875
+        },
+        {
+          "opponentId": "haku-(r)",
+          "opponentName": "Haku",
+          "w": 13,
+          "l": 3,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.8125
+        },
+        {
+          "opponentId": "zabuza-momochi-(r)",
+          "opponentName": "Zabuza Momochi",
+          "w": 12,
+          "l": 4,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.75
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 85,
+          "l": 747,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.1022
+        },
+        "aggressive": {
+          "w": 75,
+          "l": 757,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.0901
+        },
+        "control": {
+          "w": 90,
+          "l": 741,
+          "d": 1,
+          "n": 832,
+          "winRate": 0.1082
+        },
+        "support": {
+          "w": 101,
+          "l": 731,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.1214
+        }
+      }
+    },
+    {
+      "characterId": "fukasaku-and-shima-(s)",
+      "name": "Fukasaku and Shima",
+      "action": "NERF_CANDIDATE",
+      "priority": 158.82,
+      "meta": {
+        "teamWinRate": 0.8741,
+        "duelWinRate": 0.8705,
+        "teamWinRate95": [
+          0.8502,
+          0.8947
+        ],
+        "duelWinRate95": [
+          0.8587,
+          0.8815
+        ],
+        "orderGap": 0.1556,
+        "policyRange": 0.0252,
+        "teamDuelGap": 0.0036,
+        "worstMatchupWinRate": 0.1875,
+        "teamEloEquivalent": 1837,
+        "duelEloEquivalent": 1831
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/fukasaku-and-shima-(s)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Frog Song",
+          "originalName": "Frog Song",
+          "desc": "Frog Song é uma técnica usada por Fukasaku and Shima. Atinge um inimigo e causa 25 de dano. Recarga: 1 turno(s).",
+          "effectText": "Causa 25 de dano em um inimigo.",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 1,
+          "image": "static/img/ninja/fukasaku-and-shima-(s)/FrogSong.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Sand Dust",
+          "originalName": "Sand Dust",
+          "desc": "Sand Dust é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 2,
+          "image": "static/img/ninja/fukasaku-and-shima-(s)/SandDust.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Demonic Illusion: Gamarinsho",
+          "originalName": "Demonic Illusion: Gamarinsho",
+          "desc": "Afeta todos os inimigos. Efeito por 2 turno(s). Causa 10 de dano e atordoa todos os inimigos por 2 turno(s).",
+          "effectText": "Causa 10 de dano e atordoa todos os inimigos por 2 turno(s).",
+          "cost": [
+            "Gen"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/fukasaku-and-shima-(s)/DemonicIllusionGamarinsho.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 10,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Reverse Summoning",
+          "originalName": "Reverse Summoning",
+          "desc": "Reverse Summoning é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/fukasaku-and-shima-(s)/ReverseSummoning.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "kisame-hoshigaki",
+          "opponentName": "Kisame Hoshigaki",
+          "w": 3,
+          "l": 13,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.1875
+        },
+        {
+          "opponentId": "izumo-and-kotetsu",
+          "opponentName": "Izumo and Kotetsu",
+          "w": 5,
+          "l": 11,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.3125
+        },
+        {
+          "opponentId": "jigen-boruto",
+          "opponentName": "Jigen",
+          "w": 6,
+          "l": 10,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.375
+        },
+        {
+          "opponentId": "karin-(s)",
+          "opponentName": "Karin",
+          "w": 7,
+          "l": 9,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.4375
+        },
+        {
+          "opponentId": "might-guy-(s)",
+          "opponentName": "Might Guy",
+          "w": 7,
+          "l": 9,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.4375
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "konohamaru-sensei-boruto",
+          "opponentName": "Konohamaru Sarutobi — Sensei",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "momoshiki-otsutsuki-boruto",
+          "opponentName": "Momoshiki Ōtsutsuki",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "sakura-haruno-adulta",
+          "opponentName": "Sakura Haruno — Adulta",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "naruto-uzumaki-hokage",
+          "opponentName": "Naruto Uzumaki — Hokage",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "kawaki-boruto",
+          "opponentName": "Kawaki",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 714,
+          "l": 115,
+          "d": 3,
+          "n": 832,
+          "winRate": 0.8582
+        },
+        "aggressive": {
+          "w": 732,
+          "l": 100,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.8798
+        },
+        "control": {
+          "w": 735,
+          "l": 96,
+          "d": 1,
+          "n": 832,
+          "winRate": 0.8834
+        },
+        "support": {
+          "w": 716,
+          "l": 111,
+          "d": 5,
+          "n": 832,
+          "winRate": 0.8606
+        }
+      }
+    },
+    {
+      "characterId": "white-snake-orochimaru-(s)",
+      "name": "White Snake Orochimaru",
+      "action": "NERF_CANDIDATE",
+      "priority": 147.87,
+      "meta": {
+        "teamWinRate": 0.8097,
+        "duelWinRate": 0.9204,
+        "teamWinRate95": [
+          0.7822,
+          0.8346
+        ],
+        "duelWinRate95": [
+          0.9107,
+          0.9291
+        ],
+        "orderGap": 0.1376,
+        "policyRange": 0.0192,
+        "teamDuelGap": 0.1107,
+        "worstMatchupWinRate": 0.4375,
+        "teamEloEquivalent": 1752,
+        "duelEloEquivalent": 1925
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/white-snake-orochimaru-(s)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Regenerative Bite",
+          "originalName": "Regenerative Bite",
+          "desc": "Regenerative Bite é a opção ofensiva de White Snake Orochimaru nesta configuração; causa 25 de dano em um inimigo.",
+          "effectText": "Causa 25 de dano em um inimigo.",
+          "cost": [
+            "Blood",
+            "Tai"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/white-snake-orochimaru-(s)/RegenerativeBite.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Kusanagi",
+          "originalName": "Kusanagi",
+          "desc": "Kusanagi é a opção ofensiva de White Snake Orochimaru nesta configuração; causa 30 de dano em um inimigo.",
+          "effectText": "Causa 30 de dano em um inimigo.",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/white-snake-orochimaru-(s)/Kusanagi.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 30,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Immortality Transference",
+          "originalName": "Immortality Transference",
+          "desc": "Immortality Transference combina impacto e interrupção; causa 15 de dano e atordoa um inimigo por 3 turno(s).",
+          "effectText": "Causa 15 de dano e atordoa um inimigo por 3 turno(s).",
+          "cost": [
+            "Gen",
+            "Nin"
+          ],
+          "cooldown": 3,
+          "image": "static/img/ninja/white-snake-orochimaru-(s)/ImmortalityTransference.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 15,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Eight-Headed Serpent",
+          "originalName": "Eight-Headed Serpent",
+          "desc": "Eight-Headed Serpent combina impacto e interrupção; causa 20 de dano e atordoa todos os inimigos por 3 turno(s).",
+          "effectText": "Causa 20 de dano e atordoa todos os inimigos por 3 turno(s).",
+          "cost": [
+            "Blood",
+            "Tai"
+          ],
+          "cooldown": 3,
+          "image": "static/img/ninja/white-snake-orochimaru-(s)/EightHeadedSerpent.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 20,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 3
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "kisame-hoshigaki",
+          "opponentName": "Kisame Hoshigaki",
+          "w": 7,
+          "l": 9,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.4375
+        },
+        {
+          "opponentId": "might-guy-(s)",
+          "opponentName": "Might Guy",
+          "w": 7,
+          "l": 9,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.4375
+        },
+        {
+          "opponentId": "deva-path-pain-(s)",
+          "opponentName": "Deva Path Pain",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "fukasaku-and-shima-(s)",
+          "opponentName": "Fukasaku and Shima",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "sage-mode-naruto-(s)",
+          "opponentName": "Sage Mode Naruto",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "konohamaru-sensei-boruto",
+          "opponentName": "Konohamaru Sarutobi — Sensei",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "momoshiki-otsutsuki-boruto",
+          "opponentName": "Momoshiki Ōtsutsuki",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "sakura-haruno-adulta",
+          "opponentName": "Sakura Haruno — Adulta",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "sasuke-uchiha-adulto",
+          "opponentName": "Sasuke Uchiha — Adulto",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "naruto-uzumaki-hokage",
+          "opponentName": "Naruto Uzumaki — Hokage",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 764,
+          "l": 68,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9183
+        },
+        "aggressive": {
+          "w": 757,
+          "l": 75,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9099
+        },
+        "control": {
+          "w": 769,
+          "l": 63,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9243
+        },
+        "support": {
+          "w": 773,
+          "l": 59,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9291
+        }
+      }
+    },
+    {
+      "characterId": "kushimaru-kuriarare-(r)",
+      "name": "Kushimaru Kuriarare",
+      "action": "NERF_CANDIDATE",
+      "priority": 144.99,
+      "meta": {
+        "teamWinRate": 0.8916,
+        "duelWinRate": 0.6415,
+        "teamWinRate95": [
+          0.8686,
+          0.9109
+        ],
+        "duelWinRate95": [
+          0.6251,
+          0.6576
+        ],
+        "orderGap": 0.1352,
+        "policyRange": 0.0288,
+        "teamDuelGap": 0.2501,
+        "worstMatchupWinRate": 0,
+        "teamEloEquivalent": 1866,
+        "duelEloEquivalent": 1601
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/kushimaru-kuriarare-(r)/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Needle Stitching",
+          "originalName": "Needle Stitching",
+          "desc": "Needle Stitching é a opção ofensiva de Kushimaru Kuriarare nesta configuração; causa 20 de dano em um inimigo.",
+          "effectText": "Causa 20 de dano em um inimigo.",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/kushimaru-kuriarare-(r)/NeedleStitching.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 20,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Eviscerate",
+          "originalName": "Eviscerate",
+          "desc": "Eviscerate é a opção ofensiva de Kushimaru Kuriarare nesta configuração; causa 20 de dano em todos os inimigos.",
+          "effectText": "Causa 20 de dano em todos os inimigos.",
+          "cost": [
+            "Nin",
+            "Nin"
+          ],
+          "cooldown": 3,
+          "image": "static/img/ninja/kushimaru-kuriarare-(r)/Eviscerate.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 20,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Wire Crucifixion",
+          "originalName": "Wire Crucifixion",
+          "desc": "Wire Crucifixion combina impacto e interrupção; causa 15 de dano e atordoa todos os inimigos por 1 turno(s).",
+          "effectText": "Causa 15 de dano e atordoa todos os inimigos por 1 turno(s).",
+          "cost": [],
+          "cooldown": 2,
+          "image": "static/img/ninja/kushimaru-kuriarare-(r)/WireCrucifixion.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 15,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Bloqueio",
+          "originalName": "Block",
+          "desc": "Bloqueio é uma técnica usada por Kushimaru Kuriarare. Protege o próprio usuário contra dano e efeitos hostis por 1 turno(s). Recarga: 4 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/kushimaru-kuriarare-(r)/Block.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "naruto-uzumaki",
+          "opponentName": "Naruto Uzumaki",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "deva-path-pain-(s)",
+          "opponentName": "Deva Path Pain",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "dodai-(s)",
+          "opponentName": "Dodai",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "izumo-and-kotetsu",
+          "opponentName": "Izumo and Kotetsu",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        },
+        {
+          "opponentId": "karin-(s)",
+          "opponentName": "Karin",
+          "w": 0,
+          "l": 16,
+          "d": 0,
+          "n": 16,
+          "winRate": 0
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "zetsu-(s)",
+          "opponentName": "Zetsu",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "zabuza-momochi-(r)",
+          "opponentName": "Zabuza Momochi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "zabuza-momochi",
+          "opponentName": "Zabuza Momochi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "yoroi-akado",
+          "opponentName": "Yoroi Akadō",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "yamato-(s)",
+          "opponentName": "Yamato",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 520,
+          "l": 302,
+          "d": 10,
+          "n": 832,
+          "winRate": 0.625
+        },
+        "aggressive": {
+          "w": 544,
+          "l": 282,
+          "d": 6,
+          "n": 832,
+          "winRate": 0.6538
+        },
+        "control": {
+          "w": 533,
+          "l": 287,
+          "d": 12,
+          "n": 832,
+          "winRate": 0.6406
+        },
+        "support": {
+          "w": 538,
+          "l": 269,
+          "d": 25,
+          "n": 832,
+          "winRate": 0.6466
+        }
+      }
+    },
+    {
+      "characterId": "oboro",
+      "name": "Oboro",
+      "action": "NERF_CANDIDATE",
+      "priority": 140.57,
+      "meta": {
+        "teamWinRate": 0.8328,
+        "duelWinRate": 0.7828,
+        "teamWinRate95": [
+          0.8066,
+          0.856
+        ],
+        "duelWinRate95": [
+          0.7684,
+          0.7964
+        ],
+        "orderGap": 0.1461,
+        "policyRange": 0.0193,
+        "teamDuelGap": 0.05,
+        "worstMatchupWinRate": 0.125,
+        "teamEloEquivalent": 1779,
+        "duelEloEquivalent": 1723
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/oboro/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Exploding Kunai",
+          "originalName": "Exploding Kunai",
+          "desc": "Exploding Kunai é a opção ofensiva de Oboro nesta configuração; causa 15 de dano em todos os inimigos.",
+          "effectText": "Causa 15 de dano em todos os inimigos.",
+          "cost": [
+            "Nin",
+            "Nin"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/oboro/ExplodingKunai.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 15,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 0
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Underground Move",
+          "originalName": "Underground Move",
+          "desc": "Underground Move combina impacto e interrupção; causa 20 de dano e atordoa todos os inimigos por 1 turno(s).",
+          "effectText": "Causa 20 de dano e atordoa todos os inimigos por 1 turno(s).",
+          "cost": [
+            "Gen",
+            "Rand"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/oboro/UndergroundMove.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 20,
+            "target": "enemy",
+            "aoe": true,
+            "duration": 1
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Fog Clone",
+          "originalName": "Fog Clone",
+          "desc": "Fog Clone é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 3 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 3 turno(s).",
+          "cost": [
+            "Gen",
+            "Rand"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/oboro/FogClone.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 3
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Hide",
+          "originalName": "Hide",
+          "desc": "Hide é uma técnica usada por Oboro. Protege o próprio usuário contra dano e efeitos hostis por 1 turno(s). Recarga: 4 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/oboro/Hide.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "hanabi-hyuga",
+          "opponentName": "Hanabi Hyūga",
+          "w": 2,
+          "l": 14,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.125
+        },
+        {
+          "opponentId": "white-snake-orochimaru-(s)",
+          "opponentName": "White Snake Orochimaru",
+          "w": 2,
+          "l": 14,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.125
+        },
+        {
+          "opponentId": "jigen-boruto",
+          "opponentName": "Jigen",
+          "w": 2,
+          "l": 14,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.125
+        },
+        {
+          "opponentId": "asuma-sarutobi",
+          "opponentName": "Asuma Sarutobi",
+          "w": 3,
+          "l": 13,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.1875
+        },
+        {
+          "opponentId": "deva-path-pain-(s)",
+          "opponentName": "Deva Path Pain",
+          "w": 3,
+          "l": 13,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.1875
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "naruto-uzumaki-hokage",
+          "opponentName": "Naruto Uzumaki — Hokage",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "zetsu-(s)",
+          "opponentName": "Zetsu",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "zabuza-momochi-(r)",
+          "opponentName": "Zabuza Momochi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "zabuza-momochi",
+          "opponentName": "Zabuza Momochi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "yugao-uzuki",
+          "opponentName": "Yūgao Uzuki",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 645,
+          "l": 185,
+          "d": 2,
+          "n": 832,
+          "winRate": 0.7752
+        },
+        "aggressive": {
+          "w": 648,
+          "l": 184,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.7788
+        },
+        "control": {
+          "w": 651,
+          "l": 181,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.7825
+        },
+        "support": {
+          "w": 661,
+          "l": 170,
+          "d": 1,
+          "n": 832,
+          "winRate": 0.7945
+        }
+      }
+    },
+    {
+      "characterId": "tsume-inuzuka",
+      "name": "Tsume Inuzuka",
+      "action": "NERF_CANDIDATE",
+      "priority": 138.4,
+      "meta": {
+        "teamWinRate": 0.7586,
+        "duelWinRate": 0.9174,
+        "teamWinRate95": [
+          0.7286,
+          0.7863
+        ],
+        "duelWinRate95": [
+          0.9075,
+          0.9262
+        ],
+        "orderGap": 0.1557,
+        "policyRange": 0.024,
+        "teamDuelGap": 0.1588,
+        "worstMatchupWinRate": 0.5,
+        "teamEloEquivalent": 1699,
+        "duelEloEquivalent": 1918
+      },
+      "bio": "Ninja do universo Naruto. Perfil e técnicas baseados nos dados do projeto original.",
+      "icon": "static/img/ninja/tsume-inuzuka/icon.jpg",
+      "skills": [
+        {
+          "slot": 1,
+          "name": "Call Kuromaru",
+          "originalName": "Call Kuromaru",
+          "desc": "Call Kuromaru é a opção ofensiva de Tsume Inuzuka nesta configuração; causa 10 de dano em um inimigo.",
+          "effectText": "Causa 10 de dano em um inimigo.",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 4,
+          "image": "static/img/ninja/tsume-inuzuka/CallKuromaru.jpg",
+          "mechanic": {
+            "kind": "damage",
+            "power": 10,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 4
+          }
+        },
+        {
+          "slot": 2,
+          "name": "Fierce Bite",
+          "originalName": "Fierce Bite",
+          "desc": "Fierce Bite combina impacto e interrupção; causa 25 de dano e atordoa um inimigo por 2 turno(s).",
+          "effectText": "Causa 25 de dano e atordoa um inimigo por 2 turno(s).",
+          "cost": [
+            "Tai"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/tsume-inuzuka/FierceBite.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 25,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 3,
+          "name": "Tunneling Fang",
+          "originalName": "Tunneling Fang",
+          "desc": "Tunneling Fang combina impacto e interrupção; causa 15 de dano e atordoa um inimigo por 2 turno(s).",
+          "effectText": "Causa 15 de dano e atordoa um inimigo por 2 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 0,
+          "image": "static/img/ninja/tsume-inuzuka/TunnelingFang.jpg",
+          "mechanic": {
+            "kind": "stun",
+            "power": 15,
+            "target": "enemy",
+            "aoe": false,
+            "duration": 2
+          }
+        },
+        {
+          "slot": 4,
+          "name": "Light Bomb",
+          "originalName": "Light Bomb",
+          "desc": "Light Bomb é uma resposta defensiva de curta duração; torna o próprio usuário invulnerável por 1 turno(s).",
+          "effectText": "Torna o próprio usuário invulnerável por 1 turno(s).",
+          "cost": [
+            "Nin"
+          ],
+          "cooldown": 1,
+          "image": "static/img/ninja/tsume-inuzuka/LightBomb.jpg",
+          "mechanic": {
+            "kind": "invuln",
+            "power": 1,
+            "target": "self",
+            "aoe": false,
+            "duration": 1
+          }
+        }
+      ],
+      "worstMatchups": [
+        {
+          "opponentId": "dodai-(s)",
+          "opponentName": "Dodai",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "izumo-and-kotetsu",
+          "opponentName": "Izumo and Kotetsu",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "kisame-hoshigaki",
+          "opponentName": "Kisame Hoshigaki",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "white-snake-orochimaru-(s)",
+          "opponentName": "White Snake Orochimaru",
+          "w": 8,
+          "l": 8,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5
+        },
+        {
+          "opponentId": "fukasaku-and-shima-(s)",
+          "opponentName": "Fukasaku and Shima",
+          "w": 9,
+          "l": 7,
+          "d": 0,
+          "n": 16,
+          "winRate": 0.5625
+        }
+      ],
+      "bestMatchups": [
+        {
+          "opponentId": "bijuu-matatabi-event",
+          "opponentName": "Matatabi",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "konohamaru-sensei-boruto",
+          "opponentName": "Konohamaru Sarutobi — Sensei",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "momoshiki-otsutsuki-boruto",
+          "opponentName": "Momoshiki Ōtsutsuki",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "sakura-haruno-adulta",
+          "opponentName": "Sakura Haruno — Adulta",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        },
+        {
+          "opponentId": "naruto-uzumaki-hokage",
+          "opponentName": "Naruto Uzumaki — Hokage",
+          "w": 16,
+          "l": 0,
+          "d": 0,
+          "n": 16,
+          "winRate": 1
+        }
+      ],
+      "policyWinRates": {
+        "balanced": {
+          "w": 755,
+          "l": 77,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9075
+        },
+        "aggressive": {
+          "w": 774,
+          "l": 58,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9303
+        },
+        "control": {
+          "w": 770,
+          "l": 62,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9255
+        },
+        "support": {
+          "w": 754,
+          "l": 78,
+          "d": 0,
+          "n": 832,
+          "winRate": 0.9063
+        }
+      }
+    }
+  ]
+}
