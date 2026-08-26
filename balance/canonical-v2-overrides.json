@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "mode": "analysis-only",
+  "upstream": {
+    "repository": "naruto-unison/naruto-unison",
+    "commit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1"
+  },
+  "notes": [
+    "Overrides are consumed by balance simulation/audit only until the authoritative naruto-api source is versioned and v2 parity is proven.",
+    "Legacy roster fields remain unchanged for public online compatibility."
+  ],
+  "overrides": {
+    "naruto-uzumaki:3": {
+      "character": "Naruto Uzumaki",
+      "originalName": "Shadow Clones",
+      "source": "src/Game/Characters/Original/Kids.hs",
+      "reason": "Canonical skill is self damage reduction, not destructible defense.",
+      "cost": ["Rand"],
+      "cooldown": 3,
+      "classes": ["Chakra"],
+      "mechanic": {
+        "version": 2,
+        "target": "self",
+        "classes": ["Chakra"],
+        "effects": [
+          {
+            "type": "reduction",
+            "amount": 15,
+            "duration": 4,
+            "durationUnit": "rounds",
+            "classes": ["all"]
+          }
+        ]
+      }
+    },
+    "sasuke-uchiha:3": {
+      "character": "Sasuke Uchiha",
+      "originalName": "Sharingan",
+      "source": "src/Game/Characters/Original/Kids.hs",
+      "reason": "Canonical skill grants Sasuke 15 reduction and exposes one enemy for 4 turns.",
+      "cost": ["Rand"],
+      "cooldown": 4,
+      "classes": ["Mental", "Ranged", "Soulbound", "Unremovable"],
+      "mechanic": {
+        "version": 2,
+        "target": "enemy",
+        "classes": ["Mental", "Ranged", "Soulbound", "Unremovable"],
+        "effects": [
+          {
+            "type": "reduction",
+            "target": "self",
+            "amount": 15,
+            "duration": 4,
+            "durationUnit": "rounds",
+            "classes": ["all"]
+          },
+          {
+            "type": "expose",
+            "target": "enemy",
+            "duration": 4,
+            "durationUnit": "rounds",
+            "classes": ["all"],
+            "blockReduction": true,
+            "blockInvulnerable": true
+          }
+        ]
+      }
+    },
+    "hinata-hyuga:3": {
+      "character": "Hinata Hyūga",
+      "originalName": "Byakugan",
+      "source": "src/Game/Characters/Original/Kids.hs",
+      "reason": "Canonical skill is self damage reduction, not destructible defense.",
+      "cost": ["Rand"],
+      "cooldown": 4,
+      "classes": ["Mental"],
+      "mechanic": {
+        "version": 2,
+        "target": "self",
+        "classes": ["Mental"],
+        "effects": [
+          {
+            "type": "reduction",
+            "amount": 15,
+            "duration": 4,
+            "durationUnit": "rounds",
+            "classes": ["all"]
+          }
+        ]
+      }
+    }
+  }
+}
