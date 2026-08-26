@@ -1,0 +1,82 @@
+name: Canonical V2 Safe Patch Plan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build-canonical-v2-safe-patch-plan.mjs'
+      - 'audit/balance/canonical-v2-corrections/SUMMARY.json'
+      - 'audit/balance/canonical-v2-corrections/SAFE-STRUCTURAL.json'
+      - '.github/workflows/canonical-v2-safe-patch-plan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: canonical-v2-safe-patch-plan
+  cancel-in-progress: true
+
+jobs:
+  dry-run-plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and deterministic self-test
+        run: |
+          set -euo pipefail
+          node --check tools/build-canonical-v2-safe-patch-plan.mjs
+          node tools/build-canonical-v2-safe-patch-plan.mjs --self-test
+      - name: Build dry-run plan from published content
+        run: |
+          set -euo pipefail
+          node tools/build-canonical-v2-safe-patch-plan.mjs | tee /tmp/canonical-v2-safe-patch-plan.json
+      - name: Enforce dry-run accounting and zero writes
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          const s=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/SUMMARY.json','utf8'));
+          const plan=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/PATCH-PLAN.json','utf8'));
+          const rejected=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/REJECTED.json','utf8'));
+          if(q.gate!=='PASS'||q.safeStructural!==177)throw new Error(`queue=${JSON.stringify(q)}`);
+          if(s.mode!=='DRY_RUN_ONLY'||s.productionWrites!==0)throw new Error(`write mode=${JSON.stringify(s)}`);
+          if(s.queueSafeRows!==177)throw new Error(`safe rows=${s.queueSafeRows}`);
+          if(s.requestedDimensions!==s.plannedDimensions+s.rejectedDimensions)throw new Error(`accounting=${s.requestedDimensions}/${s.plannedDimensions}+${s.rejectedDimensions}`);
+          if(s.rejectedDimensions!==rejected.length)throw new Error(`rejected=${s.rejectedDimensions}/${rejected.length}`);
+          if(s.patchRows!==plan.length)throw new Error(`patchRows=${s.patchRows}/${plan.length}`);
+          if(s.duplicatePatchIds.length||s.missingAccounting!==0)throw new Error(`duplicates/missing=${JSON.stringify(s)}`);
+          for(const p of plan){
+            if(!p.beforeHash||!p.afterHash||p.beforeHash===p.afterHash)throw new Error(`invalid hashes ${p.entityId}`);
+            if(!Array.isArray(p.plannedDimensions)||!p.plannedDimensions.length)throw new Error(`empty plan ${p.entityId}`);
+          }
+          if(s.gate!=='PASS')throw new Error(`gate=${s.gate}`);
+          console.log('CANONICAL_V2_SAFE_PATCH_PLAN=PASS',s);
+          JS
+      - name: Upload dry-run evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-safe-patch-plan-${{ github.sha }}
+          path: audit/balance/canonical-v2-patch-plan
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit dry-run evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/canonical-v2-patch-plan
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): record canonical V2 dry-run patch plan [skip ci]'
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          git push origin HEAD:main
