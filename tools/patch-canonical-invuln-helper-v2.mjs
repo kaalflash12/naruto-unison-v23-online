@@ -21,8 +21,14 @@ const replacement=`      for (const m of seg.matchAll(/\\binvuln\\s+\"([^\"]+)\"
           raw: m[0], helper: 'invuln'
         });
       }`;
-const count=src.split(old).length-1;
-if(count!==1) throw new Error(`INVULN_HELPER_PATCH_MATCHES=${count}`);
-src=src.replace(old,replacement);
-fs.writeFileSync(file,src);
-console.log('CANONICAL_INVULN_HELPER_PATCH=PASS');
+const oldCount=src.split(old).length-1;
+const newCount=src.split(replacement).length-1;
+if(oldCount===1){
+  src=src.replace(old,replacement);
+  fs.writeFileSync(file,src);
+  console.log('CANONICAL_INVULN_HELPER_PATCH=PASS');
+}else if(oldCount===0&&newCount===1){
+  console.log('CANONICAL_INVULN_HELPER_PATCH=ALREADY_APPLIED');
+}else{
+  throw new Error(`INVULN_HELPER_PATCH_MATCHES old=${oldCount} new=${newCount}`);
+}
