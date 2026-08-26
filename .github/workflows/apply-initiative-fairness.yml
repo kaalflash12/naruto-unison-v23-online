@@ -1,0 +1,49 @@
+name: Apply Initiative Fairness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/apply-initiative-fairness.mjs'
+      - '.github/workflows/apply-initiative-fairness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply initiative patch
+        run: |
+          set -euo pipefail
+          node --check tools/apply-initiative-fairness.mjs
+          node tools/apply-initiative-fairness.mjs
+          node --check app-online.js
+          node --check tools/simulate-balance.mjs
+          grep -Fq 'function battleInitiativeSide()' app-online.js
+          grep -Fq 'const initiative=battleInitiativeSide();' app-online.js
+          grep -Fq 'const turnFirst =' tools/simulate-balance.mjs
+          echo 'INITIATIVE_FAIRNESS_RUNTIME=PASS'
+      - name: Commit patched runtime
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app-online.js tools/simulate-balance.mjs
+          if git diff --cached --quiet; then
+            echo 'No initiative changes needed.'
+            exit 0
+          fi
+          git commit -m 'fix(combat): alternate initiative each turn [skip initiative patch]'
+          git pull --rebase origin main
+          git push origin HEAD:main
