@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#090d10">
 <title>Admin Studio — Naruto Unison</title>
 <link rel="stylesheet" href="./admin-studio.css">
+<link rel="stylesheet" href="./admin-studio-admin.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 </head>
 <body>
@@ -32,11 +33,12 @@
       <div class="metric"><small>TIPO ABERTO</small><b id="metricType">—</b></div>
     </section>
 
-    <nav class="tabs">
+    <nav class="tabs studio-tabs">
       <button class="tab-btn active" data-tab="content">CONTEÚDO</button>
       <button class="tab-btn" data-tab="world">MUNDO</button>
       <button class="tab-btn" data-tab="ai">IA / DIRETOR</button>
       <button class="tab-btn" data-tab="rollback">VERSÕES</button>
+      <button class="tab-btn" data-tab="roles">PAPÉIS</button>
       <button class="tab-btn" data-tab="proof">PROVA</button>
     </nav>
 
@@ -82,7 +84,7 @@
     </section>
 
     <section id="tab-rollback" class="tab-panel panel hidden">
-      <div class="section-head"><div><h2>Rollback de conteúdo</h2><p>Restaura uma versão já registrada e cria uma nova versão auditável.</p></div></div>
+      <div class="section-head"><div><h2>Histórico e rollback</h2><p>Carrega as versões registradas, mostra autoria/data/mensagem e permite restaurar uma versão específica.</p></div><button id="loadVersionsBtn">CARREGAR HISTÓRICO</button></div>
       <div class="form-grid cols4">
         <label>Tipo<select id="rollbackType"></select></label>
         <label>ID<input id="rollbackId"></label>
@@ -90,14 +92,34 @@
         <label>&nbsp;<button id="rollbackBtn" type="button" class="danger full">EXECUTAR ROLLBACK</button></label>
       </div>
       <p id="rollbackMsg" class="msg"></p>
+      <div id="versionHistory" class="version-list"><div class="empty-admin">Selecione tipo e ID e carregue o histórico.</div></div>
+    </section>
+
+    <section id="tab-roles" class="tab-panel panel hidden">
+      <div class="section-head"><div><h2>Papéis e permissões</h2><p>Gestão RBAC protegida. O backend bloqueia remoção/desativação do último OWNER ativo e audita cada mudança.</p></div><button id="refreshRolesBtn">ATUALIZAR</button></div>
+      <div class="role-create">
+        <h3>Adicionar administrador</h3>
+        <div class="form-grid cols3">
+          <label>User ID Auth<input id="newPrincipalUserId" placeholder="UUID do usuário"></label>
+          <label>Nome administrativo<input id="newPrincipalName" placeholder="Nome exibido"></label>
+          <label>Papéis<div id="newPrincipalRoles" class="role-checks"></div></label>
+        </div>
+        <div class="actions"><button id="createPrincipalBtn" class="primary">CRIAR PRINCIPAL</button><span id="rolesMsg" class="msg"></span></div>
+      </div>
+      <h3>Matriz de permissões</h3>
+      <div id="roleMatrix" class="role-matrix"></div>
+      <h3>Principais administrativos</h3>
+      <div id="principalGrid" class="principal-grid"></div>
     </section>
 
     <section id="tab-proof" class="tab-panel panel hidden">
       <div class="section-head"><div><h2>Checklist operacional</h2><p>Estado lido do backend e desta interface, não marcação manual.</p></div><button id="refreshProofBtn">REVALIDAR</button></div>
       <div id="proofGrid" class="proof-grid"></div>
+      <div id="adminExtendedProof" class="proof-grid extended-proof"></div>
     </section>
   </section>
 </main>
 <script src="./admin-studio.js"></script>
+<script src="./admin-studio-admin.js"></script>
 </body>
 </html>
