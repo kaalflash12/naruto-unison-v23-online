@@ -2,6 +2,7 @@
   'use strict';
   const SUPABASE_URL='https://cpdgkszviwrgrwsltbyk.supabase.co';
   const PUBLISHABLE_KEY='sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K';
+  const SUPABASE_JS_VERSION='2.112.3';
   const BASE=(location.pathname.endsWith('/')?location.pathname:location.pathname.replace(/[^/]*$/,''));
   const RECOVERY_URL=location.origin+BASE+'recovery.html';
   let clientPromise=null;
@@ -24,7 +25,7 @@
     if(clientPromise) return clientPromise;
     clientPromise=new Promise((resolve,reject)=>{
       const s=document.createElement('script');
-      s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+      s.src=`https://cdn.jsdelivr.net/npm/@supabase/supabase-js@${SUPABASE_JS_VERSION}/dist/umd/supabase.min.js`;
       s.onload=()=>resolve(window.supabase.createClient(SUPABASE_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}}));
       s.onerror=()=>reject(new Error('Não foi possível carregar o módulo de recuperação.'));
       document.head.appendChild(s);
