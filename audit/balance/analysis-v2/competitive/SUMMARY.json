@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-26T17:14:52.024Z",
-  "sourceGeneratedAt": "2026-08-26T17:14:51.124Z",
+  "generatedAt": "2026-08-26T18:03:17.314Z",
+  "sourceGeneratedAt": "2026-08-26T18:03:16.287Z",
   "engineVersion": 2,
   "scope": "competitive",
   "totalRoster": 209,
@@ -45,6 +45,12 @@
     "balanced",
     "aggressive"
   ],
+  "thresholds": {
+    "nearUnusedShare": 0.02,
+    "dominantShare": 0.6,
+    "policySensitivity": 0.08,
+    "initiativeSensitivity": 0.08
+  },
   "classificationCounts": {
     "standard": 203
   },
@@ -58,11 +64,23 @@
     "OVERPOWERED_HIGH_CONFIDENCE": 60,
     "SEVERE_HIGH": 47,
     "EXPLOITABLE_MATCHUP": 201,
+    "SKILL_NEAR_UNUSED": 155,
+    "SKILL_DOMINANT": 109,
     "KIT_USAGE_CONCENTRATED": 54,
     "PAIRWISE_RATING_HIGH": 57,
     "UNDERPOWERED_HIGH_CONFIDENCE": 60,
     "SEVERE_LOW": 40,
-    "PAIRWISE_RATING_LOW": 48
+    "PAIRWISE_RATING_LOW": 48,
+    "ENGINE_MECHANIC_REVIEW": 4,
+    "INITIATIVE_SENSITIVE": 4,
+    "AI_POLICY_SENSITIVE": 2
+  },
+  "suspectedDomainCounts": {
+    "TECHNIQUE": 167,
+    "CHARACTER": 120,
+    "ENGINE": 4,
+    "AI": 2,
+    "NONE_DETECTED": 9
   },
   "health": {
     "meanAbsoluteScoreDeviation": 0.2215,
@@ -71,12 +89,40 @@
     "exploitableCount": 201,
     "highUncertaintyCount": 0,
     "kitConcentratedCount": 54,
+    "nearUnusedSkillCharacterCount": 155,
+    "dominantSkillCharacterCount": 109,
+    "aiPolicySensitiveCount": 2,
+    "initiativeSensitiveCount": 4,
+    "engineMechanicReviewCount": 4,
     "pairwiseRatingHighCount": 57,
     "pairwiseRatingLowCount": 48,
     "eloRange": [
       962.65,
       2057.32
-    ]
+    ],
+    "initiative": {
+      "firstScore": 0.495,
+      "secondScore": 0.505,
+      "firstScore95": [
+        0.4926,
+        0.4974
+      ],
+      "residualAdvantage": -0.005,
+      "significant": true
+    }
+  },
+  "initiative": {
+    "games": 164024,
+    "firstWins": 80933,
+    "secondWins": 82580,
+    "draws": 511,
+    "firstScore": 0.495,
+    "secondScore": 0.505,
+    "firstScore95": [
+      0.4926,
+      0.4974
+    ],
+    "residualAdvantage": -0.005
   },
   "concentration": {
     "normalizedEntropy": 0.7157,
@@ -113,9 +159,9 @@
     }
   ],
   "limitations": [
-    "O simulador v2 atual agrega balanced/aggressive e as duas ordens de iniciativa; esta camada não inventa métricas separadas de política/ordem.",
+    "Triage IA/personagem/técnica/motor indica domínio suspeito, não prova causalidade isolada; divergência upstream ainda tem precedência.",
     "O Elo-like é um rating diagnóstico offline sobre matchups simulados; não é o MMR dos jogadores e não substitui IC95 ou pior confronto.",
     "Event/special são analisados no scope=all, mas não entram no ranking competitivo scope=competitive."
   ],
-  "decisionRule": "Corrigir primeiro divergência canônica/mecânica. Buff/nerf numérico somente quando simulação v2, IC95, rating par-a-par e matriz de matchups sustentarem o desequilíbrio após a correção mecânica."
+  "decisionRule": "Corrigir primeiro divergência canônica/mecânica. Buff/nerf numérico somente quando simulação v2, IC95, rating par-a-par, política da IA, iniciativa e matriz de matchups sustentarem o desequilíbrio após a correção mecânica."
 }

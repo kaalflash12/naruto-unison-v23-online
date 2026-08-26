@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T17:14:51.124Z",
+  "generatedAt": "2026-08-26T18:03:16.287Z",
   "engine": "combat-rules-v2",
   "engineVersion": 2,
   "mode": "standard",
@@ -57,6 +57,19 @@
   "avgBattleTurns": 14.23,
   "v2NativeSkills": 0,
   "legacyFallbackSkills": 812,
+  "initiative": {
+    "games": 164024,
+    "firstWins": 80933,
+    "secondWins": 82580,
+    "draws": 511,
+    "firstScore": 0.495,
+    "secondScore": 0.505,
+    "firstScore95": [
+      0.4926,
+      0.4974
+    ],
+    "residualAdvantage": -0.005
+  },
   "effectTypes": {
     "damage": 540,
     "stun": 93,
@@ -86,6 +99,34 @@
       0,
       0
     ],
+    "byPolicy": {
+      "balanced": {
+        "matches": 808,
+        "wins": 787,
+        "losses": 21,
+        "draws": 0
+      },
+      "aggressive": {
+        "matches": 808,
+        "wins": 785,
+        "losses": 23,
+        "draws": 0
+      }
+    },
+    "byInitiative": {
+      "first": {
+        "matches": 808,
+        "wins": 784,
+        "losses": 24,
+        "draws": 0
+      },
+      "second": {
+        "matches": 808,
+        "wins": 788,
+        "losses": 20,
+        "draws": 0
+      }
+    },
     "score": 0.9728,
     "winRate": 0.9728,
     "winRate95": [
@@ -105,7 +146,72 @@
       0.8009,
       0,
       0
-    ]
+    ],
+    "skillUsage": {
+      "nearUnused": [
+        2,
+        3
+      ],
+      "dominant": [
+        1
+      ],
+      "minShare": 0,
+      "maxShare": 0.8009
+    },
+    "policyScores": {
+      "balanced": {
+        "matches": 808,
+        "wins": 787,
+        "losses": 21,
+        "draws": 0,
+        "score": 0.974,
+        "winRate": 0.974,
+        "winRate95": [
+          0.9606,
+          0.9829
+        ]
+      },
+      "aggressive": {
+        "matches": 808,
+        "wins": 785,
+        "losses": 23,
+        "draws": 0,
+        "score": 0.9715,
+        "winRate": 0.9715,
+        "winRate95": [
+          0.9576,
+          0.981
+        ]
+      }
+    },
+    "initiativeScores": {
+      "first": {
+        "matches": 808,
+        "wins": 784,
+        "losses": 24,
+        "draws": 0,
+        "score": 0.9703,
+        "winRate": 0.9703,
+        "winRate95": [
+          0.9562,
+          0.98
+        ]
+      },
+      "second": {
+        "matches": 808,
+        "wins": 788,
+        "losses": 20,
+        "draws": 0,
+        "score": 0.9752,
+        "winRate": 0.9752,
+        "winRate95": [
+          0.9621,
+          0.9839
+        ]
+      }
+    },
+    "policyDelta": 0.0025,
+    "initiativeDelta": -0.0049
   },
   "bottom": {
     "slug": "kakashi-hatake-sexto",
@@ -128,6 +234,34 @@
       0,
       0
     ],
+    "byPolicy": {
+      "balanced": {
+        "matches": 808,
+        "wins": 34,
+        "losses": 774,
+        "draws": 0
+      },
+      "aggressive": {
+        "matches": 808,
+        "wins": 29,
+        "losses": 779,
+        "draws": 0
+      }
+    },
+    "byInitiative": {
+      "first": {
+        "matches": 808,
+        "wins": 20,
+        "losses": 788,
+        "draws": 0
+      },
+      "second": {
+        "matches": 808,
+        "wins": 43,
+        "losses": 765,
+        "draws": 0
+      }
+    },
     "score": 0.039,
     "winRate": 0.039,
     "winRate95": [
@@ -147,7 +281,72 @@
       0.6107,
       0,
       0
-    ]
+    ],
+    "skillUsage": {
+      "nearUnused": [
+        2,
+        3
+      ],
+      "dominant": [
+        1
+      ],
+      "minShare": 0,
+      "maxShare": 0.6107
+    },
+    "policyScores": {
+      "balanced": {
+        "matches": 808,
+        "wins": 34,
+        "losses": 774,
+        "draws": 0,
+        "score": 0.0421,
+        "winRate": 0.0421,
+        "winRate95": [
+          0.0303,
+          0.0582
+        ]
+      },
+      "aggressive": {
+        "matches": 808,
+        "wins": 29,
+        "losses": 779,
+        "draws": 0,
+        "score": 0.0359,
+        "winRate": 0.0359,
+        "winRate95": [
+          0.0251,
+          0.0511
+        ]
+      }
+    },
+    "initiativeScores": {
+      "first": {
+        "matches": 808,
+        "wins": 20,
+        "losses": 788,
+        "draws": 0,
+        "score": 0.0248,
+        "winRate": 0.0248,
+        "winRate95": [
+          0.0161,
+          0.0379
+        ]
+      },
+      "second": {
+        "matches": 808,
+        "wins": 43,
+        "losses": 765,
+        "draws": 0,
+        "score": 0.0532,
+        "winRate": 0.0532,
+        "winRate95": [
+          0.0397,
+          0.0709
+        ]
+      }
+    },
+    "policyDelta": 0.0062,
+    "initiativeDelta": -0.0284
   },
   "methodology": [
     "combat-rules-v2 resolution",
@@ -156,7 +355,9 @@
     "shield/invulnerability on opponent phase",
     "seeded pairwise focal 3v3",
     "balanced + aggressive policies",
+    "policy-separated character diagnostics",
     "both initiative orders",
+    "initiative-separated character diagnostics",
     "shared team chakra",
     "95% Wilson interval",
     "deterministic pair-index sharding"
