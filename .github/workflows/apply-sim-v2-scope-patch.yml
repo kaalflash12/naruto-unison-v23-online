@@ -1,0 +1,47 @@
+name: Apply Balance V2 Roster Scope Patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-sim-v2-scope-patch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply explicit competitive/all roster scope
+        run: |
+          set -euo pipefail
+          if grep -Fq "const SIM_SCOPE=String(process.env.SIM_SCOPE||'competitive')" tools/simulate-balance-3v3-v2.mjs; then
+            echo 'SIM_V2_SCOPE_PATCH=ALREADY_APPLIED'
+          else
+            node tools/patch-sim-v2-scope.mjs
+          fi
+          grep -Fq "scope:SIM_SCOPE" tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "totalRoster:roster.length" tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "excludedCharacters" tools/simulate-balance-3v3-v2.mjs
+          node --check tools/simulate-balance-3v3-v2.mjs
+          echo 'SIM_V2_SCOPE_PATCH=PASS'
+      - name: Commit simulator patch
+        run: |
+          set -euo pipefail
+          git add tools/simulate-balance-3v3-v2.mjs
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix(balance-v2): distinguish competitive and all roster scopes'
+          git pull --rebase origin main
+          git push origin HEAD:main
