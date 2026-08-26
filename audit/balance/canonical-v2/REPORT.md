@@ -13,7 +13,7 @@
 - CORRETA: **4**
 - DESCRIÇÃO_ERRADA: **709**
 - DANO_ERRADO: **54**
-- EFEITO_ERRADO: **698**
+- EFEITO_ERRADO: **704**
 - ALVO_ERRADO: **289**
 - CUSTO_ERRADO: **267**
 - COOLDOWN_ERRADO: **160**
@@ -121,7 +121,7 @@
 | Asura Path Pain | Guided Missile | 4 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Guided Missile |
 | Atsui | Burning Blade | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Burning Blade |
 | Atsui | Fire Wall | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Fire Wall |
-| Atsui | Flame Slice | 3 | COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flame Slice |
+| Atsui | Flame Slice | 3 | COOLDOWN_ERRADO, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flame Slice |
 | Atsui | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Baki | Sudden Strike | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sudden Strike |
 | Baki | Wind Sword | 2 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wind Sword |
@@ -370,12 +370,12 @@
 | Jūgo | Cellular Regeneration | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cellular Regeneration |
 | Jūgo | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Kabuto Yakushi | Chakra Scalpel | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Scalpel |
-| Kabuto Yakushi | Pre-Healing Technique | 2 | ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Pre-Healing Technique |
+| Kabuto Yakushi | Pre-Healing Technique | 2 | ALVO_ERRADO, DURAÇÃO_ERRADA, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Pre-Healing Technique |
 | Kabuto Yakushi | Temple of Nirvana | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Temple of Nirvana |
 | Kabuto Yakushi | Dead Soul Technique | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dead Soul Technique |
 | Kabuto Yakushi | Chakra Absorbing Snakes | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Absorbing Snakes |
 | Kabuto Yakushi | Striking Shadow Snakes | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Striking Shadow Snakes |
-| Kabuto Yakushi | Técnica de Cura | 3 | COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Healing Technique |
+| Kabuto Yakushi | Técnica de Cura | 3 | COOLDOWN_ERRADO, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Healing Technique |
 | Kabuto Yakushi | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Kakashi Hatake | Lightning Beast Fang | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Beast Fang |
 | Kakashi Hatake | Lightning Blade Finisher | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Blade Finisher |

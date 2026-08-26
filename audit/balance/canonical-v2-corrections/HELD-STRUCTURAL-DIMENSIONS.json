@@ -42,6 +42,14 @@
         "local": 39,
         "upstream": 45
       },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -119,6 +127,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            29
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -186,6 +202,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -345,6 +369,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -408,6 +440,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -462,6 +502,17 @@
       "cooldown": {
         "local": 2,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            34
+          ],
+          "upstream": [
+            25
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -532,6 +583,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -599,6 +658,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -840,6 +907,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -914,6 +989,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -1125,6 +1208,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1187,6 +1278,14 @@
           "allies",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -1259,6 +1358,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1326,6 +1433,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -1396,6 +1511,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            31
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1462,6 +1585,14 @@
         "local": 3,
         "upstream": 2
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1527,6 +1658,16 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": [
+            40
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -1595,6 +1736,14 @@
       "cooldown": {
         "local": 3,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -1828,6 +1977,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1902,6 +2059,14 @@
           2
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -1970,6 +2135,17 @@
       "cooldown": {
         "local": 1,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": [
+            10,
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -2051,6 +2227,14 @@
           2
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -2131,6 +2315,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -2206,6 +2398,14 @@
       "damage": {
         "local": 34,
         "upstream": 30
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -2339,6 +2539,21 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            5,
+            40
+          ]
+        },
+        "defense": {
+          "local": [
+            25
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -2488,6 +2703,14 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -2722,6 +2945,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            45
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -2797,6 +3028,14 @@
         "local": 24,
         "upstream": 15
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            11
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -2868,6 +3107,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -2930,6 +3177,14 @@
           "self",
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            30
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -3053,6 +3308,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -3296,6 +3559,16 @@
           "ally"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            52
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -3512,6 +3785,14 @@
         "local": 3,
         "upstream": 2
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -3723,6 +4004,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            8
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -3927,6 +4216,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -4002,6 +4299,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            13
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -4072,6 +4377,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -4141,6 +4454,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -4362,6 +4683,14 @@
         "local": 34,
         "upstream": 35
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -4438,6 +4767,16 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            25
+          ],
+          "upstream": [
+            40
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -4955,6 +5294,20 @@
           3
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        },
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5021,6 +5374,16 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            7
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5046,6 +5409,59 @@
       "trap-counter",
       "dynamic-change"
     ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "slot": 3,
+    "techniqueId": "atsui-(s)__base_3",
+    "techniqueName": "Flame Slice",
+    "originalName": "Flame Slice",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Atsui",
+    "upstreamTechnique": "Flame Slice",
+    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 1,
+        "upstream": 0
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "dot"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -5089,6 +5505,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -5147,6 +5571,14 @@
       "damage": {
         "local": 32,
         "upstream": 40
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -5217,6 +5649,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            60
+          ],
+          "upstream": [
+            50
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5282,6 +5724,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -5416,6 +5866,17 @@
         "local": 2,
         "upstream": 0
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            34
+          ],
+          "upstream": [
+            25
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5539,6 +6000,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -5822,6 +6291,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5954,6 +6431,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            30
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -6023,6 +6508,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            56
+          ],
+          "upstream": [
+            50
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -6089,6 +6584,14 @@
         "upstream": [
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            27
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -6168,6 +6671,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -6448,6 +6959,14 @@
         "local": 38,
         "upstream": 30
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -6719,6 +7238,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -6793,6 +7320,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            13
+          ],
+          "upstream": [
+            5
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -6860,6 +7397,16 @@
           "allies",
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            46
+          ],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -6929,6 +7476,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -7125,6 +7680,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -7281,6 +7844,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -7417,6 +7988,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            63
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -7485,6 +8064,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -7617,6 +8204,14 @@
           "self",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            26
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -7836,6 +8431,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            5
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -7903,6 +8506,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -8130,6 +8741,16 @@
         "local": 2,
         "upstream": 0
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -8201,6 +8822,14 @@
       "damage": {
         "local": 21,
         "upstream": 25
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -8290,6 +8919,14 @@
       "damage": {
         "local": 21,
         "upstream": 15
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -8660,6 +9297,16 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            29
+          ],
+          "upstream": [
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -9145,6 +9792,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -9283,6 +9938,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -9513,6 +10176,14 @@
         "local": 49,
         "upstream": 15
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            6
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -9588,6 +10259,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -9886,6 +10565,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -10074,6 +10761,14 @@
         "local": 44,
         "upstream": 25
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -10143,6 +10838,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -10205,6 +10908,14 @@
         "upstream": [
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -10462,6 +11173,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -10531,6 +11250,14 @@
       "cooldown": {
         "local": 2,
         "upstream": 1
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -10662,6 +11389,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -10734,6 +11469,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -10810,6 +11553,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -10940,6 +11691,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -11051,6 +11810,14 @@
         "local": 2,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -11113,6 +11880,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11244,6 +12019,14 @@
           "self"
         ]
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -11301,6 +12084,14 @@
       "damage": {
         "local": 39,
         "upstream": 35
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11366,6 +12157,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -11429,6 +12228,16 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            41
+          ],
+          "upstream": [
+            80
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11495,6 +12304,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11628,6 +12445,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11818,6 +12643,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -11886,6 +12719,14 @@
       "damage": {
         "local": 16,
         "upstream": 30
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -11963,6 +12804,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            15
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12030,6 +12879,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            55
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12093,6 +12950,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -12166,6 +13031,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            13
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -12304,6 +13177,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -12518,6 +13399,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12676,6 +13565,14 @@
           2
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12803,6 +13700,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            31
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12865,6 +13770,14 @@
       "damage": {
         "local": 27,
         "upstream": 20
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            13
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -12932,6 +13845,16 @@
           "allies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            56
+          ],
+          "upstream": [
+            30
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -12997,6 +13920,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -13070,6 +14001,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [],
+          "upstream": [
+            5
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -13403,6 +14342,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -13468,6 +14415,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -13687,6 +14642,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -14034,6 +14997,14 @@
         "local": 36,
         "upstream": 30
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -14182,6 +15153,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -14402,6 +15381,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            21
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -14598,6 +15585,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [],
+          "upstream": [
+            30
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -14879,6 +15874,16 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            46
+          ],
+          "upstream": [
+            30
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -14943,6 +15948,16 @@
           "self",
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            46
+          ],
+          "upstream": [
+            30
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -15084,6 +16099,14 @@
         "upstream": [
           4
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            48
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -15293,6 +16316,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            19
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -15442,6 +16473,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -15505,6 +16544,14 @@
         "upstream": [
           "self"
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -15668,6 +16715,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -15743,6 +16798,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -15875,6 +16938,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -15954,6 +17025,17 @@
       "cooldown": {
         "local": 4,
         "upstream": 1
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": [
+            10,
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -16251,6 +17333,20 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            31
+          ],
+          "upstream": []
+        },
+        "reduction": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -16317,6 +17413,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -16728,6 +17832,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -16792,6 +17904,16 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            21
+          ],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -16948,6 +18070,16 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": [
+            25
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17024,6 +18156,14 @@
       "cooldown": {
         "local": 1,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -17107,6 +18247,16 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -17418,6 +18568,16 @@
           "allies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            44
+          ],
+          "upstream": [
+            35
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17484,6 +18644,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -17690,6 +18858,16 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            14
+          ],
+          "upstream": [
+            35
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17769,6 +18947,14 @@
         "local": 36,
         "upstream": 40
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17834,6 +19020,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            10
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -17909,6 +19103,22 @@
           4
         ]
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            20
+          ]
+        },
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17976,6 +19186,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -18059,6 +19277,78 @@
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "slot": 2,
+    "techniqueId": "kabuto-yakushi__base_2",
+    "techniqueName": "Pre-Healing Technique",
+    "originalName": "Pre-Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamTechnique": "Pre-Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "ally",
+          "enemy"
+        ],
+        "upstream": [
+          "self"
+        ]
+      },
+      "duration": {
+        "local": [
+          2
+        ],
+        "upstream": [
+          5
+        ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            5,
+            47
+          ],
+          "upstream": [
+            15
+          ]
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "DURAÇÃO_ERRADA"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -18184,6 +19474,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -18282,6 +19580,63 @@
   {
     "characterId": "kabuto-yakushi-(s)",
     "characterName": "Kabuto Yakushi",
+    "slot": 3,
+    "techniqueId": "kabuto-yakushi-(s)__base_3",
+    "techniqueName": "Técnica de Cura",
+    "originalName": "Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamTechnique": "Healing Technique",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 2,
+        "upstream": 1
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            34
+          ],
+          "upstream": [
+            25
+          ]
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO",
+          "EFEITO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
     "slot": 4,
     "techniqueId": "kabuto-yakushi-(s)__base_4",
     "techniqueName": "Esquiva",
@@ -18319,6 +19674,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -18706,6 +20069,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -18829,6 +20200,14 @@
           "enemy",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            7
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -18959,6 +20338,16 @@
         "local": 2,
         "upstream": 1
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -19036,6 +20425,16 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -19104,6 +20503,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -19630,6 +21037,22 @@
         "local": 2,
         "upstream": 1
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            8
+          ],
+          "upstream": [
+            30
+          ]
+        },
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -19696,6 +21119,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -19766,6 +21197,14 @@
         "local": 16,
         "upstream": 5
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -19835,6 +21274,14 @@
       "damage": {
         "local": 25,
         "upstream": 10
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            19
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -19917,6 +21364,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            37
+          ],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -19988,6 +21445,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -20145,6 +21610,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -20219,6 +21692,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -20299,6 +21780,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -20368,6 +21857,14 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            56
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -20645,6 +22142,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -20831,6 +22336,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -21123,6 +22636,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -21185,6 +22706,20 @@
         "upstream": [
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            22
+          ],
+          "upstream": []
+        },
+        "execute": {
+          "local": [],
+          "upstream": [
+            5
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -21328,6 +22863,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -21410,6 +22953,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -21660,6 +23211,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -21733,6 +23292,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -21801,6 +23368,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -21931,6 +23506,14 @@
         "local": 25,
         "upstream": 20
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -22002,6 +23585,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -22063,6 +23654,14 @@
       "cooldown": {
         "local": 2,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -22281,6 +23880,14 @@
         "local": 39,
         "upstream": 35
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -22439,6 +24046,14 @@
         "local": 29,
         "upstream": 45
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            22
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -22508,6 +24123,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -22641,6 +24264,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -22781,6 +24412,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            19
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -22853,6 +24492,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -22996,6 +24643,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -23073,6 +24728,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -23204,6 +24867,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -23344,6 +25015,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            21
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -23409,6 +25088,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -23480,6 +25167,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -23546,6 +25241,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -23888,6 +25591,14 @@
         "local": 24,
         "upstream": 15
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            11
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -23955,6 +25666,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -24164,6 +25883,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -24361,6 +26088,20 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        },
+        "defense": {
+          "local": [
+            18
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -24427,6 +26168,14 @@
         "upstream": [
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            45
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -24637,6 +26386,16 @@
           "blood"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            60
+          ],
+          "upstream": [
+            70
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -24705,6 +26464,14 @@
           "blood",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            15
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -24917,6 +26684,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -24991,6 +26766,14 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            52
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -25157,6 +26940,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -25229,6 +27020,14 @@
         "upstream": [
           "blood"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -25308,6 +27107,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -25459,6 +27266,14 @@
           "self",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            42
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -25725,6 +27540,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -25788,6 +27611,14 @@
       "damage": {
         "local": 50,
         "upstream": 30
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            6
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -25921,6 +27752,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -26133,6 +27972,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -26266,6 +28113,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -26341,6 +28196,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -26411,6 +28274,14 @@
           0,
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            44
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -26537,6 +28408,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            29
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -26689,6 +28568,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            52
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -26778,6 +28665,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -26854,6 +28749,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -26984,6 +28887,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -27051,6 +28962,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -27188,6 +29107,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -27393,6 +29320,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -27622,6 +29557,20 @@
           3
         ]
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        },
+        "defense": {
+          "local": [
+            41
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -27690,6 +29639,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -27752,6 +29711,14 @@
         "upstream": [
           "ally"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -27867,6 +29834,14 @@
       "damage": {
         "local": 41,
         "upstream": 40
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -28033,6 +30008,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            48
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -28111,6 +30094,14 @@
           0,
           2
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            32
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -28244,6 +30235,20 @@
         "local": 1,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        },
+        "reduction": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -28320,6 +30325,16 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": [
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -28529,6 +30544,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -28736,6 +30759,16 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": [
+            30
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -28800,6 +30833,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -29092,6 +31133,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            5
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29173,6 +31222,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29242,6 +31299,20 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        },
+        "reduction": {
+          "local": [
+            10
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -29314,6 +31385,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29384,6 +31463,16 @@
         "local": 17,
         "upstream": 10
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            8
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29448,6 +31537,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -29567,6 +31664,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -29693,6 +31798,20 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            20
+          ]
+        },
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29758,6 +31877,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -29820,6 +31947,15 @@
           "self",
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            10,
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -29885,6 +32021,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -30342,6 +32486,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            44
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -30556,6 +32708,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -30688,6 +32848,14 @@
         "local": 3,
         "upstream": 0
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -30771,6 +32939,14 @@
       "cooldown": {
         "local": 2,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -30857,6 +33033,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            22
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -30929,6 +33113,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -31007,6 +33199,16 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            41
+          ],
+          "upstream": [
+            35
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31081,6 +33283,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31154,6 +33364,14 @@
       "damage": {
         "local": 23,
         "upstream": 40
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            18
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -31236,6 +33454,14 @@
         "local": 25,
         "upstream": 15
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            19
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31315,6 +33541,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31341,6 +33575,63 @@
     "blockers": [
       "trap-counter"
     ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "slot": 2,
+    "techniqueId": "rin-nohara__base_2",
+    "techniqueName": "Técnica de Cura",
+    "originalName": "Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Rin Nohara",
+    "upstreamTechnique": "Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "COOLDOWN_ERRADO",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cooldown": {
+        "local": 2,
+        "upstream": 0
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            34
+          ],
+          "upstream": [
+            25
+          ]
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "COOLDOWN_ERRADO",
+          "EFEITO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -31401,6 +33692,22 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            11
+          ],
+          "upstream": [
+            10
+          ]
+        },
+        "dot": {
+          "local": [
+            6
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -31472,6 +33779,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31530,6 +33845,14 @@
       "cooldown": {
         "local": 1,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -31682,6 +34005,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            37
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31748,6 +34079,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -31953,6 +34292,14 @@
         "local": 41,
         "upstream": 45
       },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -32022,6 +34369,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -32088,6 +34443,14 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -32168,6 +34531,14 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            38
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -32346,6 +34717,17 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            3,
+            27
+          ],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -32656,6 +35038,16 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            33
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -32726,6 +35118,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -32879,6 +35279,14 @@
           3
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            41
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -32955,6 +35363,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            35
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -33030,6 +35446,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            30
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -33091,6 +35515,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            29
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33217,6 +35649,15 @@
       "cooldown": {
         "local": 2,
         "upstream": 1
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            34
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33370,6 +35811,20 @@
         "local": 1,
         "upstream": 0
       },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        },
+        "defense": {
+          "local": [
+            12
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -33442,6 +35897,14 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33653,6 +36116,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -33713,6 +36184,16 @@
       "cooldown": {
         "local": 1,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33795,6 +36276,22 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        },
+        "defense": {
+          "local": [
+            48
+          ],
+          "upstream": [
+            20
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33889,6 +36386,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            27
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -34114,6 +36619,17 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            9
+          ],
+          "upstream": [
+            5,
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -34187,6 +36703,14 @@
       "damage": {
         "local": 33,
         "upstream": 60
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.3
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -34329,6 +36853,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -34485,6 +37017,14 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            7
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -34770,6 +37310,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            27
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -34985,6 +37533,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            44
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -35059,6 +37615,14 @@
       "damage": {
         "local": 42,
         "upstream": 100
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            8
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -35201,6 +37765,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -35472,6 +38044,16 @@
           "blood"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            48
+          ],
+          "upstream": [
+            45
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -35548,6 +38130,14 @@
         "upstream": [
           0
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -35718,6 +38308,68 @@
   {
     "characterId": "shizune",
     "characterName": "Shizune",
+    "slot": 3,
+    "techniqueId": "shizune__base_3",
+    "techniqueName": "Regenerative Healing Technique",
+    "originalName": "Regenerative Healing Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Shizune",
+    "upstreamTechnique": "Regenerative Healing Technique",
+    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
+    "classifications": [
+      "CUSTO_ERRADO",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cost": {
+        "local": [
+          "nin",
+          "nin"
+        ],
+        "upstream": [
+          "rand",
+          "rand"
+        ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            5,
+            42
+          ],
+          "upstream": [
+            35
+          ]
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "CUSTO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "heal",
+      "cleanse"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
     "slot": 4,
     "techniqueId": "shizune__base_4",
     "techniqueName": "Esquiva",
@@ -35755,6 +38407,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -35821,6 +38481,16 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            33
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -35882,6 +38552,14 @@
         "local": 21,
         "upstream": 10
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -35942,6 +38620,14 @@
       "damage": {
         "local": 36,
         "upstream": 60
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            6
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36005,6 +38691,20 @@
           "rand",
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        },
+        "reduction": {
+          "local": [
+            13
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36073,6 +38773,16 @@
           "self",
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            18
+          ],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36220,6 +38930,16 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            52
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -36291,6 +39011,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36432,6 +39160,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -36557,6 +39293,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36715,6 +39459,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            20
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -36779,6 +39531,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -37051,6 +39811,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -37267,6 +40035,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -37337,6 +40113,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -37426,6 +40210,65 @@
   {
     "characterId": "tenten-(s)",
     "characterName": "Tenten",
+    "slot": 3,
+    "techniqueId": "tenten-(s)__base_3",
+    "techniqueName": "Scroll of Fire",
+    "originalName": "Scroll of Fire",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Tenten",
+    "upstreamTechnique": "Scroll of Fire",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
+    "classifications": [
+      "DURAÇÃO_ERRADA",
+      "EFEITO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "duration": {
+        "local": [
+          2
+        ],
+        "upstream": [
+          3
+        ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            6
+          ],
+          "upstream": [
+            10
+          ]
+        }
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "DURAÇÃO_ERRADA"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "dot"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
     "slot": 4,
     "techniqueId": "tenten-(s)__base_4",
     "techniqueName": "Chain Spin",
@@ -37476,6 +40319,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -37979,6 +40830,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            36
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -38044,6 +40903,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -38122,6 +40989,14 @@
         "local": 1,
         "upstream": 0
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            4
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -38187,6 +41062,14 @@
         "upstream": [
           3
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            20
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -38309,6 +41192,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            24
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -38376,6 +41267,14 @@
           "self",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            35
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -38445,6 +41344,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -38693,6 +41600,16 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            9
+          ],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39011,6 +41928,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            21
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -39094,6 +42019,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -39158,6 +42091,20 @@
         "upstream": [
           "self"
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [
+            4,
+            40
+          ],
+          "upstream": [
+            10,
+            10,
+            30,
+            40
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39226,6 +42173,21 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            25,
+            50
+          ]
+        },
+        "defense": {
+          "local": [
+            27
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39297,6 +42259,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -39360,6 +42330,20 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "heal": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        },
+        "reduction": {
+          "local": [
+            9
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39426,6 +42410,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39640,6 +42632,16 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            28
+          ],
+          "upstream": [
+            20
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -39706,6 +42708,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39776,6 +42786,14 @@
       "damage": {
         "local": 36,
         "upstream": 35
+      },
+      "effectNumeric": {
+        "execute": {
+          "local": [
+            0.22
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -39918,6 +42936,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "dot": {
+          "local": [],
+          "upstream": [
+            25
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -39989,6 +43015,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -40284,6 +43318,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -40598,6 +43640,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -40724,6 +43774,14 @@
           "enemy"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            21
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -40794,6 +43852,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -40853,6 +43919,14 @@
       "cooldown": {
         "local": 1,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [
+            3
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -41058,6 +44132,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -41120,6 +44202,14 @@
         "upstream": [
           "enemy"
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            33
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -41254,6 +44344,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            27
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -41318,6 +44416,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            30
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -41386,6 +44492,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            50
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -41526,6 +44640,14 @@
       "cooldown": {
         "local": 4,
         "upstream": 0
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -41705,6 +44827,14 @@
         "local": 4,
         "upstream": 0
       },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            40
+          ],
+          "upstream": []
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -41856,6 +44986,16 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "defense": {
+          "local": [
+            16
+          ],
+          "upstream": [
+            5
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",

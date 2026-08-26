@@ -5,10 +5,10 @@
 - Justificadas sem referência 1:1 e excluídas da fila: **117**
 - CORRETA: **4**
 - Técnicas com correção pendente: **715**
-- SAFE_STRUCTURAL: **7**
-- COMPLEX_EFFECT: **708**
+- SAFE_STRUCTURAL: **1**
+- COMPLEX_EFFECT: **714**
 - MANUAL_REVIEW: **0**
-- Dimensões estruturais retidas: **1016**
+- Dimensões estruturais retidas: **1023**
 - DESCRIPTION_AFTER_MECHANICS: **710**
 - Gate: **PASS**
 

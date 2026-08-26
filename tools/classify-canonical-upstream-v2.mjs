@@ -181,9 +181,10 @@ function upstreamFacts(block, helper = null) {
     damage: values(block, /\bdamage\s+(-?\d+)/g),
     pierce: values(block, /\bpierce\s+(-?\d+)/g),
     afflict: values(block, /\bafflict\s+(-?\d+)/g),
-    heal: values(block, /\bheal\s+(-?\d+)/g),
+    heal: values(block, /\bheal\s+(-?\d+)/gi),
     defend: values(block, /\bdefend(?:'|With)?(?:\s+\w+)?\s+(-?\d+)/g),
     reduce: values(block, /\bReduce[^\]]*?Flat\s+(\d+)/g),
+    executeThresholds: values(block, /\bexecuteAt\s+(-?\d+)/g),
     durations: uniq(values(block, /\bapply(?:With\s*\[[^\]]*\])?\s+(\d+)\b/g).concat(values(block, /\bControl\s+(\d+)\b/g))),
     targets: targetFacts(block)
   };
@@ -338,6 +339,40 @@ function publishedDirectDamage(published) {
 function canonicalDirectDamage(upstream) {
   return [...arr(upstream?.damage), ...arr(upstream?.pierce)].filter(Number.isFinite);
 }
+function publishedNumericEffects(published) {
+  const out={heal:[],dot:[],defense:[],reduction:[],execute:[]};
+  for(const m of arr(published?.mechanics)){
+    const op=String(m?.op||'');
+    if(op==='heal'){const n=num(m.amount,null);if(n!=null)out.heal.push(n)}
+    if(op==='status'&&String(m.status||'')==='regen'){const n=num(m.value??m.amount,null);if(n!=null)out.heal.push(n)}
+    if(op==='status'&&['bleed','burn','parasite','poison'].includes(String(m.status||''))){const n=num(m.damage??m.value??m.amount,null);if(n!=null)out.dot.push(n)}
+    if(op==='shield'){const n=num(m.amount,null);if(n!=null)out.defense.push(n)}
+    if(op==='buff'&&String(m.stat||'')==='defense'){const n=num(m.amount,null);if(n!=null)out.reduction.push(n)}
+    if(op==='execute'){const n=num(m.threshold,null);if(n!=null)out.execute.push(n)}
+  }
+  for(const k of Object.keys(out))out[k].sort((a,b)=>a-b);
+  return out;
+}
+function canonicalNumericEffects(upstream) {
+  const out={
+    heal:arr(upstream?.heal).filter(Number.isFinite),
+    dot:arr(upstream?.afflict).filter(Number.isFinite),
+    defense:arr(upstream?.defend).filter(Number.isFinite),
+    reduction:arr(upstream?.reduce).filter(Number.isFinite),
+    execute:arr(upstream?.executeThresholds).filter(Number.isFinite)
+  };
+  for(const k of Object.keys(out))out[k].sort((a,b)=>a-b);
+  return out;
+}
+function numericEffectMismatches(published,upstream){
+  const local=publishedNumericEffects(published),canonical=canonicalNumericEffects(upstream),mismatches={};
+  for(const key of Object.keys(canonical)){
+    const L=local[key],U=canonical[key];
+    if(!L.length&&!U.length)continue;
+    if(JSON.stringify(L)!==JSON.stringify(U))mismatches[key]={local:L,upstream:U};
+  }
+  return mismatches;
+}
 const ENGINE_SUPPORTED_CANONICAL_CATEGORIES = new Set([
   'damage','heal','defense','reduction','stun','disable','silence','expose','weaken','strengthen','exhaust','focus',
   'cleanse','dispel','chakra','alternate','stack','trap-counter','leech','demolish','dot','execute','invulnerable',
@@ -425,6 +460,11 @@ function classifyTechnique({ published, upstream }) {
   if (localDamage.length === 1 && upDamage.length === 1 && localDamage[0] !== upDamage[0]) {
     flags.push('DANO_ERRADO');
     evidence.damage = { local: localDamage[0], upstream: upDamage[0] };
+  }
+  const numericEffects=numericEffectMismatches(published,upstream);
+  if(Object.keys(numericEffects).length){
+    if(!flags.includes('EFEITO_ERRADO'))flags.push('EFEITO_ERRADO');
+    evidence.effectNumeric=numericEffects;
   }
   const structural = flags.filter((x) => ['DANO_ERRADO','EFEITO_ERRADO','ALVO_ERRADO','CUSTO_ERRADO','COOLDOWN_ERRADO','DURAÇÃO_ERRADA'].includes(x));
   const description = String(published.description || '');
@@ -590,6 +630,14 @@ function selfTest() {
   for (const expected of ['ALVO_ERRADO', 'CUSTO_ERRADO', 'COOLDOWN_ERRADO', 'DURAÇÃO_ERRADA']) if (!multi.classifications.includes(expected)) throw new Error(`SELFTEST_${expected}`);
   const extraEffect = classifyTechnique({ published: { ...basePublished, mechanics: [...basePublished.mechanics, { op: 'heal', amount: 5, target: 'self' }] }, upstream: baseUpstream });
   if (!extraEffect.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_EXTRA_EFFECT');
+  const healMismatch=classifyTechnique({published:{description:'cura',chakraCost:['NIN'],cooldown:5,mechanics:[{op:'heal',amount:47,target:'self'},{op:'status',status:'regen',value:5,turns:2,target:'self'}]},upstream:{categories:['heal'],damage:[],pierce:[],afflict:[],heal:[15],defend:[],reduce:[],executeThresholds:[],targets:['self'],cost:['Nin'],cooldown:5,durations:[5]}});
+  if(!healMismatch.classifications.includes('EFEITO_ERRADO')||!healMismatch.evidence.effectNumeric?.heal)throw new Error('SELFTEST_HEAL_NUMERIC');
+  const dotMismatch=classifyTechnique({published:{description:'queimadura',chakraCost:[],cooldown:0,mechanics:[{op:'status',status:'burn',damage:5,turns:2,target:'primary'}]},upstream:{categories:['dot'],damage:[],pierce:[],afflict:[7],heal:[],defend:[],reduce:[],executeThresholds:[],targets:['enemy'],cost:[],cooldown:0,durations:[2]}});
+  if(!dotMismatch.classifications.includes('EFEITO_ERRADO')||!dotMismatch.evidence.effectNumeric?.dot)throw new Error('SELFTEST_DOT_NUMERIC');
+  const defenseMismatch=classifyTechnique({published:{description:'defesa',chakraCost:[],cooldown:0,mechanics:[{op:'shield',amount:20,turns:2,target:'self'}]},upstream:{categories:['defense'],damage:[],pierce:[],afflict:[],heal:[],defend:[30],reduce:[],executeThresholds:[],targets:['self'],cost:[],cooldown:0,durations:[2]}});
+  if(!defenseMismatch.classifications.includes('EFEITO_ERRADO')||!defenseMismatch.evidence.effectNumeric?.defense)throw new Error('SELFTEST_DEFENSE_NUMERIC');
+  const executeMismatch=classifyTechnique({published:{description:'execute',chakraCost:[],cooldown:0,mechanics:[{op:'execute',threshold:20,target:'primary'}]},upstream:{categories:['damage','execute'],damage:[],pierce:[],afflict:[],heal:[],defend:[],reduce:[],executeThresholds:[25],targets:['enemy'],cost:[],cooldown:0,durations:[]}});
+  if(!executeMismatch.classifications.includes('EFEITO_ERRADO')||!executeMismatch.evidence.effectNumeric?.execute)throw new Error('SELFTEST_EXECUTE_NUMERIC');
   const supportedGap = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'redirect'] } });
   if (supportedGap.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_SUPPORTED_GAP_MOTOR');
   if (!supportedGap.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_SUPPORTED_GAP_EFFECT');
