@@ -10,4 +10,4 @@ admin_tabs=6
 raw_json_ui_removed=PASS
 browser_page_errors=0
 anonymous_admin_backend_blocked=PASS
-tested_commit=7c8ea65ad0734eaf41b6d787ac7e88ccff112189
+tested_commit=9c55e022e1a4d4debeaf01cfe81e767aa2a7401a
