@@ -66,17 +66,23 @@ jobs:
           set -euo pipefail
           node - <<'JS'
           const fs=require('fs');
-          const pub=JSON.parse(fs.readFileSync('audit/balance/published-v2/PUBLISHED-TECHNIQUES.json','utf8'));
+          const roster=JSON.parse(fs.readFileSync('audit/balance/published-v2/CANONICAL-ROSTER-209x4.json','utf8'));
           const fin=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
           const rows=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-CLASSIFICATION-836.json','utf8'));
           const queue=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
           const safe=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SAFE-STRUCTURAL.json','utf8'));
+          const findById=(value,id)=>{
+            if(!value||typeof value!=='object') return null;
+            if(value.id===id) return value;
+            if(Array.isArray(value)){ for(const x of value){const r=findById(x,id);if(r)return r;} return null; }
+            for(const x of Object.values(value)){const r=findById(x,id);if(r)return r;}
+            return null;
+          };
           if(fin.totalTechniques!==836||fin.accounted!==836||fin.unaccounted!==0||fin.gate!=='PASS') throw new Error(`final accounting ${JSON.stringify(fin)}`);
           if((fin.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error(`MOTOR_INSUFICIENTE=${fin.classificationCounts?.MOTOR_INSUFICIENTE}`);
-          const kamuiPub=(Array.isArray(pub)?pub:pub.techniques||[]).find(r=>r.id==='masked-man__base_4'||r.entity_id==='masked-man__base_4');
+          const kamuiPub=findById(roster,'masked-man__base_4');
           if(!kamuiPub) throw new Error('KAMUI_PUBLISHED_MISSING');
-          const kamuiPayload=kamuiPub.published||kamuiPub;
-          if(Number(kamuiPayload.cooldown)!==0) throw new Error(`KAMUI_PUBLISHED_COOLDOWN=${kamuiPayload.cooldown}`);
+          if(Number(kamuiPub.cooldown)!==0) throw new Error(`KAMUI_PUBLISHED_COOLDOWN=${kamuiPub.cooldown}`);
           const kamui=rows.find(r=>r.techniqueId==='masked-man__base_4');
           if(!kamui) throw new Error('KAMUI_CLASSIFICATION_MISSING');
           if(kamui.classifications.includes('COOLDOWN_ERRADO')) throw new Error(`KAMUI_COOLDOWN_STILL_WRONG:${JSON.stringify(kamui.classifications)}`);
@@ -84,7 +90,7 @@ jobs:
           if(safe.some(r=>r.techniqueId==='masked-man__base_4')) throw new Error('KAMUI_STILL_SAFE_AFTER_APPLY');
           if(queue.safeStructural!==0||safe.length!==0) throw new Error(`SAFE_STRUCTURAL_REMAINS:${queue.safeStructural}/${safe.length}`);
           console.log('KAMUI_PHASE_CANONICAL_SAFE_CORRECTION=PASS',{
-            cooldown:kamuiPayload.cooldown,
+            cooldown:kamuiPub.cooldown,
             classifications:kamui.classifications,
             safeStructural:queue.safeStructural,
             accounted:fin.accounted
