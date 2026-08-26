@@ -38,6 +38,7 @@ jobs:
           grep -Fq 'chakraDemand' tools/simulate-balance.mjs
           grep -Fq "target.dot = 7" tools/simulate-balance.mjs
           grep -Fq 'Wilson 95%' tools/simulate-balance.mjs
+          grep -Fq 'const turnFirst =' tools/simulate-balance.mjs
 
       - name: Run full duel gauntlet and 3v3 Monte Carlo sample
         shell: bash
@@ -74,3 +75,5 @@ jobs:
           path: audit/balance/simulation
           if-no-files-found: error
           retention-days: 30
+
+# Post-initiative validation trigger: 2026-08-26
