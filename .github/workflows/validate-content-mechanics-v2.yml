@@ -7,6 +7,7 @@ on:
       - 'combat-rules-v2.js'
       - 'combat-content-adapter-v2.js'
       - 'tools/test-content-mechanics-v2.cjs'
+      - 'tools/audit-published-techniques-v2.mjs'
       - '.github/workflows/validate-content-mechanics-v2.yml'
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ permissions:
 jobs:
   mechanics-v2:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,8 +29,11 @@ jobs:
           node --check combat-rules-v2.js
           node --check combat-content-adapter-v2.js
           node --check tools/test-content-mechanics-v2.cjs
+          node --check tools/audit-published-techniques-v2.mjs
       - name: Canonical mechanics contract
         run: node tools/test-content-mechanics-v2.cjs
+      - name: Audit all published techniques
+        run: node tools/audit-published-techniques-v2.mjs
       - name: Contract guards
         run: |
           set -euo pipefail
@@ -38,4 +42,14 @@ jobs:
           grep -Fq "multi-hit" combat-content-adapter-v2.js
           grep -Fq "bonusIf" combat-content-adapter-v2.js
           grep -Fq "execute" combat-content-adapter-v2.js
+          test -s audit/balance/published-v2/SUMMARY.json
+          grep -Fq '"gate": "PASS"' audit/balance/published-v2/SUMMARY.json
           echo 'CONTENT_MECHANICS_V2=PASS'
+      - name: Upload published-technique audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-techniques-v2-audit
+          path: audit/balance/published-v2/
+          if-no-files-found: warn
+          retention-days: 14
