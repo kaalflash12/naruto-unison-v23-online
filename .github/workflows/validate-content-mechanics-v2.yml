@@ -8,6 +8,8 @@ on:
       - 'combat-content-adapter-v2.js'
       - 'tools/test-content-mechanics-v2.cjs'
       - 'tools/audit-published-techniques-v2.mjs'
+      - 'tools/audit-semantic-skill-values-v2.mjs'
+      - 'tools/validate-published-roster-coverage-v2.mjs'
       - 'tools/simulate-published-balance-3v3-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
       - 'supabase/functions/content/index.ts'
@@ -20,7 +22,7 @@ permissions:
 jobs:
   mechanics-v2:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -33,12 +35,16 @@ jobs:
           node --check combat-content-adapter-v2.js
           node --check tools/test-content-mechanics-v2.cjs
           node --check tools/audit-published-techniques-v2.mjs
+          node --check tools/audit-semantic-skill-values-v2.mjs
+          node --check tools/validate-published-roster-coverage-v2.mjs
           node --check tools/simulate-published-balance-3v3-v2.mjs
           node --check tools/simulate-balance-3v3-v2.mjs
       - name: Canonical mechanics contract
         run: node tools/test-content-mechanics-v2.cjs
       - name: Audit all published techniques
         run: node tools/audit-published-techniques-v2.mjs
+      - name: Semantic value audit
+        run: node tools/audit-semantic-skill-values-v2.mjs
       - name: Canonical roster simulation smoke
         env:
           SIM_MODE: smoke
@@ -46,6 +52,10 @@ jobs:
           SIM_SEEDS: '1'
           SIM_MAX_TURNS: '20'
         run: node tools/simulate-published-balance-3v3-v2.mjs
+      - name: Canonical roster 209 coverage
+        env:
+          SIM_MAX_TURNS: '20'
+        run: node tools/validate-published-roster-coverage-v2.mjs
       - name: Contract guards
         run: |
           set -euo pipefail
@@ -60,8 +70,15 @@ jobs:
           grep -Fq '"gate": "PASS"' audit/balance/published-v2/SUMMARY.json
           grep -Fq '"canonicalPlayableCharacters": 209' audit/balance/published-v2/SUMMARY.json
           grep -Fq '"canonicalLinks": 836' audit/balance/published-v2/SUMMARY.json
+          test -s audit/balance/semantic-v2/SUMMARY.json
+          grep -Fq '"gate": "PASS"' audit/balance/semantic-v2/SUMMARY.json
+          grep -Fq '"skills": 836' audit/balance/semantic-v2/SUMMARY.json
+          grep -Fq '"zeroValuedEffects": 0' audit/balance/semantic-v2/SUMMARY.json
           test -s audit/balance/published-simulation-v2/CANONICAL-SOURCE.json
           grep -Fq '"characters":209' <(tr -d '[:space:]' < audit/balance/published-simulation-v2/CANONICAL-SOURCE.json) || grep -Fq '"playableCharacters":209' <(tr -d '[:space:]' < audit/balance/published-simulation-v2/CANONICAL-SOURCE.json)
+          test -s audit/balance/published-coverage-v2/SUMMARY.json
+          grep -Fq '"gate": "PASS"' audit/balance/published-coverage-v2/SUMMARY.json
+          grep -Fq '"coveredCharacters": 209' audit/balance/published-coverage-v2/SUMMARY.json
           echo 'CONTENT_MECHANICS_V2=PASS'
       - name: Upload published-technique audit
         if: always()
@@ -71,11 +88,27 @@ jobs:
           path: audit/balance/published-v2/
           if-no-files-found: warn
           retention-days: 14
+      - name: Upload semantic value audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-semantic-v2-audit
+          path: audit/balance/semantic-v2/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Upload canonical simulation smoke
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: published-roster-v2-simulation-smoke
           path: audit/balance/published-simulation-v2/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Upload canonical coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-roster-v2-coverage-209
+          path: audit/balance/published-coverage-v2/
           if-no-files-found: warn
           retention-days: 14
