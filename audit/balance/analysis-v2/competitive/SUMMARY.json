@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-08-26T15:52:32.522Z",
+  "sourceGeneratedAt": "2026-08-26T15:52:31.823Z",
+  "engineVersion": 2,
+  "scope": "competitive",
+  "totalRoster": 209,
+  "eligibleRoster": 209,
+  "characters": 203,
+  "excludedCharacters": [
+    {
+      "slug": "bijuu-shukaku-event",
+      "name": "Shukaku",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-matatabi-event",
+      "name": "Matatabi",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-gyuki-event",
+      "name": "Gyūki",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-kurama-event",
+      "name": "Kurama",
+      "classification": "event"
+    },
+    {
+      "slug": "kaguya-otsutsuki-(s)",
+      "name": "Kaguya Ōtsutsuki",
+      "classification": "special-review"
+    },
+    {
+      "slug": "toneri-otsutsuki-the-last",
+      "name": "Toneri Ōtsutsuki",
+      "classification": "special-review"
+    }
+  ],
+  "pairs": 20503,
+  "games": 164024,
+  "seeds": 2,
+  "policies": [
+    "balanced",
+    "aggressive"
+  ],
+  "classificationCounts": {
+    "standard": 203
+  },
+  "actionCounts": {
+    "NERF_CANDIDATE": 60,
+    "BUFF_CANDIDATE": 60,
+    "MATCHUP_EXPLOITABILITY_REVIEW": 82,
+    "KIT_DISTRIBUTION_REVIEW": 1
+  },
+  "flagCounts": {
+    "OVERPOWERED_HIGH_CONFIDENCE": 60,
+    "SEVERE_HIGH": 47,
+    "EXPLOITABLE_MATCHUP": 201,
+    "KIT_USAGE_CONCENTRATED": 54,
+    "PAIRWISE_RATING_HIGH": 57,
+    "UNDERPOWERED_HIGH_CONFIDENCE": 60,
+    "SEVERE_LOW": 40,
+    "PAIRWISE_RATING_LOW": 48
+  },
+  "health": {
+    "meanAbsoluteScoreDeviation": 0.2215,
+    "extremeCount": 128,
+    "severeCount": 87,
+    "exploitableCount": 201,
+    "highUncertaintyCount": 0,
+    "kitConcentratedCount": 54,
+    "pairwiseRatingHighCount": 57,
+    "pairwiseRatingLowCount": 48,
+    "eloRange": [
+      962.65,
+      2057.32
+    ]
+  },
+  "concentration": {
+    "normalizedEntropy": 0.7157,
+    "hhi": 0.032858,
+    "effectiveRoster": 44.81,
+    "top5StrengthShare": 0.3011,
+    "top10StrengthShare": 0.4873,
+    "top25StrengthShare": 0.7653
+  },
+  "pairwiseEloConcentration": {
+    "normalizedEntropy": 0.8451,
+    "hhi": 0.016466,
+    "effectiveRoster": 89.11,
+    "top5StrengthShare": 0.1783,
+    "top10StrengthShare": 0.3044,
+    "top25StrengthShare": 0.5438
+  },
+  "methodReferences": [
+    {
+      "repository": "google-deepmind/open_spiel",
+      "applied": "matriz de confrontos e pior caso como proxy operacional de exploitability"
+    },
+    {
+      "repository": "sublee/trueskill",
+      "applied": "princípio de rating sensível à incerteza; decisões continuam condicionadas por IC95, sem importar o pacote"
+    },
+    {
+      "repository": "Elo/Bradley-Terry family",
+      "applied": "rating Elo-like ajustado simultaneamente sobre toda a matriz para evidência complementar e independente da ordem dos pares"
+    },
+    {
+      "repository": "nianticlabs/metagame-balance",
+      "applied": "entropia/HHI, effective roster e concentração de força para saúde do meta"
+    }
+  ],
+  "limitations": [
+    "O simulador v2 atual agrega balanced/aggressive e as duas ordens de iniciativa; esta camada não inventa métricas separadas de política/ordem.",
+    "O Elo-like é um rating diagnóstico offline sobre matchups simulados; não é o MMR dos jogadores e não substitui IC95 ou pior confronto.",
+    "Event/special são analisados no scope=all, mas não entram no ranking competitivo scope=competitive."
+  ],
+  "decisionRule": "Corrigir primeiro divergência canônica/mecânica. Buff/nerf numérico somente quando simulação v2, IC95, rating par-a-par e matriz de matchups sustentarem o desequilíbrio após a correção mecânica."
+}

@@ -1,0 +1,164 @@
+{
+  "generatedAt": "2026-08-26T15:52:31.823Z",
+  "engine": "combat-rules-v2",
+  "engineVersion": 2,
+  "mode": "standard",
+  "scope": "competitive",
+  "seeds": 2,
+  "policies": [
+    "balanced",
+    "aggressive"
+  ],
+  "totalRoster": 209,
+  "eligibleRoster": 209,
+  "roster": 203,
+  "excludedCharacters": [
+    {
+      "slug": "bijuu-shukaku-event",
+      "name": "Shukaku",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-matatabi-event",
+      "name": "Matatabi",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-gyuki-event",
+      "name": "Gyūki",
+      "classification": "event"
+    },
+    {
+      "slug": "bijuu-kurama-event",
+      "name": "Kurama",
+      "classification": "event"
+    },
+    {
+      "slug": "kaguya-otsutsuki-(s)",
+      "name": "Kaguya Ōtsutsuki",
+      "classification": "special-review"
+    },
+    {
+      "slug": "toneri-otsutsuki-the-last",
+      "name": "Toneri Ōtsutsuki",
+      "classification": "special-review"
+    }
+  ],
+  "pairs": 20503,
+  "matchups": 164024,
+  "expectedGamesPerPair": 8,
+  "shard": {
+    "index": 0,
+    "count": 1,
+    "strategy": "pair-index-modulo",
+    "globalPairs": 20503,
+    "localPairs": 20503
+  },
+  "avgBattleTurns": 14.23,
+  "v2NativeSkills": 0,
+  "legacyFallbackSkills": 812,
+  "effectTypes": {
+    "damage": 540,
+    "stun": 93,
+    "defense": 84,
+    "invulnerable": 176,
+    "heal": 12,
+    "dot": 59
+  },
+  "top": {
+    "slug": "naruto-uzumaki",
+    "name": "Naruto Uzumaki",
+    "matches": 1616,
+    "wins": 1572,
+    "losses": 44,
+    "draws": 0,
+    "turns": 22119,
+    "hpDiff": 399306,
+    "damage": 267343,
+    "heal": 0,
+    "defense": 0,
+    "control": 9944,
+    "chakra": 15344,
+    "actions": 8520,
+    "uses": [
+      1696,
+      6824,
+      0,
+      0
+    ],
+    "score": 0.9728,
+    "winRate": 0.9728,
+    "winRate95": [
+      0.9636,
+      0.9797
+    ],
+    "avgTurns": 13.69,
+    "avgHpDiff": 247.1,
+    "avgDamage": 165.44,
+    "avgHeal": 0,
+    "avgDefense": 0,
+    "avgControl": 6.15,
+    "avgChakraSpent": 9.5,
+    "avgActions": 5.27,
+    "skillUseShare": [
+      0.1991,
+      0.8009,
+      0,
+      0
+    ]
+  },
+  "bottom": {
+    "slug": "kakashi-hatake-sexto",
+    "name": "Kakashi Hatake — Sexto Hokage",
+    "matches": 1616,
+    "wins": 63,
+    "losses": 1553,
+    "draws": 0,
+    "turns": 18185,
+    "hpDiff": -335108,
+    "damage": 52458,
+    "heal": 0,
+    "defense": 0,
+    "control": 1271,
+    "chakra": 6591,
+    "actions": 4092,
+    "uses": [
+      1593,
+      2499,
+      0,
+      0
+    ],
+    "score": 0.039,
+    "winRate": 0.039,
+    "winRate95": [
+      0.0306,
+      0.0496
+    ],
+    "avgTurns": 11.25,
+    "avgHpDiff": -207.37,
+    "avgDamage": 32.46,
+    "avgHeal": 0,
+    "avgDefense": 0,
+    "avgControl": 0.79,
+    "avgChakraSpent": 4.08,
+    "avgActions": 2.53,
+    "skillUseShare": [
+      0.3893,
+      0.6107,
+      0,
+      0
+    ]
+  },
+  "methodology": [
+    "combat-rules-v2 resolution",
+    "runtime-faithful legacy adapter while roster migrates",
+    "stun duration on target owner phase",
+    "shield/invulnerability on opponent phase",
+    "seeded pairwise focal 3v3",
+    "balanced + aggressive policies",
+    "both initiative orders",
+    "shared team chakra",
+    "95% Wilson interval",
+    "deterministic pair-index sharding"
+  ]
+}
