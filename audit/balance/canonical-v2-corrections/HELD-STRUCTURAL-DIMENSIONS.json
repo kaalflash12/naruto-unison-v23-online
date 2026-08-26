@@ -2,51 +2,6 @@
   {
     "characterId": "naruto-uzumaki",
     "characterName": "Naruto Uzumaki",
-    "slot": 1,
-    "techniqueId": "naruto-uzumaki__base_1",
-    "techniqueName": "Naruto Uzumaki Barrage",
-    "originalName": "Naruto Uzumaki Barrage",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Naruto Uzumaki Barrage",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "naruto-uzumaki",
-    "characterName": "Naruto Uzumaki",
     "slot": 2,
     "techniqueId": "naruto-uzumaki__base_2",
     "techniqueName": "Rasengan",
@@ -254,96 +209,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "sasuke-uchiha",
-    "characterName": "Sasuke Uchiha",
-    "slot": 1,
-    "techniqueId": "sasuke-uchiha__base_1",
-    "techniqueName": "Lions Barrage",
-    "originalName": "Lions Barrage",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Sasuke Uchiha",
-    "upstreamTechnique": "Lions Barrage",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "sasuke-uchiha",
-    "characterName": "Sasuke Uchiha",
-    "slot": 2,
-    "techniqueId": "sasuke-uchiha__base_2",
-    "techniqueName": "Chidori",
-    "originalName": "Chidori",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Sasuke Uchiha",
-    "upstreamTechnique": "Chidori",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "status",
-          "expose"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1083,148 +948,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "rock-lee",
-    "characterName": "Rock Lee",
-    "slot": 2,
-    "techniqueId": "rock-lee__base_2",
-    "techniqueName": "Lótus Primária",
-    "originalName": "Primary Lotus",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Rock Lee",
-    "upstreamTechnique": "Primary Lotus",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "rock-lee",
-    "characterName": "Rock Lee",
-    "slot": 3,
-    "techniqueId": "rock-lee__base_3",
-    "techniqueName": "Fifth Gate Opening",
-    "originalName": "Fifth Gate Opening",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Rock Lee",
-    "upstreamTechnique": "Fifth Gate Opening",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "cleanse",
-          "alternate",
-          "invulnerable",
-          "sacrifice"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "cleanse",
-      "alternate",
-      "invulnerable",
-      "sacrifice"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "sacrifice"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "rock-lee",
-    "characterName": "Rock Lee",
-    "slot": 4,
-    "techniqueId": "rock-lee__base_4",
-    "techniqueName": "Lótus Oculta",
-    "originalName": "Hidden Lotus",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Rock Lee",
-    "upstreamTechnique": "Hidden Lotus",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "neji-hyuga",
     "characterName": "Neji Hyūga",
     "slot": 1,
@@ -1364,50 +1087,6 @@
   {
     "characterId": "neji-hyuga",
     "characterName": "Neji Hyūga",
-    "slot": 3,
-    "techniqueId": "neji-hyuga__base_3",
-    "techniqueName": "Eight Trigrams Sixty-Four Palms",
-    "originalName": "Eight Trigrams Sixty-Four Palms",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Neji Hyūga",
-    "upstreamTechnique": "Eight Trigrams Sixty-Four Palms",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "neji-hyuga",
-    "characterName": "Neji Hyūga",
     "slot": 4,
     "techniqueId": "neji-hyuga__base_4",
     "techniqueName": "Byakugan Foresight",
@@ -1469,56 +1148,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "hinata-hyuga",
-    "characterName": "Hinata Hyūga",
-    "slot": 1,
-    "techniqueId": "hinata-hyuga__base_1",
-    "techniqueName": "Punho Gentil",
-    "originalName": "Gentle Fist",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hinata Hyūga",
-    "upstreamTechnique": "Gentle Fist",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -1797,46 +1426,6 @@
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "gaara",
-    "characterName": "Gaara",
-    "slot": 2,
-    "techniqueId": "gaara__base_2",
-    "techniqueName": "Sand Burial",
-    "originalName": "Sand Burial",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Gaara",
-    "upstreamTechnique": "Sand Burial",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "disable",
-          "defense"
-        ],
-        "upstream": [
-          "requirement"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": false
   },
   {
     "characterId": "gaara",
@@ -2340,50 +1929,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "itachi-uchiha-(s)",
-    "characterName": "Itachi Uchiha",
-    "slot": 4,
-    "techniqueId": "itachi-uchiha-(s)__base_4",
-    "techniqueName": "Totsuka Blade",
-    "originalName": "Totsuka Blade",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Itachi Uchiha",
-    "upstreamTechnique": "Totsuka Blade",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "jiraiya",
     "characterName": "Jiraiya",
     "slot": 1,
@@ -2621,57 +2166,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "jiraiya",
-    "characterName": "Jiraiya",
-    "slot": 4,
-    "techniqueId": "jiraiya__base_4",
-    "techniqueName": "Toad Oil Bomb",
-    "originalName": "Toad Oil Bomb",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Jiraiya",
-    "upstreamTechnique": "Toad Oil Bomb",
-    "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "bomb"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "tsunade",
     "characterName": "Tsunade",
     "slot": 1,
@@ -2874,147 +2368,6 @@
       "alternate",
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "tsunade",
-    "characterName": "Tsunade",
-    "slot": 4,
-    "techniqueId": "tsunade__base_4",
-    "techniqueName": "Slug Division",
-    "originalName": "Slug Division",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Tsunade",
-    "upstreamTechnique": "Slug Division",
-    "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "heal",
-          "defense"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal",
-      "defense"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "orochimaru",
-    "characterName": "Orochimaru",
-    "slot": 1,
-    "techniqueId": "orochimaru__base_1",
-    "techniqueName": "Kusanagi",
-    "originalName": "Kusanagi",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Orochimaru",
-    "upstreamTechnique": "Kusanagi",
-    "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "orochimaru",
-    "characterName": "Orochimaru",
-    "slot": 2,
-    "techniqueId": "orochimaru__base_2",
-    "techniqueName": "Curse Mark",
-    "originalName": "Curse Mark",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Orochimaru",
-    "upstreamTechnique": "Curse Mark",
-    "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -3402,99 +2755,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "a-(r)",
-    "characterName": "A",
-    "slot": 4,
-    "techniqueId": "a-(r)__base_4",
-    "techniqueName": "Lightning Armor",
-    "originalName": "Lightning Armor",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "A",
-    "upstreamTechnique": "Lightning Armor",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "status",
-          "strengthen",
-          "reduction"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "akatsuchi-(s)",
-    "characterName": "Akatsuchi",
-    "slot": 1,
-    "techniqueId": "akatsuchi-(s)__base_1",
-    "techniqueName": "High-Speed Assault",
-    "originalName": "High-Speed Assault",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Akatsuchi",
-    "upstreamTechnique": "High-Speed Assault",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "akatsuchi-(s)",
     "characterName": "Akatsuchi",
     "slot": 2,
@@ -3570,50 +2830,6 @@
   {
     "characterId": "akatsuchi-(s)",
     "characterName": "Akatsuchi",
-    "slot": 3,
-    "techniqueId": "akatsuchi-(s)__base_3",
-    "techniqueName": "Chakra Devour",
-    "originalName": "Chakra Devour",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Akatsuchi",
-    "upstreamTechnique": "Chakra Devour",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "akatsuchi-(s)",
-    "characterName": "Akatsuchi",
     "slot": 4,
     "techniqueId": "akatsuchi-(s)__base_4",
     "techniqueName": "Esquiva",
@@ -3675,54 +2891,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "ameyuri-ringo-(r)",
-    "characterName": "Ameyuri Ringo",
-    "slot": 1,
-    "techniqueId": "ameyuri-ringo-(r)__base_1",
-    "techniqueName": "Lightning Fang",
-    "originalName": "Lightning Fang",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Ameyuri Ringo",
-    "upstreamTechnique": "Lightning Fang",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "status"
-        ],
-        "upstream": [
-          "damage",
-          "stack"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stack"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -5089,50 +4257,6 @@
   {
     "characterId": "asuma-sarutobi",
     "characterName": "Asuma Sarutobi",
-    "slot": 2,
-    "techniqueId": "asuma-sarutobi__base_2",
-    "techniqueName": "Finishing Blow",
-    "originalName": "Finishing Blow",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Asuma Sarutobi",
-    "upstreamTechnique": "Finishing Blow",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "asuma-sarutobi",
-    "characterName": "Asuma Sarutobi",
     "slot": 3,
     "techniqueId": "asuma-sarutobi__base_3",
     "techniqueName": "Sharpen Blades",
@@ -5556,56 +4680,6 @@
     ],
     "blockers": [
       "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "asura-path-pain-(s)",
-    "characterName": "Asura Path Pain",
-    "slot": 1,
-    "techniqueId": "asura-path-pain-(s)__base_1",
-    "techniqueName": "Metal Blade",
-    "originalName": "Metal Blade",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Asura Path Pain",
-    "upstreamTechnique": "Metal Blade",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "trap-counter",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "trap-counter",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -6038,50 +5112,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "baki",
-    "characterName": "Baki",
-    "slot": 1,
-    "techniqueId": "baki__base_1",
-    "techniqueName": "Sudden Strike",
-    "originalName": "Sudden Strike",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Baki",
-    "upstreamTechnique": "Sudden Strike",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7524,56 +6554,6 @@
   {
     "characterId": "choji-akimichi-(s)",
     "characterName": "Chōji Akimichi",
-    "slot": 3,
-    "techniqueId": "choji-akimichi-(s)__base_3",
-    "techniqueName": "Butterfly Mode",
-    "originalName": "Butterfly Mode",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Chōji Akimichi",
-    "upstreamTechnique": "Butterfly Mode",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "status",
-          "strengthen",
-          "reduction"
-        ],
-        "upstream": [
-          "alternate",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "alternate",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "choji-akimichi-(s)",
-    "characterName": "Chōji Akimichi",
     "slot": 4,
     "techniqueId": "choji-akimichi-(s)__base_4",
     "techniqueName": "Super-Slam",
@@ -7633,98 +6613,6 @@
     "blockers": [
       "dynamic-change"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "chojuro-(s)",
-    "characterName": "Chōjūrō",
-    "slot": 1,
-    "techniqueId": "chojuro-(s)__base_1",
-    "techniqueName": "Hiramekarei Longsword",
-    "originalName": "Hiramekarei Longsword",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Chōjūrō",
-    "upstreamTechnique": "Hiramekarei Longsword",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "chojuro-(s)",
-    "characterName": "Chōjūrō",
-    "slot": 2,
-    "techniqueId": "chojuro-(s)__base_2",
-    "techniqueName": "Hiramekarei Hammer",
-    "originalName": "Hiramekarei Hammer",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Chōjūrō",
-    "upstreamTechnique": "Hiramekarei Hammer",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -8004,54 +6892,6 @@
   {
     "characterId": "choza-akimichi",
     "characterName": "Chōza Akimichi",
-    "slot": 3,
-    "techniqueId": "choza-akimichi__base_3",
-    "techniqueName": "Partial Expansion",
-    "originalName": "Partial Expansion",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Chōza Akimichi",
-    "upstreamTechnique": "Partial Expansion",
-    "upstreamSource": "src/Game/Characters/Original/Family.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "choza-akimichi",
-    "characterName": "Chōza Akimichi",
     "slot": 4,
     "techniqueId": "choza-akimichi__base_4",
     "techniqueName": "Bloqueio",
@@ -8112,51 +6952,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "chukichi-(r)",
-    "characterName": "Chūkichi",
-    "slot": 1,
-    "techniqueId": "chukichi-(r)__base_1",
-    "techniqueName": "Hidden Frost",
-    "originalName": "Hidden Frost",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Chūkichi",
-    "upstreamTechnique": "Hidden Frost",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "invulnerable"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "invulnerable"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8442,96 +7237,6 @@
     "blockers": [
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "curse-mark-jugo-(s)",
-    "characterName": "Curse Mark Jūgo",
-    "slot": 2,
-    "techniqueId": "curse-mark-jugo-(s)__base_2",
-    "techniqueName": "Connected Cannons",
-    "originalName": "Connected Cannons",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Curse Mark Jūgo",
-    "upstreamTechnique": "Connected Cannons",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "curse-mark-jugo-(s)",
-    "characterName": "Curse Mark Jūgo",
-    "slot": 3,
-    "techniqueId": "curse-mark-jugo-(s)__base_3",
-    "techniqueName": "Cellular Absorption",
-    "originalName": "Cellular Absorption",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Curse Mark Jūgo",
-    "upstreamTechnique": "Cellular Absorption",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "heal",
-          "leech"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal",
-      "leech"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -9161,50 +7866,6 @@
   {
     "characterId": "darui-(s)",
     "characterName": "Darui",
-    "slot": 3,
-    "techniqueId": "darui-(s)__base_3",
-    "techniqueName": "Black Panther",
-    "originalName": "Black Panther",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Darui",
-    "upstreamTechnique": "Black Panther",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "darui-(s)",
-    "characterName": "Darui",
     "slot": 4,
     "techniqueId": "darui-(s)__base_4",
     "techniqueName": "Bloqueio",
@@ -9822,58 +8483,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "deidara-(s)",
-    "characterName": "Deidara",
-    "slot": 4,
-    "techniqueId": "deidara-(s)__base_4",
-    "techniqueName": "C2: Clay Dragon",
-    "originalName": "C2: Clay Dragon",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Deidara",
-    "upstreamTechnique": "C2: Clay Dragon",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "defense",
-          "alternate",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense",
-      "alternate",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "bomb"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "demon-brothers",
     "characterName": "Demon Brothers",
     "slot": 1,
@@ -9944,56 +8553,6 @@
     ],
     "blockers": [
       "alternate"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "demon-brothers",
-    "characterName": "Demon Brothers",
-    "slot": 2,
-    "techniqueId": "demon-brothers__base_2",
-    "techniqueName": "Chain Shred",
-    "originalName": "Chain Shred",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Demon Brothers",
-    "upstreamTechnique": "Chain Shred",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -10608,106 +9167,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "dosu-kinuta",
-    "characterName": "Dosu Kinuta",
-    "slot": 1,
-    "techniqueId": "dosu-kinuta__base_1",
-    "techniqueName": "Resonating Echo Drill",
-    "originalName": "Resonating Echo Drill",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Dosu Kinuta",
-    "upstreamTechnique": "Resonating Echo Drill",
-    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "expose",
-          "stack",
-          "invulnerable"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "expose",
-      "stack",
-      "invulnerable"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "dosu-kinuta",
-    "characterName": "Dosu Kinuta",
-    "slot": 2,
-    "techniqueId": "dosu-kinuta__base_2",
-    "techniqueName": "Sound Manipulation",
-    "originalName": "Sound Manipulation",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Dosu Kinuta",
-    "upstreamTechnique": "Sound Manipulation",
-    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "weaken",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "weaken",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11713,50 +10172,6 @@
   {
     "characterId": "fu-yamanaka-(s)",
     "characterName": "Fū Yamanaka",
-    "slot": 1,
-    "techniqueId": "fu-yamanaka-(s)__base_1",
-    "techniqueName": "Tantō Slash",
-    "originalName": "Tantō Slash",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Fū Yamanaka",
-    "upstreamTechnique": "Tantō Slash",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "fu-yamanaka-(s)",
-    "characterName": "Fū Yamanaka",
     "slot": 2,
     "techniqueId": "fu-yamanaka-(s)__base_2",
     "techniqueName": "Transferência Mental",
@@ -11937,115 +10352,6 @@
   {
     "characterId": "fuguki-suikazan-(r)",
     "characterName": "Fuguki Suikazan",
-    "slot": 1,
-    "techniqueId": "fuguki-suikazan-(r)__base_1",
-    "techniqueName": "Needle Senbon",
-    "originalName": "Needle Senbon",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Fuguki Suikazan",
-    "upstreamTechnique": "Needle Senbon",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dynamic-change",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dynamic-change",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "fuguki-suikazan-(r)",
-    "characterName": "Fuguki Suikazan",
-    "slot": 2,
-    "techniqueId": "fuguki-suikazan-(r)__base_2",
-    "techniqueName": "Chakra Weave",
-    "originalName": "Chakra Weave",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Fuguki Suikazan",
-    "upstreamTechnique": "Chakra Weave",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "damage",
-          "heal",
-          "defense",
-          "reduction",
-          "trap-counter",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "heal",
-      "defense",
-      "reduction",
-      "trap-counter",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "fuguki-suikazan-(r)",
-    "characterName": "Fuguki Suikazan",
     "slot": 3,
     "techniqueId": "fuguki-suikazan-(r)__base_3",
     "techniqueName": "Sharp Hair Spear",
@@ -12178,52 +10484,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "fukai-(r)",
-    "characterName": "Fukai",
-    "slot": 1,
-    "techniqueId": "fukai-(r)__base_1",
-    "techniqueName": "Chakra Arms",
-    "originalName": "Chakra Arms",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Fukai",
-    "upstreamTechnique": "Chakra Arms",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -13398,50 +11658,6 @@
   {
     "characterId": "ginkaku-(r)",
     "characterName": "Ginkaku",
-    "slot": 1,
-    "techniqueId": "ginkaku-(r)__base_1",
-    "techniqueName": "Seven Stars Blade",
-    "originalName": "Seven Stars Blade",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Ginkaku",
-    "upstreamTechnique": "Seven Stars Blade",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "ginkaku-(r)",
-    "characterName": "Ginkaku",
     "slot": 2,
     "techniqueId": "ginkaku-(r)__base_2",
     "techniqueName": "Amber Purification Jar",
@@ -14051,58 +12267,6 @@
   {
     "characterId": "haku-(r)",
     "characterName": "Haku",
-    "slot": 3,
-    "techniqueId": "haku-(r)__base_3",
-    "techniqueName": "Crystal Ice Mirrors",
-    "originalName": "Crystal Ice Mirrors",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Haku",
-    "upstreamTechnique": "Crystal Ice Mirrors",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "defense",
-          "requirement",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense",
-      "requirement",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "haku-(r)",
-    "characterName": "Haku",
     "slot": 4,
     "techniqueId": "haku-(r)__base_4",
     "techniqueName": "Ice Dome",
@@ -14164,60 +12328,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "hanabi-hyuga",
-    "characterName": "Hanabi Hyūga",
-    "slot": 1,
-    "techniqueId": "hanabi-hyuga__base_1",
-    "techniqueName": "Punho Gentil",
-    "originalName": "Gentle Fist",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hanabi Hyūga",
-    "upstreamTechnique": "Gentle Fist",
-    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "trap-counter",
-          "dynamic-change",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "trap-counter",
-      "dynamic-change",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "dynamic-change",
-      "channel"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -14524,59 +12634,6 @@
       "trap-counter",
       "dynamic-change",
       "sacrifice"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "hanzo-(r)",
-    "characterName": "Hanzō",
-    "slot": 2,
-    "techniqueId": "hanzo-(r)__base_2",
-    "techniqueName": "Poison Fog",
-    "originalName": "Poison Fog",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hanzō",
-    "upstreamTechnique": "Poison Fog",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "requirement",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "requirement",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement",
-      "channel"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -15183,51 +13240,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "hashirama-senju-(r)",
-    "characterName": "Hashirama Senju",
-    "slot": 4,
-    "techniqueId": "hashirama-senju-(r)__base_4",
-    "techniqueName": "Deep Forest Flourishing",
-    "originalName": "Deep Forest Flourishing",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hashirama Senju",
-    "upstreamTechnique": "Deep Forest Flourishing",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "defense"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "hayate-gekko",
     "characterName": "Hayate Gekkō",
     "slot": 1,
@@ -15480,54 +13492,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "hiashi-hyuga",
-    "characterName": "Hiashi Hyūga",
-    "slot": 1,
-    "techniqueId": "hiashi-hyuga__base_1",
-    "techniqueName": "Punho Gentil",
-    "originalName": "Gentle Fist",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hiashi Hyūga",
-    "upstreamTechnique": "Gentle Fist",
-    "upstreamSource": "src/Game/Characters/Original/Family.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -15962,51 +13926,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "hidan-(s)",
-    "characterName": "Hidan",
-    "slot": 4,
-    "techniqueId": "hidan-(s)__base_4",
-    "techniqueName": "Death Blow",
-    "originalName": "Death Blow",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hidan",
-    "upstreamTechnique": "Death Blow",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "hinata-hyuga-(s)",
     "characterName": "Hinata Hyūga",
     "slot": 1,
@@ -16289,49 +14208,6 @@
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "hiruzen-sarutobi",
-    "characterName": "Hiruzen Sarutobi",
-    "slot": 1,
-    "techniqueId": "hiruzen-sarutobi__base_1",
-    "techniqueName": "Dragon Flame Bomb",
-    "originalName": "Dragon Flame Bomb",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Hiruzen Sarutobi",
-    "upstreamTechnique": "Dragon Flame Bomb",
-    "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "bomb"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "bomb"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": false
   },
   {
     "characterId": "hiruzen-sarutobi",
@@ -17363,60 +15239,6 @@
   {
     "characterId": "ino-yamanaka-(s)",
     "characterName": "Ino Yamanaka",
-    "slot": 1,
-    "techniqueId": "ino-yamanaka-(s)__base_1",
-    "techniqueName": "Mind Destruction",
-    "originalName": "Mind Destruction",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Ino Yamanaka",
-    "upstreamTechnique": "Mind Destruction",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "alternate",
-          "trap-counter",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "alternate",
-      "trap-counter",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "trap-counter",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "ino-yamanaka-(s)",
-    "characterName": "Ino Yamanaka",
     "slot": 2,
     "techniqueId": "ino-yamanaka-(s)__base_2",
     "techniqueName": "Proxy Surveillance",
@@ -17649,62 +15471,6 @@
   {
     "characterId": "inoichi-yamanaka",
     "characterName": "Inoichi Yamanaka",
-    "slot": 1,
-    "techniqueId": "inoichi-yamanaka__base_1",
-    "techniqueName": "Psycho Mind Transmission",
-    "originalName": "Psycho Mind Transmission",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Inoichi Yamanaka",
-    "upstreamTechnique": "Psycho Mind Transmission",
-    "upstreamSource": "src/Game/Characters/Original/Family.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "disable",
-          "trap-counter",
-          "channel",
-          "reflect"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "disable",
-      "trap-counter",
-      "channel",
-      "reflect"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "channel",
-      "reflect"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "inoichi-yamanaka",
-    "characterName": "Inoichi Yamanaka",
     "slot": 2,
     "techniqueId": "inoichi-yamanaka__base_2",
     "techniqueName": "Sensory Radar",
@@ -17930,50 +15696,6 @@
     "blockers": [
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "iruka-umino",
-    "characterName": "Iruka Umino",
-    "slot": 1,
-    "techniqueId": "iruka-umino__base_1",
-    "techniqueName": "Shuriken Throw",
-    "originalName": "Shuriken Throw",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Iruka Umino",
-    "upstreamTechnique": "Shuriken Throw",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -19035,59 +16757,6 @@
   {
     "characterId": "jinpachi-munashi-(r)",
     "characterName": "Jinpachi Munashi",
-    "slot": 1,
-    "techniqueId": "jinpachi-munashi-(r)__base_1",
-    "techniqueName": "Splatter",
-    "originalName": "Splatter",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Jinpachi Munashi",
-    "upstreamTechnique": "Splatter",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "charges",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "charges",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "charges",
-      "bomb"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "jinpachi-munashi-(r)",
-    "characterName": "Jinpachi Munashi",
     "slot": 2,
     "techniqueId": "jinpachi-munashi-(r)__base_2",
     "techniqueName": "Bomb Reload",
@@ -19971,61 +17640,6 @@
   {
     "characterId": "jirobo-(r)",
     "characterName": "Jirōbō",
-    "slot": 3,
-    "techniqueId": "jirobo-(r)__base_3",
-    "techniqueName": "Earth Dome Prison",
-    "originalName": "Earth Dome Prison",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Jirōbō",
-    "upstreamTechnique": "Earth Dome Prison",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "expose",
-          "defense"
-        ],
-        "upstream": [
-          "damage",
-          "heal",
-          "stack",
-          "leech",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "heal",
-      "stack",
-      "leech",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "jirobo-(r)",
-    "characterName": "Jirōbō",
     "slot": 4,
     "techniqueId": "jirobo-(r)__base_4",
     "techniqueName": "Summoning: Earth Prison Golem",
@@ -20599,56 +18213,6 @@
   {
     "characterId": "kabuto-yakushi-(s)",
     "characterName": "Kabuto Yakushi",
-    "slot": 1,
-    "techniqueId": "kabuto-yakushi-(s)__base_1",
-    "techniqueName": "Chakra Absorbing Snakes",
-    "originalName": "Chakra Absorbing Snakes",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kabuto Yakushi",
-    "upstreamTechnique": "Chakra Absorbing Snakes",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kabuto-yakushi-(s)",
-    "characterName": "Kabuto Yakushi",
     "slot": 2,
     "techniqueId": "kabuto-yakushi-(s)__base_2",
     "techniqueName": "Striking Shadow Snakes",
@@ -20864,53 +18428,6 @@
     "blockers": [
       "alternate"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kakashi-hatake-(s)",
-    "characterName": "Kakashi Hatake",
-    "slot": 2,
-    "techniqueId": "kakashi-hatake-(s)__base_2",
-    "techniqueName": "Lightning Blade Finisher",
-    "originalName": "Lightning Blade Finisher",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kakashi Hatake",
-    "upstreamTechnique": "Lightning Blade Finisher",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "status",
-          "expose"
-        ],
-        "upstream": [
-          "damage",
-          "stun"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -22501,54 +20018,6 @@
   {
     "characterId": "kiba-inuzuka",
     "characterName": "Kiba Inuzuka",
-    "slot": 1,
-    "techniqueId": "kiba-inuzuka__base_1",
-    "techniqueName": "Wolf Fang Over Fang",
-    "originalName": "Wolf Fang Over Fang",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kiba Inuzuka",
-    "upstreamTechnique": "Wolf Fang Over Fang",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kiba-inuzuka",
-    "characterName": "Kiba Inuzuka",
     "slot": 2,
     "techniqueId": "kiba-inuzuka__base_2",
     "techniqueName": "Two-Headed Wolf",
@@ -23061,50 +20530,6 @@
   {
     "characterId": "kidomaru",
     "characterName": "Kidōmaru",
-    "slot": 1,
-    "techniqueId": "kidomaru__base_1",
-    "techniqueName": "Spider War Bow",
-    "originalName": "Spider War Bow",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kidōmaru",
-    "upstreamTechnique": "Spider War Bow",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kidomaru",
-    "characterName": "Kidōmaru",
     "slot": 2,
     "techniqueId": "kidomaru__base_2",
     "techniqueName": "Summoning: Kyodaigumo",
@@ -23175,53 +20600,6 @@
     ],
     "blockers": [
       "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kidomaru",
-    "characterName": "Kidōmaru",
-    "slot": 3,
-    "techniqueId": "kidomaru__base_3",
-    "techniqueName": "Spiral Web",
-    "originalName": "Spiral Web",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kidōmaru",
-    "upstreamTechnique": "Spiral Web",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23348,54 +20726,6 @@
       "ALVO_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "killer-b-(s)",
-    "characterName": "Killer B",
-    "slot": 2,
-    "techniqueId": "killer-b-(s)__base_2",
-    "techniqueName": "Lariat",
-    "originalName": "Lariat",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Killer B",
-    "upstreamTechnique": "Lariat",
-    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -23876,50 +21206,6 @@
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kimimaro-(r)",
-    "characterName": "Kimimaro",
-    "slot": 2,
-    "techniqueId": "kimimaro-(r)__base_2",
-    "techniqueName": "Macabre Bone Pulse",
-    "originalName": "Macabre Bone Pulse",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kimimaro",
-    "upstreamTechnique": "Macabre Bone Pulse",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -24478,98 +21764,6 @@
   {
     "characterId": "kinkaku-(r)",
     "characterName": "Kinkaku",
-    "slot": 2,
-    "techniqueId": "kinkaku-(r)__base_2",
-    "techniqueName": "Gold Rope",
-    "originalName": "Gold Rope",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kinkaku",
-    "upstreamTechnique": "Gold Rope",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stack",
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stack",
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack",
-      "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kinkaku-(r)",
-    "characterName": "Kinkaku",
-    "slot": 3,
-    "techniqueId": "kinkaku-(r)__base_3",
-    "techniqueName": "Scroll of Fire",
-    "originalName": "Scroll of Fire",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kinkaku",
-    "upstreamTechnique": "Scroll of Fire",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot"
-        ],
-        "upstream": [
-          "damage",
-          "stack"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stack"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": false
-  },
-  {
-    "characterId": "kinkaku-(r)",
-    "characterName": "Kinkaku",
     "slot": 4,
     "techniqueId": "kinkaku-(r)__base_4",
     "techniqueName": "Aparar",
@@ -24691,54 +21885,6 @@
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kisame-hoshigaki",
-    "characterName": "Kisame Hoshigaki",
-    "slot": 2,
-    "techniqueId": "kisame-hoshigaki__base_2",
-    "techniqueName": "Samehada Shred",
-    "originalName": "Samehada Shred",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kisame Hoshigaki",
-    "upstreamTechnique": "Samehada Shred",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -25092,50 +22238,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "kisame-hoshigaki-(s)",
-    "characterName": "Kisame Hoshigaki",
-    "slot": 4,
-    "techniqueId": "kisame-hoshigaki-(s)__base_4",
-    "techniqueName": "Shark Dance",
-    "originalName": "Shark Dance",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kisame Hoshigaki",
-    "upstreamTechnique": "Shark Dance",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "kitsuchi-(s)",
     "characterName": "Kitsuchi",
     "slot": 1,
@@ -25436,50 +22538,6 @@
   {
     "characterId": "konan-(s)",
     "characterName": "Konan",
-    "slot": 1,
-    "techniqueId": "konan-(s)__base_1",
-    "techniqueName": "Paper Cut",
-    "originalName": "Paper Cut",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Konan",
-    "upstreamTechnique": "Paper Cut",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "konan-(s)",
-    "characterName": "Konan",
     "slot": 2,
     "techniqueId": "konan-(s)__base_2",
     "techniqueName": "Dance of the Shikigami",
@@ -25540,50 +22598,6 @@
     "blockers": [
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "konan-(s)",
-    "characterName": "Konan",
-    "slot": 3,
-    "techniqueId": "konan-(s)__base_3",
-    "techniqueName": "Paper Shower",
-    "originalName": "Paper Shower",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Konan",
-    "upstreamTechnique": "Paper Shower",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -26150,50 +23164,6 @@
     "blockers": [
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "konohamaru-sarutobi",
-    "characterName": "Konohamaru Sarutobi",
-    "slot": 4,
-    "techniqueId": "konohamaru-sarutobi__base_4",
-    "techniqueName": "Throw a Shuriken",
-    "originalName": "Throw a Shuriken",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Konohamaru Sarutobi",
-    "upstreamTechnique": "Throw a Shuriken",
-    "upstreamSource": "src/Game/Characters/Original/Family.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -27009,57 +23979,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "kushimaru-kuriarare-(r)",
-    "characterName": "Kushimaru Kuriarare",
-    "slot": 1,
-    "techniqueId": "kushimaru-kuriarare-(r)__base_1",
-    "techniqueName": "Needle Stitching",
-    "originalName": "Needle Stitching",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Kushimaru Kuriarare",
-    "upstreamTechnique": "Needle Stitching",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "requirement",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "requirement",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement",
-      "bomb"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -27960,54 +24879,6 @@
   {
     "characterId": "maki-(s)",
     "characterName": "Maki",
-    "slot": 3,
-    "techniqueId": "maki-(s)__base_3",
-    "techniqueName": "Cloth Paralysis",
-    "originalName": "Cloth Paralysis",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Maki",
-    "upstreamTechnique": "Cloth Paralysis",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "maki-(s)",
-    "characterName": "Maki",
     "slot": 4,
     "techniqueId": "maki-(s)__base_4",
     "techniqueName": "Cloth Shield",
@@ -28620,6 +25491,63 @@
     "descriptionAfterMechanics": true
   },
   {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "slot": 4,
+    "techniqueId": "masked-man__base_4",
+    "techniqueName": "Kamui Phase",
+    "originalName": "Kamui Phase",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Masked Man",
+    "upstreamTechnique": "Kamui Phase",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cost": {
+        "local": [
+          "blood",
+          "nin"
+        ],
+        "upstream": [
+          "chakra"
+        ]
+      },
+      "cooldown": {
+        "local": 4,
+        "upstream": 0
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "CUSTO_ERRADO",
+          "COOLDOWN_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "invulnerable"
+    ],
+    "tier": "SAFE_STRUCTURAL",
+    "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  },
+  {
     "characterId": "mei-terumi-(s)",
     "characterName": "Mei Terumi",
     "slot": 1,
@@ -28759,60 +25687,6 @@
   {
     "characterId": "mei-terumi-(s)",
     "characterName": "Mei Terumi",
-    "slot": 3,
-    "techniqueId": "mei-terumi-(s)__base_3",
-    "techniqueName": "Lava Monster",
-    "originalName": "Lava Monster",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Mei Terumi",
-    "upstreamTechnique": "Lava Monster",
-    "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish",
-          "dot",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish",
-      "dot",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "mei-terumi-(s)",
-    "characterName": "Mei Terumi",
     "slot": 4,
     "techniqueId": "mei-terumi-(s)__base_4",
     "techniqueName": "Flee",
@@ -28874,146 +25748,6 @@
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "might-guy",
-    "characterName": "Might Guy",
-    "slot": 1,
-    "techniqueId": "might-guy__base_1",
-    "techniqueName": "Leaf Hurricane",
-    "originalName": "Leaf Hurricane",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Might Guy",
-    "upstreamTechnique": "Leaf Hurricane",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "might-guy",
-    "characterName": "Might Guy",
-    "slot": 2,
-    "techniqueId": "might-guy__base_2",
-    "techniqueName": "Severe Leaf Hurricane",
-    "originalName": "Severe Leaf Hurricane",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Might Guy",
-    "upstreamTechnique": "Severe Leaf Hurricane",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "might-guy",
-    "characterName": "Might Guy",
-    "slot": 3,
-    "techniqueId": "might-guy__base_3",
-    "techniqueName": "Sixth Gate Opening",
-    "originalName": "Sixth Gate Opening",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Might Guy",
-    "upstreamTechnique": "Sixth Gate Opening",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "alternate",
-          "invulnerable",
-          "sacrifice"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "alternate",
-      "invulnerable",
-      "sacrifice"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "sacrifice"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -29276,50 +26010,6 @@
     "blockers": [
       "stack"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "might-guy-(s)",
-    "characterName": "Might Guy",
-    "slot": 4,
-    "techniqueId": "might-guy-(s)__base_4",
-    "techniqueName": "Hirudora",
-    "originalName": "Hirudora",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Might Guy",
-    "upstreamTechnique": "Hirudora",
-    "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -30259,54 +26949,6 @@
   {
     "characterId": "mizuki",
     "characterName": "Mizuki",
-    "slot": 2,
-    "techniqueId": "mizuki__base_2",
-    "techniqueName": "Execution Shuriken",
-    "originalName": "Execution Shuriken",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Mizuki",
-    "upstreamTechnique": "Execution Shuriken",
-    "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "charges"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "charges"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "charges"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "mizuki",
-    "characterName": "Mizuki",
     "slot": 3,
     "techniqueId": "mizuki__base_3",
     "techniqueName": "Genjutsu Ambush Tactics",
@@ -30439,56 +27081,6 @@
   {
     "characterId": "mu-(r)",
     "characterName": "Mū",
-    "slot": 1,
-    "techniqueId": "mu-(r)__base_1",
-    "techniqueName": "Particle Beam",
-    "originalName": "Particle Beam",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Mū",
-    "upstreamTechnique": "Particle Beam",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "invulnerable",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "invulnerable",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "mu-(r)",
-    "characterName": "Mū",
     "slot": 2,
     "techniqueId": "mu-(r)__base_2",
     "techniqueName": "Fragmentation",
@@ -30552,58 +27144,6 @@
     ],
     "blockers": [
       "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "mu-(r)",
-    "characterName": "Mū",
-    "slot": 3,
-    "techniqueId": "mu-(r)__base_3",
-    "techniqueName": "Atomic Dismantling",
-    "originalName": "Atomic Dismantling",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Mū",
-    "upstreamTechnique": "Atomic Dismantling",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -30810,102 +27350,6 @@
       "alternate",
       "channel"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "nagato-(r)",
-    "characterName": "Nagato",
-    "slot": 3,
-    "techniqueId": "nagato-(r)__base_3",
-    "techniqueName": "Naraka Path",
-    "originalName": "Naraka Path",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Nagato",
-    "upstreamTechnique": "Naraka Path",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "defense",
-          "leech",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense",
-      "leech",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "nagato-(r)",
-    "characterName": "Nagato",
-    "slot": 4,
-    "techniqueId": "nagato-(r)__base_4",
-    "techniqueName": "Preta Path",
-    "originalName": "Preta Path",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Nagato",
-    "upstreamTechnique": "Preta Path",
-    "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "heal",
-          "leech"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal",
-      "leech"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -31393,52 +27837,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "naraka-path-pain-(s)",
-    "characterName": "Naraka Path Pain",
-    "slot": 4,
-    "techniqueId": "naraka-path-pain-(s)__base_4",
-    "techniqueName": "Judgment",
-    "originalName": "Judgment",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naraka Path Pain",
-    "upstreamTechnique": "Judgment",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "defense",
-          "leech"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense",
-      "leech"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "naruto-uzumaki-(s)",
     "characterName": "Naruto Uzumaki",
     "slot": 1,
@@ -31490,56 +27888,6 @@
       "DANO_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "naruto-uzumaki-(s)",
-    "characterName": "Naruto Uzumaki",
-    "slot": 2,
-    "techniqueId": "naruto-uzumaki-(s)__base_2",
-    "techniqueName": "Rasen Shuriken",
-    "originalName": "Rasen Shuriken",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Rasen Shuriken",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "weaken",
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "weaken",
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -31709,98 +28057,6 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "neji-hyuga-(s)",
-    "characterName": "Neji Hyūga",
-    "slot": 1,
-    "techniqueId": "neji-hyuga-(s)__base_1",
-    "techniqueName": "Eight Trigrams Air Palm",
-    "originalName": "Eight Trigrams Air Palm",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Neji Hyūga",
-    "upstreamTechnique": "Eight Trigrams Air Palm",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "neji-hyuga-(s)",
-    "characterName": "Neji Hyūga",
-    "slot": 2,
-    "techniqueId": "neji-hyuga-(s)__base_2",
-    "techniqueName": "Eight Trigrams Hazan Strike",
-    "originalName": "Eight Trigrams Hazan Strike",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Neji Hyūga",
-    "upstreamTechnique": "Eight Trigrams Hazan Strike",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32022,120 +28278,6 @@
   {
     "characterId": "nine-tailed-naruto-(s)",
     "characterName": "Nine-Tailed Naruto",
-    "slot": 2,
-    "techniqueId": "nine-tailed-naruto-(s)__base_2",
-    "techniqueName": "Six-Tailed Transformation",
-    "originalName": "Six-Tailed Transformation",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Nine-Tailed Naruto",
-    "upstreamTechnique": "Six-Tailed Transformation",
-    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "status",
-          "strengthen",
-          "reduction"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "reduction",
-          "alternate",
-          "invulnerable",
-          "sacrifice"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "reduction",
-      "alternate",
-      "invulnerable",
-      "sacrifice"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "sacrifice"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "nine-tailed-naruto-(s)",
-    "characterName": "Nine-Tailed Naruto",
-    "slot": 3,
-    "techniqueId": "nine-tailed-naruto-(s)__base_3",
-    "techniqueName": "Nine-Tailed Transformation",
-    "originalName": "Nine-Tailed Transformation",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Nine-Tailed Naruto",
-    "upstreamTechnique": "Nine-Tailed Transformation",
-    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "status",
-          "strengthen",
-          "reduction"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "reduction",
-          "alternate",
-          "sacrifice"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "reduction",
-      "alternate",
-      "sacrifice"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "alternate",
-      "sacrifice"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "nine-tailed-naruto-(s)",
-    "characterName": "Nine-Tailed Naruto",
     "slot": 4,
     "techniqueId": "nine-tailed-naruto-(s)__base_4",
     "techniqueName": "Raging Flames",
@@ -32265,49 +28407,6 @@
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "obito-uchiha",
-    "characterName": "Obito Uchiha",
-    "slot": 2,
-    "techniqueId": "obito-uchiha__base_2",
-    "techniqueName": "Grand Fireball",
-    "originalName": "Grand Fireball",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Obito Uchiha",
-    "upstreamTechnique": "Grand Fireball",
-    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
-    "classifications": [
-      "EFEITO_ERRADO"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "dynamic-change"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": false
   },
   {
     "characterId": "obito-uchiha",
@@ -33107,57 +29206,6 @@
   {
     "characterId": "one-tailed-naruto",
     "characterName": "One-Tailed Naruto",
-    "slot": 2,
-    "techniqueId": "one-tailed-naruto__base_2",
-    "techniqueName": "Tailed Beast Chakra Arms",
-    "originalName": "Tailed Beast Chakra Arms",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "One-Tailed Naruto",
-    "upstreamTechnique": "Tailed Beast Chakra Arms",
-    "upstreamSource": "src/Game/Characters/Original/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "requirement",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "requirement",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "one-tailed-naruto",
-    "characterName": "One-Tailed Naruto",
     "slot": 3,
     "techniqueId": "one-tailed-naruto__base_3",
     "techniqueName": "Inner Chakra Mode",
@@ -33672,56 +29720,6 @@
   {
     "characterId": "orochimaru-(s)",
     "characterName": "Orochimaru",
-    "slot": 3,
-    "techniqueId": "orochimaru-(s)__base_3",
-    "techniqueName": "Kusanagi",
-    "originalName": "Kusanagi",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Orochimaru",
-    "upstreamTechnique": "Kusanagi",
-    "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "orochimaru-(s)",
-    "characterName": "Orochimaru",
     "slot": 4,
     "techniqueId": "orochimaru-(s)__base_4",
     "techniqueName": "Summoning: Triple Rashōmon",
@@ -33844,109 +29842,6 @@
       "ALVO_ERRADO"
     ],
     "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "pakura-(r)",
-    "characterName": "Pakura",
-    "slot": 2,
-    "techniqueId": "pakura-(r)__base_2",
-    "techniqueName": "Searing Combat",
-    "originalName": "Searing Combat",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Pakura",
-    "upstreamTechnique": "Searing Combat",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "pakura-(r)",
-    "characterName": "Pakura",
-    "slot": 3,
-    "techniqueId": "pakura-(r)__base_3",
-    "techniqueName": "Super Steam Kill",
-    "originalName": "Super Steam Kill",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Pakura",
-    "upstreamTechnique": "Super Steam Kill",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "trap-counter",
-          "dot",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "trap-counter",
-      "dot",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "requirement"
-    ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -34079,52 +29974,6 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "preta-path-pain-(s)",
-    "characterName": "Preta Path Pain",
-    "slot": 2,
-    "techniqueId": "preta-path-pain-(s)__base_2",
-    "techniqueName": "Preta Drain",
-    "originalName": "Preta Drain",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Preta Path Pain",
-    "upstreamTechnique": "Preta Drain",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "heal"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "heal"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34669,97 +30518,6 @@
   {
     "characterId": "rasa-(r)",
     "characterName": "Rasa",
-    "slot": 2,
-    "techniqueId": "rasa-(r)__base_2",
-    "techniqueName": "Gold Dust Waterfall",
-    "originalName": "Gold Dust Waterfall",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Rasa",
-    "upstreamTechnique": "Gold Dust Waterfall",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "status",
-          "weaken"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "rasa-(r)",
-    "characterName": "Rasa",
-    "slot": 3,
-    "techniqueId": "rasa-(r)__base_3",
-    "techniqueName": "24-Karat Barricade",
-    "originalName": "24-Karat Barricade",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Rasa",
-    "upstreamTechnique": "24-Karat Barricade",
-    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "rasa-(r)",
-    "characterName": "Rasa",
     "slot": 4,
     "techniqueId": "rasa-(r)__base_4",
     "techniqueName": "Gold Dust Shield",
@@ -34891,63 +30649,6 @@
     "blockers": [
       "charges",
       "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "reanimator-kabuto-(s)",
-    "characterName": "Reanimator Kabuto",
-    "slot": 3,
-    "techniqueId": "reanimator-kabuto-(s)__base_3",
-    "techniqueName": "Summoning: Reanimation",
-    "originalName": "Binding Talisman",
-    "resolution": "RESOLVIDO_POR_NOME_ATUAL_EXATO",
-    "matchSource": "EXACT_CURRENT_NAME_WITHIN_CHARACTER",
-    "upstreamCharacter": "Reanimator Kabuto",
-    "upstreamTechnique": "Summoning: Reanimation",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "expose",
-          "heal"
-        ],
-        "upstream": [
-          "heal",
-          "trap-counter",
-          "requirement",
-          "channel",
-          "sacrifice"
-        ]
-      },
-      "description": {
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal",
-      "trap-counter",
-      "requirement",
-      "channel",
-      "sacrifice"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "requirement",
-      "channel",
-      "sacrifice"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -35101,51 +30802,6 @@
       "dynamic-change",
       "bomb"
     ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "regimental-commander-gaara-(s)",
-    "characterName": "Regimental Commander Gaara",
-    "slot": 2,
-    "techniqueId": "regimental-commander-gaara-(s)__base_2",
-    "techniqueName": "Mother's Embrace",
-    "originalName": "Mother's Embrace",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Regimental Commander Gaara",
-    "upstreamTechnique": "Mother's Embrace",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "defense"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
   },
@@ -36876,51 +32532,6 @@
   {
     "characterId": "sage-mode-naruto-(s)",
     "characterName": "Sage Mode Naruto",
-    "slot": 3,
-    "techniqueId": "sage-mode-naruto-(s)__base_3",
-    "techniqueName": "Sage Mode",
-    "originalName": "Sage Mode",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Sage Mode Naruto",
-    "upstreamTechnique": "Sage Mode",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "status",
-          "strengthen",
-          "reduction"
-        ],
-        "upstream": [
-          "heal"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "sage-mode-naruto-(s)",
-    "characterName": "Sage Mode Naruto",
     "slot": 4,
     "techniqueId": "sage-mode-naruto-(s)__base_4",
     "techniqueName": "Natural Energy Assault",
@@ -37300,54 +32911,6 @@
     "blockers": [
       "alternate",
       "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "sakon-and-ukon",
-    "characterName": "Sakon and Ukon",
-    "slot": 1,
-    "techniqueId": "sakon-and-ukon__base_1",
-    "techniqueName": "Demon Twin Attack",
-    "originalName": "Demon Twin Attack",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Sakon and Ukon",
-    "upstreamTechnique": "Demon Twin Attack",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dynamic-change"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dynamic-change"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "dynamic-change"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38180,48 +33743,6 @@
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "sasori-(s)",
-    "characterName": "Sasori",
-    "slot": 2,
-    "techniqueId": "sasori-(s)__base_2",
-    "techniqueName": "Iron Sand: World Order",
-    "originalName": "Iron Sand: World Order",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Sasori",
-    "upstreamTechnique": "Iron Sand: World Order",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "disable",
-          "defense"
-        ],
-        "upstream": [
-          "damage",
-          "stack"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stack"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": false
   },
   {
     "characterId": "sasori-(s)",
@@ -39571,58 +35092,6 @@
   {
     "characterId": "shino-aburame",
     "characterName": "Shino Aburame",
-    "slot": 1,
-    "techniqueId": "shino-aburame__base_1",
-    "techniqueName": "Chakra Leech",
-    "originalName": "Chakra Leech",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Shino Aburame",
-    "upstreamTechnique": "Chakra Leech",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stack",
-          "leech",
-          "dot"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stack",
-      "leech",
-      "dot"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "shino-aburame",
-    "characterName": "Shino Aburame",
     "slot": 2,
     "techniqueId": "shino-aburame__base_2",
     "techniqueName": "Parasite",
@@ -39688,51 +35157,6 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "shino-aburame",
-    "characterName": "Shino Aburame",
-    "slot": 3,
-    "techniqueId": "shino-aburame__base_3",
-    "techniqueName": "Wall of Insects",
-    "originalName": "Wall of Insects",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Shino Aburame",
-    "upstreamTechnique": "Wall of Insects",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "defense"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "defense"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40009,54 +35433,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "shino-aburame-(s)",
-    "characterName": "Shino Aburame",
-    "slot": 4,
-    "techniqueId": "shino-aburame-(s)__base_4",
-    "techniqueName": "Gigantic Beetle Infestation",
-    "originalName": "Gigantic Beetle Infestation",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Shino Aburame",
-    "upstreamTechnique": "Gigantic Beetle Infestation",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "bomb"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "shisui-uchiha-(s)",
     "characterName": "Shisui Uchiha",
     "slot": 1,
@@ -40122,56 +35498,6 @@
       "alternate",
       "stack",
       "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "shisui-uchiha-(s)",
-    "characterName": "Shisui Uchiha",
-    "slot": 2,
-    "techniqueId": "shisui-uchiha-(s)__base_2",
-    "techniqueName": "Tsukumo",
-    "originalName": "Tsukumo",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Shisui Uchiha",
-    "upstreamTechnique": "Tsukumo",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "weaken",
-          "stack"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "weaken",
-      "stack"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40249,58 +35575,6 @@
     ],
     "blockers": [
       "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "shisui-uchiha-(s)",
-    "characterName": "Shisui Uchiha",
-    "slot": 4,
-    "techniqueId": "shisui-uchiha-(s)__base_4",
-    "techniqueName": "Kotoamatsukami",
-    "originalName": "Kotoamatsukami",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Shisui Uchiha",
-    "upstreamTechnique": "Kotoamatsukami",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "trap-counter",
-          "dynamic-change",
-          "bomb"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "trap-counter",
-      "dynamic-change",
-      "bomb"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "dynamic-change",
-      "bomb"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41404,50 +36678,6 @@
   {
     "characterId": "temari",
     "characterName": "Temari",
-    "slot": 2,
-    "techniqueId": "temari__base_2",
-    "techniqueName": "Summoning: Blade Dance",
-    "originalName": "Summoning: Blade Dance",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Temari",
-    "upstreamTechnique": "Summoning: Blade Dance",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "temari",
-    "characterName": "Temari",
     "slot": 3,
     "techniqueId": "temari__base_3",
     "techniqueName": "Sandstorm",
@@ -42189,50 +37419,6 @@
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "tenten-(s)",
-    "characterName": "Tenten",
-    "slot": 2,
-    "techniqueId": "tenten-(s)__base_2",
-    "techniqueName": "Tensasai",
-    "originalName": "Tensasai",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Tenten",
-    "upstreamTechnique": "Tensasai",
-    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43084,50 +38270,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "toroi-(r)",
-    "characterName": "Toroi",
-    "slot": 4,
-    "techniqueId": "toroi-(r)__base_4",
-    "techniqueName": "Magnetic Current",
-    "originalName": "Magnetic Current",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Toroi",
-    "upstreamTechnique": "Magnetic Current",
-    "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "torune-aburame-(s)",
     "characterName": "Torune Aburame",
     "slot": 1,
@@ -43259,56 +38401,6 @@
     ],
     "blockers": [
       "dynamic-change"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "torune-aburame-(s)",
-    "characterName": "Torune Aburame",
-    "slot": 3,
-    "techniqueId": "torune-aburame-(s)__base_3",
-    "techniqueName": "Venom Explosion",
-    "originalName": "Venom Explosion",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Torune Aburame",
-    "upstreamTechnique": "Venom Explosion",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "stack",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "stack",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "stack",
-      "requirement"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43790,60 +38882,6 @@
   {
     "characterId": "tsume-inuzuka",
     "characterName": "Tsume Inuzuka",
-    "slot": 2,
-    "techniqueId": "tsume-inuzuka__base_2",
-    "techniqueName": "Fierce Bite",
-    "originalName": "Fierce Bite",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Tsume Inuzuka",
-    "upstreamTechnique": "Fierce Bite",
-    "upstreamSource": "src/Game/Characters/Original/Family.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "strengthen",
-          "focus",
-          "trap-counter"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "strengthen",
-      "focus",
-      "trap-counter"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "tsume-inuzuka",
-    "characterName": "Tsume Inuzuka",
     "slot": 3,
     "techniqueId": "tsume-inuzuka__base_3",
     "techniqueName": "Tunneling Fang",
@@ -44288,104 +39326,6 @@
   {
     "characterId": "utakata-(s)",
     "characterName": "Utakata",
-    "slot": 1,
-    "techniqueId": "utakata-(s)__base_1",
-    "techniqueName": "Soap Bubble",
-    "originalName": "Soap Bubble",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Utakata",
-    "upstreamTechnique": "Soap Bubble",
-    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "utakata-(s)",
-    "characterName": "Utakata",
-    "slot": 2,
-    "techniqueId": "utakata-(s)__base_2",
-    "techniqueName": "Drowning Bubble",
-    "originalName": "Drowning Bubble",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Utakata",
-    "upstreamTechnique": "Drowning Bubble",
-    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "dot",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "dot",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "utakata-(s)",
-    "characterName": "Utakata",
     "slot": 3,
     "techniqueId": "utakata-(s)__base_3",
     "techniqueName": "Six-Tailed Transformation",
@@ -44509,100 +39449,6 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "white-snake-orochimaru-(s)",
-    "characterName": "White Snake Orochimaru",
-    "slot": 1,
-    "techniqueId": "white-snake-orochimaru-(s)__base_1",
-    "techniqueName": "Regenerative Bite",
-    "originalName": "Regenerative Bite",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "White Snake Orochimaru",
-    "upstreamTechnique": "Regenerative Bite",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "heal",
-          "leech"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "heal",
-      "leech"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "white-snake-orochimaru-(s)",
-    "characterName": "White Snake Orochimaru",
-    "slot": 2,
-    "techniqueId": "white-snake-orochimaru-(s)__base_2",
-    "techniqueName": "Kusanagi",
-    "originalName": "Kusanagi",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "White Snake Orochimaru",
-    "upstreamTechnique": "Kusanagi",
-    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "demolish"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "demolish"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -44752,106 +39598,6 @@
     ],
     "blockers": [
       "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "yamato-(s)",
-    "characterName": "Yamato",
-    "slot": 1,
-    "techniqueId": "yamato-(s)__base_1",
-    "techniqueName": "Tenth Edict on Enlightenment",
-    "originalName": "Tenth Edict on Enlightenment",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Yamato",
-    "upstreamTechnique": "Tenth Edict on Enlightenment",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "charges"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "charges"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "charges"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "yamato-(s)",
-    "characterName": "Yamato",
-    "slot": 2,
-    "techniqueId": "yamato-(s)__base_2",
-    "techniqueName": "Wood Clone",
-    "originalName": "Wood Clone",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Yamato",
-    "upstreamTechnique": "Wood Clone",
-    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "damage",
-          "defense",
-          "trap-counter",
-          "charges"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense",
-      "trap-counter",
-      "charges"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "trap-counter",
-      "charges"
     ],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -45940,53 +40686,6 @@
   {
     "characterId": "yugao-uzuki",
     "characterName": "Yūgao Uzuki",
-    "slot": 2,
-    "techniqueId": "yugao-uzuki__base_2",
-    "techniqueName": "Moon Haze",
-    "originalName": "Moon Haze",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Yūgao Uzuki",
-    "upstreamTechnique": "Moon Haze",
-    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "damage",
-          "defense"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "defense"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "yugao-uzuki",
-    "characterName": "Yūgao Uzuki",
     "slot": 3,
     "techniqueId": "yugao-uzuki__base_3",
     "techniqueName": "Sealing Technique",
@@ -46968,54 +41667,6 @@
   {
     "characterId": "zaku-abumi",
     "characterName": "Zaku Abumi",
-    "slot": 3,
-    "techniqueId": "zaku-abumi__base_3",
-    "techniqueName": "Supersonic Slicing Wave",
-    "originalName": "Supersonic Slicing Wave",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Zaku Abumi",
-    "upstreamTechnique": "Supersonic Slicing Wave",
-    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "requirement"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "zaku-abumi",
-    "characterName": "Zaku Abumi",
     "slot": 4,
     "techniqueId": "zaku-abumi__base_4",
     "techniqueName": "Deflect",
@@ -47232,104 +41883,6 @@
     ],
     "blockers": [
       "alternate",
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "zetsu-(s)",
-    "characterName": "Zetsu",
-    "slot": 3,
-    "techniqueId": "zetsu-(s)__base_3",
-    "techniqueName": "Underground Roots",
-    "originalName": "Underground Roots",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Zetsu",
-    "upstreamTechnique": "Underground Roots",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "weaken",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "weaken",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
-      "channel"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "zetsu-(s)",
-    "characterName": "Zetsu",
-    "slot": 4,
-    "techniqueId": "zetsu-(s)__base_4",
-    "techniqueName": "White Army",
-    "originalName": "White Army",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Zetsu",
-    "upstreamTechnique": "White Army",
-    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "stack"
-        ],
-        "upstream": [
-          "damage",
-          "channel"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "channel"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [
       "channel"
     ],
     "requiresManualSemantics": true,

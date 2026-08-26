@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T19:28:53.574Z",
+  "generatedAt": "2026-08-26T19:31:39.100Z",
   "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "totalTechniques": 836,
   "comparable": 719,
@@ -10,6 +10,8 @@
   "complexEffect": 708,
   "manualReview": 0,
   "descriptionAfterMechanics": 710,
+  "heldStructuralRows": 594,
+  "heldStructuralDimensions": 1016,
   "classificationCounts": {
     "CORRETA": 4,
     "DESCRIÇÃO_ERRADA": 710,
@@ -22,11 +24,18 @@
     "MOTOR_INSUFICIENTE": 0
   },
   "safeStructuralDimensions": {
-    "CUSTO_ERRADO": 2,
+    "CUSTO_ERRADO": 1,
     "COOLDOWN_ERRADO": 4,
     "DANO_ERRADO": 0,
     "ALVO_ERRADO": 1,
     "DURAÇÃO_ERRADA": 2
+  },
+  "heldStructuralDimensionCounts": {
+    "CUSTO_ERRADO": 266,
+    "COOLDOWN_ERRADO": 156,
+    "DANO_ERRADO": 54,
+    "ALVO_ERRADO": 288,
+    "DURAÇÃO_ERRADA": 252
   },
   "complexBlockerCounts": {
     "alternate": 88,

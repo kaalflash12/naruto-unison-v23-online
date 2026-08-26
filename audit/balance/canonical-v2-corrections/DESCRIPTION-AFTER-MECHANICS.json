@@ -38,6 +38,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -101,6 +103,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -175,6 +182,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -237,6 +249,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -280,6 +297,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -323,6 +342,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -408,6 +429,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -470,6 +497,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -527,6 +559,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -575,6 +611,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
@@ -645,6 +685,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -707,6 +752,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -757,6 +807,10 @@
     "upstreamCategories": [],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -815,6 +869,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -866,6 +924,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [],
@@ -927,6 +989,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -1003,6 +1070,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "channel"
@@ -1048,6 +1120,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1097,6 +1171,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -1142,6 +1218,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1198,6 +1276,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -1270,6 +1352,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1312,6 +1399,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1374,6 +1463,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1420,6 +1514,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -1477,6 +1573,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -1548,6 +1648,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -1607,6 +1712,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -1677,6 +1787,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -1737,6 +1851,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "requirement"
@@ -1795,6 +1913,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -1859,6 +1981,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -1953,6 +2080,13 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -2012,6 +2146,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -2075,6 +2213,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -2147,6 +2290,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2189,6 +2337,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2251,6 +2401,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -2331,6 +2486,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -2407,6 +2567,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel",
@@ -2458,6 +2623,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "bomb"
     ],
@@ -2524,6 +2691,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2576,6 +2748,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -2649,6 +2825,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -2697,6 +2878,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2743,6 +2926,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2787,6 +2972,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2857,6 +3044,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -2920,6 +3112,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -2991,6 +3187,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -3070,6 +3271,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -3143,6 +3349,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -3190,6 +3400,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -3234,6 +3446,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -3302,6 +3516,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -3346,6 +3565,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -3408,6 +3629,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -3452,6 +3678,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -3511,6 +3739,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -3563,6 +3795,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -3624,6 +3860,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -3698,6 +3939,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -3793,6 +4039,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -3849,6 +4101,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -3911,6 +4167,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -3998,6 +4258,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -4052,6 +4318,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -4114,6 +4384,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -4182,6 +4456,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -4254,6 +4533,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -4310,6 +4594,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -4379,6 +4667,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -4440,6 +4733,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -4516,6 +4814,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -4577,6 +4880,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -4641,6 +4948,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -4721,6 +5033,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "dynamic-change",
@@ -4767,6 +5084,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -4825,6 +5144,11 @@
     "upstreamCategories": [],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -4889,6 +5213,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -4966,6 +5295,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -5033,6 +5367,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -5104,6 +5443,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -5166,6 +5510,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -5214,6 +5562,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -5290,6 +5640,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -5361,6 +5716,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -5420,6 +5780,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -5495,6 +5860,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -5554,6 +5924,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "dynamic-change"
@@ -5597,6 +5971,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -5659,6 +6037,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -5701,6 +6084,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -5749,6 +6134,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [],
@@ -5818,6 +6207,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -5877,6 +6271,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -5949,6 +6348,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -5999,6 +6403,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
@@ -6055,6 +6463,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -6116,6 +6528,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -6190,6 +6607,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -6248,6 +6670,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -6320,6 +6746,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -6382,6 +6813,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -6434,6 +6870,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -6507,6 +6947,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -6570,6 +7015,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -6629,6 +7078,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -6712,6 +7165,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel",
@@ -6772,6 +7231,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -6824,6 +7287,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -6892,6 +7359,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -6970,6 +7442,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -7035,6 +7513,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "dynamic-change",
@@ -7084,6 +7566,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "channel"
@@ -7146,6 +7630,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -7190,6 +7678,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7236,6 +7726,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7290,6 +7782,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -7353,6 +7849,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -7427,6 +7928,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7488,6 +7994,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "channel"
@@ -7535,6 +8045,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -7599,6 +8111,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7642,6 +8159,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7696,6 +8215,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -7760,6 +8283,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -7821,6 +8348,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -7905,6 +8437,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -7949,6 +8487,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7993,6 +8533,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8055,6 +8597,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8108,6 +8655,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [
@@ -8185,6 +8736,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change",
       "channel"
@@ -8243,6 +8799,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -8309,6 +8869,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8366,6 +8931,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -8437,6 +9006,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -8512,6 +9086,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -8573,6 +9152,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -8617,6 +9200,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8676,6 +9261,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -8761,6 +9351,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter",
       "bomb"
@@ -8820,6 +9416,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -8892,6 +9492,11 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -8954,6 +9559,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -9048,6 +9658,13 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "bomb"
@@ -9118,6 +9735,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -9192,6 +9814,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "bomb"
     ],
@@ -9241,6 +9868,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "bomb"
@@ -9312,6 +9941,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -9360,6 +9994,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement"
     ],
@@ -9422,6 +10058,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -9481,6 +10121,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -9538,6 +10182,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -9607,6 +10255,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -9683,6 +10336,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -9756,6 +10414,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -9814,6 +10477,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -9870,6 +10537,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -9936,6 +10607,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -9984,6 +10660,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -10032,6 +10710,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -10094,6 +10774,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -10161,6 +10846,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -10218,6 +10908,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -10287,6 +10981,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -10381,6 +11080,13 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -10442,6 +11148,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -10528,6 +11239,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "dynamic-change",
@@ -10590,6 +11307,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -10655,6 +11376,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -10723,6 +11448,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -10783,6 +11513,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "charges"
     ],
@@ -10837,6 +11571,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -10895,6 +11633,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "DANO_ERRADO"
     ],
@@ -10962,6 +11705,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11004,6 +11752,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11058,6 +11808,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -11116,6 +11870,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -11172,6 +11930,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11218,6 +11980,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change",
       "channel"
@@ -11274,6 +12038,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "channel"
@@ -11344,6 +12110,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11406,6 +12177,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11450,6 +12226,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11516,6 +12294,11 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "bomb"
     ],
@@ -11572,6 +12355,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -11633,6 +12420,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -11707,6 +12499,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -11774,6 +12571,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11829,6 +12631,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -11895,6 +12701,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11946,6 +12757,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11991,6 +12806,10 @@
     "upstreamCategories": [],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
@@ -12055,6 +12874,11 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -12113,6 +12937,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -12178,6 +13006,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12227,6 +13059,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [],
@@ -12291,6 +13127,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12348,6 +13189,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -12412,6 +13257,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -12470,6 +13319,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -12537,6 +13390,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12579,6 +13437,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12631,6 +13491,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -12689,6 +13553,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -12755,6 +13623,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12816,6 +13689,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -12893,6 +13771,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -12948,6 +13831,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -13009,6 +13896,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -13082,6 +13974,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -13144,6 +14041,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement",
       "dynamic-change"
@@ -13194,6 +14095,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement",
       "channel"
@@ -13259,6 +14162,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -13307,6 +14215,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "dynamic-change",
@@ -13371,6 +14281,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -13448,6 +14362,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -13507,6 +14426,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -13593,6 +14517,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -13647,6 +14576,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement",
       "channel"
@@ -13709,6 +14640,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -13765,6 +14700,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -13828,6 +14767,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change",
       "channel"
@@ -13885,6 +14828,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [
@@ -13945,6 +14892,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -14008,6 +14959,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -14081,6 +15037,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -14137,6 +15098,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -14209,6 +15174,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -14255,6 +15225,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -14312,6 +15284,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -14367,6 +15343,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -14432,6 +15412,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -14494,6 +15478,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -14538,6 +15527,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -14613,6 +15604,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -14680,6 +15676,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "reflect"
     ],
@@ -14741,6 +15742,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -14808,6 +15814,11 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -14866,6 +15877,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -14936,6 +15951,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -14985,6 +16004,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -15041,6 +16062,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -15111,6 +16136,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -15185,6 +16215,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "trap-counter"
@@ -15247,6 +16282,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -15315,6 +16355,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -15394,6 +16438,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -15452,6 +16501,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -15519,6 +16572,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -15575,6 +16633,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -15641,6 +16703,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -15702,6 +16768,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -15778,6 +16849,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -15835,6 +16911,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -15899,6 +16980,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -15958,6 +17043,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -16020,6 +17109,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -16098,6 +17191,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -16155,6 +17253,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -16209,6 +17311,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -16259,6 +17365,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "trap-counter",
@@ -16346,6 +17454,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -16415,6 +17529,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -16479,6 +17598,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -16529,6 +17653,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "channel",
@@ -16591,6 +17717,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -16661,6 +17791,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -16747,6 +17882,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -16791,6 +17932,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -16857,6 +18000,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -16913,6 +18061,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -16976,6 +18128,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -17057,6 +18214,12 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -17133,6 +18296,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -17192,6 +18360,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -17263,6 +18435,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -17326,6 +18503,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -17393,6 +18575,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -17451,6 +18638,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -17519,6 +18710,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -17597,6 +18793,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -17657,6 +18858,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -17711,6 +18916,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -17775,6 +18984,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -17823,6 +19037,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "charges",
       "bomb"
@@ -17885,6 +19101,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -17971,6 +19191,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -18028,6 +19254,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -18108,6 +19338,12 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "bomb"
@@ -18184,6 +19420,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "bomb",
       "interrupt"
@@ -18244,6 +19485,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -18316,6 +19561,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -18359,6 +19609,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -18406,6 +19660,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -18466,6 +19724,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -18532,6 +19794,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -18586,6 +19853,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -18648,6 +19919,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -18701,6 +19976,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -18783,6 +20060,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "trap-counter",
@@ -18852,6 +20134,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -18911,6 +20198,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -18983,6 +20274,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19045,6 +20341,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19103,6 +20404,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19158,6 +20463,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -19229,6 +20539,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -19293,6 +20608,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19339,6 +20659,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -19405,6 +20727,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19445,6 +20772,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -19504,6 +20835,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -19584,6 +20920,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -19631,6 +20973,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19696,6 +21040,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -19778,6 +21127,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "trap-counter"
@@ -19851,6 +21206,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -19910,6 +21270,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19965,6 +21329,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -20024,6 +21392,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -20080,6 +21452,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -20147,6 +21523,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -20222,6 +21603,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -20281,6 +21667,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -20355,6 +21746,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "trap-counter",
@@ -20419,6 +21815,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -20513,6 +21913,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -20592,6 +21998,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -20659,6 +22071,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -20719,6 +22136,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -20771,6 +22192,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -20834,6 +22259,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -20901,6 +22331,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -20964,6 +22399,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -21045,6 +22485,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "charges"
     ],
@@ -21109,6 +22554,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21153,6 +22603,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -21222,6 +22674,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -21305,6 +22762,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -21368,6 +22831,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -21448,6 +22916,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -21507,6 +22980,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -21578,6 +23055,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21633,6 +23115,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21675,6 +23161,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21745,6 +23233,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -21790,6 +23283,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -21854,6 +23349,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21908,6 +23408,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21952,6 +23456,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -22008,6 +23514,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -22071,6 +23581,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -22139,6 +23654,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -22213,6 +23733,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22283,6 +23808,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22345,6 +23875,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22402,6 +23937,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22444,6 +23983,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22514,6 +24055,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -22575,6 +24121,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -22655,6 +24206,12 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -22751,6 +24308,13 @@
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -22823,6 +24387,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -22884,6 +24453,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -22957,6 +24531,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23003,6 +24582,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack",
       "trap-counter"
@@ -23068,6 +24649,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23124,6 +24710,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23168,6 +24758,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -23236,6 +24828,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "bomb"
     ],
@@ -23300,6 +24897,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23358,6 +24960,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -23406,6 +25012,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -23492,6 +25102,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -23537,6 +25153,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23602,6 +25220,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -23682,6 +25305,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter",
       "reflect"
@@ -23751,6 +25379,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -23815,6 +25448,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23857,6 +25495,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -23917,6 +25557,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -23961,6 +25605,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -24020,6 +25666,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -24093,6 +25744,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -24149,6 +25805,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -24224,6 +25884,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -24283,6 +25948,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -24352,6 +26021,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -24430,6 +26104,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -24488,6 +26167,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "channel"
     ],
@@ -24532,6 +26215,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -24589,6 +26274,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -24661,6 +26350,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "dynamic-change"
@@ -24717,6 +26411,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -24780,6 +26478,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -24852,6 +26555,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -24907,6 +26614,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -24970,6 +26681,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -25027,6 +26742,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -25101,6 +26820,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -25164,6 +26888,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -25231,6 +26960,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -25293,6 +27027,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -25339,6 +27078,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement",
       "bomb"
@@ -25396,6 +27137,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -25471,6 +27216,11 @@
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement",
       "dynamic-change"
@@ -25536,6 +27286,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -25594,6 +27349,10 @@
     "structuralDimensions": [
       "DANO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -25648,6 +27407,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -25721,6 +27484,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "sacrifice"
     ],
@@ -25779,6 +27547,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -25850,6 +27622,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -25912,6 +27689,11 @@
     "upstreamCategories": [],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -25978,6 +27760,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -26039,6 +27825,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -26123,6 +27913,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26177,6 +27973,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26223,6 +28023,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26282,6 +28084,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -26354,6 +28161,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -26443,6 +28255,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter",
       "dynamic-change",
@@ -26512,6 +28330,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "trap-counter",
@@ -26577,6 +28399,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -26656,6 +28482,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -26730,6 +28561,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -26796,6 +28632,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "channel"
@@ -26849,6 +28689,12 @@
     "structuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
     ],
     "blockers": [],
     "requiresManualSemantics": false,
@@ -26906,6 +28752,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -26976,6 +28826,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "bomb"
     ],
@@ -27028,6 +28883,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -27092,6 +28949,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -27134,6 +28996,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -27176,6 +29040,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -27223,6 +29089,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -27283,6 +29151,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "DANO_ERRADO"
     ],
@@ -27347,6 +29220,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "channel"
@@ -27409,6 +29286,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -27469,6 +29350,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -27513,6 +29398,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -27585,6 +29472,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -27650,6 +29542,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "channel"
     ],
@@ -27708,6 +29604,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -27771,6 +29671,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -27846,6 +29751,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "trap-counter"
@@ -27911,6 +29821,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter",
       "redirect"
@@ -27957,6 +29871,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -28028,6 +29946,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -28094,6 +30017,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -28169,6 +30097,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -28259,6 +30192,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "requirement"
@@ -28324,6 +30263,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -28382,6 +30326,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change",
       "channel"
@@ -28429,6 +30377,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "charges"
     ],
@@ -28488,6 +30438,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -28554,6 +30508,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -28600,6 +30559,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -28666,6 +30627,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -28716,6 +30681,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -28780,6 +30747,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -28834,6 +30806,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -28906,6 +30882,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -28955,6 +30936,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement"
     ],
@@ -29001,6 +30984,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29064,6 +31049,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -29141,6 +31130,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement",
       "dynamic-change"
@@ -29203,6 +31197,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -29280,6 +31278,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "charges",
       "channel"
@@ -29340,6 +31343,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -29398,6 +31405,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29454,6 +31465,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29498,6 +31513,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29549,6 +31566,10 @@
     "structuralDimensions": [
       "DANO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29595,6 +31616,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -29680,6 +31703,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -29756,6 +31785,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29798,6 +31832,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29844,6 +31880,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -29919,6 +31957,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "trap-counter"
@@ -29975,6 +32018,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -30041,6 +32089,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -30097,6 +32149,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -30151,6 +32205,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "alternate",
       "sacrifice"
@@ -30222,6 +32278,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -30276,6 +32337,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -30351,6 +32416,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -30415,6 +32485,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -30473,6 +32548,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -30547,6 +32626,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -30605,6 +32689,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -30666,6 +32754,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -30732,6 +32825,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -30817,6 +32915,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -30869,6 +32973,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -30940,6 +33048,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -31018,6 +33131,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "sacrifice"
     ],
@@ -31066,6 +33184,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement",
       "channel"
@@ -31132,6 +33252,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement",
       "channel"
@@ -31194,6 +33318,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -31263,6 +33392,11 @@
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31322,6 +33456,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -31367,6 +33505,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -31433,6 +33575,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31485,6 +33632,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -31548,6 +33699,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31594,6 +33749,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -31658,6 +33815,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31715,6 +33877,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31761,6 +33927,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement"
     ],
@@ -31811,6 +33979,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "requirement"
@@ -31876,6 +34046,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31937,6 +34112,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31981,6 +34161,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32046,6 +34228,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32105,6 +34292,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -32191,6 +34383,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -32260,6 +34458,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -32350,6 +34553,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "trap-counter",
@@ -32424,6 +34633,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -32482,6 +34696,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32525,6 +34743,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32567,6 +34787,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -32628,6 +34850,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -32694,6 +34921,11 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "charges",
       "channel"
@@ -32747,6 +34979,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "requirement",
@@ -32807,6 +35041,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -32891,6 +35129,12 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change",
       "bomb"
@@ -32937,6 +35181,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33013,6 +35259,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel",
       "bomb"
@@ -33075,6 +35326,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -33152,6 +35408,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "channel"
     ],
@@ -33217,6 +35478,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -33286,6 +35552,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -33366,6 +35637,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -33438,6 +35715,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -33480,6 +35762,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -33561,6 +35847,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33623,6 +35915,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33673,6 +35970,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
@@ -33750,6 +36051,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33818,6 +36125,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33880,6 +36192,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -33934,6 +36251,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -34006,6 +36327,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34072,6 +36398,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34134,6 +36465,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34193,6 +36529,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [
@@ -34273,6 +36613,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -34361,6 +36706,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -34445,6 +36796,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "charges",
       "dynamic-change"
@@ -34525,6 +36882,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -34584,6 +36947,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34627,6 +36994,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34708,6 +37077,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -34765,6 +37140,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -34838,6 +37217,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -34892,6 +37276,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -34985,6 +37373,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "trap-counter"
@@ -35032,6 +37426,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "dynamic-change"
     ],
@@ -35094,6 +37490,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -35166,6 +37566,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -35219,6 +37624,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -35275,6 +37684,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -35340,6 +37753,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -35417,6 +37835,12 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -35480,6 +37904,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -35551,6 +37980,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -35611,6 +38045,11 @@
     "upstreamCategories": [],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -35683,6 +38122,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -35745,6 +38189,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -35800,6 +38249,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -35879,6 +38332,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -35976,6 +38434,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "trap-counter",
@@ -36043,6 +38507,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -36117,6 +38586,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -36173,6 +38647,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -36249,6 +38727,12 @@
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -36309,6 +38793,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -36378,6 +38867,11 @@
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -36443,6 +38937,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -36525,6 +39024,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement",
       "dynamic-change"
@@ -36591,6 +39095,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -36648,6 +39156,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -36716,6 +39228,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -36791,6 +39308,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -36861,6 +39383,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -36923,6 +39450,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "DANO_ERRADO"
     ],
@@ -36989,6 +39521,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -37061,6 +39597,11 @@
       "CUSTO_ERRADO",
       "DANO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DANO_ERRADO"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -37111,6 +39652,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -37180,6 +39723,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -37223,6 +39771,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -37282,6 +39832,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -37361,6 +39916,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -37414,6 +39974,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [],
@@ -37473,6 +40037,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "bomb"
@@ -37520,6 +40088,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "bomb"
     ],
@@ -37584,6 +40154,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -37634,6 +40208,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -37706,6 +40282,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -37754,6 +40335,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "dynamic-change",
@@ -37812,6 +40395,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -37883,6 +40470,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -37931,6 +40523,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -37993,6 +40589,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38050,6 +40651,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -38110,6 +40715,10 @@
     "structuralDimensions": [
       "DANO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO"
+    ],
     "blockers": [
       "trap-counter",
       "requirement",
@@ -38162,6 +40771,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DANO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
     "blockers": [],
@@ -38227,6 +40840,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "alternate",
       "requirement",
@@ -38286,6 +40903,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -38353,6 +40974,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -38430,6 +41056,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -38491,6 +41122,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -38564,6 +41200,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -38624,6 +41265,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "requirement"
     ],
@@ -38678,6 +41323,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -38739,6 +41388,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -38826,6 +41480,13 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38868,6 +41529,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38926,6 +41589,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -38987,6 +41654,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -39052,6 +41724,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -39126,6 +41803,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -39184,6 +41866,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39239,6 +41925,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -39301,6 +41991,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -39371,6 +42066,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
@@ -39446,6 +42146,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack"
     ],
@@ -39510,6 +42215,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39565,6 +42275,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39607,6 +42321,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39651,6 +42367,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -39727,6 +42447,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39783,6 +42509,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -39864,6 +42594,11 @@
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -39918,6 +42653,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
@@ -39991,6 +42730,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "requirement",
       "charges",
@@ -40047,6 +42791,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -40126,6 +42874,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -40193,6 +42947,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40252,6 +43011,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -40328,6 +43092,12 @@
       "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40387,6 +43157,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -40439,6 +43213,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40481,6 +43259,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40540,6 +43320,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -40607,6 +43391,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "dynamic-change"
     ],
@@ -40654,6 +43442,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack",
       "requirement"
@@ -40716,6 +43506,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -40801,6 +43596,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -40873,6 +43674,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -40957,6 +43763,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "stack",
@@ -41016,6 +43827,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -41098,6 +43913,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate"
     ],
@@ -41150,6 +43971,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter"
     ],
@@ -41218,6 +44041,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -41303,6 +44131,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "charges",
       "bomb"
@@ -41380,6 +44214,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41432,6 +44271,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -41502,6 +44345,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -41566,6 +44414,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41612,6 +44465,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41658,6 +44513,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement"
     ],
@@ -41717,6 +44574,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
@@ -41781,6 +44642,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41825,6 +44691,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41871,6 +44739,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41931,6 +44801,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [
@@ -42009,6 +44883,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -42053,6 +44932,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "charges"
     ],
@@ -42104,6 +44985,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "trap-counter",
       "charges"
@@ -42163,6 +45046,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -42226,6 +45113,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -42296,6 +45188,11 @@
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack",
       "dynamic-change"
@@ -42351,6 +45248,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -42429,6 +45330,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "sacrifice"
     ],
@@ -42490,6 +45396,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -42556,6 +45467,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -42636,6 +45551,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "channel"
     ],
@@ -42705,6 +45625,11 @@
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "ALVO_ERRADO"
+    ],
     "blockers": [
       "stack"
     ],
@@ -42766,6 +45691,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -42838,6 +45768,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
@@ -42921,6 +45856,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -42996,6 +45937,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "trap-counter"
@@ -43061,6 +46007,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43116,6 +46067,10 @@
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43161,6 +46116,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43223,6 +46180,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -43289,6 +46250,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43342,6 +46308,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
     "blockers": [
@@ -43420,6 +46390,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "requirement"
@@ -43468,6 +46443,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -43535,6 +46514,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43589,6 +46573,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -43657,6 +46645,11 @@
       "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DANO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43714,6 +46707,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
@@ -43775,6 +46772,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -43845,6 +46847,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "stack",
       "channel"
@@ -43907,6 +46913,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -43973,6 +46983,11 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -44016,6 +47031,10 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [
@@ -44074,6 +47093,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [
       "trap-counter"
     ],
@@ -44120,6 +47143,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "requirement"
     ],
@@ -44181,6 +47206,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
+      "CUSTO_ERRADO",
+      "COOLDOWN_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
@@ -44258,6 +47288,12 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -44327,6 +47363,11 @@
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
     "blockers": [
       "alternate",
       "channel"
@@ -44376,6 +47417,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],
@@ -44422,6 +47465,8 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "channel"
     ],

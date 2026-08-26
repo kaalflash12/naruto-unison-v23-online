@@ -8,13 +8,16 @@
 - SAFE_STRUCTURAL: **7**
 - COMPLEX_EFFECT: **708**
 - MANUAL_REVIEW: **0**
+- Dimensões estruturais retidas: **1016**
 - DESCRIPTION_AFTER_MECHANICS: **710**
 - Gate: **PASS**
 
 ## Regra
 
 - Nenhuma das 117 técnicas justificadas entra na fila.
-- SAFE_STRUCTURAL exige evidência exata e ausência de semântica dinâmica/complexa.
+- SAFE_STRUCTURAL é calculado por dimensão, exige evidência exata e valor representável pelo schema publicado.
+- O patch automático futuro só pode consumir safeStructuralDimensions; classifications não é autorização de escrita.
+- Dimensões não representáveis ficam em heldStructuralDimensions.
 - EFEITO_ERRADO e categorias dinâmicas nunca são auto-corrigidas por este estágio.
 - DESCRIÇÃO_ERRADA é corrigida somente depois da mecânica correspondente.
 - Este estágio é fidelidade canônica; não aplica buff/nerf de balanceamento.

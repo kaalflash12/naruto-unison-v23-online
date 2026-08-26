@@ -21,6 +21,8 @@
     ],
     "tier": "CORRETA",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -49,6 +51,8 @@
     ],
     "tier": "CORRETA",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -77,6 +81,8 @@
     ],
     "tier": "CORRETA",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
@@ -106,6 +112,8 @@
     ],
     "tier": "CORRETA",
     "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
     "blockers": [
       "stack",
       "requirement"

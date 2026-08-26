@@ -35,6 +35,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -90,6 +94,11 @@
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [
+      "ALVO_ERRADO",
+      "DURAÇÃO_ERRADA"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -130,6 +139,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -181,6 +194,12 @@
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -221,6 +240,10 @@
     "structuralDimensions": [
       "COOLDOWN_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "COOLDOWN_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -267,6 +290,10 @@
     "structuralDimensions": [
       "CUSTO_ERRADO"
     ],
+    "safeStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
@@ -311,6 +338,10 @@
     "structuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
+    "safeStructuralDimensions": [
+      "DURAÇÃO_ERRADA"
+    ],
+    "heldStructuralDimensions": [],
     "blockers": [],
     "requiresManualSemantics": false,
     "descriptionAfterMechanics": true
