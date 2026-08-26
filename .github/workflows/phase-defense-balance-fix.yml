@@ -1,3 +1,4 @@
+# Triggered 2026-08-25 to apply the verified phase-aware defense-expiry patch.
 name: One-off Balance Fix — Phase-aware Defense Expiry
 
 on:
