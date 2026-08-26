@@ -36,10 +36,10 @@ jobs:
           const c=JSON.parse(fs.readFileSync('balance/canonical-v2-overrides.json','utf8'));
           const keys=Object.keys(c.overrides||{});
           if(c.mode!=='analysis-only') throw new Error('override mode must remain analysis-only');
-          if(keys.length!==8) throw new Error('expected 8 canonical overrides, got '+keys.length);
-          const batch2=keys.filter(k=>c.overrides[k]?.batch===2);
-          if(batch2.length!==5) throw new Error('expected 5 Batch 002 overrides, got '+batch2.length);
-          console.log('CANONICAL_OVERRIDE_CONFIG=PASS',{total:keys.length,batch2:batch2.length});
+          if(keys.length!==13) throw new Error('expected 13 canonical overrides, got '+keys.length);
+          const counts={}; for(const k of keys){const b=String(c.overrides[k]?.batch||'none');counts[b]=(counts[b]||0)+1;}
+          if(counts['1']!==3||counts['2']!==5||counts['3']!==5) throw new Error('unexpected batch counts '+JSON.stringify(counts));
+          console.log('CANONICAL_OVERRIDE_CONFIG=PASS',{total:keys.length,batches:counts});
           JS
 
       - name: Run deterministic override simulation smoke
@@ -55,8 +55,8 @@ jobs:
           const fs=require('fs');
           const p='audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json';
           const s=JSON.parse(fs.readFileSync(p,'utf8'));
-          if(s.overridesConfigured!==8) throw new Error('overridesConfigured='+s.overridesConfigured);
-          if(s.batches['1']!==3||s.batches['2']!==5) throw new Error('unexpected batches '+JSON.stringify(s.batches));
+          if(s.overridesConfigured!==13) throw new Error('overridesConfigured='+s.overridesConfigured);
+          if(s.batches['1']!==3||s.batches['2']!==5||s.batches['3']!==5) throw new Error('unexpected batches '+JSON.stringify(s.batches));
           if(s.publicRosterMutated!==false||s.scope!=='analysis-only') throw new Error('analysis-only guard failed');
           console.log('CANONICAL_OVERRIDE_EXECUTION=PASS',s);
           JS
