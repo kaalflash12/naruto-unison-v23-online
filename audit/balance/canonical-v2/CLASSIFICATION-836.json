@@ -1413,15 +1413,11 @@
     "upstreamTechnique": "Summoning: Ninja Hounds",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -1735,16 +1731,12 @@
     "upstreamTechnique": "Ferocious Fist",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -1958,14 +1950,10 @@
     "upstreamTechnique": "Fifth Gate Opening",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -2159,15 +2147,11 @@
     "upstreamTechnique": "Gentle Fist",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -2602,14 +2586,10 @@
     "upstreamTechnique": "Gentle Fist",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -3043,15 +3023,11 @@
     "upstreamTechnique": "Sand Coffin",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -3561,7 +3537,6 @@
     "upstreamTechnique": "Shadow Strangle",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -3570,9 +3545,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -3706,15 +3678,11 @@
     "upstreamTechnique": "Shadow Possession",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -4260,15 +4228,23 @@
     "upstreamTechnique": "Giant Flame Bomb",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "dot"
+        ],
+        "upstream": [
+          "damage",
+          "dot",
+          "bomb"
+        ]
+      },
       "target": {
         "local": [
           "enemy"
@@ -4495,17 +4471,12 @@
     "upstreamTechnique": "Major Summoning: Gamabunta",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -4631,14 +4602,10 @@
     "upstreamTechnique": "Toad Oil Bomb",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -4959,16 +4926,12 @@
     "upstreamTechnique": "Major Summoning: Katsuyu",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -5383,16 +5346,12 @@
     "upstreamTechnique": "Major Summoning: Manda",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -5514,15 +5473,11 @@
     "upstreamTechnique": "Paralyzing Bite",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -6307,14 +6262,10 @@
     "upstreamTechnique": "High-Speed Assault",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -6410,16 +6361,12 @@
     "upstreamTechnique": "Stone Golem",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -7152,16 +7099,12 @@
     "upstreamTechnique": "Summoning: Giant Centipede",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -7283,7 +7226,6 @@
     "upstreamTechnique": "Summoning: Giant Crustacean",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -7291,9 +7233,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -7539,15 +7478,11 @@
     "upstreamTechnique": "Summoning: Giant Multi-Headed Dog",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -7658,7 +7593,6 @@
     "upstreamTechnique": "Dual Pin",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -7666,9 +7600,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -7789,14 +7720,22 @@
     "upstreamTechnique": "Dragon Flame",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "dot"
+        ],
+        "upstream": [
+          "damage",
+          "dot",
+          "sacrifice"
+        ]
+      },
       "cooldown": {
         "local": 3,
         "upstream": 2
@@ -7886,15 +7825,11 @@
     "upstreamTechnique": "Twin Snake Sacrifice",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -8578,16 +8513,12 @@
     "upstreamTechnique": "Scattering Crow Swarm",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -8706,15 +8637,11 @@
     "upstreamTechnique": "Revenge of the Murder",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -9001,17 +8928,12 @@
     "upstreamTechnique": "Flying Swallow",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -9709,16 +9631,12 @@
     "upstreamTechnique": "Burning Ash",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -10044,16 +9962,12 @@
     "upstreamTechnique": "Missile Salvo",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -10296,16 +10210,12 @@
     "upstreamTechnique": "Guided Missile",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -10527,15 +10437,11 @@
     "upstreamTechnique": "Fire Wall",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -11695,16 +11601,12 @@
     "upstreamTechnique": "Ten Puppets Collection",
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -12395,15 +12297,11 @@
     "upstreamTechnique": "Ten Puppets Collection",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -12622,7 +12520,6 @@
     "upstreamTechnique": "Spinach Pill",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -12630,10 +12527,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -13087,7 +12980,6 @@
     "upstreamTechnique": "Butterfly Bombing",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
@@ -13095,9 +12987,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -13220,16 +13109,11 @@
     "upstreamTechnique": "Spiky Human Boulder",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -13344,14 +13228,10 @@
     "upstreamTechnique": "Butterfly Mode",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "status",
@@ -13440,15 +13320,11 @@
     "upstreamTechnique": "Super-Slam",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -14086,15 +13962,11 @@
     "upstreamTechnique": "Human Boulder",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -14503,15 +14375,11 @@
     "upstreamTechnique": "Psychic Jamming",
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -14614,15 +14482,11 @@
     "upstreamTechnique": "Silent Killing",
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -15070,7 +14934,6 @@
     "upstreamTechnique": "Psychotic Break",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -15078,9 +14941,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -15505,15 +15365,11 @@
     "upstreamTechnique": "Chidori",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -15618,17 +15474,12 @@
     "upstreamTechnique": "Dark Void",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -15750,15 +15601,11 @@
     "upstreamTechnique": "Curse Mark",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -16312,15 +16159,11 @@
     "upstreamTechnique": "Reverse Tetragram Sealing",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -16547,16 +16390,12 @@
     "upstreamTechnique": "Laser Circus",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -16983,7 +16822,6 @@
     "upstreamTechnique": "Detonating Clay",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -16991,9 +16829,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -17457,7 +17292,6 @@
     "upstreamTechnique": "C1: Bird Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -17466,9 +17300,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -17602,16 +17433,12 @@
     "upstreamTechnique": "C3: Megaton Sculpture",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -17731,16 +17558,12 @@
     "upstreamTechnique": "C2: Dragon Missile",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -17856,14 +17679,10 @@
     "upstreamTechnique": "C2: Clay Dragon",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -18566,16 +18385,12 @@
     "upstreamTechnique": "Universal Pull",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "interrupt"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -18693,16 +18508,12 @@
     "upstreamTechnique": "Chakra Receiver",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -19688,14 +19499,22 @@
     "upstreamTechnique": "Unpredictable Assault",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "stack"
+        ],
+        "upstream": [
+          "damage",
+          "stack",
+          "dynamic-change"
+        ]
+      },
       "target": {
         "local": [
           "enemy"
@@ -19708,6 +19527,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO"
         ]
       }
@@ -19903,7 +19723,6 @@
     "upstreamTechnique": "Drunken Fist",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -19912,9 +19731,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -20155,7 +19971,6 @@
     "upstreamTechnique": "Evening Elephant",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -20163,10 +19978,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -20302,15 +20113,11 @@
     "upstreamTechnique": "Battle Stance",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "trap-counter",
@@ -20418,16 +20225,11 @@
     "upstreamTechnique": "Night Guy",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -20860,16 +20662,12 @@
     "upstreamTechnique": "Tailed Beast Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -21391,15 +21189,11 @@
     "upstreamTechnique": "Mind Transfer",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -21708,15 +21502,10 @@
     "upstreamTechnique": "Needle Senbon",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -21814,14 +21603,10 @@
     "upstreamTechnique": "Chakra Weave",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -22248,16 +22033,12 @@
     "upstreamTechnique": "Tailed Beast Bomb Barrage",
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -22581,16 +22362,12 @@
     "upstreamTechnique": "Frog Song",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -23819,16 +23596,11 @@
     "upstreamTechnique": "Major Summoning: Giant Clam",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "reflect"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -23936,15 +23708,11 @@
     "upstreamTechnique": "Water Pistol",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -24046,15 +23814,11 @@
     "upstreamTechnique": "Steaming Danger Tyranny Boy",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -24678,16 +24442,12 @@
     "upstreamTechnique": "Thousand Needles of Death",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -24795,16 +24555,12 @@
     "upstreamTechnique": "Acupuncture",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -25131,16 +24887,12 @@
     "upstreamTechnique": "Thousand Needles of Death",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -25253,15 +25005,11 @@
     "upstreamTechnique": "Acupuncture",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -25368,14 +25116,10 @@
     "upstreamTechnique": "Crystal Ice Mirrors",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -25578,15 +25322,10 @@
     "upstreamTechnique": "Gentle Fist",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -25684,16 +25423,11 @@
     "upstreamTechnique": "Eight Trigrams Palm Rotation",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -26033,17 +25767,12 @@
     "upstreamTechnique": "Major Summoning: Ibuse",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -26173,14 +25902,10 @@
     "upstreamTechnique": "Poison Fog",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -26502,16 +26227,11 @@
     "upstreamTechnique": "Wooden Dragon",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -26617,16 +26337,11 @@
     "upstreamTechnique": "Wood Golem",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -26945,16 +26660,12 @@
     "upstreamTechnique": "Tree Wave Destruction",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -27183,16 +26894,12 @@
     "upstreamTechnique": "Deep Forest Creation",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -27844,14 +27551,10 @@
     "upstreamTechnique": "Gentle Fist",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -27948,16 +27651,12 @@
     "upstreamTechnique": "Eight Trigrams Palm Rotation",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -28082,16 +27781,12 @@
     "upstreamTechnique": "Eight Trigrams Air Palm Wall",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "reflect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -28416,15 +28111,11 @@
     "upstreamTechnique": "First Blood",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -28529,15 +28220,11 @@
     "upstreamTechnique": "Blood Curse",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -29415,12 +29102,20 @@
     "upstreamTechnique": "Dragon Flame Bomb",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE"
+      "EFEITO_ERRADO"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ]
+      "effect": {
+        "local": [
+          "damage",
+          "dot"
+        ],
+        "upstream": [
+          "damage",
+          "dot",
+          "bomb"
+        ]
+      }
     },
     "published": {
       "description": "Dragon Flame Bomb afeta um inimigo: causa 28 de dano; aplica Queimadura por 2 turno(s) (6/turno); causa 10 de dano com bônus quando a preparação é atendida. Custo: NIN + Q; recarga: 0 turno(s).",
@@ -29624,16 +29319,12 @@
     "upstreamTechnique": "Major Summoning: Enma",
     "upstreamSource": "src/Game/Characters/Original/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -31099,16 +30790,12 @@
     "upstreamTechnique": "Mind Transfer",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -31440,14 +31127,10 @@
     "upstreamTechnique": "Mind Destruction",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -31547,7 +31230,6 @@
     "upstreamTechnique": "Proxy Surveillance",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -31555,9 +31237,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -31681,16 +31360,12 @@
     "upstreamTechnique": "Mind Transfer Clone",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -31907,15 +31582,10 @@
     "upstreamTechnique": "Psycho Mind Transmission",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "reflect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -32243,7 +31913,6 @@
     "upstreamTechnique": "Mental Invasion",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -32251,9 +31920,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -32913,7 +32579,6 @@
     "upstreamTechnique": "Amaterasu",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -32921,9 +32586,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -33044,16 +32706,12 @@
     "upstreamTechnique": "Tsukuyomi",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -34714,14 +34372,10 @@
     "upstreamTechnique": "Splatter",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -34817,15 +34471,11 @@
     "upstreamTechnique": "Bomb Reload",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -35171,7 +34821,6 @@
     "upstreamTechnique": "Giant Flame Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -35179,9 +34828,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -35302,17 +34948,12 @@
     "upstreamTechnique": "Toad Oil Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb",
-        "interrupt"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -35430,16 +35071,11 @@
     "upstreamTechnique": "Toad Subjugation Shadow Manipulation",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "redirect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -35864,15 +35500,11 @@
     "upstreamTechnique": "Earth Dome Prison",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -36191,15 +35823,11 @@
     "upstreamTechnique": "Sphere of Graves",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -36410,16 +36038,12 @@
     "upstreamTechnique": "Summoning: Earth Prison Golem",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -36664,15 +36288,11 @@
     "upstreamTechnique": "Sage Transformation",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "status",
@@ -38909,16 +38529,12 @@
     "upstreamTechnique": "Poison Bomb",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -39254,16 +38870,12 @@
     "upstreamTechnique": "Kuroari Trap",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -39379,15 +38991,11 @@
     "upstreamTechnique": "Karasu Knives",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -39496,7 +39104,6 @@
     "upstreamTechnique": "Sanshōuo Shield",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -39504,9 +39111,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -39992,15 +39596,11 @@
     "upstreamTechnique": "Heal Bite",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -40324,16 +39924,12 @@
     "upstreamTechnique": "Sand Prison",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -40678,14 +40274,10 @@
     "upstreamTechnique": "Wolf Fang Over Fang",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -40779,16 +40371,12 @@
     "upstreamTechnique": "Two-Headed Wolf",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -41027,16 +40615,12 @@
     "upstreamTechnique": "Smoke Bomb",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -41705,16 +41289,12 @@
     "upstreamTechnique": "Summoning: Kyodaigumo",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -42137,14 +41717,10 @@
     "upstreamTechnique": "Lariat",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -44395,14 +43971,10 @@
     "upstreamTechnique": "Samehada Shred",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -44498,16 +44070,12 @@
     "upstreamTechnique": "Super Shark Bomb",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -44725,15 +44293,11 @@
     "upstreamTechnique": "Thousand Hungry Sharks",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -44929,7 +44493,6 @@
     "upstreamTechnique": "Exploding Water Shockwave",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -44937,9 +44500,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -45160,16 +44720,12 @@
     "upstreamTechnique": "Rock Fist",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "reflect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -45286,16 +44842,12 @@
     "upstreamTechnique": "Erupt",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "reflect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -45417,16 +44969,12 @@
     "upstreamTechnique": "Sandwiching Mountain",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -45737,15 +45285,11 @@
     "upstreamTechnique": "Dance of the Shikigami",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -46295,16 +45839,12 @@
     "upstreamTechnique": "Paper Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -46420,15 +45960,11 @@
     "upstreamTechnique": "Paper Shuriken",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -46770,15 +46306,11 @@
     "upstreamTechnique": "Throw a Fit",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -46972,15 +46504,11 @@
     "upstreamTechnique": "Rasengan",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -47082,16 +46610,12 @@
     "upstreamTechnique": "Agile Backflip",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -47630,15 +47154,11 @@
     "upstreamTechnique": "Demonic Illusion: Sylvan Fetters",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -48315,14 +47835,10 @@
     "upstreamTechnique": "Needle Stitching",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -48525,16 +48041,12 @@
     "upstreamTechnique": "Wire Crucifixion",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -48979,16 +48491,12 @@
     "upstreamTechnique": "Life Transfer",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -49440,15 +48948,11 @@
     "upstreamTechnique": "Susanoo",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -50234,7 +49738,6 @@
     "upstreamTechnique": "Chidori",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
@@ -50242,10 +49745,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -50376,15 +49875,11 @@
     "upstreamTechnique": "Blazing Arrow",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -50499,15 +49994,11 @@
     "upstreamTechnique": "Amaterasu",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -50855,15 +50346,11 @@
     "upstreamTechnique": "Major Summoning: Kurama",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -51182,16 +50669,12 @@
     "upstreamTechnique": "Water Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -51306,14 +50789,10 @@
     "upstreamTechnique": "Lava Monster",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -51733,14 +51212,10 @@
     "upstreamTechnique": "Sixth Gate Opening",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -51945,14 +51420,22 @@
     "upstreamTechnique": "Nunchaku",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "stack"
+        ],
+        "upstream": [
+          "damage",
+          "stack",
+          "channel"
+        ]
+      },
       "target": {
         "local": [
           "enemy"
@@ -51965,6 +51448,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO"
         ]
       }
@@ -52500,15 +51984,11 @@
     "upstreamTechnique": "Sensory Technique",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -52953,15 +52433,11 @@
     "upstreamTechnique": "Reciprocal Round-Robin",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "redirect"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -53398,16 +52874,12 @@
     "upstreamTechnique": "Soft Physique Modification",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "redirect"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -53772,16 +53244,11 @@
     "upstreamTechnique": "Kunai Assault",
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -54198,14 +53665,10 @@
     "upstreamTechnique": "Particle Beam",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -54416,14 +53879,10 @@
     "upstreamTechnique": "Atomic Dismantling",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -54740,16 +54199,12 @@
     "upstreamTechnique": "Human Path",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -55055,15 +54510,11 @@
     "upstreamTechnique": "Summoning: Gedo Statue",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -55173,16 +54624,12 @@
     "upstreamTechnique": "Control",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -55296,14 +54743,23 @@
     "upstreamTechnique": "Phantom Dragon",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "stack"
+        ],
+        "upstream": [
+          "damage",
+          "stack",
+          "requirement",
+          "dynamic-change"
+        ]
+      },
       "target": {
         "local": [
           "enemy"
@@ -55316,6 +54772,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO"
         ]
       }
@@ -55399,16 +54856,12 @@
     "upstreamTechnique": "Rinne Rebirth",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -56830,15 +56283,11 @@
     "upstreamTechnique": "Four-Tailed Transformation",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "status",
@@ -56942,14 +56391,10 @@
     "upstreamTechnique": "Six-Tailed Transformation",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "status",
@@ -57054,14 +56499,10 @@
     "upstreamTechnique": "Nine-Tailed Transformation",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "status",
@@ -57390,12 +56831,20 @@
     "upstreamTechnique": "Grand Fireball",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE"
+      "EFEITO_ERRADO"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ]
+      "effect": {
+        "local": [
+          "damage",
+          "dot"
+        ],
+        "upstream": [
+          "damage",
+          "dot",
+          "dynamic-change"
+        ]
+      }
     },
     "published": {
       "description": "Grand Fireball afeta um inimigo: causa 24 de dano; aplica Queimadura por 2 turno(s) (5/turno); causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
@@ -57706,16 +57155,11 @@
     "upstreamTechnique": "Exploding Kunai",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -57824,16 +57268,12 @@
     "upstreamTechnique": "Underground Move",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -58522,16 +57962,12 @@
     "upstreamTechnique": "Paper Bomb",
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -58645,16 +58081,12 @@
     "upstreamTechnique": "Tailed Beast Rasengan",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -58771,14 +58203,10 @@
     "upstreamTechnique": "Tailed Beast Chakra Arms",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -58876,15 +58304,11 @@
     "upstreamTechnique": "Inner Chakra Mode",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "status",
@@ -59740,14 +59164,10 @@
     "upstreamTechnique": "Kusanagi",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -60802,7 +60222,6 @@
     "upstreamTechnique": "Sasori Surrogate",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -60810,9 +60229,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -61064,7 +60480,6 @@
     "upstreamTechnique": "Kuroari Trap",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -61072,9 +60487,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -61724,16 +61136,12 @@
     "upstreamTechnique": "Reanimated Army",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -62053,7 +61461,6 @@
     "upstreamTechnique": "Sand Grasp",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -62061,10 +61468,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -62275,17 +61678,12 @@
     "upstreamTechnique": "Sand Mausoleum Seal",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -62514,16 +61912,12 @@
     "upstreamTechnique": "Sand Shower",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -62874,7 +62268,6 @@
     "upstreamTechnique": "Sand Tsunami",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
@@ -62882,9 +62275,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -64371,15 +63761,11 @@
     "upstreamTechnique": "Sage Transformation",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "status",
@@ -64489,17 +63875,12 @@
     "upstreamTechnique": "DNA Transmission Shadow",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -64622,7 +64003,6 @@
     "upstreamTechnique": "Inorganic Animation",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -64630,9 +64010,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -64757,7 +64134,6 @@
     "upstreamTechnique": "Transfusion",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -64765,9 +64141,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "heal",
@@ -65844,14 +65217,10 @@
     "upstreamTechnique": "Demon Twin Attack",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -65945,15 +65314,11 @@
     "upstreamTechnique": "Demon Parasite",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -66388,15 +65753,23 @@
     "upstreamTechnique": "Healing Technique",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
+      "effect": {
+        "local": [
+          "heal",
+          "cleanse"
+        ],
+        "upstream": [
+          "heal",
+          "cleanse",
+          "dynamic-change"
+        ]
+      },
       "target": {
         "local": [
           "ally",
@@ -66413,6 +65786,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO",
           "COOLDOWN_ERRADO"
         ]
@@ -67172,15 +66546,11 @@
     "upstreamTechnique": "Kazekage Puppet Summoning",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -67366,16 +66736,12 @@
     "upstreamTechnique": "Poison Blade Assault",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -67878,14 +67244,22 @@
     "upstreamTechnique": "Dragon Flame",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
+      "effect": {
+        "local": [
+          "damage",
+          "dot"
+        ],
+        "upstream": [
+          "damage",
+          "dot",
+          "channel"
+        ]
+      },
       "target": {
         "local": [
           "enemy"
@@ -68431,16 +67805,12 @@
     "upstreamTechnique": "Senbon Barrage",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -68567,15 +67937,11 @@
     "upstreamTechnique": "Shadow Possession",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -69925,16 +69291,12 @@
     "upstreamTechnique": "Insect Swarm",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -70155,15 +69517,11 @@
     "upstreamTechnique": "Insect Barricade",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -70266,14 +69624,10 @@
     "upstreamTechnique": "Gigantic Beetle Infestation",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -70365,15 +69719,11 @@
     "upstreamTechnique": "Susanoo",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -70702,15 +70052,10 @@
     "upstreamTechnique": "Kotoamatsukami",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change",
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -71232,15 +70577,11 @@
     "upstreamTechnique": "Desert Hand",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -71349,15 +70690,11 @@
     "upstreamTechnique": "Monstrous Sand Arm",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -71558,15 +70895,11 @@
     "upstreamTechnique": "Sand Transformation",
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "status",
@@ -71912,16 +71245,12 @@
     "upstreamTechnique": "Liquefy",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -72148,16 +71477,12 @@
     "upstreamTechnique": "Summoning: Doki",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -74721,16 +74046,12 @@
     "upstreamTechnique": "Izanagi",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -74951,7 +74272,6 @@
     "upstreamTechnique": "Water Shockwave",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
@@ -74959,9 +74279,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -75713,15 +75030,11 @@
     "upstreamTechnique": "Nano-Sized Venomous Beetles",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -75826,15 +75139,11 @@
     "upstreamTechnique": "Jar of Poison",
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -76281,16 +75590,12 @@
     "upstreamTechnique": "Impale",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -76412,16 +75717,12 @@
     "upstreamTechnique": "Flamethrower Jets",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -76891,16 +76192,12 @@
     "upstreamTechnique": "Tunneling Fang",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -77014,7 +76311,6 @@
     "upstreamTechnique": "Light Bomb",
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
@@ -77022,9 +76318,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "bomb"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -78429,15 +77722,11 @@
     "upstreamTechnique": "Immortality Transference",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -78550,16 +77839,12 @@
     "upstreamTechnique": "Eight-Headed Serpent",
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -79095,16 +78380,12 @@
     "upstreamTechnique": "Rasengan",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -79217,15 +78498,11 @@
     "upstreamTechnique": "Teleportation Barrier",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "reflect"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -79328,16 +78605,12 @@
     "upstreamTechnique": "Reaper Death Seal",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "sacrifice"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -79685,16 +78958,12 @@
     "upstreamTechnique": "Draining Assault",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -81381,15 +80650,11 @@
     "upstreamTechnique": "Silent Killing",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "dynamic-change"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -81819,15 +81084,11 @@
     "upstreamTechnique": "Demon Shroud",
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -82863,7 +82124,6 @@
     "upstreamTechnique": "Black Zetsu",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "COOLDOWN_ERRADO",
@@ -82871,9 +82131,6 @@
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -82986,16 +82243,12 @@
     "upstreamTechnique": "White Zetsu",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "defense",
@@ -83102,14 +82355,10 @@
     "upstreamTechnique": "Underground Roots",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",
@@ -83209,14 +82458,10 @@
     "upstreamTechnique": "White Army",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "MOTOR_INSUFICIENTE",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
-      "motor": [
-        "channel"
-      ],
       "effect": {
         "local": [
           "damage",

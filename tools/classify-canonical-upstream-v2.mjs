@@ -338,14 +338,17 @@ function publishedDirectDamage(published) {
 function canonicalDirectDamage(upstream) {
   return [...arr(upstream?.damage), ...arr(upstream?.pierce)].filter(Number.isFinite);
 }
+const ENGINE_SUPPORTED_CANONICAL_CATEGORIES = new Set([
+  'damage','heal','defense','reduction','stun','disable','silence','expose','weaken','strengthen','exhaust','focus',
+  'cleanse','dispel','chakra','alternate','stack','trap-counter','leech','demolish','dot','execute','invulnerable',
+  'requirement','charges','dynamic-change','channel','reflect','redirect','sacrifice','bomb','interrupt'
+]);
 function engineInsufficient(upstream) {
-  const insufficient = new Set(['reflect', 'redirect', 'sacrifice', 'bomb', 'dynamic-change', 'channel', 'interrupt']);
-  return arr(upstream?.categories).some((x) => insufficient.has(x));
+  return arr(upstream?.categories).some((x) => !ENGINE_SUPPORTED_CANONICAL_CATEGORIES.has(x));
 }
 function effectEquivalent(localCats, upstreamCats) {
   const ignorableMeta = new Set(['requirement', 'charges']);
-  const unsupported = new Set(['dynamic-change','channel','reflect','redirect','sacrifice','bomb','interrupt']);
-  const U = new Set(uniq(upstreamCats.filter((x) => !ignorableMeta.has(x) && !unsupported.has(x))));
+  const U = new Set(uniq(upstreamCats.filter((x) => !ignorableMeta.has(x))));
   const L = new Set(localCats);
   const hasUp = (c) => U.has(c);
   const hasLocal = (c) => L.has(c);
@@ -385,7 +388,7 @@ function classifyTechnique({ published, upstream }) {
   const evidence = {};
   if (engineInsufficient(upstream)) {
     flags.push('MOTOR_INSUFICIENTE');
-    evidence.motor = arr(upstream.categories).filter((x) => ['reflect','redirect','sacrifice','bomb','dynamic-change','channel','interrupt'].includes(x));
+    evidence.motor = arr(upstream.categories).filter((x) => !ENGINE_SUPPORTED_CANONICAL_CATEGORIES.has(x));
   }
   const localCats = publishedCategories(published);
   const upCats = arr(upstream.categories);
@@ -587,8 +590,11 @@ function selfTest() {
   for (const expected of ['ALVO_ERRADO', 'CUSTO_ERRADO', 'COOLDOWN_ERRADO', 'DURAÇÃO_ERRADA']) if (!multi.classifications.includes(expected)) throw new Error(`SELFTEST_${expected}`);
   const extraEffect = classifyTechnique({ published: { ...basePublished, mechanics: [...basePublished.mechanics, { op: 'heal', amount: 5, target: 'self' }] }, upstream: baseUpstream });
   if (!extraEffect.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_EXTRA_EFFECT');
-  const motor = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'redirect'] } });
-  if (!motor.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_MOTOR');
+  const supportedGap = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'redirect'] } });
+  if (supportedGap.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_SUPPORTED_GAP_MOTOR');
+  if (!supportedGap.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_SUPPORTED_GAP_EFFECT');
+  const futureGap = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'future-unimplemented'] } });
+  if (!futureGap.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_FUTURE_MOTOR');
   const unresolved = classifyTechnique({ published: basePublished, upstream: null });
   if (unresolved.resolution !== 'UPSTREAM_NAO_RESOLVIDO' || unresolved.classifications.length) throw new Error('SELFTEST_UNRESOLVED');
   console.log('CANONICAL_UPSTREAM_CLASSIFIER_V2_SELFTEST=PASS');

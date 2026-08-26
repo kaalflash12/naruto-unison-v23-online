@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T19:10:58.944Z",
+  "generatedAt": "2026-08-26T19:22:44.572Z",
   "contentRevision": 0,
   "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "playableCharacters": 209,
@@ -11,12 +11,12 @@
     "CORRETA": 4,
     "DESCRIÇÃO_ERRADA": 709,
     "DANO_ERRADO": 54,
-    "EFEITO_ERRADO": 689,
+    "EFEITO_ERRADO": 698,
     "ALVO_ERRADO": 289,
     "CUSTO_ERRADO": 267,
     "COOLDOWN_ERRADO": 160,
     "DURAÇÃO_ERRADA": 254,
-    "MOTOR_INSUFICIENTE": 211
+    "MOTOR_INSUFICIENTE": 0
   },
   "resolutionCounts": {
     "RESOLVIDO": 718,
