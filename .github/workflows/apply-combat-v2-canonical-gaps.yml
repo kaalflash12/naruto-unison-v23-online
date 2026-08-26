@@ -1,0 +1,77 @@
+name: Apply Combat V2 Canonical Gaps
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-combat-rules-v2-canonical-gaps.mjs'
+      - '.github/workflows/apply-combat-v2-canonical-gaps.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-combat-v2-canonical-gaps
+  cancel-in-progress: false
+
+jobs:
+  apply-and-prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply canonical gap patch
+        run: |
+          set -euo pipefail
+          node --check tools/patch-combat-rules-v2-canonical-gaps.mjs
+          node tools/patch-combat-rules-v2-canonical-gaps.mjs
+      - name: Syntax and deterministic semantics
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check tools/test-combat-rules-v2.mjs
+          node tools/test-combat-rules-v2.mjs
+      - name: Published V2 regression gate
+        run: |
+          set -euo pipefail
+          node tools/audit-published-techniques-v2.mjs | tee /tmp/published-v2-after-gap-patch.json
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
+          if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836) throw new Error('published V2 regression');
+          if(s.unsupported!==0||s.runtimeFailures!==0||s.unknownCosts!==0||s.noops!==0) throw new Error('published V2 semantic regression');
+          console.log('COMBAT_V2_CANONICAL_GAPS_REGRESSION=PASS');
+          JS
+      - name: Verify new canonical gap contracts exist
+        run: |
+          set -euo pipefail
+          grep -q "function applySkillChanges" combat-rules-v2.js
+          grep -q "function reflectRatio" combat-rules-v2.js
+          grep -q "function redirectTarget" combat-rules-v2.js
+          grep -q "type==='bomb'" combat-rules-v2.js
+          grep -q "type==='sacrifice'" combat-rules-v2.js
+          grep -q "type==='channel'" combat-rules-v2.js
+          grep -q "type==='interrupt'" combat-rules-v2.js
+          grep -q "tickChannels" combat-rules-v2.js
+          grep -q "applySkillChanges" tools/test-combat-rules-v2.mjs
+          echo COMBAT_V2_CANONICAL_GAPS=PASS
+      - name: Commit proven engine patch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add combat-rules-v2.js tools/test-combat-rules-v2.mjs audit/balance/published-v2
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'feat(combat): apply canonical gap semantics to V2 engine'
+          git pull --rebase origin main
+          git push origin HEAD:main
