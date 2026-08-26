@@ -1,0 +1,57 @@
+name: Canonical V2 Full Simulation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'balance/canonical-v2-overrides.json'
+      - 'combat-rules-v2.js'
+      - 'roster.js'
+      - 'tools/simulate-balance-3v3-v2.mjs'
+      - 'tools/run-balance-v2-with-overrides.mjs'
+      - '.github/workflows/canonical-v2-full-simulation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-simulation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run complete pair matrix with canonical overrides
+        env:
+          SIM_MODE: standard
+          SIM_SEEDS: '2'
+          SIM_MAX_TURNS: '30'
+        run: |
+          set -euo pipefail
+          node tools/run-balance-v2-with-overrides.mjs | tee /tmp/canonical-v2-full-state.json
+          test -s audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json
+          find audit/balance/simulation-v2-overrides -type f -maxdepth 1 -print
+
+      - name: Validate full coverage
+        run: |
+          node - <<'JS'
+          const fs=require('fs'),path=require('path');
+          const d='audit/balance/simulation-v2-overrides';
+          const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
+          if(state.overridesConfigured!==8) throw new Error('expected 8 overrides');
+          const candidates=['SUMMARY.json','SIMULATION-SUMMARY.json','CHARACTER-SIMULATION.json','RESULTS.json','CHARACTERS.json'];
+          const present=candidates.filter(x=>fs.existsSync(path.join(d,x)));
+          if(!present.length) throw new Error('full simulator produced no recognized summary/results file');
+          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,present});
+          JS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-full-simulation-${{ github.sha }}
+          path: audit/balance/simulation-v2-overrides
+          if-no-files-found: error
+          retention-days: 30
