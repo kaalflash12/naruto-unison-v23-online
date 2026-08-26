@@ -1,6 +1,6 @@
 name: BAN Runtime Live Proof
 
-# live-proof-trigger: 2026-08-26-ban-session-gate
+# live-proof-trigger: full ban -> revoke -> unban -> login restoration
 on:
   workflow_dispatch:
   push:
@@ -14,7 +14,7 @@ permissions:
 jobs:
   live-ban-contract:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - name: Register isolated legacy test account
         shell: bash
@@ -26,11 +26,7 @@ jobs:
           PASSWORD="$(openssl rand -hex 24)"
           printf '%s' "$USERNAME" > /tmp/banprobe-user
           printf '%s' "$PASSWORD" > /tmp/banprobe-pass
-
-          code=$(curl --max-time 25 -sS -o /tmp/register.json -w '%{http_code}' \
-            -X POST "$BASE/api/account/register" \
-            -H 'content-type: application/json' \
-            --data "$(jq -nc --arg user "$USERNAME" --arg pass "$PASSWORD" '{user:$user,pass:$pass}')")
+          code=$(curl --max-time 25 -sS -o /tmp/register.json -w '%{http_code}' -X POST "$BASE/api/account/register" -H 'content-type: application/json' --data "$(jq -nc --arg user "$USERNAME" --arg pass "$PASSWORD" '{user:$user,pass:$pass}')")
           test "$code" = 201
           jq -e '.ok == true and (.token|type=="string") and (.token|length>10) and (.profile|type=="object")' /tmp/register.json >/dev/null
           jq -r '.token' /tmp/register.json > /tmp/banprobe-token
@@ -44,24 +40,15 @@ jobs:
         run: |
           set -euo pipefail
           TOKEN=$(cat /tmp/banprobe-token)
-          code=$(curl --max-time 25 -sS -o /tmp/session-before.json -w '%{http_code}' \
-            "$BASE/api/account/session?token=$TOKEN")
+          code=$(curl --max-time 25 -sS -o /tmp/session-before.json -w '%{http_code}' "$BASE/api/account/session?token=$TOKEN")
           test "$code" = 200
           jq -e '.ok == true' /tmp/session-before.json >/dev/null
-
           jq --arg token "$TOKEN" '{token:$token,profile:.profile,revision:(.revision // 0)}' /tmp/register.json > /tmp/save-before-body.json
-          code=$(curl --max-time 25 -sS -o /tmp/save-before.json -w '%{http_code}' \
-            -X POST "$BASE/api/account/save" \
-            -H 'content-type: application/json' \
-            --data @/tmp/save-before-body.json)
+          code=$(curl --max-time 25 -sS -o /tmp/save-before.json -w '%{http_code}' -X POST "$BASE/api/account/save" -H 'content-type: application/json' --data @/tmp/save-before-body.json)
           test "$code" = 200
           jq -e '.ok == true' /tmp/save-before.json >/dev/null
           REV=$(jq -r '.revision // empty' /tmp/save-before.json)
-          if [ -n "$REV" ]; then
-            jq --argjson revision "$REV" '.revision=$revision' /tmp/save-before-body.json > /tmp/save-after-body.json
-          else
-            cp /tmp/save-before-body.json /tmp/save-after-body.json
-          fi
+          if [ -n "$REV" ]; then jq --argjson revision "$REV" '.revision=$revision' /tmp/save-before-body.json > /tmp/save-after-body.json; else cp /tmp/save-before-body.json /tmp/save-after-body.json; fi
           echo 'SESSION_BEFORE_BAN=PASS HTTP=200'
           echo 'SAVE_BEFORE_BAN=PASS HTTP=200'
 
@@ -74,18 +61,11 @@ jobs:
           TOKEN=$(cat /tmp/banprobe-token)
           blocked=0
           for i in $(seq 1 90); do
-            code=$(curl --max-time 20 -sS -o /tmp/session-after.json -w '%{http_code}' \
-              "$BASE/api/account/session?token=$TOKEN" || true)
-            if [ "$code" = 401 ] || [ "$code" = 403 ]; then
-              blocked=1
-              break
-            fi
+            code=$(curl --max-time 20 -sS -o /tmp/session-after.json -w '%{http_code}' "$BASE/api/account/session?token=$TOKEN" || true)
+            if [ "$code" = 401 ] || [ "$code" = 403 ]; then blocked=1; break; fi
             sleep 2
           done
-          if [ "$blocked" != 1 ]; then
-            echo 'BAN_TOKEN_REVOCATION=FAIL'
-            exit 1
-          fi
+          test "$blocked" = 1
           echo "SESSION_AFTER_BAN=PASS HTTP=$code"
 
       - name: Require gameplay persistence action blocked after ban
@@ -94,11 +74,8 @@ jobs:
           BASE: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api
         run: |
           set -euo pipefail
-          code=$(curl --max-time 25 -sS -o /tmp/save-after.json -w '%{http_code}' \
-            -X POST "$BASE/api/account/save" \
-            -H 'content-type: application/json' \
-            --data @/tmp/save-after-body.json || true)
-          case "$code" in 401|403) ;; *) echo "SAVE_AFTER_BAN=FAIL HTTP=$code"; cat /tmp/save-after.json; exit 1;; esac
+          code=$(curl --max-time 25 -sS -o /tmp/save-after.json -w '%{http_code}' -X POST "$BASE/api/account/save" -H 'content-type: application/json' --data @/tmp/save-after-body.json || true)
+          case "$code" in 401|403) ;; *) echo "SAVE_AFTER_BAN=FAIL HTTP=$code"; exit 1;; esac
           echo "SAVE_AFTER_BAN=PASS HTTP=$code"
 
       - name: Require fresh login blocked after ban
@@ -107,12 +84,29 @@ jobs:
           BASE: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api
         run: |
           set -euo pipefail
-          USERNAME=$(cat /tmp/banprobe-user)
-          PASSWORD=$(cat /tmp/banprobe-pass)
-          code=$(curl --max-time 25 -sS -o /tmp/login-after.json -w '%{http_code}' \
-            -X POST "$BASE/api/account/login" \
-            -H 'content-type: application/json' \
-            --data "$(jq -nc --arg user "$USERNAME" --arg pass "$PASSWORD" '{user:$user,pass:$pass}')" || true)
-          case "$code" in 401|403) ;; *) echo "LOGIN_AFTER_BAN=FAIL HTTP=$code"; cat /tmp/login-after.json; exit 1;; esac
+          USERNAME=$(cat /tmp/banprobe-user); PASSWORD=$(cat /tmp/banprobe-pass)
+          code=$(curl --max-time 25 -sS -o /tmp/login-after.json -w '%{http_code}' -X POST "$BASE/api/account/login" -H 'content-type: application/json' --data "$(jq -nc --arg user "$USERNAME" --arg pass "$PASSWORD" '{user:$user,pass:$pass}')" || true)
+          case "$code" in 401|403) ;; *) echo "LOGIN_AFTER_BAN=FAIL HTTP=$code"; exit 1;; esac
           echo "LOGIN_AFTER_BAN=PASS HTTP=$code"
-          echo 'BAN_RUNTIME_CONTRACT=PASS'
+
+      - name: Wait for external unban and require login restoration
+        shell: bash
+        env:
+          BASE: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api
+        run: |
+          set -euo pipefail
+          USERNAME=$(cat /tmp/banprobe-user); PASSWORD=$(cat /tmp/banprobe-pass)
+          restored=0
+          for i in $(seq 1 90); do
+            code=$(curl --max-time 20 -sS -o /tmp/login-restored.json -w '%{http_code}' -X POST "$BASE/api/account/login" -H 'content-type: application/json' --data "$(jq -nc --arg user "$USERNAME" --arg pass "$PASSWORD" '{user:$user,pass:$pass}')" || true)
+            if [ "$code" = 200 ] && jq -e '.ok == true and (.token|type=="string") and (.token|length>10)' /tmp/login-restored.json >/dev/null 2>&1; then restored=1; break; fi
+            sleep 2
+          done
+          test "$restored" = 1
+          TOKEN=$(jq -r '.token' /tmp/login-restored.json)
+          code2=$(curl --max-time 25 -sS -o /tmp/session-restored.json -w '%{http_code}' "$BASE/api/account/session?token=$TOKEN")
+          test "$code2" = 200
+          jq -e '.ok == true' /tmp/session-restored.json >/dev/null
+          echo "LOGIN_AFTER_UNBAN=PASS HTTP=$code"
+          echo "SESSION_AFTER_UNBAN=PASS HTTP=$code2"
+          echo 'BAN_RUNTIME_FULL_CYCLE=PASS'
