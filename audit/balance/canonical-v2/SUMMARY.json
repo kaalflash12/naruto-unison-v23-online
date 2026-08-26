@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-26T18:08:31.894Z",
+  "contentRevision": 0,
+  "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "playableCharacters": 209,
+  "classifiedTechniques": 836,
+  "upstreamCharactersParsed": 182,
+  "resolved": 718,
+  "unresolved": 118,
+  "classificationCounts": {
+    "CORRETA": 4,
+    "DESCRIÇÃO_ERRADA": 709,
+    "DANO_ERRADO": 54,
+    "EFEITO_ERRADO": 689,
+    "ALVO_ERRADO": 289,
+    "CUSTO_ERRADO": 267,
+    "COOLDOWN_ERRADO": 160,
+    "DURAÇÃO_ERRADA": 254,
+    "MOTOR_INSUFICIENTE": 211
+  },
+  "resolutionCounts": {
+    "RESOLVIDO": 718,
+    "UPSTREAM_NAO_RESOLVIDO": 118
+  },
+  "matchSourceCounts": {
+    "EXACT_WITHIN_CHARACTER": 718,
+    "AMBIGUOUS_WITHIN_CHARACTER": 9,
+    "UPSTREAM_SKILL_NOT_FOUND": 97,
+    "AMBIGUOUS_GLOBAL": 12
+  },
+  "invalidRows": 0,
+  "gate": "FAIL"
+}

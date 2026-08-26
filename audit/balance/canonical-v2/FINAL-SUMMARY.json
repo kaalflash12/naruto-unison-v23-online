@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-08-26T18:08:32.032Z",
+  "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "playableCharacters": 209,
+  "totalTechniques": 836,
+  "comparable": 719,
+  "justified": 117,
+  "accounted": 836,
+  "unaccounted": 0,
+  "invalidComparable": 0,
+  "invalidJustified": 0,
+  "classificationCounts": {
+    "CORRETA": 4,
+    "DESCRIÇÃO_ERRADA": 710,
+    "DANO_ERRADO": 54,
+    "EFEITO_ERRADO": 690,
+    "ALVO_ERRADO": 289,
+    "CUSTO_ERRADO": 267,
+    "COOLDOWN_ERRADO": 160,
+    "DURAÇÃO_ERRADA": 254,
+    "MOTOR_INSUFICIENTE": 212
+  },
+  "resolutionCounts": {
+    "RESOLVIDO": 718,
+    "JUSTIFICADO_AMBIGUIDADE_UPSTREAM": 8,
+    "JUSTIFICADO_SEM_REFERENCIA_UPSTREAM": 109,
+    "RESOLVIDO_POR_NOME_ATUAL_EXATO": 1
+  },
+  "policy": "PASS exige 836/836 contabilizadas. Comparável exige referência upstream 1:1. Conteúdo sem referência ou com alternate ambíguo só é aceito com justificativa versionada e nunca recebe CORRETA.",
+  "gate": "PASS"
+}

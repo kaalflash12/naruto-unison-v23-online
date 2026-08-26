@@ -1,0 +1,2298 @@
+[
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha",
+    "characterName": "Sasuke Uchiha",
+    "upstreamCharacter": "Sasuke Uchiha",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakura-haruno",
+    "characterName": "Sakura Haruno",
+    "upstreamCharacter": "Sakura Haruno",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake",
+    "characterName": "Kakashi Hatake",
+    "upstreamCharacter": "Kakashi Hatake",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "rock-lee",
+    "characterName": "Rock Lee",
+    "upstreamCharacter": "Rock Lee",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "neji-hyuga",
+    "characterName": "Neji Hyūga",
+    "upstreamCharacter": "Neji Hyūga",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hinata-hyuga",
+    "characterName": "Hinata Hyūga",
+    "upstreamCharacter": "Hinata Hyūga",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "gaara",
+    "characterName": "Gaara",
+    "upstreamCharacter": "Gaara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shikamaru-nara",
+    "characterName": "Shikamaru Nara",
+    "upstreamCharacter": "Shikamaru Nara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jiraiya",
+    "characterName": "Jiraiya",
+    "upstreamCharacter": "Jiraiya",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tsunade",
+    "characterName": "Tsunade",
+    "upstreamCharacter": "Tsunade",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "orochimaru",
+    "characterName": "Orochimaru",
+    "upstreamCharacter": "Orochimaru",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "a-(r)",
+    "characterName": "A",
+    "upstreamCharacter": "A",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "akatsuchi-(s)",
+    "characterName": "Akatsuchi",
+    "upstreamCharacter": "Akatsuchi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ameyuri-ringo-(r)",
+    "characterName": "Ameyuri Ringo",
+    "upstreamCharacter": "Ameyuri Ringo",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "animal-path-pain-(s)",
+    "characterName": "Animal Path Pain",
+    "upstreamCharacter": "Animal Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "anko-mitarashi",
+    "characterName": "Anko Mitarashi",
+    "upstreamCharacter": "Anko Mitarashi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ao-(s)",
+    "characterName": "Ao",
+    "upstreamCharacter": "Ao",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "aoba-yamashiro",
+    "characterName": "Aoba Yamashiro",
+    "upstreamCharacter": "Aoba Yamashiro",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "asuma-sarutobi",
+    "characterName": "Asuma Sarutobi",
+    "upstreamCharacter": "Asuma Sarutobi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "asuma-sarutobi-(s)",
+    "characterName": "Asuma Sarutobi",
+    "upstreamCharacter": "Asuma Sarutobi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "asura-path-pain-(s)",
+    "characterName": "Asura Path Pain",
+    "upstreamCharacter": "Asura Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "atsui-(s)",
+    "characterName": "Atsui",
+    "upstreamCharacter": "Atsui",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "baki",
+    "characterName": "Baki",
+    "upstreamCharacter": "Baki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "c-(s)",
+    "characterName": "C",
+    "upstreamCharacter": "C",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "chiyo-(r)",
+    "characterName": "Chiyo",
+    "upstreamCharacter": "Chiyo",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "chiyo-(s)",
+    "characterName": "Chiyo",
+    "upstreamCharacter": "Chiyo",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "choji-akimichi",
+    "characterName": "Chōji Akimichi",
+    "upstreamCharacter": "Chōji Akimichi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "choji-akimichi-(s)",
+    "characterName": "Chōji Akimichi",
+    "upstreamCharacter": "Chōji Akimichi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "chojuro-(s)",
+    "characterName": "Chōjūrō",
+    "upstreamCharacter": "Chōjūrō",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "choza-akimichi",
+    "characterName": "Chōza Akimichi",
+    "upstreamCharacter": "Chōza Akimichi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "chukichi-(r)",
+    "characterName": "Chūkichi",
+    "upstreamCharacter": "Chūkichi",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 1,
+    "margin": 0,
+    "candidates": [
+      {
+        "name": "Itachi Uchiha",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Organizations.hs"
+      },
+      {
+        "name": "Kakashi Hatake",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "name": "Konohamaru Sarutobi",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Family.hs"
+      },
+      {
+        "name": "Oboro",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Exams.hs"
+      },
+      {
+        "name": "Shikamaru Nara",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Kids.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "curse-mark-jugo-(s)",
+    "characterName": "Curse Mark Jūgo",
+    "upstreamCharacter": "Curse Mark Jūgo",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "curse-mark-sasuke",
+    "characterName": "Curse Mark Sasuke",
+    "upstreamCharacter": "Curse Mark Sasuke",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 2,
+    "margin": 1,
+    "candidates": [
+      {
+        "name": "Sasuke Uchiha",
+        "family": "Original",
+        "overlap": 2,
+        "source": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "name": "Mangekyō Sasuke",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Versions.hs"
+      },
+      {
+        "name": "Tobi",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "name": "Curse Mark Sasuke",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Versions.hs"
+      },
+      {
+        "name": "Kakashi Hatake",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Teachers.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "upstreamCharacter": "Danzō Shimura",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "darui-(s)",
+    "characterName": "Darui",
+    "upstreamCharacter": "Darui",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "deidara-(r)",
+    "characterName": "Deidara",
+    "upstreamCharacter": "Deidara",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "deidara-(s)",
+    "characterName": "Deidara",
+    "upstreamCharacter": "Deidara",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "demon-brothers",
+    "characterName": "Demon Brothers",
+    "upstreamCharacter": "Demon Brothers",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "upstreamCharacter": "Deva Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "dodai-(s)",
+    "characterName": "Dodai",
+    "upstreamCharacter": "Dodai",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "dosu-kinuta",
+    "characterName": "Dosu Kinuta",
+    "upstreamCharacter": "Dosu Kinuta",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "drunken-lee",
+    "characterName": "Drunken Lee",
+    "upstreamCharacter": "Drunken Lee",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "eight-gates-guy-(s)",
+    "characterName": "Eight-Gates Guy",
+    "upstreamCharacter": "Eight-Gates Guy",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "eight-tailed-b-(s)",
+    "characterName": "Eight-Tailed B",
+    "upstreamCharacter": "Eight-Tailed B",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 1,
+    "margin": 0,
+    "candidates": [
+      {
+        "name": "Eight-Tailed B",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      },
+      {
+        "name": "Nine-Tailed Naruto",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "fu-yamanaka-(s)",
+    "characterName": "Fū Yamanaka",
+    "upstreamCharacter": "Fū Yamanaka",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "fuguki-suikazan-(r)",
+    "characterName": "Fuguki Suikazan",
+    "upstreamCharacter": "Fuguki Suikazan",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "fukai-(r)",
+    "characterName": "Fukai",
+    "upstreamCharacter": "Fukai",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "fukasaku-and-shima-(s)",
+    "characterName": "Fukasaku and Shima",
+    "upstreamCharacter": "Fukasaku and Shima",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "upstreamCharacter": "Gaara of the Funk",
+    "upstreamFamily": "Other",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "gari-(r)",
+    "characterName": "Gari",
+    "upstreamCharacter": "Gari",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "gengetsu-hozuki-(r)",
+    "characterName": "Gengetsu Hōzuki",
+    "upstreamCharacter": "Gengetsu Hōzuki",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ginkaku-(r)",
+    "characterName": "Ginkaku",
+    "upstreamCharacter": "Ginkaku",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "haku",
+    "characterName": "Haku",
+    "upstreamCharacter": "Haku",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "haku-(r)",
+    "characterName": "Haku",
+    "upstreamCharacter": "Haku",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hanabi-hyuga",
+    "characterName": "Hanabi Hyūga",
+    "upstreamCharacter": "Hanabi Hyūga",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hanzo-(r)",
+    "characterName": "Hanzō",
+    "upstreamCharacter": "Hanzō",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hashirama-senju",
+    "characterName": "Hashirama Senju",
+    "upstreamCharacter": "Hashirama Senju",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hashirama-senju-(r)",
+    "characterName": "Hashirama Senju",
+    "upstreamCharacter": "Hashirama Senju",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hayate-gekko",
+    "characterName": "Hayate Gekkō",
+    "upstreamCharacter": "Hayate Gekkō",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiashi-hyuga",
+    "characterName": "Hiashi Hyūga",
+    "upstreamCharacter": "Hiashi Hyūga",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hidan-(s)",
+    "characterName": "Hidan",
+    "upstreamCharacter": "Hidan",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hinata-hyuga-(s)",
+    "characterName": "Hinata Hyūga",
+    "upstreamCharacter": "Hinata Hyūga",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruzen-sarutobi",
+    "characterName": "Hiruzen Sarutobi",
+    "upstreamCharacter": "Hiruzen Sarutobi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "human-path-pain-(s)",
+    "characterName": "Human Path Pain",
+    "upstreamCharacter": "Human Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "upstreamCharacter": "Ibiki Morino",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ino-yamanaka",
+    "characterName": "Ino Yamanaka",
+    "upstreamCharacter": "Ino Yamanaka",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "ino-yamanaka-(s)",
+    "characterName": "Ino Yamanaka",
+    "upstreamCharacter": "Ino Yamanaka",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "inoichi-yamanaka",
+    "characterName": "Inoichi Yamanaka",
+    "upstreamCharacter": "Inoichi Yamanaka",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "iruka-umino",
+    "characterName": "Iruka Umino",
+    "upstreamCharacter": "Iruka Umino",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 2,
+    "margin": 1,
+    "candidates": [
+      {
+        "name": "Shisui Uchiha",
+        "family": "Shippuden",
+        "overlap": 2,
+        "source": "src/Game/Characters/Shippuden/Organizations.hs"
+      },
+      {
+        "name": "Fuguki Suikazan",
+        "family": "Reanimated",
+        "overlap": 1,
+        "source": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "name": "Hanzō",
+        "family": "Reanimated",
+        "overlap": 1,
+        "source": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "name": "Jinpachi Munashi",
+        "family": "Reanimated",
+        "overlap": 1,
+        "source": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "name": "Kimimaro",
+        "family": "Reanimated",
+        "overlap": 1,
+        "source": "src/Game/Characters/Reanimated/Organizations.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "ittan-(s)",
+    "characterName": "Ittan",
+    "upstreamCharacter": "Ittan",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "izumo-and-kotetsu",
+    "characterName": "Izumo and Kotetsu",
+    "upstreamCharacter": "Izumo and Kotetsu",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jinin-akebino-(r)",
+    "characterName": "Jinin Akebino",
+    "upstreamCharacter": "Jinin Akebino",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jinpachi-munashi-(r)",
+    "characterName": "Jinpachi Munashi",
+    "upstreamCharacter": "Jinpachi Munashi",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jiraiya-(s)",
+    "characterName": "Jiraiya",
+    "upstreamCharacter": "Jiraiya",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "upstreamCharacter": "Jirōbō",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jirobo-(r)",
+    "characterName": "Jirōbō",
+    "upstreamCharacter": "Jirōbō",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jugo-(s)",
+    "characterName": "Jūgo",
+    "upstreamCharacter": "Jūgo",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kabuto-yakushi",
+    "characterName": "Kabuto Yakushi",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kabuto-yakushi-(s)",
+    "characterName": "Kabuto Yakushi",
+    "upstreamCharacter": "Kabuto Yakushi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-(s)",
+    "characterName": "Kakashi Hatake",
+    "upstreamCharacter": "Kakashi Hatake",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakuzu-(s)",
+    "characterName": "Kakuzu",
+    "upstreamCharacter": "Kakuzu",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kankuro",
+    "characterName": "Kankurō",
+    "upstreamCharacter": "Kankurō",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kankuro-(s)",
+    "characterName": "Kankurō",
+    "upstreamCharacter": "Kankurō",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "karin-(s)",
+    "characterName": "Karin",
+    "upstreamCharacter": "Karin",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kazekage-gaara-(s)",
+    "characterName": "Kazekage Gaara",
+    "upstreamCharacter": "Kazekage Gaara",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kiba-inuzuka",
+    "characterName": "Kiba Inuzuka",
+    "upstreamCharacter": "Kiba Inuzuka",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kiba-inuzuka-(s)",
+    "characterName": "Kiba Inuzuka",
+    "upstreamCharacter": "Kiba Inuzuka",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kidomaru",
+    "characterName": "Kidōmaru",
+    "upstreamCharacter": "Kidōmaru",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "killer-b-(s)",
+    "characterName": "Killer B",
+    "upstreamCharacter": "Killer B",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kimimaro",
+    "characterName": "Kimimaro",
+    "upstreamCharacter": "Kimimaro",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kimimaro-(r)",
+    "characterName": "Kimimaro",
+    "upstreamCharacter": "Kimimaro",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kin-tsuchi",
+    "characterName": "Kin Tsuchi",
+    "upstreamCharacter": "Kin Tsuchi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kinkaku-(r)",
+    "characterName": "Kinkaku",
+    "upstreamCharacter": "Kinkaku",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kisame-hoshigaki",
+    "characterName": "Kisame Hoshigaki",
+    "upstreamCharacter": "Kisame Hoshigaki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "upstreamCharacter": "Kisame Hoshigaki",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kitsuchi-(s)",
+    "characterName": "Kitsuchi",
+    "upstreamCharacter": "Kitsuchi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konan-(s)",
+    "characterName": "Konan",
+    "upstreamCharacter": "Konan",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konan-of-the-rain-(s)",
+    "characterName": "Konan of the Rain",
+    "upstreamCharacter": "Konan of the Rain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sarutobi",
+    "characterName": "Konohamaru Sarutobi",
+    "upstreamCharacter": "Konohamaru Sarutobi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sarutobi-(s)",
+    "characterName": "Konohamaru Sarutobi",
+    "upstreamCharacter": "Konohamaru Sarutobi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kurenai-yuhi",
+    "characterName": "Kurenai Yuhi",
+    "upstreamCharacter": "Kurenai Yuhi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kurotsuchi-(s)",
+    "characterName": "Kurotsuchi",
+    "upstreamCharacter": "Kurotsuchi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kushimaru-kuriarare-(r)",
+    "characterName": "Kushimaru Kuriarare",
+    "upstreamCharacter": "Kushimaru Kuriarare",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kushina-uzumaki",
+    "characterName": "Kushina Uzumaki",
+    "upstreamCharacter": "Kushina Uzumaki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "madara-uchiha-(s)",
+    "characterName": "Madara Uchiha",
+    "upstreamCharacter": "Madara Uchiha",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "maki-(s)",
+    "characterName": "Maki",
+    "upstreamCharacter": "Maki",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mangekyo-sasuke-(s)",
+    "characterName": "Mangekyō Sasuke",
+    "upstreamCharacter": "Mangekyō Sasuke",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "upstreamCharacter": "Masked Man",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mei-terumi-(s)",
+    "characterName": "Mei Terumi",
+    "upstreamCharacter": "Mei Terumi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "might-guy",
+    "characterName": "Might Guy",
+    "upstreamCharacter": "Might Guy",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "might-guy-(s)",
+    "characterName": "Might Guy",
+    "upstreamCharacter": "Might Guy",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "minato-namikaze",
+    "characterName": "Minato Namikaze",
+    "upstreamCharacter": "Minato Namikaze",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "upstreamCharacter": "Minato Namikaze",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "misumi-tsurugi",
+    "characterName": "Misumi Tsurugi",
+    "upstreamCharacter": "Misumi Tsurugi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mizuki",
+    "characterName": "Mizuki",
+    "upstreamCharacter": "Mizuki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mu-(r)",
+    "characterName": "Mū",
+    "upstreamCharacter": "Mū",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "nagato-(r)",
+    "characterName": "Nagato",
+    "upstreamCharacter": "Nagato",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "nagato-(s)",
+    "characterName": "Nagato",
+    "upstreamCharacter": "Nagato",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naraka-path-pain-(s)",
+    "characterName": "Naraka Path Pain",
+    "upstreamCharacter": "Naraka Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-(s)",
+    "characterName": "Naruto Uzumaki",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "upstreamCharacter": "Neji Hyūga",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "nine-tailed-naruto-(s)",
+    "characterName": "Nine-Tailed Naruto",
+    "upstreamCharacter": "Nine-Tailed Naruto",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "obito-uchiha",
+    "characterName": "Obito Uchiha",
+    "upstreamCharacter": "Obito Uchiha",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "oboro",
+    "characterName": "Oboro",
+    "upstreamCharacter": "Oboro",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "omoi-(s)",
+    "characterName": "Omoi",
+    "upstreamCharacter": "Omoi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "one-tailed-naruto",
+    "characterName": "One-Tailed Naruto",
+    "upstreamCharacter": "One-Tailed Naruto",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "upstreamCharacter": "Ōnoki",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "orochimaru-(s)",
+    "characterName": "Orochimaru",
+    "upstreamCharacter": "Orochimaru",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "pakura-(r)",
+    "characterName": "Pakura",
+    "upstreamCharacter": "Pakura",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "preta-path-pain-(s)",
+    "characterName": "Preta Path Pain",
+    "upstreamCharacter": "Preta Path Pain",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "puppet-master-kankuro-(s)",
+    "characterName": "Puppet Master Kankurō",
+    "upstreamCharacter": "Puppet Master Kankurō",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "rasa-(r)",
+    "characterName": "Rasa",
+    "upstreamCharacter": "Rasa",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "upstreamCharacter": "Reanimator Kabuto",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "regimental-commander-gaara-(s)",
+    "characterName": "Regimental Commander Gaara",
+    "upstreamCharacter": "Regimental Commander Gaara",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "rehabilitated-gaara",
+    "characterName": "Rehabilitated Gaara",
+    "upstreamCharacter": "Rehabilitated Gaara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "rin-nohara",
+    "characterName": "Rin Nohara",
+    "upstreamCharacter": "Rin Nohara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "rock-lee-(s)",
+    "characterName": "Rock Lee",
+    "upstreamCharacter": "Rock Lee",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sage-mode-jiraiya-(s)",
+    "characterName": "Sage Mode Jiraiya",
+    "upstreamCharacter": "Sage Mode Jiraiya",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sage-mode-kabuto-(s)",
+    "characterName": "Sage Mode Kabuto",
+    "upstreamCharacter": "Sage Mode Kabuto",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sage-mode-naruto-(s)",
+    "characterName": "Sage Mode Naruto",
+    "upstreamCharacter": "Sage Mode Naruto",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sai-(s)",
+    "characterName": "Sai",
+    "upstreamCharacter": "Sai",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakon-and-ukon",
+    "characterName": "Sakon and Ukon",
+    "upstreamCharacter": "Sakon and Ukon",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakura-haruno-(s)",
+    "characterName": "Sakura Haruno",
+    "upstreamCharacter": "Sakura Haruno",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasori-(r)",
+    "characterName": "Sasori",
+    "upstreamCharacter": "Sasori",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasori-(s)",
+    "characterName": "Sasori",
+    "upstreamCharacter": "Sasori",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha-(s)",
+    "characterName": "Sasuke Uchiha",
+    "upstreamCharacter": "Sasuke Uchiha",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shigure",
+    "characterName": "Shigure",
+    "upstreamCharacter": "Shigure",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shikaku-nara",
+    "characterName": "Shikaku Nara",
+    "upstreamCharacter": "Shikaku Nara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shikamaru-nara-(s)",
+    "characterName": "Shikamaru Nara",
+    "upstreamCharacter": "Shikamaru Nara",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shino-aburame",
+    "characterName": "Shino Aburame",
+    "upstreamCharacter": "Shino Aburame",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shino-aburame-(s)",
+    "characterName": "Shino Aburame",
+    "upstreamCharacter": "Shino Aburame",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shisui-uchiha-(s)",
+    "characterName": "Shisui Uchiha",
+    "upstreamCharacter": "Shisui Uchiha",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shizune",
+    "characterName": "Shizune",
+    "upstreamCharacter": "Shizune",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "shukaku-gaara",
+    "characterName": "Shukaku Gaara",
+    "upstreamCharacter": "Shukaku Gaara",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "suigetsu-hozuki-(s)",
+    "characterName": "Suigetsu Hōzuki",
+    "upstreamCharacter": "Suigetsu Hōzuki",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tayuya",
+    "characterName": "Tayuya",
+    "upstreamCharacter": "Tayuya",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "temari",
+    "characterName": "Temari",
+    "upstreamCharacter": "Temari",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "temari-(s)",
+    "characterName": "Temari",
+    "upstreamCharacter": "Temari",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tenten",
+    "characterName": "Tenten",
+    "upstreamCharacter": "Tenten",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tenten-(s)",
+    "characterName": "Tenten",
+    "upstreamCharacter": "Tenten",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tobi-(s)",
+    "characterName": "Tobi",
+    "upstreamCharacter": "Tobi",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tobirama-senju-(r)",
+    "characterName": "Tobirama Senju",
+    "upstreamCharacter": "Tobirama Senju",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "toroi-(r)",
+    "characterName": "Toroi",
+    "upstreamCharacter": "Toroi",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "torune-aburame-(s)",
+    "characterName": "Torune Aburame",
+    "upstreamCharacter": "Torune Aburame",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "true-form-sasori-(s)",
+    "characterName": "True Form Sasori",
+    "upstreamCharacter": "True Form Sasori",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tsume-inuzuka",
+    "characterName": "Tsume Inuzuka",
+    "upstreamCharacter": "Tsume Inuzuka",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "tsunade-(s)",
+    "characterName": "Tsunade",
+    "upstreamCharacter": "Tsunade",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "utakata-(s)",
+    "characterName": "Utakata",
+    "upstreamCharacter": "Utakata",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "white-snake-orochimaru-(s)",
+    "characterName": "White Snake Orochimaru",
+    "upstreamCharacter": "White Snake Orochimaru",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "yamato-(s)",
+    "characterName": "Yamato",
+    "upstreamCharacter": "Yamato",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "yondaime-minato",
+    "characterName": "Yondaime Minato",
+    "upstreamCharacter": "Yondaime Minato",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "yoroi-akado",
+    "characterName": "Yoroi Akadō",
+    "upstreamCharacter": "Yoroi Akadō",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "young-kakashi",
+    "characterName": "Young Kakashi",
+    "upstreamCharacter": "Young Kakashi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "yugao-uzuki",
+    "characterName": "Yūgao Uzuki",
+    "upstreamCharacter": "Yūgao Uzuki",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "upstreamCharacter": "Yugito Nii",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zabuza-momochi",
+    "characterName": "Zabuza Momochi",
+    "upstreamCharacter": "Zabuza Momochi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zabuza-momochi-(r)",
+    "characterName": "Zabuza Momochi",
+    "upstreamCharacter": "Zabuza Momochi",
+    "upstreamFamily": "Reanimated",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "upstreamCharacter": "Zaku Abumi",
+    "upstreamFamily": "Original",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zetsu-(s)",
+    "characterName": "Zetsu",
+    "upstreamCharacter": "Zetsu",
+    "upstreamFamily": "Shippuden",
+    "matchSource": "EXACT_NAME_FAMILY",
+    "score": 100,
+    "margin": null,
+    "candidates": []
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 1,
+    "margin": 0,
+    "candidates": [
+      {
+        "name": "Kakashi Hatake",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "name": "Obito Uchiha",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Flashbacks.hs"
+      },
+      {
+        "name": "Sasuke Uchiha",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "name": "Young Kakashi",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Flashbacks.hs"
+      },
+      {
+        "name": "Tobi",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 2,
+    "margin": 1,
+    "candidates": [
+      {
+        "name": "Mangekyō Sasuke",
+        "family": "Shippuden",
+        "overlap": 2,
+        "source": "src/Game/Characters/Shippuden/Versions.hs"
+      },
+      {
+        "name": "Curse Mark Sasuke",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Versions.hs"
+      },
+      {
+        "name": "Sasuke Uchiha",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "name": "Itachi Uchiha",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "name": "Madara Uchiha",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 1,
+    "margin": 0,
+    "candidates": [
+      {
+        "name": "Naruto Uzumaki",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "name": "Yondaime Minato",
+        "family": "Original",
+        "overlap": 1,
+        "source": "src/Game/Characters/Original/Flashbacks.hs"
+      },
+      {
+        "name": "Konohamaru Sarutobi",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Kids.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "AMBIGUOUS_CHARACTER",
+    "score": 1,
+    "margin": 0,
+    "candidates": [
+      {
+        "name": "Eight-Tailed B",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      },
+      {
+        "name": "Killer B",
+        "family": "Shippuden",
+        "overlap": 1,
+        "source": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      },
+      {
+        "name": "Fukai",
+        "family": "Reanimated",
+        "overlap": 1,
+        "source": "src/Game/Characters/Reanimated/Adults.hs"
+      }
+    ]
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "matchSource": "UNRESOLVED_CHARACTER",
+    "score": 0,
+    "margin": 0,
+    "candidates": []
+  }
+]

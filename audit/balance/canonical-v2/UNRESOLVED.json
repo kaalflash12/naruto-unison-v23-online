@@ -1,0 +1,6555 @@
+[
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "slot": 1,
+    "techniqueId": "itachi-uchiha-(s)__base_1",
+    "techniqueName": "Susanoo Esquelético",
+    "originalName": "Susanoo",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Susanoo Esquelético afeta o usuário: concede 35 de proteção por 3 turnos; aplica counter por 2 turno(s); aumenta Ataque em 5 por 2 turnos. Custo: KEK + NIN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 35,
+        "duration": 3
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 3,
+          "amount": 35,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.3,
+          "status": "counter",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 0,
+      "power": 35,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Susanoo",
+      "Susanoo"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha-(s)",
+    "characterName": "Itachi Uchiha",
+    "slot": 2,
+    "techniqueId": "itachi-uchiha-(s)__base_2",
+    "techniqueName": "Susanoo Armadurado",
+    "originalName": "Susanoo",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Susanoo Armadurado afeta um inimigo: causa 35 de dano; reduz Defesa em 5 por 2 turnos; concede 10 de proteção por 2 turnos. Custo: KEK + NIN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 35,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 35,
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 5,
+          "target": "primary"
+        },
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 10,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 0,
+      "power": 35,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Susanoo",
+      "Susanoo"
+    ]
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "slot": 1,
+    "techniqueId": "SasoriSOld__base_1",
+    "techniqueName": "Puppet Techniques",
+    "originalName": "Puppet Techniques",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Puppet Techniques afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "slot": 2,
+    "techniqueId": "SasoriSOld__base_2",
+    "techniqueName": "Puppet Specialties",
+    "originalName": "Puppet Specialties",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Puppet Specialties afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "slot": 3,
+    "techniqueId": "SasoriSOld__base_3",
+    "techniqueName": "Puppet Mastery",
+    "originalName": "Puppet Mastery",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Puppet Mastery afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "SasoriSOld",
+    "characterName": "Sasori Antigo",
+    "slot": 4,
+    "techniqueId": "SasoriSOld__base_4",
+    "techniqueName": "Body Switch",
+    "originalName": "Body Switch",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Body Switch afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "slot": 1,
+    "techniqueId": "corrupted-obito__base_1",
+    "techniqueName": "Hide",
+    "originalName": "Hide",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Hide afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Oboro :: Hide",
+      "Konohamaru Sarutobi :: Hide?",
+      "Shino Aburame :: Hide",
+      "Shikamaru Nara :: Hide",
+      "Kakashi Hatake :: Hide",
+      "Chūkichi :: Hide",
+      "Zetsu :: Hide",
+      "Nine-Tailed Naruto :: Hide",
+      "Kiba Inuzuka :: Hide",
+      "Ino Yamanaka :: Hide"
+    ]
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "slot": 2,
+    "techniqueId": "corrupted-obito__base_2",
+    "techniqueName": "Murderous Resolve",
+    "originalName": "Murderous Resolve",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Murderous Resolve afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "slot": 3,
+    "techniqueId": "corrupted-obito__base_3",
+    "techniqueName": "Cutting Sprigs",
+    "originalName": "Cutting Sprigs",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Cutting Sprigs afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "corrupted-obito",
+    "characterName": "Corrupted Obito",
+    "slot": 4,
+    "techniqueId": "corrupted-obito__base_4",
+    "techniqueName": "Mangekyo Sharingan",
+    "originalName": "Mangekyo Sharingan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Mangekyo Sharingan afeta o usuário: aplica Evasão por 2 turno(s); marca o alvo por 3 turnos; aumenta Ataque em 9 por 2 turnos. Custo: KEK; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "status",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.35,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "mark",
+          "mark": "sharingan-read",
+          "turns": 3,
+          "target": "enemies"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 9,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 4,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Itachi Uchiha :: Mangekyō Sharingan",
+      "Itachi Uchiha :: Mangekyō Sharingan",
+      "Madara Uchiha :: Mangekyō Sharingan"
+    ]
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "slot": 1,
+    "techniqueId": "curse-mark-sasuke-(s)__base_1",
+    "techniqueName": "Snake Shedding",
+    "originalName": "Snake Shedding",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Snake Shedding afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "slot": 2,
+    "techniqueId": "curse-mark-sasuke-(s)__base_2",
+    "techniqueName": "Sharingan Genjutsu",
+    "originalName": "Sharingan Genjutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Sharingan Genjutsu afeta um inimigo: causa 24 de dano; marca o alvo por 2 turnos; aplica Vulnerabilidade por 2 turno(s). Custo: KEK + GEN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 24,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "read-field",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.15,
+          "status": "vulnerable",
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "GEN"
+      ],
+      "cooldown": 1,
+      "power": 24,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "slot": 3,
+    "techniqueId": "curse-mark-sasuke-(s)__base_3",
+    "techniqueName": "Sharingan",
+    "originalName": "Sharingan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Sharingan afeta o usuário: aplica Evasão por 2 turno(s); marca o alvo por 3 turnos; aumenta Ataque em 6 por 2 turnos. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "status",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.35,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "mark",
+          "mark": "sharingan-read",
+          "turns": 3,
+          "target": "enemies"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 26,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Young Kakashi :: Sharingan",
+      "Obito Uchiha :: Sharingan",
+      "Sasuke Uchiha :: Sharingan",
+      "Kakashi Hatake :: Sharingan",
+      "Tobi :: Sharingan"
+    ]
+  },
+  {
+    "characterId": "curse-mark-sasuke-(s)",
+    "characterName": "Curse Mark Sasuke (shippuden)",
+    "slot": 4,
+    "techniqueId": "curse-mark-sasuke-(s)__base_4",
+    "techniqueName": "Chidori",
+    "originalName": "Chidori",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chidori afeta um inimigo: causa 40 de dano; aplica Choque por 2 turno(s); reduz Defesa em 6 por 2 turnos. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 40,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 1,
+          "status": "shock",
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 6,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Sasuke Uchiha :: Chidori",
+      "Curse Mark Sasuke :: Chidori",
+      "Mangekyō Sasuke :: Chidori"
+    ]
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "slot": 1,
+    "techniqueId": "danzo-shimura-(s)__base_1",
+    "techniqueName": "Izanagi: Ativação",
+    "originalName": "Izanagi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Danzō Shimura",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Izanagi: Ativação afeta o usuário: concede 48 de proteção por 2 turnos; aumenta Ataque em 8 por 2 turnos; remove 1 efeito negativo. Custo: KEK + GEN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 48,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 48,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 8,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "GEN"
+      ],
+      "cooldown": 3,
+      "power": 48,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Izanagi",
+      "Izanagi"
+    ]
+  },
+  {
+    "characterId": "danzo-shimura-(s)",
+    "characterName": "Danzō Shimura",
+    "slot": 2,
+    "techniqueId": "danzo-shimura-(s)__base_2",
+    "techniqueName": "Izanagi: Contra-ataque",
+    "originalName": "Izanagi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Danzō Shimura",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Izanagi: Contra-ataque afeta um inimigo: causa 33 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: KEK + GEN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 33,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 33,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "GEN"
+      ],
+      "cooldown": 0,
+      "power": 33,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Izanagi",
+      "Izanagi"
+    ]
+  },
+  {
+    "characterId": "deva-path-pain-(s)",
+    "characterName": "Deva Path Pain",
+    "slot": 1,
+    "techniqueId": "deva-path-pain-(s)__base_1",
+    "techniqueName": "Shinra Tensei",
+    "originalName": "Almighty Push",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Deva Path Pain",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Shinra Tensei afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: GEN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Almighty Push",
+      "Almighty Push"
+    ]
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "slot": 1,
+    "techniqueId": "four-tailed-naruto-(s)__base_1",
+    "techniqueName": "Tailed Beast Bomb",
+    "originalName": "Tailed Beast Bomb",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Tailed Beast Bomb afeta um inimigo: causa 42 de dano; aplica Vulnerabilidade por 2 turno(s); aplica Queimadura por 2 turno(s) (5/turno). Custo: TAI; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 42,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 42,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.18,
+          "status": "vulnerable",
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 4,
+      "power": 42,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Eight-Tailed B :: Tailed Beast Bomb",
+      "Nine-Tailed Naruto :: Tailed Beast Bomb"
+    ]
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "slot": 2,
+    "techniqueId": "four-tailed-naruto-(s)__base_2",
+    "techniqueName": "Chakra Slam",
+    "originalName": "Chakra Slam",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chakra Slam afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "slot": 3,
+    "techniqueId": "four-tailed-naruto-(s)__base_3",
+    "techniqueName": "Kyuubi Skin Block",
+    "originalName": "Kyuubi Skin Block",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kyuubi Skin Block afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: TAI; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "four-tailed-naruto-(s)",
+    "characterName": "Four Tailed Naruto (shippuden)",
+    "slot": 4,
+    "techniqueId": "four-tailed-naruto-(s)__base_4",
+    "techniqueName": "Fourth Tail Manifestation",
+    "originalName": "Fourth Tail Manifestation",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Fourth Tail Manifestation afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "gaara-of-the-funk",
+    "characterName": "Gaara Of The Funk",
+    "slot": 2,
+    "techniqueId": "gaara-of-the-funk__base_2",
+    "techniqueName": "Couldve Hada V8",
+    "originalName": "Couldve Hada V8",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": "Gaara of the Funk",
+    "upstreamFamily": "Other",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Development.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Couldve Hada V8 afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "slot": 1,
+    "techniqueId": "hiruko-sasori-(s)__base_1",
+    "techniqueName": "Defensive Puppeteering",
+    "originalName": "Defensive Puppeteering",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Defensive Puppeteering afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "slot": 2,
+    "techniqueId": "hiruko-sasori-(s)__base_2",
+    "techniqueName": "Scorpion Tail Constriction",
+    "originalName": "Scorpion Tail Constriction",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Scorpion Tail Constriction afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "slot": 3,
+    "techniqueId": "hiruko-sasori-(s)__base_3",
+    "techniqueName": "Tail Block",
+    "originalName": "Tail Block",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Tail Block afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: TAI; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hiruko-sasori-(s)",
+    "characterName": "Hiruko Sasori (shippuden)",
+    "slot": 4,
+    "techniqueId": "hiruko-sasori-(s)__base_4",
+    "techniqueName": "Scorpion Tail Strike",
+    "originalName": "Scorpion Tail Strike",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Scorpion Tail Strike afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "slot": 1,
+    "techniqueId": "hoshigaki-kisame-body-double-(s)__base_1",
+    "techniqueName": "Triple Water Prison",
+    "originalName": "Triple Water Prison",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Triple Water Prison afeta um inimigo: causa 19 de dano; aplica Encharcado por 2 turno(s); reduz Ataque em 3 por 2 turnos. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 19,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 19,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "status": "soaked",
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 3,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 19,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "slot": 2,
+    "techniqueId": "hoshigaki-kisame-body-double-(s)__base_2",
+    "techniqueName": "5 Man Eating Sharks",
+    "originalName": "5 Man Eating Sharks",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "5 Man Eating Sharks afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "slot": 3,
+    "techniqueId": "hoshigaki-kisame-body-double-(s)__base_3",
+    "techniqueName": "Water Waterfall Wave",
+    "originalName": "Water Waterfall Wave",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Water Waterfall Wave afeta o usuário: concede 24 de proteção por 2 turnos; aumenta Ataque em 5 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 24,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 24,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "hoshigaki-kisame-body-double-(s)",
+    "characterName": "Hoshigaki Kisame Body Double (shippuden)",
+    "slot": 4,
+    "techniqueId": "hoshigaki-kisame-body-double-(s)__base_4",
+    "techniqueName": "Kisame Water Clone",
+    "originalName": "Kisame Water Clone",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kisame Water Clone afeta o usuário: concede 30 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 30,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 30,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 30,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "slot": 1,
+    "techniqueId": "itachi-uchiha__base_1",
+    "techniqueName": "Mangekyō Sharingan: Previsão",
+    "originalName": "Mangekyō Sharingan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Original",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Mangekyō Sharingan: Previsão afeta o usuário: aplica Evasão por 2 turno(s); marca o alvo por 3 turnos; aumenta Ataque em 4 por 2 turnos. Custo: KEK; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "status",
+        "power": 19,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.35,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "mark",
+          "mark": "sharingan-read",
+          "turns": 3,
+          "target": "enemies"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 4,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 0,
+      "power": 19,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Mangekyō Sharingan",
+      "Mangekyō Sharingan"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha",
+    "characterName": "Itachi Uchiha",
+    "slot": 2,
+    "techniqueId": "itachi-uchiha__base_2",
+    "techniqueName": "Mangekyō Sharingan: Pressão",
+    "originalName": "Mangekyō Sharingan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Itachi Uchiha",
+    "upstreamFamily": "Original",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Mangekyō Sharingan: Pressão afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; aplica Vulnerabilidade por 2 turno(s). Custo: KEK + GEN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "read-field",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.15,
+          "status": "vulnerable",
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "GEN"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Mangekyō Sharingan",
+      "Mangekyō Sharingan"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "slot": 1,
+    "techniqueId": "itachi-uchiha-(r)__base_1",
+    "techniqueName": "Phoenix Flower",
+    "originalName": "Phoenix Flower",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Phoenix Flower afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "slot": 2,
+    "techniqueId": "itachi-uchiha-(r)__base_2",
+    "techniqueName": "Izanami",
+    "originalName": "Izanami",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Izanami afeta um inimigo: causa 37 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: KEK + GEN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 37,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 37,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "GEN"
+      ],
+      "cooldown": 1,
+      "power": 37,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "slot": 3,
+    "techniqueId": "itachi-uchiha-(r)__base_3",
+    "techniqueName": "Susanoo",
+    "originalName": "Susanoo",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Susanoo afeta o usuário: concede 44 de proteção por 3 turnos; aplica counter por 2 turno(s); aumenta Ataque em 6 por 2 turnos. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 44,
+        "duration": 3
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 3,
+          "amount": 44,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.3,
+          "status": "counter",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 44,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Madara Uchiha :: Susanoo",
+      "Itachi Uchiha :: Susanoo",
+      "Itachi Uchiha :: Susanoo",
+      "Shisui Uchiha :: Susanoo",
+      "Mangekyō Sasuke :: Susanoo"
+    ]
+  },
+  {
+    "characterId": "itachi-uchiha-(r)",
+    "characterName": "Itachi Uchiha (reanimado)",
+    "slot": 4,
+    "techniqueId": "itachi-uchiha-(r)__base_4",
+    "techniqueName": "Bloqueio",
+    "originalName": "Block",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Bloqueio afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Misumi Tsurugi :: Block",
+      "Chōza Akimichi :: Block",
+      "Sasuke Uchiha :: Block",
+      "Hinata Hyūga :: Block",
+      "Chōji Akimichi :: Block",
+      "Chōji Akimichi :: Block",
+      "Ino Yamanaka :: Block",
+      "Rock Lee :: Block",
+      "Temari :: Block",
+      "Tsunade :: Block"
+    ]
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "slot": 2,
+    "techniqueId": "reanimator-kabuto-(s)__base_2",
+    "techniqueName": "Binding Talisman",
+    "originalName": "Binding Talisman",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Reanimator Kabuto",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Binding Talisman afeta um inimigo: causa 33 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: NIN + NIN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 33,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 33,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "NIN"
+      ],
+      "cooldown": 0,
+      "power": 33,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Binding Talisman",
+      "Binding Talisman"
+    ]
+  },
+  {
+    "characterId": "reanimator-kabuto-(s)",
+    "characterName": "Reanimator Kabuto",
+    "slot": 3,
+    "techniqueId": "reanimator-kabuto-(s)__base_3",
+    "techniqueName": "Summoning: Reanimation",
+    "originalName": "Binding Talisman",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_WITHIN_CHARACTER",
+    "upstreamCharacter": "Reanimator Kabuto",
+    "upstreamFamily": "Shippuden",
+    "upstreamTechnique": null,
+    "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Summoning: Reanimation afeta um inimigo: atinge 3 vezes, totalizando cerca de 19 de dano; aplica Vulnerabilidade por 2 turno(s); aplica Regeneração por 2 turno(s). Custo: sem chakra; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 19,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "multi-hit",
+          "hits": 3,
+          "amount": 19,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.12,
+          "status": "vulnerable",
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 3,
+          "status": "regen",
+          "target": "self"
+        }
+      ],
+      "chakraCost": [],
+      "cooldown": 3,
+      "power": 19,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Binding Talisman",
+      "Binding Talisman",
+      "Summoning: Reanimation"
+    ]
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "slot": 1,
+    "techniqueId": "uchiha-itachi-body-double-(s)__base_1",
+    "techniqueName": "Genjutsu Reversal",
+    "originalName": "Genjutsu Reversal",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Genjutsu Reversal afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "slot": 2,
+    "techniqueId": "uchiha-itachi-body-double-(s)__base_2",
+    "techniqueName": "Itachi Fireball Technique",
+    "originalName": "Itachi Fireball Technique",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Itachi Fireball Technique afeta um inimigo: causa 24 de dano; aplica Queimadura por 2 turno(s) (5/turno); causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 24,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "wind-cut"
+          },
+          "bonusMultiplier": 1.35
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 24,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "slot": 3,
+    "techniqueId": "uchiha-itachi-body-double-(s)__base_3",
+    "techniqueName": "Finger Genjutsu",
+    "originalName": "Finger Genjutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Finger Genjutsu afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "uchiha-itachi-body-double-(s)",
+    "characterName": "Uchiha Itachi Body Double (shippuden)",
+    "slot": 4,
+    "techniqueId": "uchiha-itachi-body-double-(s)__base_4",
+    "techniqueName": "Illusionary Crows",
+    "originalName": "Illusionary Crows",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Illusionary Crows afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "slot": 1,
+    "techniqueId": "zaji__base_1",
+    "techniqueName": "Kunai Block",
+    "originalName": "Kunai Block",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kunai Block afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "slot": 2,
+    "techniqueId": "zaji__base_2",
+    "techniqueName": "Exploding Chakra Kunai",
+    "originalName": "Exploding Chakra Kunai",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Exploding Chakra Kunai afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "slot": 3,
+    "techniqueId": "zaji__base_3",
+    "techniqueName": "Chakra Sense",
+    "originalName": "Chakra Sense",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chakra Sense afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "zaji",
+    "characterName": "Zaji",
+    "slot": 4,
+    "techniqueId": "zaji__base_4",
+    "techniqueName": "Momemtum Reversal",
+    "originalName": "Momemtum Reversal",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Momemtum Reversal afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: GEN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 40,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 40,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "GEN"
+      ],
+      "cooldown": 4,
+      "power": 40,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "slot": 1,
+    "techniqueId": "boruto-uzumaki-genin__base_1",
+    "techniqueName": "Boruto Sutoraiku",
+    "originalName": "Boruto Sutoraiku",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Boruto Sutoraiku afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "slot": 2,
+    "techniqueId": "boruto-uzumaki-genin__base_2",
+    "techniqueName": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kage Bunshin no Jutsu afeta o usuário: concede 23 de proteção por 2 turnos; aplica Evasão por 1 turno(s); aumenta Ataque em 5 por 2 turnos. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 23,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 23,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 1,
+          "value": 0.4,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 23,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "slot": 3,
+    "techniqueId": "boruto-uzumaki-genin__base_3",
+    "techniqueName": "Fūton: Reppūshō",
+    "originalName": "Fūton: Reppūshō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Fūton: Reppūshō afeta todos os inimigos: causa 26 de dano; aplica wind-cut por 2 turno(s); aplica Sangramento por 2 turno(s) (4/turno). Custo: NIN; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "status": "wind-cut",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 4,
+          "status": "bleed",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 4,
+      "power": 26,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "boruto-uzumaki-genin",
+    "characterName": "Boruto Uzumaki",
+    "slot": 4,
+    "techniqueId": "boruto-uzumaki-genin__base_4",
+    "techniqueName": "Kieru Rasengan",
+    "originalName": "Kieru Rasengan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kieru Rasengan afeta um inimigo: causa 43 de dano; reduz Defesa em 5 por 2 turnos; ganha finalização contra alvos com até 22% de PV. Custo: NIN + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 43,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 43,
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 5,
+          "target": "primary"
+        },
+        {
+          "op": "execute",
+          "amount": 15,
+          "target": "primary",
+          "threshold": 0.22
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 43,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "slot": 1,
+    "techniqueId": "sarada-uchiha-boruto__base_1",
+    "techniqueName": "Katon: Gōkakyū no Jutsu",
+    "originalName": "Katon: Gōkakyū no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Katon: Gōkakyū no Jutsu afeta um inimigo: causa 24 de dano; aplica Queimadura por 2 turno(s) (5/turno); causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 24,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "wind-cut"
+          },
+          "bonusMultiplier": 1.35
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 24,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "slot": 2,
+    "techniqueId": "sarada-uchiha-boruto__base_2",
+    "techniqueName": "Sharingan",
+    "originalName": "Sharingan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Sharingan afeta o usuário: aplica Evasão por 2 turno(s); marca o alvo por 3 turnos; aumenta Ataque em 6 por 2 turnos. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "status",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.35,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "mark",
+          "mark": "sharingan-read",
+          "turns": 3,
+          "target": "enemies"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 26,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Young Kakashi :: Sharingan",
+      "Obito Uchiha :: Sharingan",
+      "Sasuke Uchiha :: Sharingan",
+      "Kakashi Hatake :: Sharingan",
+      "Tobi :: Sharingan"
+    ]
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "slot": 3,
+    "techniqueId": "sarada-uchiha-boruto__base_3",
+    "techniqueName": "Ōkashō",
+    "originalName": "Ōkashō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Ōkashō afeta um inimigo: causa 37 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: TAI + NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 37,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 37,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI",
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 37,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sarada-uchiha-boruto",
+    "characterName": "Sarada Uchiha",
+    "slot": 4,
+    "techniqueId": "sarada-uchiha-boruto__base_4",
+    "techniqueName": "Shurikenjutsu: Uchiha",
+    "originalName": "Shurikenjutsu: Uchiha",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Shurikenjutsu: Uchiha afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "slot": 1,
+    "techniqueId": "mitsuki-boruto__base_1",
+    "techniqueName": "Senei Jashu",
+    "originalName": "Senei Jashu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Senei Jashu afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "slot": 2,
+    "techniqueId": "mitsuki-boruto__base_2",
+    "techniqueName": "Raiton: Hebi Mikazuchi",
+    "originalName": "Raiton: Hebi Mikazuchi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Raiton: Hebi Mikazuchi afeta um inimigo: causa 26 de dano; aplica Choque por 2 turno(s); aumenta recargas em 1. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 1,
+          "status": "shock",
+          "target": "primary"
+        },
+        {
+          "op": "cooldown",
+          "amount": 1,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "slot": 3,
+    "techniqueId": "mitsuki-boruto__base_3",
+    "techniqueName": "Fūton: Toppa",
+    "originalName": "Fūton: Toppa",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Fūton: Toppa afeta todos os inimigos: causa 27 de dano; aplica wind-cut por 2 turno(s); aplica Sangramento por 2 turno(s) (4/turno). Custo: NIN + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 27,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 27,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "status": "wind-cut",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 4,
+          "status": "bleed",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 27,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "mitsuki-boruto",
+    "characterName": "Mitsuki",
+    "slot": 4,
+    "techniqueId": "mitsuki-boruto__base_4",
+    "techniqueName": "Senjutsu",
+    "originalName": "Senjutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Senjutsu afeta o usuário: concede 46 de proteção por 2 turnos; aumenta Ataque em 8 por 2 turnos; remove 1 efeito negativo. Custo: KEK + Q; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 46,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 46,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 8,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 3,
+      "power": 46,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "slot": 1,
+    "techniqueId": "kawaki-boruto__base_1",
+    "techniqueName": "Kāma",
+    "originalName": "Kāma",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kāma afeta o usuário: concede 26 de proteção por 2 turnos; gera 1 chakra; aumenta Ataque em 7 por 2 turnos. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 26,
+          "target": "self"
+        },
+        {
+          "op": "chakra-gain",
+          "amount": 1,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 26,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "slot": 2,
+    "techniqueId": "kawaki-boruto__base_2",
+    "techniqueName": "Kāma: Hōsha",
+    "originalName": "Kāma: Hōsha",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kāma: Hōsha afeta um inimigo: causa 41 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida; causa 8 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 41,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "selfHas": "form:kama"
+          },
+          "bonusMultiplier": 1.3
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 41,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "slot": 3,
+    "techniqueId": "kawaki-boruto__base_3",
+    "techniqueName": "Kagaku Ningu: Henshitsu",
+    "originalName": "Kagaku Ningu: Henshitsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kagaku Ningu: Henshitsu afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kawaki-boruto",
+    "characterName": "Kawaki",
+    "slot": 4,
+    "techniqueId": "kawaki-boruto__base_4",
+    "techniqueName": "Kāma: Kyūshū",
+    "originalName": "Kāma: Kyūshū",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kāma: Kyūshū afeta o usuário: concede 41 de proteção por 2 turnos; gera 1 chakra; aumenta Ataque em 10 por 2 turnos. Custo: KEK + Q; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 41,
+          "target": "self"
+        },
+        {
+          "op": "chakra-gain",
+          "amount": 1,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 10,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 3,
+      "power": 41,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "slot": 1,
+    "techniqueId": "naruto-uzumaki-hokage__base_1",
+    "techniqueName": "Chō Ōdama Rasengan",
+    "originalName": "Chō Ōdama Rasengan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chō Ōdama Rasengan afeta um inimigo: causa 45 de dano; reduz Defesa em 6 por 2 turnos; ganha finalização contra alvos com até 22% de PV. Custo: NIN + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 45,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 45,
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 6,
+          "target": "primary"
+        },
+        {
+          "op": "execute",
+          "amount": 15,
+          "target": "primary",
+          "threshold": 0.22
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 45,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "slot": 2,
+    "techniqueId": "naruto-uzumaki-hokage__base_2",
+    "techniqueName": "Tajū Kage Bunshin no Jutsu",
+    "originalName": "Tajū Kage Bunshin no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Tajū Kage Bunshin no Jutsu afeta o usuário: concede 31 de proteção por 2 turnos; aplica Evasão por 1 turno(s); aumenta Ataque em 6 por 2 turnos. Custo: NIN + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 31,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 31,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 1,
+          "value": 0.4,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 31,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "slot": 3,
+    "techniqueId": "naruto-uzumaki-hokage__base_3",
+    "techniqueName": "Fūton: Rasenshuriken",
+    "originalName": "Fūton: Rasenshuriken",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Fūton: Rasenshuriken afeta todos os inimigos: causa 45 de dano; aplica wind-cut por 3 turno(s); aplica Sangramento por 3 turno(s) (7/turno); reduz Defesa em 9 por 2 turnos. Custo: NIN + NIN + Q; recarga: 6 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 45,
+        "duration": 3
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 45,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 3,
+          "status": "wind-cut",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 3,
+          "damage": 7,
+          "status": "bleed",
+          "target": "all-enemies"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 9,
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 6,
+      "power": 45,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "naruto-uzumaki-hokage",
+    "characterName": "Naruto Uzumaki — Hokage",
+    "slot": 4,
+    "techniqueId": "naruto-uzumaki-hokage__base_4",
+    "techniqueName": "Kurama Chakra Mōdo",
+    "originalName": "Kurama Chakra Mōdo",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kurama Chakra Mōdo afeta o usuário: concede 46 de proteção por 2 turnos; aumenta Ataque em 8 por 2 turnos; remove 1 efeito negativo. Custo: KEK + Q; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 46,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 46,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 8,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 3,
+      "power": 46,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "slot": 1,
+    "techniqueId": "sasuke-uchiha-adulto__base_1",
+    "techniqueName": "Chidori",
+    "originalName": "Chidori",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chidori afeta um inimigo: causa 28 de dano; aplica Choque por 2 turno(s); reduz Defesa em 4 por 2 turnos. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 28,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 28,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 1,
+          "status": "shock",
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 4,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 28,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Sasuke Uchiha :: Chidori",
+      "Curse Mark Sasuke :: Chidori",
+      "Mangekyō Sasuke :: Chidori"
+    ]
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "slot": 2,
+    "techniqueId": "sasuke-uchiha-adulto__base_2",
+    "techniqueName": "Amenotejikara",
+    "originalName": "Amenotejikara",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Amenotejikara afeta um inimigo: causa 39 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: KEK + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 39,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 39,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "slot": 3,
+    "techniqueId": "sasuke-uchiha-adulto__base_3",
+    "techniqueName": "Enton: Kagutsuchi",
+    "originalName": "Enton: Kagutsuchi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Enton: Kagutsuchi afeta um inimigo: causa 41 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 41,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 41,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sasuke-uchiha-adulto",
+    "characterName": "Sasuke Uchiha — Adulto",
+    "slot": 4,
+    "techniqueId": "sasuke-uchiha-adulto__base_4",
+    "techniqueName": "Susanoo",
+    "originalName": "Susanoo",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Susanoo afeta o usuário: concede 48 de proteção por 3 turnos; aplica counter por 2 turno(s); aumenta Ataque em 7 por 2 turnos. Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 48,
+        "duration": 3
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 3,
+          "amount": 48,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.3,
+          "status": "counter",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 48,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": [
+      "Madara Uchiha :: Susanoo",
+      "Itachi Uchiha :: Susanoo",
+      "Itachi Uchiha :: Susanoo",
+      "Shisui Uchiha :: Susanoo",
+      "Mangekyō Sasuke :: Susanoo"
+    ]
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "slot": 1,
+    "techniqueId": "sakura-haruno-adulta__base_1",
+    "techniqueName": "Ōkashō",
+    "originalName": "Ōkashō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Ōkashō afeta um inimigo: causa 37 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: TAI + NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 37,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 37,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI",
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 37,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "slot": 2,
+    "techniqueId": "sakura-haruno-adulta__base_2",
+    "techniqueName": "Shōsen Jutsu",
+    "originalName": "Shōsen Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Shōsen Jutsu afeta um aliado: concede 21 de proteção por 2 turnos; aumenta Ataque em 4 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 21,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 21,
+          "target": "primary"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 4,
+          "target": "primary"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 21,
+      "target": "ally"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "slot": 3,
+    "techniqueId": "sakura-haruno-adulta__base_3",
+    "techniqueName": "Byakugō no Jutsu",
+    "originalName": "Byakugō no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Byakugō no Jutsu afeta o usuário: recupera 50 PV; remove 1 efeito negativo; aplica Regeneração por 2 turno(s). Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "heal",
+        "power": 50,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "heal",
+          "amount": 50,
+          "target": "primary"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 6,
+          "status": "regen",
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 50,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "sakura-haruno-adulta",
+    "characterName": "Sakura Haruno — Adulta",
+    "slot": 4,
+    "techniqueId": "sakura-haruno-adulta__base_4",
+    "techniqueName": "Katsuyu: Mōryōjika",
+    "originalName": "Katsuyu: Mōryōjika",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Katsuyu: Mōryōjika afeta todos os aliados: concede 24 de proteção por 2 turnos; aumenta Ataque em 5 por 2 turnos; remove 1 efeito negativo. Custo: NIN + Q; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "shield",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 24,
+          "target": "all-allies"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "all-allies"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "all-allies"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 3,
+      "power": 24,
+      "target": "all-allies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "slot": 1,
+    "techniqueId": "kakashi-hatake-sexto__base_1",
+    "techniqueName": "Shiden",
+    "originalName": "Shiden",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Shiden afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "slot": 2,
+    "techniqueId": "kakashi-hatake-sexto__base_2",
+    "techniqueName": "Raiton: Raijū Tsuiga",
+    "originalName": "Raiton: Raijū Tsuiga",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Raiton: Raijū Tsuiga afeta um inimigo: causa 39 de dano; aplica Choque por 2 turno(s); aumenta recargas em 1. Custo: NIN + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 39,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 1,
+          "status": "shock",
+          "target": "primary"
+        },
+        {
+          "op": "cooldown",
+          "amount": 1,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 39,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "slot": 3,
+    "techniqueId": "kakashi-hatake-sexto__base_3",
+    "techniqueName": "Doton: Doryūheki",
+    "originalName": "Doton: Doryūheki",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Doton: Doryūheki afeta o usuário: concede 35 de proteção por 3 turnos; aumenta Defesa em 6 por 3 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 35,
+        "duration": 3
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 3,
+          "amount": 35,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "defense",
+          "turns": 3,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 35,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kakashi-hatake-sexto",
+    "characterName": "Kakashi Hatake — Sexto Hokage",
+    "slot": 4,
+    "techniqueId": "kakashi-hatake-sexto__base_4",
+    "techniqueName": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kage Bunshin no Jutsu afeta o usuário: concede 23 de proteção por 2 turnos; aplica Evasão por 1 turno(s); aumenta Ataque em 5 por 2 turnos. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 23,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 23,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 1,
+          "value": 0.4,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 23,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "slot": 1,
+    "techniqueId": "momoshiki-otsutsuki-boruto__base_1",
+    "techniqueName": "Takamimusubinokami",
+    "originalName": "Takamimusubinokami",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Takamimusubinokami afeta um inimigo: causa 41 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 41,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 41,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "slot": 2,
+    "techniqueId": "momoshiki-otsutsuki-boruto__base_2",
+    "techniqueName": "Inukaitakerunomikoto",
+    "originalName": "Inukaitakerunomikoto",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Inukaitakerunomikoto afeta todos os inimigos: causa 29 de dano; marca o alvo por 2 turnos; causa 10 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 29,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 29,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 29,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "slot": 3,
+    "techniqueId": "momoshiki-otsutsuki-boruto__base_3",
+    "techniqueName": "Rinnegan: Kyūshū",
+    "originalName": "Rinnegan: Kyūshū",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Rinnegan: Kyūshū afeta o usuário: aplica Evasão por 2 turno(s); aumenta Ataque em 13 por 2 turnos; marca o alvo por 2 turnos. Custo: KEK + KEK; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "status",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.25,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 13,
+          "target": "self"
+        },
+        {
+          "op": "mark",
+          "mark": "read-field",
+          "turns": 2,
+          "target": "enemies"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "KEK"
+      ],
+      "cooldown": 3,
+      "power": 39,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "momoshiki-otsutsuki-boruto",
+    "characterName": "Momoshiki Ōtsutsuki",
+    "slot": 4,
+    "techniqueId": "momoshiki-otsutsuki-boruto__base_4",
+    "techniqueName": "Chakra Edan",
+    "originalName": "Chakra Edan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chakra Edan afeta um inimigo: causa 35 de dano; marca o alvo por 2 turnos; causa 12 de dano com bônus quando a preparação é atendida. Custo: NIN + Q; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 35,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 35,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 12,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 1,
+      "power": 35,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "slot": 1,
+    "techniqueId": "isshiki-otsutsuki-boruto__base_1",
+    "techniqueName": "Sukunahikona",
+    "originalName": "Sukunahikona",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Sukunahikona afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "slot": 2,
+    "techniqueId": "isshiki-otsutsuki-boruto__base_2",
+    "techniqueName": "Daikokuten",
+    "originalName": "Daikokuten",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Daikokuten afeta todos os inimigos: causa 29 de dano; marca o alvo por 2 turnos; causa 10 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 29,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 29,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 10,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 29,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "slot": 3,
+    "techniqueId": "isshiki-otsutsuki-boruto__base_3",
+    "techniqueName": "Kokuyō no Bō",
+    "originalName": "Kokuyō no Bō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kokuyō no Bō afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "isshiki-otsutsuki-boruto",
+    "characterName": "Isshiki Ōtsutsuki",
+    "slot": 4,
+    "techniqueId": "isshiki-otsutsuki-boruto__base_4",
+    "techniqueName": "Jikūkan Idō",
+    "originalName": "Jikūkan Idō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Jikūkan Idō afeta o usuário: concede 46 de proteção por 2 turnos; aumenta Ataque em 8 por 2 turnos; remove 1 efeito negativo. Custo: KEK + Q; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 46,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 46,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 8,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 3,
+      "power": 46,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "slot": 1,
+    "techniqueId": "jigen-boruto__base_1",
+    "techniqueName": "Kāma",
+    "originalName": "Kāma",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kāma afeta o usuário: concede 26 de proteção por 2 turnos; gera 1 chakra; aumenta Ataque em 7 por 2 turnos. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 26,
+          "target": "self"
+        },
+        {
+          "op": "chakra-gain",
+          "amount": 1,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 7,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 26,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "slot": 2,
+    "techniqueId": "jigen-boruto__base_2",
+    "techniqueName": "Kokuyō no Bō",
+    "originalName": "Kokuyō no Bō",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kokuyō no Bō afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "slot": 3,
+    "techniqueId": "jigen-boruto__base_3",
+    "techniqueName": "Jikūkan Ninjutsu",
+    "originalName": "Jikūkan Ninjutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Jikūkan Ninjutsu afeta um inimigo: causa 39 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: KEK + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 39,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 39,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "jigen-boruto",
+    "characterName": "Jigen",
+    "slot": 4,
+    "techniqueId": "jigen-boruto__base_4",
+    "techniqueName": "Daikokuten",
+    "originalName": "Daikokuten",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Daikokuten afeta todos os inimigos: causa 32 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 32,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 32,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "slot": 1,
+    "techniqueId": "konohamaru-sensei-boruto__base_1",
+    "techniqueName": "Rasengan",
+    "originalName": "Rasengan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Rasengan afeta um inimigo: causa 39 de dano; reduz Defesa em 5 por 2 turnos; ganha finalização contra alvos com até 22% de PV. Custo: NIN + Q; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 39,
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 5,
+          "target": "primary"
+        },
+        {
+          "op": "execute",
+          "amount": 13,
+          "target": "primary",
+          "threshold": 0.22
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 1,
+      "power": 39,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Yondaime Minato :: Rasengan",
+      "Naruto Uzumaki :: Rasengan",
+      "Konohamaru Sarutobi :: Rasengan"
+    ]
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "slot": 2,
+    "techniqueId": "konohamaru-sensei-boruto__base_2",
+    "techniqueName": "Kage Bunshin no Jutsu",
+    "originalName": "Kage Bunshin no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Kage Bunshin no Jutsu afeta o usuário: concede 23 de proteção por 2 turnos; aplica Evasão por 1 turno(s); aumenta Ataque em 5 por 2 turnos. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 23,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 23,
+          "target": "self"
+        },
+        {
+          "op": "status",
+          "turns": 1,
+          "value": 0.4,
+          "status": "evasion",
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 5,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 23,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "slot": 3,
+    "techniqueId": "konohamaru-sensei-boruto__base_3",
+    "techniqueName": "Katon: Gōkakyū no Jutsu",
+    "originalName": "Katon: Gōkakyū no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Katon: Gōkakyū no Jutsu afeta todos os inimigos: causa 22 de dano; aplica Queimadura por 2 turno(s) (5/turno); causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "wind-cut"
+          },
+          "bonusMultiplier": 1.35
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 22,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "konohamaru-sensei-boruto",
+    "characterName": "Konohamaru Sarutobi — Sensei",
+    "slot": 4,
+    "techniqueId": "konohamaru-sensei-boruto__base_4",
+    "techniqueName": "Shuriken Kage Bunshin no Jutsu",
+    "originalName": "Shuriken Kage Bunshin no Jutsu",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Shuriken Kage Bunshin no Jutsu afeta todos os inimigos: atinge 3 vezes, totalizando cerca de 31 de dano; marca o alvo por 2 turnos; aplica Vulnerabilidade por 1 turno(s). Custo: NIN + TAI; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 31,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "multi-hit",
+          "hits": 3,
+          "amount": 31,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "clone-pressure",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 1,
+          "value": 0.1,
+          "status": "vulnerable",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "NIN",
+        "TAI"
+      ],
+      "cooldown": 2,
+      "power": 31,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "slot": 1,
+    "techniqueId": "bijuu-shukaku-event__base_1",
+    "techniqueName": "Fūton: Renkūdan",
+    "originalName": "Fūton: Renkūdan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Fūton: Renkūdan afeta um inimigo: causa 25 de dano; aplica wind-cut por 2 turno(s); aplica Sangramento por 2 turno(s) (4/turno). Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 25,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 25,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "status": "wind-cut",
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 4,
+          "status": "bleed",
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 25,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "slot": 2,
+    "techniqueId": "bijuu-shukaku-event__base_2",
+    "techniqueName": "Braço Monstruoso de Areia",
+    "originalName": "Braço Monstruoso de Areia",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Braço Monstruoso de Areia afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "slot": 3,
+    "techniqueId": "bijuu-shukaku-event__base_3",
+    "techniqueName": "Defesa de Shukaku",
+    "originalName": "Defesa de Shukaku",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Defesa de Shukaku afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-shukaku-event",
+    "characterName": "Shukaku",
+    "slot": 4,
+    "techniqueId": "bijuu-shukaku-event__base_4",
+    "techniqueName": "Liberação Total de Shukaku",
+    "originalName": "Liberação Total de Shukaku",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Liberação Total de Shukaku afeta todos os inimigos: causa 32 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 32,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 32,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "slot": 1,
+    "techniqueId": "bijuu-matatabi-event__base_1",
+    "techniqueName": "Garras da Matatabi",
+    "originalName": "Garras da Matatabi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Garras da Matatabi afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI; recarga: 0 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 22,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 22,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI"
+      ],
+      "cooldown": 0,
+      "power": 22,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "slot": 2,
+    "techniqueId": "bijuu-matatabi-event__base_2",
+    "techniqueName": "Rugido Flamejante",
+    "originalName": "Rugido Flamejante",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Rugido Flamejante afeta um inimigo: causa 24 de dano; aplica Queimadura por 2 turno(s) (5/turno); causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 24,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 24,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 8,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "wind-cut"
+          },
+          "bonusMultiplier": 1.35
+        }
+      ],
+      "chakraCost": [
+        "NIN"
+      ],
+      "cooldown": 1,
+      "power": 24,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "slot": 3,
+    "techniqueId": "bijuu-matatabi-event__base_3",
+    "techniqueName": "Manto de Duas Caudas",
+    "originalName": "Manto de Duas Caudas",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Manto de Duas Caudas afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-matatabi-event",
+    "characterName": "Matatabi",
+    "slot": 4,
+    "techniqueId": "bijuu-matatabi-event__base_4",
+    "techniqueName": "Investida da Matatabi",
+    "originalName": "Investida da Matatabi",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Investida da Matatabi afeta um inimigo: causa 39 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: TAI + Q; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 39,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 39,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI",
+        "Q"
+      ],
+      "cooldown": 2,
+      "power": 39,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "slot": 1,
+    "techniqueId": "bijuu-gyuki-event__base_1",
+    "techniqueName": "Bijūdama",
+    "originalName": "Bijūdama",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Bijūdama afeta todos os inimigos: causa 42 de dano; aplica Vulnerabilidade por 2 turno(s); aplica Queimadura por 2 turno(s) (5/turno). Custo: KEK + NIN; recarga: 5 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 42,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 42,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.18,
+          "status": "vulnerable",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 5,
+      "power": 42,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "slot": 2,
+    "techniqueId": "bijuu-gyuki-event__base_2",
+    "techniqueName": "Ossos de Chakra",
+    "originalName": "Ossos de Chakra",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Ossos de Chakra afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "slot": 3,
+    "techniqueId": "bijuu-gyuki-event__base_3",
+    "techniqueName": "Lariat",
+    "originalName": "Lariat",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "AMBIGUOUS_GLOBAL",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Lariat afeta um inimigo: causa 37 de dano; marca o alvo por 2 turnos; causa 13 de dano com bônus quando a preparação é atendida. Custo: TAI + KEK; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 37,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 37,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 13,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "TAI",
+        "KEK"
+      ],
+      "cooldown": 1,
+      "power": 37,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": [
+      "Fukai :: Lariat",
+      "Killer B :: Lariat",
+      "Eight-Tailed B :: Lariat"
+    ]
+  },
+  {
+    "characterId": "bijuu-gyuki-event",
+    "characterName": "Gyūki",
+    "slot": 4,
+    "techniqueId": "bijuu-gyuki-event__base_4",
+    "techniqueName": "Barreira de Chakra",
+    "originalName": "Barreira de Chakra",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Barreira de Chakra afeta o usuário: concede 44 de proteção por 2 turnos; aumenta Ataque em 8 por 2 turnos; remove 1 efeito negativo. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 44,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 44,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 8,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 44,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "slot": 1,
+    "techniqueId": "bijuu-kurama-event__base_1",
+    "techniqueName": "Bijūdama",
+    "originalName": "Bijūdama",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Bijūdama afeta todos os inimigos: causa 42 de dano; aplica Vulnerabilidade por 2 turno(s); aplica Queimadura por 2 turno(s) (5/turno). Custo: KEK + NIN; recarga: 5 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 42,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 42,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.18,
+          "status": "vulnerable",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 5,
+          "status": "burn",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 5,
+      "power": 42,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "slot": 2,
+    "techniqueId": "bijuu-kurama-event__base_2",
+    "techniqueName": "Bijūdama Massiva",
+    "originalName": "Bijūdama Massiva",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Bijūdama Massiva afeta todos os inimigos: causa 47 de dano; aplica Vulnerabilidade por 2 turno(s); aplica Queimadura por 2 turno(s) (6/turno). Custo: KEK + NIN + Q; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 47,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 47,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "value": 0.18,
+          "status": "vulnerable",
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 6,
+          "status": "burn",
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 4,
+      "power": 47,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "slot": 3,
+    "techniqueId": "bijuu-kurama-event__base_3",
+    "techniqueName": "Mão de Chakra",
+    "originalName": "Mão de Chakra",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Mão de Chakra afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: KEK; recarga: 1 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 26,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 26,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 9,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 1,
+      "power": 26,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "bijuu-kurama-event",
+    "characterName": "Kurama",
+    "slot": 4,
+    "techniqueId": "bijuu-kurama-event__base_4",
+    "techniqueName": "Chamas Furiosas",
+    "originalName": "Chamas Furiosas",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Chamas Furiosas afeta um inimigo: causa 41 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 41,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 41,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "slot": 1,
+    "techniqueId": "kaguya-otsutsuki-(s)__base_1",
+    "techniqueName": "Yomotsu Hirasaka",
+    "originalName": "Yomotsu Hirasaka",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Yomotsu Hirasaka afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "slot": 2,
+    "techniqueId": "kaguya-otsutsuki-(s)__base_2",
+    "techniqueName": "Tomogoroshi no Haikotsu",
+    "originalName": "All-Killing Ash Bones",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Tomogoroshi no Haikotsu afeta um inimigo: causa 41 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 41,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 41,
+          "target": "primary"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "primary"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "primary",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 41,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "slot": 3,
+    "techniqueId": "kaguya-otsutsuki-(s)__base_3",
+    "techniqueName": "Expansive Truth-Seeking Ball",
+    "originalName": "Expansive Truth-Seeking Ball",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Expansive Truth-Seeking Ball afeta todos os inimigos: causa 42 de dano; marca o alvo por 2 turnos; causa 14 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN + Q; recarga: 4 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 42,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 42,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 14,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN",
+        "Q"
+      ],
+      "cooldown": 4,
+      "power": 42,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "kaguya-otsutsuki-(s)",
+    "characterName": "Kaguya Ōtsutsuki",
+    "slot": 4,
+    "techniqueId": "kaguya-otsutsuki-(s)__base_4",
+    "techniqueName": "Dimensão de Gelo",
+    "originalName": "Ice Dimension",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Dimensão de Gelo afeta todos os inimigos: causa 32 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 32,
+          "target": "all-enemies"
+        },
+        {
+          "op": "mark",
+          "mark": "ninjutsu-setup",
+          "turns": 2,
+          "target": "all-enemies"
+        },
+        {
+          "op": "damage",
+          "amount": 11,
+          "target": "all-enemies",
+          "bonusIf": {
+            "targetHas": "ninjutsu-setup"
+          },
+          "bonusMultiplier": 1.25
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 32,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "slot": 1,
+    "techniqueId": "toneri-otsutsuki-the-last__base_1",
+    "techniqueName": "Tenseigan",
+    "originalName": "Tenseigan",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Tenseigan afeta o usuário: concede 32 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 32,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 32,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 2,
+      "power": 32,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "slot": 2,
+    "techniqueId": "toneri-otsutsuki-the-last__base_2",
+    "techniqueName": "Golden Wheel Reincarnation Explosion",
+    "originalName": "Golden Wheel Reincarnation Explosion",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Golden Wheel Reincarnation Explosion afeta todos os inimigos: causa 30 de dano; aplica Queimadura por 2 turno(s) (6/turno); reduz Defesa em 5 por 2 turnos. Custo: KEK + NIN; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": true,
+        "kind": "damage",
+        "power": 30,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 30,
+          "target": "all-enemies"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 6,
+          "status": "burn",
+          "target": "all-enemies"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 5,
+          "target": "all-enemies"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 3,
+      "power": 30,
+      "target": "all-enemies"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "slot": 3,
+    "techniqueId": "toneri-otsutsuki-the-last__base_3",
+    "techniqueName": "Silver Wheel Reincarnation Explosion",
+    "originalName": "Silver Wheel Reincarnation Explosion",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Silver Wheel Reincarnation Explosion afeta um inimigo: causa 38 de dano; aplica Queimadura por 2 turno(s) (8/turno); reduz Defesa em 6 por 2 turnos. Custo: KEK + NIN; recarga: 2 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "damage",
+        "power": 38,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "damage",
+          "amount": 38,
+          "target": "primary"
+        },
+        {
+          "op": "status",
+          "turns": 2,
+          "damage": 8,
+          "status": "burn",
+          "target": "primary"
+        },
+        {
+          "op": "debuff",
+          "stat": "defense",
+          "turns": 2,
+          "amount": 6,
+          "target": "primary"
+        }
+      ],
+      "chakraCost": [
+        "KEK",
+        "NIN"
+      ],
+      "cooldown": 2,
+      "power": 38,
+      "target": "enemy"
+    },
+    "upstream": null,
+    "candidates": []
+  },
+  {
+    "characterId": "toneri-otsutsuki-the-last",
+    "characterName": "Toneri Ōtsutsuki",
+    "slot": 4,
+    "techniqueId": "toneri-otsutsuki-the-last__base_4",
+    "techniqueName": "Manto de Chakra do Tenseigan",
+    "originalName": "Tenseigan Chakra Mode",
+    "resolution": "UPSTREAM_NAO_RESOLVIDO",
+    "matchSource": "UPSTREAM_SKILL_NOT_FOUND",
+    "upstreamCharacter": null,
+    "upstreamFamily": null,
+    "upstreamTechnique": null,
+    "upstreamSource": null,
+    "classifications": [],
+    "evidence": {},
+    "published": {
+      "description": "Manto de Chakra do Tenseigan afeta o usuário: concede 36 de proteção por 2 turnos; aumenta Ataque em 6 por 2 turnos; remove 1 efeito negativo. Custo: KEK; recarga: 3 turno(s).",
+      "effect": {
+        "aoe": false,
+        "kind": "shield",
+        "power": 36,
+        "duration": 2
+      },
+      "mechanics": [
+        {
+          "op": "shield",
+          "turns": 2,
+          "amount": 36,
+          "target": "self"
+        },
+        {
+          "op": "buff",
+          "stat": "attack",
+          "turns": 2,
+          "amount": 6,
+          "target": "self"
+        },
+        {
+          "op": "cleanse",
+          "count": 1,
+          "target": "self"
+        }
+      ],
+      "chakraCost": [
+        "KEK"
+      ],
+      "cooldown": 3,
+      "power": 36,
+      "target": "self"
+    },
+    "upstream": null,
+    "candidates": []
+  }
+]
