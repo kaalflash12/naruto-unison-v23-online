@@ -50,16 +50,34 @@ function runtimeState(){
     {id:'b',side:'B',hp:20,maxHp:100,chakra:rich,cooldowns:{probe:2}}
   ],{seed:20260826});
 }
+function satisfyCanonicalRequirement(state,skill,targetId){
+  const req=skill?.mechanic?.requirements;
+  if(!req)return{supported:false,reason:'NO_REQUIREMENT'};
+  if(req.type!=='statusPresent')return{supported:false,reason:`UNSUPPORTED_REQUIREMENT_FIXTURE:${req.type}`};
+  const owner=req.target==='target'?rules.getFighter(state,targetId):rules.getFighter(state,'a');
+  if(!owner)return{supported:false,reason:'REQUIREMENT_TARGET_MISSING'};
+  rules.applyEffect(state,rules.getFighter(state,'a'),owner,{type:'status',status:String(req.status),duration:4,durationUnit:'ownerPhases',positive:req.target!=='target'});
+  return{supported:true,status:String(req.status),target:owner.id};
+}
 function auditOne(t){
   const structural=adapter.auditTechnique(t),ops=arr(t.mechanics).map(x=>String(x?.op||'')),skill=structural.ok?adapter.adaptTechnique(t):null;
   const unknownCosts=(skill?.cost||[]).filter(x=>!KNOWN_COSTS.has(String(x)));
   let runtime={ok:false,reason:'STRUCTURAL'};
   if(skill&&unknownCosts.length===0){
     try{
-      const s=runtimeState(),target=targetFor(skill),r=rules.resolveSkill(s,'a',skill,target,{payCost:false});
-      runtime={ok:Boolean(r?.ok),reason:r?.reason||null,resultEffects:arr(r?.results).length};
-    }catch(e){runtime={ok:false,reason:String(e?.message||e)}}
-  }else if(unknownCosts.length)runtime={ok:false,reason:'UNKNOWN_COST:'+unknownCosts.join(',')};
+      const s=runtimeState(),target=targetFor(skill),first=rules.resolveSkill(s,'a',skill,target,{payCost:false});
+      if(first?.ok){
+        runtime={ok:true,reason:null,resultEffects:arr(first?.results).length,requirementGateVerified:false};
+      }else if(first?.reason==='REQUIREMENT'&&skill.mechanic?.requirements){
+        const primed=satisfyCanonicalRequirement(s,skill,target);
+        if(!primed.supported){runtime={ok:false,reason:primed.reason,resultEffects:0,requirementGateVerified:false}}
+        else{
+          const second=rules.resolveSkill(s,'a',skill,target,{payCost:false});
+          runtime={ok:Boolean(second?.ok),reason:second?.reason||null,resultEffects:arr(second?.results).length,requirementGateVerified:Boolean(second?.ok),requiredStatus:primed.status,requirementTarget:primed.target};
+        }
+      }else runtime={ok:false,reason:first?.reason||'RUNTIME_FAIL',resultEffects:arr(first?.results).length,requirementGateVerified:false};
+    }catch(e){runtime={ok:false,reason:String(e?.message||e),requirementGateVerified:false}}
+  }else if(unknownCosts.length)runtime={ok:false,reason:'UNKNOWN_COST:'+unknownCosts.join(','),requirementGateVerified:false};
   return{
     id:String(t.id??''),name:String(t.name??t.id??''),characterId:t.characterId??null,
     ops,targets:arr(t.mechanics).map(x=>x?.target??null),cost:skill?.cost||[],unknownCosts,
@@ -111,6 +129,7 @@ for(const t of items){
 }
 for(const r of rows){for(const e of r.effectTypes)inc(effectTypeCounts,e);for(const c of r.cost)inc(costCounts,c)}
 const unsupported=rows.filter(x=>!x.structuralOk||x.unsupported.length),runtimeFailures=rows.filter(x=>!x.runtime.ok),unknownCosts=rows.filter(x=>x.unknownCosts.length),noops=rows.filter(x=>x.effectTypes.includes('noop'));
+const requirementGates=rows.filter(x=>x.runtime.requirementGateVerified);
 const observedOps=Object.keys(opCounts).sort(),missingExpected=[...EXPECTED_OPS].filter(x=>!observedOps.includes(x)),unexpectedOps=observedOps.filter(x=>!EXPECTED_OPS.has(x));
 const canonicalLinks=canonicalRoster.reduce((n,c)=>n+c.skills.length,0);
 const summary={
@@ -120,7 +139,7 @@ const summary={
   characterLinkFailures:characterLinkFailures.length,
   adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,expectedOps:adapter.OPS,observedOps,
   opCounts,effectTypeCounts,targetCounts,costCounts,statusCounts,
-  unsupported:unsupported.length,runtimeFailures:runtimeFailures.length,unknownCosts:unknownCosts.length,noops:noops.length,
+  unsupported:unsupported.length,runtimeFailures:runtimeFailures.length,requirementGatesVerified:requirementGates.length,unknownCosts:unknownCosts.length,noops:noops.length,
   missingExpected,unexpectedOps,
   gate:unsupported.length===0&&runtimeFailures.length===0&&unknownCosts.length===0&&noops.length===0&&missingExpected.length===0&&unexpectedOps.length===0&&rosterOnlyCharacters.length===0&&characterLinkFailures.length===0&&canonicalRoster.length===209&&canonicalLinks===836?'PASS':'FAIL'
 };
@@ -133,6 +152,6 @@ if(unknownCosts.length)write('UNKNOWN-COSTS.json',unknownCosts);
 if(noops.length)write('NOOPS.json',noops);
 if(characterLinkFailures.length)write('CHARACTER-LINK-FAILURES.json',characterLinkFailures);
 if(rosterOnlyCharacters.length)write('ROSTER-ONLY-CHARACTERS.json',rosterOnlyCharacters);
-fs.writeFileSync(path.join(OUT,'REPORT.md'),`# Published Techniques — Combat Rules V2\n\n- Revision: **${summary.contentRevision}**\n- Published characters: **${summary.publishedCharacters}**\n- Playable characters: **${summary.playableCharacters}**\n- Canonical playable roster: **${summary.canonicalPlayableCharacters} × 4 = ${summary.canonicalLinks}**\n- Content-only characters: **${summary.contentOnlyCharacters}**\n- Techniques: **${summary.techniques}**\n- Operators: **${summary.observedOps.length}/${summary.expectedOps.length}**\n- Unsupported: **${summary.unsupported}**\n- Runtime failures: **${summary.runtimeFailures}**\n- Unknown costs: **${summary.unknownCosts}**\n- No-op effects: **${summary.noops}**\n- Gate: **${summary.gate}**\n\n## Content-only characters\n\n${contentOnlyCharacters.map(x=>`- ${x.id}: ${x.name}`).join('\n')}\n\n## Operator counts\n\n${Object.entries(opCounts).sort().map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n`);
+fs.writeFileSync(path.join(OUT,'REPORT.md'),`# Published Techniques — Combat Rules V2\n\n- Revision: **${summary.contentRevision}**\n- Published characters: **${summary.publishedCharacters}**\n- Playable characters: **${summary.playableCharacters}**\n- Canonical playable roster: **${summary.canonicalPlayableCharacters} × 4 = ${summary.canonicalLinks}**\n- Content-only characters: **${summary.contentOnlyCharacters}**\n- Techniques: **${summary.techniques}**\n- Operators: **${summary.observedOps.length}/${summary.expectedOps.length}**\n- Unsupported: **${summary.unsupported}**\n- Runtime failures: **${summary.runtimeFailures}**\n- Requirement gates verified: **${summary.requirementGatesVerified}**\n- Unknown costs: **${summary.unknownCosts}**\n- No-op effects: **${summary.noops}**\n- Gate: **${summary.gate}**\n\n## Content-only characters\n\n${contentOnlyCharacters.map(x=>`- ${x.id}: ${x.name}`).join('\n')}\n\n## Operator counts\n\n${Object.entries(opCounts).sort().map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n`);
 console.log(JSON.stringify(summary,null,2));
 if(summary.gate!=='PASS')process.exitCode=2;
