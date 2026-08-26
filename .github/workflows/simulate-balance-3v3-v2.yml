@@ -7,6 +7,7 @@ on:
       - 'combat-rules-v2.js'
       - 'roster.js'
       - 'jutsu-variants.js'
+      - 'tools/test-combat-rules-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
       - '.github/workflows/simulate-balance-3v3-v2.yml'
   workflow_dispatch:
@@ -32,7 +33,12 @@ jobs:
           set -euo pipefail
           node --check combat-rules-v2.js
           node --check roster.js
+          node --check tools/test-combat-rules-v2.mjs
           node --check tools/simulate-balance-3v3-v2.mjs
+      - name: Deterministic combat semantics
+        run: |
+          set -euo pipefail
+          node tools/test-combat-rules-v2.mjs
       - name: Smoke simulation
         env:
           SIM_MODE: smoke
@@ -63,6 +69,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Re-run deterministic semantics on standard runner
+        run: |
+          set -euo pipefail
+          node tools/test-combat-rules-v2.mjs
       - name: Standard exhaustive focal-pair simulation
         env:
           SIM_MODE: standard
