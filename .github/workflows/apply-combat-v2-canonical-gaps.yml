@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Repair patcher export mutation structurally
+      - name: Repair patcher for current V2 engine
         run: |
           set -euo pipefail
           python - <<'PY'
@@ -46,8 +46,13 @@ jobs:
           if s.count(old)!=1:
               raise SystemExit(f'expected exactly one stale export block, got {s.count(old)}')
           s=s.replace(old,new,1)
+          bad="assert.deepEqual(gate.cost,[]);"
+          good="assert.equal(gate.cost.length,0);"
+          if s.count(bad)!=1:
+              raise SystemExit(f'expected exactly one cross-realm assertion, got {s.count(bad)}')
+          s=s.replace(bad,good,1)
           p.write_text(s,encoding='utf-8')
-          print('PATCHER_STRUCTURAL_EXPORT_REPAIR=PASS')
+          print('PATCHER_CURRENT_V2_REPAIR=PASS')
           PY
           node --check tools/patch-combat-rules-v2-canonical-gaps.mjs
       - name: Apply canonical gap patch
