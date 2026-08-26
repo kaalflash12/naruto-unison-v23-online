@@ -314,10 +314,15 @@ for (let i = 0; i < roster.length; i++) {
     const a = roster[i], b = roster[j];
     for (const policy of POLICIES) {
       for (let r = 0; r < DUEL_SEEDS; r++) {
-        let result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:A`, policyA: 'balanced', policyB: policy, first: 'A', skillStats });
+        let result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:a-vs-policy:firstA`, policyA: 'balanced', policyB: policy, first: 'A', skillStats });
         addResult(duelAcc.get(idOf(a)), result, 'A', policy, true); addResult(duelAcc.get(idOf(b)), result, 'B', 'balanced', false); battles += 1;
-        result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:B`, policyA: 'balanced', policyB: policy, first: 'B', skillStats });
+        result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:a-vs-policy:firstB`, policyA: 'balanced', policyB: policy, first: 'B', skillStats });
         addResult(duelAcc.get(idOf(a)), result, 'A', policy, false); addResult(duelAcc.get(idOf(b)), result, 'B', 'balanced', true); battles += 1;
+
+        result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:policy-vs-b:firstA`, policyA: policy, policyB: 'balanced', first: 'A', skillStats });
+        addResult(duelAcc.get(idOf(a)), result, 'A', 'balanced', true); addResult(duelAcc.get(idOf(b)), result, 'B', policy, false); battles += 1;
+        result = simulate([a], [b], { seed: `duel:${i}:${j}:${policy}:${r}:policy-vs-b:firstB`, policyA: policy, policyB: 'balanced', first: 'B', skillStats });
+        addResult(duelAcc.get(idOf(a)), result, 'A', 'balanced', false); addResult(duelAcc.get(idOf(b)), result, 'B', policy, true); battles += 1;
       }
     }
   }
