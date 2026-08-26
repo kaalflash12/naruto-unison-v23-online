@@ -32,8 +32,6 @@ function assertNativeV2(summary,label){
   }
 }
 
-// Rebuild the only accepted 209-character source from the published content API.
-// The audit adapts each of the 836 linked techniques through combat-content-adapter-v2.
 await runNode(['tools/audit-published-techniques-v2.mjs']);
 if(!fs.existsSync(publishedSummaryPath)||!fs.existsSync(canonicalRosterPath)) throw new Error('roster canônico publicado V2 não foi gerado');
 const published=readJson(publishedSummaryPath);
@@ -50,7 +48,6 @@ fs.mkdirSync(shardRoot,{recursive:true});
 async function runShard(index){
   const tmp=fs.mkdtempSync(path.join(os.tmpdir(),`naruto-v2-shard-${index}-`));
   try{
-    // Never use the legacy public roster as the mechanical source for the canonical matrix.
     copyPath(canonicalRosterPath,path.join(tmp,'roster.js'));
     for(const rel of ['combat-rules-v2.js','jutsu-variants.js','tools','balance']){
       const src=path.join(root,rel);
@@ -64,11 +61,13 @@ async function runShard(index){
       if(!fs.existsSync(path.join(result,file))) throw new Error(`shard ${index}: ${file} ausente`);
     }
     const summary=readJson(path.join(result,'SUMMARY.json'));
+    const ratings=readJson(path.join(result,'CHARACTER-RATINGS.json'));
     const matchups=readJson(path.join(result,'MATCHUPS.json'));
     if(summary.totalRoster!==209||summary.eligibleRoster!==209||summary.roster!==209||summary.scope!=='all') throw new Error(`shard ${index}: cobertura inválida`);
     assertNativeV2(summary,`shard ${index}`);
     if(summary.shard?.count!==SHARD_COUNT||summary.shard?.index!==index||summary.shard?.globalPairs!==21736) throw new Error(`shard ${index}: metadados inválidos`);
     if(summary.expectedGamesPerPair!==8||summary.matchups!==matchups.length*8||matchups.some(x=>x.games!==8)) throw new Error(`shard ${index}: jogos/par inválidos`);
+    if(!summary.initiative||ratings.some(r=>!r.byPolicy||!r.byInitiative||!r.policyScores||!r.initiativeScores||!r.skillUsage)||matchups.some(m=>!m.byPolicy||!m.byFirst)) throw new Error(`shard ${index}: diagnósticos de política/iniciativa/uso ausentes`);
     const out=path.join(shardRoot,`shard-${index}`);
     fs.cpSync(result,out,{recursive:true});
     console.log(`CANONICAL_209_SHARD_${index}=PASS pairs=${matchups.length} games=${summary.matchups} native=${summary.v2NativeSkills} fallback=${summary.legacyFallbackSkills}`);
@@ -104,13 +103,23 @@ const battleCounts=ratings.map(x=>Number(x.matches||0));
 const minBattlesPerCharacter=Math.min(...battleCounts);
 const maxBattlesPerCharacter=Math.max(...battleCounts);
 if(minBattlesPerCharacter!==1664||maxBattlesPerCharacter!==1664) throw new Error(`batalhas/personagem inválidas min=${minBattlesPerCharacter} max=${maxBattlesPerCharacter}`);
+if(!merged.initiative||Number(merged.initiative.games)!==173888||!Array.isArray(merged.initiative.firstScore95)) throw new Error('métrica global de iniciativa inválida');
+if(ratings.some(r=>!r.policyScores?.balanced||!r.policyScores?.aggressive||!r.initiativeScores?.first||!r.initiativeScores?.second||!r.skillUsage)) throw new Error('diagnóstico individual política/iniciativa/uso inválido');
+if(matchups.some(m=>!m.byPolicy?.balanced||!m.byPolicy?.aggressive||!m.byFirst?.A||!m.byFirst?.B)) throw new Error('diagnóstico por matchup política/iniciativa inválido');
 
 await runNode(['tools/analyze-balance-v2.mjs'],{env:{SIM_DIR:'audit/balance/canonical-v2-full'}});
 const analysis=readJson(path.join(analysisDir,'SUMMARY.json'));
 const characters=readJson(path.join(analysisDir,'CHARACTER-ANALYSIS.json'));
 if(analysis.scope!=='all'||analysis.characters!==209||characters.length!==209) throw new Error('análise 209 inválida');
 if(analysis.pairs!==21736||analysis.games!==173888) throw new Error('matriz da análise inválida');
+for(const key of ['nearUnusedSkillCharacterCount','dominantSkillCharacterCount','aiPolicySensitiveCount','initiativeSensitiveCount','engineMechanicReviewCount'])if(!Number.isFinite(Number(analysis.health?.[key]))) throw new Error(`health.${key} ausente`);
+if(!analysis.initiative||!analysis.suspectedDomainCounts||characters.some(c=>!Array.isArray(c.suspectedDomains)||!c.suspectedDomains.length)) throw new Error('triagem IA/personagem/técnica/motor inválida');
 
+console.log('BALANCE_DIAGNOSTICS_V2=PASS',JSON.stringify({
+  initiative:analysis.health.initiative,nearUnused:analysis.health.nearUnusedSkillCharacterCount,dominant:analysis.health.dominantSkillCharacterCount,
+  aiPolicySensitive:analysis.health.aiPolicySensitiveCount,initiativeSensitive:analysis.health.initiativeSensitiveCount,
+  engineReview:analysis.health.engineMechanicReviewCount,suspectedDomains:analysis.suspectedDomainCounts
+}));
 console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',JSON.stringify({
   characters:ratings.length,pairs:matchups.length,battles:merged.matchups,gamesPerPair:merged.expectedGamesPerPair,
   minBattlesPerCharacter,maxBattlesPerCharacter,nativeSkills:merged.v2NativeSkills,legacyFallbackSkills:merged.legacyFallbackSkills,
