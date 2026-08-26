@@ -7,6 +7,8 @@ on:
       - 'combat-rules-v2.js'
       - 'combat-content-adapter-v2.js'
       - 'tools/test-content-mechanics-v2.cjs'
+      - 'tools/semantic-ai-v2.mjs'
+      - 'tools/test-semantic-ai-v2.mjs'
       - 'tools/audit-published-techniques-v2.mjs'
       - 'tools/audit-semantic-skill-values-v2.mjs'
       - 'tools/validate-published-roster-coverage-v2.mjs'
@@ -34,6 +36,8 @@ jobs:
           node --check combat-rules-v2.js
           node --check combat-content-adapter-v2.js
           node --check tools/test-content-mechanics-v2.cjs
+          node --check tools/semantic-ai-v2.mjs
+          node --check tools/test-semantic-ai-v2.mjs
           node --check tools/audit-published-techniques-v2.mjs
           node --check tools/audit-semantic-skill-values-v2.mjs
           node --check tools/validate-published-roster-coverage-v2.mjs
@@ -41,6 +45,8 @@ jobs:
           node --check tools/simulate-balance-3v3-v2.mjs
       - name: Canonical mechanics contract
         run: node tools/test-content-mechanics-v2.cjs
+      - name: Semantic AI decision contract
+        run: node tools/test-semantic-ai-v2.mjs
       - name: Audit all published techniques
         run: node tools/audit-published-techniques-v2.mjs
       - name: Semantic value audit
@@ -64,6 +70,9 @@ jobs:
           grep -Fq "multi-hit" combat-content-adapter-v2.js
           grep -Fq "bonusIf" combat-content-adapter-v2.js
           grep -Fq "execute" combat-content-adapter-v2.js
+          grep -Fq "semanticAI.skillScore" tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "semanticAI.chooseTarget" tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "mark→bonusIf" tools/test-semantic-ai-v2.mjs
           grep -Fq "PAGE_SIZE = 1000" supabase/functions/content/index.ts
           grep -Fq ".range(from, from + PAGE_SIZE - 1)" supabase/functions/content/index.ts
           test -s audit/balance/published-v2/SUMMARY.json
