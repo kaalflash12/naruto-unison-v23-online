@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "policy": "Nomes repetidos dentro do mesmo personagem upstream normalmente representam estados/alternates do mesmo slot. Quando o conteúdo local os materializa como técnicas distintas e não existe chave estável de correspondência, a auditoria deve registrar ambiguidade em vez de escolher a primeira ocorrência.",
+  "techniques": {
+    "itachi-uchiha-(s)::1": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"O upstream possui duas ocorrências de Susanoo no bloco de Itachi Uchiha Shippuden; a técnica local Susanoo Esquelético não possui chave upstream estável que identifique uma ocorrência sem inferência mecânica."},
+    "itachi-uchiha-(s)::2": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"O upstream possui duas ocorrências de Susanoo no bloco de Itachi Uchiha Shippuden; a técnica local Susanoo Armadurado não possui chave upstream estável que identifique uma ocorrência sem inferência mecânica."},
+    "danzo-shimura-(s)::1": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"O upstream possui duas ocorrências de Izanagi no mesmo personagem; Ativação local não pode ser ligada por posição sem uma chave canônica explícita."},
+    "danzo-shimura-(s)::2": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"O upstream possui duas ocorrências de Izanagi no mesmo personagem; Contra-ataque local não pode ser ligada por posição sem uma chave canônica explícita."},
+    "deva-path-pain-(s)::1": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"Almighty Push aparece mais de uma vez no bloco upstream de Deva Path Pain e a técnica local Shinra Tensei não possui identificador upstream estável para escolher uma ocorrência."},
+    "itachi-uchiha::1": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"Mangekyō Sharingan aparece em duas ocorrências no Itachi Original; a divisão local Previsão não tem chave upstream 1:1."},
+    "itachi-uchiha::2": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"Mangekyō Sharingan aparece em duas ocorrências no Itachi Original; a divisão local Pressão não tem chave upstream 1:1."},
+    "reanimator-kabuto-(s)::2": {"reason":"UPSTREAM_DUPLICATE_SAME_NAME_ALTERNATES_NO_SAFE_ONE_TO_ONE_KEY","detail":"Binding Talisman aparece duas vezes no bloco de Reanimator Kabuto; sem chave canônica adicional, não é seguro escolher uma ocorrência apenas pelo nome."}
+  }
+}
