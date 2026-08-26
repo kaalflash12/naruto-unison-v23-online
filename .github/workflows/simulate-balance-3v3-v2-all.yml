@@ -1,0 +1,58 @@
+name: Balance Simulation 3v3 — All 209 Characters
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'combat-rules-v2.js'
+      - 'roster.js'
+      - 'tools/simulate-balance-3v3-v2.mjs'
+      - '.github/workflows/simulate-balance-3v3-v2-all.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  all-roster:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run deterministic all-roster matrix
+        env:
+          SIM_MODE: standard
+          SIM_SCOPE: all
+          SIM_SEEDS: '2'
+          SIM_MAX_TURNS: '30'
+        run: |
+          set -euo pipefail
+          rm -rf audit/balance/simulation-v2
+          node --check combat-rules-v2.js
+          node --check tools/simulate-balance-3v3-v2.mjs
+          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/all-roster-v2.json
+          test -s audit/balance/simulation-v2/SUMMARY.json
+          test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
+          test -s audit/balance/simulation-v2/MATCHUPS.json
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
+          const r=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/CHARACTER-RATINGS.json','utf8'));
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.roster!==209) throw new Error(`coverage ${s.totalRoster}/${s.eligibleRoster}/${s.roster}`);
+          if(s.scope!=='all') throw new Error('scope='+s.scope);
+          if(!Array.isArray(s.excludedCharacters)||s.excludedCharacters.length!==0) throw new Error('all scope excluded characters');
+          if(r.length!==209) throw new Error('ratings='+r.length);
+          const expectedPairs=209*208/2;
+          if(s.pairs!==expectedPairs) throw new Error(`pairs=${s.pairs} expected=${expectedPairs}`);
+          if(s.matchups!==expectedPairs*8) throw new Error(`matchups=${s.matchups} expected=${expectedPairs*8}`);
+          console.log('ALL_209_BALANCE_COVERAGE=PASS',{characters:r.length,pairs:s.pairs,matchups:s.matchups,top:s.top?.name,bottom:s.bottom?.name});
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: balance-v2-all-209-${{ github.sha }}
+          path: audit/balance/simulation-v2
+          if-no-files-found: error
+          retention-days: 30
