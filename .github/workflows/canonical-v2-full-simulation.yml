@@ -1,4 +1,4 @@
-name: Canonical V2 Full Simulation
+name: Canonical V2 Full Simulation — All 209 Characters
 
 on:
   push:
@@ -7,9 +7,11 @@ on:
       - 'balance/canonical-v2-overrides.json'
       - 'combat-rules-v2.js'
       - 'roster.js'
+      - 'tools/semantic-ai-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
       - 'tools/run-balance-v2-with-overrides.mjs'
-      - 'tools/compare-balance-v2-runs.mjs'
+      - 'tools/merge-balance-v2-shards.mjs'
+      - 'tools/analyze-balance-v2.mjs'
       - '.github/workflows/canonical-v2-full-simulation.yml'
   workflow_dispatch:
 
@@ -17,87 +19,148 @@ permissions:
   contents: read
 
 jobs:
-  full-simulation:
+  shard:
+    name: Canonical shard ${{ matrix.shard }}/8
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     env:
-      SIM_SCOPE: competitive
+      SIM_MODE: standard
+      SIM_SCOPE: all
+      SIM_SEEDS: '2'
+      SIM_MAX_TURNS: '30'
+      SIM_SHARD_COUNT: '8'
+      SIM_SHARD_INDEX: ${{ matrix.shard }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Generate deterministic baseline
-        env:
-          SIM_MODE: standard
-          SIM_SEEDS: '2'
-          SIM_MAX_TURNS: '30'
+      - name: Validate sharded simulator sources
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check tools/semantic-ai-v2.mjs
+          node --check tools/simulate-balance-3v3-v2.mjs
+          node --check tools/run-balance-v2-with-overrides.mjs
+          node --check tools/merge-balance-v2-shards.mjs
+          node --check tools/analyze-balance-v2.mjs
+
+      - name: Run canonical override shard
         run: |
           set -euo pipefail
           rm -rf audit/balance/simulation-v2 audit/balance/simulation-v2-overrides
-          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/baseline-v2-summary.json
-          test -s audit/balance/simulation-v2/SUMMARY.json
-          test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
-          test -s audit/balance/simulation-v2/MATCHUPS.json
-
-      - name: Run same matrix with canonical overrides
-        env:
-          SIM_MODE: standard
-          SIM_SEEDS: '2'
-          SIM_MAX_TURNS: '30'
-        run: |
-          set -euo pipefail
-          node tools/run-balance-v2-with-overrides.mjs | tee /tmp/canonical-v2-full-state.json
+          node tools/run-balance-v2-with-overrides.mjs | tee /tmp/canonical-shard-state.json
           test -s audit/balance/simulation-v2-overrides/OVERRIDE-APPLICATION.json
           test -s audit/balance/simulation-v2-overrides/SUMMARY.json
           test -s audit/balance/simulation-v2-overrides/CHARACTER-RATINGS.json
           test -s audit/balance/simulation-v2-overrides/MATCHUPS.json
 
-      - name: Compare baseline and canonical mechanics
+      - name: Validate shard invariants
         run: |
-          set -euo pipefail
-          node --check tools/compare-balance-v2-runs.mjs
-          node tools/compare-balance-v2-runs.mjs | tee /tmp/canonical-v2-comparison.json
-          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json
-          test -s audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.md
           node - <<'JS'
           const fs=require('fs');
-          const c=JSON.parse(fs.readFileSync('audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json','utf8'));
-          if(c.overridesConfigured!==13) throw new Error('expected 13 overrides');
-          if(c.affectedCharacters!==7) throw new Error('expected 7 affected characters, got '+c.affectedCharacters);
-          for(const [k,v] of Object.entries(c.comparability)){
-            if(k.startsWith('same')&&v!==true) throw new Error('comparison mismatch '+k+'='+v);
-          }
-          for(const slug of ['naruto-uzumaki','sasuke-uchiha','hinata-hyuga','fukasaku-and-shima-(s)','white-snake-orochimaru-(s)','oboro','tsume-inuzuka']){
-            if(!c.affected.some(x=>x.slug===slug)) throw new Error('missing affected '+slug);
-          }
-          console.log('CANONICAL_V2_BASELINE_COMPARISON=PASS',c.global);
-          JS
-
-      - name: Validate full competitive coverage
-        run: |
-          node - <<'JS'
-          const fs=require('fs'),path=require('path');
           const d='audit/balance/simulation-v2-overrides';
-          const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
-          const summary=JSON.parse(fs.readFileSync(path.join(d,'SUMMARY.json'),'utf8'));
-          if(state.overridesConfigured!==13) throw new Error('expected 13 overrides');
-          if(summary.totalRoster!==209||summary.eligibleRoster!==209) throw new Error(`coverage total=${summary.totalRoster} eligible=${summary.eligibleRoster}`);
-          if(summary.scope!=='competitive'||summary.roster!==203) throw new Error(`scope=${summary.scope} roster=${summary.roster}`);
-          if(!Array.isArray(summary.excludedCharacters)||summary.excludedCharacters.length!==6) throw new Error('excluded='+JSON.stringify(summary.excludedCharacters));
-          const expectedPairs=summary.roster*(summary.roster-1)/2;
-          if(summary.pairs!==expectedPairs) throw new Error(`pairs=${summary.pairs} expected=${expectedPairs}`);
-          if(summary.matchups!==expectedPairs*8) throw new Error(`matchups=${summary.matchups} expected=${expectedPairs*8}`);
-          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,total:summary.totalRoster,competitive:summary.roster,excluded:summary.excludedCharacters,pairs:summary.pairs,matchups:summary.matchups});
+          const s=JSON.parse(fs.readFileSync(`${d}/SUMMARY.json`,'utf8'));
+          const r=JSON.parse(fs.readFileSync(`${d}/CHARACTER-RATINGS.json`,'utf8'));
+          const m=JSON.parse(fs.readFileSync(`${d}/MATCHUPS.json`,'utf8'));
+          const o=JSON.parse(fs.readFileSync(`${d}/OVERRIDE-APPLICATION.json`,'utf8'));
+          const shard=Number(process.env.SIM_SHARD_INDEX);
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.roster!==209) throw new Error(`coverage ${s.totalRoster}/${s.eligibleRoster}/${s.roster}`);
+          if(s.scope!=='all') throw new Error('scope='+s.scope);
+          if(s.shard?.count!==8||s.shard?.index!==shard||s.shard?.strategy!=='pair-index-modulo') throw new Error('shard metadata='+JSON.stringify(s.shard));
+          if(s.shard?.globalPairs!==21736) throw new Error('globalPairs='+s.shard?.globalPairs);
+          if(s.pairs!==m.length||s.shard?.localPairs!==m.length) throw new Error('local pairs mismatch');
+          if(s.expectedGamesPerPair!==8) throw new Error('gamesPerPair='+s.expectedGamesPerPair);
+          if(s.matchups!==m.length*8) throw new Error(`games=${s.matchups} expected=${m.length*8}`);
+          if(!m.length||!r.length) throw new Error('empty shard');
+          if(m.some(x=>x.games!==8)) throw new Error('pair with games != 8');
+          if(o.overridesConfigured!==13) throw new Error('overrides='+o.overridesConfigured);
+          console.log('CANONICAL_V2_SHARD=PASS',{shard,pairs:m.length,games:s.matchups,ratings:r.length,overrides:o.overridesConfigured});
           JS
 
       - uses: actions/upload-artifact@v4
         with:
-          name: canonical-v2-full-simulation-${{ github.sha }}
+          name: canonical-v2-full-shard-${{ matrix.shard }}-${{ github.sha }}
+          path: audit/balance/simulation-v2-overrides
+          if-no-files-found: error
+          retention-days: 30
+
+  merge:
+    name: Merge and validate 209 × 209 matrix
+    needs: shard
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: canonical-v2-full-shard-*-${{ github.sha }}
+          path: audit/balance/canonical-v2-shards
+
+      - name: Strict deterministic merge
+        env:
+          SHARD_ROOT: audit/balance/canonical-v2-shards
+          SIM_OUT_DIR: audit/balance/canonical-v2-full
+        run: |
+          set -euo pipefail
+          node --check tools/merge-balance-v2-shards.mjs
+          node tools/merge-balance-v2-shards.mjs | tee /tmp/canonical-v2-full-merged.json
+
+      - name: Gate complete canonical matrix
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const d='audit/balance/canonical-v2-full';
+          const s=JSON.parse(fs.readFileSync(`${d}/SUMMARY.json`,'utf8'));
+          const r=JSON.parse(fs.readFileSync(`${d}/CHARACTER-RATINGS.json`,'utf8'));
+          const m=JSON.parse(fs.readFileSync(`${d}/MATCHUPS.json`,'utf8'));
+          const o=JSON.parse(fs.readFileSync(`${d}/OVERRIDE-APPLICATION.json`,'utf8'));
+          if(s.engineVersion!==2||s.mode!=='standard'||s.scope!=='all') throw new Error('engine/mode/scope mismatch');
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.roster!==209||r.length!==209) throw new Error('209 coverage failed');
+          if(s.pairs!==21736||m.length!==21736) throw new Error(`pairs=${s.pairs}/${m.length}`);
+          if(s.matchups!==173888) throw new Error('games='+s.matchups);
+          if(s.expectedGamesPerPair!==8||m.some(x=>x.games!==8)) throw new Error('games per pair != 8');
+          const keys=new Set(m.map(x=>`${x.a}\0${x.b}`));
+          if(keys.size!==21736) throw new Error('duplicate matchup keys');
+          if(s.shard?.merged!==true||s.shard?.count!==8||s.shard?.globalPairs!==21736) throw new Error('merge metadata='+JSON.stringify(s.shard));
+          if(s.canonicalOverrides?.overridesConfigured!==13||o.overridesConfigured!==13) throw new Error('canonical override gate');
+          if(s.canonicalOverrides?.publicRosterMutated!==false||o.publicRosterMutated!==false) throw new Error('public roster mutation gate');
+          console.log('CANONICAL_V2_FULL_209_MATRIX=PASS',{characters:r.length,pairs:m.length,battles:s.matchups,gamesPerPair:s.expectedGamesPerPair,shards:s.shard.count,overrides:o.overridesConfigured});
+          JS
+
+      - name: Analyze merged 209-character matrix
+        env:
+          SIM_DIR: audit/balance/canonical-v2-full
+        run: |
+          set -euo pipefail
+          node tools/analyze-balance-v2.mjs | tee /tmp/canonical-v2-all-analysis.json
+          test -s audit/balance/analysis-v2/all/SUMMARY.json
+          test -s audit/balance/analysis-v2/all/CHARACTER-ANALYSIS.json
+          test -s audit/balance/analysis-v2/all/REPORT.md
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/all/SUMMARY.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/all/CHARACTER-ANALYSIS.json','utf8'));
+          if(s.scope!=='all'||s.characters!==209||c.length!==209) throw new Error('analysis coverage failed');
+          if(s.pairs!==21736||s.games!==173888) throw new Error(`analysis matrix=${s.pairs}/${s.games}`);
+          if((s.classificationCounts.event||0)+(s.classificationCounts['special-review']||0)!==6) throw new Error('expected 6 event/special characters');
+          console.log('CANONICAL_V2_FULL_209_ANALYSIS=PASS',{characters:c.length,pairs:s.pairs,games:s.games,classifications:s.classificationCounts,actions:s.actionCounts,health:s.health});
+          JS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-full-209-${{ github.sha }}
           path: |
-            audit/balance/simulation-v2/SUMMARY.json
-            audit/balance/simulation-v2/CHARACTER-RATINGS.json
-            audit/balance/simulation-v2-overrides
+            audit/balance/canonical-v2-full
+            audit/balance/analysis-v2/all
           if-no-files-found: error
           retention-days: 30
