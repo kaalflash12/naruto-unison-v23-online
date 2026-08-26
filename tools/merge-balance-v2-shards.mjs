@@ -1,3 +1,4 @@
+// Canonical 209 matrix workflow trigger; merge remains deterministic and strict.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -46,13 +47,14 @@ for(let i=0;i<shardCount;i++)if(Number(candidates[i]?.summary?.shard?.index)!==i
 
 const fields=['engine','engineVersion','mode','scope','seeds','policies','totalRoster','eligibleRoster','roster','excludedCharacters','expectedGamesPerPair','v2NativeSkills','legacyFallbackSkills','effectTypes'];
 for(const field of fields)assertSame(field,candidates.map(x=>x.summary[field]));
-const canonicalOverrideState=assertSame('override configuration',candidates.map(x=>({schemaVersion:x.overrides.schemaVersion,upstream:x.overrides.upstream,overridesConfigured:x.overrides.overridesConfigured,batches:x.overrides.batches,keys:x.overrides.keys,publicRosterMutated:x.overrides.publicRosterMutated,scope:x.overrides.scope,sourceRuntime:x.overrides.sourceRuntime})));
-if(Number(canonicalOverrideState.overridesConfigured)!==13)throw new Error(`overrides canônicos=${canonicalOverrideState.overridesConfigured} esperados=13`);
-if(canonicalOverrideState.publicRosterMutated!==false)throw new Error('publicRosterMutated precisa permanecer false');
-if(canonicalOverrideState.scope!=='analysis-only')throw new Error(`override scope inválido: ${canonicalOverrideState.scope}`);
+assertSame('override configuration',candidates.map(x=>({schemaVersion:x.overrides.schemaVersion,upstream:x.overrides.upstream,overridesConfigured:x.overrides.overridesConfigured,batches:x.overrides.batches,keys:x.overrides.keys,publicRosterMutated:x.overrides.publicRosterMutated,scope:x.overrides.scope,sourceRuntime:x.overrides.sourceRuntime})));
 
 const first=candidates[0].summary;
+const canonicalOverrides=candidates[0].overrides;
 if(first.mode!=='standard')throw new Error(`merge canônico exige mode=standard, recebido ${first.mode}`);
+if(Number(canonicalOverrides.overridesConfigured)!==13)throw new Error(`overridesConfigured=${canonicalOverrides.overridesConfigured} esperado=13`);
+if(canonicalOverrides.publicRosterMutated!==false)throw new Error('publicRosterMutated deve permanecer false');
+if(canonicalOverrides.scope!=='analysis-only')throw new Error(`override scope=${canonicalOverrides.scope} esperado=analysis-only`);
 const expectedPairs=Number(first.roster)*(Number(first.roster)-1)/2;
 const expectedGamesPerPair=Number(first.expectedGamesPerPair||0);
 if(expectedGamesPerPair<1)throw new Error('expectedGamesPerPair inválido');
@@ -108,14 +110,14 @@ const summary={
   matchups:totalGames,
   expectedGamesPerPair,
   shard:{merged:true,count:shardCount,strategy:'pair-index-modulo',globalPairs:expectedPairs,sourceShardIndices:candidates.map(x=>Number(x.summary.shard.index))},
-  canonicalOverrides:{overridesConfigured:Number(canonicalOverrideState.overridesConfigured),batches:canonicalOverrideState.batches,keys:canonicalOverrideState.keys,publicRosterMutated:canonicalOverrideState.publicRosterMutated,scope:canonicalOverrideState.scope},
+  canonicalOverrides:{overridesConfigured:Number(canonicalOverrides.overridesConfigured),batches:canonicalOverrides.batches,keys:canonicalOverrides.keys,publicRosterMutated:canonicalOverrides.publicRosterMutated,scope:canonicalOverrides.scope},
   avgBattleTurns:round(matchups.reduce((n,x)=>n+Number(x.turns||0),0)/Math.max(1,totalGames),2),
   v2NativeSkills:first.v2NativeSkills,
   legacyFallbackSkills:first.legacyFallbackSkills,
   effectTypes:first.effectTypes,
   top:ratings[0]||null,
   bottom:ratings.at(-1)||null,
-  methodology:[...(first.methodology||[]),'strict deterministic shard merge','unique pair coverage gate','exact games-per-pair gate','canonical override integrity gate']
+  methodology:[...(first.methodology||[]),'strict deterministic shard merge','unique pair coverage gate','exact games-per-pair gate']
 };
 
 fs.rmSync(outDir,{recursive:true,force:true});
@@ -123,7 +125,7 @@ fs.mkdirSync(outDir,{recursive:true});
 fs.writeFileSync(path.join(outDir,'SUMMARY.json'),JSON.stringify(summary,null,2)+'\n');
 fs.writeFileSync(path.join(outDir,'CHARACTER-RATINGS.json'),JSON.stringify(ratings,null,2)+'\n');
 fs.writeFileSync(path.join(outDir,'MATCHUPS.json'),JSON.stringify(matchups,null,2)+'\n');
-fs.writeFileSync(path.join(outDir,'OVERRIDE-APPLICATION.json'),JSON.stringify(candidates[0].overrides,null,2)+'\n');
+fs.writeFileSync(path.join(outDir,'OVERRIDE-APPLICATION.json'),JSON.stringify(canonicalOverrides,null,2)+'\n');
 let md=`# Naruto Unison — Matriz canônica V2 completa\n\n- Personagens: **${summary.roster}**\n- Pares únicos: **${summary.pairs.toLocaleString('pt-BR')}**\n- Batalhas: **${summary.matchups.toLocaleString('pt-BR')}**\n- Jogos por par: **${summary.expectedGamesPerPair}**\n- Shards: **${summary.shard.count}**\n- Overrides canônicos: **${summary.canonicalOverrides.overridesConfigured}**\n- Turnos médios: **${summary.avgBattleTurns}**\n\n> Merge validado: sem pares duplicados, sem lacunas e com contagem exata de jogos por par.\n\n| # | Personagem | Score | Win rate | IC95% | Partidas | Dano | Cura | Defesa | Controle | Chakra |\n|---:|---|---:|---:|---|---:|---:|---:|---:|---:|---:|\n`;
 ratings.forEach((x,i)=>md+=`| ${i+1} | ${x.name} | ${(x.score*100).toFixed(1)}% | ${(x.winRate*100).toFixed(1)}% | ${(x.winRate95[0]*100).toFixed(1)}–${(x.winRate95[1]*100).toFixed(1)}% | ${x.matches} | ${x.avgDamage} | ${x.avgHeal} | ${x.avgDefense} | ${x.avgControl} | ${x.avgChakraSpent} |\n`);
 fs.writeFileSync(path.join(outDir,'REPORT.md'),md);
