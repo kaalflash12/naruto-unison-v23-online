@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/patch-canonical-invuln-helper-v2.mjs'
       - 'tools/patch-canonical-defaults-v2.mjs'
+      - 'tools/audit-published-techniques-v2.mjs'
       - '.github/workflows/recalibrate-canonical-upstream-v2.yml'
   workflow_dispatch:
 
@@ -43,6 +44,7 @@ jobs:
           node --check tools/classify-canonical-upstream-v2.mjs
           node --check combat-content-adapter-v2.js
           node --check tools/test-content-mechanics-v2.cjs
+          node --check tools/audit-published-techniques-v2.mjs
           node tools/test-content-mechanics-v2.cjs
           grep -F "cost: [], cooldown: 4" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "durations: [1], targets: ['self']" tools/classify-canonical-upstream-v2.mjs >/dev/null
@@ -50,6 +52,7 @@ jobs:
           grep -F "SELFTEST_EXTRA_TARGET" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "bonusAmount" combat-content-adapter-v2.js >/dev/null
           grep -F "requirements:statusRequirement(technique.requires)" combat-content-adapter-v2.js >/dev/null
+          grep -F "requirementGateVerified" tools/audit-published-techniques-v2.mjs >/dev/null
           echo 'CANONICAL_ADAPTER_REQUIREMENT_FLAT_BONUS=PASS'
       - name: Verify current comparator and queue
         run: |
@@ -67,7 +70,8 @@ jobs:
           const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
           if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836) throw new Error(JSON.stringify(s));
           if(s.unsupported!==0||s.runtimeFailures!==0||s.unknownCosts!==0||s.noops!==0) throw new Error('published V2 source regression');
-          console.log('PUBLISHED_V2_AFTER_LIVE_CORRECTION=PASS');
+          if(Number(s.requirementGatesVerified||0)<1) throw new Error(`REQUIREMENT_GATES_NOT_PROVED:${s.requirementGatesVerified}`);
+          console.log('PUBLISHED_V2_AFTER_LIVE_CORRECTION=PASS',{requirementGatesVerified:s.requirementGatesVerified});
           JS
       - name: Rebuild canonical upstream evidence
         run: |
