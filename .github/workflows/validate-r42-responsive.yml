@@ -55,7 +55,7 @@ jobs:
       - name: Admin responsive shell
         shell: bash
         run: |
-          grep -q '@media(max-width:640px)' admin.html
+          grep -q '@media(max-width:720px)' admin.html
           grep -q 'id="metricOnline"' admin.html
           grep -q 'id="metricQueue"' admin.html
           grep -q 'id="metricRooms"' admin.html
