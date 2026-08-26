@@ -27,10 +27,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Repair patcher export signature for current V2 engine
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/patch-combat-rules-v2-canonical-gaps.mjs')
+          s=p.read_text(encoding='utf-8')
+          old_from='  VERSION,createFighter,createState,getFighter,normalizeSkill,legacyToV2,resolveTargets,canUseSkill,resolveSkill,applyEffect,applyDamage,runTriggers,endPhase,processDots,costWithStatuses,canPay,pay,evaluateRequirement,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor'
+          old_to='  VERSION,createFighter,createState,getFighter,normalizeSkill,legacyToV2,resolveTargets,canUseSkill,resolveSkill,applyEffect,applyDamage,runTriggers,endPhase,processDots,costWithStatuses,canPay,pay,evaluateRequirement,applySkillChanges,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor'
+          new_from='  VERSION,createFighter,createState,getFighter,normalizeSkill,legacyToV2,resolveTargets,canUseSkill,resolveSkill,applyEffect,applyDamage,runTriggers,endPhase,processDots,processRegens,costWithStatuses,canPay,pay,evaluateRequirement,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor,statusActive,statusAmount'
+          new_to='  VERSION,createFighter,createState,getFighter,normalizeSkill,legacyToV2,resolveTargets,canUseSkill,resolveSkill,applyEffect,applyDamage,runTriggers,endPhase,processDots,processRegens,costWithStatuses,canPay,pay,evaluateRequirement,applySkillChanges,reflectRatio,redirectTarget,tickChannels,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor,statusActive,statusAmount'
+          if old_from not in s or old_to not in s:
+              raise SystemExit('expected stale export patch literals not found')
+          s=s.replace(old_from,new_from,1).replace(old_to,new_to,1)
+          p.write_text(s,encoding='utf-8')
+          print('PATCHER_EXPORT_SIGNATURE_REPAIRED=PASS')
+          PY
+          node --check tools/patch-combat-rules-v2-canonical-gaps.mjs
       - name: Apply canonical gap patch
         run: |
           set -euo pipefail
-          node --check tools/patch-combat-rules-v2-canonical-gaps.mjs
           node tools/patch-combat-rules-v2-canonical-gaps.mjs
       - name: Syntax and deterministic semantics
         run: |
@@ -62,12 +79,12 @@ jobs:
           grep -q "tickChannels" combat-rules-v2.js
           grep -q "applySkillChanges" tools/test-combat-rules-v2.mjs
           echo COMBAT_V2_CANONICAL_GAPS=PASS
-      - name: Commit proven engine patch
+      - name: Commit proven engine patch and repaired patcher
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add combat-rules-v2.js tools/test-combat-rules-v2.mjs audit/balance/published-v2
+          git add tools/patch-combat-rules-v2-canonical-gaps.mjs combat-rules-v2.js tools/test-combat-rules-v2.mjs audit/balance/published-v2
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
             exit 0
