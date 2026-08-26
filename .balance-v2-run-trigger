@@ -1,7 +1,8 @@
-published-v2-canonical-209-trigger=2026-08-26T16:31:00Z
+published-v2-canonical-209-trigger=2026-08-26T16:34:00Z
 source=CANONICAL-ROSTER-209x4.js
 required-native-skills=836
 required-legacy-fallback=0
 required-pairs=21736
 required-battles=173888
 required-battles-per-character=1664
+dispatch=pr-merge
