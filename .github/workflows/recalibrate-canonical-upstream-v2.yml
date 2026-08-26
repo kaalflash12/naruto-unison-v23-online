@@ -1,10 +1,9 @@
-name: Recalibrate Canonical Upstream V2 Numeric Semantics
+name: Verify Canonical Upstream V2 After Content Publish
 
 on:
   push:
     branches: [main]
     paths:
-      - 'tools/patch-canonical-upstream-classifier-numeric-v2.mjs'
       - '.github/workflows/recalibrate-canonical-upstream-v2.yml'
   workflow_dispatch:
 
@@ -12,11 +11,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: recalibrate-canonical-upstream-v2-numeric
+  group: verify-canonical-upstream-v2-live-content
   cancel-in-progress: false
 
 jobs:
-  recalibrate-and-prove:
+  verify-live-content:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -32,92 +31,88 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply numeric semantic classifier patch
+      - name: Verify current comparator and queue
         run: |
           set -euo pipefail
-          node --check tools/patch-canonical-upstream-classifier-numeric-v2.mjs
-          node tools/patch-canonical-upstream-classifier-numeric-v2.mjs
           node --check tools/classify-canonical-upstream-v2.mjs
           node --check tools/finalize-canonical-upstream-v2.mjs
           node --check tools/build-canonical-v2-correction-queue.mjs
           node tools/classify-canonical-upstream-v2.mjs --self-test
           node tools/build-canonical-v2-correction-queue.mjs --self-test
-      - name: Re-prove published V2 source
+      - name: Re-prove published V2 source after live content publish
         run: |
           set -euo pipefail
-          node tools/audit-published-techniques-v2.mjs >/tmp/published-v2-numeric.json
+          node tools/audit-published-techniques-v2.mjs >/tmp/published-v2-live.json
           node - <<'JS'
           const fs=require('fs');
           const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
           if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836) throw new Error(JSON.stringify(s));
           if(s.unsupported!==0||s.runtimeFailures!==0||s.unknownCosts!==0||s.noops!==0) throw new Error('published V2 source regression');
-          console.log('PUBLISHED_V2_NUMERIC_SOURCE=PASS');
+          console.log('PUBLISHED_V2_AFTER_LIVE_CORRECTION=PASS');
           JS
-      - name: Rebuild raw upstream evidence with numeric effects
+      - name: Rebuild canonical upstream evidence
         run: |
           set +e
-          node tools/classify-canonical-upstream-v2.mjs --root . --upstream canonical-upstream --upstream-commit 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1 | tee /tmp/raw-numeric.json
+          node tools/classify-canonical-upstream-v2.mjs --root . --upstream canonical-upstream --upstream-commit 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1 | tee /tmp/raw-live.json
           echo ${PIPESTATUS[0]} >/tmp/raw-exit
           exit 0
-      - name: Rebuild final 836 accounting
+      - name: Rebuild final 836 accounting and guarded queue
         run: |
           set -euo pipefail
-          node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/final-numeric.json
-      - name: Rebuild guarded correction queue
-        run: |
-          set -euo pipefail
-          node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/queue-numeric.json
-      - name: Enforce numeric semantic accounting
+          node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/final-live.json
+          node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/queue-live.json
+      - name: Enforce Kamui Phase live correction and accounting
         run: |
           set -euo pipefail
           node - <<'JS'
           const fs=require('fs');
-          const raw=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/SUMMARY.json','utf8'));
+          const pub=JSON.parse(fs.readFileSync('audit/balance/published-v2/PUBLISHED-TECHNIQUES.json','utf8'));
           const fin=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
           const rows=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-CLASSIFICATION-836.json','utf8'));
           const queue=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
           const safe=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SAFE-STRUCTURAL.json','utf8'));
-          if(raw.classifiedTechniques!==836||raw.playableCharacters!==209) throw new Error(`raw coverage ${raw.classifiedTechniques}/${raw.playableCharacters}`);
           if(fin.totalTechniques!==836||fin.accounted!==836||fin.unaccounted!==0||fin.gate!=='PASS') throw new Error(`final accounting ${JSON.stringify(fin)}`);
           if((fin.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error(`MOTOR_INSUFICIENTE=${fin.classificationCounts?.MOTOR_INSUFICIENTE}`);
-          if(queue.totalTechniques!==836||queue.gate!=='PASS') throw new Error(`queue ${JSON.stringify(queue)}`);
-          const pre=rows.find(r=>r.techniqueId==='kabuto-yakushi__base_2');
-          if(!pre) throw new Error('PRE_HEALING_ROW_MISSING');
-          if(!pre.classifications.includes('EFEITO_ERRADO')) throw new Error(`PRE_HEALING_EFFECT_NOT_FLAGGED:${JSON.stringify(pre.classifications)}`);
-          if(!pre.evidence?.effectNumeric?.heal) throw new Error(`PRE_HEALING_NUMERIC_HEAL_NOT_PROVEN:${JSON.stringify(pre.evidence)}`);
-          if(safe.some(r=>r.techniqueId==='kabuto-yakushi__base_2')) throw new Error('PRE_HEALING_STILL_AUTO_SAFE');
-          for(const r of safe){
-            if(r.classifications.includes('EFEITO_ERRADO')||r.evidence?.effectNumeric) throw new Error(`UNSAFE_NUMERIC_ROW_IN_SAFE_QUEUE:${r.techniqueId}`);
-          }
-          console.log('CANONICAL_UPSTREAM_V2_NUMERIC_EFFECTS=PASS',{
-            comparable:fin.comparable,justified:fin.justified,
-            effectWrong:fin.classificationCounts?.EFEITO_ERRADO,
+          const kamuiPub=(Array.isArray(pub)?pub:pub.techniques||[]).find(r=>r.id==='masked-man__base_4'||r.entity_id==='masked-man__base_4');
+          if(!kamuiPub) throw new Error('KAMUI_PUBLISHED_MISSING');
+          const kamuiPayload=kamuiPub.published||kamuiPub;
+          if(Number(kamuiPayload.cooldown)!==0) throw new Error(`KAMUI_PUBLISHED_COOLDOWN=${kamuiPayload.cooldown}`);
+          const kamui=rows.find(r=>r.techniqueId==='masked-man__base_4');
+          if(!kamui) throw new Error('KAMUI_CLASSIFICATION_MISSING');
+          if(kamui.classifications.includes('COOLDOWN_ERRADO')) throw new Error(`KAMUI_COOLDOWN_STILL_WRONG:${JSON.stringify(kamui.classifications)}`);
+          if(!kamui.classifications.includes('CUSTO_ERRADO')) throw new Error('KAMUI_HELD_COST_DISAPPEARED_UNEXPECTEDLY');
+          if(safe.some(r=>r.techniqueId==='masked-man__base_4')) throw new Error('KAMUI_STILL_SAFE_AFTER_APPLY');
+          if(queue.safeStructural!==0||safe.length!==0) throw new Error(`SAFE_STRUCTURAL_REMAINS:${queue.safeStructural}/${safe.length}`);
+          console.log('KAMUI_PHASE_CANONICAL_SAFE_CORRECTION=PASS',{
+            cooldown:kamuiPayload.cooldown,
+            classifications:kamui.classifications,
             safeStructural:queue.safeStructural,
-            preHealing:pre.evidence.effectNumeric
+            accounted:fin.accounted
           });
           JS
-      - name: Upload recalibrated numeric evidence
+      - name: Upload live verification evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: canonical-upstream-v2-numeric-${{ github.sha }}
+          name: canonical-upstream-v2-live-${{ github.sha }}
           path: |
+            audit/balance/published-v2
             audit/balance/canonical-v2
             audit/balance/canonical-v2-corrections
           if-no-files-found: error
           retention-days: 30
-      - name: Commit proven numeric recalibration and audit
+      - name: Commit proven live-content audit
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/classify-canonical-upstream-v2.mjs tools/finalize-canonical-upstream-v2.mjs audit/balance/canonical-v2 audit/balance/canonical-v2-corrections audit/balance/published-v2
+          git add audit/balance/published-v2 audit/balance/canonical-v2 audit/balance/canonical-v2-corrections
           if git diff --cached --quiet; then exit 0; fi
           if ! git diff --quiet; then
             echo 'Unexpected unstaged tracked changes:'
             git status --short
             exit 1
           fi
-          git commit -m 'audit(balance): recalibrate canonical numeric effects [skip ci]'
+          git commit -m 'audit(balance): verify Kamui canonical cooldown correction [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
