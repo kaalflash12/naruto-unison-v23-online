@@ -39,4 +39,19 @@ once('selftest motor semantics',
   if (!futureGap.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_FUTURE_MOTOR');`);
 
 fs.writeFileSync(file,src);
+
+const finalFile='tools/finalize-canonical-upstream-v2.mjs';
+let fin=fs.readFileSync(finalFile,'utf8');
+const finalOnce=(label,from,to)=>{const n=fin.split(from).length-1;if(n!==1)throw new Error(`${label}: expected 1 match, got ${n}`);fin=fin.replace(from,to)};
+
+finalOnce('finalizer effect support',
+`function effectEquivalent(L0,U0){const ignore=new Set(['requirement','charges']),unsupported=new Set(['dynamic-change','channel','reflect','redirect','sacrifice','bomb','interrupt']);const L=new Set(L0),U=new Set(U0.filter(x=>!ignore.has(x)&&!unsupported.has(x)));`,
+`const ENGINE_SUPPORTED_CANONICAL_CATEGORIES=new Set(['damage','heal','defense','reduction','stun','disable','silence','expose','weaken','strengthen','exhaust','focus','cleanse','dispel','chakra','alternate','stack','trap-counter','leech','demolish','dot','execute','invulnerable','requirement','charges','dynamic-change','channel','reflect','redirect','sacrifice','bomb','interrupt']);
+function effectEquivalent(L0,U0){const ignore=new Set(['requirement','charges']);const L=new Set(L0),U=new Set(U0.filter(x=>!ignore.has(x)));`);
+
+finalOnce('finalizer motor support',
+`function classify(pub,up){const flags=[],evidence={};const insuff=up.categories.filter(x=>['reflect','redirect','sacrifice','bomb','dynamic-change','channel','interrupt'].includes(x));`,
+`function classify(pub,up){const flags=[],evidence={};const insuff=up.categories.filter(x=>!ENGINE_SUPPORTED_CANONICAL_CATEGORIES.has(x));`);
+
+fs.writeFileSync(finalFile,fin);
 console.log('CANONICAL_UPSTREAM_CLASSIFIER_ENGINE_RECALIBRATION=APPLIED');
