@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd(),B='audit/balance/simulation-v2',N='audit/balance/simulation-v2-overrides';
+const read=(d,n)=>JSON.parse(fs.readFileSync(path.join(root,d,n),'utf8'));
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'balance/canonical-v2-overrides.json'),'utf8'));
+const bs=read(B,'SUMMARY.json'),ns=read(N,'SUMMARY.json'),br=read(B,'CHARACTER-RATINGS.json'),nr=read(N,'CHARACTER-RATINGS.json');
+const bm=new Map(br.map(x=>[x.slug,x])),nm=new Map(nr.map(x=>[x.slug,x]));
+const slugs=[...new Set(Object.keys(cfg.overrides||{}).map(k=>k.slice(0,k.lastIndexOf(':'))))];
+const round=(x,n=4)=>Number(Number(x||0).toFixed(n));
+const affected=slugs.map(slug=>{const b=bm.get(slug),n=nm.get(slug);if(!b||!n)throw new Error('missing focused rating '+slug);return{slug,name:n.name,matches:b.matches,baseline:{score:b.score,winRate:b.winRate,ci95:b.winRate95,avgDamage:b.avgDamage,avgHeal:b.avgHeal,avgDefense:b.avgDefense,avgControl:b.avgControl,avgChakraSpent:b.avgChakraSpent,skillUseShare:b.skillUseShare},canonical:{score:n.score,winRate:n.winRate,ci95:n.winRate95,avgDamage:n.avgDamage,avgHeal:n.avgHeal,avgDefense:n.avgDefense,avgControl:n.avgControl,avgChakraSpent:n.avgChakraSpent,skillUseShare:n.skillUseShare},delta:{scorePp:round(100*(n.score-b.score),2),winRatePp:round(100*(n.winRate-b.winRate),2),damage:round(n.avgDamage-b.avgDamage,2),heal:round(n.avgHeal-b.avgHeal,2),defense:round(n.avgDefense-b.avgDefense,2),control:round(n.avgControl-b.avgControl,2),chakra:round(n.avgChakraSpent-b.avgChakraSpent,2)}}});
+const report={generatedAt:new Date().toISOString(),scope:'affected-characters-vs-entire-standard-roster',focusCharacters:slugs.length,overrides:Object.keys(cfg.overrides||{}).length,comparability:{sameEngine:bs.engine===ns.engine,sameVersion:bs.engineVersion===ns.engineVersion,sameSeeds:bs.seeds===ns.seeds,samePolicies:JSON.stringify(bs.policies)===JSON.stringify(ns.policies),samePairs:bs.pairs===ns.pairs,sameMatchups:bs.matchups===ns.matchups},baseline:{pairs:bs.pairs,matchups:bs.matchups},canonical:{pairs:ns.pairs,matchups:ns.matchups},affected};
+if(!Object.values(report.comparability).every(Boolean))throw new Error('focused runs are not comparable '+JSON.stringify(report.comparability));
+fs.writeFileSync(path.join(root,N,'FOCUSED-COMPARISON.json'),JSON.stringify(report,null,2)+'\n');
+let md='# Focused canonical v2 comparison\n\nEscopo: os personagens alterados contra todo o roster padrão; pares não afetados × não afetados foram omitidos por serem invariáveis entre as duas execuções.\n\n| Personagem | Jogos | Base score | Canônico score | Δ score p.p. | Base WR | Canônico WR | Δ WR p.p. | Δ dano | Δ cura | Δ defesa | Δ controle |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\n';
+for(const x of affected)md+=`| ${x.name.replace(/\|/g,'\\|')} | ${x.matches} | ${(100*x.baseline.score).toFixed(1)}% | ${(100*x.canonical.score).toFixed(1)}% | ${x.delta.scorePp} | ${(100*x.baseline.winRate).toFixed(1)}% | ${(100*x.canonical.winRate).toFixed(1)}% | ${x.delta.winRatePp} | ${x.delta.damage} | ${x.delta.heal} | ${x.delta.defense} | ${x.delta.control} |\n`;
+fs.writeFileSync(path.join(root,N,'FOCUSED-COMPARISON.md'),md);
+console.log(JSON.stringify(report,null,2));
