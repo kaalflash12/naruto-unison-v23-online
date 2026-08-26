@@ -1,0 +1,52 @@
+name: Apply Canonical Reduction Parser V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-canonical-reduction-parser-v2.mjs'
+      - '.github/workflows/apply-canonical-reduction-parser-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-prove-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Apply parser patch
+        run: |
+          set -euo pipefail
+          node --check tools/patch-canonical-reduction-parser-v2.mjs
+          node tools/patch-canonical-reduction-parser-v2.mjs
+          node --check tools/classify-canonical-upstream-v2.mjs
+      - name: Prove parser self-test
+        run: |
+          set -euo pipefail
+          node tools/classify-canonical-upstream-v2.mjs --self-test
+          grep -Fq 'SELFTEST_REDUCTION_PARSER' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq "damage\\b(?!\\s+reduction)" tools/classify-canonical-upstream-v2.mjs
+          grep -Fq "Reduce\\s+\\[[^\\]]*\\]\\s+Flat" tools/classify-canonical-upstream-v2.mjs
+          echo 'CANONICAL_REDUCTION_PARSER_V2=PASS'
+      - name: Commit proven parser
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- tools/classify-canonical-upstream-v2.mjs; then
+            echo 'PATCH_ALREADY_APPLIED=true'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/classify-canonical-upstream-v2.mjs
+          git commit -m 'fix(balance): parse canonical damage reduction structurally'
+          git pull --rebase origin main
+          git push origin HEAD:main
