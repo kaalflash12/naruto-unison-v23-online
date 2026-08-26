@@ -20,6 +20,8 @@ jobs:
   full-simulation:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      SIM_SCOPE: competitive
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -73,7 +75,7 @@ jobs:
           console.log('CANONICAL_V2_BASELINE_COMPARISON=PASS',c.global);
           JS
 
-      - name: Validate full coverage
+      - name: Validate full competitive coverage
         run: |
           node - <<'JS'
           const fs=require('fs'),path=require('path');
@@ -81,10 +83,13 @@ jobs:
           const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
           const summary=JSON.parse(fs.readFileSync(path.join(d,'SUMMARY.json'),'utf8'));
           if(state.overridesConfigured!==13) throw new Error('expected 13 overrides');
-          if(summary.roster!==209) throw new Error('roster='+summary.roster);
-          if(!(summary.pairs>20000)) throw new Error('pair matrix incomplete: '+summary.pairs);
-          if(!(summary.matchups>80000)) throw new Error('matchups incomplete: '+summary.matchups);
-          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,roster:summary.roster,pairs:summary.pairs,matchups:summary.matchups});
+          if(summary.totalRoster!==209||summary.eligibleRoster!==209) throw new Error(`coverage total=${summary.totalRoster} eligible=${summary.eligibleRoster}`);
+          if(summary.scope!=='competitive'||summary.roster!==203) throw new Error(`scope=${summary.scope} roster=${summary.roster}`);
+          if(!Array.isArray(summary.excludedCharacters)||summary.excludedCharacters.length!==6) throw new Error('excluded='+JSON.stringify(summary.excludedCharacters));
+          const expectedPairs=summary.roster*(summary.roster-1)/2;
+          if(summary.pairs!==expectedPairs) throw new Error(`pairs=${summary.pairs} expected=${expectedPairs}`);
+          if(summary.matchups!==expectedPairs*8) throw new Error(`matchups=${summary.matchups} expected=${expectedPairs*8}`);
+          console.log('CANONICAL_V2_FULL_SIMULATION=PASS',{overrides:state.overridesConfigured,total:summary.totalRoster,competitive:summary.roster,excluded:summary.excludedCharacters,pairs:summary.pairs,matchups:summary.matchups});
           JS
 
       - uses: actions/upload-artifact@v4
@@ -96,5 +101,3 @@ jobs:
             audit/balance/simulation-v2-overrides
           if-no-files-found: error
           retention-days: 30
-
-# rerun after combat-v2 triggerTarget/excludeClasses patch
