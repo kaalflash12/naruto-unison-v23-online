@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-08-26T06:24:30.538Z",
+  "rows": 836,
+  "linked": 726,
+  "unresolved": 110,
+  "severityCounts": {
+    "OK": 167,
+    "HIGH": 341,
+    "CRITICAL": 202,
+    "MEDIUM": 16,
+    "UNRESOLVED": 110
+  },
+  "flagCounts": {
+    "COMPOUND_MECHANIC": 91,
+    "ADVANCED_MECHANIC": 476,
+    "DYNAMIC_MECHANIC": 328,
+    "COST_MISMATCH": 173,
+    "TARGET_MISMATCH_CONFIRMED": 173,
+    "KIND_MISMATCH_CONFIRMED": 50,
+    "CHARACTER_NOT_FOUND": 108,
+    "JUTSU_NOT_FOUND": 2
+  },
+  "criticalCount": 202,
+  "highCount": 341,
+  "policy": "confirmed kind mismatch requires high-confidence description/helper evidence; target mismatch requires explicit To-target or invuln helper"
+}
