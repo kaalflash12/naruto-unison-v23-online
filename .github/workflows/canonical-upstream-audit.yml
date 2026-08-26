@@ -1,0 +1,80 @@
+name: Canonical Upstream Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'roster.js'
+      - 'jutsu-variants.js'
+      - 'tools/canonical-upstream-audit.mjs'
+      - '.github/workflows/canonical-upstream-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  canonical-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout game
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: game
+          fetch-depth: 0
+      - name: Checkout canonical Naruto Unison
+        uses: actions/checkout@v4
+        with:
+          repository: naruto-unison/naruto-unison
+          ref: 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
+          path: canonical
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compare all current characters and jutsu to upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check game/tools/canonical-upstream-audit.mjs
+          node game/tools/canonical-upstream-audit.mjs --root game --upstream canonical | tee /tmp/canonical-summary.json
+          test -s game/audit/balance/current/CANONICAL-UPSTREAM-SUMMARY.json
+          test -s game/audit/balance/current/CANONICAL-UPSTREAM-JUTSUS.json
+          test -s game/audit/balance/current/CANONICAL-UPSTREAM-CHARACTERS.json
+          test -s game/audit/balance/current/CANONICAL-UPSTREAM-REPORT.md
+      - name: Validate audit coverage
+        shell: bash
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('game/audit/balance/current/CANONICAL-UPSTREAM-SUMMARY.json','utf8'));
+          if(s.rosterCharacters!==209) throw new Error(`characters=${s.rosterCharacters}`);
+          if(s.rosterJutsus!==836) throw new Error(`jutsus=${s.rosterJutsus}`);
+          if(s.canonicalCharactersParsed<150) throw new Error(`canonical parsed=${s.canonicalCharactersParsed}`);
+          if(s.matchedCharacters<120) throw new Error(`character coverage too low=${s.matchedCharacters}`);
+          if(s.matchedJutsus<400) throw new Error(`jutsu coverage too low=${s.matchedJutsus}`);
+          console.log('CANONICAL_UPSTREAM_AUDIT=PASS',s);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-upstream-audit-${{ github.sha }}
+          path: |
+            game/audit/balance/current/CANONICAL-UPSTREAM-SUMMARY.json
+            game/audit/balance/current/CANONICAL-UPSTREAM-JUTSUS.json
+            game/audit/balance/current/CANONICAL-UPSTREAM-CHARACTERS.json
+            game/audit/balance/current/CANONICAL-UPSTREAM-REPORT.md
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated canonical audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd game
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/current/CANONICAL-UPSTREAM-SUMMARY.json audit/balance/current/CANONICAL-UPSTREAM-JUTSUS.json audit/balance/current/CANONICAL-UPSTREAM-CHARACTERS.json audit/balance/current/CANONICAL-UPSTREAM-REPORT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): refresh full canonical comparison [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
