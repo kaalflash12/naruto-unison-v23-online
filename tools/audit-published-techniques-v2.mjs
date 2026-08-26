@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const adapter=require('../combat-content-adapter-v2.js');
@@ -26,6 +27,13 @@ async function getJson(url){
     if(attempt<3)await sleep(attempt*750);
   }
   throw new Error(last);
+}
+function loadPlayableRoster(){
+  const context={window:{}};context.window.window=context.window;vm.createContext(context);
+  vm.runInContext(fs.readFileSync(path.join(process.cwd(),'roster.js'),'utf8'),context,{filename:'roster.js',timeout:30000});
+  const roster=context.window.NARUTO_ROSTER;
+  if(!Array.isArray(roster)||!roster.length)throw new Error('PLAYABLE_ROSTER_MISSING');
+  return roster;
 }
 function targetFor(skill){
   const t=String(skill?.mechanic?.target||'enemy');
@@ -61,9 +69,37 @@ function auditOne(t){
 }
 
 const manifest=await getJson(`${CONTENT_BASE}/manifest`);
-const payload=await getJson(`${CONTENT_BASE}?type=technique`);
-const items=arr(payload.items);
+const [techniquePayload,characterPayload]=await Promise.all([
+  getJson(`${CONTENT_BASE}?type=technique`),
+  getJson(`${CONTENT_BASE}?type=character`)
+]);
+const items=arr(techniquePayload.items),publishedCharacters=arr(characterPayload.items),playable=loadPlayableRoster();
 if(items.length<1200)throw new Error(`TECHNIQUE_COUNT_TOO_LOW:${items.length}`);
+if(playable.length!==209)throw new Error(`PLAYABLE_ROSTER_COUNT:${playable.length}`);
+if(publishedCharacters.length<209)throw new Error(`PUBLISHED_CHARACTER_COUNT_TOO_LOW:${publishedCharacters.length}`);
+
+const techniqueById=new Map(items.map(t=>[String(t.id),t]));
+const characterById=new Map(publishedCharacters.map(c=>[String(c.id),c]));
+const playableIds=new Set(playable.map(c=>String(c.slug)));
+const contentOnlyCharacters=publishedCharacters.filter(c=>!playableIds.has(String(c.id))).map(c=>({id:c.id,name:c.name,tags:c.tags||[],rank:c.rank||''}));
+const rosterOnlyCharacters=playable.filter(c=>!characterById.has(String(c.slug))).map(c=>({id:c.slug,name:c.name}));
+const characterLinkFailures=[];
+const canonicalRoster=[];
+for(const legacyChar of playable){
+  const id=String(legacyChar.slug),published=characterById.get(id),ids=arr(published?.baseTechniqueIds).map(String);
+  if(!published||ids.length!==4){characterLinkFailures.push({id,reason:!published?'CHARACTER_NOT_PUBLISHED':`BASE_TECHNIQUE_COUNT:${ids.length}`});continue}
+  const techniques=[];
+  for(const techniqueId of ids){
+    const t=techniqueById.get(techniqueId);
+    if(!t){characterLinkFailures.push({id,techniqueId,reason:'TECHNIQUE_NOT_PUBLISHED'});continue}
+    techniques.push(adapter.adaptTechnique(t));
+  }
+  if(techniques.length!==4){characterLinkFailures.push({id,reason:`RESOLVED_TECHNIQUE_COUNT:${techniques.length}`});continue}
+  canonicalRoster.push({
+    slug:id,name:String(published.name||legacyChar.name||id),bio:String(legacyChar.bio||''),icon:String(published.image||legacyChar.icon||''),
+    hp:Number(published.hp||100),stats:published.stats||{},tags:published.tags||[],rank:published.rank||'',skills:techniques
+  });
+}
 
 const rows=items.map(auditOne),opCounts={},effectTypeCounts={},targetCounts={},costCounts={},statusCounts={};
 for(const t of items){
@@ -76,20 +112,27 @@ for(const t of items){
 for(const r of rows){for(const e of r.effectTypes)inc(effectTypeCounts,e);for(const c of r.cost)inc(costCounts,c)}
 const unsupported=rows.filter(x=>!x.structuralOk||x.unsupported.length),runtimeFailures=rows.filter(x=>!x.runtime.ok),unknownCosts=rows.filter(x=>x.unknownCosts.length),noops=rows.filter(x=>x.effectTypes.includes('noop'));
 const observedOps=Object.keys(opCounts).sort(),missingExpected=[...EXPECTED_OPS].filter(x=>!observedOps.includes(x)),unexpectedOps=observedOps.filter(x=>!EXPECTED_OPS.has(x));
+const canonicalLinks=canonicalRoster.reduce((n,c)=>n+c.skills.length,0);
 const summary={
   generatedAt:new Date().toISOString(),contentRevision:Number(manifest.revision||0),techniques:items.length,
+  publishedCharacters:publishedCharacters.length,playableCharacters:playable.length,canonicalPlayableCharacters:canonicalRoster.length,canonicalLinks,
+  contentOnlyCharacters:contentOnlyCharacters.length,contentOnlyCharacterIds:contentOnlyCharacters.map(x=>x.id),rosterOnlyCharacters:rosterOnlyCharacters.length,
+  characterLinkFailures:characterLinkFailures.length,
   adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,expectedOps:adapter.OPS,observedOps,
   opCounts,effectTypeCounts,targetCounts,costCounts,statusCounts,
   unsupported:unsupported.length,runtimeFailures:runtimeFailures.length,unknownCosts:unknownCosts.length,noops:noops.length,
   missingExpected,unexpectedOps,
-  gate:unsupported.length===0&&runtimeFailures.length===0&&unknownCosts.length===0&&noops.length===0&&missingExpected.length===0&&unexpectedOps.length===0?'PASS':'FAIL'
+  gate:unsupported.length===0&&runtimeFailures.length===0&&unknownCosts.length===0&&noops.length===0&&missingExpected.length===0&&unexpectedOps.length===0&&rosterOnlyCharacters.length===0&&characterLinkFailures.length===0&&canonicalRoster.length===209&&canonicalLinks===836?'PASS':'FAIL'
 };
 const write=(name,data)=>fs.writeFileSync(path.join(OUT,name),JSON.stringify(data,null,2)+'\n');
-write('SUMMARY.json',summary);write('TECHNIQUE-RUNTIME-AUDIT.json',rows);
+write('SUMMARY.json',summary);write('TECHNIQUE-RUNTIME-AUDIT.json',rows);write('CONTENT-ONLY-CHARACTERS.json',contentOnlyCharacters);write('CANONICAL-ROSTER-209x4.json',canonicalRoster);
+fs.writeFileSync(path.join(OUT,'CANONICAL-ROSTER-209x4.js'),'window.NARUTO_ROSTER='+JSON.stringify(canonicalRoster)+';\n');
 if(runtimeFailures.length)write('RUNTIME-FAILURES.json',runtimeFailures);
 if(unsupported.length)write('UNSUPPORTED.json',unsupported);
 if(unknownCosts.length)write('UNKNOWN-COSTS.json',unknownCosts);
 if(noops.length)write('NOOPS.json',noops);
-fs.writeFileSync(path.join(OUT,'REPORT.md'),`# Published Techniques — Combat Rules V2\n\n- Revision: **${summary.contentRevision}**\n- Techniques: **${summary.techniques}**\n- Operators: **${summary.observedOps.length}/${summary.expectedOps.length}**\n- Unsupported: **${summary.unsupported}**\n- Runtime failures: **${summary.runtimeFailures}**\n- Unknown costs: **${summary.unknownCosts}**\n- No-op effects: **${summary.noops}**\n- Gate: **${summary.gate}**\n\n## Operator counts\n\n${Object.entries(opCounts).sort().map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n`);
+if(characterLinkFailures.length)write('CHARACTER-LINK-FAILURES.json',characterLinkFailures);
+if(rosterOnlyCharacters.length)write('ROSTER-ONLY-CHARACTERS.json',rosterOnlyCharacters);
+fs.writeFileSync(path.join(OUT,'REPORT.md'),`# Published Techniques — Combat Rules V2\n\n- Revision: **${summary.contentRevision}**\n- Published characters: **${summary.publishedCharacters}**\n- Playable characters: **${summary.playableCharacters}**\n- Canonical playable roster: **${summary.canonicalPlayableCharacters} × 4 = ${summary.canonicalLinks}**\n- Content-only characters: **${summary.contentOnlyCharacters}**\n- Techniques: **${summary.techniques}**\n- Operators: **${summary.observedOps.length}/${summary.expectedOps.length}**\n- Unsupported: **${summary.unsupported}**\n- Runtime failures: **${summary.runtimeFailures}**\n- Unknown costs: **${summary.unknownCosts}**\n- No-op effects: **${summary.noops}**\n- Gate: **${summary.gate}**\n\n## Content-only characters\n\n${contentOnlyCharacters.map(x=>`- ${x.id}: ${x.name}`).join('\n')}\n\n## Operator counts\n\n${Object.entries(opCounts).sort().map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n`);
 console.log(JSON.stringify(summary,null,2));
 if(summary.gate!=='PASS')process.exitCode=2;
