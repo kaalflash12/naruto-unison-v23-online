@@ -1,6 +1,6 @@
 # Comparação canônica V2 — 209 × 4
 
-- Conteúdo publicado revision: **0**
+- Conteúdo publicado revision: **1**
 - Upstream fixado: **3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1**
 - Personagens jogáveis: **209**
 - Técnicas classificadas: **836**
@@ -16,7 +16,7 @@
 - EFEITO_ERRADO: **704**
 - ALVO_ERRADO: **289**
 - CUSTO_ERRADO: **267**
-- COOLDOWN_ERRADO: **160**
+- COOLDOWN_ERRADO: **159**
 - DURAÇÃO_ERRADA: **254**
 - MOTOR_INSUFICIENTE: **0**
 
@@ -492,7 +492,7 @@
 | Masked Man | Kusari Chains | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kusari Chains |
 | Masked Man | Kamui Banishment | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui Banishment |
 | Masked Man | Major Summoning: Kurama | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Major Summoning: Kurama |
-| Masked Man | Kamui Phase | 4 | CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui Phase |
+| Masked Man | Kamui Phase | 4 | CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui Phase |
 | Mei Terumi | Solid Fog | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Solid Fog |
 | Mei Terumi | Water Bomb | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Water Bomb |
 | Mei Terumi | Lava Monster | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lava Monster |

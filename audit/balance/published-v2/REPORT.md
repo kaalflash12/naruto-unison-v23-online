@@ -1,6 +1,6 @@
 # Published Techniques — Combat Rules V2
 
-- Revision: **0**
+- Revision: **1**
 - Published characters: **214**
 - Playable characters: **209**
 - Canonical playable roster: **209 × 4 = 836**

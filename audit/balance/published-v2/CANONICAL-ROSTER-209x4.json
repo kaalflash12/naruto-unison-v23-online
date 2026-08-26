@@ -36701,7 +36701,7 @@
           "Blood",
           "Nin"
         ],
-        "cooldown": 4,
+        "cooldown": 0,
         "charges": null,
         "mechanic": {
           "version": 2,

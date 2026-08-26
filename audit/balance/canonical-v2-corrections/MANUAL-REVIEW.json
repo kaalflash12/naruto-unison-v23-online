@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "slot": 4,
+    "techniqueId": "masked-man__base_4",
+    "techniqueName": "Kamui Phase",
+    "originalName": "Kamui Phase",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Masked Man",
+    "upstreamTechnique": "Kamui Phase",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "CUSTO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "cost": {
+        "local": [
+          "blood",
+          "nin"
+        ],
+        "upstream": [
+          "chakra"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "CUSTO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "invulnerable"
+    ],
+    "tier": "MANUAL_REVIEW",
+    "structuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "CUSTO_ERRADO"
+    ],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": true
+  }
+]

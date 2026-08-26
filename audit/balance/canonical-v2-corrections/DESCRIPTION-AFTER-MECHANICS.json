@@ -30495,7 +30495,6 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -30508,29 +30507,21 @@
           "chakra"
         ]
       },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "CUSTO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "MANUAL_REVIEW",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "CUSTO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
