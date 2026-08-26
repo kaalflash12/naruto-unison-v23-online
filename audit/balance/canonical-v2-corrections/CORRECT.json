@@ -1,5 +1,117 @@
 [
   {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "slot": 1,
+    "techniqueId": "naruto-uzumaki__base_1",
+    "techniqueName": "Naruto Uzumaki Barrage",
+    "originalName": "Naruto Uzumaki Barrage",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamTechnique": "Naruto Uzumaki Barrage",
+    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "slot": 2,
+    "techniqueId": "naruto-uzumaki__base_2",
+    "techniqueName": "Rasengan",
+    "originalName": "Rasengan",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamTechnique": "Rasengan",
+    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stun",
+      "requirement"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [
+      "requirement"
+    ],
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "slot": 3,
+    "techniqueId": "naruto-uzumaki__base_3",
+    "techniqueName": "Clones das Sombras",
+    "originalName": "Shadow Clones",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamTechnique": "Shadow Clones",
+    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "reduction"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "naruto-uzumaki",
+    "characterName": "Naruto Uzumaki",
+    "slot": 4,
+    "techniqueId": "naruto-uzumaki__base_4",
+    "techniqueName": "Sexy Technique",
+    "originalName": "Sexy Technique",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Naruto Uzumaki",
+    "upstreamTechnique": "Sexy Technique",
+    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "invulnerable"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": false
+  },
+  {
     "characterId": "aoba-yamashiro",
     "characterName": "Aoba Yamashiro",
     "slot": 3,

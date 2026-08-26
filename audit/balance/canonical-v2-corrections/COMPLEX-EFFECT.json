@@ -1,298 +1,5 @@
 [
   {
-    "characterId": "naruto-uzumaki",
-    "characterName": "Naruto Uzumaki",
-    "slot": 1,
-    "techniqueId": "naruto-uzumaki__base_1",
-    "techniqueName": "Naruto Uzumaki Barrage",
-    "originalName": "Naruto Uzumaki Barrage",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Naruto Uzumaki Barrage",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "effectNumeric": {
-        "dot": {
-          "local": [
-            3
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "naruto-uzumaki",
-    "characterName": "Naruto Uzumaki",
-    "slot": 2,
-    "techniqueId": "naruto-uzumaki__base_2",
-    "techniqueName": "Rasengan",
-    "originalName": "Rasengan",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Rasengan",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "expose",
-          "execute"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "requirement"
-        ]
-      },
-      "duration": {
-        "local": [
-          2
-        ],
-        "upstream": [
-          1
-        ]
-      },
-      "damage": {
-        "local": 39,
-        "upstream": 45
-      },
-      "effectNumeric": {
-        "execute": {
-          "local": [
-            0.22
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "stun",
-      "requirement"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [
-      "DANO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [
-      "DANO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "blockers": [
-      "requirement"
-    ],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "naruto-uzumaki",
-    "characterName": "Naruto Uzumaki",
-    "slot": 3,
-    "techniqueId": "naruto-uzumaki__base_3",
-    "techniqueName": "Clones das Sombras",
-    "originalName": "Shadow Clones",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Shadow Clones",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "status",
-          "strengthen"
-        ],
-        "upstream": [
-          "damage",
-          "reduction"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
-      "duration": {
-        "local": [
-          1,
-          2
-        ],
-        "upstream": [
-          4
-        ]
-      },
-      "effectNumeric": {
-        "defense": {
-          "local": [
-            29
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "DURAÇÃO_ERRADA"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "damage",
-      "reduction"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
-    "characterId": "naruto-uzumaki",
-    "characterName": "Naruto Uzumaki",
-    "slot": 4,
-    "techniqueId": "naruto-uzumaki__base_4",
-    "techniqueName": "Sexy Technique",
-    "originalName": "Sexy Technique",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Naruto Uzumaki",
-    "upstreamTechnique": "Sexy Technique",
-    "upstreamSource": "src/Game/Characters/Original/Kids.hs",
-    "classifications": [
-      "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "invulnerable"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": []
-      },
-      "duration": {
-        "local": [
-          2
-        ],
-        "upstream": [
-          1
-        ]
-      },
-      "effectNumeric": {
-        "defense": {
-          "local": [
-            40
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "DURAÇÃO_ERRADA"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "invulnerable"
-    ],
-    "tier": "COMPLEX_EFFECT",
-    "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA"
-    ],
-    "blockers": [],
-    "requiresManualSemantics": true,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "sasuke-uchiha",
     "characterName": "Sasuke Uchiha",
     "slot": 1,
@@ -449,6 +156,14 @@
         "upstream": [
           4
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -731,7 +446,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -757,6 +471,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -769,7 +489,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -1180,6 +899,12 @@
             3
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -1781,7 +1506,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -1816,7 +1540,9 @@
           "local": [
             9
           ],
-          "upstream": []
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -1829,7 +1555,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -4494,6 +4219,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -5026,7 +4759,9 @@
           "local": [
             8
           ],
-          "upstream": []
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -5326,6 +5061,12 @@
             13
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -5562,6 +5303,15 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15,
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -6423,6 +6173,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -7826,7 +7582,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate",
           "channel",
@@ -7860,6 +7615,12 @@
             16
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -7872,7 +7633,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "alternate",
       "channel",
@@ -13013,6 +12773,12 @@
             44
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -16722,6 +16488,14 @@
             36
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5,
+            10,
+            10
+          ]
         }
       },
       "description": {
@@ -17871,6 +17645,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -17947,6 +17729,12 @@
             21
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            20
+          ]
         }
       },
       "description": {
@@ -18311,6 +18099,14 @@
         "upstream": [
           "rand"
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -18914,7 +18710,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "channel"
@@ -18963,7 +18758,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "defense",
       "reduction",
       "channel"
@@ -19919,6 +19713,14 @@
           "self",
           "enemies"
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -23817,7 +23619,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction"
         ]
@@ -23853,7 +23654,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "defense",
       "reduction"
     ],
@@ -24419,6 +24219,12 @@
           "upstream": [
             15
           ]
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -24623,6 +24429,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -24855,7 +24669,6 @@
           "strengthen"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun",
           "focus",
@@ -24885,6 +24698,12 @@
             32
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -24897,7 +24716,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "stun",
       "focus",
@@ -24944,7 +24762,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -24963,6 +24780,12 @@
             56
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            30
+          ]
         }
       },
       "description": {
@@ -24974,7 +24797,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "alternate"
     ],
@@ -25213,6 +25035,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -28002,7 +27832,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -28021,6 +27850,12 @@
             19
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -28032,7 +27867,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -28309,7 +28143,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "expose",
           "trap-counter",
@@ -28349,7 +28182,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "expose",
       "trap-counter",
@@ -30279,7 +30111,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun"
         ]
@@ -30319,7 +30150,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "stun"
     ],
@@ -30577,6 +30407,12 @@
             52
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -30664,6 +30500,14 @@
       "damage": {
         "local": 41,
         "upstream": 20
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -32191,7 +32035,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stack",
           "trap-counter"
@@ -32220,6 +32063,12 @@
             28
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -32231,7 +32080,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "stack",
       "trap-counter"
@@ -32507,6 +32355,14 @@
         "upstream": [
           1
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -33575,7 +33431,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun",
           "alternate",
@@ -33608,7 +33463,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "stun",
       "alternate",
@@ -34351,7 +34205,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "cleanse"
         ]
@@ -34380,6 +34233,12 @@
             48
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -34392,7 +34251,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "cleanse"
     ],
@@ -34681,7 +34539,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "heal",
           "defense",
           "reduction",
@@ -34704,7 +34561,9 @@
           "local": [
             3
           ],
-          "upstream": []
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -34716,7 +34575,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "heal",
       "defense",
       "reduction",
@@ -34762,7 +34620,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "alternate",
@@ -34781,7 +34638,9 @@
           "local": [
             6
           ],
-          "upstream": []
+          "upstream": [
+            20
+          ]
         }
       },
       "description": {
@@ -34792,7 +34651,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "defense",
       "reduction",
       "alternate",
@@ -34834,7 +34692,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "alternate",
@@ -34852,7 +34709,9 @@
           "local": [
             8
           ],
-          "upstream": []
+          "upstream": [
+            30
+          ]
         }
       },
       "description": {
@@ -34863,7 +34722,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "defense",
       "reduction",
       "alternate",
@@ -35134,6 +34992,15 @@
         "upstream": [
           4
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5,
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -36005,7 +35872,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "heal",
           "reduction",
           "requirement",
@@ -36026,12 +35892,6 @@
           "upstream": [
             15
           ]
-        },
-        "reduction": {
-          "local": [
-            10
-          ],
-          "upstream": []
         }
       },
       "description": {
@@ -36043,7 +35903,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "heal",
       "reduction",
       "requirement",
@@ -36247,7 +36106,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "trap-counter"
         ]
@@ -36266,6 +36124,12 @@
             28
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -36277,7 +36141,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "trap-counter"
     ],
@@ -38729,6 +38592,12 @@
             24
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -40677,6 +40546,12 @@
             35
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -41186,7 +41061,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -41212,6 +41086,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -41224,7 +41104,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -42219,7 +42098,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -42253,7 +42131,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -44750,6 +44627,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -45296,7 +45181,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -45323,7 +45207,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "alternate"
     ],
@@ -45368,7 +45251,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -45399,7 +45281,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "alternate"
     ],
@@ -45504,7 +45385,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -45533,7 +45413,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction"
     ],
     "tier": "COMPLEX_EFFECT",
@@ -46815,7 +46694,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -46845,7 +46723,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "alternate"
     ],
@@ -47631,6 +47508,14 @@
         "upstream": [
           4
         ]
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -50062,7 +49947,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "expose",
@@ -50094,7 +49978,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "defense",
       "reduction",
       "expose",
@@ -50217,7 +50100,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "requirement"
         ]
@@ -50243,7 +50125,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "requirement"
     ],
@@ -50638,7 +50519,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "exhaust"
         ]
@@ -50658,6 +50538,12 @@
             27
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -50668,7 +50554,6 @@
       }
     },
     "upstreamCategories": [
-      "damage",
       "reduction",
       "exhaust"
     ],
@@ -50809,6 +50694,12 @@
             50
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {

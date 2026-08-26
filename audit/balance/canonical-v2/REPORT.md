@@ -10,10 +10,10 @@
 
 ## Classificações
 
-- CORRETA: **8**
-- DESCRIÇÃO_ERRADA: **707**
+- CORRETA: **9**
+- DESCRIÇÃO_ERRADA: **706**
 - DANO_ERRADO: **53**
-- EFEITO_ERRADO: **701**
+- EFEITO_ERRADO: **700**
 - ALVO_ERRADO: **322**
 - CUSTO_ERRADO: **268**
 - COOLDOWN_ERRADO: **57**
@@ -24,7 +24,6 @@
 
 | Personagem | Jutsu | Slot | Classificações | Match | Upstream |
 |---|---|---:|---|---|---|
-| Naruto Uzumaki | Clones das Sombras | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shadow Clones |
 | Sasuke Uchiha | Lions Barrage | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lions Barrage |
 | Sasuke Uchiha | Chidori | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chidori |
 | Sasuke Uchiha | Sharingan | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharingan |
@@ -524,6 +523,7 @@
 | Nagato | Deva Path | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Deva Path |
 | Nagato | Human Path | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Human Path |
 | Nagato | Naraka Path | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Naraka Path |
+| Nagato | Preta Path | 4 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Preta Path |
 
 ## Não resolvidos
 

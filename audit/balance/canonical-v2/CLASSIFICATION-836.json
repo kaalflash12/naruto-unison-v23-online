@@ -153,35 +153,9 @@
     "upstreamTechnique": "Shadow Clones",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "reduction",
-          "status"
-        ],
-        "upstream": [
-          "damage",
-          "reduction"
-        ]
-      },
-      "effectNumeric": {
-        "reduction": {
-          "local": [
-            15
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Clones das Sombras afeta o usuário: reduz todo dano recebido em 15 por 4 turnos e habilita as técnicas que exigem Clones das Sombras. Custo: Q; recarga: 3 turno(s).",
       "effect": {
@@ -220,7 +194,6 @@
       ],
       "cooldown": 3,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -228,7 +201,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         4
       ],
@@ -558,6 +533,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -621,7 +604,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         4
       ],
@@ -1013,7 +998,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -1039,6 +1023,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -1092,7 +1082,6 @@
       ],
       "cooldown": 4,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -1100,7 +1089,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         4
       ],
@@ -1727,6 +1718,12 @@
             3
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -1792,7 +1789,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -2813,7 +2812,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -2848,7 +2846,9 @@
           "local": [
             9
           ],
-          "upstream": []
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -2904,7 +2904,6 @@
       ],
       "cooldown": 4,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -2912,7 +2911,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         4
       ],
@@ -7542,6 +7543,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -7611,7 +7620,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -8393,7 +8404,9 @@
           "local": [
             8
           ],
-          "upstream": []
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -8459,7 +8472,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         3
       ],
@@ -8871,6 +8886,12 @@
             13
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -8936,7 +8957,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         1
       ],
@@ -9310,6 +9333,15 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15,
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -9379,7 +9411,10 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15,
+        15
+      ],
       "durations": [
         1
       ],
@@ -10725,6 +10760,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -10789,7 +10830,9 @@
       ],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         3
       ],
@@ -13043,7 +13086,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate",
           "channel",
@@ -13077,6 +13119,12 @@
             16
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -13126,7 +13174,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "reduction",
         "alternate",
         "channel",
@@ -13137,7 +13184,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         1
       ],
@@ -22432,6 +22481,12 @@
             44
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -22497,7 +22552,9 @@
         10
       ],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [],
       "targets": [
         "self"
@@ -28519,6 +28576,14 @@
             36
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5,
+            10,
+            10
+          ]
         }
       },
       "description": {
@@ -28580,7 +28645,11 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5,
+        10,
+        10
+      ],
       "durations": [
         3,
         2,
@@ -30601,6 +30670,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -30671,7 +30748,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         1
       ],
@@ -30727,6 +30806,12 @@
             21
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            20
+          ]
         }
       },
       "description": {
@@ -30787,7 +30872,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        20
+      ],
       "durations": [
         1
       ],
@@ -31533,6 +31620,14 @@
           "rand"
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -31597,7 +31692,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [],
       "targets": [
         "self"
@@ -32547,7 +32644,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "channel"
@@ -32637,7 +32733,6 @@
       ],
       "cooldown": 3,
       "categories": [
-        "damage",
         "defense",
         "reduction",
         "channel"
@@ -34469,6 +34564,14 @@
           "enemies"
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -34532,7 +34635,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         2
       ],
@@ -40926,7 +41031,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction"
         ]
@@ -41001,7 +41105,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "defense",
         "reduction"
       ],
@@ -41833,6 +41936,12 @@
           "upstream": [
             15
           ]
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -41900,7 +42009,9 @@
       "defend": [
         15
       ],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [],
       "targets": [
         "self",
@@ -42172,6 +42283,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -42236,7 +42355,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         1
       ],
@@ -42523,7 +42644,6 @@
           "strengthen"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun",
           "focus",
@@ -42553,6 +42673,12 @@
             32
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -42608,7 +42734,6 @@
       ],
       "cooldown": 4,
       "categories": [
-        "damage",
         "reduction",
         "stun",
         "focus",
@@ -42619,7 +42744,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         4
       ],
@@ -42655,7 +42782,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -42674,6 +42800,12 @@
             56
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            30
+          ]
         }
       },
       "description": {
@@ -42728,7 +42860,6 @@
       ],
       "cooldown": 5,
       "categories": [
-        "damage",
         "reduction",
         "alternate"
       ],
@@ -42737,7 +42868,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        30
+      ],
       "durations": [
         3
       ],
@@ -43126,6 +43259,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -43192,7 +43333,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -47745,7 +47888,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -47764,6 +47906,12 @@
             19
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -47816,7 +47964,6 @@
       ],
       "cooldown": 3,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -47824,7 +47971,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         2
       ],
@@ -48224,7 +48373,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "expose",
           "trap-counter",
@@ -48305,7 +48453,6 @@
       ],
       "cooldown": 1,
       "categories": [
-        "damage",
         "reduction",
         "expose",
         "trap-counter",
@@ -51377,7 +51524,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun"
         ]
@@ -51460,7 +51606,6 @@
       ],
       "cooldown": 2,
       "categories": [
-        "damage",
         "reduction",
         "stun"
       ],
@@ -51861,6 +52006,12 @@
             52
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -51926,7 +52077,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         3
       ],
@@ -51992,6 +52145,14 @@
       "damage": {
         "local": 41,
         "upstream": 20
+      },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
@@ -52062,7 +52223,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         1
       ],
@@ -54608,7 +54771,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stack",
           "trap-counter"
@@ -54637,6 +54799,12 @@
             28
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -54689,7 +54857,6 @@
       ],
       "cooldown": 1,
       "categories": [
-        "damage",
         "reduction",
         "stack",
         "trap-counter"
@@ -54699,7 +54866,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         4
       ],
@@ -55094,6 +55263,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -55157,7 +55334,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         1
       ],
@@ -56889,7 +57068,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "stun",
           "alternate",
@@ -56963,7 +57141,6 @@
       ],
       "cooldown": 4,
       "categories": [
-        "damage",
         "reduction",
         "stun",
         "alternate",
@@ -58161,7 +58338,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "cleanse"
         ]
@@ -58190,6 +58366,12 @@
             48
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -58245,7 +58427,6 @@
       ],
       "cooldown": 3,
       "categories": [
-        "damage",
         "reduction",
         "cleanse"
       ],
@@ -58254,7 +58435,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -58726,7 +58909,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "heal",
           "defense",
           "reduction",
@@ -58749,7 +58931,9 @@
           "local": [
             3
           ],
-          "upstream": []
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -58800,7 +58984,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "heal",
         "defense",
         "reduction",
@@ -58814,7 +58997,9 @@
       "defend": [
         10
       ],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [],
       "targets": [
         "self"
@@ -58847,7 +59032,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "alternate",
@@ -58866,7 +59050,9 @@
           "local": [
             6
           ],
-          "upstream": []
+          "upstream": [
+            20
+          ]
         }
       },
       "description": {
@@ -58922,7 +59108,6 @@
       ],
       "cooldown": null,
       "categories": [
-        "damage",
         "defense",
         "reduction",
         "alternate",
@@ -58936,7 +59121,9 @@
       "defend": [
         20
       ],
-      "reduce": [],
+      "reduce": [
+        20
+      ],
       "durations": [],
       "targets": [
         "self"
@@ -58969,7 +59156,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "alternate",
@@ -58987,7 +59173,9 @@
           "local": [
             8
           ],
-          "upstream": []
+          "upstream": [
+            30
+          ]
         }
       },
       "description": {
@@ -59043,7 +59231,6 @@
       ],
       "cooldown": null,
       "categories": [
-        "damage",
         "defense",
         "reduction",
         "alternate",
@@ -59056,7 +59243,9 @@
       "defend": [
         30
       ],
-      "reduce": [],
+      "reduce": [
+        30
+      ],
       "durations": [],
       "targets": [
         "self"
@@ -59465,6 +59654,15 @@
           4
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5,
+            15
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -59528,7 +59726,10 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15,
+        5
+      ],
       "durations": [
         4
       ],
@@ -60869,7 +61070,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "heal",
           "reduction",
           "requirement",
@@ -60890,12 +61090,6 @@
           "upstream": [
             15
           ]
-        },
-        "reduction": {
-          "local": [
-            10
-          ],
-          "upstream": []
         }
       },
       "description": {
@@ -60952,7 +61146,6 @@
       ],
       "cooldown": 5,
       "categories": [
-        "damage",
         "heal",
         "reduction",
         "requirement",
@@ -60965,7 +61158,9 @@
         15
       ],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -61246,7 +61441,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "trap-counter"
         ]
@@ -61265,6 +61459,12 @@
             28
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -61317,7 +61517,6 @@
       ],
       "cooldown": 1,
       "categories": [
-        "damage",
         "reduction",
         "trap-counter"
       ],
@@ -61326,7 +61525,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         2
       ],
@@ -65227,6 +65428,12 @@
             24
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -65291,7 +65498,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [
         1
       ],
@@ -68316,6 +68525,12 @@
             35
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            15
+          ]
         }
       },
       "description": {
@@ -68380,7 +68595,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        15
+      ],
       "durations": [],
       "targets": [
         "enemy"
@@ -69121,7 +69338,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -69147,6 +69363,12 @@
             40
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -69200,7 +69422,6 @@
       ],
       "cooldown": 4,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -69208,7 +69429,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         3
       ],
@@ -70705,7 +70928,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -70776,7 +70998,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -74812,6 +75033,14 @@
           1
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -74878,7 +75107,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],
@@ -75728,7 +75959,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -75794,7 +76024,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "reduction",
         "alternate"
       ],
@@ -75837,7 +76066,6 @@
           "stack"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -75911,7 +76139,6 @@
       ],
       "cooldown": null,
       "categories": [
-        "damage",
         "reduction",
         "alternate"
       ],
@@ -76065,7 +76292,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction"
         ]
       },
@@ -76135,7 +76361,6 @@
       ],
       "cooldown": 2,
       "categories": [
-        "damage",
         "reduction"
       ],
       "damage": [],
@@ -78176,7 +78401,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "alternate"
         ]
@@ -78243,7 +78467,6 @@
       "cost": [],
       "cooldown": 2,
       "categories": [
-        "damage",
         "reduction",
         "alternate"
       ],
@@ -79478,6 +79701,14 @@
           4
         ]
       },
+      "effectNumeric": {
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
+        }
+      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
@@ -79543,7 +79774,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         4
       ],
@@ -83679,7 +83912,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "defense",
           "reduction",
           "expose",
@@ -83752,7 +83984,6 @@
       ],
       "cooldown": 1,
       "categories": [
-        "damage",
         "defense",
         "reduction",
         "expose",
@@ -83918,7 +84149,6 @@
           "reduction"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "requirement"
         ]
@@ -83983,7 +84213,6 @@
       "cost": [],
       "cooldown": null,
       "categories": [
-        "damage",
         "reduction",
         "requirement"
       ],
@@ -84596,7 +84825,6 @@
           "cleanse"
         ],
         "upstream": [
-          "damage",
           "reduction",
           "exhaust"
         ]
@@ -84616,6 +84844,12 @@
             27
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            5
+          ]
         }
       },
       "description": {
@@ -84667,7 +84901,6 @@
       ],
       "cooldown": 3,
       "categories": [
-        "damage",
         "reduction",
         "exhaust"
       ],
@@ -84676,7 +84909,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        5
+      ],
       "durations": [
         2
       ],
@@ -84854,6 +85089,12 @@
             50
           ],
           "upstream": []
+        },
+        "reduction": {
+          "local": [],
+          "upstream": [
+            10
+          ]
         }
       },
       "description": {
@@ -84923,7 +85164,9 @@
       "afflict": [],
       "heal": [],
       "defend": [],
-      "reduce": [],
+      "reduce": [
+        10
+      ],
       "durations": [
         1
       ],

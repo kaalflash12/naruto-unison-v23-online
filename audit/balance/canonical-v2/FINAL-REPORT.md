@@ -10,14 +10,14 @@
 
 ## Classificações das técnicas comparáveis
 
-- CORRETA: **5**
-- DESCRIÇÃO_ERRADA: **711**
-- DANO_ERRADO: **54**
-- EFEITO_ERRADO: **705**
+- CORRETA: **9**
+- DESCRIÇÃO_ERRADA: **707**
+- DANO_ERRADO: **53**
+- EFEITO_ERRADO: **701**
 - ALVO_ERRADO: **322**
-- CUSTO_ERRADO: **270**
+- CUSTO_ERRADO: **268**
 - COOLDOWN_ERRADO: **57**
-- DURAÇÃO_ERRADA: **356**
+- DURAÇÃO_ERRADA: **353**
 - MOTOR_INSUFICIENTE: **0**
 
 ## Resoluções
