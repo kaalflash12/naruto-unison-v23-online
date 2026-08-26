@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "policy": "Estas entradas não afirmam equivalência canônica. Elas apenas justificam por que uma técnica local não pode receber comparação mecânica contra um registro inexistente no snapshot upstream fixado. Nenhuma entrada pode ser convertida em CORRETA sem uma referência upstream real.",
+  "characters": {
+    "SasoriSOld": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"legacy-local-variant","detail":"Sasori Antigo existe como personagem jogável local separado, mas não há registro distinto correspondente entre os 182 personagens parseados do snapshot upstream."},
+    "corrupted-obito": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"Corrupted Obito é um kit local separado; o snapshot upstream não contém personagem distinto com esse conjunto de quatro técnicas."},
+    "curse-mark-sasuke-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"A variante local shippuden de Curse Mark Sasuke não existe como personagem distinto no snapshot; não deve ser forçada contra Sasuke, Curse Mark Sasuke Original ou Mangekyō Sasuke."},
+    "four-tailed-naruto-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"No snapshot upstream, Four-Tailed Transformation é uma forma/alternate dentro de Nine-Tailed Naruto, não um personagem separado com este kit local."},
+    "hiruko-sasori-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"Hiruko Sasori é um personagem separado no roster local, mas não há registro distinto correspondente no snapshot upstream."},
+    "hoshigaki-kisame-body-double-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"O Body Double de Kisame é um kit local separado sem personagem distinto correspondente no snapshot upstream."},
+    "itachi-uchiha-(r)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"A variante reanimada local de Itachi não possui personagem distinto correspondente no snapshot upstream fixado; não deve ser ligada a outro Uchiha apenas por nomes de técnicas compartilhados."},
+    "uchiha-itachi-body-double-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-variant","detail":"O Body Double de Itachi é um kit local separado sem personagem distinto correspondente no snapshot upstream."},
+    "zaji": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-extra","detail":"Zaji está no roster local, mas não há personagem distinto correspondente no snapshot upstream parseado."},
+    "boruto-uzumaki-genin": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Boruto Uzumaki é conteúdo adicional local; o snapshot upstream fixado não contém registro distinto correspondente."},
+    "sarada-uchiha-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Sarada Uchiha é conteúdo adicional local; Sharingan compartilhado não é evidência suficiente para ligá-la a outro personagem upstream."},
+    "mitsuki-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Mitsuki é conteúdo adicional local sem registro distinto no snapshot upstream fixado."},
+    "kawaki-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Kawaki é conteúdo adicional local sem registro distinto no snapshot upstream fixado."},
+    "naruto-uzumaki-hokage": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"postwar-local-expansion","detail":"Naruto Hokage é uma variante local pós-guerra sem personagem distinto correspondente no snapshot upstream."},
+    "sasuke-uchiha-adulto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"postwar-local-expansion","detail":"Sasuke Adulto é uma variante local pós-guerra; Chidori/Susanoo compartilhados não justificam ligá-lo a outro Sasuke upstream."},
+    "sakura-haruno-adulta": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"postwar-local-expansion","detail":"Sakura Adulta é uma variante local pós-guerra sem personagem distinto correspondente no snapshot upstream."},
+    "kakashi-hatake-sexto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"postwar-local-expansion","detail":"Kakashi Sexto Hokage é uma variante local pós-guerra sem personagem distinto correspondente no snapshot upstream."},
+    "momoshiki-otsutsuki-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Momoshiki Ōtsutsuki é conteúdo adicional local sem registro distinto no snapshot upstream fixado."},
+    "isshiki-otsutsuki-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Isshiki Ōtsutsuki é conteúdo adicional local sem registro distinto no snapshot upstream fixado."},
+    "jigen-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Jigen é conteúdo adicional local sem registro distinto no snapshot upstream fixado."},
+    "konohamaru-sensei-boruto": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"boruto-local-expansion","detail":"Konohamaru Sensei é variante local posterior; Rasengan compartilhado não é evidência para usar o Konohamaru upstream como o mesmo kit."},
+    "bijuu-shukaku-event": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"event-bijuu","detail":"Shukaku é entidade jogável de evento local; não existe como personagem distinto correspondente no snapshot upstream."},
+    "bijuu-matatabi-event": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"event-bijuu","detail":"Matatabi é entidade jogável de evento local; não deve ser confundida com sua jinchūriki Yugito Nii."},
+    "bijuu-gyuki-event": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"event-bijuu","detail":"Gyūki é entidade jogável de evento local; Lariat compartilhado com jinchūriki não estabelece equivalência de personagem."},
+    "bijuu-kurama-event": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"event-bijuu","detail":"Kurama é entidade jogável de evento local; não existe como personagem distinto correspondente no snapshot upstream."},
+    "kaguya-otsutsuki-(s)": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-expansion","detail":"Kaguya Ōtsutsuki está no roster local, mas não há personagem distinto correspondente entre os 182 registros do snapshot upstream fixado."},
+    "toneri-otsutsuki-the-last": {"reason":"PINNED_UPSTREAM_HAS_NO_DISTINCT_CHARACTER_RECORD","group":"local-expansion","detail":"Toneri Ōtsutsuki está no roster local, mas não há personagem distinto correspondente no snapshot upstream fixado."}
+  },
+  "techniques": {
+    "gaara-of-the-funk::2": {"reason":"PINNED_UPSTREAM_CHARACTER_HAS_NO_SUCH_SKILL","group":"local-skill-extra","detail":"Gaara of the Funk existe no snapshot upstream, porém a técnica local do slot 2 (Couldve Hada V8) não aparece no bloco upstream fixado; não é seguro substituí-la por outro skill por semelhança."}
+  }
+}
