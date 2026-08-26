@@ -23,6 +23,7 @@ jobs:
     timeout-minutes: 15
     env:
       SIM_MODE: standard
+      SIM_SCOPE: competitive
       SIM_SEEDS: '2'
       SIM_MAX_TURNS: '30'
       SIM_FOCUS_SLUGS: naruto-uzumaki,sasuke-uchiha,hinata-hyuga,fukasaku-and-shima-(s),white-snake-orochimaru-(s),oboro,tsume-inuzuka
@@ -49,10 +50,13 @@ jobs:
           test -s audit/balance/simulation-v2/CHARACTER-RATINGS.json
           node - <<'JS'
           const fs=require('fs'); const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
-          if(s.roster!==209) throw new Error('roster='+s.roster);
-          if(s.pairs<1400||s.pairs>1500) throw new Error('focused pairs='+s.pairs);
+          if(s.totalRoster!==209||s.eligibleRoster!==209) throw new Error(`coverage total=${s.totalRoster} eligible=${s.eligibleRoster}`);
+          if(s.scope!=='competitive'||s.roster!==203) throw new Error(`scope=${s.scope} roster=${s.roster}`);
+          if(!Array.isArray(s.excludedCharacters)||s.excludedCharacters.length!==6) throw new Error('excluded='+JSON.stringify(s.excludedCharacters));
+          const focus=7,expectedPairs=focus*(s.roster-focus)+focus*(focus-1)/2;
+          if(s.pairs!==expectedPairs) throw new Error(`focused pairs=${s.pairs}, expected=${expectedPairs}`);
           if(s.matchups!==s.pairs*8) throw new Error(`matchups ${s.matchups} != pairs*8 ${s.pairs*8}`);
-          console.log('FOCUSED_BASELINE=PASS',s.pairs,s.matchups);
+          console.log('FOCUSED_BASELINE=PASS',{total:s.totalRoster,competitive:s.roster,excluded:s.excludedCharacters,pairs:s.pairs,matchups:s.matchups});
           JS
 
       - name: Run focused canonical overrides
@@ -91,5 +95,3 @@ jobs:
           path: audit/balance/simulation-v2-overrides
           if-no-files-found: error
           retention-days: 30
-
-# rerun after combat-v2 triggerTarget/excludeClasses patch
