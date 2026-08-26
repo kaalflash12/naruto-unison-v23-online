@@ -62,12 +62,12 @@ jobs:
           node - <<'JS'
           const fs=require('fs');
           const c=JSON.parse(fs.readFileSync('audit/balance/simulation-v2-overrides/BASELINE-COMPARISON.json','utf8'));
-          if(c.overridesConfigured!==8) throw new Error('expected 8 overrides');
-          if(c.affectedCharacters!==5) throw new Error('expected 5 affected characters, got '+c.affectedCharacters);
+          if(c.overridesConfigured!==13) throw new Error('expected 13 overrides');
+          if(c.affectedCharacters!==7) throw new Error('expected 7 affected characters, got '+c.affectedCharacters);
           for(const [k,v] of Object.entries(c.comparability)){
             if(k.startsWith('same')&&v!==true) throw new Error('comparison mismatch '+k+'='+v);
           }
-          for(const slug of ['naruto-uzumaki','sasuke-uchiha','hinata-hyuga','fukasaku-and-shima-(s)','white-snake-orochimaru-(s)']){
+          for(const slug of ['naruto-uzumaki','sasuke-uchiha','hinata-hyuga','fukasaku-and-shima-(s)','white-snake-orochimaru-(s)','oboro','tsume-inuzuka']){
             if(!c.affected.some(x=>x.slug===slug)) throw new Error('missing affected '+slug);
           }
           console.log('CANONICAL_V2_BASELINE_COMPARISON=PASS',c.global);
@@ -80,7 +80,7 @@ jobs:
           const d='audit/balance/simulation-v2-overrides';
           const state=JSON.parse(fs.readFileSync(path.join(d,'OVERRIDE-APPLICATION.json'),'utf8'));
           const summary=JSON.parse(fs.readFileSync(path.join(d,'SUMMARY.json'),'utf8'));
-          if(state.overridesConfigured!==8) throw new Error('expected 8 overrides');
+          if(state.overridesConfigured!==13) throw new Error('expected 13 overrides');
           if(summary.roster!==209) throw new Error('roster='+summary.roster);
           if(!(summary.pairs>20000)) throw new Error('pair matrix incomplete: '+summary.pairs);
           if(!(summary.matchups>80000)) throw new Error('matchups incomplete: '+summary.matchups);
