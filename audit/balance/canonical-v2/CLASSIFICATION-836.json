@@ -13,70 +13,33 @@
     "upstreamTechnique": "Naruto Uzumaki Barrage",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "EFEITO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "dot",
-          "expose"
-        ],
-        "upstream": [
-          "damage"
-        ]
-      },
-      "effectNumeric": {
-        "dot": {
-          "local": [
-            3
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
-      "description": "Naruto Uzumaki Barrage afeta um inimigo: atinge 2 vezes, totalizando cerca de 25 de dano; aplica Sangramento por 2 turno(s) (3/turno); reduz Defesa em 2 por 2 turnos. Custo: TAI; recarga: 0 turno(s).",
+      "description": "Naruto Uzumaki Barrage afeta um inimigo: causa 20 de dano e causa +10 de dano enquanto Clones das Sombras estiver ativo. Custo: TAI; recarga: 0 turno(s).",
       "effect": {
         "aoe": false,
         "kind": "damage",
-        "power": 25,
-        "duration": 2
+        "power": 20,
+        "duration": 0
       },
       "mechanics": [
         {
-          "op": "multi-hit",
-          "hits": 2,
-          "amount": 25,
-          "target": "primary"
-        },
-        {
-          "op": "status",
-          "turns": 2,
-          "damage": 3,
-          "status": "bleed",
-          "target": "primary"
-        },
-        {
-          "op": "debuff",
-          "stat": "defense",
-          "turns": 2,
-          "amount": 2,
-          "target": "primary"
+          "op": "damage",
+          "amount": 20,
+          "target": "primary",
+          "bonusIf": {
+            "selfHas": "shadow-clones"
+          },
+          "bonusAmount": 10
         }
       ],
       "chakraCost": [
         "TAI"
       ],
       "cooldown": 0,
-      "power": 25,
+      "power": 20,
       "target": "enemy"
     },
     "upstream": {
@@ -115,79 +78,28 @@
     "upstreamTechnique": "Rasengan",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "EFEITO_ERRADO",
-      "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "damage",
-          "expose",
-          "execute"
-        ],
-        "upstream": [
-          "damage",
-          "stun",
-          "requirement"
-        ]
-      },
-      "duration": {
-        "local": [
-          2
-        ],
-        "upstream": [
-          1
-        ]
-      },
-      "damage": {
-        "local": 39,
-        "upstream": 45
-      },
-      "effectNumeric": {
-        "execute": {
-          "local": [
-            0.22
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
-      "description": "Rasengan afeta um inimigo: causa 39 de dano; reduz Defesa em 5 por 2 turnos; ganha finalização contra alvos com até 22% de PV. Custo: NIN + Q; recarga: 1 turno(s).",
+      "description": "Rasengan afeta um inimigo: causa 45 de dano e atordoa todas as habilidades por 1 turno. Requer Clones das Sombras ativo. Custo: NIN + Q; recarga: 1 turno(s).",
       "effect": {
         "aoe": false,
-        "kind": "damage",
-        "power": 39,
-        "duration": 2
+        "kind": "stun",
+        "power": 45,
+        "duration": 1
       },
       "mechanics": [
         {
           "op": "damage",
-          "amount": 39,
+          "amount": 45,
           "target": "primary"
         },
         {
-          "op": "debuff",
-          "stat": "defense",
-          "turns": 2,
-          "amount": 5,
+          "op": "status",
+          "turns": 1,
+          "status": "stun",
           "target": "primary"
-        },
-        {
-          "op": "execute",
-          "amount": 13,
-          "target": "primary",
-          "threshold": 0.22
         }
       ],
       "chakraCost": [
@@ -195,7 +107,7 @@
         "Q"
       ],
       "cooldown": 1,
-      "power": 39,
+      "power": 45,
       "target": "enemy"
     },
     "upstream": {
@@ -242,43 +154,23 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
       "effect": {
         "local": [
-          "defense",
-          "status",
-          "strengthen"
+          "reduction",
+          "status"
         ],
         "upstream": [
           "damage",
           "reduction"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
-      "duration": {
-        "local": [
-          1,
-          2
-        ],
-        "upstream": [
-          4
-        ]
-      },
       "effectNumeric": {
-        "defense": {
+        "reduction": {
           "local": [
-            29
+            15
           ],
           "upstream": []
         }
@@ -286,47 +178,39 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "DURAÇÃO_ERRADA"
+          "EFEITO_ERRADO"
         ]
       }
     },
     "published": {
-      "description": "Clones das Sombras afeta o usuário: concede 29 de proteção por 2 turnos; aplica Evasão por 1 turno(s); aumenta Ataque em 5 por 2 turnos. Custo: NIN; recarga: 3 turno(s).",
+      "description": "Clones das Sombras afeta o usuário: reduz todo dano recebido em 15 por 4 turnos e habilita as técnicas que exigem Clones das Sombras. Custo: Q; recarga: 3 turno(s).",
       "effect": {
         "aoe": false,
-        "kind": "shield",
-        "power": 29,
-        "duration": 2
+        "kind": "status",
+        "power": 15,
+        "duration": 4
       },
       "mechanics": [
         {
-          "op": "shield",
-          "turns": 2,
-          "amount": 29,
+          "op": "buff",
+          "stat": "defense",
+          "turns": 4,
+          "amount": 15,
           "target": "self"
         },
         {
           "op": "status",
-          "turns": 1,
-          "value": 0.35,
-          "status": "evasion",
-          "target": "self"
-        },
-        {
-          "op": "buff",
-          "stat": "attack",
-          "turns": 2,
-          "amount": 5,
+          "turns": 4,
+          "value": 1,
+          "status": "shadow-clones",
           "target": "self"
         }
       ],
       "chakraCost": [
-        "NIN"
+        "Q"
       ],
       "cooldown": 3,
-      "power": 29,
+      "power": 15,
       "target": "self"
     },
     "upstream": {
@@ -368,86 +252,28 @@
     "upstreamTechnique": "Sexy Technique",
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
-      "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "DURAÇÃO_ERRADA",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "effect": {
-        "local": [
-          "defense",
-          "strengthen",
-          "cleanse"
-        ],
-        "upstream": [
-          "invulnerable"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": []
-      },
-      "duration": {
-        "local": [
-          2
-        ],
-        "upstream": [
-          1
-        ]
-      },
-      "effectNumeric": {
-        "defense": {
-          "local": [
-            40
-          ],
-          "upstream": []
-        }
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "DURAÇÃO_ERRADA"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
-      "description": "Sexy Technique afeta o usuário: concede 40 de proteção por 2 turnos; aumenta Ataque em 7 por 2 turnos; remove 1 efeito negativo. Custo: NIN; recarga: 4 turno(s).",
+      "description": "Sexy Technique afeta o usuário: torna Naruto invulnerável por 1 turno. Custo: nenhum; recarga: 4 turno(s).",
       "effect": {
         "aoe": false,
-        "kind": "shield",
-        "power": 40,
-        "duration": 2
+        "kind": "invuln",
+        "power": 0,
+        "duration": 1
       },
       "mechanics": [
         {
-          "op": "shield",
-          "turns": 2,
-          "amount": 40,
-          "target": "self"
-        },
-        {
-          "op": "buff",
-          "stat": "attack",
-          "turns": 2,
-          "amount": 7,
-          "target": "self"
-        },
-        {
-          "op": "cleanse",
-          "count": 1,
+          "op": "status",
+          "turns": 1,
+          "status": "invuln",
           "target": "self"
         }
       ],
-      "chakraCost": [
-        "NIN"
-      ],
+      "chakraCost": [],
       "cooldown": 4,
-      "power": 40,
+      "power": 0,
       "target": "self"
     },
     "upstream": {
