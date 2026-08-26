@@ -1,0 +1,64 @@
+name: Apply Semantic AI V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/semantic-ai-v2.mjs'
+      - 'tools/test-semantic-ai-v2.mjs'
+      - 'tools/apply-semantic-ai-v2.mjs'
+      - '.github/workflows/apply-semantic-ai-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  semantic-ai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Patch simulator to semantic AI
+        run: |
+          set -euo pipefail
+          node --check tools/semantic-ai-v2.mjs
+          node --check tools/test-semantic-ai-v2.mjs
+          node --check tools/apply-semantic-ai-v2.mjs
+          node tools/apply-semantic-ai-v2.mjs
+          node --check tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "semanticAI.skillScore" tools/simulate-balance-3v3-v2.mjs
+          grep -Fq "semanticAI.chooseTarget" tools/simulate-balance-3v3-v2.mjs
+      - name: Prove semantic decision scenarios
+        run: node tools/test-semantic-ai-v2.mjs
+      - name: Smoke semantic simulator
+        env:
+          SIM_MODE: smoke
+          SIM_SCOPE: all
+          SIM_SEEDS: '1'
+          SIM_MAX_TURNS: '20'
+        run: |
+          set -euo pipefail
+          node tools/simulate-balance-3v3-v2.mjs | tee /tmp/semantic-smoke.json
+          test -s audit/balance/simulation-v2/SUMMARY.json
+          node - <<'JS'
+          const fs=require('fs');const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
+          if(s.engineVersion!==2||s.totalRoster!==209||s.v2NativeSkills<0)throw new Error(JSON.stringify(s));
+          console.log('SEMANTIC_SIM_SMOKE=PASS',{roster:s.totalRoster,pairs:s.pairs,games:s.matchups});
+          JS
+      - name: Commit semantic simulator integration
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/simulate-balance-3v3-v2.mjs
+          if git diff --cached --quiet; then echo 'SEMANTIC_SIM_ALREADY_APPLIED=PASS'; exit 0; fi
+          git commit -m 'feat(balance): use context-aware semantic AI in v2 simulator [skip apply semantic ai]'
+          git pull --rebase origin main
+          git push origin HEAD:main
