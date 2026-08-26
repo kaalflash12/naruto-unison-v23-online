@@ -38,6 +38,10 @@ const conditional=adapter.adaptTechnique({id:'conditional',chakraCost:[],mechani
 assert.equal(conditional.mechanic.effects.length,2);
 assert.equal(conditional.mechanic.effects[1].amount,10);
 assert.deepEqual(conditional.mechanic.effects[1].requirements,{type:'statusPresent',target:'target',status:'wind-cut'});
+const fixedConditional=adapter.adaptTechnique({id:'fixed-conditional',chakraCost:[],mechanics:[{op:'damage',amount:20,target:'primary',bonusIf:{selfHas:'shadow-clones'},bonusAmount:10}]});
+assert.equal(fixedConditional.mechanic.effects.length,2);
+assert.equal(fixedConditional.mechanic.effects[1].amount,10,'bonusAmount deve preservar bônus fixo canônico');
+assert.deepEqual(fixedConditional.mechanic.effects[1].requirements,{type:'statusPresent',status:'shadow-clones'});
 
 const execute=adapter.adaptTechnique({id:'execute',chakraCost:[],mechanics:[{op:'execute',amount:15,target:'primary',threshold:.22,ignoreShield:true}]});
 assert.equal(execute.mechanic.effects[0].requirements.type,'hpBelow');
@@ -52,6 +56,15 @@ function state(hpB=100){return rules.createState([
 function useAs(s,actorId,skill,target=null){const r=rules.resolveSkill(s,actorId,skill,target,{payCost:false});assert.equal(r.ok,true,JSON.stringify(r));return r}
 function use(s,skill,target='b'){return useAs(s,'a',skill,target)}
 function tech(id,mechanics,extra={}){return adapter.adaptTechnique({id,chakraCost:[],cooldown:0,mechanics,...extra})}
+
+{
+  const s=state();
+  const required=adapter.adaptTechnique({id:'required-shadow-clones',chakraCost:[],requires:{selfHas:'shadow-clones'},mechanics:[{op:'damage',amount:20,target:'primary'}]});
+  assert.deepEqual(required.mechanic.requirements,{type:'statusPresent',status:'shadow-clones'});
+  assert.equal(rules.canUseSkill(s,'a',required,'b').ok,false,'requisito canônico deve bloquear uso sem setup');
+  rules.applyEffect(s,rules.getFighter(s,'a'),rules.getFighter(s,'a'),{type:'status',status:'shadow-clones',duration:4,durationUnit:'ownerPhases',positive:true});
+  assert.equal(rules.canUseSkill(s,'a',required,'b').ok,true,'requisito canônico deve liberar uso após setup');
+}
 
 {
   const s=state();
@@ -173,4 +186,4 @@ function tech(id,mechanics,extra={}){return adapter.adaptTechnique({id,chakraCos
 }
 
 assert.throws(()=>adapter.adaptTechnique({mechanics:[{op:'unknown-op'}]}),/UNSUPPORTED_CONTENT_OP/);
-console.log(JSON.stringify({ok:true,adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,ops:adapter.OPS.length,runtimeCases:19}));
+console.log(JSON.stringify({ok:true,adapterVersion:adapter.VERSION,rulesVersion:rules.VERSION,ops:adapter.OPS.length,runtimeCases:20}));

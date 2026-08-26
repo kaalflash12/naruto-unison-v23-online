@@ -73,8 +73,9 @@ function mechanicsToEffects(mechanics=[]){
     const target=targetSpec(m.target,op,m),amount=Math.max(0,num(m.amount));
     if(op==='damage'){
       effects.push({type:'damage',target,amount,damageClass:'normal',variance:0,bypassDefense:Boolean(m.ignoreShield)});
-      const req=statusRequirement(m.bonusIf),mult=Math.max(1,num(m.bonusMultiplier,1));
-      if(req&&mult>1){const bonus=Math.max(0,Math.round(amount*(mult-1)));if(bonus)effects.push({type:'damage',target,amount:bonus,damageClass:'normal',variance:0,bypassDefense:Boolean(m.ignoreShield),requirements:req,conditionalBonus:true})}
+      const req=statusRequirement(m.bonusIf),mult=Math.max(1,num(m.bonusMultiplier,1)),fixed=m.bonusAmount==null?null:Math.max(0,num(m.bonusAmount));
+      const bonus=fixed==null?Math.max(0,Math.round(amount*(mult-1))):fixed;
+      if(req&&bonus>0)effects.push({type:'damage',target,amount:bonus,damageClass:'normal',variance:0,bypassDefense:Boolean(m.ignoreShield),requirements:req,conditionalBonus:true})
       continue;
     }
     if(op==='multi-hit'){
@@ -114,7 +115,7 @@ function adaptTechnique(technique={}){
     cost:costTokens(technique.chakraCost??technique.cost),
     cooldown:Math.max(0,num(technique.cooldown,technique.cd??0)),
     charges:technique.charges==null?null:Math.max(0,num(technique.charges)),
-    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}
+    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),requirements:statusRequirement(technique.requires),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}
   };
 }
 function auditTechnique(technique={}){
