@@ -12,12 +12,20 @@ const EXPECTED_OPS=new Set(adapter.OPS);
 const KNOWN_COSTS=new Set(['Blood','Gen','Nin','Tai','Rand']);
 const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
 const inc=(obj,key,n=1)=>{obj[key]=Number(obj[key]||0)+n};
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 
 async function getJson(url){
-  const r=await fetch(url,{headers:{accept:'application/json'},signal:AbortSignal.timeout(30000)});
-  const text=await r.text();let body=null;try{body=JSON.parse(text)}catch{}
-  if(!r.ok||!body?.ok)throw new Error(`CONTENT_HTTP_${r.status}:${text.slice(0,300)}`);
-  return body;
+  let last='content_unavailable';
+  for(let attempt=1;attempt<=3;attempt++){
+    try{
+      const r=await fetch(url,{headers:{accept:'application/json'},signal:AbortSignal.timeout(30000)});
+      const text=await r.text();let body=null;try{body=JSON.parse(text)}catch{}
+      if(r.ok&&body?.ok)return body;
+      last=`CONTENT_HTTP_${r.status}:${text.slice(0,300)}`;
+    }catch(e){last=String(e?.message||e)}
+    if(attempt<3)await sleep(attempt*750);
+  }
+  throw new Error(last);
 }
 function targetFor(skill){
   const t=String(skill?.mechanic?.target||'enemy');
