@@ -117,5 +117,6 @@ jobs:
           git add audit/balance/canonical-v2
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'audit(balance): refresh raw canonical V2 classification [skip ci]'
+          git restore audit/balance/published-v2 || true
           git pull --rebase origin main
           git push origin HEAD:main
