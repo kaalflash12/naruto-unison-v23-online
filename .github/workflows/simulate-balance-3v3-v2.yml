@@ -9,6 +9,7 @@ on:
       - 'jutsu-variants.js'
       - 'tools/test-combat-rules-v2.mjs'
       - 'tools/simulate-balance-3v3-v2.mjs'
+      - 'tools/analyze-balance-v2.mjs'
       - '.github/workflows/simulate-balance-3v3-v2.yml'
   workflow_dispatch:
 
@@ -23,6 +24,8 @@ jobs:
   smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    env:
+      SIM_SCOPE: competitive
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,6 +38,7 @@ jobs:
           node --check roster.js
           node --check tools/test-combat-rules-v2.mjs
           node --check tools/simulate-balance-3v3-v2.mjs
+          node --check tools/analyze-balance-v2.mjs
       - name: Deterministic combat semantics
         run: |
           set -euo pipefail
@@ -51,7 +55,8 @@ jobs:
           const fs=require('fs');
           const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
           if(s.engineVersion!==2) throw new Error('engineVersion != 2');
-          if(s.roster<190) throw new Error('roster incompleto');
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.scope!=='competitive'||s.roster!==203) throw new Error('competitive coverage invalid '+JSON.stringify({total:s.totalRoster,eligible:s.eligibleRoster,scope:s.scope,roster:s.roster}));
+          if(!Array.isArray(s.excludedCharacters)||s.excludedCharacters.length!==6) throw new Error('excluded coverage invalid');
           if(s.matchups<100) throw new Error('smoke insuficiente');
           if(s.v2NativeSkills+s.legacyFallbackSkills!==s.roster*4) throw new Error('cobertura de jutsus inconsistente');
           console.log('V2_SMOKE=PASS',s);
@@ -60,7 +65,9 @@ jobs:
   standard:
     needs: smoke
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
+    env:
+      SIM_SCOPE: competitive
     steps:
       - uses: actions/checkout@v4
         with:
@@ -73,27 +80,49 @@ jobs:
         run: |
           set -euo pipefail
           node tools/test-combat-rules-v2.mjs
-      - name: Standard exhaustive focal-pair simulation
+      - name: Standard exhaustive competitive simulation
         env:
           SIM_MODE: standard
           SIM_SEEDS: '2'
           SIM_MAX_TURNS: '30'
         run: |
           set -euo pipefail
+          rm -rf audit/balance/simulation-v2 audit/balance/analysis-v2/competitive
           node tools/simulate-balance-3v3-v2.mjs | tee /tmp/v2-standard.json
           node - <<'JS'
           const fs=require('fs');
           const s=JSON.parse(fs.readFileSync('audit/balance/simulation-v2/SUMMARY.json','utf8'));
+          if(s.totalRoster!==209||s.eligibleRoster!==209||s.scope!=='competitive'||s.roster!==203) throw new Error('competitive coverage invalid '+JSON.stringify(s));
+          if(s.excludedCharacters.length!==6) throw new Error('expected 6 event/special exclusions');
           const expectedPairs=s.roster*(s.roster-1)/2;
           if(s.pairs!==expectedPairs) throw new Error(`pairs=${s.pairs}, esperado=${expectedPairs}`);
           if(s.matchups!==expectedPairs*8) throw new Error(`games=${s.matchups}, esperado=${expectedPairs*8}`);
           if(!s.top || !s.bottom) throw new Error('ranking ausente');
           console.log('V2_STANDARD=PASS',s);
           JS
+      - name: Analyze competitive balance from the same matrix
+        run: |
+          set -euo pipefail
+          node tools/analyze-balance-v2.mjs | tee /tmp/v2-analysis.json
+          test -s audit/balance/analysis-v2/competitive/SUMMARY.json
+          test -s audit/balance/analysis-v2/competitive/CHARACTER-ANALYSIS.json
+          test -s audit/balance/analysis-v2/competitive/REPORT.md
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/competitive/SUMMARY.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('audit/balance/analysis-v2/competitive/CHARACTER-ANALYSIS.json','utf8'));
+          if(s.scope!=='competitive'||s.characters!==203||c.length!==203) throw new Error('competitive analysis coverage failed');
+          if(!s.methodReferences.some(x=>x.repository==='google-deepmind/open_spiel')) throw new Error('OpenSpiel method missing');
+          if(!s.methodReferences.some(x=>x.repository==='sublee/trueskill')) throw new Error('TrueSkill method missing');
+          if(!s.methodReferences.some(x=>x.repository==='EbTech/Elo-MMR')) throw new Error('Elo-MMR method missing');
+          console.log('V2_COMPETITIVE_ANALYSIS=PASS',s.actionCounts,s.health,s.concentration);
+          JS
       - uses: actions/upload-artifact@v4
         with:
           name: balance-simulation-v2-${{ github.sha }}
-          path: audit/balance/simulation-v2
+          path: |
+            audit/balance/simulation-v2
+            audit/balance/analysis-v2/competitive
           if-no-files-found: error
           retention-days: 30
       - name: Commit generated v2 audit
@@ -101,10 +130,8 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add audit/balance/simulation-v2
+          git add audit/balance/simulation-v2 audit/balance/analysis-v2/competitive
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'audit(balance): refresh combat-rules-v2 simulation [skip ci]'
+          git commit -m 'audit(balance): refresh combat-rules-v2 competitive analysis [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
-
-# rerun after combat-v2 triggerTarget/excludeClasses patch
