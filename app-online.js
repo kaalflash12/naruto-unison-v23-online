@@ -1285,6 +1285,15 @@ function expireDefenseAfterOpponentPhase(team){
   if(f.shield&&f.shieldTurns>0){f.shieldTurns--;if(f.shieldTurns<=0)f.shield=0}
  }
 }
+function battleInitiativeSide(){
+ if(!G)return 'you';
+ if(G.initiativeFirst!=='you'&&G.initiativeFirst!=='ai'){
+  G.initiativeFirst=Math.random()<.5?'you':'ai';
+  log(`Iniciativa inicial: ${G.initiativeFirst==='you'?'VOCÊ':'ADVERSÁRIO'}. A prioridade alterna a cada turno.`,'info');
+ }
+ const odd=(Math.max(1,Number(G.turn||1))-1)%2===0;
+ return odd?G.initiativeFirst:(G.initiativeFirst==='you'?'ai':'you');
+}
 async function tick(){
  const effects=[];
  for(const [side,team] of [['you',G.you],['ai',G.ai]])for(let index=0;index<team.length;index++){
@@ -1302,14 +1311,26 @@ async function execute(){
  G.animating=true;renderBattle();
  try{
  const usedActs=G.acts.map(a=>({...a}));
- let ch={...G.ch};for(const a of G.acts){let sk=G.you[a.user].skills[a.skill];if(canPay(ch,sk.cost)){pay(ch,sk.cost);await perform(a,false)}}G.ch=ch;
- expireDefenseAfterOpponentPhase(G.ai);
- recordJutsuUses(usedActs,G.you);
- if(!alive(G.ai).length)return finish(true,false);
- for(const a of aiActs())await perform(a,true);
- expireDefenseAfterOpponentPhase(G.you);
- if(!alive(G.you).length)return finish(false,false);
- if(G.story&&!storyProtectedAlive())return finish(false,false);
+ const playerPhase=async()=>{
+  let ch={...G.ch};for(const a of G.acts){const sk=G.you[a.user]?.skills?.[a.skill];if(sk&&G.you[a.user]?.hp>0&&canPay(ch,sk.cost)){pay(ch,sk.cost);await perform(a,false)}}G.ch=ch;
+  expireDefenseAfterOpponentPhase(G.ai);
+  recordJutsuUses(usedActs,G.you);
+ };
+ const aiPhase=async()=>{for(const a of aiActs())await perform(a,true);expireDefenseAfterOpponentPhase(G.you)};
+ const initiative=battleInitiativeSide();
+ if(initiative==='ai'){
+  await aiPhase();
+  if(!alive(G.you).length)return finish(false,false);
+  if(G.story&&!storyProtectedAlive())return finish(false,false);
+  await playerPhase();
+  if(!alive(G.ai).length)return finish(true,false);
+ }else{
+  await playerPhase();
+  if(!alive(G.ai).length)return finish(true,false);
+  await aiPhase();
+  if(!alive(G.you).length)return finish(false,false);
+  if(G.story&&!storyProtectedAlive())return finish(false,false);
+ }
  await tick();
  if(!alive(G.ai).length)return finish(true,false);
  if(!alive(G.you).length)return finish(false,false);

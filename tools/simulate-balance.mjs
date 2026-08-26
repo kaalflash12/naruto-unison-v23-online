@@ -256,7 +256,8 @@ function simulate(charsA, charsB, { seed, policyA = 'balanced', policyB = 'balan
   for (; turn <= MAX_TURNS; turn++) {
     const runA = () => { chA = performPhase(A, B, chA, policyA, rng, skillStats); expireDefense(B); };
     const runB = () => { chB = performPhase(B, A, chB, policyB, rng, skillStats); expireDefense(A); };
-    if (first === 'A') { runA(); if (!alive(B).length) break; runB(); }
+    const turnFirst = ((turn - 1) % 2 === 0) ? first : (first === 'A' ? 'B' : 'A');
+    if (turnFirst === 'A') { runA(); if (!alive(B).length) break; runB(); }
     else { runB(); if (!alive(A).length) break; runA(); }
     if (!alive(A).length || !alive(B).length) break;
     tick(A, skillStats, aM); tick(B, skillStats, bM);
