@@ -1,0 +1,52 @@
+[
+  {
+    "id": "bijuu-chomei-event",
+    "name": "Chōmei",
+    "tags": [
+      "bijuu",
+      "event",
+      "monthly-unlock"
+    ],
+    "rank": "EVENTO"
+  },
+  {
+    "id": "bijuu-isobu-event",
+    "name": "Isobu",
+    "tags": [
+      "bijuu",
+      "event",
+      "monthly-unlock"
+    ],
+    "rank": "EVENTO"
+  },
+  {
+    "id": "bijuu-kokuo-event",
+    "name": "Kokuō",
+    "tags": [
+      "bijuu",
+      "event",
+      "monthly-unlock"
+    ],
+    "rank": "EVENTO"
+  },
+  {
+    "id": "bijuu-saiken-event",
+    "name": "Saiken",
+    "tags": [
+      "bijuu",
+      "event",
+      "monthly-unlock"
+    ],
+    "rank": "EVENTO"
+  },
+  {
+    "id": "bijuu-son-goku-event",
+    "name": "Son Gokū",
+    "tags": [
+      "bijuu",
+      "event",
+      "monthly-unlock"
+    ],
+    "rank": "EVENTO"
+  }
+]

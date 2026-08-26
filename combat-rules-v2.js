@@ -10,7 +10,7 @@ const DAMAGE_CLASSES=new Set(['normal','piercing','affliction']);
 const TARGETS=new Set(['self','ally','allies','enemy','enemies','everyone','randomEnemy']);
 const DISABLING_STATUSES=new Set(['stun','disable','silence','seal']);
 const NEGATIVE_STATUSES=new Set(['stun','disable','silence','seal','expose','exhaust','weaken','snare','throttle','taunt','alone','bind','bleed','blind','burn','chakra-lock','freeze','parasite','poison','shock','soaked','vulnerable','wind-cut']);
-const POSITIVE_STATUSES=new Set(['invulnerable','immunity','focus','reduction','strengthen','endure','enrage','counter','evasion','regen']);
+const POSITIVE_STATUSES=new Set(['invulnerable','immunity','focus','reduction','strengthen','endure','enrage','counter','evasion','regen','reflect','redirect','channel']);
 const IMMUNITY_BLOCKABLE=new Set(['damage','dot','stun','disable','silence','seal','expose','exhaust','weaken','snare','throttle','taunt','alone','demolish','trap','counter']);
 const clone=v=>v==null?v:JSON.parse(JSON.stringify(v));
 const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
@@ -36,7 +36,7 @@ function createFighter(input={}){
     id:String(input.id??uid('fighter')),side:String(input.side??'A'),name:String(input.name??input.id??'Fighter'),
     hp:clamp(num(input.hp,maxHp),0,maxHp),maxHp,
     chakra:{Blood:0,Gen:0,Nin:0,Tai:0,Rand:0,...clone(input.chakra||{})},
-    statuses:arr(input.statuses).map(clone),defense:arr(input.defense).map(clone),dots:arr(input.dots).map(clone),traps:arr(input.traps).map(clone),
+    statuses:arr(input.statuses).map(clone),defense:arr(input.defense).map(clone),dots:arr(input.dots).map(clone),traps:arr(input.traps).map(clone),channels:arr(input.channels).map(clone),
     stacks:{...clone(input.stacks||{})},alternates:{...clone(input.alternates||{})},skillCharges:{...clone(input.skillCharges||{})},cooldowns:{...clone(input.cooldowns||{})},metadata:{...clone(input.metadata||{})}
   };
 }
@@ -122,8 +122,23 @@ function evaluateRequirement(state,actor,skill,req,target){
     default:return false;
   }
 }
+function applySkillChanges(state,actor,skill,target=null){
+  const out=clone(skill);out.mechanic=clone(out.mechanic||{});out.cost=arr(out.cost).map(String);
+  for(const change of arr(out.mechanic.changes)){
+    if(!evaluateRequirement(state,actor,out,change.requirements||change.requirement,target))continue;
+    const type=String(change.type||change.op||'');
+    if(type==='setCost')out.cost=arr(change.cost).map(String);
+    else if(type==='addCost')out.cost.push(...arr(change.cost||change.token||'Rand').map(String));
+    else if(type==='removeCost'){let n=Math.max(1,num(change.count,1));const token=change.token==null?null:String(change.token);for(let i=out.cost.length-1;i>=0&&n>0;i--){if(token==null||out.cost[i]===token){out.cost.splice(i,1);n--}}}
+    else if(type==='setTarget'&&TARGETS.has(String(change.target)))out.mechanic.target=String(change.target);
+    else if(type==='targetAll'){const t=String(out.mechanic.target||'enemy');out.mechanic.target=t==='enemy'?'enemies':t==='ally'||t==='self'?'allies':t}
+    else if(type==='setCooldown')out.cooldown=Math.max(0,num(change.cooldown,change.amount));
+    else if(type==='setCharges')out.charges=Math.max(0,num(change.charges,change.amount));
+  }
+  return out;
+}
 function canUseSkill(state,actorId,skillInput,targetId=null){
-  const actor=getFighter(state,actorId),skill=normalizeSkill(skillInput);if(!actor||!alive(actor))return{ok:false,reason:'ACTOR_DEAD_OR_MISSING'};
+  const actor=getFighter(state,actorId),baseSkill=normalizeSkill(skillInput),target=targetId==null?null:getFighter(state,targetId),skill=actor?applySkillChanges(state,actor,baseSkill,target):baseSkill;if(!actor||!alive(actor))return{ok:false,reason:'ACTOR_DEAD_OR_MISSING'};
   if(isDisabledFor(actor,skill.classes))return{ok:false,reason:'DISABLED'};
   if(num(actor.cooldowns[skill.id])>0)return{ok:false,reason:'COOLDOWN'};
   if(ensureCharges(actor,skill)<=0)return{ok:false,reason:'NO_CHARGES'};
@@ -153,16 +168,19 @@ function absorbDefense(state,target,amount,classes,effect,ctx){
 }
 function rolledAmount(state,effect){const base=Math.max(0,num(effect.amount)),variance=Math.max(0,num(effect.variance));if(!variance)return Math.round(base);const r=randomOf(state)();return Math.max(0,Math.round(base*(1-variance+2*variance*r)))}
 function counterRatio(target,classes){return clamp(statusActive(target,'counter').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>Math.max(n,num(s.value,s.amount)),0),0,1)}
+function reflectRatio(target,classes){return clamp(statusActive(target,'reflect').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>Math.max(n,num(s.ratio,s.value??s.amount??1)),0),0,1)}
+function redirectTarget(state,target,classes){for(const s of statusActive(target,'redirect')){if(!intersects(s.classes||['all'],classes))continue;const id=s.redirectToId||s.toId||s.sourceId,protector=getFighter(state,id);if(protector&&alive(protector)&&protector.id!==target.id)return protector}return null}
 function applyDamage(state,source,target,effect,ctx={}){
   if(!alive(target))return{dealt:0,blocked:'dead'};const classes=normClasses(effect.classes||ctx.skill?.classes||['all']);
+  if(!ctx.redirected&&!effect.bypassRedirect){const protector=redirectTarget(state,target,classes);if(protector){const r=applyDamage(state,source,protector,effect,{...ctx,redirected:true,originalTarget:target});return{...r,redirectedTo:protector.id,originalTarget:target.id}}}
   if(isImmuneTo(target,'damage',classes))return{dealt:0,blocked:'immunity'};
   if(isInvulnerable(target,classes,effect))return{dealt:0,blocked:'invulnerable'};
   if(isEvaded(state,target,classes,effect))return{dealt:0,blocked:'evasion'};
   let raw=rolledAmount(state,effect);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';if(damageClass==='piercing'||damageClass==='affliction')effect={...effect,bypassDefense:true};
   raw=Math.max(0,raw+attackAdjustment(source,classes)+exposureAmount(target,classes)-reductionAmount(target,classes,effect));raw=Math.max(0,Math.round(raw*vulnerabilityMultiplier(target,classes)));
-  const{remaining,absorbed}=absorbDefense(state,target,raw,classes,effect,{...ctx,source});const before=target.hp;target.hp=Math.max(0,num(target.hp)-remaining);const dealt=before-target.hp;let countered=0;
-  if(dealt>0){runTriggers(state,'onHarmed',{...ctx,source,target,amount:dealt,effect},1);runTriggers(state,'onDamage',{...ctx,source,target,amount:dealt,effect},1);if(!ctx.counter&&alive(source)){const ratio=counterRatio(target,classes);if(ratio>0){const reflected=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount:reflected,damageClass:'normal',variance:0},{counter:true});countered=r.dealt||0}}}
-  if(before>0&&target.hp<=0)runTriggers(state,'onDeath',{...ctx,source,target,effect},1);return{dealt,absorbed,raw,countered};
+  const{remaining,absorbed}=absorbDefense(state,target,raw,classes,effect,{...ctx,source});const before=target.hp;target.hp=Math.max(0,num(target.hp)-remaining);const dealt=before-target.hp;let countered=0,reflected=0;
+  if(dealt>0){runTriggers(state,'onHarmed',{...ctx,source,target,amount:dealt,effect},1);runTriggers(state,'onDamage',{...ctx,source,target,amount:dealt,effect},1);if(!ctx.counter&&alive(source)){const ratio=counterRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0},{counter:true});countered=r.dealt||0}}if(!ctx.reflect&&!ctx.counter&&alive(source)){const ratio=reflectRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0,bypassRedirect:true},{reflect:true});reflected=r.dealt||0}}}
+  if(before>0&&target.hp<=0)runTriggers(state,'onDeath',{...ctx,source,target,effect},1);return{dealt,absorbed,raw,countered,reflected};
 }
 function addStatus(target,status){
   const raw=clone(status||{});const s={...raw,id:raw.id||uid('status'),type:String(raw.type),duration:raw.duration==='permanent'?'permanent':Math.max(1,num(raw.duration,1)),durationUnit:raw.durationUnit||'rounds',classes:normClasses(raw.classes||['all']),amount:raw.amount??raw.magnitude??null,sourceId:raw.sourceId??null};target.statuses.push(s);return s;
@@ -210,6 +228,12 @@ function applyEffect(state,source,target,effect,ctx={},depth=0){
   if(type==='stack'){const key=String(effect.key||'stack'),op=effect.op||'add',amount=Math.max(0,num(effect.amount,1)),before=num(target.stacks[key]);if(op==='remove')target.stacks[key]=Math.max(0,before-amount);else if(op==='set')target.stacks[key]=amount;else target.stacks[key]=before+amount;return{type,key,before,after:target.stacks[key]}}
   if(type==='alternate'){const key=String(effect.key||ctx.skill?.id||'skill'),value=String(effect.value||effect.to||'');if(effect.op==='clear')delete target.alternates[key];else target.alternates[key]=value;return{type,key,value:target.alternates[key]??null}}
   if(type==='trap'||type==='counter'){const triggerTarget=String(effect.triggerTarget||effect.counterTarget||effect.trapTarget||(effect.target==='source'||effect.target==='target'?effect.target:'source'));const trap={id:effect.id||uid('trap'),trigger:String(effect.trigger||'onHarmed'),duration:effect.duration??1,durationUnit:effect.durationUnit||'rounds',effects:clone(effect.effects||[]),target:triggerTarget,classes:normClasses(effect.classes||['all']),excludeClasses:arr(effect.excludeClasses).map(normClass),once:Boolean(effect.once),sourceId:source.id,metadata:clone(effect.metadata||{})};target.traps.push(trap);return{type,id:trap.id}}
+  if(type==='bomb'){const trap={id:effect.id||uid('bomb'),trigger:'onExpire',duration:Math.max(1,num(effect.duration,1)),durationUnit:effect.durationUnit||'ownerPhases',effects:clone(effect.effects||[]),target:String(effect.triggerTarget||'target'),classes:normClasses(effect.classes||['all']),excludeClasses:[],once:true,sourceId:source.id,metadata:{...clone(effect.metadata||{}),bomb:true}};target.traps.push(trap);return{type,id:trap.id,duration:trap.duration}}
+  if(type==='sacrifice'){const amount=Math.max(0,num(effect.amount)),floor=effect.canKill?0:Math.max(0,num(effect.minHp,1)),before=target.hp;target.hp=Math.max(floor,num(target.hp)-amount);return{type,lost:before-target.hp,before,after:target.hp}}
+  if(type==='reflect')return{type,status:addStatus(target,{...effect,type:'reflect',ratio:clamp(num(effect.ratio,effect.value??effect.amount??1),0,1),positive:true,sourceId:source.id})};
+  if(type==='redirect')return{type,status:addStatus(target,{...effect,type:'redirect',redirectToId:String(effect.redirectToId||effect.toId||source.id),positive:true,sourceId:source.id})};
+  if(type==='channel'){const channel={id:String(effect.id||uid('channel')),skillId:String(effect.skillId||ctx.skill?.id||''),duration:effect.duration==='permanent'?'permanent':Math.max(1,num(effect.duration,1)),durationUnit:effect.durationUnit||'ownerPhases',tickEffects:clone(effect.tickEffects||effect.effects||[]),endEffects:clone(effect.endEffects||[]),sourceId:source.id,targetId:target.id,classes:normClasses(effect.classes||ctx.skill?.classes||['all']),metadata:clone(effect.metadata||{})};target.channels.push(channel);return{type,id:channel.id,duration:channel.duration}}
+  if(type==='interrupt'){const before=target.channels.length,skillId=effect.skillId==null?null:String(effect.skillId),channelId=effect.channelId==null?null:String(effect.channelId),classes=normClasses(effect.classes||['all']);target.channels=target.channels.filter(c=>{const match=(!skillId||c.skillId===skillId)&&(!channelId||c.id===channelId)&&intersects(c.classes||['all'],classes);return !match});return{type,interrupted:before-target.channels.length}}
   return{type:'noop'};
 }
 function runTriggers(state,trigger,context={},depth=0){
@@ -218,7 +242,7 @@ function runTriggers(state,trigger,context={},depth=0){
   return out;
 }
 function resolveSkill(state,actorId,skillInput,targetId=null,options={}){
-  const actor=getFighter(state,actorId),skill=normalizeSkill(skillInput),gate=canUseSkill(state,actorId,skill,targetId);if(!gate.ok)return{ok:false,reason:gate.reason};if(options.payCost!==false&&!pay(actor,gate.cost))return{ok:false,reason:'NO_CHAKRA'};
+  const actor=getFighter(state,actorId),baseSkill=normalizeSkill(skillInput),gate=canUseSkill(state,actorId,baseSkill,targetId);if(!gate.ok)return{ok:false,reason:gate.reason};const skill=gate.skill||baseSkill;if(options.payCost!==false&&!pay(actor,gate.cost))return{ok:false,reason:'NO_CHAKRA'};
   const targets=resolveTargets(state,actor,skill.mechanic.target||'enemy',targetId);if(!targets.length&&skill.mechanic.target!=='self')return{ok:false,reason:'NO_TARGET'};const results=[];
   for(const effect of arr(skill.mechanic.effects)){const eTargets=effectTargets(state,actor,skill,effect,targetId);for(const target of eTargets){if(!evaluateRequirement(state,actor,skill,effect.requirements,target))continue;results.push({targetId:target.id,effect:applyEffect(state,actor,target,effect,{skill,actor,target})})}}
   if(skill.cooldown>0)actor.cooldowns[skill.id]=skill.cooldown;if(skill.charges!=null){const k=chargeKey(skill);actor.skillCharges[k]=Math.max(0,ensureCharges(actor,skill)-1)}state.history.push({round:state.round,phase:state.phase,actorId:actor.id,skillId:skill.id,skillName:skill.name,targetIds:targets.map(x=>x.id)});state.log.push({type:'skill',actorId:actor.id,skillId:skill.id,results:clone(results)});runTriggers(state,'onAction',{source:actor,skill,targets},1);return{ok:true,skill,targets:targets.map(x=>x.id),results};
@@ -227,15 +251,17 @@ function resolveSkill(state,actorId,skillInput,targetId=null,options={}){
 function decrementTimed(list,predicate){for(const item of list){if(item.duration==='permanent'||!predicate(item))continue;item.duration=Math.max(0,num(item.duration)-1)}return list.filter(x=>x.duration==='permanent'||num(x.duration)>0)}
 function processDots(state,fighter){const out=[];for(const dot of[...fighter.dots]){const source=getFighter(state,dot.sourceId)||fighter;out.push(applyDamage(state,source,fighter,{type:'damage',amount:dot.amount,damageClass:dot.damageClass,classes:dot.classes,bypassDefense:dot.bypassDefense,bypassInvulnerable:dot.bypassInvulnerable,variance:dot.variance},{dot:true}));dot.duration=Math.max(0,num(dot.duration)-1)}fighter.dots=fighter.dots.filter(x=>num(x.duration)>0);return out}
 function processRegens(state,fighter){const out=[];for(const s of statusActive(fighter,'regen')){const amount=Math.max(0,num(s.value,s.amount));if(amount<=0)continue;const before=fighter.hp;fighter.hp=Math.min(fighter.maxHp,fighter.hp+amount);out.push({type:'regen',statusId:s.id,healed:fighter.hp-before})}return out}
+function tickTraps(state,fighter,shouldTick){const keep=[];for(const trap of fighter.traps){if(trap.duration==='permanent'||!shouldTick(trap)){keep.push(trap);continue}trap.duration=Math.max(0,num(trap.duration)-1);if(trap.duration>0){keep.push(trap);continue}if(String(trap.trigger)==='onExpire'){const source=getFighter(state,trap.sourceId)||fighter;for(const ef of arr(trap.effects))applyEffect(state,source,fighter,ef,{triggeredBy:trap,source,target:fighter},1)}}fighter.traps=keep}
+function tickChannels(state,fighter,shouldTick){const keep=[];for(const channel of fighter.channels){const ticks=channel.duration==='permanent'?false:shouldTick(channel);if(ticks){const source=getFighter(state,channel.sourceId)||fighter;const target=getFighter(state,channel.targetId)||fighter;for(const ef of arr(channel.tickEffects))applyEffect(state,source,target,ef,{channel,source,target},1);channel.duration=Math.max(0,num(channel.duration)-1)}if(channel.duration==='permanent'||num(channel.duration)>0){keep.push(channel);continue}const source=getFighter(state,channel.sourceId)||fighter;const target=getFighter(state,channel.targetId)||fighter;for(const ef of arr(channel.endEffects))applyEffect(state,source,target,ef,{channelEnded:channel,source,target},1)}fighter.channels=keep}
 function endPhase(state,actingSide){
   const opponent=enemySide(state,actingSide),roundBoundary=state.phase%2===1;
-  for(const f of state.fighters){const isOpponent=f.side===opponent,isOwner=f.side===actingSide,shouldTick=s=>(s.durationUnit==='rounds'&&roundBoundary)||(s.durationUnit==='opponentPhases'&&isOpponent)||(s.durationUnit==='ownerPhases'&&isOwner);if(isOwner){processDots(state,f);processRegens(state,f)}f.statuses=decrementTimed(f.statuses,shouldTick);f.defense=decrementTimed(f.defense,shouldTick);f.traps=decrementTimed(f.traps,shouldTick);for(const k of Object.keys(f.cooldowns))if(isOwner&&num(f.cooldowns[k])>0)f.cooldowns[k]=Math.max(0,num(f.cooldowns[k])-1)}
+  for(const f of state.fighters){const isOpponent=f.side===opponent,isOwner=f.side===actingSide,shouldTick=s=>(s.durationUnit==='rounds'&&roundBoundary)||(s.durationUnit==='opponentPhases'&&isOpponent)||(s.durationUnit==='ownerPhases'&&isOwner);if(isOwner){processDots(state,f);processRegens(state,f)}tickChannels(state,f,shouldTick);f.statuses=decrementTimed(f.statuses,shouldTick);f.defense=decrementTimed(f.defense,shouldTick);tickTraps(state,f,shouldTick);for(const k of Object.keys(f.cooldowns))if(isOwner&&num(f.cooldowns[k])>0)f.cooldowns[k]=Math.max(0,num(f.cooldowns[k])-1)}
   state.phase++;if(state.phase%2===0)state.round++;
 }
 
 return Object.freeze({
   VERSION,createFighter,createState,getFighter,normalizeSkill,legacyToV2,resolveTargets,
   canUseSkill,resolveSkill,applyEffect,applyDamage,runTriggers,endPhase,processDots,processRegens,
-  costWithStatuses,canPay,pay,evaluateRequirement,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor,statusActive,statusAmount
+  costWithStatuses,canPay,pay,evaluateRequirement,intersects,normClasses,makeRng,isImmuneTo,isDisabledFor,statusActive,statusAmount,applySkillChanges,reflectRatio,redirectTarget,tickChannels
 });
 });

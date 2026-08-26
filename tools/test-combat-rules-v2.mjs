@@ -87,3 +87,35 @@ const v2=(name,target,effects,classes=['all'])=>({name,originalName:name,cost:[]
 }
 
 console.log('COMBAT_RULES_V2_SEMANTICS=PASS');
+
+
+// CANONICAL_GAP_MECHANICS_V2_TESTS
+// Sacrifice respects the default 1 HP floor.
+{
+  const s=state();B(s).hp=8;const r=R.applyEffect(s,A(s),B(s),{type:'sacrifice',amount:20});assert.equal(r.lost,7);assert.equal(B(s).hp,1);
+}
+
+// Bomb resolves delayed effects when its timer expires.
+{
+  const s=state();R.applyEffect(s,A(s),B(s),{type:'bomb',duration:1,durationUnit:'ownerPhases',effects:[{type:'damage',amount:17,variance:0}]});assert.equal(B(s).hp,100);R.endPhase(s,'B');assert.equal(B(s).hp,83);assert.equal(B(s).traps.length,0);
+}
+
+// Reflect returns a configured fraction of actual damage without recursion.
+{
+  const s=state();R.applyEffect(s,B(s),B(s),{type:'reflect',ratio:1,duration:2,classes:['all']});const r=R.applyDamage(s,A(s),B(s),{type:'damage',amount:20,variance:0,classes:['all']});assert.equal(r.dealt,20);assert.equal(r.reflected,20);assert.equal(A(s).hp,80);assert.equal(B(s).hp,80);
+}
+
+// Redirect transfers incoming damage to a living protector.
+{
+  const s=R.createState([fighter('A','A'),fighter('B','B'),fighter('C','B')],{seed:7});const a=R.getFighter(s,'A'),b=R.getFighter(s,'B'),c=R.getFighter(s,'C');R.applyEffect(s,c,b,{type:'redirect',redirectToId:'C',duration:2,classes:['all']});const r=R.applyDamage(s,a,b,{type:'damage',amount:25,variance:0,classes:['all']});assert.equal(r.redirectedTo,'C');assert.equal(b.hp,100);assert.equal(c.hp,75);
+}
+
+// Channel ticks on its configured phase and interrupt cancels it.
+{
+  const s=state();R.applyEffect(s,A(s),B(s),{type:'channel',duration:2,durationUnit:'ownerPhases',tickEffects:[{type:'damage',amount:6,variance:0}]});assert.equal(B(s).channels.length,1);R.endPhase(s,'B');assert.equal(B(s).hp,94);assert.equal(B(s).channels.length,1);const cut=R.applyEffect(s,A(s),B(s),{type:'interrupt'});assert.equal(cut.interrupted,1);R.endPhase(s,'B');assert.equal(B(s).hp,94);
+}
+
+// Dynamic changes are applied before cost validation.
+{
+  const s=R.createState([fighter('A','A',{chakra:{Blood:0,Gen:0,Nin:0,Tai:0,Rand:0},statuses:[{type:'form:test',duration:2}]}),fighter('B','B')],{seed:8});const skill={id:'dyn',name:'Dynamic',cost:['Nin'],classes:['nin'],mechanic:{version:2,target:'enemy',effects:[{type:'damage',amount:10}],changes:[{type:'setCost',cost:[],requirements:{type:'statusPresent',status:'form:test'}}]}};const gate=R.canUseSkill(s,'A',skill,'B');assert.equal(gate.ok,true);assert.equal(gate.cost.length,0);assert.equal(R.resolveSkill(s,'A',skill,'B').ok,true);
+}
