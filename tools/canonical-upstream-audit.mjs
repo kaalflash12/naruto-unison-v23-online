@@ -14,7 +14,6 @@ const compact=s=>String(s??'').replace(/\s+/g,' ').trim();
 const escRe=s=>String(s).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const uniq=a=>[...new Set(a)];
 const arr=v=>Array.isArray(v)?v:[];
-const round=(x,n=4)=>Number(Number(x||0).toFixed(n));
 
 function walk(dir){
   const out=[];
@@ -220,7 +219,7 @@ fs.writeFileSync(path.join(outDir,'CANONICAL-UPSTREAM-SUMMARY.json'),JSON.string
 fs.writeFileSync(path.join(outDir,'CANONICAL-UPSTREAM-JUTSUS.json'),JSON.stringify(skillRows,null,2)+'\n');
 fs.writeFileSync(path.join(outDir,'CANONICAL-UPSTREAM-CHARACTERS.json'),JSON.stringify(characterRows,null,2)+'\n');
 
-const topFlags=Object.entries(flagCounts).sort((a,b)=>b[1]-a[1);
+const topFlags=Object.entries(flagCounts).sort((a,b)=>b[1]-a[1]);
 const topNeeds=Object.entries(engineNeeds).sort((a,b)=>b[1]-a[1]);
 const critical=skillRows.filter(x=>x.severity==='CRITICAL').slice(0,100);
 const unresolved=skillRows.filter(x=>x.severity==='UNRESOLVED').slice(0,100);
