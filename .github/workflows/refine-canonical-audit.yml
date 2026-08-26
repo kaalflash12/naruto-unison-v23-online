@@ -1,0 +1,67 @@
+name: Refine Canonical Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/refine-canonical-audit.mjs'
+      - 'audit/balance/current/CANONICAL-UPSTREAM-JUTSUS.json'
+      - '.github/workflows/refine-canonical-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refine canonical mismatches
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check tools/refine-canonical-audit.mjs
+          test -s audit/balance/current/CANONICAL-UPSTREAM-JUTSUS.json
+          node tools/refine-canonical-audit.mjs | tee /tmp/refined-summary.json
+          test -s audit/balance/current/CANONICAL-UPSTREAM-REFINED.json
+          test -s audit/balance/current/CANONICAL-UPSTREAM-REFINED-SUMMARY.json
+          test -s audit/balance/current/CANONICAL-UPSTREAM-REFINED-REPORT.md
+      - name: Validate refined audit
+        shell: bash
+        run: |
+          node - <<'JS'
+          const fs=require('fs');const s=JSON.parse(fs.readFileSync('audit/balance/current/CANONICAL-UPSTREAM-REFINED-SUMMARY.json','utf8'));
+          if(s.rows!==836)throw new Error(`rows=${s.rows}`);
+          if(s.linked<700)throw new Error(`linked=${s.linked}`);
+          if(s.criticalCount<=0)throw new Error('criticalCount=0');
+          if(s.criticalCount>=449)throw new Error(`refinement did not reduce old critical count: ${s.criticalCount}`);
+          console.log('REFINED_CANONICAL_AUDIT=PASS',s);
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refined-canonical-audit-${{ github.sha }}
+          path: |
+            audit/balance/current/CANONICAL-UPSTREAM-REFINED.json
+            audit/balance/current/CANONICAL-UPSTREAM-REFINED-SUMMARY.json
+            audit/balance/current/CANONICAL-UPSTREAM-REFINED-REPORT.md
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated refined audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/current/CANONICAL-UPSTREAM-REFINED.json audit/balance/current/CANONICAL-UPSTREAM-REFINED-SUMMARY.json audit/balance/current/CANONICAL-UPSTREAM-REFINED-REPORT.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): refresh refined canonical comparison [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
