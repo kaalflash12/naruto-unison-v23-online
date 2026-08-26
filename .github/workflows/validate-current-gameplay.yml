@@ -54,6 +54,8 @@ jobs:
           grep -Fq '"skills"' roster.js
           grep -Fq 'admin_reset_combat_history' admin-combat-reset.html
           grep -Fq 'RESETAR HISTÓRICO DE TODAS AS CONTAS' admin-combat-reset.html
+          grep -Fq 'function battleInitiativeSide()' app-online.js
+          grep -Fq 'const initiative=battleInitiativeSide();' app-online.js
           echo 'CURRENT_RUNTIME_SYNTAX=PASS'
 
       - name: Resolve runner Chrome
@@ -164,3 +166,5 @@ jobs:
           path: current-gameplay-proof.json
           if-no-files-found: error
           retention-days: 14
+
+# Post-initiative validation trigger: 2026-08-26
