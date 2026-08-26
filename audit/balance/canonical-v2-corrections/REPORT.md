@@ -8,8 +8,8 @@
 - SAFE_STRUCTURAL: **0**
 - COMPLEX_EFFECT: **714**
 - MANUAL_REVIEW: **0**
-- Dimensões estruturais retidas: **920**
-- DESCRIPTION_AFTER_MECHANICS: **709**
+- Dimensões estruturais retidas: **1059**
+- DESCRIPTION_AFTER_MECHANICS: **711**
 - Gate: **PASS**
 
 ## Regra

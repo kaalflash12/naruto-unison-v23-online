@@ -64,7 +64,8 @@ const targetCompatible = (localTargets, upstreamTargets) => {
     if (t === 'allies-except-self') return new Set(['allies-except-self', 'allies']);
     return new Set([t]);
   };
-  return U.every((u) => L.some((l) => aliases(u).has(l) || aliases(l).has(u)));
+  const compatible=(a,b)=>aliases(a).has(b)||aliases(b).has(a);
+  return U.every((u) => L.some((l) => compatible(u,l))) && L.every((l) => U.some((u) => compatible(u,l)));
 };
 
 function walk(dir) {
@@ -444,13 +445,13 @@ function classifyTechnique({ published, upstream }) {
   }
   const lc = normalizeCost(published.chakraCost ?? published.cost);
   const uc = normalizeCost(upstream.cost);
-  if (uc.length && JSON.stringify(lc) !== JSON.stringify(uc)) {
+  if (JSON.stringify(lc) !== JSON.stringify(uc)) {
     flags.push('CUSTO_ERRADO');
     evidence.cost = { local: lc, upstream: uc };
   }
   const localCd = num(published.cooldown, 0);
-  const upCd = num(upstream.cooldown, null);
-  if (upCd != null && localCd !== upCd) {
+  const upCd = num(upstream.cooldown, 0);
+  if (localCd !== upCd) {
     flags.push('COOLDOWN_ERRADO');
     evidence.cooldown = { local: localCd, upstream: upCd };
   }
@@ -633,6 +634,10 @@ function selfTest() {
   if (!wrongDamage.classifications.includes('DESCRIÇÃO_ERRADA')) throw new Error('SELFTEST_DESCRIPTION');
   const multi = classifyTechnique({ published: { ...basePublished, chakraCost: ['TAI'], cooldown: 2, mechanics: [{ op: 'damage', amount: 20, target: 'all-allies' }, { op: 'debuff', stat: 'defense', amount: 3, turns: 3, target: 'all-allies' }] }, upstream: baseUpstream });
   for (const expected of ['ALVO_ERRADO', 'CUSTO_ERRADO', 'COOLDOWN_ERRADO', 'DURAÇÃO_ERRADA']) if (!multi.classifications.includes(expected)) throw new Error(`SELFTEST_${expected}`);
+  const zeroDefaults = classifyTechnique({ published: { ...basePublished, chakraCost: ['NIN'], cooldown: 4 }, upstream: { ...baseUpstream, cost: [], cooldown: null } });
+  if (!zeroDefaults.classifications.includes('CUSTO_ERRADO') || !zeroDefaults.classifications.includes('COOLDOWN_ERRADO')) throw new Error('SELFTEST_ZERO_DEFAULTS');
+  const extraTarget = classifyTechnique({ published: { ...basePublished, mechanics: [...basePublished.mechanics, { op: 'heal', amount: 5, target: 'self' }] }, upstream: baseUpstream });
+  if (!extraTarget.classifications.includes('ALVO_ERRADO')) throw new Error('SELFTEST_EXTRA_TARGET');
   const extraEffect = classifyTechnique({ published: { ...basePublished, mechanics: [...basePublished.mechanics, { op: 'heal', amount: 5, target: 'self' }] }, upstream: baseUpstream });
   if (!extraEffect.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_EXTRA_EFFECT');
   const healMismatch=classifyTechnique({published:{description:'cura',chakraCost:['NIN'],cooldown:5,mechanics:[{op:'heal',amount:47,target:'self'},{op:'status',status:'regen',value:5,turns:2,target:'self'}]},upstream:{categories:['heal'],damage:[],pierce:[],afflict:[],heal:[15],defend:[],reduce:[],executeThresholds:[],targets:['self'],cost:['Nin'],cooldown:5,durations:[5]}});

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T21:05:25.502Z",
+  "generatedAt": "2026-08-26T21:14:30.425Z",
   "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "playableCharacters": 209,
   "totalTechniques": 836,
@@ -11,11 +11,11 @@
   "invalidJustified": 0,
   "classificationCounts": {
     "CORRETA": 5,
-    "DESCRIÇÃO_ERRADA": 709,
+    "DESCRIÇÃO_ERRADA": 711,
     "DANO_ERRADO": 54,
     "EFEITO_ERRADO": 705,
-    "ALVO_ERRADO": 289,
-    "CUSTO_ERRADO": 164,
+    "ALVO_ERRADO": 322,
+    "CUSTO_ERRADO": 270,
     "COOLDOWN_ERRADO": 57,
     "DURAÇÃO_ERRADA": 356,
     "MOTOR_INSUFICIENTE": 0

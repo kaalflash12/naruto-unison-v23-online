@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T21:05:25.582Z",
+  "generatedAt": "2026-08-26T21:14:30.506Z",
   "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "totalTechniques": 836,
   "comparable": 719,
@@ -9,16 +9,16 @@
   "safeStructural": 0,
   "complexEffect": 714,
   "manualReview": 0,
-  "descriptionAfterMechanics": 709,
-  "heldStructuralRows": 599,
-  "heldStructuralDimensions": 920,
+  "descriptionAfterMechanics": 711,
+  "heldStructuralRows": 602,
+  "heldStructuralDimensions": 1059,
   "classificationCounts": {
     "CORRETA": 5,
-    "DESCRIÇÃO_ERRADA": 709,
+    "DESCRIÇÃO_ERRADA": 711,
     "DANO_ERRADO": 54,
     "EFEITO_ERRADO": 705,
-    "ALVO_ERRADO": 289,
-    "CUSTO_ERRADO": 164,
+    "ALVO_ERRADO": 322,
+    "CUSTO_ERRADO": 270,
     "COOLDOWN_ERRADO": 57,
     "DURAÇÃO_ERRADA": 356,
     "MOTOR_INSUFICIENTE": 0
@@ -31,10 +31,10 @@
     "DURAÇÃO_ERRADA": 0
   },
   "heldStructuralDimensionCounts": {
-    "CUSTO_ERRADO": 164,
+    "CUSTO_ERRADO": 270,
     "COOLDOWN_ERRADO": 57,
     "DANO_ERRADO": 54,
-    "ALVO_ERRADO": 289,
+    "ALVO_ERRADO": 322,
     "DURAÇÃO_ERRADA": 356
   },
   "complexBlockerCounts": {
