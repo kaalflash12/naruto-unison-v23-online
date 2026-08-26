@@ -8,7 +8,7 @@
   "notes": [
     "Overrides are consumed by balance simulation/audit only until the authoritative naruto-api source is versioned and v2 parity is proven.",
     "Legacy roster fields remain unchanged for public online compatibility.",
-    "Batch 002 adds only high-confidence mechanics representable by Combat Rules v2. Unsupported canonical sub-effects are explicitly recorded in limitations rather than approximated as unrelated damage/stun."
+    "Only high-confidence mechanics representable by Combat Rules v2 are overridden. Unsupported canonical sub-effects are recorded in limitations rather than approximated as unrelated damage/stun."
   ],
   "overrides": {
     "naruto-uzumaki:3": {
@@ -20,14 +20,7 @@
       "cost": ["Rand"],
       "cooldown": 3,
       "classes": ["Chakra"],
-      "mechanic": {
-        "version": 2,
-        "target": "self",
-        "classes": ["Chakra"],
-        "effects": [
-          {"type":"reduction","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]}
-        ]
-      }
+      "mechanic": {"version":2,"target":"self","classes":["Chakra"],"effects":[{"type":"reduction","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]}]}
     },
     "sasuke-uchiha:3": {
       "batch": 1,
@@ -37,16 +30,8 @@
       "reason": "Canonical skill grants Sasuke 15 reduction and exposes one enemy for 4 turns.",
       "cost": ["Rand"],
       "cooldown": 4,
-      "classes": ["Mental", "Ranged", "Soulbound", "Unremovable"],
-      "mechanic": {
-        "version": 2,
-        "target": "enemy",
-        "classes": ["Mental", "Ranged", "Soulbound", "Unremovable"],
-        "effects": [
-          {"type":"reduction","target":"self","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]},
-          {"type":"expose","target":"enemy","duration":4,"durationUnit":"rounds","classes":["all"],"blockReduction":true,"blockInvulnerable":true}
-        ]
-      }
+      "classes": ["Mental","Ranged","Soulbound","Unremovable"],
+      "mechanic": {"version":2,"target":"enemy","classes":["Mental","Ranged","Soulbound","Unremovable"],"effects":[{"type":"reduction","target":"self","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]},{"type":"expose","target":"enemy","duration":4,"durationUnit":"rounds","classes":["all"],"blockReduction":true,"blockInvulnerable":true}]}
     },
     "hinata-hyuga:3": {
       "batch": 1,
@@ -57,33 +42,18 @@
       "cost": ["Rand"],
       "cooldown": 4,
       "classes": ["Mental"],
-      "mechanic": {
-        "version": 2,
-        "target": "self",
-        "classes": ["Mental"],
-        "effects": [
-          {"type":"reduction","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]}
-        ]
-      }
+      "mechanic": {"version":2,"target":"self","classes":["Mental"],"effects":[{"type":"reduction","amount":15,"duration":4,"durationUnit":"rounds","classes":["all"]}]}
     },
     "fukasaku-and-shima-(s):1": {
       "batch": 2,
       "character": "Fukasaku and Shima",
       "originalName": "Frog Song",
       "source": "src/Game/Characters/Shippuden/Leaders.hs",
-      "reason": "Canonical skill deals 20 affliction over 2 turns and increases the target skill costs by one arbitrary chakra; it is not generic direct damage.",
+      "reason": "Canonical skill deals 20 affliction over 2 turns and increases target skill costs by one arbitrary chakra; it is not generic direct damage.",
       "cost": ["Rand"],
       "cooldown": 1,
-      "classes": ["Mental", "Ranged"],
-      "mechanic": {
-        "version": 2,
-        "target": "enemy",
-        "classes": ["Mental", "Ranged"],
-        "effects": [
-          {"type":"dot","amount":20,"duration":2,"damageClass":"affliction","classes":["Mental","Ranged"]},
-          {"type":"exhaust","amount":1,"duration":2,"durationUnit":"ownerPhases","classes":["all"]}
-        ]
-      }
+      "classes": ["Mental","Ranged"],
+      "mechanic": {"version":2,"target":"enemy","classes":["Mental","Ranged"],"effects":[{"type":"dot","amount":20,"duration":2,"damageClass":"affliction","classes":["Mental","Ranged"]},{"type":"exhaust","amount":1,"duration":2,"durationUnit":"ownerPhases","classes":["all"]}]}
     },
     "fukasaku-and-shima-(s):2": {
       "batch": 2,
@@ -91,15 +61,8 @@
       "originalName": "Sand Dust",
       "source": "src/Game/Characters/Shippuden/Leaders.hs",
       "reason": "Canonical skill protects all allies from Ranged skills for one turn, not only the user from every class.",
-      "classes": ["Chakra", "Ranged"],
-      "mechanic": {
-        "version": 2,
-        "target": "allies",
-        "classes": ["Chakra", "Ranged"],
-        "effects": [
-          {"type":"invulnerable","target":"allies","duration":1,"durationUnit":"opponentPhases","classes":["Ranged"]}
-        ]
-      }
+      "classes": ["Chakra","Ranged"],
+      "mechanic": {"version":2,"target":"allies","classes":["Chakra","Ranged"],"effects":[{"type":"invulnerable","target":"allies","duration":1,"durationUnit":"opponentPhases","classes":["Ranged"]}]}
     },
     "fukasaku-and-shima-(s):3": {
       "batch": 2,
@@ -108,16 +71,9 @@
       "source": "src/Game/Characters/Shippuden/Leaders.hs",
       "reason": "Canonical stun occurs only on the third consecutive use and causes no direct damage.",
       "cost": ["Gen"],
-      "classes": ["Mental", "Ranged", "Resource"],
+      "classes": ["Mental","Ranged","Resource"],
       "limitations": ["Combat Rules v2 cannot selectively cancel only previous stuns created by this same skill; that canonical cleanup remains pending."],
-      "mechanic": {
-        "version": 2,
-        "target": "enemies",
-        "classes": ["Mental", "Ranged", "Resource"],
-        "effects": [
-          {"type":"stun","target":"enemies","duration":2,"durationUnit":"ownerPhases","classes":["all"],"requirements":{"type":"consecutiveUses","count":3}}
-        ]
-      }
+      "mechanic": {"version":2,"target":"enemies","classes":["Mental","Ranged","Resource"],"effects":[{"type":"stun","target":"enemies","duration":2,"durationUnit":"ownerPhases","classes":["all"],"requirements":{"type":"consecutiveUses","count":3}}]}
     },
     "white-snake-orochimaru-(s):1": {
       "batch": 2,
@@ -125,17 +81,10 @@
       "originalName": "Regenerative Bite",
       "source": "src/Game/Characters/Shippuden/Versions.hs",
       "reason": "Canonical skill steals 35 health from an enemy and heals Orochimaru by the damage dealt.",
-      "cost": ["Blood", "Tai"],
-      "classes": ["Physical", "Melee"],
+      "cost": ["Blood","Tai"],
+      "classes": ["Physical","Melee"],
       "limitations": ["Transformation into Kusanagi after body acquisition is not modeled by this override."],
-      "mechanic": {
-        "version": 2,
-        "target": "enemy",
-        "classes": ["Physical", "Melee"],
-        "effects": [
-          {"type":"leech","amount":35,"ratio":1,"damageClass":"normal","classes":["Physical","Melee"]}
-        ]
-      }
+      "mechanic": {"version":2,"target":"enemy","classes":["Physical","Melee"],"effects":[{"type":"leech","amount":35,"ratio":1,"damageClass":"normal","classes":["Physical","Melee"]}]}
     },
     "white-snake-orochimaru-(s):4": {
       "batch": 2,
@@ -143,19 +92,67 @@
       "originalName": "Eight-Headed Serpent",
       "source": "src/Game/Characters/Shippuden/Versions.hs",
       "reason": "Canonical skill deals 20 damage to all enemies for 3 turns and grants stun/disable immunity while active; it is not a 3-turn AoE stun.",
-      "cost": ["Blood", "Tai"],
+      "cost": ["Blood","Tai"],
       "cooldown": 3,
-      "classes": ["Physical", "Melee"],
+      "classes": ["Physical","Melee"],
       "limitations": ["Retaliating specifically against an enemy that stuns Orochimaru requires an on-status-applied trigger that Combat Rules v2 does not yet expose."],
-      "mechanic": {
-        "version": 2,
-        "target": "enemies",
-        "classes": ["Physical", "Melee"],
-        "effects": [
-          {"type":"dot","target":"enemies","amount":20,"duration":3,"damageClass":"normal","classes":["Physical","Melee"]},
-          {"type":"immunity","target":"self","duration":3,"durationUnit":"ownerPhases","classes":["all"],"effects":["stun","disable"]}
-        ]
-      }
+      "mechanic": {"version":2,"target":"enemies","classes":["Physical","Melee"],"effects":[{"type":"dot","target":"enemies","amount":20,"duration":3,"damageClass":"normal","classes":["Physical","Melee"]},{"type":"immunity","target":"self","duration":3,"durationUnit":"ownerPhases","classes":["all"],"effects":["stun","disable"]}]}
+    },
+    "oboro:1": {
+      "batch": 3,
+      "character": "Oboro",
+      "originalName": "Exploding Kunai",
+      "source": "src/Game/Characters/Original/Exams.hs",
+      "reason": "Canonical skill deals exactly 15 damage to all enemies. Its base cost is two arbitrary chakra.",
+      "cost": ["Rand","Rand"],
+      "classes": ["Chakra","Ranged"],
+      "limitations": ["Canonical cost falls to one arbitrary chakra during Fog Clone; conditional cost changes are not represented in this override."],
+      "mechanic": {"version":2,"target":"enemies","classes":["Chakra","Ranged"],"effects":[{"type":"damage","amount":15,"damageClass":"normal","classes":["Chakra","Ranged"]}]}
+    },
+    "oboro:2": {
+      "batch": 3,
+      "character": "Oboro",
+      "originalName": "Underground Move",
+      "source": "src/Game/Characters/Original/Exams.hs",
+      "reason": "Canonical base form targets one enemy for 20 damage and stuns only Physical and Mental skills for one turn; it is not unconditional AoE control.",
+      "cost": ["Gen","Rand"],
+      "classes": ["Physical","Melee"],
+      "limitations": ["During Fog Clone this skill canonically targets all enemies and costs one Genjutsu chakra; that conditional transformation remains pending."],
+      "mechanic": {"version":2,"target":"enemy","classes":["Physical","Melee"],"effects":[{"type":"damage","amount":20,"damageClass":"normal","classes":["Physical","Melee"]},{"type":"stun","duration":1,"durationUnit":"ownerPhases","classes":["Physical","Mental"]}]}
+    },
+    "oboro:3": {
+      "batch": 3,
+      "character": "Oboro",
+      "originalName": "Fog Clone",
+      "source": "src/Game/Characters/Original/Exams.hs",
+      "reason": "Canonical skill grants 30 destructible defense plus selective invulnerability to Mental, Physical and Summon skills for 3 turns.",
+      "cost": ["Gen","Rand"],
+      "cooldown": 4,
+      "classes": ["Mental"],
+      "mechanic": {"version":2,"target":"self","classes":["Mental"],"effects":[{"type":"defense","amount":30,"duration":3,"durationUnit":"opponentPhases","destructible":true,"classes":["all"]},{"type":"invulnerable","duration":3,"durationUnit":"opponentPhases","classes":["Mental","Physical","Summon"]},{"type":"status","status":"Fog Clone","duration":3,"durationUnit":"opponentPhases"}]}
+    },
+    "tsume-inuzuka:1": {
+      "batch": 3,
+      "character": "Tsume Inuzuka",
+      "originalName": "Call Kuromaru",
+      "source": "src/Game/Characters/Original/Family.hs",
+      "reason": "Canonical skill gives Tsume 10 flat reduction for 4 turns and enables Fierce Bite while active.",
+      "cost": ["Rand"],
+      "cooldown": 4,
+      "classes": ["Physical","Melee"],
+      "limitations": ["Kuromaru's 10-damage retaliation against enemies using non-Bane skills on Tsume requires a class-filtered OnHarmed trigger not yet modeled here."],
+      "mechanic": {"version":2,"target":"self","classes":["Physical","Melee"],"effects":[{"type":"reduction","amount":10,"duration":4,"durationUnit":"opponentPhases","classes":["all"]},{"type":"status","status":"Call Kuromaru","duration":4,"durationUnit":"opponentPhases"}]}
+    },
+    "tsume-inuzuka:2": {
+      "batch": 3,
+      "character": "Tsume Inuzuka",
+      "originalName": "Fierce Bite",
+      "source": "src/Game/Characters/Original/Family.hs",
+      "reason": "Canonical Fierce Bite is a 25-damage attack available during Call Kuromaru, not a multi-turn stun.",
+      "cost": ["Tai"],
+      "classes": ["Physical","Melee","Bypassing"],
+      "limitations": ["The canonical OnDeath reward (2 turns of +10 damage, Endure and Focus) requires an OnDeath trigger and is not approximated."],
+      "mechanic": {"version":2,"target":"enemy","classes":["Physical","Melee","Bypassing"],"requirements":{"type":"statusPresent","status":"Call Kuromaru"},"effects":[{"type":"damage","amount":25,"damageClass":"normal","classes":["Physical","Melee"]}]}
     }
   }
 }
