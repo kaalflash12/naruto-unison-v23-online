@@ -1,0 +1,41 @@
+name: Validate Content Mechanics V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'combat-rules-v2.js'
+      - 'combat-content-adapter-v2.js'
+      - 'tools/test-content-mechanics-v2.cjs'
+      - '.github/workflows/validate-content-mechanics-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mechanics-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-content-mechanics-v2.cjs
+      - name: Canonical mechanics contract
+        run: node tools/test-content-mechanics-v2.cjs
+      - name: Contract guards
+        run: |
+          set -euo pipefail
+          grep -Fq "const VERSION=2" combat-content-adapter-v2.js
+          grep -Fq "UNSUPPORTED_CONTENT_OP" combat-content-adapter-v2.js
+          grep -Fq "multi-hit" combat-content-adapter-v2.js
+          grep -Fq "bonusIf" combat-content-adapter-v2.js
+          grep -Fq "execute" combat-content-adapter-v2.js
+          echo 'CONTENT_MECHANICS_V2=PASS'
