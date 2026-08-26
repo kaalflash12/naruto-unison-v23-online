@@ -1,0 +1,80 @@
+name: Canonical V2 Correction Queue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build-canonical-v2-correction-queue.mjs'
+      - 'audit/balance/canonical-v2/FINAL-CLASSIFICATION-836.json'
+      - 'audit/balance/canonical-v2/FINAL-SUMMARY.json'
+      - '.github/workflows/canonical-v2-correction-queue.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: canonical-v2-correction-queue
+  cancel-in-progress: false
+
+jobs:
+  build-and-prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and deterministic self-test
+        run: |
+          set -euo pipefail
+          node --check tools/build-canonical-v2-correction-queue.mjs
+          node tools/build-canonical-v2-correction-queue.mjs --self-test
+      - name: Build guarded correction queue
+        run: |
+          set -euo pipefail
+          node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/canonical-v2-correction-queue.json
+      - name: Enforce final accounting and queue safety
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const source=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          const safe=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SAFE-STRUCTURAL.json','utf8'));
+          const complex=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/COMPLEX-EFFECT.json','utf8'));
+          if(source.upstreamCommit!=='3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1') throw new Error(`upstream=${source.upstreamCommit}`);
+          if(source.totalTechniques!==836||source.comparable!==719||source.justified!==117||source.accounted!==836||source.unaccounted!==0||source.gate!=='PASS') throw new Error(`source=${JSON.stringify(source)}`);
+          if((source.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error('MOTOR_INSUFICIENTE must remain zero');
+          if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.justifiedExcluded!==117) throw new Error(`queue=${JSON.stringify(q)}`);
+          if(q.actionable+q.correct!==719) throw new Error(`queue partition=${q.actionable}+${q.correct}`);
+          for(const r of safe){
+            if(String(r.resolution).startsWith('JUSTIFICADO_')) throw new Error(`justified leaked ${r.characterId}/${r.slot}`);
+            if(r.requiresManualSemantics||r.blockers.length) throw new Error(`unsafe SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
+            if(r.classifications.includes('EFEITO_ERRADO')||r.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error(`complex SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
+            if(!r.structuralDimensions.length) throw new Error(`empty SAFE_STRUCTURAL ${r.characterId}/${r.slot}`);
+          }
+          for(const r of complex) if(String(r.resolution).startsWith('JUSTIFICADO_')) throw new Error(`justified complex leak ${r.characterId}/${r.slot}`);
+          console.log('CANONICAL_V2_CORRECTION_QUEUE=PASS',q);
+          JS
+      - name: Upload queue evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-correction-queue-${{ github.sha }}
+          path: audit/balance/canonical-v2-corrections
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated queue evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/balance/canonical-v2-corrections
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): record guarded canonical V2 correction queue [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
