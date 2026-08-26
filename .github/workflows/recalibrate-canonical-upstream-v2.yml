@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply and verify canonical parser contracts
+      - name: Apply and verify canonical parser and adapter contracts
         run: |
           set -euo pipefail
           node --check tools/patch-canonical-invuln-helper-v2.mjs
@@ -41,10 +41,16 @@ jobs:
           node tools/patch-canonical-invuln-helper-v2.mjs
           node tools/patch-canonical-defaults-v2.mjs
           node --check tools/classify-canonical-upstream-v2.mjs
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-content-mechanics-v2.cjs
+          node tools/test-content-mechanics-v2.cjs
           grep -F "cost: [], cooldown: 4" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "durations: [1], targets: ['self']" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "SELFTEST_ZERO_DEFAULTS" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "SELFTEST_EXTRA_TARGET" tools/classify-canonical-upstream-v2.mjs >/dev/null
+          grep -F "bonusAmount" combat-content-adapter-v2.js >/dev/null
+          grep -F "requirements:statusRequirement(technique.requires)" combat-content-adapter-v2.js >/dev/null
+          echo 'CANONICAL_ADAPTER_REQUIREMENT_FLAT_BONUS=PASS'
       - name: Verify current comparator and queue
         run: |
           set -euo pipefail
@@ -74,7 +80,7 @@ jobs:
           set -euo pipefail
           node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/final-live.json
           node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/queue-live.json
-      - name: Enforce canonical defaults and Kamui correction
+      - name: Enforce canonical Naruto batch and final accounting
         run: |
           set -euo pipefail
           node - <<'JS'
@@ -89,25 +95,44 @@ jobs:
             for(const x of Object.values(value)){const r=findById(x,id);if(r)return r;}
             return null;
           };
+          const one=(id)=>{const x=findById(roster,id);if(!x)throw new Error(`PUBLISHED_MISSING:${id}`);return x;};
+          const effect=(skill,type,pred=()=>true)=>skill.mechanic?.effects?.find(e=>e?.type===type&&pred(e));
+          const exactCorrect=(id)=>{
+            const row=rows.find(r=>r.techniqueId===id);
+            if(!row)throw new Error(`CLASSIFICATION_MISSING:${id}`);
+            if(row.classifications.length!==1||row.classifications[0]!=='CORRETA') throw new Error(`NOT_CORRECT:${id}:${JSON.stringify(row.classifications)}:${JSON.stringify(row.evidence||{})}`);
+          };
           if(fin.totalTechniques!==836||fin.accounted!==836||fin.unaccounted!==0||fin.gate!=='PASS') throw new Error(`final accounting ${JSON.stringify(fin)}`);
           if((fin.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error(`MOTOR_INSUFICIENTE=${fin.classificationCounts?.MOTOR_INSUFICIENTE}`);
-          const kamuiPub=findById(roster,'masked-man__base_4');
-          if(!kamuiPub) throw new Error('KAMUI_PUBLISHED_MISSING');
-          if(Number(kamuiPub.cooldown)!==4) throw new Error(`KAMUI_PUBLISHED_COOLDOWN=${kamuiPub.cooldown}`);
-          if(!Array.isArray(kamuiPub.cost)||kamuiPub.cost.length!==0) throw new Error(`KAMUI_PUBLISHED_COST=${JSON.stringify(kamuiPub.cost)}`);
-          const effects=Array.isArray(kamuiPub.mechanic?.effects)?kamuiPub.mechanic.effects:[];
-          if(effects.length!==1||effects[0]?.type!=='invulnerable'||Number(effects[0]?.duration)!==1||effects[0]?.target!=='self') throw new Error(`KAMUI_EFFECTS=${JSON.stringify(effects)}`);
-          const kamui=rows.find(r=>r.techniqueId==='masked-man__base_4');
-          if(!kamui) throw new Error('KAMUI_CLASSIFICATION_MISSING');
-          if(kamui.classifications.length!==1||kamui.classifications[0]!=='CORRETA') throw new Error(`KAMUI_NOT_CORRECT:${JSON.stringify(kamui.classifications)}`);
-          const naruto=rows.find(r=>r.techniqueId==='naruto-uzumaki__base_4');
-          if(!naruto) throw new Error('NARUTO_DEFENSE_CLASSIFICATION_MISSING');
-          if(!naruto.classifications.includes('CUSTO_ERRADO')) throw new Error(`ZERO_COST_DEFAULT_NOT_ENFORCED:${JSON.stringify(naruto.classifications)}`);
-          console.log('CANONICAL_DEFAULT_CONTRACTS=PASS',{
-            kamui:kamui.classifications,
-            naruto:naruto.classifications,
-            accounted:fin.accounted
-          });
+
+          const kamui=one('masked-man__base_4');
+          if(Number(kamui.cooldown)!==4||!Array.isArray(kamui.cost)||kamui.cost.length!==0) throw new Error(`KAMUI_PUBLISHED=${JSON.stringify(kamui)}`);
+          const kamuiEffects=kamui.mechanic?.effects||[];
+          if(kamuiEffects.length!==1||kamuiEffects[0]?.type!=='invulnerable'||Number(kamuiEffects[0]?.duration)!==1||kamuiEffects[0]?.target!=='self') throw new Error(`KAMUI_EFFECTS=${JSON.stringify(kamuiEffects)}`);
+          exactCorrect('masked-man__base_4');
+
+          const barrage=one('naruto-uzumaki__base_1');
+          if(JSON.stringify(barrage.cost)!==JSON.stringify(['Tai'])||Number(barrage.cooldown)!==0) throw new Error(`BARRAGE_COST_CD=${JSON.stringify({cost:barrage.cost,cd:barrage.cooldown})}`);
+          const barrageBase=effect(barrage,'damage',e=>Number(e.amount)===20&&!e.conditionalBonus);
+          const barrageBonus=effect(barrage,'damage',e=>Number(e.amount)===10&&e.conditionalBonus===true);
+          if(!barrageBase||!barrageBonus||barrageBonus.requirements?.type!=='statusPresent'||barrageBonus.requirements?.status!=='shadow-clones') throw new Error(`BARRAGE_EFFECTS=${JSON.stringify(barrage.mechanic?.effects)}`);
+
+          const rasengan=one('naruto-uzumaki__base_2');
+          if(JSON.stringify(rasengan.cost)!==JSON.stringify(['Nin','Rand'])||Number(rasengan.cooldown)!==1) throw new Error(`RASENGAN_COST_CD=${JSON.stringify({cost:rasengan.cost,cd:rasengan.cooldown})}`);
+          if(rasengan.mechanic?.requirements?.type!=='statusPresent'||rasengan.mechanic?.requirements?.status!=='shadow-clones') throw new Error(`RASENGAN_REQUIREMENT=${JSON.stringify(rasengan.mechanic?.requirements)}`);
+          if(!effect(rasengan,'damage',e=>Number(e.amount)===45)||!effect(rasengan,'stun',e=>Number(e.duration)===1)) throw new Error(`RASENGAN_EFFECTS=${JSON.stringify(rasengan.mechanic?.effects)}`);
+
+          const clones=one('naruto-uzumaki__base_3');
+          if(JSON.stringify(clones.cost)!==JSON.stringify(['Rand'])||Number(clones.cooldown)!==3) throw new Error(`CLONES_COST_CD=${JSON.stringify({cost:clones.cost,cd:clones.cooldown})}`);
+          if(!effect(clones,'reduction',e=>Number(e.amount)===15&&Number(e.duration)===4)||!effect(clones,'status',e=>e.status==='shadow-clones'&&Number(e.duration)===4)) throw new Error(`CLONES_EFFECTS=${JSON.stringify(clones.mechanic?.effects)}`);
+
+          const sexy=one('naruto-uzumaki__base_4');
+          if(!Array.isArray(sexy.cost)||sexy.cost.length!==0||Number(sexy.cooldown)!==4) throw new Error(`SEXY_COST_CD=${JSON.stringify({cost:sexy.cost,cd:sexy.cooldown})}`);
+          const sexyEffects=sexy.mechanic?.effects||[];
+          if(sexyEffects.length!==1||sexyEffects[0]?.type!=='invulnerable'||Number(sexyEffects[0]?.duration)!==1||sexyEffects[0]?.target!=='self') throw new Error(`SEXY_EFFECTS=${JSON.stringify(sexyEffects)}`);
+
+          for(const id of ['naruto-uzumaki__base_1','naruto-uzumaki__base_2','naruto-uzumaki__base_3','naruto-uzumaki__base_4']) exactCorrect(id);
+          console.log('CANONICAL_NARUTO_BATCH_V2=PASS',{accounted:fin.accounted,naruto:4,kamui:'CORRETA'});
           JS
       - name: Upload live verification evidence
         if: always()
@@ -132,6 +157,6 @@ jobs:
             git status --short
             exit 1
           fi
-          git commit -m 'audit(balance): enforce canonical zero defaults and target parity [skip ci]'
+          git commit -m 'audit(balance): verify canonical Naruto batch [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
