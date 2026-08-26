@@ -1,6 +1,6 @@
 # Meta-balance — prioridade de intervenção
 
-Gerado em: 2026-08-26T06:05:33.378Z
+Gerado em: 2026-08-26T06:06:13.242Z
 
 ## O que esta camada acrescenta
 
