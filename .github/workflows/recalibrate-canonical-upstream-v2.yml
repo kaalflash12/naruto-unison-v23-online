@@ -38,6 +38,7 @@ jobs:
           node --check tools/patch-canonical-upstream-classifier-engine-v2.mjs
           node tools/patch-canonical-upstream-classifier-engine-v2.mjs
           node --check tools/classify-canonical-upstream-v2.mjs
+          node --check tools/finalize-canonical-upstream-v2.mjs
           node tools/classify-canonical-upstream-v2.mjs --self-test
       - name: Re-prove published V2 source
         run: |
@@ -90,8 +91,13 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/classify-canonical-upstream-v2.mjs audit/balance/canonical-v2 audit/balance/published-v2
+          git add tools/classify-canonical-upstream-v2.mjs tools/finalize-canonical-upstream-v2.mjs audit/balance/canonical-v2 audit/balance/published-v2
           if git diff --cached --quiet; then exit 0; fi
+          if ! git diff --quiet; then
+            echo 'Unexpected unstaged tracked changes:'
+            git status --short
+            exit 1
+          fi
           git commit -m 'audit(balance): recalibrate canonical V2 after engine gaps [skip ci]'
           git pull --rebase origin main
           git push origin HEAD:main
