@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090d10">
+<title>Admin Studio — Naruto Unison</title>
+<link rel="stylesheet" href="./admin-studio.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="mark">火</span><div><b>NARUTO UNISON — ADMIN STUDIO</b><small>Conteúdo, mundo, IA e publicação</small></div></div>
+  <div class="top-actions"><a href="./admin.html" class="btn">GAMEOPS</a><a href="./" class="btn">JOGO</a><button id="logoutBtn" class="btn hidden">SAIR</button></div>
+</header>
+<main class="shell">
+  <section id="loginPanel" class="panel auth-panel">
+    <h1>Admin Studio</h1>
+    <p>Use a mesma conta OWNER do painel administrativo. O Studio valida todas as alterações no backend antes de publicar.</p>
+    <div class="form-grid cols2">
+      <label>E-mail<input id="loginEmail" type="email" autocomplete="username" value="admin@naruto-unison.example"></label>
+      <label>Senha<input id="loginPassword" type="password" autocomplete="current-password"></label>
+    </div>
+    <div class="actions"><button id="loginBtn" class="primary">ENTRAR NO STUDIO</button><span id="loginMsg" class="msg"></span></div>
+  </section>
+
+  <section id="studio" class="hidden">
+    <section class="status-grid">
+      <div class="metric"><small>ROLE</small><b id="metricRole">—</b></div>
+      <div class="metric"><small>REVISÃO CONTEÚDO</small><b id="metricRevision">—</b></div>
+      <div class="metric"><small>EVENTOS ATIVOS</small><b id="metricEvents">—</b></div>
+      <div class="metric"><small>TIPO ABERTO</small><b id="metricType">—</b></div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="content">CONTEÚDO</button>
+      <button class="tab-btn" data-tab="world">MUNDO</button>
+      <button class="tab-btn" data-tab="ai">IA / DIRETOR</button>
+      <button class="tab-btn" data-tab="rollback">VERSÕES</button>
+      <button class="tab-btn" data-tab="proof">PROVA</button>
+    </nav>
+
+    <section id="tab-content" class="tab-panel panel">
+      <div class="section-head"><div><h2>Editor guiado</h2><p>Personagens, técnicas, missões, história, equipamentos, bosses, eventos e perfis operacionais.</p></div><button id="reloadTypeBtn">RECARREGAR</button></div>
+      <div class="toolbar">
+        <label>Tipo<select id="entityType"></select></label>
+        <label>Entidade<select id="entitySelect"><option value="">+ NOVA ENTIDADE</option></select></label>
+        <label>Filtro<input id="entityFilter" placeholder="nome ou id"></label>
+      </div>
+      <div id="entityInfo" class="entity-info"></div>
+      <form id="entityForm" class="form-grid"></form>
+      <div class="actions sticky-actions">
+        <button id="validateBtn" type="button">VALIDAR</button>
+        <button id="publishBtn" type="button" class="primary">VALIDAR E PUBLICAR</button>
+        <label class="message-field">Mensagem<input id="publishMessage" value="edição via Admin Studio"></label>
+        <span id="contentMsg" class="msg"></span>
+      </div>
+    </section>
+
+    <section id="tab-world" class="tab-panel panel hidden">
+      <div class="section-head"><div><h2>Mundo e mapa</h2><p>O mundo usa as entidades reais <b>location</b> e <b>scene</b>. Edite locais, cenários, fundos, clima, landmarks e vínculos sem JSON manual.</p></div></div>
+      <div class="world-actions">
+        <button class="jump-type" data-type="location">ABRIR LOCAIS</button>
+        <button class="jump-type" data-type="scene">ABRIR CENAS</button>
+        <button class="jump-type" data-type="animation_profile">PERFIS DE ANIMAÇÃO</button>
+        <button class="jump-type" data-type="ai_profile">PERFIS DE IA</button>
+      </div>
+      <div id="worldSummary" class="cards"></div>
+    </section>
+
+    <section id="tab-ai" class="tab-panel panel hidden">
+      <div class="section-head"><div><h2>Diretor de IA</h2><p>Executa o AI_EVENT_DIRECTOR real. A publicação continua sujeita às permissões, conteúdo publicado e limites do backend.</p></div><button id="refreshAiBtn">ATUALIZAR AUDITORIA</button></div>
+      <div class="form-grid cols3">
+        <label>Ciclo<select id="aiCycle"><option value="weekly">weekly</option><option value="monthly">monthly</option><option value="seasonal">seasonal</option></select></label>
+        <label class="span2">Contexto<input id="aiContext" maxlength="4000" placeholder="Diretriz temática opcional para a próxima operação"></label>
+      </div>
+      <div class="actions"><button id="runAiBtn" class="primary">GERAR / PUBLICAR EVENTO</button><span id="aiMsg" class="msg"></span></div>
+      <div class="split">
+        <div><h3>Resultado mais recente</h3><pre id="aiResult" class="result-box">Nenhuma execução nesta sessão.</pre></div>
+        <div><h3>Auditoria do Diretor</h3><div id="aiAudit" class="cards"></div></div>
+      </div>
+    </section>
+
+    <section id="tab-rollback" class="tab-panel panel hidden">
+      <div class="section-head"><div><h2>Rollback de conteúdo</h2><p>Restaura uma versão já registrada e cria uma nova versão auditável.</p></div></div>
+      <div class="form-grid cols4">
+        <label>Tipo<select id="rollbackType"></select></label>
+        <label>ID<input id="rollbackId"></label>
+        <label>Versão<input id="rollbackVersion" type="number" min="1" step="1"></label>
+        <label>&nbsp;<button id="rollbackBtn" type="button" class="danger full">EXECUTAR ROLLBACK</button></label>
+      </div>
+      <p id="rollbackMsg" class="msg"></p>
+    </section>
+
+    <section id="tab-proof" class="tab-panel panel hidden">
+      <div class="section-head"><div><h2>Checklist operacional</h2><p>Estado lido do backend e desta interface, não marcação manual.</p></div><button id="refreshProofBtn">REVALIDAR</button></div>
+      <div id="proofGrid" class="proof-grid"></div>
+    </section>
+  </section>
+</main>
+<script src="./admin-studio.js"></script>
+</body>
+</html>
