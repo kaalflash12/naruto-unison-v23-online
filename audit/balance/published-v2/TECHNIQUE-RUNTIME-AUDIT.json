@@ -23531,31 +23531,22 @@
     "name": "Kamui Phase",
     "characterId": "masked-man",
     "ops": [
-      "status",
-      "status",
-      "cooldown"
+      "status"
     ],
     "targets": [
-      "self",
-      "self",
       "self"
     ],
-    "cost": [
-      "Blood",
-      "Nin"
-    ],
+    "cost": [],
     "unknownCosts": [],
     "effectTypes": [
-      "invulnerable",
-      "status",
-      "cooldown"
+      "invulnerable"
     ],
     "unsupported": [],
     "structuralOk": true,
     "runtime": {
       "ok": true,
       "reason": null,
-      "resultEffects": 3
+      "resultEffects": 1
     }
   },
   {

@@ -176,8 +176,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -191,17 +190,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -215,8 +210,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -225,13 +219,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -342,8 +334,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -357,17 +348,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -381,8 +368,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -391,13 +377,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -632,8 +616,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -647,17 +630,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -671,8 +650,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -681,13 +659,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -880,8 +856,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -895,17 +870,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -919,8 +890,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -929,13 +899,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -1181,8 +1149,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1196,17 +1163,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -1220,8 +1184,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -1230,13 +1193,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -1407,8 +1368,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1422,17 +1382,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -1446,8 +1402,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -1456,13 +1411,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -1950,8 +1903,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1965,17 +1917,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -1989,8 +1937,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -1999,13 +1946,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -3080,8 +3025,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -3095,17 +3039,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -3119,8 +3059,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -3129,13 +3068,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -3282,8 +3219,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -3297,17 +3233,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -3321,8 +3253,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -3331,13 +3262,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -4189,8 +4118,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -4204,17 +4132,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -4228,8 +4152,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -4238,13 +4161,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -4428,8 +4349,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -4443,17 +4363,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -4467,8 +4383,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -4477,13 +4392,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -5479,8 +5392,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5494,17 +5406,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -5518,8 +5426,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -5528,13 +5435,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -5698,8 +5603,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5713,17 +5617,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -5737,8 +5637,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -5747,13 +5646,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -5974,8 +5871,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5989,17 +5885,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -6013,8 +5905,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -6023,13 +5914,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -6264,8 +6153,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -6279,17 +6167,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -6303,8 +6187,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -6313,13 +6196,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -7211,8 +7092,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7226,17 +7106,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -7250,8 +7126,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -7260,13 +7135,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -7450,8 +7323,7 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7465,17 +7337,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -7489,8 +7357,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -7499,13 +7366,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -7653,8 +7518,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7668,17 +7532,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -7692,8 +7552,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -7702,13 +7561,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -7817,8 +7674,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7832,17 +7688,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -7856,8 +7708,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -7866,13 +7717,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -8113,8 +7962,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -8128,24 +7976,20 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -8154,13 +7998,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -8480,8 +8322,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -8495,17 +8336,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -8519,8 +8356,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -8529,13 +8365,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -9765,8 +9599,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -9780,17 +9613,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -9804,8 +9633,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -9814,13 +9642,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -9912,8 +9738,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -9927,17 +9752,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -9951,8 +9772,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -9961,13 +9781,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -10233,8 +10051,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -10248,17 +10065,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -10272,8 +10085,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -10282,13 +10094,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -10538,8 +10348,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -10553,17 +10362,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -10577,8 +10382,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -10587,13 +10391,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -10811,8 +10613,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -10826,17 +10627,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -10850,8 +10647,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -10860,13 +10656,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -11146,8 +10940,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11161,17 +10954,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -11185,8 +10974,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -11195,13 +10983,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -11362,8 +11148,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11377,17 +11162,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -11401,8 +11182,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -11411,13 +11191,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -11664,8 +11442,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11679,17 +11456,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "summon"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -11703,8 +11476,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -11713,13 +11485,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -12130,8 +11900,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12145,17 +11914,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12169,8 +11934,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12179,13 +11943,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -12419,8 +12181,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12434,17 +12195,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "gen"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12458,8 +12215,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12468,13 +12224,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -12616,8 +12370,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12631,17 +12384,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12655,8 +12404,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12665,13 +12413,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -12924,8 +12670,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12939,17 +12684,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12963,8 +12704,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12973,13 +12713,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -13151,8 +12889,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -13166,17 +12903,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -13190,8 +12923,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -13200,13 +12932,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -13372,8 +13102,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -13387,17 +13116,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -13411,8 +13137,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -13421,13 +13146,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -13894,8 +13617,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -13909,17 +13631,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -13933,8 +13651,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -13943,13 +13660,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -14389,8 +14104,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -14404,17 +14118,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -14428,8 +14138,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -14438,13 +14147,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -14616,8 +14323,7 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -14631,17 +14337,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -14655,8 +14358,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -14665,13 +14367,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -15127,8 +14827,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -15142,17 +14841,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -15166,8 +14862,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -15176,13 +14871,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -15637,8 +15330,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -15652,24 +15344,19 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -15678,13 +15365,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -16446,8 +16131,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -16461,17 +16145,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -16485,8 +16165,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -16495,13 +16174,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -16911,8 +16588,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -16926,17 +16602,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -16950,8 +16622,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -16960,13 +16631,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -17386,8 +17055,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -17402,17 +17070,13 @@
           "defense"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -17426,8 +17090,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -17437,13 +17100,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -17805,8 +17466,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -17820,17 +17480,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -17844,8 +17500,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -17854,13 +17509,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -18618,8 +18271,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -18633,17 +18285,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -18657,8 +18305,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -18667,13 +18314,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -19160,8 +18805,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19175,17 +18819,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -19199,8 +18839,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -19209,13 +18848,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -19447,8 +19084,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19462,17 +19098,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -19486,8 +19118,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -19496,13 +19127,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -19648,8 +19277,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19663,17 +19291,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -19687,8 +19311,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -19697,13 +19320,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -20477,8 +20098,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -20492,17 +20112,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -20516,8 +20132,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -20526,13 +20141,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -21093,8 +20706,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21108,17 +20720,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -21132,8 +20740,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21142,13 +20749,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -21419,8 +21024,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21434,17 +21038,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -21458,8 +21058,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21468,13 +21067,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -21665,8 +21262,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21681,17 +21277,13 @@
           "bomb"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -21705,8 +21297,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21716,13 +21307,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [
       "bomb"
@@ -22115,8 +21704,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -22130,17 +21718,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -22154,8 +21738,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -22164,13 +21747,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -22310,8 +21891,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -22325,17 +21905,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          1,
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -22349,8 +21926,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -22359,13 +21935,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -22609,8 +22183,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -22624,17 +22197,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -22648,8 +22217,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -22658,13 +22226,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -22836,8 +22402,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -22851,17 +22416,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -22875,8 +22436,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -22885,13 +22445,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -23184,8 +22742,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -23199,17 +22756,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -23223,8 +22776,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -23233,13 +22785,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -23342,8 +22892,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -23357,17 +22906,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -23381,8 +22926,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -23391,13 +22935,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -23558,8 +23100,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -23573,17 +23114,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -23597,8 +23134,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -23607,13 +23143,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -24097,8 +23631,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -24112,17 +23645,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -24136,8 +23665,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -24146,13 +23674,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -24238,8 +23764,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -24253,17 +23778,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          1,
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -24277,8 +23799,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -24287,13 +23808,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -25062,8 +24581,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25077,17 +24595,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -25101,8 +24615,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25111,13 +24624,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -25640,8 +25151,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25655,17 +25165,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -25679,8 +25185,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25689,13 +25194,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -25856,8 +25359,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25871,17 +25373,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -25895,8 +25393,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25905,13 +25402,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -26657,8 +26152,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -26672,17 +26166,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -26696,8 +26186,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -26706,13 +26195,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -27306,54 +26793,6 @@
     "descriptionAfterMechanics": true
   },
   {
-    "characterId": "masked-man",
-    "characterName": "Masked Man",
-    "slot": 4,
-    "techniqueId": "masked-man__base_4",
-    "techniqueName": "Kamui Phase",
-    "originalName": "Kamui Phase",
-    "resolution": "RESOLVIDO",
-    "matchSource": "EXACT_WITHIN_CHARACTER",
-    "upstreamCharacter": "Masked Man",
-    "upstreamTechnique": "Kamui Phase",
-    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
-    "classifications": [
-      "CUSTO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
-    ],
-    "evidence": {
-      "cost": {
-        "local": [
-          "blood",
-          "nin"
-        ],
-        "upstream": [
-          "chakra"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "CUSTO_ERRADO"
-        ]
-      }
-    },
-    "upstreamCategories": [
-      "invulnerable"
-    ],
-    "tier": "MANUAL_REVIEW",
-    "structuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
-    "safeStructuralDimensions": [],
-    "heldStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
-    "blockers": [],
-    "requiresManualSemantics": false,
-    "descriptionAfterMechanics": true
-  },
-  {
     "characterId": "mei-terumi-(s)",
     "characterName": "Mei Terumi",
     "slot": 1,
@@ -27504,8 +26943,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -27519,17 +26957,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -27543,8 +26977,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -27553,13 +26986,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -28077,8 +27508,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28092,17 +27522,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -28116,8 +27542,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -28126,13 +27551,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -28714,8 +28137,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28729,17 +28151,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -28753,8 +28171,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -28763,13 +28180,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -28927,8 +28342,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28942,17 +28356,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -28966,8 +28376,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -28976,13 +28385,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -29072,8 +28479,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -29087,17 +28493,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -29111,8 +28513,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -29121,13 +28522,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -30508,8 +29907,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -30523,17 +29921,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -30547,8 +29941,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -30557,13 +29950,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -30798,8 +30189,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -30813,17 +30203,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -30837,8 +30223,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -30847,13 +30232,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -31349,8 +30732,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31364,17 +30746,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -31388,8 +30766,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -31398,13 +30775,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -31629,8 +31004,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31644,17 +31018,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -31668,8 +31038,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -31678,13 +31047,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -31841,8 +31208,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31856,17 +31222,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "summon"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -31880,8 +31242,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -31890,13 +31251,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -31986,8 +31345,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32001,17 +31359,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -32025,8 +31379,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -32035,13 +31388,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -32197,8 +31548,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32212,24 +31562,19 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -32238,13 +31583,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -32672,8 +32015,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32687,17 +32029,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -32711,8 +32049,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -32721,13 +32058,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -33078,8 +32413,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -33093,17 +32427,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -33117,8 +32447,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -33127,13 +32456,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -33743,8 +33070,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -33758,17 +33084,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -33782,8 +33104,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -33792,13 +33113,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -34044,8 +33363,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -34059,17 +33377,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -34083,8 +33397,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -34093,13 +33406,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -34333,8 +33644,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -34348,17 +33658,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -34372,8 +33678,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -34382,13 +33687,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -36080,8 +35383,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -36095,17 +35397,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -36119,8 +35417,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -36129,13 +35426,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -37730,8 +37025,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -37745,17 +37039,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -37769,8 +37059,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -37779,13 +37068,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -38372,8 +37659,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -38387,17 +37673,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -38411,8 +37693,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -38421,13 +37702,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -38976,8 +38255,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -38991,17 +38269,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -39015,8 +38289,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -39025,13 +38298,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -39258,8 +38529,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -39273,17 +38543,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -39297,8 +38563,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -39307,13 +38572,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -39496,8 +38759,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -39511,17 +38773,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -39535,8 +38793,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -39545,13 +38802,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -40078,8 +39333,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -40093,17 +39347,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -40117,8 +39367,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -40127,13 +39376,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -40868,8 +40115,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -40883,17 +40129,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -40907,8 +40149,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -40917,13 +40158,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -41309,8 +40548,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -41324,17 +40562,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -41348,8 +40582,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -41358,13 +40591,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -42223,8 +41454,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42238,17 +41468,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -42262,8 +41488,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -42272,13 +41497,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -42375,8 +41598,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42390,17 +41612,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -42414,8 +41632,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -42424,13 +41641,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -42673,8 +41888,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42688,17 +41902,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -42712,8 +41922,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -42722,13 +41931,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -42980,8 +42187,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42995,17 +42201,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43019,8 +42221,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43029,13 +42230,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -43283,8 +42482,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43298,17 +42496,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43322,8 +42516,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43332,13 +42525,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -43604,8 +42795,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43619,17 +42809,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43643,8 +42829,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43653,13 +42838,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -43816,8 +42999,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43831,17 +43013,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43855,8 +43033,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43865,13 +43042,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -44096,8 +43271,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44111,17 +43285,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44135,8 +43305,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44145,13 +43314,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -44381,8 +43548,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44396,17 +43562,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44420,8 +43582,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44430,13 +43591,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -44605,8 +43764,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44620,17 +43778,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44644,8 +43798,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44654,13 +43807,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,
@@ -44791,8 +43942,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44806,17 +43956,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44830,8 +43976,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44840,13 +43985,11 @@
     ],
     "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "requiresManualSemantics": true,

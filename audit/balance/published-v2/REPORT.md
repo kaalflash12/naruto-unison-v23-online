@@ -1,6 +1,6 @@
 # Published Techniques — Combat Rules V2
 
-- Revision: **1**
+- Revision: **2**
 - Published characters: **214**
 - Playable characters: **209**
 - Canonical playable roster: **209 × 4 = 836**
@@ -27,7 +27,7 @@
 - chakra-drain: 118
 - chakra-gain: 9
 - cleanse: 319
-- cooldown: 32
+- cooldown: 31
 - damage: 1185
 - debuff: 196
 - dispel: 10
@@ -37,4 +37,4 @@
 - mark: 450
 - multi-hit: 96
 - shield: 372
-- status: 622
+- status: 621

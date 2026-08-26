@@ -3,13 +3,13 @@
 - Técnicas totais contabilizadas: **836**
 - Comparáveis 1:1: **719**
 - Justificadas sem referência 1:1 e excluídas da fila: **117**
-- CORRETA: **4**
-- Técnicas com correção pendente: **715**
+- CORRETA: **5**
+- Técnicas com correção pendente: **714**
 - SAFE_STRUCTURAL: **0**
 - COMPLEX_EFFECT: **714**
-- MANUAL_REVIEW: **1**
-- Dimensões estruturais retidas: **1023**
-- DESCRIPTION_AFTER_MECHANICS: **710**
+- MANUAL_REVIEW: **0**
+- Dimensões estruturais retidas: **920**
+- DESCRIPTION_AFTER_MECHANICS: **709**
 - Gate: **PASS**
 
 ## Regra

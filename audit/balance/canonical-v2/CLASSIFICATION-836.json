@@ -369,8 +369,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -384,17 +383,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -408,8 +403,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -449,11 +443,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Naruto",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Naruto becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -463,8 +455,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -817,8 +813,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -832,17 +827,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -856,8 +847,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -897,11 +887,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Sasuke",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Sasuke becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -911,8 +899,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -1280,8 +1272,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1295,17 +1286,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -1319,8 +1306,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -1360,11 +1346,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Sakura",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Sakura becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -1374,8 +1358,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -1709,8 +1697,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1724,17 +1711,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -1748,8 +1731,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -1789,11 +1771,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kakashi",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Kakashi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -1803,8 +1783,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -2586,8 +2570,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -2601,17 +2584,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -2625,8 +2605,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -2668,11 +2647,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Neji",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Neji becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -2682,8 +2659,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -3049,8 +3030,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -3064,17 +3044,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -3088,8 +3064,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -3129,11 +3104,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hinata",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Hinata becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -3143,8 +3116,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -3975,8 +3952,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -3990,17 +3966,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -4014,8 +3986,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -4055,11 +4026,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Shikamaru",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Shikamaru becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -4069,8 +4038,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -6888,8 +6861,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -6903,17 +6875,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -6927,8 +6895,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -6968,11 +6935,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Akatsuchi",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Akatsuchi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -6982,8 +6947,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -7322,8 +7291,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7337,17 +7305,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -7361,8 +7325,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -7402,11 +7365,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ameyuri",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Ameyuri becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -7416,8 +7377,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -8770,8 +8735,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -8785,17 +8749,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -8809,8 +8769,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -8850,11 +8809,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ao",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Ao becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -8864,8 +8821,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -9209,8 +9170,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -9224,17 +9184,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -9248,8 +9204,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -9289,11 +9244,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Aoba",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Aoba becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -9303,8 +9256,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -11086,8 +11043,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11101,17 +11057,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -11125,8 +11077,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -11166,11 +11117,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Atsui",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Atsui becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -11180,8 +11129,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -11531,8 +11484,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11546,17 +11498,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -11570,8 +11518,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -11611,11 +11558,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Baki",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Baki becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -11625,8 +11570,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -11986,8 +11935,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12001,17 +11949,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12025,8 +11969,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12066,11 +12009,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "C",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "C becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -12080,8 +12021,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -12457,8 +12402,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -12472,17 +12416,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -12496,8 +12436,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -12537,11 +12476,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Chiyo",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Chiyo becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -12551,8 +12488,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -14291,8 +14232,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -14306,17 +14246,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -14330,8 +14266,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -14371,11 +14306,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Chōjūrō",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Chōjūrō becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -14385,8 +14318,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -14760,8 +14697,7 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -14775,17 +14711,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -14799,8 +14731,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -14840,11 +14771,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Chōza",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Chōza becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -14854,8 +14783,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -15196,8 +15129,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -15211,17 +15143,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -15235,8 +15163,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -15276,11 +15203,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Chūkichi",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Chūkichi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -15290,8 +15215,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -15868,8 +15797,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -15883,17 +15811,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -15907,8 +15831,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -15948,11 +15871,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Jūgo",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Jūgo becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -15962,8 +15883,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -16340,8 +16265,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -16355,24 +16279,20 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -16414,11 +16334,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Sasuke",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Sasuke becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -16428,8 +16346,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -17365,8 +17287,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -17380,17 +17301,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -17404,8 +17321,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -17445,11 +17361,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Darui",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Darui becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -17459,8 +17373,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -19679,8 +19597,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19694,17 +19611,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -19718,8 +19631,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -19759,11 +19671,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Dodai",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Dodai becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -19773,8 +19683,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -20104,8 +20018,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -20119,17 +20032,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -20143,8 +20052,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -20184,11 +20092,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Dosu",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Dosu becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -20198,8 +20104,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -20592,8 +20502,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -20607,17 +20516,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -20631,8 +20536,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -20672,11 +20576,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Lee",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Lee becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -20686,8 +20588,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -21077,8 +20983,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21092,17 +20997,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -21116,8 +21017,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21157,11 +21057,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Guy",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Guy becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -21171,8 +21069,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -21523,8 +21425,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21538,17 +21439,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -21562,8 +21459,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21603,11 +21499,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "B",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "B becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -21617,8 +21511,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -22611,8 +22509,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -22626,17 +22523,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -22650,8 +22543,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -22691,11 +22583,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Fuguki",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Fuguki becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -22705,8 +22595,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -23061,8 +22955,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -23076,17 +22969,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -23100,8 +22989,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -23141,11 +23029,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Fukai",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Fukai becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -23155,8 +23041,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -23536,8 +23426,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -23551,17 +23440,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "summon"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -23575,8 +23460,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -23616,11 +23500,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Fukasaku and Shima",
-      "cost": [
-        "Summon"
-      ],
-      "cooldown": null,
+      "description": "Fukasaku and Shima becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -23630,8 +23512,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -24361,8 +24247,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -24376,17 +24261,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -24400,8 +24281,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -24441,11 +24321,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Gari",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Gari becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -24455,8 +24333,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -24820,8 +24702,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -24835,17 +24716,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "gen"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -24859,8 +24736,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -24900,11 +24776,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Gengetsu",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Gengetsu becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -24914,8 +24788,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -25241,8 +25119,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25256,17 +25133,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -25280,8 +25153,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25321,11 +25193,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ginkaku",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Ginkaku becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -25335,8 +25205,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -25718,8 +25592,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25733,17 +25606,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -25757,8 +25626,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25798,11 +25666,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Haku",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Haku becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -25812,8 +25678,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -26179,8 +26049,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -26194,17 +26063,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -26218,8 +26083,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -26259,11 +26123,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Haku",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Haku becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -26273,8 +26135,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -26630,8 +26496,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -26645,17 +26510,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -26669,8 +26531,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -26712,11 +26573,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hanabi",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Hanabi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -26726,8 +26585,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -27575,8 +27438,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -27590,17 +27452,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -27614,8 +27472,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -27655,11 +27512,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hashirama",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Hashirama becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -27669,8 +27524,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -28500,8 +28359,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28515,17 +28373,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -28539,8 +28393,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -28580,11 +28433,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hayate",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Hayate becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -28594,8 +28445,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -28959,8 +28814,7 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28974,17 +28828,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -28998,8 +28849,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -29041,11 +28891,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hiashi",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Hiashi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -29055,8 +28903,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -29865,8 +29717,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -29880,17 +29731,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2,
+          3
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "reduction": {
@@ -29904,8 +29752,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -29947,11 +29794,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Hinata",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Hinata becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -29961,8 +29806,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -31236,8 +31085,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31251,24 +31099,19 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -31310,11 +31153,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Pain",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Pain becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -31324,8 +31165,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -32633,8 +32478,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32648,17 +32492,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -32672,8 +32512,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -32713,11 +32552,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ino",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Ino becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -32727,8 +32564,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -33547,8 +33388,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -33562,17 +33402,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -33586,8 +33422,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -33627,11 +33462,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Iruka",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Iruka becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -33641,8 +33474,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -34647,8 +34484,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -34663,17 +34499,13 @@
           "defense"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -34687,8 +34519,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -34728,11 +34559,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ittan",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Ittan becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable",
         "defense"
@@ -34743,8 +34572,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -35496,8 +35329,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -35511,17 +35343,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -35535,8 +35363,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -35576,11 +35403,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Jinin",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Jinin becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -35590,8 +35415,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -36898,8 +36727,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -36913,17 +36741,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -36937,8 +36761,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -36978,11 +36801,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Jirōbō",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Jirōbō becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -36992,8 +36813,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -37876,8 +37701,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -37891,17 +37715,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -37915,8 +37735,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -37956,11 +37775,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Jūgo",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Jūgo becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -37970,8 +37787,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -38338,8 +38159,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -38353,17 +38173,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -38377,8 +38193,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -38418,11 +38233,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kabuto",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Kabuto becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -38432,8 +38245,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -38775,8 +38592,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -38790,17 +38606,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -38814,8 +38626,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -38855,11 +38666,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kabuto",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kabuto becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -38869,8 +38678,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -40201,8 +40014,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -40216,17 +40028,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -40240,8 +40048,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -40281,11 +40088,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kankurō",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Kankurō becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -40295,8 +40100,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -41166,8 +40975,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -41181,17 +40989,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -41205,8 +41009,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -41246,11 +41049,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Karin",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Karin becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -41260,8 +41061,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -41663,8 +41468,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -41678,17 +41482,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -41702,8 +41502,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -41743,11 +41542,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Gaara",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Gaara becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -41757,8 +41554,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -42126,8 +41927,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42142,17 +41942,13 @@
           "bomb"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -42166,8 +41962,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -42207,11 +42002,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kiba",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kiba becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable",
         "bomb"
@@ -42222,8 +42015,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -43049,8 +42846,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43064,17 +42860,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43088,8 +42880,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43129,11 +42920,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kidōmaru",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Kidōmaru becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -43143,8 +42932,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -43470,8 +43263,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43485,17 +43277,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          1,
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -43509,8 +43298,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43552,11 +43340,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Killer B",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Killer B becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -43566,8 +43352,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -43961,8 +43751,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43976,17 +43765,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44000,8 +43785,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44041,11 +43825,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kimimaro",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kimimaro becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -44055,8 +43837,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -44417,8 +44203,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44432,17 +44217,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44456,8 +44237,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44497,11 +44277,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kimimaro",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kimimaro becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -44511,8 +44289,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -44934,8 +44716,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44949,17 +44730,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -44973,8 +44750,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -45014,11 +44790,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kin",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Kin becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -45028,8 +44802,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -45377,8 +45155,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -45392,17 +45169,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -45416,8 +45189,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -45457,11 +45229,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kinkaku",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kinkaku becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -45471,8 +45241,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -45824,8 +45598,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -45839,17 +45612,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -45863,8 +45632,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -45904,11 +45672,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kisame",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kisame becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -45918,8 +45684,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -46755,8 +46525,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -46770,17 +46539,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -46794,8 +46559,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -46835,11 +46599,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kitsuchi",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kitsuchi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -46849,8 +46611,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -47175,8 +46941,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -47190,17 +46955,14 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          1,
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -47214,8 +46976,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -47257,11 +47018,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Konan",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Konan becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -47271,8 +47030,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -48558,8 +48321,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -48573,17 +48335,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -48597,8 +48355,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -48638,11 +48395,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Konohamaru",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Konohamaru becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -48652,8 +48407,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -49494,8 +49253,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -49509,17 +49267,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -49533,8 +49287,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -49574,11 +49327,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kurotsuchi",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kurotsuchi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -49588,8 +49339,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -49935,8 +49690,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -49950,17 +49704,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -49974,8 +49724,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -50015,11 +49764,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kushimaru",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kushimaru becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -50029,8 +49776,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -51330,8 +51081,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -51345,17 +51095,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -51369,8 +51115,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -51410,11 +51155,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Maki",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Maki becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -51424,8 +51167,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -52332,28 +52079,11 @@
     "upstreamTechnique": "Kamui Phase",
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
-      "CUSTO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "cost": {
-        "local": [
-          "blood",
-          "nin"
-        ],
-        "upstream": [
-          "chakra"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "CUSTO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
-      "description": "Kamui Phase afeta o usuário: aplica Invulnerabilidade por 1 turno(s); aplica Evasão por 2 turno(s); reduz recargas em 1. Custo: KEK + NIN; recarga: 0 turno(s).",
+      "description": "Kamui Phase afeta o usuário: aplica Invulnerabilidade por 1 turno(s). Custo: nenhum; recarga: 4 turno(s).",
       "effect": {
         "aoe": false,
         "kind": "status",
@@ -52366,34 +52096,17 @@
           "turns": 1,
           "status": "invuln",
           "target": "self"
-        },
-        {
-          "op": "status",
-          "turns": 2,
-          "value": 0.4,
-          "status": "evasion",
-          "target": "self"
-        },
-        {
-          "op": "cooldown",
-          "amount": -1,
-          "target": "self"
         }
       ],
-      "chakraCost": [
-        "KEK",
-        "NIN"
-      ],
-      "cooldown": 0,
+      "chakraCost": [],
+      "cooldown": 4,
       "power": 42,
       "target": "self"
     },
     "upstream": {
-      "description": "The masked man",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "The masked man becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -52403,8 +52116,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -52765,8 +52482,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -52780,17 +52496,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -52804,8 +52516,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -52845,11 +52556,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Mei",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Mei becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -52859,8 +52568,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -54117,8 +53830,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -54132,17 +53844,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -54156,8 +53864,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -54197,11 +53904,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Minato",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Minato becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -54211,8 +53916,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -55097,8 +54806,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -55112,17 +54820,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -55136,8 +54840,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -55177,11 +54880,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Misumi",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Misumi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -55191,8 +54892,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -55534,8 +55239,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -55549,17 +55253,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -55573,8 +55273,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -55614,11 +55313,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Mizuki",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Mizuki becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -55628,8 +55325,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -55967,8 +55668,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -55982,17 +55682,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -56006,8 +55702,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -56047,11 +55742,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Mū",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Mū becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -56061,8 +55754,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -59166,8 +58863,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -59181,17 +58877,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -59205,8 +58897,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -59246,11 +58937,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Obito",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Obito becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -59260,8 +58949,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -59639,8 +59332,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -59654,17 +59346,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -59678,8 +59366,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -59719,11 +59406,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Oboro",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Oboro becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -59733,8 +59418,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -60595,8 +60284,7 @@
     "upstreamSource": "src/Game/Characters/Original/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -60610,17 +60298,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -60634,8 +60318,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -60675,11 +60358,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Naruto",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Naruto becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -60689,8 +60370,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -61045,8 +60730,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -61060,17 +60744,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -61084,8 +60764,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -61125,11 +60804,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Ōnoki",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Ōnoki becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -61139,8 +60816,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -61488,8 +61169,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -61503,17 +61183,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "summon"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -61527,8 +61203,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -61568,11 +61243,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Orochimaru",
-      "cost": [
-        "Summon"
-      ],
-      "cooldown": null,
+      "description": "Orochimaru becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -61582,8 +61255,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -61933,8 +61610,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -61948,17 +61624,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -61972,8 +61644,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -62013,11 +61684,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Pakura",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Pakura becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -62027,8 +61696,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -62368,8 +62041,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -62383,24 +62055,19 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -62442,11 +62109,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Pain",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Pain becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -62456,8 +62121,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -63292,8 +62961,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -63307,17 +62975,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -63331,8 +62995,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -63372,11 +63035,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Rasa",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Rasa becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -63386,8 +63047,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -64100,8 +63765,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -64115,17 +63779,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -64139,8 +63799,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -64180,11 +63839,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Gaara",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Gaara becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -64194,8 +63851,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -65117,8 +64778,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -65132,17 +64792,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -65156,8 +64812,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -65197,11 +64852,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Rin",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Rin becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -65211,8 +64864,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -65596,8 +65253,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -65611,17 +65267,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -65635,8 +65287,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -65676,11 +65327,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Lee",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Lee becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -65690,8 +65339,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -66070,8 +65723,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -66085,17 +65737,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -66109,8 +65757,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -66150,11 +65797,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Jiraiya",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Jiraiya becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -66164,8 +65809,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -68987,8 +68636,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -69002,17 +68650,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -69026,8 +68670,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -69067,11 +68710,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Sasori",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Sasori becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -69081,8 +68722,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -71851,8 +71496,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -71866,17 +71510,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -71890,8 +71530,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -71931,11 +71570,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Shino",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Shino becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -71945,8 +71582,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -73175,8 +72816,7 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -73190,17 +72830,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -73214,8 +72850,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -73255,11 +72890,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Shizune",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Shizune becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -73269,8 +72902,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -74143,8 +73780,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -74158,17 +73794,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -74182,8 +73814,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -74223,11 +73854,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Suigetsu",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Suigetsu becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -74237,8 +73866,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -74606,8 +74239,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -74621,17 +74253,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "mental"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -74645,8 +74273,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -74686,11 +74313,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Tayuya",
-      "cost": [
-        "Mental"
-      ],
-      "cooldown": null,
+      "description": "Tayuya becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -74700,8 +74325,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -75073,8 +74702,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -75088,17 +74716,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -75112,8 +74736,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -75153,11 +74776,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Temari",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Temari becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -75167,8 +74788,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -75998,8 +75623,7 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -76013,17 +75637,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -76037,8 +75657,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -76078,11 +75697,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Tenten",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Tenten becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -76092,8 +75709,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -77376,8 +76997,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -77391,17 +77011,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -77415,8 +77031,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -77456,11 +77071,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Tobirama",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Tobirama becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -77470,8 +77083,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -78262,8 +77879,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -78277,17 +77893,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "blood"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -78301,8 +77913,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -78342,11 +77953,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Torune",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Torune becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -78356,8 +77965,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -79765,8 +79378,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -79780,17 +79392,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -79804,8 +79412,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -79845,11 +79452,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Tsunade",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Tsunade becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -79859,8 +79464,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -80418,8 +80027,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -80433,17 +80041,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -80457,8 +80061,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -80498,11 +80101,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Utakata",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Utakata becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -80512,8 +80113,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -81300,8 +80905,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -81315,17 +80919,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -81339,8 +80939,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -81380,11 +80979,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Yamato",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Yamato becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -81394,8 +80991,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -81783,8 +81384,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -81798,17 +81398,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -81822,8 +81418,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -81863,11 +81458,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Minato",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Minato becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -81877,8 +81470,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -82264,8 +81861,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -82279,17 +81875,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -82303,8 +81895,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -82344,11 +81935,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Yoroi",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Yoroi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -82358,8 +81947,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -82757,8 +82350,7 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -82772,17 +82364,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -82796,8 +82384,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -82837,11 +82424,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Kakashi",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Kakashi becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -82851,8 +82436,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -83205,8 +82794,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -83220,17 +82808,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -83244,8 +82828,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -83285,11 +82868,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Yūgao",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Yūgao becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -83299,8 +82880,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -83652,8 +83237,7 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -83667,17 +83251,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -83691,8 +83271,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -83732,11 +83311,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Yugito",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Yugito becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -83746,8 +83323,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -84110,8 +83691,7 @@
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -84125,17 +83705,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -84149,8 +83725,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -84190,11 +83765,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Zabuza",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Zabuza becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -84204,8 +83777,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -84545,8 +84122,7 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -84560,17 +84136,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "tai"
+          2
         ],
         "upstream": [
-          "physical"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -84584,8 +84156,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -84625,11 +84196,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Zabuza",
-      "cost": [
-        "Physical"
-      ],
-      "cooldown": null,
+      "description": "Zabuza becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -84639,8 +84208,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },
@@ -85174,8 +84747,7 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
+      "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -85189,17 +84761,13 @@
           "invulnerable"
         ]
       },
-      "cost": {
+      "duration": {
         "local": [
-          "nin"
+          2
         ],
         "upstream": [
-          "chakra"
+          1
         ]
-      },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
       },
       "effectNumeric": {
         "defense": {
@@ -85213,8 +84781,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -85254,11 +84821,9 @@
       "target": "self"
     },
     "upstream": {
-      "description": "Zaku",
-      "cost": [
-        "Chakra"
-      ],
-      "cooldown": null,
+      "description": "Zaku becomes invulnerable for 1 turn.",
+      "cost": [],
+      "cooldown": 4,
       "categories": [
         "invulnerable"
       ],
@@ -85268,8 +84833,12 @@
       "heal": [],
       "defend": [],
       "reduce": [],
-      "durations": [],
-      "targets": []
+      "durations": [
+        1
+      ],
+      "targets": [
+        "self"
+      ]
     },
     "candidates": []
   },

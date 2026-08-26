@@ -1,6 +1,6 @@
 # Comparação canônica V2 — 209 × 4
 
-- Conteúdo publicado revision: **1**
+- Conteúdo publicado revision: **2**
 - Upstream fixado: **3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1**
 - Personagens jogáveis: **209**
 - Técnicas classificadas: **836**
@@ -10,14 +10,14 @@
 
 ## Classificações
 
-- CORRETA: **4**
-- DESCRIÇÃO_ERRADA: **709**
+- CORRETA: **5**
+- DESCRIÇÃO_ERRADA: **708**
 - DANO_ERRADO: **54**
 - EFEITO_ERRADO: **704**
 - ALVO_ERRADO: **289**
-- CUSTO_ERRADO: **267**
-- COOLDOWN_ERRADO: **159**
-- DURAÇÃO_ERRADA: **254**
+- CUSTO_ERRADO: **164**
+- COOLDOWN_ERRADO: **57**
+- DURAÇÃO_ERRADA: **356**
 - MOTOR_INSUFICIENTE: **0**
 
 ## Divergências
@@ -27,19 +27,19 @@
 | Naruto Uzumaki | Naruto Uzumaki Barrage | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Naruto Uzumaki Barrage |
 | Naruto Uzumaki | Rasengan | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasengan |
 | Naruto Uzumaki | Clones das Sombras | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shadow Clones |
-| Naruto Uzumaki | Sexy Technique | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sexy Technique |
+| Naruto Uzumaki | Sexy Technique | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sexy Technique |
 | Sasuke Uchiha | Lions Barrage | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lions Barrage |
 | Sasuke Uchiha | Chidori | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chidori |
 | Sasuke Uchiha | Sharingan | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharingan |
-| Sasuke Uchiha | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Sasuke Uchiha | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Sakura Haruno | KO Punch | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | KO Punch |
 | Sakura Haruno | Técnica de Cura | 2 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Healing Technique |
 | Sakura Haruno | Inner Sakura | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Inner Sakura |
-| Sakura Haruno | Técnica de Substituição | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Substitution Technique |
+| Sakura Haruno | Técnica de Substituição | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Substitution Technique |
 | Kakashi Hatake | Sharingan | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharingan |
 | Kakashi Hatake | Summoning: Ninja Hounds | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Ninja Hounds |
 | Kakashi Hatake | Lightning Blade | 3 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Blade |
-| Kakashi Hatake | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Kakashi Hatake | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Rock Lee | Ferocious Fist | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ferocious Fist |
 | Rock Lee | Lótus Primária | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Primary Lotus |
 | Rock Lee | Fifth Gate Opening | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Fifth Gate Opening |
@@ -47,11 +47,11 @@
 | Neji Hyūga | Punho Gentil | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gentle Fist |
 | Neji Hyūga | Eight Trigrams Palm Rotation | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Palm Rotation |
 | Neji Hyūga | Eight Trigrams Sixty-Four Palms | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Sixty-Four Palms |
-| Neji Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
+| Neji Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
 | Hinata Hyūga | Punho Gentil | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gentle Fist |
 | Hinata Hyūga | Eight Trigrams Sixty-Four Palms | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Sixty-Four Palms |
 | Hinata Hyūga | Byakugan | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan |
-| Hinata Hyūga | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Hinata Hyūga | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Gaara | Sand Coffin | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sand Coffin |
 | Gaara | Sand Burial | 2 | EFEITO_ERRADO | EXACT_WITHIN_CHARACTER | Sand Burial |
 | Gaara | Sand Clone | 3 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sand Clone |
@@ -59,7 +59,7 @@
 | Shikamaru Nara | Meditate | 1 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Meditate |
 | Shikamaru Nara | Shadow Strangle | 2 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shadow Strangle |
 | Shikamaru Nara | Shadow Possession | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shadow Possession |
-| Shikamaru Nara | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Shikamaru Nara | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Itachi Uchiha | Susanoo Esquelético | 1 |  | AMBIGUOUS_WITHIN_CHARACTER | — |
 | Itachi Uchiha | Susanoo Armadurado | 2 |  | AMBIGUOUS_WITHIN_CHARACTER | — |
 | Itachi Uchiha | Amaterasu | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Amaterasu |
@@ -87,11 +87,11 @@
 | Akatsuchi | High-Speed Assault | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | High-Speed Assault |
 | Akatsuchi | Stone Golem | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Stone Golem |
 | Akatsuchi | Chakra Devour | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Devour |
-| Akatsuchi | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Akatsuchi | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Ameyuri Ringo | Lightning Fang | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Fang |
 | Ameyuri Ringo | Depth Charge | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Depth Charge |
 | Ameyuri Ringo | Thunder Gate | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Thunder Gate |
-| Ameyuri Ringo | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Ameyuri Ringo | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Animal Path Pain | Summoning: Giant Centipede | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Giant Centipede |
 | Animal Path Pain | Summoning: Giant Crustacean | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Giant Crustacean |
 | Animal Path Pain | Summoning: Giant Panda | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Giant Panda |
@@ -103,10 +103,10 @@
 | Ao | Byakugan | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan |
 | Ao | Técnica Sensorial | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Technique |
 | Ao | Barrier Talisman | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Barrier Talisman |
-| Ao | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Ao | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Aoba Yamashiro | Scattering Crow Swarm | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Scattering Crow Swarm |
 | Aoba Yamashiro | Revenge of the Murder | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Revenge of the Murder |
-| Aoba Yamashiro | Crow Barrier | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crow Barrier |
+| Aoba Yamashiro | Crow Barrier | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crow Barrier |
 | Asuma Sarutobi | Flying Swallow | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Swallow |
 | Asuma Sarutobi | Finishing Blow | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Finishing Blow |
 | Asuma Sarutobi | Sharpen Blades | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharpen Blades |
@@ -122,19 +122,19 @@
 | Atsui | Burning Blade | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Burning Blade |
 | Atsui | Fire Wall | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Fire Wall |
 | Atsui | Flame Slice | 3 | COOLDOWN_ERRADO, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flame Slice |
-| Atsui | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Atsui | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Baki | Sudden Strike | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sudden Strike |
 | Baki | Wind Sword | 2 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wind Sword |
 | Baki | Flak Jacket | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flak Jacket |
-| Baki | Teleport | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Teleport |
+| Baki | Teleport | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Teleport |
 | C | Técnica Sensorial | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Technique |
 | C | Técnica de Cura | 2 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Healing Technique |
 | C | Flash Pillar | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flash Pillar |
-| C | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| C | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Chiyo | Ten Puppets Collection | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ten Puppets Collection |
 | Chiyo | Possum | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Possum |
 | Chiyo | Army of Illusions | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Army of Illusions |
-| Chiyo | Puppet Distraction | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Puppet Distraction |
+| Chiyo | Puppet Distraction | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Puppet Distraction |
 | Chiyo | Assault Blade | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Assault Blade |
 | Chiyo | Three Treasure Suction Crush | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Three Treasure Suction Crush |
 | Chiyo | Ten Puppets Collection | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ten Puppets Collection |
@@ -150,15 +150,15 @@
 | Chōjūrō | Hiramekarei Longsword | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hiramekarei Longsword |
 | Chōjūrō | Hiramekarei Hammer | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hiramekarei Hammer |
 | Chōjūrō | Hiramekarei Twinswords | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hiramekarei Twinswords |
-| Chōjūrō | Dodge | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Chōjūrō | Dodge | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Chōza Akimichi | Chain Bind | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chain Bind |
 | Chōza Akimichi | Human Boulder | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Human Boulder |
 | Chōza Akimichi | Partial Expansion | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Partial Expansion |
-| Chōza Akimichi | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Chōza Akimichi | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Chūkichi | Hidden Frost | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hidden Frost |
 | Chūkichi | Psychic Jamming | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Psychic Jamming |
 | Chūkichi | Silent Killing | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Silent Killing |
-| Chūkichi | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Chūkichi | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Corrupted Obito | Hide | 1 |  | AMBIGUOUS_GLOBAL | — |
 | Corrupted Obito | Murderous Resolve | 2 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Corrupted Obito | Cutting Sprigs | 3 |  | UPSTREAM_SKILL_NOT_FOUND | — |
@@ -166,11 +166,11 @@
 | Curse Mark Jūgo | Psychotic Break | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Psychotic Break |
 | Curse Mark Jūgo | Connected Cannons | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Connected Cannons |
 | Curse Mark Jūgo | Cellular Absorption | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cellular Absorption |
-| Curse Mark Jūgo | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Curse Mark Jūgo | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Curse Mark Sasuke | Chidori | 1 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chidori |
 | Curse Mark Sasuke | Dark Void | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dark Void |
 | Curse Mark Sasuke | Curse Mark | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Curse Mark |
-| Curse Mark Sasuke | Sharingan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharingan Foresight |
+| Curse Mark Sasuke | Sharingan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharingan Foresight |
 | Curse Mark Sasuke (shippuden) | Snake Shedding | 1 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Curse Mark Sasuke (shippuden) | Sharingan Genjutsu | 2 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Curse Mark Sasuke (shippuden) | Sharingan | 3 |  | AMBIGUOUS_GLOBAL | — |
@@ -182,7 +182,7 @@
 | Darui | Laser Circus | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Laser Circus |
 | Darui | Water Wall | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Water Wall |
 | Darui | Black Panther | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Black Panther |
-| Darui | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Darui | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Deidara | Detonating Clay | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Detonating Clay |
 | Deidara | Chakra Clay Trap | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Clay Trap |
 | Deidara | Sonar Bat Bombs | 3 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sonar Bat Bombs |
@@ -202,23 +202,23 @@
 | Dodai | Rubber Wall | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rubber Wall |
 | Dodai | Técnica Sensorial | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Technique |
 | Dodai | Rubber Sphere and Rope | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rubber Sphere and Rope |
-| Dodai | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Dodai | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Dosu Kinuta | Resonating Echo Drill | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Resonating Echo Drill |
 | Dosu Kinuta | Sound Manipulation | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sound Manipulation |
 | Dosu Kinuta | Echo Speaker Tuning | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Echo Speaker Tuning |
-| Dosu Kinuta | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Dosu Kinuta | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Drunken Lee | Unpredictable Assault | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Unpredictable Assault |
 | Drunken Lee | Drunken Counter | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Drunken Counter |
 | Drunken Lee | Drunken Fist | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Drunken Fist |
-| Drunken Lee | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Drunken Lee | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Eight-Gates Guy | Evening Elephant | 1 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Evening Elephant |
 | Eight-Gates Guy | Battle Stance | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Battle Stance |
 | Eight-Gates Guy | Night Guy | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Night Guy |
-| Eight-Gates Guy | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Eight-Gates Guy | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Eight-Tailed B | Chakra Bones | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Bones |
 | Eight-Tailed B | Lariat | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lariat |
 | Eight-Tailed B | Tailed Beast Bomb | 3 | EFEITO_ERRADO, COOLDOWN_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tailed Beast Bomb |
-| Eight-Tailed B | Chakra Barrier | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Barrier |
+| Eight-Tailed B | Chakra Barrier | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Barrier |
 | Four Tailed Naruto (shippuden) | Tailed Beast Bomb | 1 |  | AMBIGUOUS_GLOBAL | — |
 | Four Tailed Naruto (shippuden) | Chakra Slam | 2 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Four Tailed Naruto (shippuden) | Kyuubi Skin Block | 3 |  | UPSTREAM_SKILL_NOT_FOUND | — |
@@ -230,15 +230,15 @@
 | Fuguki Suikazan | Needle Senbon | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Needle Senbon |
 | Fuguki Suikazan | Chakra Weave | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Weave |
 | Fuguki Suikazan | Sharp Hair Spear | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sharp Hair Spear |
-| Fuguki Suikazan | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Fuguki Suikazan | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Fukai | Chakra Arms | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Arms |
 | Fukai | Tailed Beast Bomb Barrage | 2 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tailed Beast Bomb Barrage |
 | Fukai | Lariat | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lariat |
-| Fukai | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Fukai | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Fukasaku and Shima | Frog Song | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Frog Song |
 | Fukasaku and Shima | Sand Dust | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sand Dust |
 | Fukasaku and Shima | Demonic Illusion: Gamarinsho | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Demonic Illusion: Gamarinsho |
-| Fukasaku and Shima | Reverse Summoning | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Reverse Summoning |
+| Fukasaku and Shima | Reverse Summoning | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Reverse Summoning |
 | Gaara Of The Funk | Funk Coffin | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Funk Coffin |
 | Gaara Of The Funk | Couldve Hada V8 | 2 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Gaara Of The Funk | Nchk Nchk Nchk Nchk | 3 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Nchk-Nchk-Nchk-Nchk |
@@ -246,27 +246,27 @@
 | Gari | Exploding Palm | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Exploding Palm |
 | Gari | Ground Pound | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ground Pound |
 | Gari | Landmine Fist | 3 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Landmine Fist |
-| Gari | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Gari | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Gengetsu Hōzuki | Major Summoning: Giant Clam | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Major Summoning: Giant Clam |
 | Gengetsu Hōzuki | Water Pistol | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Water Pistol |
 | Gengetsu Hōzuki | Steaming Danger Tyranny Boy | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Steaming Danger Tyranny Boy |
-| Gengetsu Hōzuki | Mirage | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mirage |
+| Gengetsu Hōzuki | Mirage | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mirage |
 | Ginkaku | Seven Stars Blade | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Seven Stars Blade |
 | Ginkaku | Amber Purification Jar | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Amber Purification Jar |
 | Ginkaku | Benihisago | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Benihisago |
-| Ginkaku | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Ginkaku | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Haku | Thousand Needles of Death | 1 | EFEITO_ERRADO, ALVO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Thousand Needles of Death |
 | Haku | Acupuncture | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Acupuncture |
 | Haku | Crystal Ice Mirrors | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crystal Ice Mirrors |
-| Haku | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Haku | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Haku | Thousand Needles of Death | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Thousand Needles of Death |
 | Haku | Acupuncture | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Acupuncture |
 | Haku | Crystal Ice Mirrors | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crystal Ice Mirrors |
-| Haku | Ice Dome | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ice Dome |
+| Haku | Ice Dome | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ice Dome |
 | Hanabi Hyūga | Punho Gentil | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gentle Fist |
 | Hanabi Hyūga | Eight Trigrams Palm Rotation | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Palm Rotation |
 | Hanabi Hyūga | Unyielding Tenacity | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Unyielding Tenacity |
-| Hanabi Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
+| Hanabi Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
 | Hanzō | Major Summoning: Ibuse | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Major Summoning: Ibuse |
 | Hanzō | Poison Fog | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Poison Fog |
 | Hanzō | Sickle Dance | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sickle Dance |
@@ -274,7 +274,7 @@
 | Hashirama Senju | Wooden Dragon | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wooden Dragon |
 | Hashirama Senju | Wood Golem | 2 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wood Golem |
 | Hashirama Senju | Veritable 1000-Armed Kannon | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Veritable 1000-Armed Kannon |
-| Hashirama Senju | Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Foresight |
+| Hashirama Senju | Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Foresight |
 | Hashirama Senju | Tree Wave Destruction | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tree Wave Destruction |
 | Hashirama Senju | Tree Strangulation | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tree Strangulation |
 | Hashirama Senju | Deep Forest Creation | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Deep Forest Creation |
@@ -282,11 +282,11 @@
 | Hayate Gekkō | Secret Sword | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Secret Sword |
 | Hayate Gekkō | Crescent Moon Dance | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crescent Moon Dance |
 | Hayate Gekkō | Transparency Technique | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Transparency Technique |
-| Hayate Gekkō | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Hayate Gekkō | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Hiashi Hyūga | Punho Gentil | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gentle Fist |
 | Hiashi Hyūga | Eight Trigrams Palm Rotation | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Palm Rotation |
 | Hiashi Hyūga | Eight Trigrams Air Palm Wall | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Air Palm Wall |
-| Hiashi Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
+| Hiashi Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
 | Hidan | Jashin Sigil | 1 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Jashin Sigil |
 | Hidan | First Blood | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | First Blood |
 | Hidan | Blood Curse | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Blood Curse |
@@ -294,7 +294,7 @@
 | Hinata Hyūga | Pressure Point Strike | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Pressure Point Strike |
 | Hinata Hyūga | Gentle Step Twin Lion Fists | 2 | EFEITO_ERRADO, ALVO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gentle Step Twin Lion Fists |
 | Hinata Hyūga | Eight Trigrams Sixty-Four Palms | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eight Trigrams Sixty-Four Palms |
-| Hinata Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
+| Hinata Hyūga | Byakugan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Byakugan Foresight |
 | Hiruko Sasori (shippuden) | Defensive Puppeteering | 1 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Hiruko Sasori (shippuden) | Scorpion Tail Constriction | 2 |  | UPSTREAM_SKILL_NOT_FOUND | — |
 | Hiruko Sasori (shippuden) | Tail Block | 3 |  | UPSTREAM_SKILL_NOT_FOUND | — |
@@ -310,7 +310,7 @@
 | Human Path Pain | Mind Invasion | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mind Invasion |
 | Human Path Pain | Spirit Absorption | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Spirit Absorption |
 | Human Path Pain | Soul Rip | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Soul Rip |
-| Human Path Pain | Rinnegan Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rinnegan Foresight |
+| Human Path Pain | Rinnegan Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rinnegan Foresight |
 | Ibiki Morino | Biding Time | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Biding Time |
 | Ibiki Morino | Payback | 2 | ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Payback |
 | Ibiki Morino | Summoning: Iron Maiden | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Iron Maiden |
@@ -322,7 +322,7 @@
 | Ino Yamanaka | Mind Destruction | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mind Destruction |
 | Ino Yamanaka | Proxy Surveillance | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Proxy Surveillance |
 | Ino Yamanaka | Mind Transfer Clone | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mind Transfer Clone |
-| Ino Yamanaka | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Ino Yamanaka | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Inoichi Yamanaka | Psycho Mind Transmission | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Psycho Mind Transmission |
 | Inoichi Yamanaka | Sensory Radar | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Radar |
 | Inoichi Yamanaka | Sensory Radar: Collate | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Radar: Collate |
@@ -330,7 +330,7 @@
 | Iruka Umino | Shuriken Throw | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shuriken Throw |
 | Iruka Umino | Ally Shield | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Ally Shield |
 | Iruka Umino | Capture and Arrest | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Capture and Arrest |
-| Iruka Umino | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Iruka Umino | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Itachi Uchiha | Mangekyō Sharingan: Previsão | 1 |  | AMBIGUOUS_WITHIN_CHARACTER | — |
 | Itachi Uchiha | Mangekyō Sharingan: Pressão | 2 |  | AMBIGUOUS_WITHIN_CHARACTER | — |
 | Itachi Uchiha | Amaterasu | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Amaterasu |
@@ -342,13 +342,13 @@
 | Ittan | Battlefield Trenches | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Battlefield Trenches |
 | Ittan | Mobile Core | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mobile Core |
 | Ittan | Earth Dome | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Earth Dome |
-| Ittan | Trench Defense | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Trench Defense |
+| Ittan | Trench Defense | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Trench Defense |
 | Izumo and Kotetsu | Mace Crush | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mace Crush |
 | Izumo and Kotetsu | Syrup Trap | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Syrup Trap |
 | Jinin Akebino | Axe Chop | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Axe Chop |
 | Jinin Akebino | Hammer Bash | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hammer Bash |
 | Jinin Akebino | Helm-Splitter | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Helm-Splitter |
-| Jinin Akebino | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Jinin Akebino | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Jinpachi Munashi | Splatter | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Splatter |
 | Jinpachi Munashi | Bomb Reload | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Bomb Reload |
 | Jinpachi Munashi | Scroll Unraveling | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Scroll Unraveling |
@@ -360,7 +360,7 @@
 | Jirōbō | Crushing Palm | 1 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crushing Palm |
 | Jirōbō | Sphere of Graves | 2 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sphere of Graves |
 | Jirōbō | Earth Dome Prison | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Earth Dome Prison |
-| Jirōbō | Terra Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Terra Shield |
+| Jirōbō | Terra Shield | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Terra Shield |
 | Jirōbō | Rivalry | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rivalry |
 | Jirōbō | Sphere of Graves | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sphere of Graves |
 | Jirōbō | Earth Dome Prison | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Earth Dome Prison |
@@ -368,15 +368,15 @@
 | Jūgo | Piston Fist | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Piston Fist |
 | Jūgo | Sage Transformation | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sage Transformation |
 | Jūgo | Cellular Regeneration | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cellular Regeneration |
-| Jūgo | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Jūgo | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Kabuto Yakushi | Chakra Scalpel | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Scalpel |
 | Kabuto Yakushi | Pre-Healing Technique | 2 | ALVO_ERRADO, DURAÇÃO_ERRADA, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Pre-Healing Technique |
 | Kabuto Yakushi | Temple of Nirvana | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Temple of Nirvana |
-| Kabuto Yakushi | Dead Soul Technique | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dead Soul Technique |
+| Kabuto Yakushi | Dead Soul Technique | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dead Soul Technique |
 | Kabuto Yakushi | Chakra Absorbing Snakes | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra Absorbing Snakes |
 | Kabuto Yakushi | Striking Shadow Snakes | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Striking Shadow Snakes |
 | Kabuto Yakushi | Técnica de Cura | 3 | COOLDOWN_ERRADO, EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Healing Technique |
-| Kabuto Yakushi | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Kabuto Yakushi | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Kakashi Hatake | Lightning Beast Fang | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Beast Fang |
 | Kakashi Hatake | Lightning Blade Finisher | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lightning Blade Finisher |
 | Kakashi Hatake | Kamui | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui |
@@ -388,7 +388,7 @@
 | Kankurō | Iron Maiden | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Iron Maiden |
 | Kankurō | Poison Bomb | 2 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Poison Bomb |
 | Kankurō | Puppet Technique | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Puppet Technique |
-| Kankurō | Técnica de Substituição | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Substitution Technique |
+| Kankurō | Técnica de Substituição | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Substitution Technique |
 | Kankurō | Kuroari Trap | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kuroari Trap |
 | Kankurō | Karasu Knives | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Karasu Knives |
 | Kankurō | Sanshōuo Shield | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sanshōuo Shield |
@@ -396,15 +396,15 @@
 | Karin | Mind's Eye | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mind's Eye |
 | Karin | Adamantine Attacking Chains | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Adamantine Attacking Chains |
 | Karin | Heal Bite | 3 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Heal Bite |
-| Karin | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Karin | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Kazekage Gaara | Monstrous Sand Arm | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Monstrous Sand Arm |
 | Kazekage Gaara | Sand Prison | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sand Prison |
 | Kazekage Gaara | Sand Summoning | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sand Summoning |
-| Kazekage Gaara | Levitating Sand Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Levitating Sand Shield |
+| Kazekage Gaara | Levitating Sand Shield | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Levitating Sand Shield |
 | Kiba Inuzuka | Wolf Fang Over Fang | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wolf Fang Over Fang |
 | Kiba Inuzuka | Two-Headed Wolf | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Two-Headed Wolf |
 | Kiba Inuzuka | Dynamic Marking | 3 | EFEITO_ERRADO, ALVO_ERRADO, COOLDOWN_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dynamic Marking |
-| Kiba Inuzuka | Bomba de Fumaça | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Smoke Bomb |
+| Kiba Inuzuka | Bomba de Fumaça | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Smoke Bomb |
 | Kiba Inuzuka | Man-Beast Clone | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Man-Beast Clone |
 | Kiba Inuzuka | Three-Headed Wolf | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Three-Headed Wolf |
 | Kiba Inuzuka | Tail Chasing Rotating Fang | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tail Chasing Rotating Fang |
@@ -412,31 +412,31 @@
 | Kidōmaru | Spider War Bow | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Spider War Bow |
 | Kidōmaru | Summoning: Kyodaigumo | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Kyodaigumo |
 | Kidōmaru | Spiral Web | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Spiral Web |
-| Kidōmaru | Spider Thread Armor | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Spider Thread Armor |
+| Kidōmaru | Spider Thread Armor | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Spider Thread Armor |
 | Killer B | Acrobat | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Acrobat |
 | Killer B | Lariat | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lariat |
 | Killer B | Octopus Hold | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Octopus Hold |
-| Killer B | Octopus Leg Clone | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Octopus Leg Clone |
+| Killer B | Octopus Leg Clone | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Octopus Leg Clone |
 | Kimimaro | Camellia Dance | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Camellia Dance |
 | Kimimaro | Clematis Dance | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Clematis Dance |
 | Kimimaro | Bracken Dance | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Bracken Dance |
-| Kimimaro | Larch Dance | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Larch Dance |
+| Kimimaro | Larch Dance | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Larch Dance |
 | Kimimaro | Clematis Dance | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Clematis Dance |
 | Kimimaro | Macabre Bone Pulse | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Macabre Bone Pulse |
 | Kimimaro | Digital Shrapnel | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Digital Shrapnel |
-| Kimimaro | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Kimimaro | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Kin Tsuchi | Bell Ring Illusion | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Bell Ring Illusion |
 | Kin Tsuchi | Shadow Senbon | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shadow Senbon |
 | Kin Tsuchi | Unnerving Bells | 3 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Unnerving Bells |
-| Kin Tsuchi | Foresight | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Foresight |
+| Kin Tsuchi | Foresight | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Foresight |
 | Kinkaku | Leaf Fan | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Leaf Fan |
 | Kinkaku | Gold Rope | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Gold Rope |
 | Kinkaku | Scroll of Fire | 3 | EFEITO_ERRADO | EXACT_WITHIN_CHARACTER | Scroll of Fire |
-| Kinkaku | Aparar | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
+| Kinkaku | Aparar | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Parry |
 | Kisame Hoshigaki | Samehada Slash | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Samehada Slash |
 | Kisame Hoshigaki | Samehada Shred | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Samehada Shred |
 | Kisame Hoshigaki | Super Shark Bomb | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Super Shark Bomb |
-| Kisame Hoshigaki | Scale Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Scale Shield |
+| Kisame Hoshigaki | Scale Shield | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Scale Shield |
 | Kisame Hoshigaki | Thousand Hungry Sharks | 1 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Thousand Hungry Sharks |
 | Kisame Hoshigaki | Man-Eating Sharks | 2 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Man-Eating Sharks |
 | Kisame Hoshigaki | Exploding Water Shockwave | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Exploding Water Shockwave |
@@ -444,11 +444,11 @@
 | Kitsuchi | Rock Fist | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rock Fist |
 | Kitsuchi | Erupt | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Erupt |
 | Kitsuchi | Sandwiching Mountain | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sandwiching Mountain |
-| Kitsuchi | Rock Shelter | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rock Shelter |
+| Kitsuchi | Rock Shelter | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rock Shelter |
 | Konan | Paper Cut | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Cut |
 | Konan | Dance of the Shikigami | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dance of the Shikigami |
 | Konan | Paper Shower | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Shower |
-| Konan | Paper Clone | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Clone |
+| Konan | Paper Clone | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Clone |
 | Konan of the Rain | Paper Chakram | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Chakram |
 | Konan of the Rain | Sacred Paper Emissary | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sacred Paper Emissary |
 | Konan of the Rain | Paper Bomb | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Paper Bomb |
@@ -460,7 +460,7 @@
 | Konohamaru Sarutobi | Rasengan | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasengan |
 | Konohamaru Sarutobi | Agile Backflip | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Agile Backflip |
 | Konohamaru Sarutobi | Quick Recovery | 3 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Quick Recovery |
-| Konohamaru Sarutobi | Hide | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
+| Konohamaru Sarutobi | Hide | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Hide |
 | Kurenai Yuhi | Demonic Illusion: Entrap | 1 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Demonic Illusion: Entrap |
 | Kurenai Yuhi | Illusory Tree Meld | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Illusory Tree Meld |
 | Kurenai Yuhi | Demonic Illusion: Sylvan Fetters | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Demonic Illusion: Sylvan Fetters |
@@ -468,11 +468,11 @@
 | Kurotsuchi | Lava Quicklime | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lava Quicklime |
 | Kurotsuchi | Water Trumpet | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Water Trumpet |
 | Kurotsuchi | Falling Earth Spears | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Falling Earth Spears |
-| Kurotsuchi | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Kurotsuchi | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Kushimaru Kuriarare | Needle Stitching | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Needle Stitching |
 | Kushimaru Kuriarare | Eviscerate | 2 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Eviscerate |
 | Kushimaru Kuriarare | Wire Crucifixion | 3 | EFEITO_ERRADO, COOLDOWN_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Wire Crucifixion |
-| Kushimaru Kuriarare | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Kushimaru Kuriarare | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Kushina Uzumaki | Double Tetragram Seal | 1 | EFEITO_ERRADO, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Double Tetragram Seal |
 | Kushina Uzumaki | Life Link | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Life Link |
 | Kushina Uzumaki | Life Transfer | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Life Transfer |
@@ -484,7 +484,7 @@
 | Maki | Binding Cloth | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Binding Cloth |
 | Maki | Humidified Cloth | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Humidified Cloth |
 | Maki | Cloth Paralysis | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cloth Paralysis |
-| Maki | Cloth Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cloth Shield |
+| Maki | Cloth Shield | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Cloth Shield |
 | Mangekyō Sasuke | Susanoo | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Susanoo |
 | Mangekyō Sasuke | Chidori | 2 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chidori |
 | Mangekyō Sasuke | Blazing Arrow | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Blazing Arrow |
@@ -492,11 +492,10 @@
 | Masked Man | Kusari Chains | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kusari Chains |
 | Masked Man | Kamui Banishment | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui Banishment |
 | Masked Man | Major Summoning: Kurama | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Major Summoning: Kurama |
-| Masked Man | Kamui Phase | 4 | CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kamui Phase |
 | Mei Terumi | Solid Fog | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Solid Fog |
 | Mei Terumi | Water Bomb | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Water Bomb |
 | Mei Terumi | Lava Monster | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Lava Monster |
-| Mei Terumi | Flee | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flee |
+| Mei Terumi | Flee | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flee |
 | Might Guy | Leaf Hurricane | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Leaf Hurricane |
 | Might Guy | Severe Leaf Hurricane | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Severe Leaf Hurricane |
 | Might Guy | Sixth Gate Opening | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sixth Gate Opening |
@@ -508,7 +507,7 @@
 | Minato Namikaze | Flying Raijin | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Raijin |
 | Minato Namikaze | Técnica Sensorial | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sensory Technique |
 | Minato Namikaze | Space-Time Marking | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Space-Time Marking |
-| Minato Namikaze | Flying Light | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Light |
+| Minato Namikaze | Flying Light | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Light |
 | Minato Namikaze | Space-Time Marking | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Space-Time Marking |
 | Minato Namikaze | Reciprocal Round-Robin | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Reciprocal Round-Robin |
 | Minato Namikaze | Rasen-Flash Super-Circle Dance Howl (Stage III) | 3 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasen-Flash Super-Circle Dance Howl (Stage III) |
@@ -516,14 +515,15 @@
 | Misumi Tsurugi | Flexible Twisting Joints | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flexible Twisting Joints |
 | Misumi Tsurugi | Soft Physique Modification | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Soft Physique Modification |
 | Misumi Tsurugi | Tighten Joints | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Tighten Joints |
-| Misumi Tsurugi | Bloqueio | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
+| Misumi Tsurugi | Bloqueio | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Block |
 | Mizuki | Kunai Assault | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Kunai Assault |
 | Mizuki | Execution Shuriken | 2 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Execution Shuriken |
 | Mizuki | Genjutsu Ambush Tactics | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Genjutsu Ambush Tactics |
-| Mizuki | Esquiva | 4 | EFEITO_ERRADO, CUSTO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
+| Mizuki | Esquiva | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dodge |
 | Mū | Particle Beam | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Particle Beam |
 | Mū | Fragmentation | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Fragmentation |
 | Mū | Atomic Dismantling | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Atomic Dismantling |
+| Mū | Dustless Bewildering Cover | 4 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Dustless Bewildering Cover |
 
 ## Não resolvidos
 

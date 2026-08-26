@@ -36697,11 +36697,8 @@
           "balance:r37",
           "identity:ninjutsu"
         ],
-        "cost": [
-          "Blood",
-          "Nin"
-        ],
-        "cooldown": 0,
+        "cost": [],
+        "cooldown": 4,
         "charges": null,
         "mechanic": {
           "version": 2,
@@ -36715,22 +36712,6 @@
               "classes": [
                 "all"
               ]
-            },
-            {
-              "type": "status",
-              "target": "self",
-              "status": "evasion",
-              "duration": 2,
-              "durationUnit": "ownerPhases",
-              "value": 0.4,
-              "amount": 0.4,
-              "negative": false
-            },
-            {
-              "type": "cooldown",
-              "target": "self",
-              "amount": -1,
-              "scope": "all"
             }
           ],
           "classes": [
@@ -36744,9 +36725,7 @@
           ],
           "source": "content_entities.technique",
           "contentOps": [
-            "status",
-            "status",
-            "cooldown"
+            "status"
           ]
         }
       }

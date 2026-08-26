@@ -90,6 +90,33 @@
     "descriptionAfterMechanics": false
   },
   {
+    "characterId": "masked-man",
+    "characterName": "Masked Man",
+    "slot": 4,
+    "techniqueId": "masked-man__base_4",
+    "techniqueName": "Kamui Phase",
+    "originalName": "Kamui Phase",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Masked Man",
+    "upstreamTechnique": "Kamui Phase",
+    "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "invulnerable"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [],
+    "requiresManualSemantics": false,
+    "descriptionAfterMechanics": false
+  },
+  {
     "characterId": "zabuza-momochi-(r)",
     "characterName": "Zabuza Momochi",
     "slot": 3,
