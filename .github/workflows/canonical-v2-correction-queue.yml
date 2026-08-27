@@ -34,11 +34,14 @@ jobs:
           set -euo pipefail
           node --check tools/build-canonical-v2-correction-queue.mjs
           node tools/build-canonical-v2-correction-queue.mjs --self-test
-      - name: Build guarded correction queue
+      - name: Snapshot previous queue and build guarded correction queue
         run: |
           set -euo pipefail
+          if [ -f audit/balance/canonical-v2-corrections/SUMMARY.json ]; then
+            cp audit/balance/canonical-v2-corrections/SUMMARY.json /tmp/canonical-v2-queue-before.json
+          fi
           node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/canonical-v2-correction-queue.json
-      - name: Enforce final accounting and per-dimension queue safety
+      - name: Enforce final accounting, monotonicity and per-dimension queue safety
         run: |
           set -euo pipefail
           node - <<'JS'
@@ -54,6 +57,20 @@ jobs:
           if((source.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error('MOTOR_INSUFICIENTE must remain zero');
           if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.justifiedExcluded!==117) throw new Error(`queue=${JSON.stringify(q)}`);
           if(q.actionable+q.correct!==719) throw new Error(`queue partition=${q.actionable}+${q.correct}`);
+          if(fs.existsSync('/tmp/canonical-v2-queue-before.json')){
+            const before=JSON.parse(fs.readFileSync('/tmp/canonical-v2-queue-before.json','utf8'));
+            const sameBaseline=before.sourceUpstreamCommit===q.sourceUpstreamCommit&&before.comparable===q.comparable&&before.justifiedExcluded===q.justifiedExcluded;
+            if(sameBaseline){
+              if(q.actionable>before.actionable) throw new Error(`ACTIONABLE_REGRESSION=${before.actionable}->${q.actionable}`);
+              if(q.correct<before.correct) throw new Error(`CORRECT_REGRESSION=${before.correct}->${q.correct}`);
+              const nonIncreasing=['DESCRIÇÃO_ERRADA','DANO_ERRADO','EFEITO_ERRADO','ALVO_ERRADO','CUSTO_ERRADO','COOLDOWN_ERRADO','DURAÇÃO_ERRADA','MOTOR_INSUFICIENTE'];
+              for(const key of nonIncreasing){
+                const prev=Number(before.classificationCounts?.[key]||0),next=Number(q.classificationCounts?.[key]||0);
+                if(next>prev) throw new Error(`CLASSIFICATION_REGRESSION:${key}=${prev}->${next}`);
+              }
+              console.log('CANONICAL_V2_MONOTONIC_QUEUE=PASS',{actionable:`${before.actionable}->${q.actionable}`,correct:`${before.correct}->${q.correct}`});
+            }
+          }
           if(safe.length!==q.safeStructural) throw new Error(`safe count=${safe.length}/${q.safeStructural}`);
           if(safe.length+complex.length+manual.length!==q.actionable) throw new Error(`tier coverage=${safe.length}+${complex.length}+${manual.length}/${q.actionable}`);
           for(const r of safe){
