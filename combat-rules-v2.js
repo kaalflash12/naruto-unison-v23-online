@@ -151,7 +151,7 @@ function resolveTargets(state,actor,targetSpec,targetId){
   const own=team(state,actor.side).filter(alive),other=team(state,enemySide(state,actor.side)).filter(alive),explicit=targetId==null?null:getFighter(state,targetId);
   switch(targetSpec){
     case'self':return[actor];case'ally':return explicit&&explicit.side===actor.side&&alive(explicit)?[explicit]:own.filter(x=>x.id!==actor.id).slice(0,1);case'allies':return own;
-    case'enemy':return explicit&&explicit.side!==actor.side&&alive(explicit)?[explicit]:other.slice(0,1);case'enemies':return other;case'everyone':return[...own,...other];case'randomEnemy':return other.length?[other[Math.floor(randomOf(state)()*other.length)]]:[];default:return explicit&&alive(explicit)?[explicit]:[];
+    case'enemy':return explicit&&explicit.side!==actor.side&&alive(explicit)?[explicit]:other.slice(0,1);case'enemies':return other;case'other-enemies':{const primary=explicit&&explicit.side!==actor.side&&alive(explicit)?explicit:other[0];return other.filter(x=>!primary||x.id!==primary.id)}case'everyone':return[...own,...other];case'randomEnemy':return other.length?[other[Math.floor(randomOf(state)()*other.length)]]:[];default:return explicit&&alive(explicit)?[explicit]:[];
   }
 }
 function effectTargets(state,actor,skill,effect,targetId){return resolveTargets(state,actor,effect.target||skill.mechanic.target||'enemy',targetId)}
@@ -166,7 +166,8 @@ function absorbDefense(state,target,amount,classes,effect,ctx){
   for(const layer of target.defense){if(remaining<=0)break;if(num(layer.amount)<=0||!intersects(layer.classes||['all'],classes))continue;const take=Math.min(remaining,num(layer.amount));layer.amount=num(layer.amount)-take;remaining-=take;absorbed+=take;if(layer.amount<=0)runTriggers(state,'onBreak',{...ctx,target,brokenLayer:layer},1)}
   target.defense=target.defense.filter(x=>num(x.amount)>0);return{remaining,absorbed};
 }
-function rolledAmount(state,effect){const base=Math.max(0,num(effect.amount)),variance=Math.max(0,num(effect.variance));if(!variance)return Math.round(base);const r=randomOf(state)();return Math.max(0,Math.round(base*(1-variance+2*variance*r)))}
+function scaledAmount(effect,source,target){let base=Math.max(0,num(effect.amount));const scale=effect?.amountScale;if(scale&&scale.type==='stack'){const owner=scale.source==='target'?target:source;const stacks=Math.max(0,num(owner?.stacks?.[String(scale.key||'')]));base+=stacks*num(scale.per)}return Math.max(0,base)}
+function rolledAmount(state,effect,source=null,target=null){const base=scaledAmount(effect,source,target),variance=Math.max(0,num(effect.variance));if(!variance)return Math.round(base);const r=randomOf(state)();return Math.max(0,Math.round(base*(1-variance+2*variance*r)))}
 function counterRatio(target,classes){return clamp(statusActive(target,'counter').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>Math.max(n,num(s.value,s.amount)),0),0,1)}
 function reflectRatio(target,classes){return clamp(statusActive(target,'reflect').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>Math.max(n,num(s.ratio,s.value??s.amount??1)),0),0,1)}
 function redirectTarget(state,target,classes){for(const s of statusActive(target,'redirect')){if(!intersects(s.classes||['all'],classes))continue;const id=s.redirectToId||s.toId||s.sourceId,protector=getFighter(state,id);if(protector&&alive(protector)&&protector.id!==target.id)return protector}return null}
@@ -176,7 +177,7 @@ function applyDamage(state,source,target,effect,ctx={}){
   if(isImmuneTo(target,'damage',classes))return{dealt:0,blocked:'immunity'};
   if(isInvulnerable(target,classes,effect))return{dealt:0,blocked:'invulnerable'};
   if(isEvaded(state,target,classes,effect))return{dealt:0,blocked:'evasion'};
-  let raw=rolledAmount(state,effect);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';if(damageClass==='piercing'||damageClass==='affliction')effect={...effect,bypassDefense:true};
+  let raw=rolledAmount(state,effect,source,target);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';if(damageClass==='piercing'||damageClass==='affliction')effect={...effect,bypassDefense:true};
   raw=Math.max(0,raw+attackAdjustment(source,classes)+exposureAmount(target,classes)-reductionAmount(target,classes,effect));raw=Math.max(0,Math.round(raw*vulnerabilityMultiplier(target,classes)));
   const{remaining,absorbed}=absorbDefense(state,target,raw,classes,effect,{...ctx,source});const before=target.hp;target.hp=Math.max(0,num(target.hp)-remaining);const dealt=before-target.hp;let countered=0,reflected=0;
   if(dealt>0){runTriggers(state,'onHarmed',{...ctx,source,target,amount:dealt,effect},1);runTriggers(state,'onDamage',{...ctx,source,target,amount:dealt,effect},1);if(!ctx.counter&&alive(source)){const ratio=counterRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0},{counter:true});countered=r.dealt||0}}if(!ctx.reflect&&!ctx.counter&&alive(source)){const ratio=reflectRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0,bypassRedirect:true},{reflect:true});reflected=r.dealt||0}}}

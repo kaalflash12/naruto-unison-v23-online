@@ -21,7 +21,7 @@ const ENGINE_EFFECT_TYPES=Object.freeze([
 const ENGINE_EFFECT_SET=new Set(ENGINE_EFFECT_TYPES);
 const ENGINE_CHANGE_TYPES=Object.freeze(['setCost','addCost','removeCost','setTarget','targetAll','setCooldown','setCharges']);
 const ENGINE_CHANGE_SET=new Set(ENGINE_CHANGE_TYPES);
-const ENGINE_TARGETS=new Set(['self','ally','allies','enemy','enemies','everyone','randomEnemy']);
+const ENGINE_TARGETS=new Set(['self','ally','allies','enemy','enemies','other-enemies','everyone','randomEnemy']);
 const ENGINE_REQUIREMENT_TYPES=new Set(['stackAtLeast','stackAtMost','statusPresent','statusAbsent','hpBelow','hpAtMost','consecutiveUses','previousSkill','chargeAtLeast','alternateActive']);
 const MAX_ENGINE_DEPTH=6,MAX_ENGINE_EFFECTS=100,MAX_ENGINE_CHANGES=32,MAX_ENGINE_REQUIREMENTS=32,MAX_ENGINE_BYTES=65536;
 const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
@@ -150,6 +150,13 @@ function validateEngineEffect(raw,depth=0,counter={count:0}){
   const out=clone(raw),type=String(out.type||'');
   if(!ENGINE_EFFECT_SET.has(type))throw new Error(`UNSUPPORTED_ENGINE_EFFECT:${type||'<empty>'}`);
   if(out.target!=null&&!ENGINE_TARGETS.has(String(out.target)))throw new Error(`INVALID_ENGINE_TARGET:${out.target}`);
+  if(out.amountScale!=null){
+    const scale=out.amountScale;
+    if(!scale||typeof scale!=='object'||Array.isArray(scale)||String(scale.type||'')!=='stack')throw new Error('INVALID_ENGINE_AMOUNT_SCALE');
+    if(!['source','target'].includes(String(scale.source||'')))throw new Error(`INVALID_ENGINE_AMOUNT_SCALE_SOURCE:${scale.source}`);
+    if(!String(scale.key||'').trim())throw new Error('INVALID_ENGINE_AMOUNT_SCALE_KEY');
+    if(!Number.isFinite(Number(scale.per)))throw new Error(`INVALID_ENGINE_AMOUNT_SCALE_PER:${scale.per}`);
+  }
   if(out.duration!=null&&out.duration!=='permanent'&&(!Number.isFinite(Number(out.duration))||Number(out.duration)<0))throw new Error(`INVALID_ENGINE_DURATION:${out.duration}`);
   if(out.requirements!=null)out.requirements=validateEngineRequirement(out.requirements,depth+1,{count:0});
   if(out.requirement!=null)out.requirement=validateEngineRequirement(out.requirement,depth+1,{count:0});

@@ -62,7 +62,9 @@ function state(){
   return rules.createState([
     {id:'a',side:'A',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}},
     {id:'ally',side:'A',hp:100,maxHp:100,chakra:{Blood:0,Gen:0,Nin:0,Tai:0,Rand:0}},
-    {id:'b',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}}
+    {id:'b',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}},
+    {id:'b2',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}},
+    {id:'b3',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}}
   ],{seed:7});
 }
 function use(s,actor,skill,target){
@@ -138,6 +140,40 @@ function use(s,actor,skill,target){
   assert.deepEqual(gate.cost,['Tai']);
 }
 
+{
+  const s=state();
+  rules.getFighter(s,'b').stacks['Space-Time Marking']=2;
+  rules.getFighter(s,'b2').stacks['Space-Time Marking']=1;
+  const skill=adapter.adaptTechnique({...base,id:'minato-stack-scale',cooldown:0,mechanics:[],effect:{...base.effect,engineEffects:[
+    {type:'damage',target:'enemy',amount:20,variance:0},
+    {type:'damage',target:'enemies',amount:0,variance:0,amountScale:{type:'stack',source:'target',key:'Space-Time Marking',per:20}}
+  ]}});
+  use(s,'a',skill,'b');
+  assert.equal(rules.getFighter(s,'b').hp,40,'alvo com 2 stacks deve receber 20 base + 40 escalado');
+  assert.equal(rules.getFighter(s,'b2').hp,80,'outro inimigo com 1 stack deve receber 20 escalado');
+  assert.equal(rules.getFighter(s,'b3').hp,100,'inimigo sem stack não deve receber bônus');
+}
+{
+  const s=state();
+  rules.getFighter(s,'a').stacks['Two-Tailed Transformation']=1;
+  const skill=adapter.adaptTechnique({...base,id:'Cat Claws',cooldown:0,mechanics:[],effect:{...base.effect,engineRequirements:{type:'stackAtLeast',key:'Two-Tailed Transformation',amount:1},engineEffects:[
+    {type:'damage',target:'enemy',amount:15,variance:0,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},
+    {type:'damage',target:'other-enemies',amount:5,variance:0,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},
+    {type:'stack',target:'self',key:'Cat Claws',op:'add',amount:1}
+  ]}});
+  use(s,'a',skill,'b');
+  assert.equal(rules.getFighter(s,'b').hp,85);
+  assert.equal(rules.getFighter(s,'b2').hp,95);
+  assert.equal(rules.getFighter(s,'b3').hp,95);
+  assert.equal(rules.getFighter(s,'a').stacks['Cat Claws'],1);
+  use(s,'a',skill,'b');
+  assert.equal(rules.getFighter(s,'b').hp,65,'segundo uso deve causar 20 no alvo');
+  assert.equal(rules.getFighter(s,'b2').hp,85,'segundo uso deve causar 10 nos outros inimigos');
+  assert.equal(rules.getFighter(s,'b3').hp,85);
+  assert.equal(rules.getFighter(s,'a').stacks['Cat Claws'],2);
+}
+
+assert.throws(()=>adapter.validateEngineEffects([{type:'damage',amount:1,amountScale:{type:'stack',source:'ally',key:'x',per:1}}]),/INVALID_ENGINE_AMOUNT_SCALE_SOURCE/);
 assert.throws(()=>adapter.validateEngineEffects([{type:'noop'}]),/UNSUPPORTED_ENGINE_EFFECT/);
 assert.throws(()=>adapter.validateEngineEffects([{type:'made-up'}]),/UNSUPPORTED_ENGINE_EFFECT/);
 assert.throws(()=>adapter.validateEngineEffects([{type:'damage',target:'source',amount:1}]),/INVALID_ENGINE_TARGET/);
@@ -155,6 +191,6 @@ console.log(JSON.stringify({
   ok:true,
   engineEffectTypes:adapter.ENGINE_EFFECT_TYPES.length,
   engineChangeTypes:adapter.ENGINE_CHANGE_TYPES.length,
-  runtimeCases:7,
+  runtimeCases:9,
   compatibility:true
 }));
