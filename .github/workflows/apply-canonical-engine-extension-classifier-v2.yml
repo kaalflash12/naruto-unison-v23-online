@@ -54,8 +54,12 @@ jobs:
           JS
       - name: Rebuild raw, final and correction queue
         run: |
-          set -euo pipefail
+          set -uo pipefail
+          set +e
           node tools/classify-canonical-upstream-v2.mjs --root . --upstream canonical-upstream --upstream-commit 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1 | tee /tmp/canonical-v2-engine-extension-raw.json
+          raw_code=${PIPESTATUS[0]}
+          set -e
+          if [ "$raw_code" -ne 0 ] && [ "$raw_code" -ne 2 ]; then exit "$raw_code"; fi
           node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/canonical-v2-engine-extension-final.json
           node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/canonical-v2-engine-extension-queue.json
       - name: Enforce Minato Yugito correction and monotonic queue
