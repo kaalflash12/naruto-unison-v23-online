@@ -1,0 +1,102 @@
+name: Apply Canonical Engine Extension Classifier V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-canonical-engine-extension-classifier-v2.mjs'
+      - '.github/workflows/apply-canonical-engine-extension-classifier-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-canonical-engine-extension-classifier-v2
+  cancel-in-progress: false
+
+jobs:
+  patch-classify-prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: naruto-unison/naruto-unison
+          ref: 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
+          path: canonical-upstream
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Patch classifier and self-test
+        run: |
+          set -euo pipefail
+          node --check tools/patch-canonical-engine-extension-classifier-v2.mjs
+          node tools/patch-canonical-engine-extension-classifier-v2.mjs
+          node --check tools/classify-canonical-upstream-v2.mjs
+          grep -F 'ENGINE_EXTENSION_CLASSIFIER_V2' tools/classify-canonical-upstream-v2.mjs >/dev/null
+          grep -F 'SELFTEST_ENGINE_SCALE' tools/classify-canonical-upstream-v2.mjs >/dev/null
+          grep -F 'SELFTEST_ENGINE_STACK' tools/classify-canonical-upstream-v2.mjs >/dev/null
+          node tools/classify-canonical-upstream-v2.mjs --self-test
+      - name: Re-prove published V2 runtime
+        run: |
+          set -euo pipefail
+          node tools/audit-published-techniques-v2.mjs | tee /tmp/published-v2-engine-extension.json
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
+          if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836) throw new Error(JSON.stringify(s));
+          if(s.unsupported!==0||s.runtimeFailures!==0||s.unknownCosts!==0||s.noops!==0) throw new Error('PUBLISHED_V2_REGRESSION');
+          JS
+      - name: Rebuild raw, final and correction queue
+        run: |
+          set -euo pipefail
+          node tools/classify-canonical-upstream-v2.mjs --root . --upstream canonical-upstream --upstream-commit 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1 | tee /tmp/canonical-v2-engine-extension-raw.json
+          node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream | tee /tmp/canonical-v2-engine-extension-final.json
+          node tools/build-canonical-v2-correction-queue.mjs | tee /tmp/canonical-v2-engine-extension-queue.json
+      - name: Enforce Minato Yugito correction and monotonic queue
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const rows=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-CLASSIFICATION-836.json','utf8'));
+          const fin=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          const exact=(id)=>{
+            const r=rows.find(x=>x.techniqueId===id);
+            if(!r)throw new Error(`MISSING:${id}`);
+            if(r.classifications.length!==1||r.classifications[0]!=='CORRETA')throw new Error(`NOT_CORRECT:${id}:${JSON.stringify(r.classifications)}:${JSON.stringify(r.evidence||{})}`);
+          };
+          exact('minato-namikaze-(r)__base_3');
+          exact('yugito-nii-(s)__base_3');
+          if(fin.gate!=='PASS'||fin.totalTechniques!==836||fin.accounted!==836||fin.unaccounted!==0)throw new Error(`FINAL=${JSON.stringify(fin)}`);
+          if((fin.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0)throw new Error(`MOTOR_INSUFICIENTE=${fin.classificationCounts?.MOTOR_INSUFICIENTE}`);
+          if(q.gate!=='PASS'||q.actionable>701||q.correct<18)throw new Error(`QUEUE_NOT_REDUCED=${JSON.stringify(q)}`);
+          console.log('ENGINE_EXTENSION_CANONICAL_CORRECTION=PASS',{actionable:q.actionable,correct:q.correct});
+          JS
+      - name: Upload proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-engine-extension-classifier-v2-${{ github.sha }}
+          path: |
+            audit/balance/published-v2
+            audit/balance/canonical-v2
+            audit/balance/canonical-v2-corrections
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit classifier and evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/classify-canonical-upstream-v2.mjs audit/balance/published-v2 audit/balance/canonical-v2 audit/balance/canonical-v2-corrections
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): classify engine extension corrections [skip ci]'
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          git push origin HEAD:main
