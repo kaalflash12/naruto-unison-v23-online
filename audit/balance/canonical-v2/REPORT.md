@@ -10,11 +10,11 @@
 
 ## Classificações
 
-- CORRETA: **9**
-- DESCRIÇÃO_ERRADA: **699**
+- CORRETA: **16**
+- DESCRIÇÃO_ERRADA: **692**
 - DANO_ERRADO: **26**
 - EFEITO_ERRADO: **700**
-- ALVO_ERRADO: **322**
+- ALVO_ERRADO: **315**
 - CUSTO_ERRADO: **153**
 - COOLDOWN_ERRADO: **22**
 - DURAÇÃO_ERRADA: **353**
@@ -308,7 +308,6 @@
 | Human Path Pain | Soul Rip | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Soul Rip |
 | Human Path Pain | Rinnegan Foresight | 4 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rinnegan Foresight |
 | Ibiki Morino | Biding Time | 1 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Biding Time |
-| Ibiki Morino | Payback | 2 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Payback |
 | Ibiki Morino | Summoning: Iron Maiden | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Iron Maiden |
 | Ibiki Morino | Summoning: Torture Chamber | 4 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Torture Chamber |
 | Ino Yamanaka | Mind Destruction | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Mind Destruction |
@@ -353,8 +352,6 @@
 | Jiraiya | Toad Oil Bomb | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Toad Oil Bomb |
 | Jiraiya | Toad Subjugation Shadow Manipulation | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Toad Subjugation Shadow Manipulation |
 | Jiraiya | Raging Lion's Mane | 4 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Raging Lion's Mane |
-| Jirōbō | Crushing Palm | 1 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Crushing Palm |
-| Jirōbō | Sphere of Graves | 2 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Sphere of Graves |
 | Jirōbō | Earth Dome Prison | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Earth Dome Prison |
 | Jirōbō | Terra Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Terra Shield |
 | Jirōbō | Rivalry | 1 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rivalry |
@@ -434,7 +431,6 @@
 | Kisame Hoshigaki | Super Shark Bomb | 3 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Super Shark Bomb |
 | Kisame Hoshigaki | Scale Shield | 4 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Scale Shield |
 | Kisame Hoshigaki | Thousand Hungry Sharks | 1 | EFEITO_ERRADO, COOLDOWN_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Thousand Hungry Sharks |
-| Kisame Hoshigaki | Man-Eating Sharks | 2 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Man-Eating Sharks |
 | Kisame Hoshigaki | Exploding Water Shockwave | 3 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Exploding Water Shockwave |
 | Kisame Hoshigaki | Shark Dance | 4 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Shark Dance |
 | Kitsuchi | Rock Fist | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DANO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rock Fist |
@@ -524,6 +520,10 @@
 | Nagato | Human Path | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Human Path |
 | Nagato | Naraka Path | 3 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Naraka Path |
 | Nagato | Preta Path | 4 | EFEITO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Preta Path |
+| Nagato | Summoning: Gedo Statue | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: Gedo Statue |
+| Nagato | Control | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Control |
+| Nagato | Phantom Dragon | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Phantom Dragon |
+| Nagato | Rinne Rebirth | 4 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rinne Rebirth |
 
 ## Não resolvidos
 

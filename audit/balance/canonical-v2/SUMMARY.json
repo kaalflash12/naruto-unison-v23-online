@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T10:37:42.909Z",
+  "generatedAt": "2026-08-27T10:45:37.998Z",
   "contentRevision": 3,
   "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "playableCharacters": 209,
@@ -8,11 +8,11 @@
   "resolved": 718,
   "unresolved": 118,
   "classificationCounts": {
-    "CORRETA": 9,
-    "DESCRIÇÃO_ERRADA": 699,
+    "CORRETA": 16,
+    "DESCRIÇÃO_ERRADA": 692,
     "DANO_ERRADO": 26,
     "EFEITO_ERRADO": 700,
-    "ALVO_ERRADO": 322,
+    "ALVO_ERRADO": 315,
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,
     "DURAÇÃO_ERRADA": 353,

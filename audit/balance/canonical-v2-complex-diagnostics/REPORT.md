@@ -1,10 +1,10 @@
 # Diagnóstico dos bloqueadores canônicos V2
 
-- Linhas complexas: **710**
+- Linhas complexas: **703**
 - Com EFEITO_ERRADO: **701**
-- Sem EFEITO_ERRADO: **9**
+- Sem EFEITO_ERRADO: **2**
 - Bloqueadores suportados pelo motor V2: **SIM**
-- Linhas sem EFEITO_ERRADO compostas somente por bloqueadores suportados: **9**
+- Linhas sem EFEITO_ERRADO compostas somente por bloqueadores suportados: **2**
 - Gate: **PASS**
 
 ## Bloqueadores
@@ -19,5 +19,5 @@
 - reflect: 6 (efeito divergente 6; sem efeito divergente 0; exclusivo 2)
 - requirement: 58 (efeito divergente 57; sem efeito divergente 1; exclusivo 23)
 - sacrifice: 19 (efeito divergente 19; sem efeito divergente 0; exclusivo 7)
-- stack: 85 (efeito divergente 76; sem efeito divergente 9; exclusivo 39)
+- stack: 78 (efeito divergente 76; sem efeito divergente 2; exclusivo 32)
 - trap-counter: 108 (efeito divergente 108; sem efeito divergente 0; exclusivo 46)

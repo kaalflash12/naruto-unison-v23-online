@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-27T10:41:23.845Z",
+  "generatedAt": "2026-08-27T10:45:38.360Z",
   "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
-  "complexRows": 710,
+  "complexRows": 703,
   "withEffectMismatch": 701,
-  "withoutEffectMismatch": 9,
+  "withoutEffectMismatch": 2,
   "blockerFreeComplexRows": 326,
   "allBlockersEngineSupported": true,
-  "supportedBlockerRowsWithoutEffectMismatch": 9,
+  "supportedBlockerRowsWithoutEffectMismatch": 2,
   "structuralDimensionCounts": {
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,
     "DANO_ERRADO": 26,
-    "ALVO_ERRADO": 322,
+    "ALVO_ERRADO": 315,
     "DURAÇÃO_ERRADA": 353
   },
   "heldStructuralDimensionCounts": {
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,
     "DANO_ERRADO": 26,
-    "ALVO_ERRADO": 322,
+    "ALVO_ERRADO": 315,
     "DURAÇÃO_ERRADA": 353
   },
   "blockerCounts": {
@@ -32,7 +32,7 @@
     "reflect": 6,
     "requirement": 58,
     "sacrifice": 19,
-    "stack": 85,
+    "stack": 78,
     "trap-counter": 108
   },
   "topIntersections": [
@@ -52,7 +52,7 @@
       "blockers": [
         "stack"
       ],
-      "rows": 39
+      "rows": 32
     },
     {
       "blockers": [

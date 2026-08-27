@@ -513,6 +513,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -876,6 +880,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -1227,6 +1234,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -1668,6 +1678,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -2220,6 +2234,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -2438,6 +2456,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -2669,6 +2690,10 @@
         "upstream": [
           "allies",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "allies",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -2788,6 +2813,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -3041,6 +3069,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -3162,6 +3194,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -3275,6 +3310,9 @@
           "self"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -3491,6 +3529,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -3601,6 +3642,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -4291,6 +4335,10 @@
         "upstream": [
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemy",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -4416,6 +4464,10 @@
           "self"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -4548,6 +4600,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -4912,6 +4968,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -5020,6 +5079,10 @@
           "allies"
         ],
         "upstream": [
+          "self",
+          "allies"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies"
         ]
@@ -5481,6 +5544,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -5935,6 +6002,10 @@
         "upstream": [
           "self",
           "allies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies"
         ]
       },
       "cost": {
@@ -6053,6 +6124,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -6940,6 +7014,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -7058,6 +7136,9 @@
           "enemies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -7288,6 +7369,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -7413,6 +7498,11 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies",
           "enemies"
@@ -7552,6 +7642,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -7674,6 +7767,11 @@
           "self",
           "allies",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies",
+          "enemies"
         ]
       },
       "description": {
@@ -7789,6 +7887,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -8014,6 +8116,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -8242,6 +8348,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -8485,6 +8594,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -8722,6 +8834,10 @@
           "allies"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -9167,6 +9283,11 @@
           "self",
           "allies-except-self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies-except-self",
+          "enemies"
         ]
       },
       "duration": {
@@ -9399,6 +9520,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -9627,6 +9751,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -9760,6 +9888,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -9867,6 +9999,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -9988,6 +10124,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -10202,6 +10342,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cost": {
@@ -10325,6 +10469,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "description": {
@@ -10432,6 +10580,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -10668,6 +10820,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -11187,6 +11342,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -11422,6 +11580,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -11540,6 +11701,9 @@
           "enemy"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -12108,6 +12272,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -12694,6 +12862,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -12811,6 +12982,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "allies-except-self"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies-except-self"
         ]
@@ -13054,6 +13229,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "description": {
@@ -13278,6 +13456,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -13414,6 +13595,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -13631,6 +13816,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -13938,6 +14127,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -14166,6 +14358,10 @@
         "upstream": [
           "allies",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "allies",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -14287,6 +14483,10 @@
           "self"
         ],
         "upstream": [
+          "allies",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemy"
         ]
@@ -15302,6 +15502,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -15846,6 +16050,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "duration": {
@@ -16092,6 +16299,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -16560,6 +16770,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -16674,6 +16888,11 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy",
           "enemies"
@@ -16797,6 +17016,10 @@
           "enemy"
         ],
         "upstream": [
+          "enemy",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemy",
           "enemies"
         ]
@@ -17241,6 +17464,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -17462,6 +17688,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "cooldown": {
@@ -17586,6 +17816,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -17705,6 +17939,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -17850,6 +18088,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -18195,6 +18437,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -18778,6 +19024,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -18899,6 +19149,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -19023,6 +19277,9 @@
           "enemy"
         ],
         "upstream": [
+          "allies"
+        ],
+        "normalizedUpstream": [
           "allies"
         ]
       },
@@ -19681,6 +19938,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -19905,6 +20165,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -20011,6 +20275,9 @@
           "enemy"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -20119,6 +20386,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -20380,6 +20651,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cooldown": {
@@ -20631,6 +20906,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -20863,6 +21142,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -21618,6 +21900,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -21728,6 +22013,9 @@
           "enemy"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -22156,6 +22444,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -22502,6 +22793,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -22966,6 +23261,9 @@
         ],
         "upstream": [
           "allies"
+        ],
+        "normalizedUpstream": [
+          "allies"
         ]
       },
       "duration": {
@@ -23085,6 +23383,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -23310,6 +23612,10 @@
           "enemy"
         ],
         "upstream": [
+          "ally",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "ally",
           "enemy"
         ]
@@ -23579,6 +23885,10 @@
         "upstream": [
           "ally",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "ally",
+          "enemy"
         ]
       },
       "cost": {
@@ -23792,6 +24102,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -24374,6 +24687,9 @@
           "enemies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -25019,6 +25335,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "damage": {
@@ -25140,6 +25459,9 @@
           "allies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -25500,6 +25822,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -25624,6 +25949,9 @@
           "enemies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -26180,6 +26508,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -26291,6 +26622,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -26426,6 +26760,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -26790,6 +27127,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -27132,6 +27472,10 @@
         "upstream": [
           "self",
           "allies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies"
         ]
       },
       "effectNumeric": {
@@ -27368,6 +27712,10 @@
           "enemies"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -27612,6 +27960,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -27839,6 +28191,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -27946,6 +28302,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -28413,6 +28773,11 @@
           "self",
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy",
+          "enemies"
         ]
       },
       "duration": {
@@ -28538,6 +28903,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "duration": {
@@ -28655,6 +29023,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -28786,6 +29157,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -29003,6 +29377,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -29322,6 +29700,10 @@
         "upstream": [
           "self",
           "allies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies"
         ]
       },
       "damage": {
@@ -29448,6 +29830,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "description": {
@@ -29556,6 +29942,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -30014,6 +30403,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -30131,6 +30524,11 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies",
           "enemies"
@@ -30951,6 +31349,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -31074,6 +31475,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -31180,26 +31584,9 @@
     "upstreamTechnique": "Payback",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Payback afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: Q; recarga: 0 turno(s).",
       "effect": {
@@ -31297,6 +31684,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -31420,6 +31811,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -31662,6 +32057,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -32088,6 +32487,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -32211,6 +32613,9 @@
           "enemy"
         ],
         "upstream": [
+          "allies-except-self"
+        ],
+        "normalizedUpstream": [
           "allies-except-self"
         ]
       },
@@ -32552,6 +32957,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "effectNumeric": {
@@ -32669,6 +33077,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -32775,6 +33186,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -33453,6 +33868,10 @@
         "upstream": [
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemy",
+          "enemies"
         ]
       },
       "cost": {
@@ -33956,6 +34375,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -34188,6 +34611,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "ally"
+        ],
+        "normalizedUpstream": [
           "self",
           "ally"
         ]
@@ -34536,6 +34963,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -35478,6 +35908,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -35605,6 +36038,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -35728,6 +36164,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -35862,6 +36302,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -36099,6 +36543,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "duration": {
@@ -36197,26 +36644,9 @@
     "upstreamTechnique": "Crushing Palm",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Crushing Palm afeta um inimigo: causa 31 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: TAI + Q; recarga: 0 turno(s).",
       "effect": {
@@ -36294,26 +36724,9 @@
     "upstreamTechnique": "Sphere of Graves",
     "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemies"
-        ],
-        "upstream": [
-          "self",
-          "enemies"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Sphere of Graves afeta todos os inimigos: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: TAI + Q; recarga: 0 turno(s).",
       "effect": {
@@ -36412,6 +36825,10 @@
           "allies"
         ],
         "upstream": [
+          "self",
+          "allies"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies"
         ]
@@ -36748,6 +37165,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -36862,6 +37283,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -36994,6 +37418,9 @@
           "self"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -37374,6 +37801,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -37731,6 +38161,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -37857,6 +38290,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -38301,6 +38737,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -38536,6 +38975,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -38875,6 +39318,10 @@
         "upstream": [
           "allies-except-self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "allies-except-self",
+          "enemies"
         ]
       },
       "cost": {
@@ -39004,6 +39451,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -39127,6 +39578,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -39244,6 +39699,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -39352,6 +39811,11 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy",
           "enemies"
@@ -40139,6 +40603,10 @@
         "upstream": [
           "self",
           "allies-except-self"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies-except-self"
         ]
       },
       "cost": {
@@ -40273,6 +40741,9 @@
           "enemy"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -40609,6 +41080,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "effectNumeric": {
@@ -40857,6 +41331,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "duration": {
@@ -40984,6 +41461,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -41119,6 +41599,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "allies-except-self"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies-except-self"
         ]
@@ -41467,6 +41951,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -41600,6 +42088,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -42104,6 +42595,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -42224,6 +42718,10 @@
           "enemy"
         ],
         "upstream": [
+          "enemy",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemy",
           "enemies"
         ]
@@ -42435,6 +42933,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -42786,6 +43288,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -42986,6 +43491,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -43217,6 +43725,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -43337,6 +43849,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -43464,6 +43980,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -43709,6 +44229,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -43928,6 +44451,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -44172,6 +44699,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -44302,6 +44833,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "damage": {
@@ -44425,6 +44960,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -44664,6 +45203,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -45653,26 +46196,9 @@
     "upstreamTechnique": "Man-Eating Sharks",
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Man-Eating Sharks afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 0 turno(s).",
       "effect": {
@@ -45771,6 +46297,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -46131,6 +46661,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -46257,6 +46791,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -46937,6 +47474,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -47058,6 +47599,10 @@
           "allies"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -47186,6 +47731,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cost": {
@@ -47309,6 +47858,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -47546,6 +48099,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -47963,6 +48519,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -48301,6 +48860,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -48525,6 +49088,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -48735,6 +49302,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -48967,6 +49538,9 @@
           "self"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -49863,6 +50437,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "effectNumeric": {
@@ -49984,6 +50561,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -50102,6 +50682,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -50227,6 +50810,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -50469,6 +51055,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -50582,6 +51171,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -51172,6 +51764,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -51314,6 +51910,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -51544,6 +52144,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -51672,6 +52276,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -51779,6 +52387,10 @@
           "allies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -52743,6 +53355,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "damage": {
@@ -52863,6 +53478,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -53310,6 +53929,12 @@
           "allies-except-self",
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "allies-except-self",
+          "enemy",
+          "enemies"
         ]
       },
       "duration": {
@@ -53440,6 +54065,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -53556,6 +54185,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -53785,6 +54417,10 @@
           "self"
         ],
         "upstream": [
+          "allies-except-self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies-except-self",
           "enemies"
         ]
@@ -54028,6 +54664,10 @@
         "upstream": [
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemy",
+          "enemies"
         ]
       },
       "description": {
@@ -54138,6 +54778,9 @@
           "self"
         ],
         "upstream": [
+          "allies"
+        ],
+        "normalizedUpstream": [
           "allies"
         ]
       },
@@ -54379,6 +55022,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -54499,6 +55145,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -55295,6 +55945,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -55629,6 +56282,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "description": {
@@ -55739,6 +56395,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -56172,6 +56832,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -56291,6 +56954,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -56403,6 +57070,10 @@
           "ally"
         ],
         "upstream": [
+          "self",
+          "allies-except-self"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies-except-self"
         ]
@@ -56657,6 +57328,9 @@
           "self"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -57182,6 +57856,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -57640,6 +58317,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -57746,26 +58427,9 @@
     "upstreamTechnique": "Pressure Point Strike",
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Pressure Point Strike afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: Q; recarga: 0 turno(s).",
       "effect": {
@@ -58234,6 +58898,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -58567,6 +59234,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -58930,6 +59600,9 @@
           "enemies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -59296,6 +59969,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "damage": {
@@ -59409,6 +60085,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -59642,6 +60322,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -59758,6 +60441,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -60234,6 +60921,10 @@
         "upstream": [
           "allies",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "allies",
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -60441,26 +61132,9 @@
     "upstreamTechnique": "Atomic Dismantling",
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Atomic Dismantling afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: NIN; recarga: 0 turno(s).",
       "effect": {
@@ -60674,6 +61348,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -60781,6 +61458,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -61132,6 +61812,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -61580,6 +62264,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "duration": {
@@ -61896,6 +62583,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -62017,6 +62707,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -62270,6 +62964,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cost": {
@@ -62405,6 +63103,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -62512,6 +63214,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -62927,6 +63632,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -63149,6 +63857,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cooldown": {
@@ -63269,6 +63980,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -63495,6 +64209,10 @@
           "self"
         ],
         "upstream": [
+          "enemies",
+          "everyone"
+        ],
+        "normalizedUpstream": [
           "enemies",
           "everyone"
         ]
@@ -63748,6 +64466,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -63994,6 +64716,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -64111,6 +64836,10 @@
           "self"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -64248,6 +64977,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -64373,6 +65106,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "effectNumeric": {
@@ -64490,6 +65226,9 @@
           "self"
         ],
         "upstream": [
+          "ally"
+        ],
+        "normalizedUpstream": [
           "ally"
         ]
       },
@@ -64845,6 +65584,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -64970,6 +65713,9 @@
           "ally"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -65314,6 +66060,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -65800,6 +66550,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cost": {
@@ -65932,6 +66685,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -66069,6 +66826,10 @@
         "upstream": [
           "self",
           "ally"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "ally"
         ]
       },
       "cooldown": {
@@ -66204,6 +66965,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cooldown": {
@@ -66337,6 +67102,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -66563,6 +67332,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "cost": {
@@ -66692,6 +67465,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -66814,6 +67591,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -67053,6 +67833,11 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies",
           "enemies"
@@ -67299,6 +68084,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -67420,6 +68208,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -67646,6 +68437,11 @@
           "self",
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy",
+          "enemies"
         ]
       },
       "description": {
@@ -67756,6 +68552,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -67874,6 +68673,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -67994,6 +68796,9 @@
           "ally"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -68672,6 +69477,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "effectNumeric": {
@@ -68786,6 +69594,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -68928,6 +69740,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "cost": {
@@ -69068,6 +69884,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "damage": {
@@ -69182,6 +70001,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -69303,6 +70126,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -69430,6 +70257,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -69538,6 +70369,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -69753,6 +70587,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "description": {
@@ -69863,6 +70701,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -70004,6 +70846,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -70224,6 +71070,9 @@
           "enemy"
         ],
         "upstream": [
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "enemies"
         ]
       },
@@ -71351,6 +72200,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -71564,6 +72417,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "ally"
+        ],
+        "normalizedUpstream": [
           "self",
           "ally"
         ]
@@ -72622,6 +73479,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -72746,6 +73607,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -73096,6 +73960,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -73213,6 +74081,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -73579,6 +74451,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -74048,6 +74924,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -74268,6 +75148,10 @@
           "self"
         ],
         "upstream": [
+          "allies",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "allies",
           "enemies"
         ]
@@ -74505,6 +75389,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "cooldown": {
@@ -74611,6 +75498,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -74948,6 +75838,11 @@
           "self",
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy",
+          "enemies"
         ]
       },
       "description": {
@@ -75058,6 +75953,10 @@
           "enemies"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -75401,6 +76300,10 @@
         "upstream": [
           "enemy",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemy",
+          "enemies"
         ]
       },
       "description": {
@@ -75720,6 +76623,9 @@
         ],
         "upstream": [
           "allies"
+        ],
+        "normalizedUpstream": [
+          "allies"
         ]
       },
       "duration": {
@@ -75842,6 +76748,9 @@
           "enemies"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -76167,6 +77076,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "description": {
@@ -76384,6 +77296,9 @@
         ],
         "upstream": [
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "enemies"
         ]
       },
       "duration": {
@@ -76508,6 +77423,9 @@
           "self"
         ],
         "upstream": [
+          "allies"
+        ],
+        "normalizedUpstream": [
           "allies"
         ]
       },
@@ -76746,6 +77664,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -77154,6 +78076,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -77270,6 +78196,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -77617,6 +78547,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "cost": {
@@ -77750,6 +78684,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -77879,6 +78817,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -78019,6 +78961,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -78124,6 +79070,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -78480,6 +79429,9 @@
         ],
         "upstream": [
           "allies"
+        ],
+        "normalizedUpstream": [
+          "allies"
         ]
       },
       "duration": {
@@ -78605,6 +79557,11 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "allies",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "allies",
           "enemy"
@@ -78739,6 +79696,9 @@
         ],
         "upstream": [
           "self"
+        ],
+        "normalizedUpstream": [
+          "self"
         ]
       },
       "effectNumeric": {
@@ -78860,6 +79820,9 @@
           "ally"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -80074,6 +81037,10 @@
         "upstream": [
           "self",
           "enemies"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemies"
         ]
       },
       "duration": {
@@ -80407,6 +81374,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -80647,6 +81618,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "damage": {
@@ -80768,6 +81743,9 @@
         ],
         "upstream": [
           "ally"
+        ],
+        "normalizedUpstream": [
+          "ally"
         ]
       },
       "description": {
@@ -80877,6 +81855,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -81123,6 +82105,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -81242,6 +82228,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -81369,6 +82359,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },
@@ -81597,6 +82590,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -81721,6 +82718,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -81849,6 +82850,9 @@
           "enemies"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -82092,6 +83096,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "description": {
@@ -82308,6 +83316,9 @@
           "self"
         ],
         "upstream": [
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "enemy"
         ]
       },
@@ -82647,6 +83658,10 @@
         "upstream": [
           "self",
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "self",
+          "enemy"
         ]
       },
       "duration": {
@@ -82757,6 +83772,11 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy",
           "enemies"
@@ -82986,6 +84006,9 @@
         ],
         "upstream": [
           "enemy"
+        ],
+        "normalizedUpstream": [
+          "enemy"
         ]
       },
       "effectNumeric": {
@@ -83206,6 +84229,10 @@
           "self"
         ],
         "upstream": [
+          "self",
+          "enemies"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemies"
         ]
@@ -83584,6 +84611,10 @@
           "enemy"
         ],
         "upstream": [
+          "self",
+          "enemy"
+        ],
+        "normalizedUpstream": [
           "self",
           "enemy"
         ]
@@ -84089,26 +85120,9 @@
     "upstreamTechnique": "Slicing Sound Wave",
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
-      "ALVO_ERRADO",
-      "DESCRIÇÃO_ERRADA"
+      "CORRETA"
     ],
-    "evidence": {
-      "target": {
-        "local": [
-          "enemy"
-        ],
-        "upstream": [
-          "self",
-          "enemy"
-        ]
-      },
-      "description": {
-        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
-        "dimensions": [
-          "ALVO_ERRADO"
-        ]
-      }
-    },
+    "evidence": {},
     "published": {
       "description": "Slicing Sound Wave afeta um inimigo: causa 22 de dano; marca o alvo por 2 turnos; causa 8 de dano com bônus quando a preparação é atendida. Custo: KEK; recarga: 0 turno(s).",
       "effect": {
@@ -84518,6 +85532,9 @@
           "enemy"
         ],
         "upstream": [
+          "self"
+        ],
+        "normalizedUpstream": [
           "self"
         ]
       },

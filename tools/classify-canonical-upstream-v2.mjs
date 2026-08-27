@@ -409,6 +409,13 @@ function effectEquivalent(localCats, upstreamCats) {
   }
   return true;
 }
+function normalizeStackAuxiliarySelfTarget(localTargets, upstreamTargets, upstreamCategories, effectsMatch) {
+  const L = uniq(arr(localTargets).map(normalizeTarget));
+  const U = uniq(arr(upstreamTargets).map(normalizeTarget));
+  if (!effectsMatch || !arr(upstreamCategories).includes('stack') || !U.includes('self')) return U;
+  const withoutSelf = U.filter((t) => t !== 'self');
+  return sameSet(L, withoutSelf) ? withoutSelf : U;
+}
 function descriptionClaimsDimension(description, category) {
   const t = norm(description);
   if (!t) return false;
@@ -433,15 +440,17 @@ function classifyTechnique({ published, upstream }) {
   }
   const localCats = publishedCategories(published);
   const upCats = arr(upstream.categories);
-  if (!effectEquivalent(localCats, upCats)) {
+  const effectsMatch = effectEquivalent(localCats, upCats);
+  if (!effectsMatch) {
     flags.push('EFEITO_ERRADO');
     evidence.effect = { local: localCats, upstream: upCats };
   }
   const localTargets = publishedTargets(published);
-  const upTargets = arr(upstream.targets);
+  const rawUpTargets = arr(upstream.targets);
+  const upTargets = normalizeStackAuxiliarySelfTarget(localTargets, rawUpTargets, upCats, effectsMatch);
   if (!targetCompatible(localTargets, upTargets)) {
     flags.push('ALVO_ERRADO');
-    evidence.target = { local: localTargets, upstream: upTargets };
+    evidence.target = { local: localTargets, upstream: rawUpTargets, normalizedUpstream: upTargets };
   }
   const lc = normalizeCost(published.chakraCost ?? published.cost);
   const uc = normalizeCost(upstream.cost);
