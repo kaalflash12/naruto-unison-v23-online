@@ -1,0 +1,6 @@
+contentRevision=3
+source=canonical-v2-safe-patch
+techniques=170
+dimensions=177
+expectedNativeV2=836
+expectedFallback=0
