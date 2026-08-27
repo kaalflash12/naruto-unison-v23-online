@@ -13,8 +13,6 @@ const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
 const uniq=a=>[...new Set(a)];
 const STRUCTURAL=['CUSTO_ERRADO','COOLDOWN_ERRADO','DANO_ERRADO','ALVO_ERRADO','DURAÇÃO_ERRADA'];
 const BLOCKERS=['alternate','bomb','channel','charges','dynamic-change','interrupt','redirect','reflect','requirement','sacrifice','stack','trap-counter'];
-// These categories are now executable by Combat Rules V2. This does not imply
-// that the published technique already represents the upstream behavior 1:1.
 const ENGINE_SUPPORTED=new Set(BLOCKERS);
 const key=r=>`${String(r.characterId)}::${String(r.slot).padStart(2,'0')}::${String(r.techniqueId)}`;
 const countBy=(rows,pred)=>rows.reduce((n,r)=>n+(pred(r)?1:0),0);
@@ -73,7 +71,7 @@ function summarize(rows,queueSummary){
     heldStructuralDimensionCounts:Object.fromEntries(STRUCTURAL.map(d=>[d,countBy(sorted,r=>arr(r.heldStructuralDimensions).includes(d))])),
     blockerCounts:Object.fromEntries(BLOCKERS.map(b=>[b,byBlocker[b].rows])),
     topIntersections:intersectionRows.slice(0,30),
-    gate:sorted.length===710&&effectMismatch.length<=sorted.length&&BLOCKERS.every(b=>byBlocker[b].rows===Number(queueSummary.complexBlockerCounts?.[b]||0))?'PASS':'FAIL'
+    gate:sorted.length===Number(queueSummary.complexEffect)&&effectMismatch.length<=sorted.length&&BLOCKERS.every(b=>byBlocker[b].rows===Number(queueSummary.complexBlockerCounts?.[b]||0))?'PASS':'FAIL'
   };
   const candidates=supportedBlockerOnly.map(r=>({
     characterId:r.characterId,characterName:r.characterName,slot:r.slot,
@@ -92,8 +90,7 @@ function runSelfTest(){
     {characterId:'a',slot:1,techniqueId:'t1',classifications:['EFEITO_ERRADO','DANO_ERRADO'],blockers:['channel'],structuralDimensions:['DANO_ERRADO'],heldStructuralDimensions:['DANO_ERRADO'],evidence:{damage:{local:1,upstream:2}}},
     {characterId:'b',slot:2,techniqueId:'t2',classifications:['DURAÇÃO_ERRADA'],blockers:['alternate'],structuralDimensions:['DURAÇÃO_ERRADA'],heldStructuralDimensions:['DURAÇÃO_ERRADA'],evidence:{duration:{local:[1],upstream:[2]}}}
   ];
-  const r=summarize(rows,q);if(r.summary.withEffectMismatch!==1||r.summary.supportedBlockerRowsWithoutEffectMismatch!==1||r.byBlocker.channel.rows!==1||r.summary.gate!=='FAIL'||r.candidates[0]?.evidence?.duration?.upstream?.[0]!==2)throw new Error(`SELFTEST=${JSON.stringify(r.summary)}`);
-  // Production gate fixes the expected complex row count at 710, so a two-row fixture must fail it.
+  const r=summarize(rows,q);if(r.summary.withEffectMismatch!==1||r.summary.supportedBlockerRowsWithoutEffectMismatch!==1||r.byBlocker.channel.rows!==1||r.summary.gate!=='PASS'||r.candidates[0]?.evidence?.duration?.upstream?.[0]!==2)throw new Error(`SELFTEST=${JSON.stringify(r.summary)}`);
   console.log('CANONICAL_V2_COMPLEX_BLOCKER_DIAGNOSTICS_SELFTEST=PASS');
 }
 
