@@ -1,21 +1,15 @@
 {
-  "generatedAt": "2026-08-26T22:25:01.377Z",
+  "generatedAt": "2026-08-27T12:01:44.830Z",
   "mode": "DRY_RUN_ONLY",
-  "contentRevision": 2,
+  "contentRevision": 3,
   "publishedTechniques": 1262,
-  "queueSafeRows": 177,
-  "requestedDimensions": 186,
-  "patchRows": 170,
-  "plannedDimensions": 177,
-  "rejectedDimensions": 9,
-  "plannedByDimension": {
-    "CUSTO_ERRADO": 115,
-    "COOLDOWN_ERRADO": 35,
-    "DANO_ERRADO": 27
-  },
-  "rejectedByDimension": {
-    "ALVO_ERRADO": 9
-  },
+  "queueSafeRows": 0,
+  "requestedDimensions": 0,
+  "patchRows": 0,
+  "plannedDimensions": 0,
+  "rejectedDimensions": 0,
+  "plannedByDimension": {},
+  "rejectedByDimension": {},
   "duplicatePatchIds": [],
   "missingAccounting": 0,
   "productionWrites": 0,
