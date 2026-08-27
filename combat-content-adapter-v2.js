@@ -12,6 +12,18 @@ const COST_MAP=Object.freeze({GEN:'Gen',NIN:'Nin',TAI:'Tai',KEK:'Blood',Q:'Rand'
 const POSITIVE_STATUS=new Set(['counter','evasion','regen','invuln']);
 const NEGATIVE_STATUS=new Set(['bind','bleed','blind','burn','chakra-lock','freeze','parasite','poison','shock','silence','soaked','stun','vulnerable','wind-cut']);
 const DOT_STATUS=new Set(['bleed','burn','parasite','poison']);
+const ENGINE_EFFECT_TYPES=Object.freeze([
+  'damage','heal','leech','defense','invulnerable','immunity','stun','disable','silence','seal','dot','status',
+  'reduction','focus','strengthen','endure','enrage','expose','exhaust','weaken','snare','throttle','taunt','alone',
+  'cleanse','cure','dispel','demolish','cooldown','chakra','stack','alternate','trap','counter',
+  'bomb','sacrifice','reflect','redirect','channel','interrupt'
+]);
+const ENGINE_EFFECT_SET=new Set(ENGINE_EFFECT_TYPES);
+const ENGINE_CHANGE_TYPES=Object.freeze(['setCost','addCost','removeCost','setTarget','targetAll','setCooldown','setCharges']);
+const ENGINE_CHANGE_SET=new Set(ENGINE_CHANGE_TYPES);
+const ENGINE_TARGETS=new Set(['self','ally','allies','enemy','enemies','everyone','randomEnemy']);
+const ENGINE_REQUIREMENT_TYPES=new Set(['stackAtLeast','stackAtMost','statusPresent','statusAbsent','hpBelow','hpAtMost','consecutiveUses','previousSkill','chargeAtLeast','alternateActive']);
+const MAX_ENGINE_DEPTH=6,MAX_ENGINE_EFFECTS=100,MAX_ENGINE_CHANGES=32,MAX_ENGINE_REQUIREMENTS=32,MAX_ENGINE_BYTES=65536;
 const arr=v=>Array.isArray(v)?v:(v==null?[]:[v]);
 const num=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
 const clone=v=>v==null?v:JSON.parse(JSON.stringify(v));
@@ -103,10 +115,114 @@ function mechanicsToEffects(mechanics=[]){
   }
   return effects;
 }
+
+function jsonSize(value){
+  try{return JSON.stringify(value).length}catch{return Infinity}
+}
+function validateEngineRequirement(raw,depth=0,counter={count:0}){
+  if(raw==null)return null;
+  if(depth>MAX_ENGINE_DEPTH)throw new Error('ENGINE_REQUIREMENT_DEPTH_EXCEEDED');
+  if(Array.isArray(raw)){
+    if(raw.length>MAX_ENGINE_REQUIREMENTS)throw new Error('ENGINE_REQUIREMENT_COUNT_EXCEEDED');
+    return raw.map(x=>validateEngineRequirement(x,depth+1,counter));
+  }
+  if(typeof raw!=='object')throw new Error('INVALID_ENGINE_REQUIREMENT');
+  counter.count++;
+  if(counter.count>MAX_ENGINE_REQUIREMENTS)throw new Error('ENGINE_REQUIREMENT_COUNT_EXCEEDED');
+  const out=clone(raw);
+  if(out.any!=null){
+    if(!Array.isArray(out.any)||out.any.length===0)throw new Error('INVALID_ENGINE_REQUIREMENT_ANY');
+    out.any=out.any.map(x=>validateEngineRequirement(x,depth+1,counter));
+  }
+  if(out.not!=null)out.not=validateEngineRequirement(out.not,depth+1,counter);
+  if(out.any==null&&out.not==null){
+    const type=String(out.type||'');
+    if(!ENGINE_REQUIREMENT_TYPES.has(type))throw new Error(`UNSUPPORTED_ENGINE_REQUIREMENT:${type||'<empty>'}`);
+  }
+  if(out.target!=null&&!['target','self'].includes(String(out.target)))throw new Error(`INVALID_ENGINE_REQUIREMENT_TARGET:${out.target}`);
+  return out;
+}
+function validateEngineEffect(raw,depth=0,counter={count:0}){
+  if(depth>MAX_ENGINE_DEPTH)throw new Error('ENGINE_EFFECT_DEPTH_EXCEEDED');
+  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('INVALID_ENGINE_EFFECT');
+  counter.count++;
+  if(counter.count>MAX_ENGINE_EFFECTS)throw new Error('ENGINE_EFFECT_COUNT_EXCEEDED');
+  const out=clone(raw),type=String(out.type||'');
+  if(!ENGINE_EFFECT_SET.has(type))throw new Error(`UNSUPPORTED_ENGINE_EFFECT:${type||'<empty>'}`);
+  if(out.target!=null&&!ENGINE_TARGETS.has(String(out.target)))throw new Error(`INVALID_ENGINE_TARGET:${out.target}`);
+  if(out.duration!=null&&out.duration!=='permanent'&&(!Number.isFinite(Number(out.duration))||Number(out.duration)<0))throw new Error(`INVALID_ENGINE_DURATION:${out.duration}`);
+  if(out.requirements!=null)out.requirements=validateEngineRequirement(out.requirements,depth+1,{count:0});
+  if(out.requirement!=null)out.requirement=validateEngineRequirement(out.requirement,depth+1,{count:0});
+  for(const key of ['effects','tickEffects','endEffects','onBreak']){
+    if(out[key]==null)continue;
+    if(!Array.isArray(out[key]))throw new Error(`INVALID_ENGINE_NESTED_EFFECTS:${key}`);
+    out[key]=out[key].map(x=>validateEngineEffect(x,depth+1,counter));
+  }
+  if(type==='trap'||type==='counter'||type==='bomb'){
+    if(out.triggerTarget!=null&&!['source','target'].includes(String(out.triggerTarget)))throw new Error(`INVALID_ENGINE_TRIGGER_TARGET:${out.triggerTarget}`);
+  }
+  if(type==='channel'&&out.duration!=='permanent'&&Math.max(0,num(out.duration))<1)throw new Error('INVALID_ENGINE_CHANNEL_DURATION');
+  if(type==='bomb'&&Math.max(0,num(out.duration))<1)throw new Error('INVALID_ENGINE_BOMB_DURATION');
+  if(type==='reflect'){
+    const ratio=num(out.ratio,out.value??out.amount??1);
+    if(ratio<0||ratio>1)throw new Error(`INVALID_ENGINE_REFLECT_RATIO:${ratio}`);
+  }
+  return out;
+}
+function validateEngineEffects(raw){
+  if(raw==null)return[];
+  if(!Array.isArray(raw))throw new Error('ENGINE_EFFECTS_MUST_BE_ARRAY');
+  if(raw.length>MAX_ENGINE_EFFECTS)throw new Error('ENGINE_EFFECT_COUNT_EXCEEDED');
+  if(jsonSize(raw)>MAX_ENGINE_BYTES)throw new Error('ENGINE_EFFECTS_TOO_LARGE');
+  const counter={count:0};
+  return raw.map(x=>validateEngineEffect(x,0,counter));
+}
+function validateEngineChanges(raw){
+  if(raw==null)return[];
+  if(!Array.isArray(raw))throw new Error('ENGINE_CHANGES_MUST_BE_ARRAY');
+  if(raw.length>MAX_ENGINE_CHANGES)throw new Error('ENGINE_CHANGE_COUNT_EXCEEDED');
+  if(jsonSize(raw)>MAX_ENGINE_BYTES)throw new Error('ENGINE_CHANGES_TOO_LARGE');
+  return raw.map(rawChange=>{
+    if(!rawChange||typeof rawChange!=='object'||Array.isArray(rawChange))throw new Error('INVALID_ENGINE_CHANGE');
+    const out=clone(rawChange),type=String(out.type||out.op||'');
+    if(!ENGINE_CHANGE_SET.has(type))throw new Error(`UNSUPPORTED_ENGINE_CHANGE:${type||'<empty>'}`);
+    out.type=type;delete out.op;
+    if(out.requirements!=null)out.requirements=validateEngineRequirement(out.requirements,0,{count:0});
+    if(out.requirement!=null)out.requirement=validateEngineRequirement(out.requirement,0,{count:0});
+    if(type==='setTarget'&&!ENGINE_TARGETS.has(String(out.target)))throw new Error(`INVALID_ENGINE_CHANGE_TARGET:${out.target}`);
+    if(out.cost!=null)out.cost=costTokens(out.cost);
+    if(out.token!=null)out.token=costToken(out.token);
+    if(['setCooldown','setCharges'].includes(type)){
+      const value=out[type==='setCooldown'?'cooldown':'charges']??out.amount;
+      if(!Number.isFinite(Number(value))||Number(value)<0)throw new Error(`INVALID_ENGINE_CHANGE_VALUE:${type}`);
+    }
+    if(type==='removeCost'&&out.count!=null&&(!Number.isFinite(Number(out.count))||Number(out.count)<1))throw new Error('INVALID_ENGINE_REMOVE_COST_COUNT');
+    return out;
+  });
+}
+function engineExtension(technique={}){
+  const effect=technique.effect&&typeof technique.effect==='object'&&!Array.isArray(technique.effect)?technique.effect:{};
+  const effects=validateEngineEffects(effect.engineEffects);
+  const changes=validateEngineChanges(effect.engineChanges);
+  const explicitRequirement=effect.engineRequirements==null?null:validateEngineRequirement(effect.engineRequirements,0,{count:0});
+  const legacyRequirement=statusRequirement(technique.requires);
+  const requirements=legacyRequirement&&explicitRequirement?[legacyRequirement,explicitRequirement]:(explicitRequirement||legacyRequirement);
+  let charges=technique.charges==null?null:Math.max(0,Math.floor(num(technique.charges)));
+  if(effect.engineCharges!=null){
+    const n=Number(effect.engineCharges);
+    if(!Number.isSafeInteger(n)||n<0||n>999)throw new Error(`INVALID_ENGINE_CHARGES:${effect.engineCharges}`);
+    charges=n;
+  }
+  return{effects,changes,requirements,charges};
+}
 function adaptTechnique(technique={}){
   const mechanics=arr(technique.mechanics);
-  const effects=mechanicsToEffects(mechanics);
+  const generatedEffects=mechanicsToEffects(mechanics);
+  const ext=engineExtension(technique);
+  const effects=[...generatedEffects,...ext.effects];
   const primaryTarget=effects[0]?.target||targetSpec(technique.target,'damage',{});
+  const mechanic={version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),requirements:ext.requirements,source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))};
+  if(ext.changes.length)mechanic.changes=ext.changes;
   return {
     id:String(technique.id??technique.entityId??technique.name??'technique'),
     name:String(technique.name??technique.id??'Technique'),
@@ -114,8 +230,8 @@ function adaptTechnique(technique={}){
     classes:arr(technique.classes||technique.tags||['all']),
     cost:costTokens(technique.chakraCost??technique.cost),
     cooldown:Math.max(0,num(technique.cooldown,technique.cd??0)),
-    charges:technique.charges==null?null:Math.max(0,num(technique.charges)),
-    mechanic:{version:2,target:primaryTarget,effects,classes:arr(technique.classes||technique.tags||['all']),requirements:statusRequirement(technique.requires),source:'content_entities.technique',contentOps:mechanics.map(x=>String(x?.op||''))}
+    charges:ext.charges,
+    mechanic
   };
 }
 function auditTechnique(technique={}){
@@ -123,8 +239,16 @@ function auditTechnique(technique={}){
   const unsupported=ops.filter(x=>!OP_SET.has(x));
   let skill=null,error=null;
   try{skill=adaptTechnique(technique)}catch(e){error=String(e?.message||e)}
-  return{ok:unsupported.length===0&&!error,ops,unsupported,effectCount:skill?.mechanic?.effects?.length||0,cost:skill?.cost||[],error};
+  const engine=technique.effect&&typeof technique.effect==='object'?technique.effect:{};
+  const engineEffectCount=Array.isArray(engine.engineEffects)?engine.engineEffects.length:0;
+  const engineChangeCount=Array.isArray(engine.engineChanges)?engine.engineChanges.length:0;
+  return{ok:unsupported.length===0&&!error,ops,unsupported,effectCount:skill?.mechanic?.effects?.length||0,engineEffectCount,engineChangeCount,cost:skill?.cost||[],error};
 }
 
-return Object.freeze({VERSION,OPS,COST_MAP,costToken,costTokens,targetSpec,splitTotal,statusRequirement,mechanicsToEffects,adaptTechnique,auditTechnique});
+return Object.freeze({
+  VERSION,OPS,COST_MAP,ENGINE_EFFECT_TYPES,ENGINE_CHANGE_TYPES,
+  costToken,costTokens,targetSpec,splitTotal,statusRequirement,mechanicsToEffects,
+  validateEngineRequirement,validateEngineEffects,validateEngineChanges,engineExtension,
+  adaptTechnique,auditTechnique
+});
 });
