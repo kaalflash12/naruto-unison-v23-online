@@ -1,6 +1,6 @@
 # Comparação canônica V2 — 209 × 4
 
-- Conteúdo publicado revision: **3**
+- Conteúdo publicado revision: **4**
 - Upstream fixado: **3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1**
 - Personagens jogáveis: **209**
 - Técnicas classificadas: **836**
@@ -13,7 +13,7 @@
 - CORRETA: **16**
 - DESCRIÇÃO_ERRADA: **692**
 - DANO_ERRADO: **26**
-- EFEITO_ERRADO: **700**
+- EFEITO_ERRADO: **702**
 - ALVO_ERRADO: **315**
 - CUSTO_ERRADO: **153**
 - COOLDOWN_ERRADO: **22**
@@ -502,7 +502,7 @@
 | Minato Namikaze | Flying Light | 4 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Light |
 | Minato Namikaze | Space-Time Marking | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Space-Time Marking |
 | Minato Namikaze | Reciprocal Round-Robin | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Reciprocal Round-Robin |
-| Minato Namikaze | Rasen-Flash Super-Circle Dance Howl (Stage III) | 3 | ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasen-Flash Super-Circle Dance Howl (Stage III) |
+| Minato Namikaze | Rasen-Flash Super-Circle Dance Howl (Stage III) | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasen-Flash Super-Circle Dance Howl (Stage III) |
 | Minato Namikaze | Chakra-Arm Raijin | 4 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra-Arm Raijin |
 | Misumi Tsurugi | Flexible Twisting Joints | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flexible Twisting Joints |
 | Misumi Tsurugi | Soft Physique Modification | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Soft Physique Modification |

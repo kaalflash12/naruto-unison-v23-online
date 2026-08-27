@@ -53766,14 +53766,20 @@
     "upstreamTechnique": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
+      "effect": {
+        "local": [],
+        "upstream": [
+          "damage",
+          "stack"
+        ]
+      },
       "target": {
-        "local": [
-          "enemy"
-        ],
+        "local": [],
         "upstream": [
           "enemy",
           "enemies"
@@ -53791,41 +53797,40 @@
       }
     },
     "published": {
-      "description": "Rasen-Flash Super-Circle Dance Howl (Stage III) afeta um inimigo: causa 31 de dano; marca o alvo por 2 turnos; causa 11 de dano com bônus quando a preparação é atendida. Custo: KEK + Q; recarga: 0 turno(s).",
+      "description": "Rasen-Flash Super-Circle Dance Howl (Stage III) afeta um inimigo: causa 20 de dano ao alvo e causa 20 de dano a cada inimigo para cada acúmulo de Space-Time Marking nele. Custo: KEK + Q; recarga: 0 turno(s).",
       "effect": {
-        "aoe": false,
+        "aoe": true,
         "kind": "damage",
-        "power": 31,
-        "duration": 2
-      },
-      "mechanics": [
-        {
-          "op": "damage",
-          "amount": 31,
-          "target": "primary"
-        },
-        {
-          "op": "mark",
-          "mark": "ninjutsu-setup",
-          "turns": 2,
-          "target": "primary"
-        },
-        {
-          "op": "damage",
-          "amount": 11,
-          "target": "primary",
-          "bonusIf": {
-            "targetHas": "ninjutsu-setup"
+        "power": 20,
+        "duration": 0,
+        "engineEffects": [
+          {
+            "type": "damage",
+            "amount": 20,
+            "target": "enemy",
+            "variance": 0
           },
-          "bonusMultiplier": 1.25
-        }
-      ],
+          {
+            "type": "damage",
+            "amount": 0,
+            "target": "enemies",
+            "variance": 0,
+            "amountScale": {
+              "key": "Space-Time Marking",
+              "per": 20,
+              "type": "stack",
+              "source": "target"
+            }
+          }
+        ]
+      },
+      "mechanics": [],
       "chakraCost": [
         "KEK",
         "Q"
       ],
       "cooldown": 0,
-      "power": 31,
+      "power": 20,
       "target": "enemy"
     },
     "upstream": {
@@ -82720,14 +82725,21 @@
     "upstreamTechnique": "Cat Claws",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
+      "effect": {
+        "local": [],
+        "upstream": [
+          "damage",
+          "stack",
+          "requirement"
+        ]
+      },
       "target": {
-        "local": [
-          "enemy"
-        ],
+        "local": [],
         "upstream": [
           "self",
           "enemy",
@@ -82742,45 +82754,63 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO"
         ]
       }
     },
     "published": {
-      "description": "Cat Claws afeta um inimigo: causa 26 de dano; marca o alvo por 2 turnos; causa 9 de dano com bônus quando a preparação é atendida. Custo: KEK; recarga: 1 turno(s).",
+      "description": "Cat Claws afeta a equipe inimiga: requer Two-Tailed Transformation; causa 15 de dano ao alvo e 5 de dano aos outros inimigos. A cada uso, o dano da técnica aumenta em 5. Custo: KEK; recarga: 1 turno(s).",
       "effect": {
-        "aoe": false,
+        "aoe": true,
         "kind": "damage",
-        "power": 26,
-        "duration": 2
-      },
-      "mechanics": [
-        {
-          "op": "damage",
-          "amount": 26,
-          "target": "primary"
-        },
-        {
-          "op": "mark",
-          "mark": "ninjutsu-setup",
-          "turns": 2,
-          "target": "primary"
-        },
-        {
-          "op": "damage",
-          "amount": 9,
-          "target": "primary",
-          "bonusIf": {
-            "targetHas": "ninjutsu-setup"
+        "power": 15,
+        "duration": 0,
+        "engineEffects": [
+          {
+            "type": "damage",
+            "amount": 15,
+            "target": "enemy",
+            "variance": 0,
+            "amountScale": {
+              "key": "Cat Claws",
+              "per": 5,
+              "type": "stack",
+              "source": "source"
+            }
           },
-          "bonusMultiplier": 1.25
+          {
+            "type": "damage",
+            "amount": 5,
+            "target": "other-enemies",
+            "variance": 0,
+            "amountScale": {
+              "key": "Cat Claws",
+              "per": 5,
+              "type": "stack",
+              "source": "source"
+            }
+          },
+          {
+            "op": "add",
+            "key": "Cat Claws",
+            "type": "stack",
+            "amount": 1,
+            "target": "self"
+          }
+        ],
+        "engineRequirements": {
+          "key": "Two-Tailed Transformation",
+          "type": "stackAtLeast",
+          "amount": 1
         }
-      ],
+      },
+      "mechanics": [],
       "chakraCost": [
         "KEK"
       ],
       "cooldown": 1,
-      "power": 26,
+      "power": 15,
       "target": "enemy"
     },
     "upstream": {

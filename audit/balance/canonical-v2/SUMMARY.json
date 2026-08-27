@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-27T10:45:37.998Z",
-  "contentRevision": 3,
+  "generatedAt": "2026-08-27T12:35:01.980Z",
+  "contentRevision": 4,
   "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "playableCharacters": 209,
   "classifiedTechniques": 836,
@@ -11,7 +11,7 @@
     "CORRETA": 16,
     "DESCRIÇÃO_ERRADA": 692,
     "DANO_ERRADO": 26,
-    "EFEITO_ERRADO": 700,
+    "EFEITO_ERRADO": 702,
     "ALVO_ERRADO": 315,
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,
