@@ -1,0 +1,142 @@
+name: Online Live Smoke
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'online-config.js'
+      - 'secure-auth-adapter.js'
+      - 'app-online.js'
+      - '.github/workflows/online-live-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Smoke production Pages, assets, Auth and API
+        shell: bash
+        env:
+          SITE: https://kaalflash12.github.io/naruto-unison-v23-online
+          API: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api
+          BRIDGE: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge
+          AUTH_HEALTH: https://cpdgkszviwrgrwsltbyk.supabase.co/auth/v1/health
+          PUBLISHABLE_KEY: sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K
+          ORIGIN: https://kaalflash12.github.io
+        run: |
+          set -euo pipefail
+
+          echo '== Wait until GitHub Pages serves online-r45 =='
+          ready=0
+          for i in $(seq 1 36); do
+            if curl -fLsS --connect-timeout 10 --max-time 25 "$SITE/online-config.js?v=$GITHUB_SHA-$i" -o /tmp/online-config.js \
+              && grep -Fq "version:'online-r45'" /tmp/online-config.js \
+              && grep -Fq 'secure-auth-adapter.js?v=20260827-r45' /tmp/online-config.js \
+              && grep -Fq "</'+'script>" /tmp/online-config.js; then
+              ready=1
+              break
+            fi
+            sleep 5
+          done
+          test "$ready" -eq 1
+
+          echo '== Public index and required bundles =='
+          curl -fLsS --connect-timeout 10 --max-time 30 "$SITE/?v=$GITHUB_SHA" -o /tmp/index.html
+          grep -Fq 'online-config.js' /tmp/index.html
+          grep -Fq 'app-online.js' /tmp/index.html
+
+          assets=(
+            roster.js
+            story-data.js
+            character-unlocks.js
+            jutsu-variants.js
+            battle-fx.js
+            v23-data.js
+            online-config.js
+            secure-auth-adapter.js
+            app-online.js
+            desktop-overhaul.css
+            r39-live-hotfix.css
+            r42-responsive-fix.css
+            account-recovery.js
+            r40-battle-guard.js
+            r40-desktop-overhaul.js
+            r39-live-hotfix.js
+            r43-admin-entry.js
+          )
+          for asset in "${assets[@]}"; do
+            echo "asset: $asset"
+            curl -fLsS --connect-timeout 10 --max-time 30 "$SITE/$asset?v=$GITHUB_SHA" -o "/tmp/${asset//\//_}"
+            test -s "/tmp/${asset//\//_}"
+          done
+
+          echo '== JavaScript parser gate on deployed files =='
+          node --check /tmp/online-config.js
+          node --check /tmp/secure-auth-adapter.js
+          node --check /tmp/app-online.js
+          node --check /tmp/account-recovery.js
+          node --check /tmp/r40-battle-guard.js
+          node --check /tmp/r40-desktop-overhaul.js
+          node --check /tmp/r39-live-hotfix.js
+          node --check /tmp/r43-admin-entry.js
+
+          echo '== naruto-api OPTIONS / CORS =='
+          curl -sS --connect-timeout 10 --max-time 30 \
+            -D /tmp/api-options.headers -o /tmp/api-options.body \
+            -X OPTIONS \
+            -H "Origin: $ORIGIN" \
+            -H 'Access-Control-Request-Method: POST' \
+            -H 'Access-Control-Request-Headers: content-type,authorization' \
+            "$API/api/account/login"
+          grep -Eqi '^access-control-allow-origin:[[:space:]]*https://kaalflash12\.github\.io' /tmp/api-options.headers
+
+          echo '== naruto-api login route is reachable =='
+          code="$(curl -sS --connect-timeout 10 --max-time 30 \
+            -o /tmp/login.json -w '%{http_code}' \
+            -H "Origin: $ORIGIN" \
+            -H 'content-type: application/json' \
+            --data "{\"login\":\"smoke${GITHUB_RUN_ID}\",\"password\":\"invalid-password-live-smoke\"}" \
+            "$API/api/account/login")"
+          case "$code" in
+            400|401|403|429) ;;
+            *) echo "Unexpected login status: $code"; cat /tmp/login.json; exit 1 ;;
+          esac
+
+          echo '== Supabase Auth health =='
+          curl -fLsS --connect-timeout 10 --max-time 30 \
+            -H "apikey: $PUBLISHABLE_KEY" \
+            "$AUTH_HEALTH" -o /tmp/auth-health.json
+          test -s /tmp/auth-health.json
+
+          echo '== legacy-auth-bridge health / CORS =='
+          curl -fLsS --connect-timeout 10 --max-time 30 \
+            -H "Origin: $ORIGIN" \
+            "$BRIDGE/health" -o /tmp/bridge-health.json
+          grep -Fq '"ok":true' /tmp/bridge-health.json
+          grep -Fq 'legacy-auth-bridge' /tmp/bridge-health.json
+          curl -sS --connect-timeout 10 --max-time 30 \
+            -D /tmp/bridge-options.headers -o /tmp/bridge-options.body \
+            -X OPTIONS \
+            -H "Origin: $ORIGIN" \
+            -H 'Access-Control-Request-Method: POST' \
+            -H 'Access-Control-Request-Headers: content-type' \
+            "$BRIDGE/exchange"
+          grep -Eqi '^access-control-allow-origin:[[:space:]]*https://kaalflash12\.github\.io' /tmp/bridge-options.headers
+
+          echo '== legacy-auth-bridge exchange route is reachable =='
+          bridge_code="$(curl -sS --connect-timeout 10 --max-time 30 \
+            -o /tmp/bridge-exchange.json -w '%{http_code}' \
+            -H "Origin: $ORIGIN" \
+            -H 'content-type: application/json' \
+            --data '{"token":"00000000000000000000000000000000","password":"invalid-password-live-smoke"}' \
+            "$BRIDGE/exchange")"
+          case "$bridge_code" in
+            401|403|428|429) ;;
+            *) echo "Unexpected bridge status: $bridge_code"; cat /tmp/bridge-exchange.json; exit 1 ;;
+          esac
+
+          echo 'ONLINE_LIVE_SMOKE=PASS'
