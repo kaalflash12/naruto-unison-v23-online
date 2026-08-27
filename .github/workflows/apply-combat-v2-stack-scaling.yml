@@ -1,0 +1,125 @@
+name: Apply Combat V2 Stack Scaling
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-combat-v2-stack-scaling.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-combat-v2-stack-scaling
+  cancel-in-progress: false
+
+jobs:
+  apply-and-prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Patch canonical stack scaling and XEnemies semantics
+        run: |
+          set -euo pipefail
+          node <<'JS'
+          const fs=require('fs');
+          function patch(path, transforms){
+            let src=fs.readFileSync(path,'utf8');
+            for(const [from,to,label] of transforms){
+              if(src.includes(to)) continue;
+              const count=src.split(from).length-1;
+              if(count!==1) throw new Error(`${path}:${label}: expected 1 match, got ${count}`);
+              src=src.replace(from,to);
+            }
+            fs.writeFileSync(path,src);
+          }
+
+          patch('combat-content-adapter-v2.js',[
+            [
+              "const ENGINE_TARGETS=new Set(['self','ally','allies','enemy','enemies','everyone','randomEnemy']);",
+              "const ENGINE_TARGETS=new Set(['self','ally','allies','enemy','enemies','other-enemies','everyone','randomEnemy']);",
+              'engine-targets'
+            ],
+            [
+              "  if(out.target!=null&&!ENGINE_TARGETS.has(String(out.target)))throw new Error(`INVALID_ENGINE_TARGET:${out.target}`);\n  if(out.duration!=null&&out.duration!=='permanent'&&(!Number.isFinite(Number(out.duration))||Number(out.duration)<0))throw new Error(`INVALID_ENGINE_DURATION:${out.duration}`);",
+              "  if(out.target!=null&&!ENGINE_TARGETS.has(String(out.target)))throw new Error(`INVALID_ENGINE_TARGET:${out.target}`);\n  if(out.amountScale!=null){\n    const scale=out.amountScale;\n    if(!scale||typeof scale!=='object'||Array.isArray(scale)||String(scale.type||'')!=='stack')throw new Error('INVALID_ENGINE_AMOUNT_SCALE');\n    if(!['source','target'].includes(String(scale.source||'')))throw new Error(`INVALID_ENGINE_AMOUNT_SCALE_SOURCE:${scale.source}`);\n    if(!String(scale.key||'').trim())throw new Error('INVALID_ENGINE_AMOUNT_SCALE_KEY');\n    if(!Number.isFinite(Number(scale.per)))throw new Error(`INVALID_ENGINE_AMOUNT_SCALE_PER:${scale.per}`);\n  }\n  if(out.duration!=null&&out.duration!=='permanent'&&(!Number.isFinite(Number(out.duration))||Number(out.duration)<0))throw new Error(`INVALID_ENGINE_DURATION:${out.duration}`);",
+              'amount-scale-validation'
+            ]
+          ]);
+
+          patch('combat-rules-v2.js',[
+            [
+              "    case'enemy':return explicit&&explicit.side!==actor.side&&alive(explicit)?[explicit]:other.slice(0,1);case'enemies':return other;case'everyone':return[...own,...other];case'randomEnemy':return other.length?[other[Math.floor(randomOf(state)()*other.length)]]:[];default:return explicit&&alive(explicit)?[explicit]:[];",
+              "    case'enemy':return explicit&&explicit.side!==actor.side&&alive(explicit)?[explicit]:other.slice(0,1);case'enemies':return other;case'other-enemies':{const primary=explicit&&explicit.side!==actor.side&&alive(explicit)?explicit:other[0];return other.filter(x=>!primary||x.id!==primary.id)}case'everyone':return[...own,...other];case'randomEnemy':return other.length?[other[Math.floor(randomOf(state)()*other.length)]]:[];default:return explicit&&alive(explicit)?[explicit]:[];",
+              'other-enemies-target'
+            ],
+            [
+              "function rolledAmount(state,effect){const base=Math.max(0,num(effect.amount)),variance=Math.max(0,num(effect.variance));if(!variance)return Math.round(base);const r=randomOf(state)();return Math.max(0,Math.round(base*(1-variance+2*variance*r)))}",
+              "function scaledAmount(effect,source,target){let base=Math.max(0,num(effect.amount));const scale=effect?.amountScale;if(scale&&scale.type==='stack'){const owner=scale.source==='target'?target:source;const stacks=Math.max(0,num(owner?.stacks?.[String(scale.key||'')]));base+=stacks*num(scale.per)}return Math.max(0,base)}\nfunction rolledAmount(state,effect,source=null,target=null){const base=scaledAmount(effect,source,target),variance=Math.max(0,num(effect.variance));if(!variance)return Math.round(base);const r=randomOf(state)();return Math.max(0,Math.round(base*(1-variance+2*variance*r)))}",
+              'stack-scaled-amount'
+            ],
+            [
+              "  let raw=rolledAmount(state,effect);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';",
+              "  let raw=rolledAmount(state,effect,source,target);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';",
+              'damage-context'
+            ]
+          ]);
+
+          patch('tools/test-content-engine-extensions-v2.cjs',[
+            [
+              "    {id:'b',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}}\n",
+              "    {id:'b',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}},\n    {id:'b2',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}},\n    {id:'b3',side:'B',hp:100,maxHp:100,chakra:{Blood:5,Gen:5,Nin:5,Tai:5,Rand:0}}\n",
+              'three-enemy-state'
+            ],
+            [
+              "assert.throws(()=>adapter.validateEngineEffects([{type:'noop'}]),/UNSUPPORTED_ENGINE_EFFECT/);",
+              "{\n  const s=state();\n  rules.getFighter(s,'b').stacks['Space-Time Marking']=2;\n  rules.getFighter(s,'b2').stacks['Space-Time Marking']=1;\n  const skill=adapter.adaptTechnique({...base,id:'minato-stack-scale',cooldown:0,mechanics:[],effect:{...base.effect,engineEffects:[\n    {type:'damage',target:'enemy',amount:20,variance:0},\n    {type:'damage',target:'enemies',amount:0,variance:0,amountScale:{type:'stack',source:'target',key:'Space-Time Marking',per:20}}\n  ]}});\n  use(s,'a',skill,'b');\n  assert.equal(rules.getFighter(s,'b').hp,40,'alvo com 2 stacks deve receber 20 base + 40 escalado');\n  assert.equal(rules.getFighter(s,'b2').hp,80,'outro inimigo com 1 stack deve receber 20 escalado');\n  assert.equal(rules.getFighter(s,'b3').hp,100,'inimigo sem stack não deve receber bônus');\n}\n{\n  const s=state();\n  rules.getFighter(s,'a').stacks['Two-Tailed Transformation']=1;\n  const skill=adapter.adaptTechnique({...base,id:'Cat Claws',cooldown:0,mechanics:[],effect:{...base.effect,engineRequirements:{type:'stackAtLeast',key:'Two-Tailed Transformation',amount:1},engineEffects:[\n    {type:'damage',target:'enemy',amount:15,variance:0,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},\n    {type:'damage',target:'other-enemies',amount:5,variance:0,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},\n    {type:'stack',target:'self',key:'Cat Claws',op:'add',amount:1}\n  ]}});\n  use(s,'a',skill,'b');\n  assert.equal(rules.getFighter(s,'b').hp,85);\n  assert.equal(rules.getFighter(s,'b2').hp,95);\n  assert.equal(rules.getFighter(s,'b3').hp,95);\n  assert.equal(rules.getFighter(s,'a').stacks['Cat Claws'],1);\n  use(s,'a',skill,'b');\n  assert.equal(rules.getFighter(s,'b').hp,65,'segundo uso deve causar 20 no alvo');\n  assert.equal(rules.getFighter(s,'b2').hp,85,'segundo uso deve causar 10 nos outros inimigos');\n  assert.equal(rules.getFighter(s,'b3').hp,85);\n  assert.equal(rules.getFighter(s,'a').stacks['Cat Claws'],2);\n}\n\nassert.throws(()=>adapter.validateEngineEffects([{type:'damage',amount:1,amountScale:{type:'stack',source:'ally',key:'x',per:1}}]),/INVALID_ENGINE_AMOUNT_SCALE_SOURCE/);\nassert.throws(()=>adapter.validateEngineEffects([{type:'noop'}]),/UNSUPPORTED_ENGINE_EFFECT/);",
+              'runtime-stack-scaling-tests'
+            ],
+            [
+              "  runtimeCases:7,",
+              "  runtimeCases:9,",
+              'runtime-case-count'
+            ]
+          ]);
+          JS
+      - name: Syntax
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-content-engine-extensions-v2.cjs
+      - name: Advanced envelope deterministic contract
+        run: node tools/test-content-engine-extensions-v2.cjs
+      - name: Canonical mechanics regression contract
+        run: node tools/test-content-mechanics-v2.cjs
+      - name: Verify patch markers
+        run: |
+          set -euo pipefail
+          grep -Fq "other-enemies" combat-rules-v2.js
+          grep -Fq "amountScale" combat-rules-v2.js
+          grep -Fq "amountScale" combat-content-adapter-v2.js
+          grep -Fq "minato-stack-scale" tools/test-content-engine-extensions-v2.cjs
+          grep -Fq "id:'Cat Claws'" tools/test-content-engine-extensions-v2.cjs
+          echo 'COMBAT_V2_STACK_SCALING=PASS'
+      - name: Commit proven runtime patch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add combat-rules-v2.js combat-content-adapter-v2.js tools/test-content-engine-extensions-v2.cjs
+          if git diff --cached --quiet; then
+            echo 'Patch already present.'
+            exit 0
+          fi
+          git commit -m 'fix(combat): support canonical stack-scaled effects and XEnemies [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
