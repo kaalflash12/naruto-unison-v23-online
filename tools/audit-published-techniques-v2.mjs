@@ -50,14 +50,88 @@ function runtimeState(){
     {id:'b',side:'B',hp:20,maxHp:100,chakra:rich,cooldowns:{probe:2}}
   ],{seed:20260826});
 }
+function primeCanonicalRequirement(state,skill,req,targetId,want=true){
+  if(!req)return{supported:false,reason:'NO_REQUIREMENT'};
+  if(Array.isArray(req)){
+    if(!req.length)return{supported:true,fixture:'empty-array'};
+    if(want){
+      for(const child of req){const r=primeCanonicalRequirement(state,skill,child,targetId,true);if(!r.supported)return r}
+      return{supported:true,fixture:'all'};
+    }
+    return primeCanonicalRequirement(state,skill,req[0],targetId,false);
+  }
+  if(req.any){
+    const choices=arr(req.any);
+    if(!choices.length)return{supported:false,reason:'EMPTY_ANY_REQUIREMENT'};
+    if(want)return primeCanonicalRequirement(state,skill,choices[0],targetId,true);
+    for(const child of choices){const r=primeCanonicalRequirement(state,skill,child,targetId,false);if(!r.supported)return r}
+    return{supported:true,fixture:'none-of-any'};
+  }
+  if(req.not)return primeCanonicalRequirement(state,skill,req.not,targetId,!want);
+  const actor=rules.getFighter(state,'a'),target=targetId==null?null:rules.getFighter(state,targetId),owner=req.target==='target'?target:actor;
+  if(!actor||!owner)return{supported:false,reason:'REQUIREMENT_TARGET_MISSING'};
+  const type=String(req.type||'');
+  if(type==='stackAtLeast'){
+    const key=String(req.key||''),amount=Math.max(0,Number(req.amount??1));
+    owner.stacks[key]=want?Math.max(Number(owner.stacks[key]||0),amount):Math.max(0,amount-1);
+    return{supported:true,fixture:`${type}:${key}:${owner.stacks[key]}`,target:owner.id};
+  }
+  if(type==='stackAtMost'){
+    const key=String(req.key||''),amount=Math.max(0,Number(req.amount??0));
+    owner.stacks[key]=want?Math.min(Number(owner.stacks[key]||0),amount):amount+1;
+    return{supported:true,fixture:`${type}:${key}:${owner.stacks[key]}`,target:owner.id};
+  }
+  if(type==='statusPresent'||type==='statusAbsent'){
+    const status=String(req.status||''),shouldExist=type==='statusPresent'?want:!want;
+    owner.statuses=arr(owner.statuses).filter(s=>String(s?.type)!==status);
+    if(shouldExist)rules.applyEffect(state,actor,owner,{type:'status',status,duration:4,durationUnit:'ownerPhases',positive:req.target!=='target'});
+    return{supported:true,status,fixture:`${type}:${status}:${shouldExist?'present':'absent'}`,target:owner.id};
+  }
+  if(type==='hpBelow'){
+    const ratio=Number(req.ratio??.5);
+    if(want&&ratio<=0)return{supported:false,reason:'UNSATISFIABLE_HP_BELOW'};
+    owner.hp=want?Math.max(1,Math.ceil(owner.maxHp*ratio)-1):Math.max(1,Math.ceil(owner.maxHp*ratio));
+    return{supported:true,fixture:`${type}:${owner.hp}`,target:owner.id};
+  }
+  if(type==='hpAtMost'){
+    const amount=Number(req.amount??0);
+    if(want&&amount<1)return{supported:false,reason:'UNSATISFIABLE_HP_AT_MOST'};
+    owner.hp=want?Math.max(1,Math.min(owner.maxHp,amount)):Math.min(owner.maxHp,Math.max(1,amount+1));
+    return{supported:true,fixture:`${type}:${owner.hp}`,target:owner.id};
+  }
+  if(type==='consecutiveUses'){
+    state.history=state.history.filter(h=>String(h.actorId)!==actor.id);
+    const needed=Math.max(0,Number(req.count??1)-1);
+    const count=want?needed:Math.max(0,needed-1);
+    for(let i=0;i<count;i++)state.history.push({actorId:actor.id,skillId:skill.id,skillName:skill.name});
+    return{supported:true,fixture:`${type}:${count}`};
+  }
+  if(type==='previousSkill'){
+    state.history=state.history.filter(h=>String(h.actorId)!==actor.id);
+    if(want)state.history.push({actorId:actor.id,skillId:String(req.skillId||req.name),skillName:String(req.name||req.skillId)});
+    else state.history.push({actorId:actor.id,skillId:'fixture-other-skill',skillName:'Fixture Other Skill'});
+    return{supported:true,fixture:`${type}:${want?'match':'mismatch'}`};
+  }
+  if(type==='chargeAtLeast'){
+    const amount=Math.max(0,Number(req.amount??1));
+    actor.skillCharges[String(skill.id||skill.name)]=want?amount:Math.max(0,amount-1);
+    return{supported:true,fixture:`${type}:${actor.skillCharges[String(skill.id||skill.name)]}`};
+  }
+  if(type==='alternateActive'){
+    const key=String(req.key||''),value=String(req.value||'');
+    actor.alternates[key]=want?value:`fixture-not-${value}`;
+    return{supported:true,fixture:`${type}:${key}:${actor.alternates[key]}`};
+  }
+  return{supported:false,reason:`UNSUPPORTED_REQUIREMENT_FIXTURE:${type||'<empty>'}`};
+}
 function satisfyCanonicalRequirement(state,skill,targetId){
   const req=skill?.mechanic?.requirements;
   if(!req)return{supported:false,reason:'NO_REQUIREMENT'};
-  if(req.type!=='statusPresent')return{supported:false,reason:`UNSUPPORTED_REQUIREMENT_FIXTURE:${req.type}`};
-  const owner=req.target==='target'?rules.getFighter(state,targetId):rules.getFighter(state,'a');
-  if(!owner)return{supported:false,reason:'REQUIREMENT_TARGET_MISSING'};
-  rules.applyEffect(state,rules.getFighter(state,'a'),owner,{type:'status',status:String(req.status),duration:4,durationUnit:'ownerPhases',positive:req.target!=='target'});
-  return{supported:true,status:String(req.status),target:owner.id};
+  const primed=primeCanonicalRequirement(state,skill,req,targetId,true);
+  if(!primed.supported)return primed;
+  const actor=rules.getFighter(state,'a'),target=targetId==null?null:rules.getFighter(state,targetId);
+  if(!rules.evaluateRequirement(state,actor,skill,req,target))return{supported:false,reason:'REQUIREMENT_FIXTURE_FAILED'};
+  return primed;
 }
 function auditOne(t){
   const structural=adapter.auditTechnique(t),ops=arr(t.mechanics).map(x=>String(x?.op||'')),skill=structural.ok?adapter.adaptTechnique(t):null;
@@ -73,7 +147,7 @@ function auditOne(t){
         if(!primed.supported){runtime={ok:false,reason:primed.reason,resultEffects:0,requirementGateVerified:false}}
         else{
           const second=rules.resolveSkill(s,'a',skill,target,{payCost:false});
-          runtime={ok:Boolean(second?.ok),reason:second?.reason||null,resultEffects:arr(second?.results).length,requirementGateVerified:Boolean(second?.ok),requiredStatus:primed.status,requirementTarget:primed.target};
+          runtime={ok:Boolean(second?.ok),reason:second?.reason||null,resultEffects:arr(second?.results).length,requirementGateVerified:Boolean(second?.ok),requiredStatus:primed.status,requirementFixture:primed.fixture,requirementTarget:primed.target};
         }
       }else runtime={ok:false,reason:first?.reason||'RUNTIME_FAIL',resultEffects:arr(first?.results).length,requirementGateVerified:false};
     }catch(e){runtime={ok:false,reason:String(e?.message||e),requirementGateVerified:false}}
