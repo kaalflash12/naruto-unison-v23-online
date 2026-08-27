@@ -5,7 +5,10 @@ on:
     branches: [main]
     paths:
       - 'tools/classify-canonical-upstream-v2.mjs'
-      - 'tools/finalize-canonical-upstream-v2.mjs'
+      - 'combat-rules-v2.js'
+      - 'combat-content-adapter-v2.js'
+      - 'audit/balance/canonical-v2/**'
+      - 'audit/balance/canonical-v2-corrections/**'
       - '.github/workflows/validate-canonical-engine-envelope-classifier.yml'
   workflow_dispatch:
 
@@ -21,19 +24,38 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Syntax
+      - name: Syntax and runtime contract
         run: |
           set -euo pipefail
           node --check tools/classify-canonical-upstream-v2.mjs
           node --check tools/finalize-canonical-upstream-v2.mjs
+          node --check combat-rules-v2.js
+          node --check combat-content-adapter-v2.js
+          node tools/test-content-engine-extensions-v2.cjs
       - name: Canonical classifier self-test
         run: node tools/classify-canonical-upstream-v2.mjs --self-test
-      - name: Guard engine envelope support
+      - name: Guard installed envelope semantics
         run: |
           set -euo pipefail
-          grep -Fq 'engineEnvelopeCategories' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'ENGINE_EXTENSION_CLASSIFIER_V2' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'publishedEngineEffects' tools/classify-canonical-upstream-v2.mjs
           grep -Fq 'other-enemies' tools/classify-canonical-upstream-v2.mjs
-          grep -Fq 'SELFTEST_ENGINE_MINATO' tools/classify-canonical-upstream-v2.mjs
-          grep -Fq 'SELFTEST_ENGINE_CAT' tools/classify-canonical-upstream-v2.mjs
-          grep -Fq 'engineEnvelopeCats' tools/finalize-canonical-upstream-v2.mjs
-          echo 'CANONICAL_ENGINE_ENVELOPE_CLASSIFIER=PASS'
+          grep -Fq 'SELFTEST_ENGINE_SCALE' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'SELFTEST_ENGINE_STACK' tools/classify-canonical-upstream-v2.mjs
+      - name: Prove monotonic canonical reduction
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          const fin=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
+          const rows=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-CLASSIFICATION-836.json','utf8'));
+          if(q.gate!=='PASS'||q.actionable>701||q.correct<18) throw new Error(`QUEUE_REGRESSION:${JSON.stringify(q)}`);
+          if((q.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0) throw new Error('MOTOR_INSUFICIENTE_REGRESSION');
+          if(fin.gate!=='PASS'||fin.accounted!==836||fin.unaccounted!==0) throw new Error(`FINAL_GATE:${JSON.stringify(fin)}`);
+          for(const id of ['minato-namikaze-(r)__base_3','yugito-nii-(s)__base_3']){
+            const r=rows.find(x=>x.techniqueId===id);
+            if(!r||r.classifications.length!==1||r.classifications[0]!=='CORRETA') throw new Error(`CANONICAL_REGRESSION:${id}:${JSON.stringify(r?.classifications)}`);
+          }
+          console.log('CANONICAL_ENGINE_ENVELOPE_CLASSIFIER=PASS',{correct:q.correct,actionable:q.actionable,motor:q.classificationCounts.MOTOR_INSUFICIENTE});
+          JS
