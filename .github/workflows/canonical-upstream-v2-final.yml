@@ -9,6 +9,7 @@ on:
       - 'tools/build-canonical-v2-correction-queue.mjs'
       - 'balance/canonical-upstream-v2-justifications.json'
       - 'balance/canonical-upstream-v2-ambiguities.json'
+      - '.canonical-upstream-v2-run-trigger'
       - '.github/workflows/canonical-upstream-v2-final.yml'
   workflow_dispatch:
 
@@ -51,7 +52,7 @@ jobs:
           node - <<'JS'
           const fs=require('fs');const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
           if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836)throw new Error(JSON.stringify(s));
-          console.log('PUBLISHED_V2_209X4=PASS');
+          console.log('PUBLISHED_V2_209X4=PASS', {contentRevision:s.contentRevision, characters:s.canonicalPlayableCharacters, links:s.canonicalLinks});
           JS
       - name: Generate raw comparison evidence
         env:
