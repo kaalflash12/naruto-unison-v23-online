@@ -140,7 +140,11 @@ function selfTestRun(){
 if(selfTest){selfTestRun();process.exit(0)}
 fs.mkdirSync(outDir,{recursive:true});
 const queueSummary=read(path.join(queueDir,'SUMMARY.json')),rows=read(path.join(queueDir,'SAFE-STRUCTURAL.json'));
-if(queueSummary.gate!=='PASS'||queueSummary.safeStructural!==177||rows.length!==177)throw new Error(`SAFE_QUEUE_INVALID:${queueSummary.safeStructural}/${rows.length}`);
+if(queueSummary.gate!=='PASS')throw new Error(`SAFE_QUEUE_GATE=${queueSummary.gate}`);
+if(queueSummary.totalTechniques!==836||queueSummary.comparable!==719||queueSummary.justifiedExcluded!==117)throw new Error(`SAFE_QUEUE_ACCOUNTING=${JSON.stringify(queueSummary)}`);
+if(queueSummary.actionable+queueSummary.correct!==queueSummary.comparable)throw new Error(`SAFE_QUEUE_PARTITION=${queueSummary.actionable}+${queueSummary.correct}/${queueSummary.comparable}`);
+if(!Number.isInteger(queueSummary.safeStructural)||queueSummary.safeStructural<0)throw new Error(`SAFE_QUEUE_COUNT_INVALID=${queueSummary.safeStructural}`);
+if(rows.length!==queueSummary.safeStructural)throw new Error(`SAFE_QUEUE_ROWS=${rows.length}/${queueSummary.safeStructural}`);
 const [manifest,payload]=await Promise.all([getJson(`${CONTENT_BASE}/manifest`),getJson(`${CONTENT_BASE}?type=technique`)]);
 const items=arr(payload.items),byId=new Map(items.map(x=>[String(x.id),x]));
 const patches=[],rejected=[];let requestedDimensions=0,plannedDimensions=0,rejectedDimensions=0;
@@ -157,7 +161,7 @@ const summary={
   queueSafeRows:rows.length,requestedDimensions,patchRows:patches.length,plannedDimensions,rejectedDimensions,
   plannedByDimension,rejectedByDimension,duplicatePatchIds:uniq(duplicatePatchIds),missingAccounting:requestedDimensions-plannedDimensions-rejectedDimensions,
   productionWrites:0,
-  gate:items.length>=1200&&rows.length===177&&duplicatePatchIds.length===0&&requestedDimensions===plannedDimensions+rejectedDimensions?'PASS':'FAIL'
+  gate:items.length>=1200&&rows.length===queueSummary.safeStructural&&duplicatePatchIds.length===0&&requestedDimensions===plannedDimensions+rejectedDimensions?'PASS':'FAIL'
 };
 write('SUMMARY.json',summary);write('PATCH-PLAN.json',patches);write('REJECTED.json',rejected);
 fs.writeFileSync(path.join(outDir,'REPORT.md'),`# Canonical V2 Safe Patch Plan — Dry Run\n\n- Mode: **${summary.mode}**\n- Content revision: **${summary.contentRevision}**\n- Safe queue rows: **${summary.queueSafeRows}**\n- Requested dimensions: **${summary.requestedDimensions}**\n- Planned dimensions: **${summary.plannedDimensions}**\n- Rejected dimensions: **${summary.rejectedDimensions}**\n- Patch rows: **${summary.patchRows}**\n- Production writes: **0**\n- Gate: **${summary.gate}**\n\n## Planned by dimension\n\n${Object.entries(plannedByDimension).map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n\n## Rejected by dimension\n\n${Object.entries(rejectedByDimension).map(([k,v])=>`- ${k}: ${v}`).join('\n')}\n`);

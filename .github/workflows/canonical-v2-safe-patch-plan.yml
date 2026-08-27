@@ -47,9 +47,11 @@ jobs:
           const s=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/SUMMARY.json','utf8'));
           const plan=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/PATCH-PLAN.json','utf8'));
           const rejected=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-patch-plan/REJECTED.json','utf8'));
-          if(q.gate!=='PASS'||q.safeStructural!==177)throw new Error(`queue=${JSON.stringify(q)}`);
+          if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.justifiedExcluded!==117)throw new Error(`queue=${JSON.stringify(q)}`);
+          if(q.actionable+q.correct!==q.comparable)throw new Error(`queue partition=${q.actionable}+${q.correct}/${q.comparable}`);
+          if(!Number.isInteger(q.safeStructural)||q.safeStructural<0)throw new Error(`invalid safe count=${q.safeStructural}`);
           if(s.mode!=='DRY_RUN_ONLY'||s.productionWrites!==0)throw new Error(`write mode=${JSON.stringify(s)}`);
-          if(s.queueSafeRows!==177)throw new Error(`safe rows=${s.queueSafeRows}`);
+          if(s.queueSafeRows!==q.safeStructural)throw new Error(`safe rows=${s.queueSafeRows}/${q.safeStructural}`);
           if(s.requestedDimensions!==s.plannedDimensions+s.rejectedDimensions)throw new Error(`accounting=${s.requestedDimensions}/${s.plannedDimensions}+${s.rejectedDimensions}`);
           if(s.rejectedDimensions!==rejected.length)throw new Error(`rejected=${s.rejectedDimensions}/${rejected.length}`);
           if(s.patchRows!==plan.length)throw new Error(`patchRows=${s.patchRows}/${plan.length}`);
