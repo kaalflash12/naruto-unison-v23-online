@@ -44,6 +44,7 @@ const seal=adapter.adaptTechnique({
   effect:{engineEffects:[{type:'seal',target:'enemy',classes:['all'],duration:1,durationUnit:'ownerPhases'}]}
 });
 
+// Main Battle Stance behavior: sacrifice, anti-harm, damage bypass, next-turn double damage, expiry.
 {
   const s=state();
   const used=rules.resolveSkill(s,'guy',battleStance,'guy');
@@ -65,13 +66,9 @@ const seal=adapter.adaptTechnique({
   assert.equal(incoming.ok,true);
   assert.equal(rules.getFighter(s,'guy').hp,80,'Enrage não deve bloquear dano');
 
-  const bypass=rules.resolveSkill(s,'enemy',seal,'guy',{payCost:false});
-  assert.equal(bypass.ok,true);
-  assert.equal(rules.statusActive(rules.getFighter(s,'guy'),'seal').length,1,'Seal deve atravessar Enrage como no upstream');
-
   rules.endPhase(s,'B');
   const doubled=rules.resolveSkill(s,'guy',hit,'enemy',{payCost:false});
-  assert.equal(doubled.ok,true);
+  assert.equal(doubled.ok,true,JSON.stringify(doubled));
   assert.equal(rules.getFighter(s,'enemy').hp,80,'Strengthen Percent 100 deve dobrar 10 para 20');
 
   rules.endPhase(s,'A');
@@ -80,6 +77,17 @@ const seal=adapter.adaptTechnique({
   const normal=rules.resolveSkill(s,'guy',hit,'enemy',{payCost:false});
   assert.equal(normal.ok,true);
   assert.equal(rules.getFighter(s,'enemy').hp,70,'depois da expiração, dano deve voltar a 10');
+}
+
+// Upstream Enrage explicitly allows Seal to pass. Keep this isolated because Seal itself suppresses helpful effects upstream.
+{
+  const s=state();
+  const used=rules.resolveSkill(s,'guy',battleStance,'guy');
+  assert.equal(used.ok,true);
+  rules.endPhase(s,'A');
+  const bypass=rules.resolveSkill(s,'enemy',seal,'guy',{payCost:false});
+  assert.equal(bypass.ok,true);
+  assert.equal(rules.statusActive(rules.getFighter(s,'guy'),'seal').length,1,'Seal deve atravessar Enrage como no upstream');
 }
 
 {
