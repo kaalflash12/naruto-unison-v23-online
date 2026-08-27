@@ -1,0 +1,520 @@
+[
+  {
+    "blockers": [
+      "trap-counter"
+    ],
+    "rows": 46
+  },
+  {
+    "blockers": [
+      "channel"
+    ],
+    "rows": 44
+  },
+  {
+    "blockers": [
+      "stack"
+    ],
+    "rows": 39
+  },
+  {
+    "blockers": [
+      "dynamic-change"
+    ],
+    "rows": 27
+  },
+  {
+    "blockers": [
+      "alternate"
+    ],
+    "rows": 24
+  },
+  {
+    "blockers": [
+      "requirement"
+    ],
+    "rows": 23
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel"
+    ],
+    "rows": 20
+  },
+  {
+    "blockers": [
+      "bomb"
+    ],
+    "rows": 15
+  },
+  {
+    "blockers": [
+      "alternate",
+      "trap-counter"
+    ],
+    "rows": 8
+  },
+  {
+    "blockers": [
+      "sacrifice"
+    ],
+    "rows": 7
+  },
+  {
+    "blockers": [
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 7
+  },
+  {
+    "blockers": [
+      "alternate",
+      "sacrifice"
+    ],
+    "rows": 6
+  },
+  {
+    "blockers": [
+      "alternate",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "bomb",
+      "trap-counter"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "channel",
+      "dynamic-change"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "channel",
+      "requirement"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "channel",
+      "stack"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "charges"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "requirement",
+      "stack"
+    ],
+    "rows": 5
+  },
+  {
+    "blockers": [
+      "alternate",
+      "bomb"
+    ],
+    "rows": 4
+  },
+  {
+    "blockers": [
+      "dynamic-change",
+      "requirement"
+    ],
+    "rows": 4
+  },
+  {
+    "blockers": [
+      "requirement",
+      "trap-counter"
+    ],
+    "rows": 4
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "stack"
+    ],
+    "rows": 3
+  },
+  {
+    "blockers": [
+      "bomb",
+      "requirement"
+    ],
+    "rows": 3
+  },
+  {
+    "blockers": [
+      "channel",
+      "charges"
+    ],
+    "rows": 3
+  },
+  {
+    "blockers": [
+      "channel",
+      "dynamic-change",
+      "trap-counter"
+    ],
+    "rows": 3
+  },
+  {
+    "blockers": [
+      "channel",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 3
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "requirement"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "bomb",
+      "charges"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "bomb",
+      "dynamic-change"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "bomb",
+      "dynamic-change",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "channel",
+      "requirement",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "channel",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "dynamic-change",
+      "sacrifice",
+      "stack"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "dynamic-change",
+      "stack"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "dynamic-change",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "reflect"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "reflect",
+      "trap-counter"
+    ],
+    "rows": 2
+  },
+  {
+    "blockers": [
+      "alternate",
+      "bomb",
+      "channel"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "bomb",
+      "requirement",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "bomb",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "bomb",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "dynamic-change"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "channel",
+      "sacrifice"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "charges",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "dynamic-change",
+      "sacrifice",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "requirement",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "requirement",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "requirement",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "alternate",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "bomb",
+      "channel"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "bomb",
+      "charges",
+      "requirement"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "bomb",
+      "charges",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "bomb",
+      "interrupt"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "bomb",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "dynamic-change",
+      "requirement",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "redirect"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "reflect"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "reflect",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "requirement",
+      "sacrifice",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "channel",
+      "requirement",
+      "stack",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "charges",
+      "dynamic-change"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "charges",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "dynamic-change",
+      "requirement",
+      "stack"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "interrupt",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "redirect"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "redirect",
+      "trap-counter"
+    ],
+    "rows": 1
+  },
+  {
+    "blockers": [
+      "requirement",
+      "sacrifice"
+    ],
+    "rows": 1
+  }
+]

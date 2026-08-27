@@ -1,0 +1,265 @@
+[
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "slot": 2,
+    "techniqueId": "ibiki-morino__base_2",
+    "techniqueName": "Payback",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "slot": 1,
+    "techniqueId": "jirobo__base_1",
+    "techniqueName": "Crushing Palm",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "slot": 2,
+    "techniqueId": "jirobo__base_2",
+    "techniqueName": "Sphere of Graves",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "slot": 2,
+    "techniqueId": "kisame-hoshigaki-(s)__base_2",
+    "techniqueName": "Man-Eating Sharks",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "slot": 3,
+    "techniqueId": "minato-namikaze-(r)__base_3",
+    "techniqueName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "slot": 4,
+    "techniqueId": "neji-hyuga-(s)__base_4",
+    "techniqueName": "Pressure Point Strike",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "slot": 3,
+    "techniqueId": "onoki-(s)__base_3",
+    "techniqueName": "Atomic Dismantling",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "slot": 3,
+    "techniqueId": "yugito-nii-(s)__base_3",
+    "techniqueName": "Cat Claws",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack",
+      "requirement"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack",
+      "requirement"
+    ]
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "slot": 1,
+    "techniqueId": "zaku-abumi__base_1",
+    "techniqueName": "Slicing Sound Wave",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ]
+  }
+]

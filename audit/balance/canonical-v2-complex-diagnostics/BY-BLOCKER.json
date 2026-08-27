@@ -1,0 +1,3503 @@
+{
+  "alternate": {
+    "rows": 88,
+    "engineSupported": true,
+    "withEffectMismatch": 88,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 24,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 36,
+      "COOLDOWN_ERRADO": 16,
+      "DANO_ERRADO": 5,
+      "ALVO_ERRADO": 59,
+      "DURAÇÃO_ERRADA": 46
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 36,
+      "COOLDOWN_ERRADO": 16,
+      "DANO_ERRADO": 5,
+      "ALVO_ERRADO": 59,
+      "DURAÇÃO_ERRADA": 46
+    },
+    "samples": [
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 1,
+        "techniqueId": "a-(r)__base_1",
+        "techniqueName": "Piercing Four-Fingered",
+        "originalName": "Piercing Four-Fingered",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack"
+          ]
+        },
+        "upstreamCategories": [
+          "stun",
+          "alternate",
+          "stack"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "Piercing Four-Fingered",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 2,
+        "techniqueId": "a-(r)__base_2",
+        "techniqueName": "Three-Fingered Assault",
+        "originalName": "Three-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack",
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "Three-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 3,
+        "techniqueId": "a-(r)__base_3",
+        "techniqueName": "One-Fingered Assault",
+        "originalName": "One-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "charges"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "stack",
+          "invulnerable",
+          "charges"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "One-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 1,
+        "techniqueId": "animal-path-pain-(s)__base_1",
+        "techniqueName": "Summoning: Giant Centipede",
+        "originalName": "Summoning: Giant Centipede",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Centipede",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "anko-mitarashi",
+        "characterName": "Anko Mitarashi",
+        "slot": 1,
+        "techniqueId": "anko-mitarashi__base_1",
+        "techniqueName": "Dual Pin",
+        "originalName": "Dual Pin",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "COOLDOWN_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "COOLDOWN_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "expose",
+          "alternate",
+          "invulnerable",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Anko Mitarashi",
+        "upstreamTechnique": "Dual Pin",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi-(s)__base_1",
+        "techniqueName": "Thousand Hand Strike",
+        "originalName": "Thousand Hand Strike",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Thousand Hand Strike",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 3,
+        "techniqueId": "asuma-sarutobi-(s)__base_3",
+        "techniqueName": "Burning Ash",
+        "originalName": "Burning Ash",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "alternate",
+          "channel"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Burning Ash",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi__base_1",
+        "techniqueName": "Flying Swallow",
+        "originalName": "Flying Swallow",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "stun",
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Flying Swallow",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      }
+    ]
+  },
+  "bomb": {
+    "rows": 42,
+    "engineSupported": true,
+    "withEffectMismatch": 42,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 15,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 8,
+      "COOLDOWN_ERRADO": 2,
+      "DANO_ERRADO": 5,
+      "ALVO_ERRADO": 22,
+      "DURAÇÃO_ERRADA": 13
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 8,
+      "COOLDOWN_ERRADO": 2,
+      "DANO_ERRADO": 5,
+      "ALVO_ERRADO": 22,
+      "DURAÇÃO_ERRADA": 13
+    },
+    "samples": [
+      {
+        "characterId": "aoba-yamashiro",
+        "characterName": "Aoba Yamashiro",
+        "slot": 2,
+        "techniqueId": "aoba-yamashiro__base_2",
+        "techniqueName": "Revenge of the Murder",
+        "originalName": "Revenge of the Murder",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "bomb"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "focus",
+          "trap-counter",
+          "invulnerable",
+          "bomb"
+        ],
+        "upstreamCharacter": "Aoba Yamashiro",
+        "upstreamTechnique": "Revenge of the Murder",
+        "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
+      },
+      {
+        "characterId": "deidara-(r)",
+        "characterName": "Deidara",
+        "slot": 1,
+        "techniqueId": "deidara-(r)__base_1",
+        "techniqueName": "Detonating Clay",
+        "originalName": "Detonating Clay",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter",
+            "bomb"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter",
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "invulnerable",
+          "bomb"
+        ],
+        "upstreamCharacter": "Deidara",
+        "upstreamTechnique": "Detonating Clay",
+        "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "characterId": "deidara-(s)",
+        "characterName": "Deidara",
+        "slot": 1,
+        "techniqueId": "deidara-(s)__base_1",
+        "techniqueName": "C1: Bird Bomb",
+        "originalName": "C1: Bird Bomb",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DANO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "DANO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "DANO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "DANO_ERRADO": [
+            "alternate",
+            "bomb"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "bomb"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "weaken",
+          "alternate",
+          "bomb"
+        ],
+        "upstreamCharacter": "Deidara",
+        "upstreamTechnique": "C1: Bird Bomb",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "deidara-(s)",
+        "characterName": "Deidara",
+        "slot": 2,
+        "techniqueId": "deidara-(s)__base_2",
+        "techniqueName": "C3: Megaton Sculpture",
+        "originalName": "C3: Megaton Sculpture",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "bomb"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "weaken",
+          "bomb"
+        ],
+        "upstreamCharacter": "Deidara",
+        "upstreamTechnique": "C3: Megaton Sculpture",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "deidara-(s)",
+        "characterName": "Deidara",
+        "slot": 3,
+        "techniqueId": "deidara-(s)__base_3",
+        "techniqueName": "C2: Dragon Missile",
+        "originalName": "C2: Dragon Missile",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "weaken",
+          "bomb"
+        ],
+        "upstreamCharacter": "Deidara",
+        "upstreamTechnique": "C2: Dragon Missile",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "deidara-(s)",
+        "characterName": "Deidara",
+        "slot": 4,
+        "techniqueId": "deidara-(s)__base_4",
+        "techniqueName": "C2: Clay Dragon",
+        "originalName": "C2: Clay Dragon",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "bomb"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "defense",
+          "alternate",
+          "bomb"
+        ],
+        "upstreamCharacter": "Deidara",
+        "upstreamTechnique": "C2: Clay Dragon",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "eight-tailed-b-(s)",
+        "characterName": "Eight-Tailed B",
+        "slot": 3,
+        "techniqueId": "eight-tailed-b-(s)__base_3",
+        "techniqueName": "Tailed Beast Bomb",
+        "originalName": "Tailed Beast Bomb",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DANO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "DANO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "DANO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "DANO_ERRADO": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "bomb"
+        ],
+        "upstreamCharacter": "Eight-Tailed B",
+        "upstreamTechnique": "Tailed Beast Bomb",
+        "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      },
+      {
+        "characterId": "fukai-(r)",
+        "characterName": "Fukai",
+        "slot": 2,
+        "techniqueId": "fukai-(r)__base_2",
+        "techniqueName": "Tailed Beast Bomb Barrage",
+        "originalName": "Tailed Beast Bomb Barrage",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "bomb"
+        ],
+        "upstreamCharacter": "Fukai",
+        "upstreamTechnique": "Tailed Beast Bomb Barrage",
+        "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs"
+      }
+    ]
+  },
+  "channel": {
+    "rows": 111,
+    "engineSupported": true,
+    "withEffectMismatch": 111,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 44,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 12,
+      "COOLDOWN_ERRADO": 5,
+      "DANO_ERRADO": 9,
+      "ALVO_ERRADO": 63,
+      "DURAÇÃO_ERRADA": 61
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 12,
+      "COOLDOWN_ERRADO": 5,
+      "DANO_ERRADO": 9,
+      "ALVO_ERRADO": 63,
+      "DURAÇÃO_ERRADA": 61
+    },
+    "samples": [
+      {
+        "characterId": "akatsuchi-(s)",
+        "characterName": "Akatsuchi",
+        "slot": 2,
+        "techniqueId": "akatsuchi-(s)__base_2",
+        "techniqueName": "Stone Golem",
+        "originalName": "Stone Golem",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DANO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "channel"
+        ],
+        "structuralDimensions": [
+          "DANO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DANO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DANO_ERRADO": [
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "channel"
+        ],
+        "upstreamCharacter": "Akatsuchi",
+        "upstreamTechnique": "Stone Golem",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 1,
+        "techniqueId": "animal-path-pain-(s)__base_1",
+        "techniqueName": "Summoning: Giant Centipede",
+        "originalName": "Summoning: Giant Centipede",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Centipede",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 2,
+        "techniqueId": "animal-path-pain-(s)__base_2",
+        "techniqueName": "Summoning: Giant Crustacean",
+        "originalName": "Summoning: Giant Crustacean",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "exhaust",
+          "invulnerable",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Crustacean",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 4,
+        "techniqueId": "animal-path-pain-(s)__base_4",
+        "techniqueName": "Summoning: Giant Multi-Headed Dog",
+        "originalName": "Summoning: Giant Multi-Headed Dog",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Multi-Headed Dog",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "aoba-yamashiro",
+        "characterName": "Aoba Yamashiro",
+        "slot": 1,
+        "techniqueId": "aoba-yamashiro__base_1",
+        "techniqueName": "Scattering Crow Swarm",
+        "originalName": "Scattering Crow Swarm",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "dot",
+          "channel"
+        ],
+        "upstreamCharacter": "Aoba Yamashiro",
+        "upstreamTechnique": "Scattering Crow Swarm",
+        "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 3,
+        "techniqueId": "asuma-sarutobi-(s)__base_3",
+        "techniqueName": "Burning Ash",
+        "originalName": "Burning Ash",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "alternate",
+          "channel"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Burning Ash",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi__base_1",
+        "techniqueName": "Flying Swallow",
+        "originalName": "Flying Swallow",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "stun",
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Flying Swallow",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "asura-path-pain-(s)",
+        "characterName": "Asura Path Pain",
+        "slot": 2,
+        "techniqueId": "asura-path-pain-(s)__base_2",
+        "techniqueName": "Missile Salvo",
+        "originalName": "Missile Salvo",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "dispel",
+          "alternate",
+          "channel"
+        ],
+        "upstreamCharacter": "Asura Path Pain",
+        "upstreamTechnique": "Missile Salvo",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      }
+    ]
+  },
+  "charges": {
+    "rows": 15,
+    "engineSupported": true,
+    "withEffectMismatch": 15,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 5,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 1,
+      "COOLDOWN_ERRADO": 1,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 9,
+      "DURAÇÃO_ERRADA": 3
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 1,
+      "COOLDOWN_ERRADO": 1,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 9,
+      "DURAÇÃO_ERRADA": 3
+    },
+    "samples": [
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 3,
+        "techniqueId": "a-(r)__base_3",
+        "techniqueName": "One-Fingered Assault",
+        "originalName": "One-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "charges"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "stack",
+          "invulnerable",
+          "charges"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "One-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "danzo-shimura-(s)",
+        "characterName": "Danzō Shimura",
+        "slot": 3,
+        "techniqueId": "danzo-shimura-(s)__base_3",
+        "techniqueName": "Reverse Tetragram Sealing",
+        "originalName": "Reverse Tetragram Sealing",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "invulnerable",
+          "charges",
+          "channel"
+        ],
+        "upstreamCharacter": "Danzō Shimura",
+        "upstreamTechnique": "Reverse Tetragram Sealing",
+        "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs"
+      },
+      {
+        "characterId": "eight-tailed-b-(s)",
+        "characterName": "Eight-Tailed B",
+        "slot": 1,
+        "techniqueId": "eight-tailed-b-(s)__base_1",
+        "techniqueName": "Chakra Bones",
+        "originalName": "Chakra Bones",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "strengthen",
+          "charges"
+        ],
+        "upstreamCharacter": "Eight-Tailed B",
+        "upstreamTechnique": "Chakra Bones",
+        "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs"
+      },
+      {
+        "characterId": "jinpachi-munashi-(r)",
+        "characterName": "Jinpachi Munashi",
+        "slot": 1,
+        "techniqueId": "jinpachi-munashi-(r)__base_1",
+        "techniqueName": "Splatter",
+        "originalName": "Splatter",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges",
+          "bomb"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "dot",
+          "charges",
+          "bomb"
+        ],
+        "upstreamCharacter": "Jinpachi Munashi",
+        "upstreamTechnique": "Splatter",
+        "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "characterId": "jinpachi-munashi-(r)",
+        "characterName": "Jinpachi Munashi",
+        "slot": 2,
+        "techniqueId": "jinpachi-munashi-(r)__base_2",
+        "techniqueName": "Bomb Reload",
+        "originalName": "Bomb Reload",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "charges",
+          "bomb"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "defense",
+          "stack",
+          "charges",
+          "bomb"
+        ],
+        "upstreamCharacter": "Jinpachi Munashi",
+        "upstreamTechnique": "Bomb Reload",
+        "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "characterId": "kazekage-gaara-(s)",
+        "characterName": "Kazekage Gaara",
+        "slot": 3,
+        "techniqueId": "kazekage-gaara-(s)__base_3",
+        "techniqueName": "Sand Summoning",
+        "originalName": "Sand Summoning",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "reduction",
+          "strengthen",
+          "charges"
+        ],
+        "upstreamCharacter": "Kazekage Gaara",
+        "upstreamTechnique": "Sand Summoning",
+        "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs"
+      },
+      {
+        "characterId": "mizuki",
+        "characterName": "Mizuki",
+        "slot": 2,
+        "techniqueId": "mizuki__base_2",
+        "techniqueName": "Execution Shuriken",
+        "originalName": "Execution Shuriken",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "charges"
+        ],
+        "upstreamCharacter": "Mizuki",
+        "upstreamTechnique": "Execution Shuriken",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "nagato-(s)",
+        "characterName": "Nagato",
+        "slot": 4,
+        "techniqueId": "nagato-(s)__base_4",
+        "techniqueName": "Rinne Rebirth",
+        "originalName": "Rinne Rebirth",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "charges",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "heal",
+          "charges",
+          "channel"
+        ],
+        "upstreamCharacter": "Nagato",
+        "upstreamTechnique": "Rinne Rebirth",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      }
+    ]
+  },
+  "dynamic-change": {
+    "rows": 54,
+    "engineSupported": true,
+    "withEffectMismatch": 54,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 27,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 13,
+      "COOLDOWN_ERRADO": 6,
+      "DANO_ERRADO": 6,
+      "ALVO_ERRADO": 33,
+      "DURAÇÃO_ERRADA": 16
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 13,
+      "COOLDOWN_ERRADO": 6,
+      "DANO_ERRADO": 6,
+      "ALVO_ERRADO": 33,
+      "DURAÇÃO_ERRADA": 16
+    },
+    "samples": [
+      {
+        "characterId": "akatsuchi-(s)",
+        "characterName": "Akatsuchi",
+        "slot": 1,
+        "techniqueId": "akatsuchi-(s)__base_1",
+        "techniqueName": "High-Speed Assault",
+        "originalName": "High-Speed Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "dynamic-change"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Akatsuchi",
+        "upstreamTechnique": "High-Speed Assault",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi__base_1",
+        "techniqueName": "Flying Swallow",
+        "originalName": "Flying Swallow",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "dynamic-change",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "stun",
+          "alternate",
+          "dynamic-change",
+          "channel"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Flying Swallow",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "atsui-(s)",
+        "characterName": "Atsui",
+        "slot": 2,
+        "techniqueId": "atsui-(s)__base_2",
+        "techniqueName": "Fire Wall",
+        "originalName": "Fire Wall",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter",
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "dot",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Atsui",
+        "upstreamTechnique": "Fire Wall",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "choji-akimichi-(s)",
+        "characterName": "Chōji Akimichi",
+        "slot": 1,
+        "techniqueId": "choji-akimichi-(s)__base_1",
+        "techniqueName": "Butterfly Bombing",
+        "originalName": "Butterfly Bombing",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DANO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "DANO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DANO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DANO_ERRADO": [
+            "dynamic-change"
+          ],
+          "ALVO_ERRADO": [
+            "dynamic-change"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Chōji Akimichi",
+        "upstreamTechnique": "Butterfly Bombing",
+        "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs"
+      },
+      {
+        "characterId": "choji-akimichi-(s)",
+        "characterName": "Chōji Akimichi",
+        "slot": 2,
+        "techniqueId": "choji-akimichi-(s)__base_2",
+        "techniqueName": "Spiky Human Boulder",
+        "originalName": "Spiky Human Boulder",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "dynamic-change",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter",
+            "dynamic-change",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "dot",
+          "dynamic-change",
+          "channel"
+        ],
+        "upstreamCharacter": "Chōji Akimichi",
+        "upstreamTechnique": "Spiky Human Boulder",
+        "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs"
+      },
+      {
+        "characterId": "choji-akimichi-(s)",
+        "characterName": "Chōji Akimichi",
+        "slot": 4,
+        "techniqueId": "choji-akimichi-(s)__base_4",
+        "techniqueName": "Super-Slam",
+        "originalName": "Super-Slam",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "cleanse",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Chōji Akimichi",
+        "upstreamTechnique": "Super-Slam",
+        "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs"
+      },
+      {
+        "characterId": "chukichi-(r)",
+        "characterName": "Chūkichi",
+        "slot": 2,
+        "techniqueId": "chukichi-(r)__base_2",
+        "techniqueName": "Psychic Jamming",
+        "originalName": "Psychic Jamming",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "exhaust",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Chūkichi",
+        "upstreamTechnique": "Psychic Jamming",
+        "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs"
+      },
+      {
+        "characterId": "chukichi-(r)",
+        "characterName": "Chūkichi",
+        "slot": 3,
+        "techniqueId": "chukichi-(r)__base_3",
+        "techniqueName": "Silent Killing",
+        "originalName": "Silent Killing",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "expose",
+          "invulnerable",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Chūkichi",
+        "upstreamTechnique": "Silent Killing",
+        "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs"
+      }
+    ]
+  },
+  "interrupt": {
+    "rows": 2,
+    "engineSupported": true,
+    "withEffectMismatch": 2,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 0,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 2,
+      "DURAÇÃO_ERRADA": 1
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 2,
+      "DURAÇÃO_ERRADA": 1
+    },
+    "samples": [
+      {
+        "characterId": "deva-path-pain-(s)",
+        "characterName": "Deva Path Pain",
+        "slot": 3,
+        "techniqueId": "deva-path-pain-(s)__base_3",
+        "techniqueName": "Atração Universal",
+        "originalName": "Universal Pull",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "interrupt"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "interrupt"
+        ],
+        "upstreamCharacter": "Deva Path Pain",
+        "upstreamTechnique": "Universal Pull",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "jiraiya-(s)",
+        "characterName": "Jiraiya",
+        "slot": 2,
+        "techniqueId": "jiraiya-(s)__base_2",
+        "techniqueName": "Toad Oil Bomb",
+        "originalName": "Toad Oil Bomb",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "bomb",
+          "interrupt"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "dot",
+          "bomb",
+          "interrupt"
+        ],
+        "upstreamCharacter": "Jiraiya",
+        "upstreamTechnique": "Toad Oil Bomb",
+        "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs"
+      }
+    ]
+  },
+  "redirect": {
+    "rows": 3,
+    "engineSupported": true,
+    "withEffectMismatch": 3,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 1,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 1,
+      "DURAÇÃO_ERRADA": 2
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 1,
+      "DURAÇÃO_ERRADA": 2
+    },
+    "samples": [
+      {
+        "characterId": "jiraiya-(s)",
+        "characterName": "Jiraiya",
+        "slot": 3,
+        "techniqueId": "jiraiya-(s)__base_3",
+        "techniqueName": "Toad Subjugation Shadow Manipulation",
+        "originalName": "Toad Subjugation Shadow Manipulation",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "channel",
+          "redirect"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "channel",
+          "redirect"
+        ],
+        "upstreamCharacter": "Jiraiya",
+        "upstreamTechnique": "Toad Subjugation Shadow Manipulation",
+        "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs"
+      },
+      {
+        "characterId": "minato-namikaze-(r)",
+        "characterName": "Minato Namikaze",
+        "slot": 2,
+        "techniqueId": "minato-namikaze-(r)__base_2",
+        "techniqueName": "Reciprocal Round-Robin",
+        "originalName": "Reciprocal Round-Robin",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "redirect"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "trap-counter",
+          "redirect"
+        ],
+        "upstreamCharacter": "Minato Namikaze",
+        "upstreamTechnique": "Reciprocal Round-Robin",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "misumi-tsurugi",
+        "characterName": "Misumi Tsurugi",
+        "slot": 2,
+        "techniqueId": "misumi-tsurugi__base_2",
+        "techniqueName": "Soft Physique Modification",
+        "originalName": "Soft Physique Modification",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "redirect"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "redirect"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "expose",
+          "invulnerable",
+          "redirect"
+        ],
+        "upstreamCharacter": "Misumi Tsurugi",
+        "upstreamTechnique": "Soft Physique Modification",
+        "upstreamSource": "src/Game/Characters/Original/Exams.hs"
+      }
+    ]
+  },
+  "reflect": {
+    "rows": 6,
+    "engineSupported": true,
+    "withEffectMismatch": 6,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 2,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 1,
+      "ALVO_ERRADO": 3,
+      "DURAÇÃO_ERRADA": 4
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 0,
+      "COOLDOWN_ERRADO": 0,
+      "DANO_ERRADO": 1,
+      "ALVO_ERRADO": 3,
+      "DURAÇÃO_ERRADA": 4
+    },
+    "samples": [
+      {
+        "characterId": "gengetsu-hozuki-(r)",
+        "characterName": "Gengetsu Hōzuki",
+        "slot": 1,
+        "techniqueId": "gengetsu-hozuki-(r)__base_1",
+        "techniqueName": "Major Summoning: Giant Clam",
+        "originalName": "Major Summoning: Giant Clam",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "channel",
+          "reflect"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": [
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "defense",
+          "channel",
+          "reflect"
+        ],
+        "upstreamCharacter": "Gengetsu Hōzuki",
+        "upstreamTechnique": "Major Summoning: Giant Clam",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "hiashi-hyuga",
+        "characterName": "Hiashi Hyūga",
+        "slot": 3,
+        "techniqueId": "hiashi-hyuga__base_3",
+        "techniqueName": "Eight Trigrams Air Palm Wall",
+        "originalName": "Eight Trigrams Air Palm Wall",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "reflect"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [],
+          "DURAÇÃO_ERRADA": []
+        },
+        "upstreamCategories": [
+          "reflect"
+        ],
+        "upstreamCharacter": "Hiashi Hyūga",
+        "upstreamTechnique": "Eight Trigrams Air Palm Wall",
+        "upstreamSource": "src/Game/Characters/Original/Family.hs"
+      },
+      {
+        "characterId": "inoichi-yamanaka",
+        "characterName": "Inoichi Yamanaka",
+        "slot": 1,
+        "techniqueId": "inoichi-yamanaka__base_1",
+        "techniqueName": "Psycho Mind Transmission",
+        "originalName": "Psycho Mind Transmission",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "channel",
+          "reflect"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "disable",
+          "trap-counter",
+          "channel",
+          "reflect"
+        ],
+        "upstreamCharacter": "Inoichi Yamanaka",
+        "upstreamTechnique": "Psycho Mind Transmission",
+        "upstreamSource": "src/Game/Characters/Original/Family.hs"
+      },
+      {
+        "characterId": "kitsuchi-(s)",
+        "characterName": "Kitsuchi",
+        "slot": 1,
+        "techniqueId": "kitsuchi-(s)__base_1",
+        "techniqueName": "Rock Fist",
+        "originalName": "Rock Fist",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DANO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "reflect"
+        ],
+        "structuralDimensions": [
+          "DANO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DANO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DANO_ERRADO": [
+            "trap-counter"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "disable",
+          "trap-counter",
+          "reflect"
+        ],
+        "upstreamCharacter": "Kitsuchi",
+        "upstreamTechnique": "Rock Fist",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "kitsuchi-(s)",
+        "characterName": "Kitsuchi",
+        "slot": 2,
+        "techniqueId": "kitsuchi-(s)__base_2",
+        "techniqueName": "Erupt",
+        "originalName": "Erupt",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "reflect"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "reduction",
+          "stun",
+          "trap-counter",
+          "reflect"
+        ],
+        "upstreamCharacter": "Kitsuchi",
+        "upstreamTechnique": "Erupt",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "yondaime-minato",
+        "characterName": "Yondaime Minato",
+        "slot": 2,
+        "techniqueId": "yondaime-minato__base_2",
+        "techniqueName": "Teleportation Barrier",
+        "originalName": "Teleportation Barrier",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "reflect"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "reflect"
+        ],
+        "upstreamCharacter": "Yondaime Minato",
+        "upstreamTechnique": "Teleportation Barrier",
+        "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs"
+      }
+    ]
+  },
+  "requirement": {
+    "rows": 58,
+    "engineSupported": true,
+    "withEffectMismatch": 57,
+    "withoutEffectMismatch": 1,
+    "exclusiveBlocker": 23,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 6,
+      "COOLDOWN_ERRADO": 2,
+      "DANO_ERRADO": 2,
+      "ALVO_ERRADO": 31,
+      "DURAÇÃO_ERRADA": 14
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 6,
+      "COOLDOWN_ERRADO": 2,
+      "DANO_ERRADO": 2,
+      "ALVO_ERRADO": 31,
+      "DURAÇÃO_ERRADA": 14
+    },
+    "samples": [
+      {
+        "characterId": "anko-mitarashi",
+        "characterName": "Anko Mitarashi",
+        "slot": 3,
+        "techniqueId": "anko-mitarashi__base_3",
+        "techniqueName": "Twin Snake Sacrifice",
+        "originalName": "Twin Snake Sacrifice",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "dot",
+          "requirement",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Anko Mitarashi",
+        "upstreamTechnique": "Twin Snake Sacrifice",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi-(s)__base_1",
+        "techniqueName": "Thousand Hand Strike",
+        "originalName": "Thousand Hand Strike",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Thousand Hand Strike",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "demon-brothers",
+        "characterName": "Demon Brothers",
+        "slot": 2,
+        "techniqueId": "demon-brothers__base_2",
+        "techniqueName": "Chain Shred",
+        "originalName": "Chain Shred",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "requirement"
+        ],
+        "upstreamCharacter": "Demon Brothers",
+        "upstreamTechnique": "Chain Shred",
+        "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
+      },
+      {
+        "characterId": "gaara-of-the-funk",
+        "characterName": "Gaara Of The Funk",
+        "slot": 4,
+        "techniqueId": "gaara-of-the-funk__base_4",
+        "techniqueName": "Dance Dance Resurrection",
+        "originalName": "Dance Dance Resurrection",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [],
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "requirement"
+        ],
+        "upstreamCharacter": "Gaara of the Funk",
+        "upstreamTechnique": "Dance Dance Resurrection",
+        "upstreamSource": "src/Game/Characters/Development.hs"
+      },
+      {
+        "characterId": "gaara",
+        "characterName": "Gaara",
+        "slot": 2,
+        "techniqueId": "gaara__base_2",
+        "techniqueName": "Sand Burial",
+        "originalName": "Sand Burial",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "requirement"
+        ],
+        "upstreamCharacter": "Gaara",
+        "upstreamTechnique": "Sand Burial",
+        "upstreamSource": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "characterId": "gaara",
+        "characterName": "Gaara",
+        "slot": 3,
+        "techniqueId": "gaara__base_3",
+        "techniqueName": "Sand Clone",
+        "originalName": "Sand Clone",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "trap-counter",
+          "requirement"
+        ],
+        "upstreamCharacter": "Gaara",
+        "upstreamTechnique": "Sand Clone",
+        "upstreamSource": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "characterId": "gengetsu-hozuki-(r)",
+        "characterName": "Gengetsu Hōzuki",
+        "slot": 3,
+        "techniqueId": "gengetsu-hozuki-(r)__base_3",
+        "techniqueName": "Steaming Danger Tyranny Boy",
+        "originalName": "Steaming Danger Tyranny Boy",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement",
+          "bomb"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "bomb"
+          ]
+        },
+        "upstreamCategories": [
+          "invulnerable",
+          "requirement",
+          "bomb"
+        ],
+        "upstreamCharacter": "Gengetsu Hōzuki",
+        "upstreamTechnique": "Steaming Danger Tyranny Boy",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "haku-(r)",
+        "characterName": "Haku",
+        "slot": 2,
+        "techniqueId": "haku-(r)__base_2",
+        "techniqueName": "Acupuncture",
+        "originalName": "Acupuncture",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement",
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "silence",
+          "requirement",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Haku",
+        "upstreamTechnique": "Acupuncture",
+        "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs"
+      }
+    ]
+  },
+  "sacrifice": {
+    "rows": 19,
+    "engineSupported": true,
+    "withEffectMismatch": 19,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 7,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 1,
+      "COOLDOWN_ERRADO": 4,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 10,
+      "DURAÇÃO_ERRADA": 6
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 1,
+      "COOLDOWN_ERRADO": 4,
+      "DANO_ERRADO": 0,
+      "ALVO_ERRADO": 10,
+      "DURAÇÃO_ERRADA": 6
+    },
+    "samples": [
+      {
+        "characterId": "anko-mitarashi",
+        "characterName": "Anko Mitarashi",
+        "slot": 1,
+        "techniqueId": "anko-mitarashi__base_1",
+        "techniqueName": "Dual Pin",
+        "originalName": "Dual Pin",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "COOLDOWN_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "COOLDOWN_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "expose",
+          "alternate",
+          "invulnerable",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Anko Mitarashi",
+        "upstreamTechnique": "Dual Pin",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "anko-mitarashi",
+        "characterName": "Anko Mitarashi",
+        "slot": 2,
+        "techniqueId": "anko-mitarashi__base_2",
+        "techniqueName": "Dragon Flame",
+        "originalName": "Dragon Flame",
+        "classifications": [
+          "EFEITO_ERRADO"
+        ],
+        "blockers": [
+          "sacrifice"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "dot",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Anko Mitarashi",
+        "upstreamTechnique": "Dragon Flame",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "anko-mitarashi",
+        "characterName": "Anko Mitarashi",
+        "slot": 3,
+        "techniqueId": "anko-mitarashi__base_3",
+        "techniqueName": "Twin Snake Sacrifice",
+        "originalName": "Twin Snake Sacrifice",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "requirement",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": []
+        },
+        "upstreamCategories": [
+          "dot",
+          "requirement",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Anko Mitarashi",
+        "upstreamTechnique": "Twin Snake Sacrifice",
+        "upstreamSource": "src/Game/Characters/Original/Teachers.hs"
+      },
+      {
+        "characterId": "choji-akimichi",
+        "characterName": "Chōji Akimichi",
+        "slot": 1,
+        "techniqueId": "choji-akimichi__base_1",
+        "techniqueName": "Spinach Pill",
+        "originalName": "Spinach Pill",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "COOLDOWN_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "channel",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "COOLDOWN_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "reduction",
+          "alternate",
+          "channel",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Chōji Akimichi",
+        "upstreamTechnique": "Spinach Pill",
+        "upstreamSource": "src/Game/Characters/Original/Kids.hs"
+      },
+      {
+        "characterId": "curse-mark-sasuke",
+        "characterName": "Curse Mark Sasuke",
+        "slot": 3,
+        "techniqueId": "curse-mark-sasuke__base_3",
+        "techniqueName": "Curse Mark",
+        "originalName": "Curse Mark",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": []
+        },
+        "upstreamCategories": [
+          "invulnerable",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Curse Mark Sasuke",
+        "upstreamTechnique": "Curse Mark",
+        "upstreamSource": "src/Game/Characters/Original/Versions.hs"
+      },
+      {
+        "characterId": "eight-gates-guy-(s)",
+        "characterName": "Eight-Gates Guy",
+        "slot": 1,
+        "techniqueId": "eight-gates-guy-(s)__base_1",
+        "techniqueName": "Evening Elephant",
+        "originalName": "Evening Elephant",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "COOLDOWN_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "dynamic-change",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "COOLDOWN_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "COOLDOWN_ERRADO": [
+            "dynamic-change"
+          ],
+          "ALVO_ERRADO": [
+            "stack",
+            "dynamic-change"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "stack",
+          "invulnerable",
+          "dynamic-change",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Eight-Gates Guy",
+        "upstreamTechnique": "Evening Elephant",
+        "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs"
+      },
+      {
+        "characterId": "eight-gates-guy-(s)",
+        "characterName": "Eight-Gates Guy",
+        "slot": 2,
+        "techniqueId": "eight-gates-guy-(s)__base_2",
+        "techniqueName": "Battle Stance",
+        "originalName": "Battle Stance",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "DURAÇÃO_ERRADA": []
+        },
+        "upstreamCategories": [
+          "damage",
+          "strengthen",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Eight-Gates Guy",
+        "upstreamTechnique": "Battle Stance",
+        "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs"
+      },
+      {
+        "characterId": "eight-gates-guy-(s)",
+        "characterName": "Eight-Gates Guy",
+        "slot": 3,
+        "techniqueId": "eight-gates-guy-(s)__base_3",
+        "techniqueName": "Night Guy",
+        "originalName": "Night Guy",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "dynamic-change",
+          "sacrifice"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack",
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "weaken",
+          "stack",
+          "dynamic-change",
+          "sacrifice"
+        ],
+        "upstreamCharacter": "Eight-Gates Guy",
+        "upstreamTechnique": "Night Guy",
+        "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs"
+      }
+    ]
+  },
+  "stack": {
+    "rows": 85,
+    "engineSupported": true,
+    "withEffectMismatch": 76,
+    "withoutEffectMismatch": 9,
+    "exclusiveBlocker": 39,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 11,
+      "COOLDOWN_ERRADO": 4,
+      "DANO_ERRADO": 2,
+      "ALVO_ERRADO": 59,
+      "DURAÇÃO_ERRADA": 22
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 11,
+      "COOLDOWN_ERRADO": 4,
+      "DANO_ERRADO": 2,
+      "ALVO_ERRADO": 59,
+      "DURAÇÃO_ERRADA": 22
+    },
+    "samples": [
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 1,
+        "techniqueId": "a-(r)__base_1",
+        "techniqueName": "Piercing Four-Fingered",
+        "originalName": "Piercing Four-Fingered",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack"
+          ]
+        },
+        "upstreamCategories": [
+          "stun",
+          "alternate",
+          "stack"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "Piercing Four-Fingered",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 2,
+        "techniqueId": "a-(r)__base_2",
+        "techniqueName": "Three-Fingered Assault",
+        "originalName": "Three-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack",
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "Three-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 3,
+        "techniqueId": "a-(r)__base_3",
+        "techniqueName": "One-Fingered Assault",
+        "originalName": "One-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "charges"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "stack",
+          "invulnerable",
+          "charges"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "One-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "ameyuri-ringo-(r)",
+        "characterName": "Ameyuri Ringo",
+        "slot": 1,
+        "techniqueId": "ameyuri-ringo-(r)__base_1",
+        "techniqueName": "Lightning Fang",
+        "originalName": "Lightning Fang",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "stack"
+        ],
+        "upstreamCharacter": "Ameyuri Ringo",
+        "upstreamTechnique": "Lightning Fang",
+        "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 4,
+        "techniqueId": "animal-path-pain-(s)__base_4",
+        "techniqueName": "Summoning: Giant Multi-Headed Dog",
+        "originalName": "Summoning: Giant Multi-Headed Dog",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Multi-Headed Dog",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 1,
+        "techniqueId": "asuma-sarutobi-(s)__base_1",
+        "techniqueName": "Thousand Hand Strike",
+        "originalName": "Thousand Hand Strike",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "alternate",
+          "stack",
+          "requirement"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Thousand Hand Strike",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "asuma-sarutobi-(s)",
+        "characterName": "Asuma Sarutobi",
+        "slot": 4,
+        "techniqueId": "asuma-sarutobi-(s)__base_4",
+        "techniqueName": "Burning Ash: Ignite",
+        "originalName": "Burning Ash: Ignite",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stack",
+          "dot"
+        ],
+        "upstreamCharacter": "Asuma Sarutobi",
+        "upstreamTechnique": "Burning Ash: Ignite",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "choza-akimichi",
+        "characterName": "Chōza Akimichi",
+        "slot": 2,
+        "techniqueId": "choza-akimichi__base_2",
+        "techniqueName": "Human Boulder",
+        "originalName": "Human Boulder",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "defense",
+          "stack",
+          "channel"
+        ],
+        "upstreamCharacter": "Chōza Akimichi",
+        "upstreamTechnique": "Human Boulder",
+        "upstreamSource": "src/Game/Characters/Original/Family.hs"
+      }
+    ]
+  },
+  "trap-counter": {
+    "rows": 108,
+    "engineSupported": true,
+    "withEffectMismatch": 108,
+    "withoutEffectMismatch": 0,
+    "exclusiveBlocker": 46,
+    "structuralDimensions": {
+      "CUSTO_ERRADO": 11,
+      "COOLDOWN_ERRADO": 3,
+      "DANO_ERRADO": 7,
+      "ALVO_ERRADO": 60,
+      "DURAÇÃO_ERRADA": 43
+    },
+    "heldStructuralDimensions": {
+      "CUSTO_ERRADO": 11,
+      "COOLDOWN_ERRADO": 3,
+      "DANO_ERRADO": 7,
+      "ALVO_ERRADO": 60,
+      "DURAÇÃO_ERRADA": 43
+    },
+    "samples": [
+      {
+        "characterId": "a-(r)",
+        "characterName": "A",
+        "slot": 2,
+        "techniqueId": "a-(r)__base_2",
+        "techniqueName": "Three-Fingered Assault",
+        "originalName": "Three-Fingered Assault",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "CUSTO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "structuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "CUSTO_ERRADO",
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "CUSTO_ERRADO": [
+            "alternate"
+          ],
+          "ALVO_ERRADO": [
+            "alternate",
+            "stack",
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "alternate",
+          "stack",
+          "trap-counter"
+        ],
+        "upstreamCharacter": "A",
+        "upstreamTechnique": "Three-Fingered Assault",
+        "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 1,
+        "techniqueId": "animal-path-pain-(s)__base_1",
+        "techniqueName": "Summoning: Giant Centipede",
+        "originalName": "Summoning: Giant Centipede",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "alternate",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stun",
+          "alternate",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Centipede",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "animal-path-pain-(s)",
+        "characterName": "Animal Path Pain",
+        "slot": 4,
+        "techniqueId": "animal-path-pain-(s)__base_4",
+        "techniqueName": "Summoning: Giant Multi-Headed Dog",
+        "originalName": "Summoning: Giant Multi-Headed Dog",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "stack",
+            "trap-counter",
+            "channel"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "stack",
+          "trap-counter",
+          "channel"
+        ],
+        "upstreamCharacter": "Animal Path Pain",
+        "upstreamTechnique": "Summoning: Giant Multi-Headed Dog",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "ao-(s)",
+        "characterName": "Ao",
+        "slot": 3,
+        "techniqueId": "ao-(s)__base_3",
+        "techniqueName": "Barrier Talisman",
+        "originalName": "Barrier Talisman",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "exhaust",
+          "trap-counter"
+        ],
+        "upstreamCharacter": "Ao",
+        "upstreamTechnique": "Barrier Talisman",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "aoba-yamashiro",
+        "characterName": "Aoba Yamashiro",
+        "slot": 2,
+        "techniqueId": "aoba-yamashiro__base_2",
+        "techniqueName": "Revenge of the Murder",
+        "originalName": "Revenge of the Murder",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "bomb"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "focus",
+          "trap-counter",
+          "invulnerable",
+          "bomb"
+        ],
+        "upstreamCharacter": "Aoba Yamashiro",
+        "upstreamTechnique": "Revenge of the Murder",
+        "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
+      },
+      {
+        "characterId": "asura-path-pain-(s)",
+        "characterName": "Asura Path Pain",
+        "slot": 1,
+        "techniqueId": "asura-path-pain-(s)__base_1",
+        "techniqueName": "Metal Blade",
+        "originalName": "Metal Blade",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter"
+        ],
+        "structuralDimensions": [],
+        "heldStructuralDimensions": [],
+        "dimensionBlockers": {},
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "dot"
+        ],
+        "upstreamCharacter": "Asura Path Pain",
+        "upstreamTechnique": "Metal Blade",
+        "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
+      },
+      {
+        "characterId": "atsui-(s)",
+        "characterName": "Atsui",
+        "slot": 2,
+        "techniqueId": "atsui-(s)__base_2",
+        "techniqueName": "Fire Wall",
+        "originalName": "Fire Wall",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter",
+          "dynamic-change"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter",
+            "dynamic-change"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "dot",
+          "dynamic-change"
+        ],
+        "upstreamCharacter": "Atsui",
+        "upstreamTechnique": "Fire Wall",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      },
+      {
+        "characterId": "c-(s)",
+        "characterName": "C",
+        "slot": 1,
+        "techniqueId": "c-(s)__base_1",
+        "techniqueName": "Técnica Sensorial",
+        "originalName": "Sensory Technique",
+        "classifications": [
+          "EFEITO_ERRADO",
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA",
+          "DESCRIÇÃO_ERRADA"
+        ],
+        "blockers": [
+          "trap-counter"
+        ],
+        "structuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "heldStructuralDimensions": [
+          "ALVO_ERRADO",
+          "DURAÇÃO_ERRADA"
+        ],
+        "dimensionBlockers": {
+          "ALVO_ERRADO": [
+            "trap-counter"
+          ],
+          "DURAÇÃO_ERRADA": [
+            "trap-counter"
+          ]
+        },
+        "upstreamCategories": [
+          "damage",
+          "trap-counter",
+          "invulnerable"
+        ],
+        "upstreamCharacter": "C",
+        "upstreamTechnique": "Sensory Technique",
+        "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs"
+      }
+    ]
+  }
+}

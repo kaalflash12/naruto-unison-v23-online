@@ -1,0 +1,250 @@
+{
+  "generatedAt": "2026-08-27T10:33:36.141Z",
+  "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
+  "complexRows": 710,
+  "withEffectMismatch": 701,
+  "withoutEffectMismatch": 9,
+  "blockerFreeComplexRows": 326,
+  "allBlockersEngineSupported": true,
+  "supportedBlockerRowsWithoutEffectMismatch": 9,
+  "structuralDimensionCounts": {
+    "CUSTO_ERRADO": 153,
+    "COOLDOWN_ERRADO": 22,
+    "DANO_ERRADO": 26,
+    "ALVO_ERRADO": 322,
+    "DURAÇÃO_ERRADA": 353
+  },
+  "heldStructuralDimensionCounts": {
+    "CUSTO_ERRADO": 153,
+    "COOLDOWN_ERRADO": 22,
+    "DANO_ERRADO": 26,
+    "ALVO_ERRADO": 322,
+    "DURAÇÃO_ERRADA": 353
+  },
+  "blockerCounts": {
+    "alternate": 88,
+    "bomb": 42,
+    "channel": 111,
+    "charges": 15,
+    "dynamic-change": 54,
+    "interrupt": 2,
+    "redirect": 3,
+    "reflect": 6,
+    "requirement": 58,
+    "sacrifice": 19,
+    "stack": 85,
+    "trap-counter": 108
+  },
+  "topIntersections": [
+    {
+      "blockers": [
+        "trap-counter"
+      ],
+      "rows": 46
+    },
+    {
+      "blockers": [
+        "channel"
+      ],
+      "rows": 44
+    },
+    {
+      "blockers": [
+        "stack"
+      ],
+      "rows": 39
+    },
+    {
+      "blockers": [
+        "dynamic-change"
+      ],
+      "rows": 27
+    },
+    {
+      "blockers": [
+        "alternate"
+      ],
+      "rows": 24
+    },
+    {
+      "blockers": [
+        "requirement"
+      ],
+      "rows": 23
+    },
+    {
+      "blockers": [
+        "alternate",
+        "channel"
+      ],
+      "rows": 20
+    },
+    {
+      "blockers": [
+        "bomb"
+      ],
+      "rows": 15
+    },
+    {
+      "blockers": [
+        "alternate",
+        "trap-counter"
+      ],
+      "rows": 8
+    },
+    {
+      "blockers": [
+        "sacrifice"
+      ],
+      "rows": 7
+    },
+    {
+      "blockers": [
+        "stack",
+        "trap-counter"
+      ],
+      "rows": 7
+    },
+    {
+      "blockers": [
+        "alternate",
+        "sacrifice"
+      ],
+      "rows": 6
+    },
+    {
+      "blockers": [
+        "alternate",
+        "stack",
+        "trap-counter"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "bomb",
+        "trap-counter"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "channel",
+        "dynamic-change"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "channel",
+        "requirement"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "channel",
+        "stack"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "charges"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "requirement",
+        "stack"
+      ],
+      "rows": 5
+    },
+    {
+      "blockers": [
+        "alternate",
+        "bomb"
+      ],
+      "rows": 4
+    },
+    {
+      "blockers": [
+        "dynamic-change",
+        "requirement"
+      ],
+      "rows": 4
+    },
+    {
+      "blockers": [
+        "requirement",
+        "trap-counter"
+      ],
+      "rows": 4
+    },
+    {
+      "blockers": [
+        "alternate",
+        "channel",
+        "stack"
+      ],
+      "rows": 3
+    },
+    {
+      "blockers": [
+        "bomb",
+        "requirement"
+      ],
+      "rows": 3
+    },
+    {
+      "blockers": [
+        "channel",
+        "charges"
+      ],
+      "rows": 3
+    },
+    {
+      "blockers": [
+        "channel",
+        "dynamic-change",
+        "trap-counter"
+      ],
+      "rows": 3
+    },
+    {
+      "blockers": [
+        "channel",
+        "stack",
+        "trap-counter"
+      ],
+      "rows": 3
+    },
+    {
+      "blockers": [
+        "alternate",
+        "channel",
+        "requirement"
+      ],
+      "rows": 2
+    },
+    {
+      "blockers": [
+        "alternate",
+        "channel",
+        "stack",
+        "trap-counter"
+      ],
+      "rows": 2
+    },
+    {
+      "blockers": [
+        "alternate",
+        "channel",
+        "trap-counter"
+      ],
+      "rows": 2
+    }
+  ],
+  "gate": "PASS"
+}
