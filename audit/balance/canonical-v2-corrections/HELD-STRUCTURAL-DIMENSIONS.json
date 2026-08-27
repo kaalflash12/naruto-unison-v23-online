@@ -14,7 +14,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -42,14 +41,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2,
@@ -71,7 +62,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -82,22 +72,18 @@
       "expose",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -272,7 +258,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -294,10 +279,6 @@
           "ally"
         ]
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 0
-      },
       "effectNumeric": {
         "heal": {
           "local": [
@@ -313,28 +294,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "heal"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -354,7 +330,6 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -367,14 +342,6 @@
         ],
         "upstream": [
           "reduction"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -403,7 +370,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -411,20 +377,16 @@
     "upstreamCategories": [
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -1162,7 +1124,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -1184,14 +1145,6 @@
         ],
         "upstream": [
           "self"
-        ]
-      },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -1217,7 +1170,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -1225,22 +1177,18 @@
     "upstreamCategories": [
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -1503,7 +1451,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1529,10 +1476,6 @@
           "self"
         ]
       },
-      "cooldown": {
-        "local": 3,
-        "upstream": 2
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -1545,8 +1488,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -1556,14 +1498,11 @@
       "trap-counter",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -1572,7 +1511,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ]
@@ -1595,7 +1533,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -1618,10 +1555,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 3,
-        "upstream": 0
-      },
       "effectNumeric": {
         "reduction": {
           "local": [
@@ -1633,8 +1566,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
@@ -1642,14 +1574,11 @@
       "stack",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -1658,7 +1587,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -1679,7 +1607,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -1707,10 +1634,6 @@
           "enemies"
         ]
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
-      },
       "duration": {
         "local": [
           1,
@@ -1729,7 +1652,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DURAÇÃO_ERRADA",
           "DANO_ERRADO"
         ]
@@ -1741,16 +1663,13 @@
       "invulnerable",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO",
@@ -1760,7 +1679,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "DANO_ERRADO": [
         "channel"
       ],
@@ -1939,7 +1857,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -1953,16 +1870,6 @@
         "upstream": [
           "damage",
           "dot"
-        ]
-      },
-      "cost": {
-        "local": [
-          "blood",
-          "nin"
-        ],
-        "upstream": [
-          "nin",
-          "rand"
         ]
       },
       "duration": {
@@ -1984,7 +1891,6 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -1993,20 +1899,16 @@
       "damage",
       "dot"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -2027,7 +1929,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -2051,10 +1952,6 @@
           "enemies"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -2069,8 +1966,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -2079,14 +1975,11 @@
       "dot",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -2094,7 +1987,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [
         "bomb"
       ]
@@ -2318,7 +2210,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -2341,10 +2232,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 34,
-        "upstream": 30
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -2357,8 +2244,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -2366,20 +2252,16 @@
       "damage",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -3399,7 +3281,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -3427,16 +3308,6 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -3458,7 +3329,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -3470,15 +3340,12 @@
       "invulnerable",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -3487,7 +3354,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ],
@@ -3833,7 +3699,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -3858,16 +3723,11 @@
           3
         ]
       },
-      "damage": {
-        "local": 18,
-        "upstream": 20
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -3875,20 +3735,16 @@
       "damage",
       "dot"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -3909,7 +3765,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -3932,14 +3787,6 @@
         ],
         "upstream": [
           "self"
-        ]
-      },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "gen"
         ]
       },
       "duration": {
@@ -3965,7 +3812,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -3974,22 +3820,18 @@
       "damage",
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -4529,7 +4371,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -4548,38 +4389,25 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -4600,7 +4428,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -4623,10 +4450,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 34,
-        "upstream": 35
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -4639,8 +4462,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -4648,20 +4470,16 @@
       "damage",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -4783,7 +4601,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -4805,40 +4622,27 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -5104,7 +4908,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5126,42 +4929,27 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -5182,7 +4970,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5204,30 +4991,22 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -5235,7 +5014,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ]
@@ -5257,7 +5035,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -5272,14 +5049,6 @@
           "damage",
           "reduction",
           "dot"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -5314,7 +5083,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -5324,20 +5092,16 @@
       "reduction",
       "dot"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -5521,7 +5285,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5543,16 +5306,6 @@
           "ally"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -5566,28 +5319,23 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "defense"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -5773,7 +5521,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -5795,10 +5542,6 @@
           "ally"
         ]
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 0
-      },
       "effectNumeric": {
         "heal": {
           "local": [
@@ -5814,28 +5557,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "heal"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -5999,7 +5737,6 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -6015,16 +5752,6 @@
           "channel"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -6037,7 +5764,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -6047,14 +5773,11 @@
       "stun",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -6062,7 +5785,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "channel"
       ]
@@ -6311,7 +6033,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -6325,16 +6046,6 @@
           "damage",
           "stun",
           "dot"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
         ]
       },
       "duration": {
@@ -6357,7 +6068,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -6367,20 +6077,16 @@
       "stun",
       "dot"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -6799,7 +6505,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -6825,16 +6530,11 @@
           1
         ]
       },
-      "damage": {
-        "local": 20,
-        "upstream": 25
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -6844,20 +6544,16 @@
       "expose",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -7276,7 +6972,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -7301,14 +6996,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -7323,8 +7010,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -7333,20 +7019,16 @@
       "defense",
       "weaken"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -7750,7 +7432,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -7775,14 +7456,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -7796,7 +7469,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -7806,15 +7478,12 @@
       "reduction",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -7823,7 +7492,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ],
@@ -8585,7 +8253,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -8610,14 +8277,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -8631,7 +8290,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -8642,15 +8300,12 @@
       "invulnerable",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -8660,7 +8315,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter",
         "bomb"
@@ -8780,7 +8434,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -8803,10 +8456,6 @@
           "enemy"
         ]
       },
-      "damage": {
-        "local": 21,
-        "upstream": 25
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -8819,28 +8468,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "DANO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -9071,7 +8715,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -9087,14 +8730,6 @@
           "bomb"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -9107,7 +8742,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -9117,14 +8751,11 @@
       "weaken",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -9132,7 +8763,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "bomb"
       ]
@@ -9702,7 +9332,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -9723,34 +9352,22 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -9758,7 +9375,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -9931,7 +9547,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -9953,20 +9568,11 @@
           "ally"
         ]
       },
-      "cost": {
-        "local": [
-          "tai"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -9974,14 +9580,11 @@
       "damage",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -9989,7 +9592,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ]
@@ -10012,7 +9614,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -10036,16 +9637,6 @@
         "upstream": [
           "self",
           "enemy"
-        ]
-      },
-      "cost": {
-        "local": [
-          "tai",
-          "tai"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
         ]
       },
       "duration": {
@@ -10073,7 +9664,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA",
           "DANO_ERRADO"
         ]
@@ -10083,16 +9673,13 @@
       "damage",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO",
@@ -10102,7 +9689,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DANO_ERRADO": [
         "channel"
       ],
@@ -10671,7 +10257,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -10686,10 +10271,6 @@
           "damage",
           "bomb"
         ]
-      },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
       },
       "damage": {
         "local": 44,
@@ -10706,7 +10287,6 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "COOLDOWN_ERRADO",
           "DANO_ERRADO"
         ]
       }
@@ -10715,14 +10295,11 @@
       "damage",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DANO_ERRADO"
     ],
@@ -10730,7 +10307,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "DANO_ERRADO": [
         "bomb"
       ]
@@ -11131,7 +10707,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11156,10 +10731,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -11171,8 +10742,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -11181,14 +10751,11 @@
       "reduction",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -11196,7 +10763,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [
         "bomb"
       ]
@@ -11362,7 +10928,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -11377,14 +10942,6 @@
           "exhaust",
           "dot",
           "channel"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -11407,7 +10964,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -11418,14 +10974,11 @@
       "dot",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -11433,7 +10986,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "channel"
       ]
@@ -11754,7 +11306,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11772,10 +11323,6 @@
         ],
         "upstream": []
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 0
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -11788,27 +11335,22 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "CUSTO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
+      "CUSTO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "CUSTO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
-      "COOLDOWN_ERRADO": []
+      "CUSTO_ERRADO": []
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11829,7 +11371,6 @@
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -11858,10 +11399,6 @@
         ],
         "upstream": []
       },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -11874,23 +11411,19 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "CUSTO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "CUSTO_ERRADO",
       "ALVO_ERRADO"
@@ -11900,7 +11433,6 @@
     ],
     "dimensionBlockers": {
       "CUSTO_ERRADO": [],
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -13185,7 +12717,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -13209,20 +12740,11 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -13232,20 +12754,16 @@
       "strengthen",
       "focus"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -15047,7 +14565,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -15070,20 +14587,11 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -15091,14 +14599,11 @@
       "stack",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -15107,7 +14612,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ]
@@ -15479,7 +14983,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -15491,14 +14994,6 @@
         ],
         "upstream": [
           "damage"
-        ]
-      },
-      "cost": {
-        "local": [
-          "gen"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -15513,7 +15008,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -15521,20 +15015,16 @@
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -16215,7 +15705,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -16240,14 +15729,6 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -16269,7 +15750,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -16279,15 +15759,12 @@
       "reduction",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -16296,7 +15773,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ],
@@ -16567,7 +16043,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -16589,20 +16064,11 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -16610,14 +16076,11 @@
       "stack",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -16626,7 +16089,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ]
@@ -16649,7 +16111,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -16674,14 +16135,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -16703,7 +16156,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -16712,15 +16164,12 @@
       "invulnerable",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -16729,7 +16178,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ],
@@ -16754,7 +16202,6 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -16767,14 +16214,6 @@
         ],
         "upstream": [
           "invulnerable"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -16797,7 +16236,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -16805,20 +16243,16 @@
     "upstreamCategories": [
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -17259,7 +16693,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Adults.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -17274,16 +16707,6 @@
           "weaken"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -17296,7 +16719,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -17305,20 +16727,16 @@
       "damage",
       "weaken"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -17592,7 +17010,6 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -17610,14 +17027,6 @@
           "invulnerable"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -17630,7 +17039,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -17642,14 +17050,11 @@
       "trap-counter",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -17657,7 +17062,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter"
       ]
@@ -18169,7 +17573,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -18195,14 +17598,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -18217,8 +17612,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -18228,14 +17622,11 @@
       "bomb",
       "interrupt"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -18244,7 +17635,6 @@
       "interrupt"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "bomb"
       ]
@@ -18729,7 +18119,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -18759,16 +18148,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -18792,7 +18171,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -18806,15 +18184,12 @@
       "requirement",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -18826,7 +18201,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter",
         "channel"
@@ -18854,7 +18228,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -18877,10 +18250,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 36,
-        "upstream": 40
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -18893,8 +18262,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -18902,20 +18270,16 @@
       "damage",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -19498,7 +18862,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19522,36 +18885,27 @@
           2
         ]
       },
-      "damage": {
-        "local": 20,
-        "upstream": 35
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -19571,7 +18925,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -19584,10 +18937,6 @@
         "upstream": [
           "ally"
         ]
-      },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
       },
       "effectNumeric": {
         "heal": {
@@ -19604,7 +18953,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "EFEITO_ERRADO"
         ]
       }
@@ -19613,20 +18961,16 @@
       "heal",
       "cleanse"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -19824,7 +19168,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -19849,16 +19192,11 @@
           1
         ]
       },
-      "damage": {
-        "local": 32,
-        "upstream": 40
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -19868,20 +19206,16 @@
       "cleanse",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -20297,7 +19631,6 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -20312,14 +19645,6 @@
           "damage",
           "defense",
           "strengthen"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -20344,7 +19669,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -20354,20 +19678,16 @@
       "defense",
       "strengthen"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -20468,7 +19788,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -20485,14 +19804,6 @@
           "channel"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -20505,7 +19816,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -20516,14 +19826,11 @@
       "trap-counter",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -20533,7 +19840,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter",
         "channel"
@@ -20668,7 +19974,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -20691,10 +19996,6 @@
           "ally"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "duration": {
         "local": [
           2
@@ -20708,7 +20009,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -20717,22 +20017,18 @@
       "defense",
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -20753,7 +20049,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -20768,14 +20063,6 @@
           "trap-counter"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -20788,7 +20075,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -20797,14 +20083,11 @@
       "exhaust",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -20812,7 +20095,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter"
       ]
@@ -20900,7 +20182,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -20925,10 +20206,6 @@
           "self"
         ]
       },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
-      },
       "effectNumeric": {
         "heal": {
           "local": [
@@ -20949,8 +20226,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -20958,14 +20234,11 @@
       "heal",
       "sacrifice"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -20973,7 +20246,6 @@
       "sacrifice"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -21076,7 +20348,6 @@
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21109,10 +20380,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 16,
-        "upstream": 5
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -21125,8 +20392,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "ALVO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -21134,22 +20400,18 @@
       "damage",
       "weaken"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -21276,7 +20538,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -21303,16 +20564,6 @@
           "allies-except-self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -21332,8 +20583,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
@@ -21344,14 +20594,11 @@
       "strengthen",
       "charges"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -21359,7 +20606,6 @@
       "charges"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -21554,7 +20800,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -21580,10 +20825,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "duration": {
         "local": [
           2
@@ -21604,7 +20845,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -21615,15 +20855,12 @@
       "invulnerable",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -21632,7 +20869,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -23008,7 +22244,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -23034,14 +22269,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "gen"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -23062,7 +22289,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -23072,15 +22298,12 @@
       "stack",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -23089,7 +22312,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -23111,8 +22333,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -23141,18 +22361,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
-      "cooldown": {
-        "local": 2,
-        "upstream": 1
-      },
       "damage": {
         "local": 17,
         "upstream": 10
@@ -23162,8 +22370,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DANO_ERRADO"
         ]
       }
@@ -23175,17 +22381,12 @@
       "stack",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
@@ -23194,8 +22395,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
-      "COOLDOWN_ERRADO": [],
       "DANO_ERRADO": [
         "stack"
       ],
@@ -25403,7 +24602,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25426,16 +24624,11 @@
           1
         ]
       },
-      "damage": {
-        "local": 19,
-        "upstream": 20
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25443,20 +24636,16 @@
       "damage",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -25478,7 +24667,6 @@
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25510,10 +24698,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 24,
-        "upstream": 15
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -25527,8 +24711,7 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -25536,22 +24719,18 @@
       "damage",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -25893,7 +25072,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -25916,14 +25094,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "heal": {
           "local": [],
@@ -25942,8 +25112,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -25951,14 +25120,11 @@
       "heal",
       "sacrifice"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -25966,7 +25132,6 @@
       "sacrifice"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -26159,7 +25324,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -26181,14 +25345,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2,
@@ -26202,28 +25358,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
     },
     "upstreamCategories": [],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -26331,7 +25482,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -26355,16 +25505,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "blood",
-          "nin"
-        ],
-        "upstream": [
-          "blood",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -26377,8 +25517,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -26386,14 +25525,11 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -26401,7 +25537,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -26422,7 +25557,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -26445,14 +25579,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -26466,7 +25592,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -26475,22 +25600,18 @@
       "reduction",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -27054,7 +26175,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -27079,21 +26199,11 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "blood",
-          "gen"
-        ],
-        "upstream": [
-          "gen"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -27102,14 +26212,11 @@
       "stack",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -27117,7 +26224,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -27451,7 +26557,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -27476,10 +26581,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 6,
-        "upstream": 2
-      },
       "damage": {
         "local": 50,
         "upstream": 30
@@ -27497,7 +26598,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DANO_ERRADO"
         ]
       }
@@ -27506,15 +26606,12 @@
       "damage",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DANO_ERRADO",
       "ALVO_ERRADO"
@@ -27523,7 +26620,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "DANO_ERRADO": [
         "trap-counter"
       ],
@@ -28343,7 +27439,6 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -28356,14 +27451,6 @@
         "upstream": [
           "damage",
           "reduction"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -28386,7 +27473,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -28395,20 +27481,16 @@
       "damage",
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -28429,7 +27511,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -28455,16 +27536,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -28476,8 +27547,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
@@ -28488,14 +27558,11 @@
       "invulnerable",
       "redirect"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -28503,7 +27570,6 @@
       "redirect"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "redirect"
       ]
@@ -28526,7 +27592,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -28553,14 +27618,6 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -28582,7 +27639,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -28594,15 +27650,12 @@
       "stack",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -28612,7 +27665,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -29914,7 +28966,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -29928,16 +28979,6 @@
         "upstream": [
           "reduction",
           "cleanse"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
         ]
       },
       "duration": {
@@ -29966,7 +29007,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -29975,20 +29015,16 @@
       "reduction",
       "cleanse"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -30284,7 +29320,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -30311,14 +29346,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2,
@@ -30341,7 +29368,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -30352,15 +29378,12 @@
       "strengthen",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -30369,7 +29392,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ],
@@ -30873,7 +29895,6 @@
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -30907,17 +29928,12 @@
           1
         ]
       },
-      "damage": {
-        "local": 24,
-        "upstream": 35
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -30926,22 +29942,18 @@
       "expose",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -31024,7 +30036,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31049,14 +30060,6 @@
           "ally"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -31069,8 +30072,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -31080,14 +30082,11 @@
       "trap-counter",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -31097,7 +30096,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter",
         "bomb"
@@ -31373,7 +30371,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -31398,10 +30395,6 @@
           "enemies"
         ]
       },
-      "damage": {
-        "local": 17,
-        "upstream": 10
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -31416,8 +30409,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "DANO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -31425,20 +30417,16 @@
       "damage",
       "defense"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -32001,7 +30989,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -32013,14 +31000,6 @@
         ],
         "upstream": [
           "stun"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -32035,7 +31014,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -32043,20 +31021,16 @@
     "upstreamCategories": [
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -32267,7 +31241,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Versions.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -32283,14 +31256,6 @@
           "trap-counter"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -32303,7 +31268,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -32313,14 +31277,11 @@
       "stun",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -32328,7 +31289,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter"
       ]
@@ -32469,7 +31429,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32492,22 +31451,11 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -32515,14 +31463,11 @@
       "damage",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -32530,7 +31475,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "trap-counter"
       ]
@@ -32697,7 +31641,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -32719,16 +31662,11 @@
           "self"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -32736,14 +31674,11 @@
       "charges",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -32752,7 +31687,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ]
@@ -33160,7 +32094,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -33186,16 +32119,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -33209,8 +32132,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
@@ -33220,14 +32142,11 @@
       "dot",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -33235,7 +32154,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ]
@@ -33349,7 +32267,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -33374,10 +32291,6 @@
           "enemies"
         ]
       },
-      "damage": {
-        "local": 23,
-        "upstream": 40
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -33389,8 +32302,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "ALVO_ERRADO",
-          "DANO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -33399,20 +32311,16 @@
       "defense",
       "demolish"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -33635,7 +32543,6 @@
     "upstreamSource": "src/Game/Characters/Original/Flashbacks.hs",
     "classifications": [
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "EFEITO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -33648,10 +32555,6 @@
         "upstream": [
           "ally"
         ]
-      },
-      "cooldown": {
-        "local": 2,
-        "upstream": 0
       },
       "effectNumeric": {
         "heal": {
@@ -33668,7 +32571,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "EFEITO_ERRADO"
         ]
       }
@@ -33677,20 +32579,16 @@
       "heal",
       "cleanse"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -33711,7 +32609,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -33734,16 +32631,6 @@
         ],
         "upstream": [
           "ally"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
         ]
       },
       "duration": {
@@ -33775,7 +32662,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -33783,22 +32669,18 @@
     "upstreamCategories": [
       "heal"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -33901,7 +32783,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -33925,10 +32806,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "duration": {
         "local": [
           2
@@ -33942,7 +32819,6 @@
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -33951,22 +32827,18 @@
       "damage",
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -33988,7 +32860,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -34010,16 +32881,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "defense": {
           "local": [
@@ -34032,28 +32893,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -34299,7 +33155,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -34323,10 +33178,6 @@
           1
         ]
       },
-      "damage": {
-        "local": 41,
-        "upstream": 45
-      },
       "effectNumeric": {
         "execute": {
           "local": [
@@ -34339,8 +33190,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -34349,20 +33199,16 @@
       "expose",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -35557,7 +34403,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -35578,16 +34423,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "heal": {
           "local": [],
@@ -35600,28 +34435,23 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "heal"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -35956,7 +34786,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -35979,10 +34808,6 @@
           "self"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "effectNumeric": {
         "heal": {
           "local": [],
@@ -36001,8 +34826,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -36010,20 +34834,16 @@
       "heal",
       "cleanse"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -36043,7 +34863,6 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -36056,14 +34875,6 @@
         ],
         "upstream": [
           "reduction"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -36092,7 +34903,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -36100,20 +34910,16 @@
     "upstreamCategories": [
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -36133,7 +34939,6 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -36144,16 +34949,6 @@
           "stack"
         ],
         "upstream": []
-      },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
       },
       "duration": {
         "local": [
@@ -36167,26 +34962,21 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
     },
     "upstreamCategories": [],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -36206,7 +34996,6 @@
     "upstreamSource": "src/Game/Characters/Reanimated/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -36222,14 +35011,6 @@
           "weaken"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -36242,7 +35023,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -36252,20 +35032,16 @@
       "stun",
       "weaken"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -36521,7 +35297,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -36548,16 +35323,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "dot": {
           "local": [],
@@ -36577,8 +35342,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "EFEITO_ERRADO",
-          "CUSTO_ERRADO"
+          "EFEITO_ERRADO"
         ]
       }
     },
@@ -36589,14 +35353,11 @@
       "requirement",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -36605,7 +35366,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "channel"
       ]
@@ -36991,8 +35751,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -37016,14 +35774,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 4,
-        "upstream": 0
-      },
-      "damage": {
-        "local": 33,
-        "upstream": 60
-      },
       "effectNumeric": {
         "execute": {
           "local": [
@@ -37036,9 +35786,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
-          "DANO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -37046,16 +35794,11 @@
       "damage",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
-      "DANO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO",
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -37063,8 +35806,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -37160,7 +35901,6 @@
     "upstreamSource": "src/Game/Characters/Original/Exams.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -37174,10 +35914,6 @@
         "upstream": [
           "reduction"
         ]
-      },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
       },
       "duration": {
         "local": [
@@ -37199,7 +35935,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "COOLDOWN_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -37207,20 +35942,16 @@
     "upstreamCategories": [
       "reduction"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -37241,7 +35972,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -37264,20 +35994,11 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -37285,14 +36006,11 @@
       "damage",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -37300,7 +36018,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -37579,7 +36296,6 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -37594,14 +36310,6 @@
           "damage",
           "defense",
           "trap-counter"
-        ]
-      },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -37624,7 +36332,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -37634,14 +36341,11 @@
       "defense",
       "trap-counter"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -37649,7 +36353,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter"
       ]
@@ -37839,7 +36542,6 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -37854,14 +36556,6 @@
           "weaken"
         ]
       },
-      "cost": {
-        "local": [
-          "blood"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -37874,7 +36568,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -37883,20 +36576,16 @@
       "damage",
       "weaken"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -38246,7 +36935,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -38261,14 +36949,6 @@
           "damage",
           "trap-counter",
           "invulnerable"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -38291,7 +36971,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -38301,14 +36980,11 @@
       "trap-counter",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -38316,7 +36992,6 @@
       "trap-counter"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "trap-counter"
       ]
@@ -38338,7 +37013,6 @@
     "upstreamSource": "src/Game/Characters/Original/Teachers.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -38354,14 +37028,6 @@
           "requirement"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -38374,7 +37040,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -38384,14 +37049,11 @@
       "dot",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -38399,7 +37061,6 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -38916,7 +37577,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Organizations.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -38932,16 +37592,6 @@
           "stun",
           "invulnerable",
           "channel"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
         ]
       },
       "duration": {
@@ -38966,7 +37616,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -38977,14 +37626,11 @@
       "invulnerable",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -38992,7 +37638,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "channel"
       ]
@@ -39331,9 +37976,7 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -39357,10 +38000,6 @@
           "enemy"
         ]
       },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "duration": {
         "local": [
           1,
@@ -39370,18 +38009,12 @@
           1
         ]
       },
-      "damage": {
-        "local": 28,
-        "upstream": 20
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "COOLDOWN_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -39389,25 +38022,18 @@
       "damage",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
-      "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO",
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -39878,7 +38504,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -39901,36 +38526,27 @@
           "enemies"
         ]
       },
-      "cooldown": {
-        "local": 5,
-        "upstream": 0
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -39951,7 +38567,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -39975,20 +38590,11 @@
           "enemies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -39997,14 +38603,11 @@
       "weaken",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -40012,7 +38615,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -40032,7 +38634,6 @@
     "upstreamSource": "src/Game/Characters/Original/Kids.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -40047,14 +38648,6 @@
           "defense",
           "stack",
           "invulnerable"
-        ]
-      },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
         ]
       },
       "duration": {
@@ -40077,7 +38670,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -40087,14 +38679,11 @@
       "stack",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -40102,7 +38691,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -40328,7 +38916,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -40351,14 +38938,6 @@
           "allies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -40379,7 +38958,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -40387,22 +38965,18 @@
     "upstreamCategories": [
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -40510,7 +39084,6 @@
     "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -40529,16 +39102,6 @@
           "invulnerable"
         ]
       },
-      "cost": {
-        "local": [
-          "blood",
-          "gen"
-        ],
-        "upstream": [
-          "gen",
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -40551,7 +39114,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -40563,20 +39125,16 @@
       "dispel",
       "invulnerable"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -40597,7 +39155,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -40620,22 +39177,11 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "blood",
-          "gen"
-        ],
-        "upstream": [
-          "blood",
-          "blood"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -40644,14 +39190,11 @@
       "charges",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -40661,7 +39204,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "bomb"
       ]
@@ -41004,8 +39546,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -41028,18 +39568,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
-      "cooldown": {
-        "local": 1,
-        "upstream": 0
-      },
       "effectNumeric": {
         "dot": {
           "local": [
@@ -41051,32 +39579,23 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO",
-          "COOLDOWN_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
     "upstreamCategories": [
       "damage"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO",
-      "COOLDOWN_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
-      "COOLDOWN_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -41885,7 +40404,6 @@
     "upstreamSource": "src/Game/Characters/Original/Family.hs",
     "classifications": [
       "EFEITO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -41901,14 +40419,6 @@
           "channel"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -41921,7 +40431,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -41931,14 +40440,11 @@
       "stun",
       "channel"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
@@ -41946,7 +40452,6 @@
       "channel"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": [
         "channel"
       ]
@@ -41969,7 +40474,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DURAÇÃO_ERRADA",
       "DESCRIÇÃO_ERRADA"
     ],
@@ -41994,14 +40498,6 @@
           "allies"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "duration": {
         "local": [
           2
@@ -42022,7 +40518,6 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "CUSTO_ERRADO",
           "DURAÇÃO_ERRADA"
         ]
       }
@@ -42032,15 +40527,12 @@
       "charges",
       "bomb"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
@@ -42050,7 +40542,6 @@
       "bomb"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
         "bomb"
       ],
@@ -42242,7 +40733,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -42265,14 +40755,6 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "heal": {
           "local": [],
@@ -42292,8 +40774,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -42301,14 +40782,11 @@
       "heal",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -42316,7 +40794,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -43055,7 +41532,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43080,16 +41556,6 @@
           "enemy"
         ]
       },
-      "cost": {
-        "local": [
-          "nin",
-          "nin"
-        ],
-        "upstream": [
-          "rand",
-          "rand"
-        ]
-      },
       "effectNumeric": {
         "dot": {
           "local": [],
@@ -43102,8 +41568,7 @@
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -43113,14 +41578,11 @@
       "dot",
       "sacrifice"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -43128,7 +41590,6 @@
       "sacrifice"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -43395,7 +41856,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
-      "CUSTO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43417,20 +41877,11 @@
           "self"
         ]
       },
-      "cost": {
-        "local": [
-          "nin"
-        ],
-        "upstream": [
-          "rand"
-        ]
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "ALVO_ERRADO",
-          "CUSTO_ERRADO"
+          "ALVO_ERRADO"
         ]
       }
     },
@@ -43438,14 +41889,11 @@
       "focus",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "CUSTO_ERRADO",
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
-      "CUSTO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
@@ -43453,7 +41901,6 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "CUSTO_ERRADO": [],
       "ALVO_ERRADO": []
     },
     "requiresManualSemantics": true,
@@ -43637,7 +42084,6 @@
       "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -43671,17 +42117,12 @@
           1
         ]
       },
-      "damage": {
-        "local": 24,
-        "upstream": 20
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
           "ALVO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -43691,22 +42132,18 @@
       "weaken",
       "strengthen"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "ALVO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "ALVO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
@@ -44377,7 +42814,6 @@
     "classifications": [
       "EFEITO_ERRADO",
       "DURAÇÃO_ERRADA",
-      "DANO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
@@ -44400,16 +42836,11 @@
           1
         ]
       },
-      "damage": {
-        "local": 21,
-        "upstream": 10
-      },
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
           "EFEITO_ERRADO",
-          "DURAÇÃO_ERRADA",
-          "DANO_ERRADO"
+          "DURAÇÃO_ERRADA"
         ]
       }
     },
@@ -44417,20 +42848,16 @@
       "damage",
       "stun"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
-      "DANO_ERRADO",
       "DURAÇÃO_ERRADA"
     ],
-    "safeStructuralDimensions": [
-      "DANO_ERRADO"
-    ],
+    "safeStructuralDimensions": [],
     "heldStructuralDimensions": [
       "DURAÇÃO_ERRADA"
     ],
     "blockers": [],
     "dimensionBlockers": {
-      "DANO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
