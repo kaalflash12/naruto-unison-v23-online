@@ -1,0 +1,42 @@
+name: Validate Stack-Scaled Effects
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'combat-rules-v2.js'
+      - 'combat-content-adapter-v2.js'
+      - 'tools/test-content-engine-extensions-v2.cjs'
+      - '.github/workflows/validate-stack-scaled-effects.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stack-scaled-effects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-content-engine-extensions-v2.cjs
+      - name: Advanced envelope deterministic contract
+        run: node tools/test-content-engine-extensions-v2.cjs
+      - name: Canonical stack-scaling guards
+        run: |
+          set -euo pipefail
+          grep -Fq "other-enemies" combat-rules-v2.js
+          grep -Fq "amountScale" combat-rules-v2.js
+          grep -Fq "other-enemies" combat-content-adapter-v2.js
+          grep -Fq "INVALID_ENGINE_AMOUNT_SCALE" combat-content-adapter-v2.js
+          grep -Fq "Space-Time Marking" tools/test-content-engine-extensions-v2.cjs
+          grep -Fq "Cat Claws" tools/test-content-engine-extensions-v2.cjs
+          echo 'STACK_SCALED_EFFECTS=PASS'
