@@ -105,7 +105,7 @@ jobs:
           const fc=f.classificationCounts||{};
           const expectedFinal={CORRETA:16,'DESCRIÇÃO_ERRADA':693,'DANO_ERRADO':26,'EFEITO_ERRADO':701,'ALVO_ERRADO':315,'CUSTO_ERRADO':153,'COOLDOWN_ERRADO':22,'DURAÇÃO_ERRADA':353,'MOTOR_INSUFICIENTE':0};
           for(const [k,v] of Object.entries(expectedFinal))if(Number(fc[k])!==v)throw new Error(`final ${k}=${fc[k]}/${v}`);
-          if(q.gate!=='PASS'||q.total!==836||q.comparable!==719||q.correct!==16||q.actionable!==703||q.safeStructural!==0||q.complexEffect!==703)throw new Error(`queue=${JSON.stringify(q)}`);
+          if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.correct!==16||q.actionable!==703||q.safeStructural!==0||q.complexEffect!==703)throw new Error(`queue=${JSON.stringify(q)}`);
           if(q.heldStructuralDimensions!==869||q.heldStructuralRows!==542)throw new Error(`held=${q.heldStructuralRows}/${q.heldStructuralDimensions}`);
           if(q.heldStructuralDimensionCounts?.ALVO_ERRADO!==315)throw new Error(`held target=${q.heldStructuralDimensionCounts?.ALVO_ERRADO}`);
           if(q.complexBlockerCounts?.stack!==78)throw new Error(`stack blockers=${q.complexBlockerCounts?.stack}`);
