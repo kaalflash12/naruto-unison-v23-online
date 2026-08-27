@@ -10,7 +10,7 @@ assert.equal(baseAdapted.mechanic.changes,undefined,'técnica antiga não deve g
 assert.equal(baseAdapted.charges,null,'técnica antiga sem charges deve permanecer sem charges');
 assert.equal(baseAdapted.mechanic.requirements,null,'técnica antiga sem requisitos deve permanecer sem requisitos');
 
-const extended=adapter.adaptTechnique({
+const extendedSource={
   ...base,
   id:'extended',
   chakraCost:['NIN','Q'],
@@ -28,7 +28,8 @@ const extended=adapter.adaptTechnique({
       {type:'interrupt',target:'enemy',skillId:'channel-skill'}
     ]
   }
-});
+};
+const extended=adapter.adaptTechnique(extendedSource);
 assert.equal(extended.charges,2);
 assert.deepEqual(extended.mechanic.requirements,{type:'statusPresent',status:'setup'});
 assert.equal(extended.mechanic.changes.length,1);
@@ -145,7 +146,7 @@ assert.throws(()=>adapter.validateEngineChanges([{type:'made-up'}]),/UNSUPPORTED
 assert.throws(()=>adapter.validateEngineChanges([{type:'setTarget',target:'primary'}]),/INVALID_ENGINE_CHANGE_TARGET/);
 assert.throws(()=>adapter.adaptTechnique({...base,effect:{...base.effect,engineCharges:-1}}),/INVALID_ENGINE_CHARGES/);
 
-const audited=adapter.auditTechnique(extended);
+const audited=adapter.auditTechnique(extendedSource);
 assert.equal(audited.ok,true);
 assert.equal(audited.engineEffectCount,6);
 assert.equal(audited.engineChangeCount,1);
