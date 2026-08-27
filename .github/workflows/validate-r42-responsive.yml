@@ -66,8 +66,9 @@ jobs:
       - name: Current runtime loaded and mastery retained in Jutsus
         shell: bash
         run: |
-          grep -q "version:'online-r44'" online-config.js
-          grep -q 'secure-auth-adapter.js?v=20260826-r44' online-config.js
+          grep -q "version:'online-r45'" online-config.js
+          grep -q 'secure-auth-adapter.js?v=20260827-r45' online-config.js
+          grep -q "document.write('<script src=\"secure-auth-adapter.js?v=20260827-r45\"></'+'script>')" online-config.js
           grep -q 'r42-responsive-fix.css' online-config.js
           grep -q 'window.NarutoSecureAuth' secure-auth-adapter.js
           grep -q 'TREINO / PROVAS DE DOMÍNIO' r40-desktop-overhaul.js
@@ -76,9 +77,10 @@ jobs:
         shell: bash
         run: |
           cat > R42-RESPONSIVE-VALIDATED.txt <<'EOF'
-          R44 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
+          R45 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
           syntax=PASS
           secure_auth_adapter=PASS
+          secure_auth_bootstrap=PASS
           single_battle_controller=PASS
           desktop_layout=PASS
           mobile_layout=PASS
