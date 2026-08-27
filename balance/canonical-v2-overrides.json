@@ -1,5 +1,6 @@
 {
   "schemaVersion": 2,
+  "productionRevisionAudit": 3,
   "mode": "analysis-only",
   "upstream": {
     "repository": "naruto-unison/naruto-unison",
