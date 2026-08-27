@@ -1,0 +1,49 @@
+name: Validate Content Engine Extensions V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'combat-content-adapter-v2.js'
+      - 'combat-rules-v2.js'
+      - 'tools/test-content-mechanics-v2.cjs'
+      - 'tools/test-content-engine-extensions-v2.cjs'
+      - '.github/workflows/validate-content-engine-extensions-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine-content-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax
+        run: |
+          set -euo pipefail
+          node --check combat-content-adapter-v2.js
+          node --check combat-rules-v2.js
+          node --check tools/test-content-mechanics-v2.cjs
+          node --check tools/test-content-engine-extensions-v2.cjs
+      - name: Existing 15-op contract
+        run: node tools/test-content-mechanics-v2.cjs
+      - name: Advanced content envelope contract
+        run: node tools/test-content-engine-extensions-v2.cjs
+      - name: Guard advanced envelope surface
+        run: |
+          set -euo pipefail
+          grep -Fq "ENGINE_EFFECT_TYPES" combat-content-adapter-v2.js
+          grep -Fq "ENGINE_CHANGE_TYPES" combat-content-adapter-v2.js
+          grep -Fq "engineEffects" combat-content-adapter-v2.js
+          grep -Fq "engineChanges" combat-content-adapter-v2.js
+          grep -Fq "engineRequirements" combat-content-adapter-v2.js
+          grep -Fq "engineCharges" combat-content-adapter-v2.js
+          grep -Fq "UNSUPPORTED_ENGINE_EFFECT" combat-content-adapter-v2.js
+          grep -Fq "UNSUPPORTED_ENGINE_CHANGE" combat-content-adapter-v2.js
+          if grep -Fq "'noop'" <(node -e "const a=require('./combat-content-adapter-v2.js');console.log(a.ENGINE_EFFECT_TYPES.join('\\n'))"); then exit 1; fi
+          echo 'CONTENT_ENGINE_EXTENSIONS_V2=PASS'
