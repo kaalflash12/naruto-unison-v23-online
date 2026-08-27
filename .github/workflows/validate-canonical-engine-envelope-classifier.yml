@@ -1,0 +1,39 @@
+name: Validate Canonical Engine Envelope Classifier
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/classify-canonical-upstream-v2.mjs'
+      - 'tools/finalize-canonical-upstream-v2.mjs'
+      - '.github/workflows/validate-canonical-engine-envelope-classifier.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  classifier-envelope:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax
+        run: |
+          set -euo pipefail
+          node --check tools/classify-canonical-upstream-v2.mjs
+          node --check tools/finalize-canonical-upstream-v2.mjs
+      - name: Canonical classifier self-test
+        run: node tools/classify-canonical-upstream-v2.mjs --self-test
+      - name: Guard engine envelope support
+        run: |
+          set -euo pipefail
+          grep -Fq 'engineEnvelopeCategories' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'other-enemies' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'SELFTEST_ENGINE_MINATO' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'SELFTEST_ENGINE_CAT' tools/classify-canonical-upstream-v2.mjs
+          grep -Fq 'engineEnvelopeCats' tools/finalize-canonical-upstream-v2.mjs
+          echo 'CANONICAL_ENGINE_ENVELOPE_CLASSIFIER=PASS'
