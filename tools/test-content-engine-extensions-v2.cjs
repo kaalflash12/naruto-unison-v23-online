@@ -120,7 +120,7 @@ function use(s,actor,skill,target){
 }
 {
   const s=state();
-  const req=adapter.adaptTechnique({...base,id:'req-skill',mechanics:[],effect:{...base.effect,engineRequirements:{type:'statusPresent',status:'setup'},engineCharges:2,engineEffects:[{type:'damage',target:'enemy',amount:10,variance:0}]}});
+  const req=adapter.adaptTechnique({...base,id:'req-skill',cooldown:0,mechanics:[],effect:{...base.effect,engineRequirements:{type:'statusPresent',status:'setup'},engineCharges:2,engineEffects:[{type:'damage',target:'enemy',amount:10,variance:0}]}});
   assert.equal(rules.canUseSkill(s,'a',req,'b').ok,false);
   rules.applyEffect(s,rules.getFighter(s,'a'),rules.getFighter(s,'a'),{type:'status',status:'setup',duration:2,durationUnit:'ownerPhases'});
   assert.equal(rules.canUseSkill(s,'a',req,'b').ok,true);
