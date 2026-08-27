@@ -18,6 +18,14 @@ const BLOCKERS=['alternate','bomb','channel','charges','dynamic-change','interru
 const ENGINE_SUPPORTED=new Set(BLOCKERS);
 const key=r=>`${String(r.characterId)}::${String(r.slot).padStart(2,'0')}::${String(r.techniqueId)}`;
 const countBy=(rows,pred)=>rows.reduce((n,r)=>n+(pred(r)?1:0),0);
+const compactEvidence=r=>({
+  cost:r.evidence?.cost??null,
+  cooldown:r.evidence?.cooldown??null,
+  damage:r.evidence?.damage??null,
+  target:r.evidence?.target??null,
+  duration:r.evidence?.duration??null,
+  effect:r.evidence?.effect??null
+});
 
 function summarize(rows,queueSummary){
   if(queueSummary.gate!=='PASS')throw new Error(`QUEUE_GATE=${queueSummary.gate}`);
@@ -39,7 +47,7 @@ function summarize(rows,queueSummary){
         techniqueId:r.techniqueId,techniqueName:r.techniqueName,originalName:r.originalName,
         classifications:r.classifications,blockers:r.blockers,
         structuralDimensions:r.structuralDimensions,heldStructuralDimensions:r.heldStructuralDimensions,
-        dimensionBlockers:r.dimensionBlockers,
+        dimensionBlockers:r.dimensionBlockers,evidence:compactEvidence(r),
         upstreamCategories:r.upstreamCategories,
         upstreamCharacter:r.upstreamCharacter,upstreamTechnique:r.upstreamTechnique,upstreamSource:r.upstreamSource
       }))
@@ -69,9 +77,11 @@ function summarize(rows,queueSummary){
   };
   const candidates=supportedBlockerOnly.map(r=>({
     characterId:r.characterId,characterName:r.characterName,slot:r.slot,
-    techniqueId:r.techniqueId,techniqueName:r.techniqueName,classifications:r.classifications,
-    blockers:r.blockers,structuralDimensions:r.structuralDimensions,heldStructuralDimensions:r.heldStructuralDimensions,
-    dimensionBlockers:r.dimensionBlockers,upstreamCategories:r.upstreamCategories
+    techniqueId:r.techniqueId,techniqueName:r.techniqueName,originalName:r.originalName,
+    classifications:r.classifications,blockers:r.blockers,
+    structuralDimensions:r.structuralDimensions,heldStructuralDimensions:r.heldStructuralDimensions,
+    dimensionBlockers:r.dimensionBlockers,evidence:compactEvidence(r),upstreamCategories:r.upstreamCategories,
+    upstreamCharacter:r.upstreamCharacter,upstreamTechnique:r.upstreamTechnique,upstreamSource:r.upstreamSource
   }));
   return{summary,byBlocker,intersections:intersectionRows,candidates};
 }
@@ -79,10 +89,10 @@ function summarize(rows,queueSummary){
 function runSelfTest(){
   const q={gate:'PASS',complexEffect:2,sourceUpstreamCommit:'x',complexBlockerCounts:Object.fromEntries(BLOCKERS.map(b=>[b,b==='channel'?1:b==='alternate'?1:0]))};
   const rows=[
-    {characterId:'a',slot:1,techniqueId:'t1',classifications:['EFEITO_ERRADO','DANO_ERRADO'],blockers:['channel'],structuralDimensions:['DANO_ERRADO'],heldStructuralDimensions:['DANO_ERRADO']},
-    {characterId:'b',slot:2,techniqueId:'t2',classifications:['DURAÇÃO_ERRADA'],blockers:['alternate'],structuralDimensions:['DURAÇÃO_ERRADA'],heldStructuralDimensions:['DURAÇÃO_ERRADA']}
+    {characterId:'a',slot:1,techniqueId:'t1',classifications:['EFEITO_ERRADO','DANO_ERRADO'],blockers:['channel'],structuralDimensions:['DANO_ERRADO'],heldStructuralDimensions:['DANO_ERRADO'],evidence:{damage:{local:1,upstream:2}}},
+    {characterId:'b',slot:2,techniqueId:'t2',classifications:['DURAÇÃO_ERRADA'],blockers:['alternate'],structuralDimensions:['DURAÇÃO_ERRADA'],heldStructuralDimensions:['DURAÇÃO_ERRADA'],evidence:{duration:{local:[1],upstream:[2]}}}
   ];
-  const r=summarize(rows,q);if(r.summary.withEffectMismatch!==1||r.summary.supportedBlockerRowsWithoutEffectMismatch!==1||r.byBlocker.channel.rows!==1||r.summary.gate!=='FAIL')throw new Error(`SELFTEST=${JSON.stringify(r.summary)}`);
+  const r=summarize(rows,q);if(r.summary.withEffectMismatch!==1||r.summary.supportedBlockerRowsWithoutEffectMismatch!==1||r.byBlocker.channel.rows!==1||r.summary.gate!=='FAIL'||r.candidates[0]?.evidence?.duration?.upstream?.[0]!==2)throw new Error(`SELFTEST=${JSON.stringify(r.summary)}`);
   // Production gate fixes the expected complex row count at 710, so a two-row fixture must fail it.
   console.log('CANONICAL_V2_COMPLEX_BLOCKER_DIAGNOSTICS_SELFTEST=PASS');
 }
