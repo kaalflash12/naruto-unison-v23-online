@@ -10,6 +10,7 @@ on:
       - 'roster.js'
       - 'jutsu-variants.js'
       - 'tools/test-content-mechanics-v2.cjs'
+      - 'tools/test-content-engine-extensions-v2.cjs'
       - 'tools/semantic-ai-v2.mjs'
       - 'tools/test-semantic-ai-v2.mjs'
       - 'tools/audit-published-techniques-v2.mjs'
@@ -43,6 +44,7 @@ jobs:
           node --check combat-rules-v2.js
           node --check combat-content-adapter-v2.js
           node --check tools/test-content-mechanics-v2.cjs
+          node --check tools/test-content-engine-extensions-v2.cjs
           node --check tools/semantic-ai-v2.mjs
           node --check tools/test-semantic-ai-v2.mjs
           node --check tools/audit-published-techniques-v2.mjs
@@ -56,6 +58,8 @@ jobs:
           node --check tools/run-canonical-209-shards.mjs
       - name: Canonical mechanics contract
         run: node tools/test-content-mechanics-v2.cjs
+      - name: Advanced content envelope contract
+        run: node tools/test-content-engine-extensions-v2.cjs
       - name: Semantic AI decision contract
         run: node tools/test-semantic-ai-v2.mjs
       - name: Audit all published techniques
@@ -81,6 +85,12 @@ jobs:
           grep -Fq "multi-hit" combat-content-adapter-v2.js
           grep -Fq "bonusIf" combat-content-adapter-v2.js
           grep -Fq "execute" combat-content-adapter-v2.js
+          grep -Fq "ENGINE_EFFECT_TYPES" combat-content-adapter-v2.js
+          grep -Fq "ENGINE_CHANGE_TYPES" combat-content-adapter-v2.js
+          grep -Fq "engineEffects" combat-content-adapter-v2.js
+          grep -Fq "engineChanges" combat-content-adapter-v2.js
+          grep -Fq "engineRequirements" combat-content-adapter-v2.js
+          grep -Fq "engineCharges" combat-content-adapter-v2.js
           grep -Fq "semanticAI.skillScore" tools/simulate-balance-3v3-v2.mjs
           grep -Fq "semanticAI.chooseTarget" tools/simulate-balance-3v3-v2.mjs
           grep -Fq "mark→bonusIf" tools/test-semantic-ai-v2.mjs
