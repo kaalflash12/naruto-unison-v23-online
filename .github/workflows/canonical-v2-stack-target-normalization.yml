@@ -1,0 +1,138 @@
+name: Canonical V2 Stack Target Normalization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-canonical-stack-target-normalization-v2.mjs'
+      - '.github/workflows/canonical-v2-stack-target-normalization.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: canonical-v2-stack-target-normalization
+  cancel-in-progress: true
+
+jobs:
+  normalize-and-reclassify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout game
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Checkout pinned upstream
+        uses: actions/checkout@v4
+        with:
+          repository: naruto-unison/naruto-unison
+          ref: 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
+          path: canonical-upstream
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Patch self-test and apply
+        run: |
+          set -euo pipefail
+          node --check tools/patch-canonical-stack-target-normalization-v2.mjs
+          node tools/patch-canonical-stack-target-normalization-v2.mjs --self-test
+          node tools/patch-canonical-stack-target-normalization-v2.mjs
+          node --check tools/classify-canonical-upstream-v2.mjs
+          node --check tools/finalize-canonical-upstream-v2.mjs
+          grep -q 'normalizeStackAuxiliarySelfTarget' tools/classify-canonical-upstream-v2.mjs
+          grep -q 'normalizeStackAuxiliarySelfTarget' tools/finalize-canonical-upstream-v2.mjs
+
+      - name: Re-prove published V2 source
+        run: |
+          set -euo pipefail
+          node tools/audit-published-techniques-v2.mjs
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/published-v2/SUMMARY.json','utf8'));
+          if(s.gate!=='PASS'||s.canonicalPlayableCharacters!==209||s.canonicalLinks!==836)throw new Error(`published=${JSON.stringify(s)}`);
+          if(s.unsupported||s.runtimeFailures||s.unknownCosts||s.noops)throw new Error('published V2 source not clean');
+          console.log('PUBLISHED_V2_209x4=PASS');
+          JS
+
+      - name: Rebuild raw canonical classification
+        env:
+          UPSTREAM_DIR: canonical-upstream
+          UPSTREAM_COMMIT: 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
+        run: |
+          set +e
+          node tools/classify-canonical-upstream-v2.mjs --root . --upstream canonical-upstream --upstream-commit 3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then exit "$code"; fi
+
+      - name: Prove exact raw target normalization
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/SUMMARY.json','utf8'));
+          const c=s.classificationCounts||{};
+          if(s.contentRevision!==3)throw new Error(`revision=${s.contentRevision}`);
+          if(s.playableCharacters!==209||s.classifiedTechniques!==836||s.resolved!==718||s.unresolved!==118)throw new Error(`coverage=${JSON.stringify(s)}`);
+          const expected={CORRETA:16,'DESCRIÇÃO_ERRADA':692,'DANO_ERRADO':26,'EFEITO_ERRADO':700,'ALVO_ERRADO':315,'CUSTO_ERRADO':153,'COOLDOWN_ERRADO':22,'DURAÇÃO_ERRADA':353,'MOTOR_INSUFICIENTE':0};
+          for(const [k,v] of Object.entries(expected))if(Number(c[k])!==v)throw new Error(`${k}=${c[k]}/${v}`);
+          console.log('RAW_STACK_TARGET_NORMALIZATION=PASS',c);
+          JS
+
+      - name: Finalize 836 accounting and rebuild correction queue
+        run: |
+          set -euo pipefail
+          node tools/finalize-canonical-upstream-v2.mjs --root . --upstream canonical-upstream
+          node tools/build-canonical-v2-correction-queue.mjs
+          rm -rf audit/balance/canonical-v2-complex-diagnostics
+          node tools/summarize-canonical-v2-complex-blockers.mjs
+
+      - name: Prove exact final accounting
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const f=JSON.parse(fs.readFileSync('audit/balance/canonical-v2/FINAL-SUMMARY.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          const d=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-complex-diagnostics/SUMMARY.json','utf8'));
+          if(f.gate!=='PASS'||f.totalTechniques!==836||f.accounted!==836||f.unaccounted!==0||f.comparable!==719||f.justified!==117)throw new Error(`final=${JSON.stringify(f)}`);
+          const fc=f.classificationCounts||{};
+          const expectedFinal={CORRETA:16,'DESCRIÇÃO_ERRADA':693,'DANO_ERRADO':26,'EFEITO_ERRADO':701,'ALVO_ERRADO':315,'CUSTO_ERRADO':153,'COOLDOWN_ERRADO':22,'DURAÇÃO_ERRADA':353,'MOTOR_INSUFICIENTE':0};
+          for(const [k,v] of Object.entries(expectedFinal))if(Number(fc[k])!==v)throw new Error(`final ${k}=${fc[k]}/${v}`);
+          if(q.gate!=='PASS'||q.total!==836||q.comparable!==719||q.correct!==16||q.actionable!==703||q.safeStructural!==0||q.complexEffect!==703)throw new Error(`queue=${JSON.stringify(q)}`);
+          if(q.heldStructuralDimensions!==869||q.heldStructuralRows!==542)throw new Error(`held=${q.heldStructuralRows}/${q.heldStructuralDimensions}`);
+          if(q.heldStructuralDimensionCounts?.ALVO_ERRADO!==315)throw new Error(`held target=${q.heldStructuralDimensionCounts?.ALVO_ERRADO}`);
+          if(q.complexBlockerCounts?.stack!==78)throw new Error(`stack blockers=${q.complexBlockerCounts?.stack}`);
+          if(d.gate!=='PASS'||d.complexRows!==703||d.withEffectMismatch!==701||d.withoutEffectMismatch!==2||d.supportedBlockerRowsWithoutEffectMismatch!==2)throw new Error(`diagnostics=${JSON.stringify(d)}`);
+          console.log('FINAL_STACK_TARGET_NORMALIZATION=PASS',{final:fc,queue:{correct:q.correct,actionable:q.actionable,complex:q.complexEffect,stack:q.complexBlockerCounts?.stack},diagnostics:{effect:d.withEffectMismatch,noEffect:d.withoutEffectMismatch}});
+          JS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-stack-target-normalization-${{ github.sha }}
+          path: |
+            audit/balance/canonical-v2
+            audit/balance/canonical-v2-corrections
+            audit/balance/canonical-v2-complex-diagnostics
+          retention-days: 30
+
+      - name: Persist validated classifier and evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/classify-canonical-upstream-v2.mjs tools/finalize-canonical-upstream-v2.mjs audit/balance/canonical-v2 audit/balance/canonical-v2-corrections audit/balance/canonical-v2-complex-diagnostics
+          git restore audit/balance/published-v2 || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'fix(balance): normalize auxiliary stack self targets [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main || {
+            git pull --rebase origin main
+            git push origin HEAD:main
+          }
