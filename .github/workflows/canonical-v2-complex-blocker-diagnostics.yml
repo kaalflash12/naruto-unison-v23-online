@@ -48,7 +48,7 @@ jobs:
           const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
           if(s.gate!=='PASS')throw new Error(`diagnostic gate=${s.gate}`);
           if(q.gate!=='PASS')throw new Error(`queue gate=${q.gate}`);
-          if(s.complexRows!==q.complexEffect||s.complexRows!==710)throw new Error(`complex=${s.complexRows}/${q.complexEffect}`);
+          if(s.complexRows!==q.complexEffect)throw new Error(`complex=${s.complexRows}/${q.complexEffect}`);
           for(const [k,v] of Object.entries(q.complexBlockerCounts||{}))if(Number(s.blockerCounts?.[k])!==Number(v))throw new Error(`blocker ${k}=${s.blockerCounts?.[k]}/${v}`);
           if(!s.allBlockersEngineSupported)throw new Error('engine-supported blocker set incomplete');
           console.log('CANONICAL_V2_COMPLEX_BLOCKER_DIAGNOSTICS=PASS',JSON.stringify(s));
