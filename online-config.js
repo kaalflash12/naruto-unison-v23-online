@@ -1,9 +1,15 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r44'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r45'};
 
 (()=>{
   if(window.NarutoSecureAuth)return;
-  if(document.readyState==='loading')document.write('<script src="secure-auth-adapter.js?v=20260826-r44"><\\/script>');
-  else{const s=document.createElement('script');s.src='secure-auth-adapter.js?v=20260826-r44';s.async=false;document.head.appendChild(s)}
+  if(document.readyState==='loading'){
+    document.write('<script src="secure-auth-adapter.js?v=20260827-r45"></'+'script>');
+  }else{
+    const s=document.createElement('script');
+    s.src='secure-auth-adapter.js?v=20260827-r45';
+    s.async=false;
+    document.head.appendChild(s);
+  }
 })();
 
 (()=>{
