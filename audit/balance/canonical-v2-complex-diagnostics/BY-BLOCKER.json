@@ -54,6 +54,39 @@
             "stack"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin"
+            ],
+            "upstream": [
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "allies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "stun",
+              "alternate",
+              "stack"
+            ]
+          }
+        },
         "upstreamCategories": [
           "stun",
           "alternate",
@@ -99,6 +132,41 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin"
+            ],
+            "upstream": [
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "alternate",
+              "stack",
+              "trap-counter"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "alternate",
@@ -136,6 +204,39 @@
           "CUSTO_ERRADO": [
             "alternate"
           ]
+        },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin",
+              "rand"
+            ],
+            "upstream": [
+              "rand",
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "stack",
+              "invulnerable",
+              "charges"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -187,6 +288,41 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "trap-counter",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -237,6 +373,44 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": {
+            "local": 1,
+            "upstream": 0
+          },
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "expose",
+              "alternate",
+              "invulnerable",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "expose",
@@ -282,6 +456,42 @@
           "DURAÇÃO_ERRADA": [
             "alternate"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "alternate",
+              "stack",
+              "requirement"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -329,6 +539,38 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "alternate",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "alternate",
           "channel"
@@ -374,6 +616,43 @@
             "dynamic-change",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "stun",
+              "alternate",
+              "dynamic-change",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -428,6 +707,26 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "focus",
+              "trap-counter",
+              "invulnerable",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "focus",
           "trap-counter",
@@ -472,6 +771,39 @@
             "trap-counter",
             "bomb"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "invulnerable",
+              "bomb"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -531,6 +863,51 @@
             "bomb"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin"
+            ],
+            "upstream": [
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": {
+            "local": 21,
+            "upstream": 15
+          },
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              4
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "dot",
+              "expose"
+            ],
+            "upstream": [
+              "damage",
+              "weaken",
+              "alternate",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "weaken",
@@ -573,6 +950,39 @@
             "bomb"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              4
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "weaken",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "weaken",
@@ -608,6 +1018,31 @@
             "bomb"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              4
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "weaken",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "weaken",
@@ -635,6 +1070,25 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "defense",
+              "alternate",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "defense",
           "alternate",
@@ -670,6 +1124,27 @@
             "bomb"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": {
+            "local": 44,
+            "upstream": 25
+          },
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "expose",
+              "dot"
+            ],
+            "upstream": [
+              "damage",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "bomb"
@@ -703,6 +1178,33 @@
           "ALVO_ERRADO": [
             "bomb"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "expose",
+              "dot"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "bomb"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -768,6 +1270,35 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": {
+            "local": 24,
+            "upstream": 15
+          },
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "expose",
+              "defense"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -815,6 +1346,41 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "trap-counter",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -858,6 +1424,42 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "exhaust",
+              "invulnerable",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -898,6 +1500,34 @@
             "trap-counter",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies",
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stack",
+              "trap-counter",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -940,6 +1570,41 @@
           "DURAÇÃO_ERRADA": [
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "allies"
+            ],
+            "upstream": [
+              "allies",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "dot",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -985,6 +1650,38 @@
             "alternate",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "alternate",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "alternate",
@@ -1032,6 +1729,43 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "stun",
+              "alternate",
+              "dynamic-change",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -1077,6 +1811,42 @@
             "alternate",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin"
+            ],
+            "upstream": [
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "dispel",
+              "alternate",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1139,6 +1909,39 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin",
+              "rand"
+            ],
+            "upstream": [
+              "rand",
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "stack",
+              "invulnerable",
+              "charges"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -1178,6 +1981,33 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "invulnerable",
+              "charges",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "invulnerable",
           "charges",
@@ -1211,6 +2041,32 @@
         "dimensionBlockers": {
           "ALVO_ERRADO": []
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "strengthen",
+              "charges"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -1239,6 +2095,25 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "dot",
+              "charges",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "dot",
@@ -1268,6 +2143,26 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "defense",
+              "stack",
+              "charges",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "defense",
           "stack",
@@ -1302,6 +2197,35 @@
         "dimensionBlockers": {
           "ALVO_ERRADO": []
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "reduction",
+              "strengthen",
+              "charges"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "defense",
@@ -1330,6 +2254,23 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "charges"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "charges"
@@ -1370,6 +2311,40 @@
           "DURAÇÃO_ERRADA": [
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "ally"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              3
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "heal",
+              "charges",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "heal",
@@ -1420,6 +2395,23 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "dynamic-change"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "dynamic-change"
@@ -1466,6 +2458,43 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "stun",
+              "alternate",
+              "dynamic-change",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -1505,6 +2534,32 @@
             "trap-counter",
             "dynamic-change"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "dot"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "dot",
+              "dynamic-change"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1554,6 +2609,41 @@
             "dynamic-change"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": {
+            "local": 38,
+            "upstream": 30
+          },
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "dot",
+              "expose"
+            ],
+            "upstream": [
+              "damage",
+              "dynamic-change"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "dynamic-change"
@@ -1592,6 +2682,34 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "dot",
+              "dynamic-change",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "trap-counter",
@@ -1629,6 +2747,32 @@
             "dynamic-change"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "cleanse",
+              "dynamic-change"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "cleanse",
@@ -1664,6 +2808,30 @@
             "dynamic-change"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "exhaust",
+              "dynamic-change"
+            ]
+          }
+        },
         "upstreamCategories": [
           "exhaust",
           "dynamic-change"
@@ -1697,6 +2865,32 @@
           "DURAÇÃO_ERRADA": [
             "dynamic-change"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "expose",
+              "invulnerable",
+              "dynamic-change"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1764,6 +2958,39 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "interrupt"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "trap-counter",
@@ -1799,6 +3026,34 @@
           "ALVO_ERRADO": [
             "bomb"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "dot",
+              "expose"
+            ],
+            "upstream": [
+              "damage",
+              "dot",
+              "bomb",
+              "interrupt"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1860,6 +3115,33 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              1,
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "disable",
+              "chakra",
+              "expose"
+            ],
+            "upstream": [
+              "channel",
+              "redirect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "channel",
           "redirect"
@@ -1894,6 +3176,34 @@
           "DURAÇÃO_ERRADA": [
             "trap-counter"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              0,
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "trap-counter",
+              "redirect"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1930,6 +3240,34 @@
           "ALVO_ERRADO": [
             "redirect"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "expose",
+              "invulnerable",
+              "redirect"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -1992,6 +3330,32 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "defense",
+              "channel",
+              "reflect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "defense",
           "channel",
@@ -2029,6 +3393,36 @@
           "ALVO_ERRADO": [],
           "DURAÇÃO_ERRADA": []
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "ally"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "reflect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "reflect"
         ],
@@ -2055,6 +3449,26 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "disable",
+              "trap-counter",
+              "channel",
+              "reflect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "disable",
@@ -2099,6 +3513,36 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": {
+            "local": 39,
+            "upstream": 35
+          },
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "dot",
+              "expose"
+            ],
+            "upstream": [
+              "damage",
+              "disable",
+              "trap-counter",
+              "reflect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "disable",
@@ -2142,6 +3586,41 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "reduction",
+              "stun",
+              "trap-counter",
+              "reflect"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "reduction",
@@ -2176,6 +3655,29 @@
         ],
         "dimensionBlockers": {
           "ALVO_ERRADO": []
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "ally"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "reflect"
+            ]
+          }
         },
         "upstreamCategories": [
           "reflect"
@@ -2232,6 +3734,33 @@
         "dimensionBlockers": {
           "ALVO_ERRADO": []
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stun",
+              "weaken"
+            ],
+            "upstream": [
+              "dot",
+              "requirement",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "dot",
           "requirement",
@@ -2276,6 +3805,42 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "alternate",
+              "stack",
+              "requirement"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "defense",
@@ -2304,6 +3869,24 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "requirement"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -2341,6 +3924,36 @@
           "CUSTO_ERRADO": [],
           "ALVO_ERRADO": []
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "gen"
+            ],
+            "upstream": []
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "ally",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "requirement"
+            ]
+          }
+        },
         "upstreamCategories": [
           "requirement"
         ],
@@ -2371,6 +3984,31 @@
         ],
         "dimensionBlockers": {
           "ALVO_ERRADO": []
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy",
+              "self"
+            ],
+            "upstream": [
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "disable",
+              "defense"
+            ],
+            "upstream": [
+              "requirement"
+            ]
+          }
         },
         "upstreamCategories": [
           "requirement"
@@ -2405,6 +4043,34 @@
           "ALVO_ERRADO": [
             "trap-counter"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy",
+              "self"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "disable",
+              "defense"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "trap-counter",
+              "requirement"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -2443,6 +4109,31 @@
             "bomb"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "invulnerable",
+              "requirement",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "invulnerable",
           "requirement",
@@ -2478,6 +4169,32 @@
           "ALVO_ERRADO": [
             "dynamic-change"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "silence",
+              "requirement",
+              "dynamic-change"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -2551,6 +4268,44 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": {
+            "local": 1,
+            "upstream": 0
+          },
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "expose",
+              "alternate",
+              "invulnerable",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "expose",
@@ -2578,6 +4333,24 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "dot"
+            ],
+            "upstream": [
+              "damage",
+              "dot",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "dot",
@@ -2611,6 +4384,33 @@
         ],
         "dimensionBlockers": {
           "ALVO_ERRADO": []
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stun",
+              "weaken"
+            ],
+            "upstream": [
+              "dot",
+              "requirement",
+              "sacrifice"
+            ]
+          }
         },
         "upstreamCategories": [
           "dot",
@@ -2663,6 +4463,44 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": {
+            "local": 1,
+            "upstream": 0
+          },
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "allies-except-self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "reduction",
+              "alternate",
+              "channel",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "reduction",
           "alternate",
@@ -2696,6 +4534,31 @@
         ],
         "dimensionBlockers": {
           "DURAÇÃO_ERRADA": []
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "invulnerable",
+              "sacrifice"
+            ]
+          }
         },
         "upstreamCategories": [
           "invulnerable",
@@ -2746,6 +4609,45 @@
             "dynamic-change"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": {
+            "local": 1,
+            "upstream": 0
+          },
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "stack",
+              "invulnerable",
+              "dynamic-change",
+              "sacrifice"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -2781,6 +4683,33 @@
         ],
         "dimensionBlockers": {
           "DURAÇÃO_ERRADA": []
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": {
+            "local": [
+              1,
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "trap-counter",
+              "strengthen",
+              "status"
+            ],
+            "upstream": [
+              "damage",
+              "strengthen",
+              "sacrifice"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -2819,6 +4748,34 @@
             "stack",
             "dynamic-change"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "weaken",
+              "stack",
+              "dynamic-change",
+              "sacrifice"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -2888,6 +4845,39 @@
             "stack"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin"
+            ],
+            "upstream": [
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "allies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "stun",
+              "alternate",
+              "stack"
+            ]
+          }
+        },
         "upstreamCategories": [
           "stun",
           "alternate",
@@ -2933,6 +4923,41 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin"
+            ],
+            "upstream": [
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "alternate",
+              "stack",
+              "trap-counter"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "alternate",
@@ -2971,6 +4996,39 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin",
+              "rand"
+            ],
+            "upstream": [
+              "rand",
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "stack",
+              "invulnerable",
+              "charges"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -3000,6 +5058,23 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "status"
+            ],
+            "upstream": [
+              "damage",
+              "stack"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stack"
@@ -3037,6 +5112,34 @@
             "trap-counter",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies",
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stack",
+              "trap-counter",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -3083,6 +5186,42 @@
             "alternate"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "alternate",
+              "stack",
+              "requirement"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "defense",
@@ -3120,6 +5259,32 @@
             "stack"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stack",
+              "dot"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stack",
@@ -3156,6 +5321,34 @@
             "stack",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "self"
+            ],
+            "upstream": [
+              "allies",
+              "enemy"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "damage",
+              "defense",
+              "stack",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -3226,6 +5419,41 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": {
+            "local": [
+              "nin",
+              "nin"
+            ],
+            "upstream": [
+              "rand",
+              "rand"
+            ]
+          },
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "alternate",
+              "stack",
+              "trap-counter"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "alternate",
@@ -3274,6 +5502,41 @@
             "channel"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self",
+              "enemy"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stun",
+              "alternate",
+              "trap-counter",
+              "channel"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "stun",
@@ -3314,6 +5577,34 @@
             "trap-counter",
             "channel"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemies"
+            ],
+            "upstream": [
+              "self",
+              "allies",
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "stack",
+              "trap-counter",
+              "channel"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -3357,6 +5648,37 @@
             "trap-counter"
           ]
         },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "exhaust",
+              "trap-counter"
+            ]
+          }
+        },
         "upstreamCategories": [
           "exhaust",
           "trap-counter"
@@ -3383,6 +5705,26 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "defense",
+              "strengthen",
+              "cleanse"
+            ],
+            "upstream": [
+              "focus",
+              "trap-counter",
+              "invulnerable",
+              "bomb"
+            ]
+          }
+        },
         "upstreamCategories": [
           "focus",
           "trap-counter",
@@ -3410,6 +5752,24 @@
         "structuralDimensions": [],
         "heldStructuralDimensions": [],
         "dimensionBlockers": {},
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": null,
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "dot"
+            ]
+          }
+        },
         "upstreamCategories": [
           "damage",
           "trap-counter",
@@ -3446,6 +5806,32 @@
             "trap-counter",
             "dynamic-change"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "enemies"
+            ]
+          },
+          "duration": null,
+          "effect": {
+            "local": [
+              "damage",
+              "dot"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "dot",
+              "dynamic-change"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",
@@ -3488,6 +5874,38 @@
           "DURAÇÃO_ERRADA": [
             "trap-counter"
           ]
+        },
+        "evidence": {
+          "cost": null,
+          "cooldown": null,
+          "damage": null,
+          "target": {
+            "local": [
+              "enemy"
+            ],
+            "upstream": [
+              "self"
+            ]
+          },
+          "duration": {
+            "local": [
+              2
+            ],
+            "upstream": [
+              1
+            ]
+          },
+          "effect": {
+            "local": [
+              "damage",
+              "stack"
+            ],
+            "upstream": [
+              "damage",
+              "trap-counter",
+              "invulnerable"
+            ]
+          }
         },
         "upstreamCategories": [
           "damage",

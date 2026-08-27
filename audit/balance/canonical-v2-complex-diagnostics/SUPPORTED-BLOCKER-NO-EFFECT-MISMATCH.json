@@ -5,6 +5,7 @@
     "slot": 2,
     "techniqueId": "ibiki-morino__base_2",
     "techniqueName": "Payback",
+    "originalName": "Payback",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -23,10 +24,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Ibiki Morino",
+    "upstreamTechnique": "Payback",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
   },
   {
     "characterId": "jirobo",
@@ -34,6 +54,7 @@
     "slot": 1,
     "techniqueId": "jirobo__base_1",
     "techniqueName": "Crushing Palm",
+    "originalName": "Crushing Palm",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -52,10 +73,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Jirōbō",
+    "upstreamTechnique": "Crushing Palm",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
   },
   {
     "characterId": "jirobo",
@@ -63,6 +103,7 @@
     "slot": 2,
     "techniqueId": "jirobo__base_2",
     "techniqueName": "Sphere of Graves",
+    "originalName": "Sphere of Graves",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -81,10 +122,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemies"
+        ],
+        "upstream": [
+          "self",
+          "enemies"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Jirōbō",
+    "upstreamTechnique": "Sphere of Graves",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs"
   },
   {
     "characterId": "kisame-hoshigaki-(s)",
@@ -92,6 +152,7 @@
     "slot": 2,
     "techniqueId": "kisame-hoshigaki-(s)__base_2",
     "techniqueName": "Man-Eating Sharks",
+    "originalName": "Man-Eating Sharks",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -110,10 +171,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Kisame Hoshigaki",
+    "upstreamTechnique": "Man-Eating Sharks",
+    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs"
   },
   {
     "characterId": "minato-namikaze-(r)",
@@ -121,6 +201,7 @@
     "slot": 3,
     "techniqueId": "minato-namikaze-(r)__base_3",
     "techniqueName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "originalName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -139,10 +220,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "enemy",
+          "enemies"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Minato Namikaze",
+    "upstreamTechnique": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs"
   },
   {
     "characterId": "neji-hyuga-(s)",
@@ -150,6 +250,7 @@
     "slot": 4,
     "techniqueId": "neji-hyuga-(s)__base_4",
     "techniqueName": "Pressure Point Strike",
+    "originalName": "Pressure Point Strike",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -168,10 +269,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Neji Hyūga",
+    "upstreamTechnique": "Pressure Point Strike",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs"
   },
   {
     "characterId": "onoki-(s)",
@@ -179,6 +299,7 @@
     "slot": 3,
     "techniqueId": "onoki-(s)__base_3",
     "techniqueName": "Atomic Dismantling",
+    "originalName": "Atomic Dismantling",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -197,10 +318,29 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Ōnoki",
+    "upstreamTechnique": "Atomic Dismantling",
+    "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs"
   },
   {
     "characterId": "yugito-nii-(s)",
@@ -208,6 +348,7 @@
     "slot": 3,
     "techniqueId": "yugito-nii-(s)__base_3",
     "techniqueName": "Cat Claws",
+    "originalName": "Cat Claws",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -227,11 +368,31 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy",
+          "enemies"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack",
       "requirement"
-    ]
+    ],
+    "upstreamCharacter": "Yugito Nii",
+    "upstreamTechnique": "Cat Claws",
+    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs"
   },
   {
     "characterId": "zaku-abumi",
@@ -239,6 +400,7 @@
     "slot": 1,
     "techniqueId": "zaku-abumi__base_1",
     "techniqueName": "Slicing Sound Wave",
+    "originalName": "Slicing Sound Wave",
     "classifications": [
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
@@ -257,9 +419,28 @@
         "stack"
       ]
     },
+    "evidence": {
+      "cost": null,
+      "cooldown": null,
+      "damage": null,
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "duration": null,
+      "effect": null
+    },
     "upstreamCategories": [
       "damage",
       "stack"
-    ]
+    ],
+    "upstreamCharacter": "Zaku Abumi",
+    "upstreamTechnique": "Slicing Sound Wave",
+    "upstreamSource": "src/Game/Characters/Original/Exams.hs"
   }
 ]
