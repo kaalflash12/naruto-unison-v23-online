@@ -361,6 +361,37 @@
     "descriptionAfterMechanics": false
   },
   {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "slot": 3,
+    "techniqueId": "minato-namikaze-(r)__base_3",
+    "techniqueName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "originalName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Minato Namikaze",
+    "upstreamTechnique": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {},
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
     "characterId": "neji-hyuga-(s)",
     "characterName": "Neji Hyūga",
     "slot": 4,
@@ -417,6 +448,39 @@
     "heldStructuralDimensions": [],
     "blockers": [
       "stack"
+    ],
+    "dimensionBlockers": {},
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": false
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "slot": 3,
+    "techniqueId": "yugito-nii-(s)__base_3",
+    "techniqueName": "Cat Claws",
+    "originalName": "Cat Claws",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Yugito Nii",
+    "upstreamTechnique": "Cat Claws",
+    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
+    "classifications": [
+      "CORRETA"
+    ],
+    "evidence": {},
+    "upstreamCategories": [
+      "damage",
+      "stack",
+      "requirement"
+    ],
+    "tier": "CORRETA",
+    "structuralDimensions": [],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [],
+    "blockers": [
+      "stack",
+      "requirement"
     ],
     "dimensionBlockers": {},
     "requiresManualSemantics": true,

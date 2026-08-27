@@ -52,7 +52,7 @@ const normalizeTarget = (x) => {
   if (['allies', 'all-allies'].includes(t)) return 'allies';
   if (['allies-except-self', 'xallies'].includes(t)) return 'allies-except-self';
   if (['enemy', 'primary'].includes(t)) return 'enemy';
-  if (['enemies', 'all-enemies'].includes(t)) return 'enemies';
+  if (['enemies', 'all-enemies', 'other-enemies'].includes(t)) return 'enemies';
   if (['everyone'].includes(t)) return 'everyone';
   return t || 'unknown';
 };
@@ -293,6 +293,33 @@ function chooseUpstreamSkill(localSkill, upstreamCharacter, upstreamCharacters) 
   return { skill: null, source: 'UPSTREAM_SKILL_NOT_FOUND' };
 }
 
+// ENGINE_EXTENSION_CLASSIFIER_V2
+function publishedEngineEffects(published) {
+  const out=[];
+  const visit=(raw)=>{
+    if(!raw||typeof raw!=='object'||Array.isArray(raw))return;
+    out.push(raw);
+    for(const key of ['effects','tickEffects','endEffects','onBreak'])for(const child of arr(raw[key]))visit(child);
+  };
+  for(const effect of arr(published?.effect?.engineEffects))visit(effect);
+  return out;
+}
+function engineEffectCategories(effect) {
+  const type=String(effect?.type||''),out=[];
+  const map={
+    damage:['damage'],heal:['heal'],leech:['damage','leech','heal'],defense:['defense'],
+    invulnerable:['invulnerable'],stun:['stun'],disable:['disable'],silence:['silence'],
+    reduction:['reduction'],strengthen:['strengthen'],expose:['expose'],weaken:['weaken'],
+    exhaust:['exhaust'],focus:['focus'],cleanse:['cleanse'],cure:['cleanse'],dispel:['dispel'],
+    demolish:['demolish'],chakra:['chakra'],stack:['stack'],alternate:['alternate'],
+    trap:['trap-counter'],counter:['trap-counter'],dot:['dot'],channel:['channel'],reflect:['reflect'],
+    redirect:['redirect'],sacrifice:['sacrifice'],bomb:['bomb'],interrupt:['interrupt']
+  };
+  out.push(...arr(map[type]));
+  if(effect?.amountScale?.type==='stack')out.push('stack');
+  if(effect?.execute===true)out.push('execute');
+  return uniq(out);
+}
 function publishedCategories(published) {
   const out = [];
   for (const m of arr(published?.mechanics)) {
@@ -324,13 +351,18 @@ function publishedCategories(published) {
       else out.push('status');
     }
   }
+  for(const effect of publishedEngineEffects(published))out.push(...engineEffectCategories(effect));
   return uniq(out);
 }
 function publishedTargets(published) {
-  return uniq(arr(published?.mechanics).map((m) => normalizeTarget(m?.target === 'primary' ? (['buff','heal','shield','cleanse','chakra-gain'].includes(String(m?.op)) ? 'ally' : 'enemy') : m?.target)));
+  const legacy=arr(published?.mechanics).map((m) => normalizeTarget(m?.target === 'primary' ? (['buff','heal','shield','cleanse','chakra-gain'].includes(String(m?.op)) ? 'ally' : 'enemy') : m?.target));
+  const engine=publishedEngineEffects(published).map((e)=>e?.target==null?null:normalizeTarget(e.target)).filter(Boolean);
+  return uniq([...legacy,...engine]);
 }
 function publishedDurations(published) {
-  return uniq(arr(published?.mechanics).map((m) => num(m?.turns, null)).filter((x) => x != null && x > 0)).sort((a, b) => a - b);
+  const legacy=arr(published?.mechanics).map((m) => num(m?.turns, null)).filter((x) => x != null && x > 0);
+  const engine=publishedEngineEffects(published).map((e)=>e?.duration==='permanent'?null:num(e?.duration,null)).filter((x)=>x!=null&&x>0);
+  return uniq([...legacy,...engine]).sort((a, b) => a - b);
 }
 function publishedDirectDamage(published) {
   const vals = [];
@@ -339,6 +371,10 @@ function publishedDirectDamage(published) {
     if (op === 'damage' || op === 'multi-hit' || op === 'drain') {
       const n = num(m.amount, null); if (n != null) vals.push(n);
     }
+  }
+  for(const e of publishedEngineEffects(published)){
+    if(!['damage','leech'].includes(String(e?.type||'')))continue;
+    const n=num(e?.amount,null);if(n!=null&&n>0)vals.push(n);
   }
   return vals;
 }
@@ -355,6 +391,14 @@ function publishedNumericEffects(published) {
     if(op==='shield'){const n=num(m.amount,null);if(n!=null)out.defense.push(n)}
     if(op==='buff'&&String(m.stat||'')==='defense'){const n=num(m.amount,null);if(n!=null)out.reduction.push(n)}
     if(op==='execute'){const n=num(m.threshold,null);if(n!=null)out.execute.push(n)}
+  }
+  for(const e of publishedEngineEffects(published)){
+    const type=String(e?.type||''),n=num(e?.amount,null);
+    if(type==='heal'&&n!=null)out.heal.push(n);
+    if(type==='dot'&&n!=null)out.dot.push(n);
+    if(type==='defense'&&n!=null)out.defense.push(n);
+    if(type==='reduction'&&n!=null)out.reduction.push(n);
+    if(e?.execute===true){const x=num(e?.threshold,null);if(x!=null)out.execute.push(x)}
   }
   for(const k of Object.keys(out))out[k].sort((a,b)=>a-b);
   return out;
@@ -659,6 +703,10 @@ function selfTest() {
   if(reductionFacts.categories.includes('damage')||!reductionFacts.categories.includes('reduction')||JSON.stringify(reductionFacts.reduce)!==JSON.stringify([15])||!reductionFacts.durations.includes(4))throw new Error('SELFTEST_REDUCTION_PARSER');
   const executeMismatch=classifyTechnique({published:{description:'execute',chakraCost:[],cooldown:0,mechanics:[{op:'execute',threshold:20,target:'primary'}]},upstream:{categories:['damage','execute'],damage:[],pierce:[],afflict:[],heal:[],defend:[],reduce:[],executeThresholds:[25],targets:['enemy'],cost:[],cooldown:0,durations:[]}});
   if(!executeMismatch.classifications.includes('EFEITO_ERRADO')||!executeMismatch.evidence.effectNumeric?.execute)throw new Error('SELFTEST_EXECUTE_NUMERIC');
+  const engineScale=classifyTechnique({published:{description:'Rasen-Flash causa 20 de dano e escala por marca.',chakraCost:['KEK','Q'],cooldown:0,mechanics:[],effect:{engineEffects:[{type:'damage',target:'enemy',amount:20},{type:'damage',target:'enemies',amount:0,amountScale:{type:'stack',source:'target',key:'Space-Time Marking',per:20}}]}},upstream:{categories:['damage','stack'],damage:[20],pierce:[],afflict:[],heal:[],defend:[],reduce:[],executeThresholds:[],targets:['enemy','enemies'],cost:['Blood','Rand'],cooldown:null,durations:[]}});
+  if(JSON.stringify(engineScale.classifications)!==JSON.stringify(['CORRETA']))throw new Error(`SELFTEST_ENGINE_SCALE:${JSON.stringify(engineScale)}`);
+  const engineStack=classifyTechnique({published:{description:'Cat Claws causa dano crescente à equipe inimiga.',chakraCost:['KEK'],cooldown:1,mechanics:[],effect:{engineRequirements:{type:'stackAtLeast',key:'Two-Tailed Transformation',amount:1},engineEffects:[{type:'damage',target:'enemy',amount:15,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},{type:'damage',target:'other-enemies',amount:5,amountScale:{type:'stack',source:'source',key:'Cat Claws',per:5}},{type:'stack',target:'self',key:'Cat Claws',op:'add',amount:1}]}},upstream:{categories:['damage','stack','requirement'],damage:[],pierce:[],afflict:[],heal:[],defend:[],reduce:[],executeThresholds:[],targets:['self','enemy','enemies'],cost:['Blood'],cooldown:1,durations:[]}});
+  if(JSON.stringify(engineStack.classifications)!==JSON.stringify(['CORRETA']))throw new Error(`SELFTEST_ENGINE_STACK:${JSON.stringify(engineStack)}`);
   const supportedGap = classifyTechnique({ published: basePublished, upstream: { ...baseUpstream, categories: [...baseUpstream.categories, 'redirect'] } });
   if (supportedGap.classifications.includes('MOTOR_INSUFICIENTE')) throw new Error('SELFTEST_SUPPORTED_GAP_MOTOR');
   if (!supportedGap.classifications.includes('EFEITO_ERRADO')) throw new Error('SELFTEST_SUPPORTED_GAP_EFFECT');

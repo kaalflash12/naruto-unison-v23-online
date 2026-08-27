@@ -10,11 +10,11 @@
 
 ## Classificações
 
-- CORRETA: **16**
-- DESCRIÇÃO_ERRADA: **692**
+- CORRETA: **18**
+- DESCRIÇÃO_ERRADA: **690**
 - DANO_ERRADO: **26**
-- EFEITO_ERRADO: **702**
-- ALVO_ERRADO: **315**
+- EFEITO_ERRADO: **700**
+- ALVO_ERRADO: **313**
 - CUSTO_ERRADO: **153**
 - COOLDOWN_ERRADO: **22**
 - DURAÇÃO_ERRADA: **353**
@@ -502,7 +502,6 @@
 | Minato Namikaze | Flying Light | 4 | EFEITO_ERRADO, CUSTO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flying Light |
 | Minato Namikaze | Space-Time Marking | 1 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Space-Time Marking |
 | Minato Namikaze | Reciprocal Round-Robin | 2 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Reciprocal Round-Robin |
-| Minato Namikaze | Rasen-Flash Super-Circle Dance Howl (Stage III) | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rasen-Flash Super-Circle Dance Howl (Stage III) |
 | Minato Namikaze | Chakra-Arm Raijin | 4 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Chakra-Arm Raijin |
 | Misumi Tsurugi | Flexible Twisting Joints | 1 | EFEITO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Flexible Twisting Joints |
 | Misumi Tsurugi | Soft Physique Modification | 2 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Soft Physique Modification |
@@ -524,6 +523,7 @@
 | Nagato | Control | 2 | EFEITO_ERRADO, ALVO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Control |
 | Nagato | Phantom Dragon | 3 | EFEITO_ERRADO, ALVO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Phantom Dragon |
 | Nagato | Rinne Rebirth | 4 | EFEITO_ERRADO, ALVO_ERRADO, DURAÇÃO_ERRADA, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Rinne Rebirth |
+| Naraka Path Pain | Summoning: King of Hell | 1 | EFEITO_ERRADO, CUSTO_ERRADO, DESCRIÇÃO_ERRADA | EXACT_WITHIN_CHARACTER | Summoning: King of Hell |
 
 ## Não resolvidos
 
