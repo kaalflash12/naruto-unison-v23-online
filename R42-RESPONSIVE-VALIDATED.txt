@@ -1,6 +1,7 @@
-R44 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
+R45 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
 syntax=PASS
 secure_auth_adapter=PASS
+secure_auth_bootstrap=PASS
 single_battle_controller=PASS
 desktop_layout=PASS
 mobile_layout=PASS
