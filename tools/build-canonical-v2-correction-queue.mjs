@@ -22,7 +22,7 @@ const DIMENSION_BLOCKERS={
   CUSTO_ERRADO:new Set(['dynamic-change','alternate']),
   COOLDOWN_ERRADO:new Set(['dynamic-change','alternate']),
   DANO_ERRADO:new Set(['dynamic-change','alternate','channel','trap-counter','bomb','stack']),
-  ALVO_ERRADO:new Set(['dynamic-change','alternate','channel','trap-counter','redirect','bomb']),
+  ALVO_ERRADO:new Set(['dynamic-change','alternate','channel','trap-counter','redirect','bomb','stack']),
   DURAÇÃO_ERRADA:new Set(['dynamic-change','alternate','channel','trap-counter','bomb'])
 };
 
@@ -147,6 +147,7 @@ function runSelfTest(){
   const effectCost=structuredClone(base);effectCost.classifications=['EFEITO_ERRADO','CUSTO_ERRADO'];effectCost.upstream.categories=['damage','trap-counter'];const ec=analyze(effectCost);if(ec.tier!=='SAFE_STRUCTURAL'||!ec.safeStructuralDimensions.includes('CUSTO_ERRADO'))throw new Error(`SELFTEST_EFFECT_INDEPENDENT_COST=${JSON.stringify(ec)}`);
   const dynamicCost=structuredClone(effectCost);dynamicCost.upstream.categories=['damage','dynamic-change'];const dc=analyze(dynamicCost);if(dc.safeStructuralDimensions.includes('CUSTO_ERRADO'))throw new Error(`SELFTEST_DYNAMIC_COST_BLOCK=${JSON.stringify(dc)}`);
   const targetEffect=structuredClone(base);targetEffect.classifications=['EFEITO_ERRADO','ALVO_ERRADO'];targetEffect.evidence={target:{local:['self'],upstream:['enemy']}};const te=analyze(targetEffect);if(te.safeStructuralDimensions.includes('ALVO_ERRADO'))throw new Error(`SELFTEST_EFFECT_TARGET_BLOCK=${JSON.stringify(te)}`);
+  const stackedTarget=structuredClone(base);stackedTarget.classifications=['ALVO_ERRADO'];stackedTarget.upstream.categories=['damage','stack'];stackedTarget.evidence={target:{local:['enemy'],upstream:['self','enemy']}};const st=analyze(stackedTarget);if(st.safeStructuralDimensions.includes('ALVO_ERRADO')||st.tier!=='COMPLEX_EFFECT'||!st.heldStructuralDimensions.includes('ALVO_ERRADO'))throw new Error(`SELFTEST_STACKED_TARGET_BLOCK=${JSON.stringify(st)}`);
   const damageEffect=structuredClone(base);damageEffect.classifications=['EFEITO_ERRADO','DANO_ERRADO'];damageEffect.evidence={damage:{local:20,upstream:25}};const de=analyze(damageEffect);if(!de.safeStructuralDimensions.includes('DANO_ERRADO'))throw new Error(`SELFTEST_STATIC_DAMAGE=${JSON.stringify(de)}`);
   const stackedDamage=structuredClone(damageEffect);stackedDamage.upstream.categories=['damage','stack'];const sd=analyze(stackedDamage);if(sd.safeStructuralDimensions.includes('DANO_ERRADO'))throw new Error(`SELFTEST_STACKED_DAMAGE_BLOCK=${JSON.stringify(sd)}`);
   const unsupportedCost=structuredClone(base);unsupportedCost.evidence.cost.upstream=['chakra'];const u=analyze(unsupportedCost);if(u.tier!=='MANUAL_REVIEW'||!u.heldStructuralDimensions.includes('CUSTO_ERRADO'))throw new Error(`SELFTEST_UNREPRESENTABLE_COST=${JSON.stringify(u)}`);
@@ -185,6 +186,7 @@ const report=[
   '- SAFE_STRUCTURAL é calculado por dimensão, exige evidência exata e valor representável pelo schema publicado.',
   '- Custo e cooldown estáticos podem ser corrigidos independentemente de um efeito divergente, exceto quando dynamic-change/alternate pode reescrevê-los.',
   '- Dano só é liberado quando há valor estático explícito 1:1 e nenhum blocker que altere a quantidade ao longo do tempo.',
+  '- Alvo com bookkeeping de stack/tag é sempre retido para reparo semântico; o conjunto de targets upstream não pode ser achatado em um único campo.',
   '- Alvo e duração permanecem retidos diante de EFEITO_ERRADO porque podem pertencer a subefeitos distintos.',
   '- O patch automático futuro só pode consumir safeStructuralDimensions; classifications não é autorização de escrita.',
   '- Dimensões não representáveis ficam em heldStructuralDimensions.',
