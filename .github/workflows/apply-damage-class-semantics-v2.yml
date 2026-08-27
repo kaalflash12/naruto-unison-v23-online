@@ -1,0 +1,65 @@
+name: Apply Canonical Damage Class Semantics V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/patch-damage-class-semantics-v2.mjs'
+      - 'tools/test-damage-class-semantics-v2.cjs'
+      - '.github/workflows/apply-damage-class-semantics-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-damage-class-semantics-v2
+  cancel-in-progress: true
+
+jobs:
+  patch-test-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Apply deterministic patch
+        run: |
+          set -euo pipefail
+          node tools/patch-damage-class-semantics-v2.mjs
+      - name: Syntax and regression contracts
+        run: |
+          set -euo pipefail
+          node --check combat-rules-v2.js
+          node --check combat-content-adapter-v2.js
+          node --check tools/test-damage-class-semantics-v2.cjs
+          node tools/test-content-mechanics-v2.cjs
+          node tools/test-content-engine-extensions-v2.cjs
+          node tools/test-curse-mark-canonical-v2.cjs
+          node tools/test-percent-enrage-semantics-v2.cjs
+          node tools/test-damage-class-semantics-v2.cjs
+      - name: Guard exact damage-class semantics
+        run: |
+          set -euo pipefail
+          grep -Fq "const ignoresReduction=damageClass==='piercing'||damageClass==='affliction'" combat-rules-v2.js
+          grep -Fq "const ignoresWeaken=damageClass==='affliction'" combat-rules-v2.js
+          grep -Fq "if(damageClass==='affliction')effect={...effect,bypassDefense:true}" combat-rules-v2.js
+          echo 'DAMAGE_CLASS_SEMANTICS_V2=PASS'
+      - name: Commit engine patch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add combat-rules-v2.js
+          if git diff --cached --quiet; then
+            echo 'No engine change required'
+            exit 0
+          fi
+          git commit -m 'fix(combat): canonicalize piercing and affliction semantics'
+          git pull --rebase origin main
+          git push origin HEAD:main
