@@ -158,7 +158,9 @@ function effectTargets(state,actor,skill,effect,targetId){return resolveTargets(
 function isInvulnerable(target,classes,effect){if(effect?.bypassInvulnerable)return false;if(statusActive(target,'expose').some(s=>s.blockInvulnerable===true&&intersects(s.classes||['all'],classes)))return false;return statusActive(target,'invulnerable').some(s=>intersects(s.classes||['all'],classes))}
 function isEvaded(state,target,classes,effect){if(effect?.bypassEvasion)return false;const chance=clamp(statusActive(target,'evasion').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>Math.max(n,num(s.value,s.amount)),0),0,.95);return chance>0&&randomOf(state)()<chance}
 function reductionAmount(target,classes,effect){if(effect?.ignoreReduction)return 0;if(statusActive(target,'expose').some(s=>s.blockReduction===true&&intersects(s.classes||['all'],classes)))return 0;return statusActive(target,'reduction').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>n+Math.max(0,num(s.amount,s.magnitude)),0)}
-function attackAdjustment(source,classes){return statusActive(source,'strengthen').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')).reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0)-statusActive(source,'weaken').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')).reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0)}
+function modifierMode(s){return String(s?.amountMode||s?.mode||'flat').trim().toLowerCase()}
+function attackAdjustment(source,classes){return statusActive(source,'strengthen').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')&&modifierMode(s)!=='percent').reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0)-statusActive(source,'weaken').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')&&modifierMode(s)!=='percent').reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0)}
+function attackMultiplier(source,classes){const strengthen=statusActive(source,'strengthen').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')&&modifierMode(s)==='percent').reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0);const weaken=statusActive(source,'weaken').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='attack')&&modifierMode(s)==='percent').reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0);return Math.max(0,1+strengthen/100-weaken/100)}
 function exposureAmount(target,classes){return statusActive(target,'expose').filter(s=>intersects(s.classes||['all'],classes)&&(!s.stat||s.stat==='defense')).reduce((n,s)=>n+Math.max(0,num(s.amount,s.value)),0)}
 function vulnerabilityMultiplier(target,classes){const v=statusActive(target,'vulnerable').filter(s=>intersects(s.classes||['all'],classes)).reduce((n,s)=>n+Math.max(0,num(s.value,s.amount)),0);return 1+v}
 function absorbDefense(state,target,amount,classes,effect,ctx){
@@ -178,7 +180,7 @@ function applyDamage(state,source,target,effect,ctx={}){
   if(isInvulnerable(target,classes,effect))return{dealt:0,blocked:'invulnerable'};
   if(isEvaded(state,target,classes,effect))return{dealt:0,blocked:'evasion'};
   let raw=rolledAmount(state,effect,source,target);const damageClass=DAMAGE_CLASSES.has(effect.damageClass)?effect.damageClass:'normal';if(damageClass==='piercing'||damageClass==='affliction')effect={...effect,bypassDefense:true};
-  raw=Math.max(0,raw+attackAdjustment(source,classes)+exposureAmount(target,classes)-reductionAmount(target,classes,effect));raw=Math.max(0,Math.round(raw*vulnerabilityMultiplier(target,classes)));
+  raw=Math.max(0,raw*attackMultiplier(source,classes)+attackAdjustment(source,classes)+exposureAmount(target,classes)-reductionAmount(target,classes,effect));raw=Math.max(0,Math.round(raw*vulnerabilityMultiplier(target,classes)));
   const{remaining,absorbed}=absorbDefense(state,target,raw,classes,effect,{...ctx,source});const before=target.hp;target.hp=Math.max(0,num(target.hp)-remaining);const dealt=before-target.hp;let countered=0,reflected=0;
   if(dealt>0){runTriggers(state,'onHarmed',{...ctx,source,target,amount:dealt,effect},1);runTriggers(state,'onDamage',{...ctx,source,target,amount:dealt,effect},1);if(!ctx.counter&&alive(source)){const ratio=counterRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0},{counter:true});countered=r.dealt||0}}if(!ctx.reflect&&!ctx.counter&&alive(source)){const ratio=reflectRatio(target,classes);if(ratio>0){const amount=Math.max(1,Math.round(dealt*ratio)),r=applyDamage(state,target,source,{type:'damage',amount,damageClass:'normal',variance:0,bypassRedirect:true},{reflect:true});reflected=r.dealt||0}}}
   if(before>0&&target.hp<=0)runTriggers(state,'onDeath',{...ctx,source,target,effect},1);return{dealt,absorbed,raw,countered,reflected};
@@ -190,9 +192,18 @@ function effectBlockedByImmunity(target,type,effect,ctx){
   const key=type==='status'?String(effect.status||effect.name||'status'):type;if(!IMMUNITY_BLOCKABLE.has(key)&&!(type==='status'&&effect.negative===true))return false;
   return isImmuneTo(target,key,normClasses(effect.classes||ctx.skill?.classes||['all']));
 }
+const ENRAGE_BLOCKABLE=new Set(['stun','disable','silence','expose','exhaust','weaken','snare','throttle','taunt']);
+function effectBlockedByEnrage(target,type,effect){
+  if(!statusActive(target,'enrage').length)return false;
+  const key=type==='status'?String(effect.status||effect.name||'status'):type;
+  if(['damage','dot','alone','seal','reveal','share'].includes(key))return false;
+  if(type==='status')return effect.negative===true||NEGATIVE_STATUSES.has(key);
+  return ENRAGE_BLOCKABLE.has(key);
+}
 function removeStatuses(target,predicate,count=Infinity){let left=Math.max(0,num(count,Infinity)),removed=0;const removedTypes=[];target.statuses=target.statuses.filter(s=>{if(left>0&&predicate(s)){left--;removed++;removedTypes.push(String(s.type));return false}return true});return{removed,removedTypes,left}}
 function applyEffect(state,source,target,effect,ctx={},depth=0){
   if(depth>12)throw new Error('V2_TRIGGER_DEPTH_EXCEEDED');const type=String(effect.type||'noop');
+  if(type!=='damage'&&effectBlockedByEnrage(target,type,effect))return{type,blocked:'enrage'};
   if(type!=='damage'&&effectBlockedByImmunity(target,type,effect,ctx))return{type,blocked:'immunity'};
   if(type==='damage')return{type,...applyDamage(state,source,target,clone(effect),ctx)};
   if(type==='heal'){const amount=rolledAmount(state,effect),before=target.hp;target.hp=Math.min(target.maxHp,target.hp+amount);return{type,healed:target.hp-before}}
