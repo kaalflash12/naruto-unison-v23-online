@@ -8,6 +8,7 @@ on:
       - 'combat-rules-v2.js'
       - 'tools/test-content-mechanics-v2.cjs'
       - 'tools/test-content-engine-extensions-v2.cjs'
+      - 'tools/test-curse-mark-canonical-v2.cjs'
       - '.github/workflows/validate-content-engine-extensions-v2.yml'
   workflow_dispatch:
 
@@ -30,10 +31,13 @@ jobs:
           node --check combat-rules-v2.js
           node --check tools/test-content-mechanics-v2.cjs
           node --check tools/test-content-engine-extensions-v2.cjs
+          node --check tools/test-curse-mark-canonical-v2.cjs
       - name: Existing 15-op contract
         run: node tools/test-content-mechanics-v2.cjs
       - name: Advanced content envelope contract
         run: node tools/test-content-engine-extensions-v2.cjs
+      - name: Canonical Curse Mark contract
+        run: node tools/test-curse-mark-canonical-v2.cjs
       - name: Guard advanced envelope surface
         run: |
           set -euo pipefail
