@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-27T01:00:26.304Z",
+  "generatedAt": "2026-08-27T01:07:04.027Z",
   "sourceUpstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "totalTechniques": 836,
   "comparable": 719,
   "justifiedExcluded": 117,
   "correct": 9,
   "actionable": 710,
-  "safeStructural": 9,
-  "complexEffect": 701,
+  "safeStructural": 0,
+  "complexEffect": 710,
   "manualReview": 0,
   "descriptionAfterMechanics": 700,
-  "heldStructuralRows": 540,
-  "heldStructuralDimensions": 867,
+  "heldStructuralRows": 549,
+  "heldStructuralDimensions": 876,
   "classificationCounts": {
     "CORRETA": 9,
     "DESCRIÇÃO_ERRADA": 700,
@@ -27,14 +27,14 @@
     "CUSTO_ERRADO": 0,
     "COOLDOWN_ERRADO": 0,
     "DANO_ERRADO": 0,
-    "ALVO_ERRADO": 9,
+    "ALVO_ERRADO": 0,
     "DURAÇÃO_ERRADA": 0
   },
   "heldStructuralDimensionCounts": {
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,
     "DANO_ERRADO": 26,
-    "ALVO_ERRADO": 313,
+    "ALVO_ERRADO": 322,
     "DURAÇÃO_ERRADA": 353
   },
   "complexBlockerCounts": {

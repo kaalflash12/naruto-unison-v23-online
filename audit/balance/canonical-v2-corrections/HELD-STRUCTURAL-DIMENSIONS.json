@@ -787,6 +787,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ],
       "DURAÇÃO_ERRADA": [
@@ -1587,7 +1588,9 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -2600,7 +2603,8 @@
         "alternate"
       ],
       "ALVO_ERRADO": [
-        "alternate"
+        "alternate",
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -2691,6 +2695,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -3506,6 +3511,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ]
@@ -4577,7 +4583,8 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
-        "alternate"
+        "alternate",
+        "stack"
       ],
       "DURAÇÃO_ERRADA": [
         "alternate"
@@ -4797,7 +4804,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -7111,6 +7120,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -9375,7 +9385,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -9526,6 +9538,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -9878,6 +9891,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ],
       "DURAÇÃO_ERRADA": [
@@ -10026,6 +10040,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -11136,7 +11151,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -12962,6 +12979,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "dynamic-change"
       ]
@@ -13340,7 +13358,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -14450,6 +14470,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "bomb"
       ]
@@ -14613,6 +14634,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ]
     },
@@ -15355,7 +15377,64 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "ibiki-morino",
+    "characterName": "Ibiki Morino",
+    "slot": 2,
+    "techniqueId": "ibiki-morino__base_2",
+    "techniqueName": "Payback",
+    "originalName": "Payback",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Ibiki Morino",
+    "upstreamTechnique": "Payback",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -16022,6 +16101,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -16090,6 +16170,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ]
     },
@@ -17792,6 +17873,118 @@
   {
     "characterId": "jirobo",
     "characterName": "Jirōbō",
+    "slot": 1,
+    "techniqueId": "jirobo__base_1",
+    "techniqueName": "Crushing Palm",
+    "originalName": "Crushing Palm",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Jirōbō",
+    "upstreamTechnique": "Crushing Palm",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
+    "slot": 2,
+    "techniqueId": "jirobo__base_2",
+    "techniqueName": "Sphere of Graves",
+    "originalName": "Sphere of Graves",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Jirōbō",
+    "upstreamTechnique": "Sphere of Graves",
+    "upstreamSource": "src/Game/Characters/Original/Organizations.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemies"
+        ],
+        "upstream": [
+          "self",
+          "enemies"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "jirobo",
+    "characterName": "Jirōbō",
     "slot": 3,
     "techniqueId": "jirobo__base_3",
     "techniqueName": "Earth Dome Prison",
@@ -18099,7 +18292,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -18202,6 +18397,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ],
@@ -22312,7 +22508,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -22398,7 +22596,9 @@
       "DANO_ERRADO": [
         "stack"
       ],
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -22478,7 +22678,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -23041,6 +23243,62 @@
     "dimensionBlockers": {
       "COOLDOWN_ERRADO": [
         "alternate"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "kisame-hoshigaki-(s)",
+    "characterName": "Kisame Hoshigaki",
+    "slot": 2,
+    "techniqueId": "kisame-hoshigaki-(s)__base_2",
+    "techniqueName": "Man-Eating Sharks",
+    "originalName": "Man-Eating Sharks",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Kisame Hoshigaki",
+    "upstreamTechnique": "Man-Eating Sharks",
+    "upstreamSource": "src/Game/Characters/Shippuden/Akatsuki.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -23920,6 +24178,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "bomb"
       ]
     },
@@ -24581,7 +24840,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -25537,7 +25798,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26060,6 +26323,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ]
@@ -26154,7 +26418,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -26224,7 +26490,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26307,6 +26575,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -26695,6 +26964,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -26921,7 +27191,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -27071,7 +27343,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -27248,6 +27522,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -27334,6 +27609,62 @@
     "dimensionBlockers": {
       "DURAÇÃO_ERRADA": [
         "trap-counter"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "minato-namikaze-(r)",
+    "characterName": "Minato Namikaze",
+    "slot": 3,
+    "techniqueId": "minato-namikaze-(r)__base_3",
+    "techniqueName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "originalName": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Minato Namikaze",
+    "upstreamTechnique": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
+    "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "enemy",
+          "enemies"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -27665,7 +27996,9 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -28527,6 +28860,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -28942,6 +29276,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -29126,6 +29461,62 @@
       "DURAÇÃO_ERRADA": [
         "alternate",
         "trap-counter"
+      ]
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "neji-hyuga-(s)",
+    "characterName": "Neji Hyūga",
+    "slot": 4,
+    "techniqueId": "neji-hyuga-(s)__base_4",
+    "techniqueName": "Pressure Point Strike",
+    "originalName": "Pressure Point Strike",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Neji Hyūga",
+    "upstreamTechnique": "Pressure Point Strike",
+    "upstreamSource": "src/Game/Characters/Shippuden/Kids.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -30097,6 +30488,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "bomb"
       ]
@@ -30428,6 +30820,62 @@
     "blockers": [],
     "dimensionBlockers": {
       "ALVO_ERRADO": []
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "onoki-(s)",
+    "characterName": "Ōnoki",
+    "slot": 3,
+    "techniqueId": "onoki-(s)__base_3",
+    "techniqueName": "Atomic Dismantling",
+    "originalName": "Atomic Dismantling",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Ōnoki",
+    "upstreamTechnique": "Atomic Dismantling",
+    "upstreamSource": "src/Game/Characters/Shippuden/Leaders.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31784,6 +32232,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -33475,6 +33924,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "dynamic-change",
         "channel"
@@ -35277,7 +35727,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38615,7 +39067,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -40208,6 +40662,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "channel"
       ],
@@ -40794,7 +41249,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -41448,6 +41905,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -41901,7 +42359,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -42243,6 +42703,7 @@
     "dimensionBlockers": {
       "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -42637,8 +43098,69 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "yugito-nii-(s)",
+    "characterName": "Yugito Nii",
+    "slot": 3,
+    "techniqueId": "yugito-nii-(s)__base_3",
+    "techniqueName": "Cat Claws",
+    "originalName": "Cat Claws",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Yugito Nii",
+    "upstreamTechnique": "Cat Claws",
+    "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy",
+          "enemies"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack",
+      "requirement"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack",
+      "requirement"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -43262,6 +43784,62 @@
     "dimensionBlockers": {
       "CUSTO_ERRADO": [],
       "DURAÇÃO_ERRADA": []
+    },
+    "requiresManualSemantics": true,
+    "descriptionAfterMechanics": true
+  },
+  {
+    "characterId": "zaku-abumi",
+    "characterName": "Zaku Abumi",
+    "slot": 1,
+    "techniqueId": "zaku-abumi__base_1",
+    "techniqueName": "Slicing Sound Wave",
+    "originalName": "Slicing Sound Wave",
+    "resolution": "RESOLVIDO",
+    "matchSource": "EXACT_WITHIN_CHARACTER",
+    "upstreamCharacter": "Zaku Abumi",
+    "upstreamTechnique": "Slicing Sound Wave",
+    "upstreamSource": "src/Game/Characters/Original/Exams.hs",
+    "classifications": [
+      "ALVO_ERRADO",
+      "DESCRIÇÃO_ERRADA"
+    ],
+    "evidence": {
+      "target": {
+        "local": [
+          "enemy"
+        ],
+        "upstream": [
+          "self",
+          "enemy"
+        ]
+      },
+      "description": {
+        "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
+        "dimensions": [
+          "ALVO_ERRADO"
+        ]
+      }
+    },
+    "upstreamCategories": [
+      "damage",
+      "stack"
+    ],
+    "tier": "COMPLEX_EFFECT",
+    "structuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
+      "ALVO_ERRADO"
+    ],
+    "blockers": [
+      "stack"
+    ],
+    "dimensionBlockers": {
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true

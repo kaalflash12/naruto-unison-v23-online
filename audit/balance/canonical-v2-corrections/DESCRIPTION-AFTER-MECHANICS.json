@@ -933,6 +933,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ],
       "DURAÇÃO_ERRADA": [
@@ -2042,7 +2043,9 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -3390,7 +3393,8 @@
         "alternate"
       ],
       "ALVO_ERRADO": [
-        "alternate"
+        "alternate",
+        "stack"
       ]
     },
     "requiresManualSemantics": true,
@@ -3481,6 +3485,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -4493,6 +4498,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ]
@@ -5672,7 +5678,8 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
-        "alternate"
+        "alternate",
+        "stack"
       ],
       "DURAÇÃO_ERRADA": [
         "alternate"
@@ -5892,7 +5899,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -8500,6 +8509,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -11486,7 +11496,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -11637,6 +11649,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -11989,6 +12002,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ],
       "DURAÇÃO_ERRADA": [
@@ -12137,6 +12151,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -13523,7 +13538,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -15669,6 +15686,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "dynamic-change"
       ]
@@ -16109,7 +16127,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -17324,6 +17344,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "bomb"
       ]
@@ -17592,6 +17613,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ]
     },
@@ -18334,6 +18356,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -18377,19 +18400,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -19259,6 +19284,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -19327,6 +19353,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ]
     },
@@ -21279,19 +21306,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21333,19 +21362,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21710,7 +21741,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -21813,6 +21846,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ],
@@ -26431,7 +26465,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -26517,7 +26553,9 @@
       "DANO_ERRADO": [
         "stack"
       ],
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -26597,7 +26635,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -27303,19 +27343,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -28329,6 +28371,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "bomb"
       ]
     },
@@ -29304,7 +29347,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -30410,7 +30455,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -30982,6 +31029,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "channel"
       ]
@@ -31076,7 +31124,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -31146,7 +31196,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -31229,6 +31281,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -31831,6 +31884,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "channel"
       ]
     },
@@ -32102,7 +32156,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -32252,7 +32308,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32429,6 +32487,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -32557,19 +32616,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -32900,7 +32961,9 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -34013,6 +34076,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -34580,6 +34644,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -34900,19 +34965,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -36074,6 +36141,7 @@
     ],
     "dimensionBlockers": {
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "bomb"
       ]
@@ -36562,19 +36630,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -38303,6 +38373,7 @@
       ],
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter"
       ]
     },
@@ -40040,6 +40111,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter",
         "dynamic-change",
         "channel"
@@ -41951,7 +42023,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -45913,7 +45987,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -47746,6 +47822,7 @@
     "dimensionBlockers": {
       "ALVO_ERRADO": [
         "alternate",
+        "stack",
         "trap-counter",
         "channel"
       ],
@@ -48387,7 +48464,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -49349,6 +49428,7 @@
         "dynamic-change"
       ],
       "ALVO_ERRADO": [
+        "stack",
         "dynamic-change"
       ]
     },
@@ -49802,7 +49882,9 @@
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -50144,6 +50226,7 @@
     "dimensionBlockers": {
       "CUSTO_ERRADO": [],
       "ALVO_ERRADO": [
+        "stack",
         "trap-counter"
       ],
       "DURAÇÃO_ERRADA": [
@@ -50654,7 +50737,9 @@
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": [],
+      "ALVO_ERRADO": [
+        "stack"
+      ],
       "DURAÇÃO_ERRADA": []
     },
     "requiresManualSemantics": true,
@@ -50699,20 +50784,22 @@
       "stack",
       "requirement"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack",
       "requirement"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
@@ -51377,19 +51464,21 @@
       "damage",
       "stack"
     ],
-    "tier": "SAFE_STRUCTURAL",
+    "tier": "COMPLEX_EFFECT",
     "structuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "safeStructuralDimensions": [
+    "safeStructuralDimensions": [],
+    "heldStructuralDimensions": [
       "ALVO_ERRADO"
     ],
-    "heldStructuralDimensions": [],
     "blockers": [
       "stack"
     ],
     "dimensionBlockers": {
-      "ALVO_ERRADO": []
+      "ALVO_ERRADO": [
+        "stack"
+      ]
     },
     "requiresManualSemantics": true,
     "descriptionAfterMechanics": true
