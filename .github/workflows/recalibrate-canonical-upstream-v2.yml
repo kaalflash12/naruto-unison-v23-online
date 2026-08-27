@@ -51,7 +51,7 @@ jobs:
           grep -F "SELFTEST_ZERO_DEFAULTS" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "SELFTEST_EXTRA_TARGET" tools/classify-canonical-upstream-v2.mjs >/dev/null
           grep -F "bonusAmount" combat-content-adapter-v2.js >/dev/null
-          grep -F "requirements:statusRequirement(technique.requires)" combat-content-adapter-v2.js >/dev/null
+          grep -F "const legacyRequirement=statusRequirement(technique.requires);" combat-content-adapter-v2.js >/dev/null
           grep -F "requirementGateVerified" tools/audit-published-techniques-v2.mjs >/dev/null
           echo 'CANONICAL_ADAPTER_REQUIREMENT_FLAT_BONUS=PASS'
       - name: Verify current comparator and queue
