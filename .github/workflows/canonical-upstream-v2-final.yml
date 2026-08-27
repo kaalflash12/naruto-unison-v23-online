@@ -110,9 +110,26 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add audit/balance/canonical-v2 audit/balance/canonical-v2-corrections
-          if git diff --cached --quiet; then exit 0; fi
+          if git diff --cached --quiet; then
+            echo 'CANONICAL_EVIDENCE_ALREADY_CURRENT=PASS'
+            exit 0
+          fi
           git commit -m 'audit(balance): refresh canonical V2 accounting and correction queue [skip ci]'
-          git reset --hard HEAD
-          git clean -fd
-          git pull --rebase origin main
-          git push origin HEAD:main
+          if git push origin HEAD:main; then
+            echo 'CANONICAL_EVIDENCE_PUSH=PASS'
+            exit 0
+          fi
+          echo 'CONCURRENT_EVIDENCE_PUSH=DETECTED'
+          git fetch origin main
+          git show origin/main:audit/balance/canonical-v2/FINAL-SUMMARY.json >/tmp/remote-final-summary.json
+          git show origin/main:audit/balance/canonical-v2-corrections/SUMMARY.json >/tmp/remote-queue-summary.json
+          node - <<'JS'
+          const fs=require('fs');
+          const f=JSON.parse(fs.readFileSync('/tmp/remote-final-summary.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('/tmp/remote-queue-summary.json','utf8'));
+          if(f.gate!=='PASS'||f.totalTechniques!==836||f.accounted!==836||f.unaccounted!==0)throw new Error(`remote final evidence stale: ${JSON.stringify(f)}`);
+          if((f.classificationCounts?.MOTOR_INSUFICIENTE||0)!==0)throw new Error(`remote motor=${f.classificationCounts?.MOTOR_INSUFICIENTE}`);
+          if(q.gate!=='PASS'||q.totalTechniques!==836||q.comparable!==719||q.justifiedExcluded!==117)throw new Error(`remote queue evidence stale: ${JSON.stringify(q)}`);
+          if(q.safeStructural!==0)throw new Error(`remote safeStructural=${q.safeStructural}`);
+          console.log('REMOTE_CANONICAL_EVIDENCE=PASS',{accounted:f.accounted,safeStructural:q.safeStructural,complexEffect:q.complexEffect});
+          JS
