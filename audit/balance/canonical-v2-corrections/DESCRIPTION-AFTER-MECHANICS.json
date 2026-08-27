@@ -33072,14 +33072,20 @@
     "upstreamTechnique": "Rasen-Flash Super-Circle Dance Howl (Stage III)",
     "upstreamSource": "src/Game/Characters/Reanimated/Kage.hs",
     "classifications": [
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
+      "effect": {
+        "local": [],
+        "upstream": [
+          "damage",
+          "stack"
+        ]
+      },
       "target": {
-        "local": [
-          "enemy"
-        ],
+        "local": [],
         "upstream": [
           "enemy",
           "enemies"
@@ -51539,14 +51545,21 @@
     "upstreamTechnique": "Cat Claws",
     "upstreamSource": "src/Game/Characters/Shippuden/Jinchuriki.hs",
     "classifications": [
+      "EFEITO_ERRADO",
       "ALVO_ERRADO",
       "DESCRIÇÃO_ERRADA"
     ],
     "evidence": {
+      "effect": {
+        "local": [],
+        "upstream": [
+          "damage",
+          "stack",
+          "requirement"
+        ]
+      },
       "target": {
-        "local": [
-          "enemy"
-        ],
+        "local": [],
         "upstream": [
           "self",
           "enemy",
@@ -51561,6 +51574,7 @@
       "description": {
         "reason": "texto publicado descreve uma dimensão mecânica que diverge do upstream",
         "dimensions": [
+          "EFEITO_ERRADO",
           "ALVO_ERRADO"
         ]
       }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T10:45:38.173Z",
+  "generatedAt": "2026-08-27T12:39:01.231Z",
   "upstreamCommit": "3f81bcd0de1795c17ce1f8e8d9f9fa51b38af0e1",
   "playableCharacters": 209,
   "totalTechniques": 836,
@@ -13,7 +13,7 @@
     "CORRETA": 16,
     "DESCRIÇÃO_ERRADA": 693,
     "DANO_ERRADO": 26,
-    "EFEITO_ERRADO": 701,
+    "EFEITO_ERRADO": 703,
     "ALVO_ERRADO": 315,
     "CUSTO_ERRADO": 153,
     "COOLDOWN_ERRADO": 22,

@@ -1,6 +1,6 @@
 # Published Techniques — Combat Rules V2
 
-- Revision: **2**
+- Revision: **4**
 - Published characters: **214**
 - Playable characters: **209**
 - Canonical playable roster: **209 × 4 = 836**
@@ -9,6 +9,7 @@
 - Operators: **15/15**
 - Unsupported: **0**
 - Runtime failures: **0**
+- Requirement gates verified: **2**
 - Unknown costs: **0**
 - No-op effects: **0**
 - Gate: **PASS**
@@ -23,18 +24,18 @@
 
 ## Operator counts
 
-- buff: 395
+- buff: 394
 - chakra-drain: 118
 - chakra-gain: 9
-- cleanse: 319
+- cleanse: 318
 - cooldown: 31
-- damage: 1185
-- debuff: 196
+- damage: 1182
+- debuff: 194
 - dispel: 10
 - drain: 6
-- execute: 34
+- execute: 33
 - heal: 27
-- mark: 450
-- multi-hit: 96
-- shield: 372
-- status: 621
+- mark: 448
+- multi-hit: 95
+- shield: 370
+- status: 622
