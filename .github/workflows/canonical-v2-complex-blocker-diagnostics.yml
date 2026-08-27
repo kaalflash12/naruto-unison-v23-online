@@ -1,0 +1,73 @@
+name: Canonical V2 Complex Blocker Diagnostics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/summarize-canonical-v2-complex-blockers.mjs'
+      - 'tools/build-canonical-v2-correction-queue.mjs'
+      - 'audit/balance/canonical-v2-corrections/**'
+      - '.github/workflows/canonical-v2-complex-blocker-diagnostics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: canonical-v2-complex-blocker-diagnostics
+  cancel-in-progress: true
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and self-test
+        run: |
+          set -euo pipefail
+          node --check tools/summarize-canonical-v2-complex-blockers.mjs
+          node tools/summarize-canonical-v2-complex-blockers.mjs --self-test
+      - name: Build diagnostics
+        run: |
+          set -euo pipefail
+          rm -rf audit/balance/canonical-v2-complex-diagnostics
+          node tools/summarize-canonical-v2-complex-blockers.mjs
+      - name: Enforce exact current queue accounting
+        run: |
+          set -euo pipefail
+          node - <<'JS'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-complex-diagnostics/SUMMARY.json','utf8'));
+          const q=JSON.parse(fs.readFileSync('audit/balance/canonical-v2-corrections/SUMMARY.json','utf8'));
+          if(s.gate!=='PASS')throw new Error(`diagnostic gate=${s.gate}`);
+          if(q.gate!=='PASS')throw new Error(`queue gate=${q.gate}`);
+          if(s.complexRows!==q.complexEffect||s.complexRows!==710)throw new Error(`complex=${s.complexRows}/${q.complexEffect}`);
+          for(const [k,v] of Object.entries(q.complexBlockerCounts||{}))if(Number(s.blockerCounts?.[k])!==Number(v))throw new Error(`blocker ${k}=${s.blockerCounts?.[k]}/${v}`);
+          if(!s.allBlockersEngineSupported)throw new Error('engine-supported blocker set incomplete');
+          console.log('CANONICAL_V2_COMPLEX_BLOCKER_DIAGNOSTICS=PASS',JSON.stringify(s));
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canonical-v2-complex-blocker-diagnostics-${{ github.sha }}
+          path: audit/balance/canonical-v2-complex-diagnostics
+          retention-days: 30
+      - name: Persist compact diagnostics
+        run: |
+          set -euo pipefail
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add audit/balance/canonical-v2-complex-diagnostics
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit(balance): record complex blocker diagnostics [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main || {
+            git pull --rebase origin main
+            git push origin HEAD:main
+          }
