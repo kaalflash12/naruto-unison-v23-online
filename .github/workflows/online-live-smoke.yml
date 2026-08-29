@@ -22,7 +22,7 @@ jobs:
         shell: bash
         env:
           SITE: https://kaalflash12.github.io/naruto-unison-v23-online
-          API: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api
+          API: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors
           BRIDGE: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge
           AUTH_HEALTH: https://cpdgkszviwrgrwsltbyk.supabase.co/auth/v1/health
           PUBLISHABLE_KEY: sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K
@@ -30,11 +30,12 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo '== Wait until GitHub Pages serves online-r45 =='
+          echo '== Wait until GitHub Pages serves online-r45 through CORS gateway =='
           ready=0
           for i in $(seq 1 36); do
             if curl -fLsS --connect-timeout 10 --max-time 25 "$SITE/online-config.js?v=$GITHUB_SHA-$i" -o /tmp/online-config.js \
               && grep -Fq "version:'online-r45'" /tmp/online-config.js \
+              && grep -Fq "functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors'" /tmp/online-config.js \
               && grep -Fq 'secure-auth-adapter.js?v=20260827-r45' /tmp/online-config.js \
               && grep -Fq "</'+'script>" /tmp/online-config.js; then
               ready=1
@@ -84,19 +85,23 @@ jobs:
           node --check /tmp/r39-live-hotfix.js
           node --check /tmp/r43-admin-entry.js
 
-          echo '== naruto-api OPTIONS / CORS =='
-          curl -sS --connect-timeout 10 --max-time 30 \
-            -D /tmp/api-options.headers -o /tmp/api-options.body \
+          echo '== naruto-api-cors OPTIONS / CORS =='
+          options_code="$(curl -sS --connect-timeout 10 --max-time 30 \
+            -D /tmp/api-options.headers -o /tmp/api-options.body -w '%{http_code}' \
             -X OPTIONS \
             -H "Origin: $ORIGIN" \
             -H 'Access-Control-Request-Method: POST' \
             -H 'Access-Control-Request-Headers: content-type,authorization' \
-            "$API/api/account/login"
-          grep -Eqi '^access-control-allow-origin:[[:space:]]*https://kaalflash12\.github\.io' /tmp/api-options.headers
+            "$API/api/account/login")"
+          case "$options_code" in
+            200|204) ;;
+            *) echo "Unexpected OPTIONS status: $options_code"; cat /tmp/api-options.body; exit 1 ;;
+          esac
+          tr -d '\r' < /tmp/api-options.headers | grep -Eqi '^access-control-allow-origin:[[:space:]]*https://kaalflash12\.github\.io$'
 
-          echo '== naruto-api login route is reachable =='
+          echo '== naruto-api login route is reachable with CORS on error =='
           code="$(curl -sS --connect-timeout 10 --max-time 30 \
-            -o /tmp/login.json -w '%{http_code}' \
+            -D /tmp/login.headers -o /tmp/login.json -w '%{http_code}' \
             -H "Origin: $ORIGIN" \
             -H 'content-type: application/json' \
             --data "{\"login\":\"smoke${GITHUB_RUN_ID}\",\"password\":\"invalid-password-live-smoke\"}" \
@@ -105,6 +110,8 @@ jobs:
             400|401|403|429) ;;
             *) echo "Unexpected login status: $code"; cat /tmp/login.json; exit 1 ;;
           esac
+          tr -d '\r' < /tmp/login.headers | grep -Eqi '^access-control-allow-origin:[[:space:]]*https://kaalflash12\.github\.io$'
+          tr -d '\r' < /tmp/login.headers | grep -Eqi '^x-naruto-cors-gateway:[[:space:]]*1$'
 
           echo '== Supabase Auth health =='
           curl -fLsS --connect-timeout 10 --max-time 30 \
