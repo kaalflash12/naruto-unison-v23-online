@@ -1,4 +1,4 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r49'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r50'};
 
 (()=>{
   if(window.NarutoSecureAuth)return;
@@ -43,5 +43,19 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
   const adminEntry=document.createElement('script');adminEntry.src='r43-admin-entry.js?v=20260824-r43';adminEntry.async=false;document.head.appendChild(adminEntry);
 })();
 
+(()=>{
+  const installR50=()=>{
+    if(document.querySelector('link[data-naruto-layout="r50"]'))return;
+    const r50=document.createElement('link');
+    r50.rel='stylesheet';
+    r50.dataset.narutoLayout='r50';
+    r50.href='r50-desktop-layout-authoritative.css?v=20260829-r50-1';
+    document.head.appendChild(r50);
+    document.documentElement.dataset.desktopLayout='r50';
+  };
+  if(document.readyState==='complete')installR50();
+  else window.addEventListener('load',()=>setTimeout(installR50,0),{once:true});
+})();
+
 // CORS gateway redeploy proof: naruto-api-cors v20
-// Desktop layout revision: R49 final override
+// Desktop layout revision: R50 authoritative post-load override
