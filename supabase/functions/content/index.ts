@@ -22,7 +22,7 @@ const SERVICE_KEY = pick("SUPABASE_SECRET_KEYS", "SUPABASE_SERVICE_ROLE_KEY");
 const TYPE_RE = /^[a-z0-9][a-z0-9_-]{0,63}$/i;
 const HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "GET,OPTIONS",
   "Content-Type": "application/json; charset=utf-8",
   "Cache-Control": "public, max-age=30",
