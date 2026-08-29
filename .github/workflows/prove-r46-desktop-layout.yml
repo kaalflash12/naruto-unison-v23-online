@@ -1,0 +1,116 @@
+name: Prove R46 Desktop Layout
+
+on:
+  push:
+    paths:
+      - 'r46-desktop-layout-fix.css'
+      - 'online-config.js'
+      - '.github/workflows/prove-r46-desktop-layout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  desktop-layout-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Measure public desktop layout at 1680px
+        shell: bash
+        env:
+          SITE: https://kaalflash12.github.io/naruto-unison-v23-online
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "$CHROME"
+          WORK="$(mktemp -d)"
+          cd "$WORK"
+          npm init -y >/dev/null 2>&1
+          npm install --silent --no-audit --no-fund puppeteer-core@24.16.0
+          CHROME="$CHROME" SITE="$SITE" GITHUB_SHA="$GITHUB_SHA" node <<'NODE'
+          const puppeteer = require('puppeteer-core');
+          const fs = require('fs');
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              executablePath: process.env.CHROME,
+              headless: true,
+              args: ['--no-sandbox', '--disable-dev-shm-usage']
+            });
+            const page = await browser.newPage();
+            await page.setViewport({ width: 1680, height: 950, deviceScaleFactor: 1 });
+
+            const response = await page.goto(`${process.env.SITE}/?layout-proof=${process.env.GITHUB_SHA}-${Date.now()}`, {
+              waitUntil: 'networkidle2',
+              timeout: 45000
+            });
+            if (!response || !response.ok()) throw new Error(`Public page HTTP ${response?.status()}`);
+
+            await page.waitForFunction(() => Array.from(document.styleSheets).some(s => /r46-desktop-layout-fix\.css/.test(s.href || '')), { timeout: 30000 });
+
+            const proof = await page.evaluate(() => {
+              const select = document.querySelector('#selectPage');
+              if (!select) throw new Error('#selectPage missing');
+              document.querySelectorAll('#main .gameShellPage').forEach(el => el.classList.add('hidden'));
+              select.classList.remove('hidden');
+
+              const rect = sel => {
+                const el = document.querySelector(sel);
+                if (!el) return null;
+                const r = el.getBoundingClientRect();
+                const cs = getComputedStyle(el);
+                return {
+                  x: Math.round(r.x), y: Math.round(r.y),
+                  width: Math.round(r.width), height: Math.round(r.height),
+                  display: cs.display, position: cs.position,
+                  maxWidth: cs.maxWidth, overflow: cs.overflow
+                };
+              };
+
+              return {
+                viewport: { width: innerWidth, height: innerHeight },
+                r46Loaded: Array.from(document.styleSheets).some(s => /r46-desktop-layout-fix\.css/.test(s.href || '')),
+                shell: rect('#selectPage'),
+                sideNav: rect('#selectPage > .gameSideNav'),
+                main: rect('#selectPage > .selectMain'),
+                charSelect: rect('#selectPage #charSelect'),
+                preview: rect('#selectPage #preview'),
+                rosterFrame: rect('#selectPage #forTeam'),
+                roster: rect('#selectPage #roster')
+              };
+            });
+
+            console.log('R46_LAYOUT_PROOF=' + JSON.stringify(proof));
+            const fail = [];
+            if (!proof.r46Loaded) fail.push('R46 stylesheet not loaded');
+            if (!proof.shell || proof.shell.width < 1500) fail.push(`shell width ${proof.shell?.width}`);
+            if (!proof.main || proof.main.width < 1200) fail.push(`main width ${proof.main?.width}`);
+            if (!proof.charSelect || proof.charSelect.width < 1150) fail.push(`charSelect width ${proof.charSelect?.width}`);
+            if (!proof.preview || proof.preview.width < 1100) fail.push(`preview width ${proof.preview?.width}`);
+            if (!proof.rosterFrame || proof.rosterFrame.width < 1100) fail.push(`forTeam width ${proof.rosterFrame?.width}`);
+            if (proof.charSelect?.position !== 'relative') fail.push(`charSelect position ${proof.charSelect?.position}`);
+            if (proof.preview?.position !== 'relative') fail.push(`preview position ${proof.preview?.position}`);
+            if (fail.length) throw new Error('Desktop layout proof failed: ' + fail.join(' | '));
+
+            await page.screenshot({ path: 'r46-layout-1680.png', fullPage: true });
+            fs.writeFileSync('r46-layout-proof.json', JSON.stringify(proof, null, 2));
+            console.log('R46_DESKTOP_LAYOUT=PASS');
+            await browser.close();
+          })().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          NODE
+          cp "$WORK/r46-layout-1680.png" "$GITHUB_WORKSPACE/r46-layout-1680.png"
+          cp "$WORK/r46-layout-proof.json" "$GITHUB_WORKSPACE/r46-layout-proof.json"
+
+      - name: Upload R46 visual proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: r46-desktop-layout-proof
+          path: |
+            r46-layout-1680.png
+            r46-layout-proof.json
+          if-no-files-found: error
+          retention-days: 30
