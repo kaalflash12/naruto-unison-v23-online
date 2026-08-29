@@ -1,0 +1,60 @@
+name: Recover naruto-api v84 source
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_REF: cpdgkszviwrgrwsltbyk
+      TOKEN_1: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      TOKEN_2: ${{ secrets.SUPABASE_TOKEN }}
+      TOKEN_3: ${{ secrets.SUPABASE_MANAGEMENT_TOKEN }}
+      TOKEN_4: ${{ secrets.SUPABASE_PAT }}
+      TOKEN_5: ${{ secrets.SB_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Select existing Supabase management token
+        shell: bash
+        run: |
+          set -euo pipefail
+          token=''
+          for name in TOKEN_1 TOKEN_2 TOKEN_3 TOKEN_4 TOKEN_5; do
+            value="${!name:-}"
+            if [ -n "$value" ]; then token="$value"; break; fi
+          done
+          if [ -z "$token" ]; then
+            echo 'NO_SUPABASE_MANAGEMENT_TOKEN'
+            exit 2
+          fi
+          echo "SUPABASE_ACCESS_TOKEN=$token" >> "$GITHUB_ENV"
+          echo 'SUPABASE_MANAGEMENT_TOKEN_FOUND=1'
+      - name: Download exact deployed naruto-api
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --version
+          rm -rf supabase/functions/naruto-api
+          supabase functions download naruto-api --project-ref "$PROJECT_REF" --debug
+          test -s supabase/functions/naruto-api/index.ts
+          sha256sum supabase/functions/naruto-api/index.ts | tee /tmp/naruto-api-source.sha256
+          echo '=== CORS/OPTIONS anchors ==='
+          grep -nEi 'access-control|cors|OPTIONS|Deno\.serve|serve\(' supabase/functions/naruto-api/index.ts | head -n 160 || true
+      - name: Package recovered source
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-source
+          path: |
+            supabase/functions/naruto-api/**
+            /tmp/naruto-api-source.sha256
+          if-no-files-found: error
+          retention-days: 1
