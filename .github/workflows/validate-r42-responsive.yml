@@ -4,6 +4,7 @@ on:
     paths:
       - '.r42-validate-trigger'
       - 'r42-responsive-fix.css'
+      - 'r48-desktop-layout-fix.css'
       - 'r40-battle-guard.js'
       - 'r39-live-hotfix.js'
       - 'r40-desktop-overhaul.js'
@@ -52,6 +53,9 @@ jobs:
           grep -q '#onlinePage .onlinePanel' r42-responsive-fix.css
           grep -q '#profilePage' r42-responsive-fix.css
           grep -q '#jutsuHubTabs' r42-responsive-fix.css
+          grep -q '@media (min-width: 1051px)' r48-desktop-layout-fix.css
+          grep -q '#selectPage #preview' r48-desktop-layout-fix.css
+          grep -q '#selectPage #forTeam' r48-desktop-layout-fix.css
       - name: Admin responsive shell
         shell: bash
         run: |
@@ -66,10 +70,11 @@ jobs:
       - name: Current runtime loaded and mastery retained in Jutsus
         shell: bash
         run: |
-          grep -q "version:'online-r45'" online-config.js
+          grep -q "version:'online-r48'" online-config.js
           grep -q 'secure-auth-adapter.js?v=20260827-r45' online-config.js
           grep -q "document.write('<script src=\"secure-auth-adapter.js?v=20260827-r45\"></'+'script>')" online-config.js
           grep -q 'r42-responsive-fix.css' online-config.js
+          grep -q 'r48-desktop-layout-fix.css?v=20260829-r48-1' online-config.js
           grep -q 'window.NarutoSecureAuth' secure-auth-adapter.js
           grep -q 'TREINO / PROVAS DE DOMÍNIO' r40-desktop-overhaul.js
           grep -q 'jutsuTrainingHub' r40-desktop-overhaul.js
@@ -77,11 +82,12 @@ jobs:
         shell: bash
         run: |
           cat > R42-RESPONSIVE-VALIDATED.txt <<'EOF'
-          R45 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
+          R48 CURRENT RUNTIME / R42 RESPONSIVE + R48 DESKTOP VALIDATION
           syntax=PASS
           secure_auth_adapter=PASS
           secure_auth_bootstrap=PASS
           single_battle_controller=PASS
+          r48_desktop_override=PASS
           desktop_layout=PASS
           mobile_layout=PASS
           desktop_native_wheel=PASS
