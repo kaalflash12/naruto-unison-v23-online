@@ -1,0 +1,56 @@
+name: Apply R49 Cache Bust
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-r49-cache-bust.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-index-cache-keys:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Replace stale generic cache keys
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+              'static/css/embeds.css"': 'static/css/embeds.css?v=20260829-r49-2"',
+              'styles-online.css?v=online': 'styles-online.css?v=20260829-r49-2',
+              'jutsu-variants.js?v=online': 'jutsu-variants.js?v=20260829-r49-2',
+              'online-config.js?v=online': 'online-config.js?v=20260829-r49-2',
+              'app-online.js?v=online': 'app-online.js?v=20260829-r49-2',
+          }
+          missing=[]
+          for old,new in replacements.items():
+              if old not in s and new not in s:
+                  missing.append(old)
+              s=s.replace(old,new)
+          if missing:
+              raise SystemExit('Expected cache-key targets missing: '+', '.join(missing))
+          p.write_text(s,encoding='utf-8')
+          PY
+          grep -F 'static/css/embeds.css?v=20260829-r49-2' index.html
+          grep -F 'styles-online.css?v=20260829-r49-2' index.html
+          grep -F 'online-config.js?v=20260829-r49-2' index.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'R49_CACHE_BUST=ALREADY_APPLIED'
+            exit 0
+          fi
+          git commit -m 'fix(ui): invalidate cached R49 desktop loader'
+          git push origin HEAD:main
+          echo 'R49_CACHE_BUST=APPLIED'
