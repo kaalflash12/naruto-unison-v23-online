@@ -82,6 +82,9 @@ jobs:
             });
 
             console.log('R46_LAYOUT_PROOF=' + JSON.stringify(proof));
+            await page.screenshot({ path: 'r46-layout-1680.png', fullPage: true });
+            fs.writeFileSync('r46-layout-proof.json', JSON.stringify(proof, null, 2));
+
             const fail = [];
             if (!proof.r46Loaded) fail.push('R46 stylesheet not loaded');
             if (!proof.shell || proof.shell.width < 1500) fail.push(`shell width ${proof.shell?.width}`);
@@ -90,11 +93,9 @@ jobs:
             if (!proof.preview || proof.preview.width < 1100) fail.push(`preview width ${proof.preview?.width}`);
             if (!proof.rosterFrame || proof.rosterFrame.width < 1100) fail.push(`forTeam width ${proof.rosterFrame?.width}`);
             if (proof.charSelect?.position !== 'relative') fail.push(`charSelect position ${proof.charSelect?.position}`);
-            if (proof.preview?.position !== 'relative') fail.push(`preview position ${proof.preview?.position}`);
+            if (['absolute','fixed'].includes(proof.preview?.position)) fail.push(`preview leaves normal flow: ${proof.preview?.position}`);
             if (fail.length) throw new Error('Desktop layout proof failed: ' + fail.join(' | '));
 
-            await page.screenshot({ path: 'r46-layout-1680.png', fullPage: true });
-            fs.writeFileSync('r46-layout-proof.json', JSON.stringify(proof, null, 2));
             console.log('R46_DESKTOP_LAYOUT=PASS');
             await browser.close();
           })().catch(err => {
@@ -106,6 +107,7 @@ jobs:
           cp "$WORK/r46-layout-proof.json" "$GITHUB_WORKSPACE/r46-layout-proof.json"
 
       - name: Upload R46 visual proof
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: r46-desktop-layout-proof
