@@ -49,7 +49,7 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
     const r50=document.createElement('link');
     r50.rel='stylesheet';
     r50.dataset.narutoLayout='r50';
-    r50.href='r50-desktop-layout-authoritative.css?v=20260829-r50-1';
+    r50.href='r50-desktop-layout-authoritative.css?v=20260829-r50-2';
     document.head.appendChild(r50);
     document.documentElement.dataset.desktopLayout='r50';
   };
@@ -58,4 +58,4 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
 })();
 
 // CORS gateway redeploy proof: naruto-api-cors v20
-// Desktop layout revision: R50 authoritative post-load override
+// Desktop layout revision: R50.2 authoritative post-load override
