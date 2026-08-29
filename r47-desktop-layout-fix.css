@@ -1,0 +1,283 @@
+/* Naruto Unison R47 — desktop-first final override.
+   Loaded after every legacy/overhaul stylesheet so the PC canvas is actually wide.
+   Mobile rules below 900 px remain owned by the existing responsive layer. */
+:root{--naruto-desktop-layout-revision:"r47"}
+
+@media (min-width:900px){
+  html,body{
+    width:100%!important;max-width:none!important;
+    min-height:100%!important;height:auto!important;
+    overflow-x:hidden!important;overflow-y:auto!important;
+  }
+  body{margin:0!important}
+  #main{
+    display:block!important;
+    width:100%!important;max-width:none!important;
+    min-height:100vh!important;height:auto!important;
+    margin:0!important;padding:0 10px 18px!important;
+    box-sizing:border-box!important;overflow:visible!important;
+  }
+
+  /* Stop the legacy 942/1180 px desktop column. */
+  #main .gameShellPage:not(.hidden),
+  #main #selectPage.gameShellPage:not(.hidden),
+  #main #missionPage.gameShellPage:not(.hidden),
+  #main #eventsPage.gameShellPage:not(.hidden),
+  #main #ninjaMissionPage.gameShellPage:not(.hidden),
+  #main #shopPage.gameShellPage:not(.hidden),
+  #main #inventoryPage.gameShellPage:not(.hidden),
+  #main #encyclopediaPage.gameShellPage:not(.hidden){
+    display:grid!important;
+    grid-template-columns:clamp(205px,13vw,240px) minmax(0,1fr)!important;
+    width:calc(100vw - 20px)!important;max-width:none!important;
+    min-height:calc(100vh - 20px)!important;height:auto!important;
+    margin:10px auto!important;
+    box-sizing:border-box!important;
+    align-items:stretch!important;overflow:visible!important;
+  }
+  #main .gameShellPage:not(.hidden)>.gameSideNav{
+    width:auto!important;min-width:0!important;max-width:none!important;
+    min-height:100%!important;height:auto!important;
+    position:relative!important;top:auto!important;
+    box-sizing:border-box!important;
+  }
+  #main .gameShellPage:not(.hidden)>.homeMain,
+  #main .gameShellPage:not(.hidden)>.jutsuMain,
+  #main .gameShellPage:not(.hidden)>.selectMain,
+  #main .gameShellPage:not(.hidden)>.missionMain,
+  #main .gameShellPage:not(.hidden)>.eventMain,
+  #main .gameShellPage:not(.hidden)>.featureMain{
+    width:100%!important;max-width:none!important;min-width:0!important;
+    padding:18px 22px 26px!important;
+    box-sizing:border-box!important;overflow:visible!important;
+  }
+  #main .gameShellPage:not(.hidden)>.gameSideNav button{
+    min-height:40px!important;padding:9px 10px!important;
+    font-size:11px!important;line-height:1.15!important;
+  }
+
+  /* ===== PERSONAGENS / EQUIPE ===== */
+  #selectPage .selectMain{min-width:0!important}
+  #selectPage .selectTop{
+    width:100%!important;max-width:none!important;
+    margin:0 0 12px!important;padding:0 0 11px!important;
+    box-sizing:border-box!important;
+  }
+  #selectPage .selectTop h1{font-size:25px!important;margin:3px 0 2px!important}
+  #selectPage .selectTop p{font-size:13px!important}
+
+  #selectPage #charSelect{
+    position:relative!important;inset:auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:auto auto auto auto!important;
+    gap:12px!important;
+    width:100%!important;max-width:none!important;
+    height:auto!important;min-height:0!important;max-height:none!important;
+    margin:0!important;padding:0!important;
+    box-sizing:border-box!important;overflow:visible!important;
+    transform:none!important;
+  }
+  #selectPage #historyBuildBadge{
+    position:static!important;inset:auto!important;
+    width:100%!important;height:auto!important;
+    margin:0!important;padding:6px 10px!important;
+    box-sizing:border-box!important;
+    font-size:10px!important;line-height:1.2!important;
+  }
+
+  /* First row uses the whole available width. Second row (account) spans both columns,
+     eliminating the beige dead zone visible in the old PC layout. */
+  #selectPage #charSelect>header{
+    position:static!important;inset:auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(620px,1.75fr) minmax(300px,.72fr)!important;
+    grid-template-areas:"play team" "user user"!important;
+    gap:10px 14px!important;align-items:stretch!important;
+    width:100%!important;max-width:none!important;
+    height:auto!important;min-height:0!important;
+    margin:0!important;padding:0!important;
+    box-sizing:border-box!important;
+  }
+  #selectPage #charSelect>header>.space{display:none!important}
+
+  #selectPage #playButtons{
+    grid-area:play!important;
+    display:grid!important;
+    grid-template-columns:minmax(170px,.65fr) minmax(170px,.65fr) minmax(430px,1.7fr)!important;
+    grid-template-areas:"start random ai"!important;
+    gap:9px!important;align-items:stretch!important;
+    width:100%!important;max-width:none!important;min-width:0!important;
+    height:auto!important;margin:0!important;padding:0!important;
+    box-sizing:border-box!important;
+  }
+  #selectPage #startMatch{grid-area:start!important}
+  #selectPage #randomYou{grid-area:random!important}
+  #selectPage #aiCompact{grid-area:ai!important}
+  #selectPage #playButtons>.playButton{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    width:100%!important;min-width:0!important;min-height:56px!important;height:auto!important;
+    margin:0!important;padding:10px 12px!important;box-sizing:border-box!important;
+    font-size:13px!important;font-weight:900!important;line-height:1.15!important;
+  }
+  #selectPage #aiCompact{
+    display:grid!important;
+    grid-template-columns:auto minmax(190px,1fr) auto minmax(150px,auto)!important;
+    grid-template-areas:"label select new team" "summary summary summary summary"!important;
+    gap:6px 8px!important;align-items:center!important;
+    width:100%!important;max-width:none!important;min-width:0!important;
+    min-height:56px!important;margin:0!important;padding:7px 9px!important;
+    box-sizing:border-box!important;
+  }
+  #selectPage #aiCompact .aiLabel{grid-area:label!important;font-size:11px!important}
+  #selectPage #aiProfile{grid-area:select!important;width:100%!important;min-width:0!important;height:36px!important;box-sizing:border-box!important;font-size:12px!important}
+  #selectPage #randomAI{grid-area:new!important;min-width:58px!important;height:36px!important;padding:0 9px!important;font-size:10px!important}
+  #selectPage #aiTeamButtons{grid-area:team!important;display:flex!important;gap:5px!important;justify-content:flex-end!important;min-width:150px!important}
+  #selectPage #aiTeamButtons img{width:46px!important;height:46px!important;object-fit:cover!important}
+  #selectPage #aiSummary{grid-area:summary!important;display:block!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important;font-size:10px!important;line-height:1.25!important}
+
+  #selectPage #teamContainer{
+    grid-area:team!important;
+    position:static!important;inset:auto!important;
+    display:block!important;
+    width:100%!important;min-width:0!important;max-width:none!important;
+    height:auto!important;margin:0!important;padding:10px!important;
+    box-sizing:border-box!important;text-align:center!important;
+  }
+  #selectPage #teamButtons{
+    width:100%!important;height:auto!important;min-height:82px!important;
+    margin:0 0 8px!important;box-sizing:border-box!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;
+    overflow:visible!important;
+  }
+  #selectPage #teamButtons img{width:72px!important;height:72px!important;object-fit:cover!important}
+  #selectPage #underTeam{width:100%!important;margin:0!important;padding:5px 8px!important;box-sizing:border-box!important;font-size:13px!important}
+
+  #selectPage #userBox{
+    grid-area:user!important;
+    position:static!important;inset:auto!important;
+    width:100%!important;max-width:none!important;min-width:0!important;
+    min-height:82px!important;height:auto!important;
+    margin:0!important;padding:10px 14px!important;box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:minmax(220px,1fr) repeat(3,minmax(120px,.55fr))!important;
+    grid-auto-flow:row!important;column-gap:18px!important;row-gap:3px!important;
+    align-content:center!important;color:#21150d!important;font-size:12px!important;
+  }
+  #selectPage #userBox h4{grid-column:1!important;grid-row:1!important;margin:0!important;font-size:14px!important}
+  #selectPage #userBox p{grid-column:1!important;grid-row:2!important;margin:0!important}
+  #selectPage #userBox dt,#selectPage #userBox dd{float:none!important;width:auto!important;margin:0!important;line-height:1.25!important}
+
+  #selectPage #preview,
+  #selectPage #charSelect>article#preview{
+    position:static!important;inset:auto!important;
+    width:100%!important;max-width:none!important;
+    height:auto!important;min-height:230px!important;max-height:360px!important;
+    margin:0!important;padding:14px 18px!important;box-sizing:border-box!important;
+    overflow:auto!important;z-index:1!important;
+    font-size:13px!important;line-height:1.35!important;
+  }
+  #selectPage #preview>section{min-height:72px!important}
+  #selectPage #preview>section>div{width:72px!important}
+  #selectPage #preview>section>h4,#selectPage #preview>section>p{margin-left:80px!important}
+
+  /* Character album: real desktop grid, bigger portraits and arrows inside the panel. */
+  #selectPage #forTeam{
+    position:static!important;inset:auto!important;
+    display:grid!important;
+    grid-template-columns:46px minmax(0,1fr) 46px!important;
+    grid-template-areas:"prev roster next" "browse browse browse"!important;
+    gap:10px!important;
+    width:100%!important;max-width:none!important;
+    height:auto!important;min-height:330px!important;
+    margin:0!important;padding:12px!important;box-sizing:border-box!important;
+    overflow:visible!important;
+    border-left:9px solid var(--select-border)!important;border-right:9px solid var(--select-border)!important;
+  }
+  #selectPage #prevPage,#selectPage #nextPage{
+    position:static!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;
+    transform:none!important;
+    width:46px!important;height:100%!important;min-height:250px!important;
+    margin:0!important;padding:0!important;align-self:stretch!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    font-size:28px!important;
+  }
+  #selectPage #prevPage{grid-area:prev!important}
+  #selectPage #nextPage{grid-area:next!important}
+  #selectPage #forTeam #roster,
+  #selectPage #forTeam .charScroll{
+    grid-area:roster!important;
+    display:grid!important;
+    grid-template-columns:repeat(auto-fill,minmax(88px,1fr))!important;
+    gap:10px!important;align-content:start!important;justify-items:center!important;
+    width:100%!important;max-width:none!important;
+    height:auto!important;min-height:250px!important;max-height:430px!important;
+    margin:0!important;padding:5px!important;box-sizing:border-box!important;
+    overflow-y:auto!important;overflow-x:hidden!important;text-align:center!important;
+  }
+  #selectPage #forTeam .charWrapper{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    width:100%!important;min-width:0!important;height:auto!important;
+    margin:0!important;position:relative!important;overflow:visible!important;
+  }
+  #selectPage #forTeam .char,
+  #selectPage #forTeam .charicon,
+  #selectPage #forTeam .char img{
+    width:84px!important;height:84px!important;max-width:84px!important;max-height:84px!important;
+    margin:0!important;object-fit:cover!important;
+  }
+  #selectPage #forTeam .charWrapper button.add,
+  #selectPage #forTeam .charWrapper button.remove{
+    width:23px!important;height:23px!important;right:1px!important;top:1px!important;left:auto!important;bottom:auto!important;z-index:20!important;
+  }
+  #selectPage #browse{
+    grid-area:browse!important;
+    position:static!important;inset:auto!important;
+    display:grid!important;grid-template-columns:repeat(7,minmax(90px,1fr))!important;
+    gap:4px!important;
+    width:100%!important;height:auto!important;min-height:42px!important;
+    margin:0!important;padding:0!important;box-sizing:border-box!important;
+  }
+  #selectPage #browse button{
+    width:100%!important;min-width:0!important;height:42px!important;
+    margin:0!important;padding:5px 4px!important;box-sizing:border-box!important;font-size:10px!important;
+  }
+
+  /* Other desktop screens inherit the full canvas instead of staying in a narrow centre strip. */
+  #homePage .homeHeroGrid{grid-template-columns:minmax(390px,.85fr) minmax(650px,1.55fr)!important;gap:18px!important}
+  #homePage .homeActionGrid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  #jutsuPage .jutsuLayout{grid-template-columns:minmax(260px,.62fr) minmax(620px,1.55fr) minmax(330px,.8fr)!important;gap:16px!important}
+  #missionPage .missionPanel,#eventsPage .eventPanel,#ninjaMissionPage .missionPanel,#shopPage .featurePanel,#inventoryPage .featurePanel,#encyclopediaPage .featurePanel{
+    width:100%!important;max-width:none!important;box-sizing:border-box!important;
+  }
+}
+
+/* Compact PC / small laptop: still full-width, but controls wrap instead of collapsing into a tablet column. */
+@media (min-width:900px) and (max-width:1299px){
+  #main .gameShellPage:not(.hidden),
+  #main #selectPage.gameShellPage:not(.hidden){grid-template-columns:205px minmax(0,1fr)!important}
+  #main .gameShellPage:not(.hidden)>.homeMain,
+  #main .gameShellPage:not(.hidden)>.jutsuMain,
+  #main .gameShellPage:not(.hidden)>.selectMain,
+  #main .gameShellPage:not(.hidden)>.missionMain,
+  #main .gameShellPage:not(.hidden)>.eventMain,
+  #main .gameShellPage:not(.hidden)>.featureMain{padding:14px 16px 22px!important}
+  #selectPage #charSelect>header{
+    grid-template-columns:minmax(0,1fr) 260px!important;
+    grid-template-areas:"play team" "user user"!important;
+  }
+  #selectPage #playButtons{
+    grid-template-columns:1fr 1fr!important;
+    grid-template-areas:"start random" "ai ai"!important;
+  }
+  #selectPage #aiCompact{grid-template-columns:auto minmax(150px,1fr) auto minmax(140px,auto)!important}
+  #selectPage #teamButtons img{width:62px!important;height:62px!important}
+  #selectPage #userBox{grid-template-columns:minmax(180px,1fr) repeat(3,minmax(95px,.5fr))!important}
+  #selectPage #forTeam #roster,#selectPage #forTeam .charScroll{grid-template-columns:repeat(auto-fill,minmax(74px,1fr))!important;gap:7px!important}
+  #selectPage #forTeam .char,#selectPage #forTeam .charicon,#selectPage #forTeam .char img{width:70px!important;height:70px!important;max-width:70px!important;max-height:70px!important}
+  #selectPage #browse{grid-template-columns:repeat(7,minmax(70px,1fr))!important}
+  #homePage .homeHeroGrid,#jutsuPage .jutsuLayout{grid-template-columns:1fr!important}
+}
+
+/* Hidden always wins, including selection after the high-specificity desktop rules. */
+.hidden,#selectPage.gameShellPage.hidden,#main .gameShellPage.hidden{display:none!important}
