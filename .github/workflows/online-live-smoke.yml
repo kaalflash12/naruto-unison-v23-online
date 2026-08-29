@@ -147,3 +147,79 @@ jobs:
           esac
 
           echo 'ONLINE_LIVE_SMOKE=PASS'
+
+      - name: Browser public CORS proof
+        shell: bash
+        env:
+          SITE: https://kaalflash12.github.io/naruto-unison-v23-online
+          EXPECTED_API: https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "$CHROME"
+          WORK="$(mktemp -d)"
+          cd "$WORK"
+          npm init -y >/dev/null 2>&1
+          npm install --silent --no-audit --no-fund puppeteer-core@24.16.0
+          CHROME="$CHROME" SITE="$SITE" EXPECTED_API="$EXPECTED_API" GITHUB_RUN_ID="$GITHUB_RUN_ID" node <<'NODE'
+          const puppeteer = require('puppeteer-core');
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              executablePath: process.env.CHROME,
+              headless: true,
+              args: ['--no-sandbox', '--disable-dev-shm-usage']
+            });
+            const page = await browser.newPage();
+            const failures = [];
+
+            page.on('console', msg => {
+              const text = msg.text();
+              if (/cors|failed to fetch/i.test(text)) failures.push(`console:${text}`);
+            });
+            page.on('pageerror', err => {
+              const text = String(err && err.message || err);
+              if (/cors|failed to fetch/i.test(text)) failures.push(`pageerror:${text}`);
+            });
+            page.on('requestfailed', req => {
+              if (/supabase\.co/i.test(req.url())) failures.push(`requestfailed:${req.method()}:${req.url()}:${req.failure()?.errorText || ''}`);
+            });
+
+            const response = await page.goto(`${process.env.SITE}/?browser-proof=${Date.now()}`, {
+              waitUntil: 'domcontentloaded',
+              timeout: 30000
+            });
+            if (!response || !response.ok()) throw new Error(`Public page HTTP ${response?.status()}`);
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            const proof = await page.evaluate(async ({ expectedApi, runId }) => {
+              const cfg = window.NARUTO_ONLINE_CONFIG || {};
+              const actualApi = String(cfg.functionUrl || '');
+              if (actualApi !== expectedApi) return { error: `Unexpected functionUrl: ${actualApi}`, actualApi };
+              try {
+                const r = await fetch(`${actualApi}/api/account/login`, {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify({ login: `browser-smoke${runId}`, password: 'invalid-password-browser-smoke' })
+                });
+                const body = await r.text();
+                return { actualApi, status: r.status, body: body.slice(0, 500) };
+              } catch (e) {
+                return { actualApi, error: String(e && e.message || e) };
+              }
+            }, { expectedApi: process.env.EXPECTED_API, runId: process.env.GITHUB_RUN_ID });
+
+            console.log('BROWSER_PROOF=' + JSON.stringify(proof));
+            if (proof.error) throw new Error(proof.error);
+            if (![400, 401, 403, 429].includes(proof.status)) throw new Error(`Unexpected browser login status: ${proof.status}`);
+            if (failures.length) throw new Error('Browser network/CORS failures: ' + failures.join(' | '));
+
+            const title = await page.title();
+            if (!/Naruto Unison/i.test(title)) throw new Error(`Unexpected public title: ${title}`);
+            console.log('BROWSER_CORS_PROOF=PASS');
+            await browser.close();
+          })().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          NODE
