@@ -1,8 +1,9 @@
-R45 CURRENT RUNTIME / R42 RESPONSIVE VALIDATION
+R48 CURRENT RUNTIME / R42 RESPONSIVE + R48 DESKTOP VALIDATION
 syntax=PASS
 secure_auth_adapter=PASS
 secure_auth_bootstrap=PASS
 single_battle_controller=PASS
+r48_desktop_override=PASS
 desktop_layout=PASS
 mobile_layout=PASS
 desktop_native_wheel=PASS
