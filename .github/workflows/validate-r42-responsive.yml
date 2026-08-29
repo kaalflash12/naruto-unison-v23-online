@@ -5,6 +5,7 @@ on:
       - '.r42-validate-trigger'
       - 'r42-responsive-fix.css'
       - 'r48-desktop-layout-fix.css'
+      - 'r49-desktop-layout-final.css'
       - 'r40-battle-guard.js'
       - 'r39-live-hotfix.js'
       - 'r40-desktop-overhaul.js'
@@ -56,6 +57,13 @@ jobs:
           grep -q '@media (min-width: 1051px)' r48-desktop-layout-fix.css
           grep -q '#selectPage #preview' r48-desktop-layout-fix.css
           grep -q '#selectPage #forTeam' r48-desktop-layout-fix.css
+          grep -q '@media (min-width: 900px)' r49-desktop-layout-final.css
+          grep -q 'width: calc(100vw - 24px)' r49-desktop-layout-final.css
+          grep -q '#selectPage #preview' r49-desktop-layout-final.css
+          grep -q '#selectPage #forTeam' r49-desktop-layout-final.css
+          grep -q 'max-height: none' r49-desktop-layout-final.css
+          grep -q 'overflow: visible' r49-desktop-layout-final.css
+          grep -q '@media (max-width: 899px)' r49-desktop-layout-final.css
       - name: Admin responsive shell
         shell: bash
         run: |
@@ -70,11 +78,12 @@ jobs:
       - name: Current runtime loaded and mastery retained in Jutsus
         shell: bash
         run: |
-          grep -q "version:'online-r48'" online-config.js
+          grep -q "version:'online-r49'" online-config.js
           grep -q 'secure-auth-adapter.js?v=20260827-r45' online-config.js
           grep -q "document.write('<script src=\"secure-auth-adapter.js?v=20260827-r45\"></'+'script>')" online-config.js
           grep -q 'r42-responsive-fix.css' online-config.js
           grep -q 'r48-desktop-layout-fix.css?v=20260829-r48-1' online-config.js
+          grep -q 'r49-desktop-layout-final.css?v=20260829-r49-1' online-config.js
           grep -q 'window.NarutoSecureAuth' secure-auth-adapter.js
           grep -q 'TREINO / PROVAS DE DOMÍNIO' r40-desktop-overhaul.js
           grep -q 'jutsuTrainingHub' r40-desktop-overhaul.js
@@ -82,12 +91,16 @@ jobs:
         shell: bash
         run: |
           cat > R42-RESPONSIVE-VALIDATED.txt <<'EOF'
-          R48 CURRENT RUNTIME / R42 RESPONSIVE + R48 DESKTOP VALIDATION
+          R49 CURRENT RUNTIME / R42 RESPONSIVE + R48/R49 DESKTOP VALIDATION
           syntax=PASS
           secure_auth_adapter=PASS
           secure_auth_bootstrap=PASS
           single_battle_controller=PASS
           r48_desktop_override=PASS
+          r49_desktop_override=PASS
+          r49_full_width_canvas=PASS
+          r49_preview_natural_scroll=PASS
+          r49_roster_natural_scroll=PASS
           desktop_layout=PASS
           mobile_layout=PASS
           desktop_native_wheel=PASS
