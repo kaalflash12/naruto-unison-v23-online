@@ -39,4 +39,4 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
   const adminEntry=document.createElement('script');adminEntry.src='r43-admin-entry.js?v=20260824-r43';adminEntry.async=false;document.head.appendChild(adminEntry);
 })();
 
-// CORS gateway redeploy proof: naruto-api-cors v4
+// CORS gateway redeploy proof: naruto-api-cors v8
