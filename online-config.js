@@ -1,4 +1,4 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r46'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r45'};
 
 (()=>{
   if(window.NarutoSecureAuth)return;
