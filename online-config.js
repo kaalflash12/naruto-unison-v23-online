@@ -1,4 +1,4 @@
-window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r48'};
+window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/naruto-api-cors',supabaseUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co',publishableKey:'sb_publishable_KGkT_uJNg1nRBgftEvlT3w_c_aHOo5K',authBridgeUrl:'https://cpdgkszviwrgrwsltbyk.supabase.co/functions/v1/legacy-auth-bridge',hosting:'github-pages',database:'supabase-postgres',version:'online-r49'};
 
 (()=>{
   if(window.NarutoSecureAuth)return;
@@ -35,6 +35,7 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
   const r46css=document.createElement('link');r46css.rel='stylesheet';r46css.href='r46-desktop-layout-fix.css?v=20260829-r46';document.head.appendChild(r46css);
   const r47css=document.createElement('link');r47css.rel='stylesheet';r47css.href='r47-desktop-layout-fix.css?v=20260829-r47-1';document.head.appendChild(r47css);
   const r48css=document.createElement('link');r48css.rel='stylesheet';r48css.href='r48-desktop-layout-fix.css?v=20260829-r48-1';document.head.appendChild(r48css);
+  const r49css=document.createElement('link');r49css.rel='stylesheet';r49css.href='r49-desktop-layout-final.css?v=20260829-r49-1';document.head.appendChild(r49css);
   const recovery=document.createElement('script');recovery.src='account-recovery.js?v=20260824-r43';recovery.async=false;document.head.appendChild(recovery);
   const guard=document.createElement('script');guard.src='r40-battle-guard.js?v=20260824-r43';guard.async=false;document.head.appendChild(guard);
   const desktop=document.createElement('script');desktop.src='r40-desktop-overhaul.js?v=20260824-r43';desktop.async=false;document.head.appendChild(desktop);
@@ -43,4 +44,4 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
 })();
 
 // CORS gateway redeploy proof: naruto-api-cors v20
-// Desktop layout revision: R48 final override
+// Desktop layout revision: R49 final override
