@@ -270,7 +270,7 @@
   body #main #selectPage #teamButtons {
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 76px !important;
+    min-height: 82px !important;
     height: auto !important;
     margin: 0 !important;
     display: flex !important;
@@ -283,10 +283,10 @@
   body #main #selectPage #teamButtons .char,
   body #main #selectPage #teamButtons .charicon,
   body #main #selectPage #teamButtons img {
-    width: 68px !important;
-    height: 68px !important;
-    max-width: 68px !important;
-    max-height: 68px !important;
+    width: 76px !important;
+    height: 76px !important;
+    max-width: 76px !important;
+    max-height: 76px !important;
     object-fit: cover !important;
   }
 
