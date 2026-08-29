@@ -1,0 +1,146 @@
+name: Prove R48 Desktop Layout
+
+on:
+  push:
+    paths:
+      - 'r48-desktop-layout-fix.css'
+      - 'online-config.js'
+      - '.github/workflows/prove-r48-desktop-layout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  desktop-layout-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Measure public R48 desktop layout at 1680px
+        shell: bash
+        env:
+          SITE: https://kaalflash12.github.io/naruto-unison-v23-online
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium || true)"
+          test -n "$CHROME"
+          WORK="$(mktemp -d)"
+          cd "$WORK"
+          npm init -y >/dev/null 2>&1
+          npm install --silent --no-audit --no-fund puppeteer-core@24.16.0
+          CHROME="$CHROME" SITE="$SITE" GITHUB_SHA="$GITHUB_SHA" node <<'NODE'
+          const puppeteer = require('puppeteer-core');
+          const fs = require('fs');
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              executablePath: process.env.CHROME,
+              headless: true,
+              args: ['--no-sandbox', '--disable-dev-shm-usage']
+            });
+            const page = await browser.newPage();
+            await page.setViewport({ width: 1680, height: 950, deviceScaleFactor: 1 });
+
+            let ready = false;
+            for (let attempt = 0; attempt < 20 && !ready; attempt++) {
+              const response = await page.goto(`${process.env.SITE}/?page=select&r48-proof=${process.env.GITHUB_SHA}-${Date.now()}-${attempt}`, {
+                waitUntil: 'networkidle2', timeout: 45000
+              });
+              if (!response || !response.ok()) throw new Error(`Public page HTTP ${response?.status()}`);
+              try {
+                await page.waitForFunction(() =>
+                  window.NARUTO_ONLINE_CONFIG?.version === 'online-r48' &&
+                  Array.from(document.styleSheets).some(s => /r48-desktop-layout-fix\.css/.test(s.href || '')),
+                  { timeout: 5000 }
+                );
+                ready = true;
+              } catch {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+              }
+            }
+            if (!ready) throw new Error('Public Pages did not expose online-r48 + R48 stylesheet in time');
+
+            await new Promise(resolve => setTimeout(resolve, 800));
+
+            const proof = await page.evaluate(() => {
+              const select = document.querySelector('#selectPage');
+              if (!select) throw new Error('#selectPage missing');
+              document.querySelectorAll('#main .gameShellPage').forEach(el => el.classList.add('hidden'));
+              select.classList.remove('hidden');
+
+              const box = sel => {
+                const el = document.querySelector(sel);
+                if (!el) return null;
+                const r = el.getBoundingClientRect();
+                const cs = getComputedStyle(el);
+                return {
+                  x: Math.round(r.x), y: Math.round(r.y),
+                  width: Math.round(r.width), height: Math.round(r.height),
+                  display: cs.display, position: cs.position,
+                  maxWidth: cs.maxWidth, maxHeight: cs.maxHeight,
+                  overflow: cs.overflow, overflowY: cs.overflowY,
+                  gridTemplateColumns: cs.gridTemplateColumns
+                };
+              };
+              const firstChar = document.querySelector('#selectPage #forTeam .charicon');
+              const teamImg = document.querySelector('#selectPage #teamButtons img');
+              const dims = el => el ? {width: Math.round(el.getBoundingClientRect().width), height: Math.round(el.getBoundingClientRect().height)} : null;
+
+              return {
+                version: window.NARUTO_ONLINE_CONFIG?.version || null,
+                viewport: { width: innerWidth, height: innerHeight },
+                r48Loaded: Array.from(document.styleSheets).some(s => /r48-desktop-layout-fix\.css/.test(s.href || '')),
+                shell: box('#selectPage'),
+                sideNav: box('#selectPage > .gameSideNav'),
+                main: box('#selectPage > .selectMain'),
+                charSelect: box('#selectPage #charSelect'),
+                controls: box('#selectPage #playButtons'),
+                preview: box('#selectPage #preview'),
+                rosterFrame: box('#selectPage #forTeam'),
+                roster: box('#selectPage #roster'),
+                firstChar: dims(firstChar),
+                teamImg: dims(teamImg)
+              };
+            });
+
+            console.log('R48_LAYOUT_PROOF=' + JSON.stringify(proof));
+            await page.screenshot({ path: 'r48-layout-1680.png', fullPage: true });
+            fs.writeFileSync('r48-layout-proof.json', JSON.stringify(proof, null, 2));
+
+            const fail = [];
+            if (proof.version !== 'online-r48') fail.push(`runtime version ${proof.version}`);
+            if (!proof.r48Loaded) fail.push('R48 stylesheet not loaded');
+            if (!proof.shell || proof.shell.width < 1500) fail.push(`shell width ${proof.shell?.width}`);
+            if (!proof.main || proof.main.width < 1250) fail.push(`main width ${proof.main?.width}`);
+            if (!proof.charSelect || proof.charSelect.width < 1200) fail.push(`charSelect width ${proof.charSelect?.width}`);
+            if (!proof.preview || proof.preview.width < 1200) fail.push(`preview width ${proof.preview?.width}`);
+            if (!proof.rosterFrame || proof.rosterFrame.width < 1200) fail.push(`forTeam width ${proof.rosterFrame?.width}`);
+            if (['absolute','fixed'].includes(proof.preview?.position)) fail.push(`preview position ${proof.preview?.position}`);
+            if (proof.preview?.maxHeight !== 'none') fail.push(`preview maxHeight ${proof.preview?.maxHeight}`);
+            if (proof.preview?.overflowY !== 'visible') fail.push(`preview overflowY ${proof.preview?.overflowY}`);
+            if (proof.roster?.maxHeight !== 'none') fail.push(`roster maxHeight ${proof.roster?.maxHeight}`);
+            if (proof.roster?.overflowY !== 'visible') fail.push(`roster overflowY ${proof.roster?.overflowY}`);
+            if (proof.firstChar && proof.firstChar.width < 70) fail.push(`char icon width ${proof.firstChar.width}`);
+            if (proof.teamImg && proof.teamImg.width < 66) fail.push(`team image width ${proof.teamImg.width}`);
+            if (fail.length) throw new Error('R48 desktop layout proof failed: ' + fail.join(' | '));
+
+            console.log('R48_DESKTOP_LAYOUT=PASS');
+            await browser.close();
+          })().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          NODE
+          cp "$WORK/r48-layout-1680.png" "$GITHUB_WORKSPACE/r48-layout-1680.png"
+          cp "$WORK/r48-layout-proof.json" "$GITHUB_WORKSPACE/r48-layout-proof.json"
+
+      - name: Upload R48 visual proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r48-desktop-layout-proof
+          path: |
+            r48-layout-1680.png
+            r48-layout-proof.json
+          if-no-files-found: error
+          retention-days: 30
