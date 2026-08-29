@@ -41,13 +41,14 @@ jobs:
             const page = await browser.newPage();
             await page.setViewport({ width: 1680, height: 950, deviceScaleFactor: 1 });
 
-            const response = await page.goto(`${process.env.SITE}/?layout-proof=${process.env.GITHUB_SHA}-${Date.now()}`, {
+            const response = await page.goto(`${process.env.SITE}/?page=select&layout-proof=${process.env.GITHUB_SHA}-${Date.now()}`, {
               waitUntil: 'networkidle2',
               timeout: 45000
             });
             if (!response || !response.ok()) throw new Error(`Public page HTTP ${response?.status()}`);
 
             await page.waitForFunction(() => Array.from(document.styleSheets).some(s => /r46-desktop-layout-fix\.css/.test(s.href || '')), { timeout: 30000 });
+            await new Promise(resolve => setTimeout(resolve, 300));
 
             const proof = await page.evaluate(() => {
               const select = document.querySelector('#selectPage');
