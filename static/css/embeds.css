@@ -217,6 +217,24 @@ img[role="button"]:disabled {
     grid-template-columns: minmax(390px, .9fr) minmax(620px, 1.45fr) !important;
     gap: 20px !important;
   }
+
+  /* R50 overflow guard: legacy skill blocks can carry full-width rules while
+     R50 indents their text. Constrain the text box instead of widening the page. */
+  html body #main #selectPage #preview,
+  html body #main #selectPage #charSelect > article#preview {
+    overflow-x: clip !important;
+  }
+
+  html body #main #selectPage #preview > section > h4,
+  html body #main #selectPage #preview > section > p,
+  html body #main #selectPage #preview .skillMechanic {
+    width: auto !important;
+    max-width: calc(100% - 90px) !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
 }
 
 /* Desktop intermediário continua responsivo, sem retornar ao quadro de 942 px. */
