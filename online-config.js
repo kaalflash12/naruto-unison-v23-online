@@ -60,3 +60,4 @@ window.NARUTO_ONLINE_CONFIG={functionUrl:'https://cpdgkszviwrgrwsltbyk.supabase.
 // CORS gateway redeploy proof: naruto-api-cors v20
 // Desktop layout revision: R50.2 authoritative post-load override
 // Desktop selection preview overflow containment validated by current gameplay gate
+// Desktop account-card overflow fix verification trigger
