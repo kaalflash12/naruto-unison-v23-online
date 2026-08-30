@@ -141,6 +141,56 @@ img[role="button"]:disabled {
     font-size: 12px !important;
   }
 
+  /* O CSS legado dava 120px a cada DT/DD do card de conta e deixava os
+     pares flutuarem para fora da terceira coluna. O card passa a controlar
+     seus próprios campos e nunca pode ampliar o documento. */
+  html body #main #selectPage #userBox {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-auto-rows: min-content !important;
+    align-content: start !important;
+    gap: 2px 8px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  html body #main #selectPage #userBox > h4,
+  html body #main #selectPage #userBox > p {
+    grid-column: 1 / -1 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  html body #main #selectPage #userBox > dt,
+  html body #main #selectPage #userBox > dd {
+    position: static !important;
+    inset: auto !important;
+    float: none !important;
+    clear: none !important;
+    display: block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  html body #main #selectPage #userBox > dd {
+    text-align: right !important;
+  }
+
   /* Preview vira painel legível, não uma janela de 200 px com scroll permanente. */
   body #main #selectPage #charSelect > article#preview {
     position: static !important;
