@@ -26,6 +26,7 @@ jobs:
           set -euo pipefail
           OUT="$RUNNER_TEMP/v84-window"
           mkdir -p "$OUT/zips" "$OUT/extracted" "$OUT/reports"
+          echo 'target deployed update: 2026-08-19T13:41:02Z'
 
           gh api --paginate "/repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
             --jq '.artifacts[] | select(.expired == false) | [.id, .name, .size_in_bytes, .created_at] | @tsv' \
