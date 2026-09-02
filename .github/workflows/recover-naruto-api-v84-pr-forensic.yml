@@ -1,0 +1,120 @@
+name: Recover Naruto API v84 PR forensic
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Recover packed archives and Git-history hits
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --force --prune origin '+refs/heads/*:refs/remotes/origin/*' '+refs/tags/*:refs/tags/*'
+          OUT="$RUNNER_TEMP/naruto-api-v84-pr-forensic"
+          export OUT
+          mkdir -p "$OUT/hits" "$OUT/reports"
+          python3 - <<'PY'
+          import base64,hashlib,io,lzma,os,pathlib,re,subprocess,tarfile
+          O=pathlib.Path(os.environ['OUT']); H=O/'hits'; R=[]; seen=set(); ah=set(); n=0
+          marks=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts',b'Deno.serve',b'Access-Control-Allow-Origin']
+          def sh(*a): return subprocess.check_output(a)
+          def save(tag,b):
+            global n
+            if not b:return
+            k=hashlib.sha256(b).hexdigest()
+            if k in seen:return
+            seen.add(k)
+            mm=[x.decode() for x in marks if x in b]
+            if mm:
+              n+=1; p=H/f'{n:04d}_{re.sub(r"[^A-Za-z0-9._-]+","_",tag)[-120:]}_{k[:12]}.bin';p.write_bytes(b)
+              R.append(f'HIT\t{tag}\t{len(b)}\t{k}\t{",".join(mm)}')
+            for mode in ('r:*',):
+              try:
+                with tarfile.open(fileobj=io.BytesIO(b),mode=mode,ignore_zeros=True) as t:
+                  for m in t.getmembers():
+                    if not m.isfile():continue
+                    low=m.name.lower(); f=t.extractfile(m); body=f.read() if f else b''
+                    mm2=[x.decode() for x in marks if x in body]
+                    if mm2 or 'naruto-api' in low or 'game-data.ts' in low or low.endswith('/index.ts'):
+                      n+=1; k2=hashlib.sha256(body).hexdigest(); p=H/f'{n:04d}_{re.sub(r"[^A-Za-z0-9._-]+","_",m.name)[-120:]}_{k2[:12]}.bin';p.write_bytes(body)
+                      R.append(f'MEMBER\t{tag}\t{m.name}\t{len(body)}\t{k2}\t{",".join(mm2)}')
+              except Exception: pass
+          refs=sh('git','for-each-ref','--format=%(refname)','refs/remotes/origin').decode().splitlines()
+          # Scan every reachable blob once for direct source/markers.
+          objs=sh('git','rev-list','--objects','--all').decode(errors='replace').splitlines()
+          for row in objs:
+            s=row.split(' ',1); oid=s[0]; name=s[1] if len(s)>1 else ''
+            low=name.lower()
+            if not (('naruto' in low and ('api' in low or low.endswith('.ts'))) or 'game-data.ts' in low or low.endswith('/index.ts')): continue
+            try:b=sh('git','cat-file','-p',oid)
+            except:continue
+            save('git_'+oid+'_'+name,b)
+          # Reconstruct part-* payloads with merged-tail alternatives.
+          for ref in refs:
+            try:names=sh('git','ls-tree','-r','--name-only',ref).decode(errors='replace').splitlines()
+            except:continue
+            dirs=sorted({str(pathlib.PurePosixPath(p).parent) for p in names if pathlib.PurePosixPath(p).name=='part-00'})
+            for d in dirs:
+              ps=[p for p in names if str(pathlib.PurePosixPath(p).parent)==d and pathlib.PurePosixPath(p).name.startswith('part-')]
+              try:bs={p:sh('git','show',f'{ref}:{p}') for p in ps}
+              except:continue
+              key='|'.join(sorted(hashlib.sha256(x).hexdigest() for x in bs.values()))
+              if key in ah:continue
+              ah.add(key)
+              singles=sorted([p for p in ps if re.fullmatch(r'part-\d+',pathlib.PurePosixPath(p).name)],key=lambda p:int(pathlib.PurePosixPath(p).name[5:]))
+              seqs=[('singles',singles)]
+              for p in ps:
+                m=re.fullmatch(r'part-(\d+)-(\d+)',pathlib.PurePosixPath(p).name)
+                if m:
+                  a=int(m.group(1)); seqs.append((f'merged{a}',[q for q in singles if int(pathlib.PurePosixPath(q).name[5:])<a]+[p]))
+              for sn,seq in seqs:
+                raw=b''.join(bs[p] for p in seq); clean=re.sub(rb'[^A-Za-z0-9+/=]',b'',raw)
+                variants=[]
+                for x in (raw,clean):
+                  for trim in range(4):
+                    y=x[:-trim] if trim else x
+                    try:variants.append(base64.b64decode(y+b'='*((-len(y))%4),validate=False))
+                    except:pass
+                for i,b in enumerate(variants):
+                  save(f'{ref}_{d}_{sn}_b64{i}',b)
+                  if b.startswith(b'\xfd7zXZ\x00'):
+                    try:save(f'{ref}_{d}_{sn}_xz{i}',lzma.decompress(b))
+                    except:
+                      dec=lzma.LZMADecompressor();acc=bytearray()
+                      try:
+                        for j in range(0,len(b),2048):acc.extend(dec.decompress(b[j:j+2048]))
+                      except:pass
+                      save(f'{ref}_{d}_{sn}_xzpartial{i}',bytes(acc))
+          # Include unreachable objects still present in clone.
+          try:fs=subprocess.check_output(['git','fsck','--full','--no-reflogs','--unreachable'],stderr=subprocess.STDOUT).decode(errors='replace').splitlines()
+          except subprocess.CalledProcessError as e:fs=e.output.decode(errors='replace').splitlines()
+          for row in fs:
+            m=re.search(r'unreachable blob ([0-9a-f]{40})',row)
+            if not m:continue
+            oid=m.group(1)
+            try:b=sh('git','cat-file','-p',oid)
+            except:continue
+            if any(x in b for x in marks) or b'game-data.ts' in b or b'naruto-api' in b: save('unreachable_'+oid,b)
+          (O/'reports'/'REPORT.tsv').write_text('\n'.join(R)+'\n')
+          (O/'VERDICT.txt').write_text(f'hits={n}\nunique_payloads_scanned={len(seen)}\narchives={len(ah)}\n')
+          PY
+          cat "$OUT/VERDICT.txt"
+          cat "$OUT/reports/REPORT.tsv" || true
+          find "$OUT" -type f -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-pr-forensic
+          path: ${{ runner.temp }}/naruto-api-v84-pr-forensic/**
+          if-no-files-found: error
+          retention-days: 7

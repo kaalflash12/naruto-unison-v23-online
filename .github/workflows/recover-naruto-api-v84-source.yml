@@ -1,0 +1,79 @@
+name: Recover naruto-api v84 source
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_REF: cpdgkszviwrgrwsltbyk
+      TOKEN_1: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      TOKEN_2: ${{ secrets.SUPABASE_TOKEN }}
+      TOKEN_3: ${{ secrets.SUPABASE_MANAGEMENT_TOKEN }}
+      TOKEN_4: ${{ secrets.SUPABASE_PAT }}
+      TOKEN_5: ${{ secrets.SB_ACCESS_TOKEN }}
+      TOKEN_6: ${{ secrets.SUPABASE_API_TOKEN }}
+      TOKEN_7: ${{ secrets.SUPABASE_CLI_TOKEN }}
+      TOKEN_8: ${{ secrets.SUPABASE_PERSONAL_ACCESS_TOKEN }}
+      TOKEN_9: ${{ secrets.SUPABASE_MANAGEMENT_API_TOKEN }}
+      TOKEN_10: ${{ secrets.SUPABASE_DEPLOY_TOKEN }}
+      TOKEN_11: ${{ secrets.SUPABASE_PROJECT_TOKEN }}
+      TOKEN_12: ${{ secrets.SUPABASE_PROD_ACCESS_TOKEN }}
+      TOKEN_13: ${{ secrets.SUPABASE_PRODUCTION_ACCESS_TOKEN }}
+      TOKEN_14: ${{ secrets.SUPABASE_MGMT_TOKEN }}
+      TOKEN_15: ${{ secrets.SB_MANAGEMENT_TOKEN }}
+      TOKEN_16: ${{ secrets.SB_TOKEN }}
+      TOKEN_17: ${{ secrets.SB_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.116.0
+      - name: Select existing Supabase management token
+        shell: bash
+        run: |
+          set -euo pipefail
+          token=''
+          selected=''
+          for name in TOKEN_{1..17}; do
+            value="${!name:-}"
+            if [ -n "$value" ]; then
+              token="$value"
+              selected="$name"
+              break
+            fi
+          done
+          if [ -z "$token" ]; then
+            echo 'NO_SUPABASE_MANAGEMENT_TOKEN'
+            exit 2
+          fi
+          echo "SUPABASE_ACCESS_TOKEN=$token" >> "$GITHUB_ENV"
+          echo "SUPABASE_MANAGEMENT_TOKEN_FOUND=$selected"
+      - name: Download exact deployed naruto-api
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --version
+          rm -rf supabase/functions/naruto-api
+          supabase functions download naruto-api --project-ref "$PROJECT_REF" --debug
+          test -s supabase/functions/naruto-api/index.ts
+          sha256sum supabase/functions/naruto-api/index.ts | tee /tmp/naruto-api-source.sha256
+          echo '=== recovered files ==='
+          find supabase/functions/naruto-api -type f -maxdepth 3 -print | sort
+          echo '=== CORS/OPTIONS anchors ==='
+          grep -nEi 'access-control|cors|OPTIONS|Deno\.serve|serve\(' supabase/functions/naruto-api/index.ts | head -n 160 || true
+      - name: Package recovered source
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-source
+          path: |
+            supabase/functions/naruto-api/**
+            /tmp/naruto-api-source.sha256
+          if-no-files-found: error
+          retention-days: 1

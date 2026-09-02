@@ -1,0 +1,189 @@
+name: Recover Naruto API v84 from Actions artifacts
+
+on:
+  push:
+    branches:
+      - fix/recover-naruto-api-v84-cors
+    paths:
+      - .github/workflows/recover-naruto-api-v84-actions-artifacts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan historical Actions artifacts for deployed naruto-api source
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/naruto-api-v84-actions-artifacts"
+          mkdir -p "$OUT/downloads" "$OUT/candidates" "$OUT/exact" "$OUT/reports"
+
+          # gh --paginate returns multiple JSON documents. Extract each page with --jq
+          # instead of trying to parse the concatenated output as JSONL.
+          gh api --paginate "/repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.expired == false) | [.id, .name, .size_in_bytes, .created_at] | @tsv' \
+            > "$OUT/reports/artifacts.tsv"
+
+          python3 - "$OUT" <<'PY'
+          import pathlib, re, sys
+          out=pathlib.Path(sys.argv[1])
+          rows=[]
+          for raw in (out/'reports/artifacts.tsv').read_text(errors='replace').splitlines():
+              parts=raw.split('\t')
+              if len(parts) < 4: continue
+              aid,name,size,created=parts[0],parts[1],parts[2],parts[3]
+              try: size_i=int(size or 0)
+              except ValueError: continue
+              if size_i > 100*1024*1024: continue
+              rows.append((aid,name,size_i,created))
+          seen={r[0]:r for r in rows}
+          rows=list(seen.values())
+          rx=re.compile(r'naruto|canonical|r38|r382|backup|source|payload|api|forensic|online|final|social-data|runtime|smoke',re.I)
+          rows.sort(key=lambda r:(0 if rx.search(r[1]) else 1, r[3]))
+          (out/'reports/artifacts.tsv').write_text(''.join(f'{a}\t{n}\t{s}\t{c}\n' for a,n,s,c in rows))
+          (out/'reports/artifact-count.txt').write_text(f'unexpired_scannable={len(rows)}\n')
+          print(f'unexpired_scannable={len(rows)}')
+          PY
+
+          while IFS=$'\t' read -r id name size created; do
+            [ -n "$id" ] || continue
+            safe="$(printf '%s' "$name" | tr -c 'A-Za-z0-9._-' '_' | cut -c1-100)"
+            z="$OUT/downloads/${id}_${safe}.zip"
+            echo "DOWNLOAD artifact=$id name=$name size=$size created=$created"
+            if ! gh api "/repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > "$z" 2>/dev/null; then
+              echo -e "DOWNLOAD_FAIL\t$id\t$name" >> "$OUT/reports/download-errors.tsv"
+              rm -f "$z"
+            fi
+          done < "$OUT/reports/artifacts.tsv"
+
+          python3 - "$OUT" <<'PY'
+          import hashlib, io, json, lzma, gzip, pathlib, re, sys, tarfile, zipfile
+          out=pathlib.Path(sys.argv[1]); cand=out/'candidates'; exact=out/'exact'; variants=out/'exact-variants'
+          cand.mkdir(exist_ok=True); exact.mkdir(exist_ok=True); variants.mkdir(exist_ok=True)
+          markers=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts',b'Deno.serve',b'Access-Control-Allow-Origin']
+          path_rx=re.compile(r'(^|/)(supabase/)?functions/naruto-api/|naruto-api/(index|game-data)\.ts$|game-data\.ts$',re.I)
+          ts_rx=re.compile(r'(Deno\.serve|serve\s*\(|createClient|naruto_accounts|/api/account/login|session_token)')
+          report=[]; exact_hits=[]; seen=set(); n=0
+          MAX_MEMBER=30*1024*1024
+          MAX_DEPTH=6
+
+          def save_candidate(prov,name,data,marks):
+              global n
+              sha=hashlib.sha256(data).hexdigest(); key=(sha,len(data))
+              if key in seen:return
+              seen.add(key); n+=1
+              safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)[-140:] or 'blob'
+              p=cand/f'{n:05d}_{safe}_{sha[:12]}.bin'; p.write_bytes(data)
+              report.append({'provenance':prov,'path':name,'size':len(data),'sha256':sha,'markers':marks,'candidate':p.name})
+
+          def canonical_rel(name):
+              low=name.replace('\\','/').lower(); orig=name.replace('\\','/')
+              marker='supabase/functions/naruto-api/'
+              pos=low.rfind(marker)
+              if pos >= 0: return orig[pos+len(marker):]
+              if low.endswith('/naruto-api/index.ts') or low=='naruto-api/index.ts': return 'index.ts'
+              if low.endswith('/naruto-api/game-data.ts') or low=='naruto-api/game-data.ts': return 'game-data.ts'
+              return None
+
+          def write_exact(prov,name,data):
+              rel=canonical_rel(name)
+              if not rel:return
+              relp=pathlib.PurePosixPath(rel)
+              if '..' in relp.parts:return
+              sha=hashlib.sha256(data).hexdigest()
+              dest=exact/pathlib.Path(*relp.parts); dest.parent.mkdir(parents=True,exist_ok=True)
+              if not dest.exists(): dest.write_bytes(data)
+              elif hashlib.sha256(dest.read_bytes()).hexdigest()!=sha:
+                  vp=variants/(sha[:16]+'__'+re.sub(r'[^A-Za-z0-9._-]+','_',str(relp)))
+                  vp.parent.mkdir(parents=True,exist_ok=True); vp.write_bytes(data)
+              exact_hits.append({'provenance':prov,'path':name,'saved_as':str(dest.relative_to(exact)),'size':len(data),'sha256':sha})
+
+          def consider(prov,name,data,depth):
+              if len(data)>MAX_MEMBER:return
+              low=name.replace('\\','/').lower()
+              marks=[m.decode(errors='replace') for m in markers if m in data]
+              text=''
+              if len(data)<=8*1024*1024:
+                  try:text=data.decode('utf-8')
+                  except Exception:text=''
+              is_path=bool(path_rx.search(low))
+              is_ts=(low.endswith('.ts') and bool(ts_rx.search(text))) if text else False
+              if is_path or (len(marks)>=3 and (low.endswith('.ts') or 'index' in low)) or is_ts:
+                  save_candidate(prov,name,data,marks)
+              if is_path: write_exact(prov,name,data)
+              if depth>=MAX_DEPTH:return
+              scan_container(prov+'!'+name,data,depth+1)
+
+          def scan_container(prov,data,depth):
+              try:
+                  if zipfile.is_zipfile(io.BytesIO(data)):
+                      with zipfile.ZipFile(io.BytesIO(data)) as z:
+                          for i in z.infolist():
+                              if i.is_dir() or i.file_size>MAX_MEMBER: continue
+                              try:b=z.read(i)
+                              except Exception:continue
+                              consider(prov,i.filename,b,depth)
+                      return
+              except Exception:pass
+              try:
+                  with tarfile.open(fileobj=io.BytesIO(data),mode='r:*',ignore_zeros=True) as t:
+                      any_member=False
+                      for m in t:
+                          if not m.isfile() or m.size>MAX_MEMBER:continue
+                          any_member=True
+                          try:f=t.extractfile(m); b=f.read() if f else b''
+                          except Exception:continue
+                          consider(prov,m.name,b,depth)
+                      if any_member:return
+              except Exception:pass
+              if data.startswith(b'\xfd7zXZ\x00'):
+                  try: consider(prov,'<xz>',lzma.decompress(data),depth)
+                  except Exception: pass
+              if data.startswith(b'\x1f\x8b'):
+                  try: consider(prov,'<gzip>',gzip.decompress(data),depth)
+                  except Exception: pass
+
+          for z in sorted((out/'downloads').glob('*.zip')):
+              try:data=z.read_bytes()
+              except Exception:continue
+              scan_container(z.name,data,0)
+
+          byrel={}
+          for h in exact_hits: byrel.setdefault(h['saved_as'],[]).append(h)
+          collisions={k:v for k,v in byrel.items() if len({x['sha256'] for x in v})>1}
+          provenance={}
+          for h in exact_hits:
+              provenance.setdefault(h['sha256'],[]).append({'provenance':h['provenance'],'path':h['path'],'saved_as':h['saved_as']})
+          (out/'reports/CANDIDATES.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
+          (out/'reports/EXACT_HITS.json').write_text(json.dumps(exact_hits,indent=2,ensure_ascii=False))
+          (out/'reports/COLLISIONS.json').write_text(json.dumps(collisions,indent=2,ensure_ascii=False))
+          (out/'reports/PROVENANCE.json').write_text(json.dumps(provenance,indent=2,ensure_ascii=False))
+          exact_files=[p for p in exact.rglob('*') if p.is_file()]
+          variant_files=[p for p in variants.rglob('*') if p.is_file()]
+          verdict=(f'candidates={len(report)}\nexact_path_hits={len(exact_hits)}\nexact_files={len(exact_files)}\n'
+                   f'variant_files={len(variant_files)}\ncollisions={len(collisions)}\n'
+                   f'has_index_ts={str((exact/"index.ts").is_file()).lower()}\n'
+                   f'has_game_data_ts={str((exact/"game-data.ts").is_file()).lower()}\n')
+          (out/'VERDICT.txt').write_text(verdict)
+          print(verdict,end='')
+          PY
+
+          find "$OUT" -type f ! -path "$OUT/downloads/*" -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+          rm -rf "$OUT/downloads"
+
+      - name: Upload recovery scan
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-actions-artifact-scan-fixed
+          path: ${{ runner.temp }}/naruto-api-v84-actions-artifacts/**
+          if-no-files-found: error
+          retention-days: 7
