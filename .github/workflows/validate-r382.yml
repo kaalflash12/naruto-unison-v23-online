@@ -1,4 +1,4 @@
-name: Inspect Naruto Unison R38 artifacts
+name: Recover Naruto API v84 observable forensic
 
 on:
   pull_request:
@@ -9,33 +9,72 @@ permissions:
   contents: read
 
 jobs:
-  inspect:
+  recover:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: main
-          fetch-depth: 1
-      - name: List release assets and validate R382 patch
-        env:
-          GH_TOKEN: ${{ github.token }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Reconstruct historical packed runtimes
         shell: bash
         run: |
           set -euo pipefail
-          echo '=== RELEASES ==='
-          gh release list --repo "$GITHUB_REPOSITORY" --limit 100 || true
-          echo '=== RELEASE ASSETS ==='
-          gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq '.[] | {tag:.tag_name,name:.name,assets:[.assets[]?.name]}' || true
-          echo '=== R382 PATCH ==='
-          python - <<'PY'
-          from pathlib import Path
-          import base64,re,lzma,hashlib
-          paths=['.r382-delta/part-00','.r382-delta/part-01','.r382-delta/part-02','.r382-delta/part-03','.r382-delta/part-04','.r382-delta/part-05','.r382-delta/part-06']
-          s=b''.join(re.sub(rb'[^A-Za-z0-9+/=]',b'',Path(p).read_bytes()) for p in paths)
-          print('chars',len(s),'mod4',len(s)%4)
-          data=base64.b64decode(s,validate=True)
-          lzma.decompress(data)
-          print('bytes',len(data),'sha256',hashlib.sha256(data).hexdigest())
-          Path('/tmp/r382.tar.xz').write_bytes(data)
+          OUT="$RUNNER_TEMP/naruto-api-v84-observable-forensic"
+          export OUT
+          mkdir -p "$OUT"
+          python3 - <<'PY'
+          import base64,hashlib,lzma,os,pathlib,re,tarfile,io
+          root=pathlib.Path('.'); out=pathlib.Path(os.environ['OUT']); report=[]
+          markers=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts',b'Deno.serve',b'Access-Control-Allow-Origin',b'naruto-api']
+          dirs=[p for p in root.iterdir() if p.is_dir() and p.name.startswith('.r38') and (p/'part-00').exists()]
+          for d in sorted(dirs):
+            ps=list(d.glob('part-*'))
+            singles=sorted([p for p in ps if re.fullmatch(r'part-\d+',p.name)],key=lambda p:int(p.name[5:]))
+            seqs=[('singles',singles)]
+            for p in ps:
+              m=re.fullmatch(r'part-(\d+)-(\d+)',p.name)
+              if m:
+                a=int(m.group(1)); seqs.append((f'merged_{p.name}',[q for q in singles if int(q.name[5:])<a]+[p]))
+            for label,seq in seqs:
+              raw=b''.join(p.read_bytes() for p in seq)
+              clean=re.sub(rb'[^A-Za-z0-9+/=]',b'',raw)
+              try: dec=base64.b64decode(clean+b'='*((-len(clean))%4),validate=False)
+              except Exception as e:
+                report.append(f'{d.name}\t{label}\tBASE64_FAIL\t{e}'); continue
+              sha=hashlib.sha256(dec).hexdigest(); status='DECODED'
+              try:
+                plain=lzma.decompress(dec); status='XZ_OK'
+                target=out/'success'/d.name.lstrip('.')/label; target.mkdir(parents=True,exist_ok=True)
+                (target/'payload.tar').write_bytes(plain)
+                try:
+                  with tarfile.open(fileobj=io.BytesIO(plain),mode='r:*',ignore_zeros=True) as t:
+                    t.extractall(target/'files',filter='data')
+                  status='TAR_OK'
+                except Exception as e: status=f'XZ_OK_TAR_FAIL:{e}'
+                hit=[]
+                for m in markers:
+                  if m in plain: hit.append(m.decode(errors='replace'))
+                if (target/'files').exists():
+                  for f in (target/'files').rglob('*'):
+                    if f.is_file() and f.stat().st_size<10_000_000:
+                      try:b=f.read_bytes()
+                      except:continue
+                      for m in markers:
+                        if m in b and m.decode(errors='replace') not in hit:hit.append(m.decode(errors='replace'))
+                report.append(f'{d.name}\t{label}\t{status}\tdecoded={len(dec)}\tplain={len(plain)}\tsha256={sha}\tmarkers={",".join(hit)}')
+              except Exception as e:
+                target=out/'failed'/d.name.lstrip('.'); target.mkdir(parents=True,exist_ok=True)
+                (target/f'{label}.xz').write_bytes(dec)
+                report.append(f'{d.name}\t{label}\tXZ_FAIL:{e}\tdecoded={len(dec)}\tsha256={sha}')
+          (out/'REPORT.tsv').write_text('\n'.join(report)+'\n')
           PY
-          tar -tJf /tmp/r382.tar.xz | head -80
+          cat "$OUT/REPORT.tsv"
+          find "$OUT" -type f -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-observable-forensic
+          path: ${{ runner.temp }}/naruto-api-v84-observable-forensic/**
+          if-no-files-found: error
+          retention-days: 7
