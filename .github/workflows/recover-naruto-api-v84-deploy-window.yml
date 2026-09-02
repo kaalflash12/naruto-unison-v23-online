@@ -1,0 +1,116 @@
+name: Recover Naruto API v84 deploy-window artifacts
+
+on:
+  push:
+    branches:
+      - fix/recover-naruto-api-v84-cors
+    paths:
+      - .github/workflows/recover-naruto-api-v84-deploy-window.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  recover-window:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover source candidates around v84 deploy timestamp
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/v84-window"
+          mkdir -p "$OUT/zips" "$OUT/extracted" "$OUT/reports"
+
+          gh api --paginate "/repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.expired == false) | [.id, .name, .size_in_bytes, .created_at] | @tsv' \
+            | awk -F '\t' '$4 >= "2026-08-18T00:00:00Z" && $4 <= "2026-08-22T23:59:59Z"' \
+            > "$OUT/reports/window-artifacts.tsv"
+
+          wc -l "$OUT/reports/window-artifacts.tsv" | tee "$OUT/reports/window-count.txt"
+
+          while IFS=$'\t' read -r id name size created; do
+            [ -n "$id" ] || continue
+            [ "$size" -le 104857600 ] || continue
+            safe="$(printf '%s' "$name" | tr -c 'A-Za-z0-9._-' '_' | cut -c1-100)"
+            z="$OUT/zips/${id}_${safe}.zip"
+            echo "GET $id $created $name"
+            if gh api "/repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > "$z" 2>/dev/null; then
+              python3 - "$z" "$OUT/extracted" "$id" "$name" <<'PY'
+          import hashlib, io, json, pathlib, re, sys, tarfile, zipfile, gzip, lzma
+          zpath=pathlib.Path(sys.argv[1]); out=pathlib.Path(sys.argv[2]); aid=sys.argv[3]; aname=sys.argv[4]
+          hits=[]; MAX=40*1024*1024
+          def wanted(name,data):
+              p=name.replace('\\','/').lower()
+              exact=('supabase/functions/naruto-api/' in p or p.endswith('/naruto-api/index.ts') or p.endswith('/naruto-api/game-data.ts'))
+              markers=sum(x in data for x in [b'naruto_accounts',b'/api/account/login',b'Deno.serve',b'game-data.ts',b'online-mundial-v23'])
+              return exact or (name.lower().endswith('.ts') and markers>=3)
+          def emit(prov,name,data):
+              if not wanted(name,data): return
+              sha=hashlib.sha256(data).hexdigest(); safe=re.sub(r'[^A-Za-z0-9._-]+','_',name)[-150:]
+              p=out/f'{aid}__{sha[:16]}__{safe}'; p.write_bytes(data)
+              hits.append({'artifact_id':aid,'artifact_name':aname,'provenance':prov,'path':name,'size':len(data),'sha256':sha,'saved':p.name})
+          def scan(data,prov,depth=0):
+              if depth>6 or len(data)>MAX:return
+              try:
+                  if zipfile.is_zipfile(io.BytesIO(data)):
+                      with zipfile.ZipFile(io.BytesIO(data)) as z:
+                          for i in z.infolist():
+                              if i.is_dir() or i.file_size>MAX:continue
+                              try:b=z.read(i)
+                              except:continue
+                              emit(prov,i.filename,b); scan(b,prov+'!'+i.filename,depth+1)
+                      return
+              except:pass
+              try:
+                  with tarfile.open(fileobj=io.BytesIO(data),mode='r:*',ignore_zeros=True) as t:
+                      anym=False
+                      for m in t:
+                          if not m.isfile() or m.size>MAX:continue
+                          anym=True
+                          try:f=t.extractfile(m); b=f.read() if f else b''
+                          except:continue
+                          emit(prov,m.name,b); scan(b,prov+'!'+m.name,depth+1)
+                      if anym:return
+              except:pass
+              if data.startswith(b'\x1f\x8b'):
+                  try:b=gzip.decompress(data); emit(prov,'<gzip>',b); scan(b,prov+'!gzip',depth+1)
+                  except:pass
+              if data.startswith(b'\xfd7zXZ\x00'):
+                  try:b=lzma.decompress(data); emit(prov,'<xz>',b); scan(b,prov+'!xz',depth+1)
+                  except:pass
+          scan(zpath.read_bytes(),zpath.name)
+          if hits:
+              rp=out.parent/'reports'/'hits.jsonl'
+              with rp.open('a') as f:
+                  for h in hits:f.write(json.dumps(h,ensure_ascii=False)+'\n')
+          PY
+            fi
+          done < "$OUT/reports/window-artifacts.tsv"
+
+          python3 - "$OUT" <<'PY'
+          import hashlib,json,pathlib,sys
+          out=pathlib.Path(sys.argv[1]); files=[p for p in (out/'extracted').glob('*') if p.is_file()]
+          rows=[]
+          for p in files:
+              b=p.read_bytes(); rows.append({'file':p.name,'size':len(b),'sha256':hashlib.sha256(b).hexdigest(),'has_import_game_data':b"./game-data.ts" in b,'has_login':b'/api/account/login' in b,'has_accounts':b'naruto_accounts' in b})
+          (out/'reports/summary.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          (out/'VERDICT.txt').write_text(f'candidate_files={len(files)}\nindex_like={sum(r["has_login"] and r["has_accounts"] for r in rows)}\nimports_game_data={sum(r["has_import_game_data"] for r in rows)}\n')
+          print((out/'VERDICT.txt').read_text(),end='')
+          PY
+
+          rm -rf "$OUT/zips"
+          find "$OUT" -type f -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+
+      - name: Upload deploy-window recovery
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-deploy-window-scan
+          path: ${{ runner.temp }}/v84-window/**
+          if-no-files-found: error
+          retention-days: 7
