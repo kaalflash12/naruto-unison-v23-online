@@ -52,10 +52,8 @@ jobs:
               out=[]
               for label,x in [('ws',w),('clean',c)]:
                   if not x: continue
-                  # standard; if impossible mod 4 == 1, trim one trailing char as salvage
                   xs=[(label,x)]
                   if len(x)%4==1 and len(x)>1: xs.append((label+'-trim1',x[:-1]))
-                  # also trim up to 3 chars for corrupted tail
                   for n in (1,2,3):
                       if len(x)>n: xs.append((label+f'-tail{n}',x[:-n]))
                   for ll,y in xs:
@@ -66,10 +64,8 @@ jobs:
           def partial_xz(raw):
               if not raw.startswith(b'\xfd7zXZ\x00'): return []
               outs=[]
-              # normal
               try: outs.append(('xz-full',lzma.decompress(raw)))
               except Exception: pass
-              # incremental salvage: preserve output produced before corruption/EOF
               dec=lzma.LZMADecompressor(); acc=bytearray()
               try:
                   step=4096
@@ -80,7 +76,6 @@ jobs:
               return outs
 
           def scan_payload(tag,data):
-              nonlocal_dummy=None
               global recovered,hits
               sha=hashlib.sha256(data).hexdigest()
               key=(sha,len(data))
@@ -93,7 +88,6 @@ jobs:
                   hits+=1
                   (OUT/'hits'/f'payload_{hits:04d}_{sha[:12]}.bin').write_bytes(data)
                   report.append(f'HIT_PAYLOAD\t{tag}\t{len(data)}\t{sha}\t{",".join(found)}')
-              # Try tar normally and in ignore-zero mode.
               for mode in ('r:*','r|*'):
                   try:
                       tf=tarfile.open(fileobj=io.BytesIO(data),mode=mode,ignore_zeros=True)
@@ -119,23 +113,19 @@ jobs:
               dirs=sorted({str(pathlib.PurePosixPath(p).parent) for p in ns if pathlib.PurePosixPath(p).name=='part-00'})
               for d in dirs:
                   allp=[p for p in ns if str(pathlib.PurePosixPath(p).parent)==d and pathlib.PurePosixPath(p).name.startswith('part-')]
-                  # unique archive by blob ids
                   try:
                       blobs={p:show(ref,p) for p in allp}
                   except Exception: continue
                   oidkey='|'.join(sorted(hashlib.sha256(v).hexdigest() for v in blobs.values()))
                   if oidkey in seen: continue
-                  # normal numeric single-part files only
                   singles=sorted([p for p in allp if re.fullmatch(r'part-\d+',pathlib.PurePosixPath(p).name)],key=lambda p:int(pathlib.PurePosixPath(p).name.split('-')[1]))
                   seqs=[('singles',singles)]
-                  # merged alternatives like part-07-08 replace overlapping singles >= first number
                   for p in allp:
                       m=re.fullmatch(r'part-(\d+)-(\d+)',pathlib.PurePosixPath(p).name)
                       if m:
                           a,b=map(int,m.groups())
                           prefix=[q for q in singles if int(pathlib.PurePosixPath(q).name.split('-')[1])<a]
                           seqs.append((f'merged-{a}-{b}',prefix+[p]))
-                          # alternative: retain first overlapping single then merged
                           first=[q for q in singles if int(pathlib.PurePosixPath(q).name.split('-')[1])<=a]
                           seqs.append((f'single-{a}+merged',first+[p]))
                   for seqname,seq in seqs:
@@ -145,7 +135,6 @@ jobs:
                       candidates=[]
                       candidates += b64variants(rawjoin)
                       candidates += b64variants(cleanjoin)
-                      # decode each part independently then concatenate
                       decoded_parts=[]; ok=True
                       for p in seq:
                           vs=b64variants(blobs[p])
@@ -170,3 +159,5 @@ jobs:
           path: ${{ runner.temp }}/naruto-api-v84-forensic-repair/**
           if-no-files-found: error
           retention-days: 7
+
+# retrigger: 2026-09-02T15:16Z
