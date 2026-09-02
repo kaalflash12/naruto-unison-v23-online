@@ -1,0 +1,188 @@
+name: Recover Naruto API v84 deep audit
+
+on:
+  push:
+    branches:
+      - fix/recover-naruto-api-v84-cors
+    paths:
+      - .github/workflows/recover-naruto-api-v84-deep-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout recovery branch with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch every branch and tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --force --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          git fetch --force --tags origin
+          echo "remote_branches=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+          echo "commits=$(git rev-list --all | sort -u | wc -l)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Search complete Git object history
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/naruto-api-v84-deep-audit"
+          mkdir -p "$OUT/history-hits"
+          git for-each-ref --format='%(refname) %(objectname)' refs/remotes/origin refs/tags | sort > "$OUT/refs.txt"
+          git rev-list --objects --all > "$OUT/all-objects.txt"
+          grep -Eai '(^|/)(naruto-api|game-data\.ts)(/|$)|naruto[_-]api|game-data\.ts' "$OUT/all-objects.txt" > "$OUT/path-name-hits.txt" || true
+
+          OUT="$OUT" python3 - <<'PY'
+          import hashlib, os, pathlib, re, subprocess
+          out=pathlib.Path(os.environ['OUT'])
+          markers=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts']
+          allowed={'.ts','.tsx','.js','.mjs','.cjs','.json','.md','.txt','.yml','.yaml','.html'}
+          seen=set(); hits=[]; scanned=0
+          rows=(out/'all-objects.txt').read_text(errors='replace').splitlines()
+          for row in rows:
+              parts=row.split(' ',1)
+              if len(parts)!=2: continue
+              oid,path=parts
+              ext=pathlib.PurePosixPath(path).suffix.lower()
+              if ext not in allowed: continue
+              if oid in seen: continue
+              seen.add(oid)
+              try:
+                  typ=subprocess.check_output(['git','cat-file','-t',oid],text=True).strip()
+                  if typ!='blob': continue
+                  size=int(subprocess.check_output(['git','cat-file','-s',oid],text=True).strip())
+                  if size>5_000_000: continue
+                  data=subprocess.check_output(['git','cat-file','-p',oid])
+              except Exception:
+                  continue
+              scanned += 1
+              found=[m.decode() for m in markers if m in data]
+              namehit=('naruto-api' in path.lower() or 'naruto_api' in path.lower() or path.lower().endswith('game-data.ts'))
+              if not found and not namehit: continue
+              sha=hashlib.sha256(data).hexdigest()
+              safe=re.sub(r'[^A-Za-z0-9._-]+','_',path)[-180:]
+              dest=out/'history-hits'/f'{oid}__{safe}'
+              dest.write_bytes(data)
+              hits.append((oid,path,size,sha,','.join(found)))
+          with (out/'content-hits.tsv').open('w',encoding='utf-8') as f:
+              f.write('oid\tpath\tsize\tsha256\tmarkers\n')
+              for row in hits: f.write('\t'.join(map(str,row))+'\n')
+          (out/'history-scan-summary.txt').write_text(f'unique_text_blobs_scanned={scanned}\nhits={len(hits)}\n',encoding='utf-8')
+          PY
+
+          while IFS=$'\t' read -r oid path size sha markers; do
+            [ "$oid" = "oid" ] && continue
+            {
+              echo "=== $oid $path ==="
+              git log --all --find-object="$oid" --format='%H %cI %D %s' --no-patch | head -n 20 || true
+            } >> "$OUT/hit-provenance.txt"
+          done < "$OUT/content-hits.tsv"
+
+      - name: Decode and inspect every packed Base64 XZ payload on branch tips
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/naruto-api-v84-deep-audit"
+          mkdir -p "$OUT/archive-hits"
+          OUT="$OUT" python3 - <<'PY'
+          import base64, hashlib, io, lzma, os, pathlib, re, subprocess, tarfile, tempfile
+          out=pathlib.Path(os.environ['OUT'])
+          refs=subprocess.check_output(['git','for-each-ref','--format=%(refname)','refs/remotes/origin'],text=True).splitlines()
+          markers=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts']
+          archive_seen={}
+          reports=[]; hits=[]
+          def git_text(ref,path):
+              return subprocess.check_output(['git','show',f'{ref}:{path}'])
+          for ref in refs:
+              try:
+                  names=subprocess.check_output(['git','ls-tree','-r','--name-only',ref],text=True,errors='replace').splitlines()
+              except Exception:
+                  continue
+              dirs=sorted({str(pathlib.PurePosixPath(p).parent) for p in names if pathlib.PurePosixPath(p).name=='part-00'})
+              for d in dirs:
+                  parts=sorted([p for p in names if str(pathlib.PurePosixPath(p).parent)==d and pathlib.PurePosixPath(p).name.startswith('part-')], key=lambda p:[int(x) if x.isdigit() else x for x in re.split(r'(\d+)',p)])
+                  if not parts: continue
+                  try:
+                      manifest=[]; chunks=[]
+                      for p in parts:
+                          oid=subprocess.check_output(['git','rev-parse',f'{ref}:{p}'],text=True).strip()
+                          manifest.append(oid)
+                          chunks.append(re.sub(rb'[^A-Za-z0-9+/=]',b'',git_text(ref,p)))
+                      key=hashlib.sha256(('\n'.join(manifest)).encode()).hexdigest()
+                      if key in archive_seen:
+                          reports.append((ref,d,len(parts),'DUPLICATE',archive_seen[key],key,''))
+                          continue
+                      archive_seen[key]=f'{ref}:{d}'
+                      raw=base64.b64decode(b''.join(chunks),validate=True)
+                      if not raw.startswith(b'\xfd7zXZ\x00'):
+                          reports.append((ref,d,len(parts),'NOT_XZ','',key,str(len(raw))))
+                          continue
+                      decomp=lzma.decompress(raw)
+                      tf=tarfile.open(fileobj=io.BytesIO(decomp),mode='r:')
+                      members=[m for m in tf.getmembers() if m.isfile()]
+                      matched=[]
+                      for m in members:
+                          lname=m.name.lower()
+                          namehit=('naruto-api' in lname or 'naruto_api' in lname or lname.endswith('game-data.ts'))
+                          if m.size>8_000_000 and not namehit: continue
+                          f=tf.extractfile(m)
+                          data=f.read() if f else b''
+                          found=[x.decode() for x in markers if x in data]
+                          if not namehit and not found: continue
+                          sha=hashlib.sha256(data).hexdigest()
+                          safe=re.sub(r'[^A-Za-z0-9._-]+','_',f'{ref}_{d}_{m.name}')[-220:]
+                          dest=out/'archive-hits'/safe
+                          dest.write_bytes(data)
+                          matched.append(m.name)
+                          hits.append((ref,d,m.name,m.size,sha,','.join(found)))
+                      reports.append((ref,d,len(parts),'VALID_XZ_TAR',str(len(members)),key,';'.join(matched[:30])))
+                  except Exception as e:
+                      reports.append((ref,d,len(parts),'ERROR','', '',repr(e)[:300]))
+          with (out/'packed-archives.tsv').open('w',encoding='utf-8') as f:
+              f.write('ref\tdir\tparts\tstatus\tmembers_or_source\tarchive_key\tmatches_or_error\n')
+              for r in reports: f.write('\t'.join(map(str,r))+'\n')
+          with (out/'archive-content-hits.tsv').open('w',encoding='utf-8') as f:
+              f.write('ref\tdir\tmember\tsize\tsha256\tmarkers\n')
+              for r in hits: f.write('\t'.join(map(str,r))+'\n')
+          (out/'archive-scan-summary.txt').write_text(f'refs={len(refs)}\nunique_archives={len(archive_seen)}\narchives_seen={len(reports)}\nmember_hits={len(hits)}\n',encoding='utf-8')
+          PY
+
+      - name: Build recovery verdict and hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/naruto-api-v84-deep-audit"
+          {
+            echo 'NARUTO API V84 DEEP RECOVERY AUDIT'
+            echo "generated_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo 'scope=all reachable Git refs/objects + all part-* Base64/XZ tar payloads on remote branch tips'
+            cat "$OUT/history-scan-summary.txt"
+            cat "$OUT/archive-scan-summary.txt"
+            echo "path_name_hits=$(wc -l < "$OUT/path-name-hits.txt")"
+            echo "history_content_hits=$(($(wc -l < "$OUT/content-hits.tsv")-1))"
+            echo "archive_content_hits=$(($(wc -l < "$OUT/archive-content-hits.tsv")-1))"
+            echo
+            echo 'Required published-source markers:'
+            echo '  naruto_accounts'
+            echo '  session_token'
+            echo '  /api/account/login'
+            echo '  game-data.ts'
+          } > "$OUT/VERDICT.txt"
+          find "$OUT" -type f -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+          cat "$OUT/VERDICT.txt" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload deep recovery evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-deep-audit
+          path: ${{ runner.temp }}/naruto-api-v84-deep-audit/**
+          if-no-files-found: error
+          retention-days: 7
