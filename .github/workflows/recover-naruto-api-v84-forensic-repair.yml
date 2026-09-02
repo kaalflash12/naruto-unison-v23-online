@@ -1,0 +1,172 @@
+name: Recover Naruto API v84 forensic repair
+
+on:
+  push:
+    branches:
+      - fix/recover-naruto-api-v84-cors
+    paths:
+      - .github/workflows/recover-naruto-api-v84-forensic-repair.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch all refs
+        run: |
+          git fetch --force --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          git fetch --force --tags origin
+      - name: Forensic recovery of packed payloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/naruto-api-v84-forensic-repair"
+          export OUT
+          mkdir -p "$OUT/recovered" "$OUT/hits" "$OUT/reports"
+          python3 - <<'PY'
+          import base64, hashlib, io, itertools, lzma, os, pathlib, re, subprocess, tarfile, traceback
+          OUT=pathlib.Path(os.environ['OUT'])
+          B64=set(b'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=')
+          MARKERS=[b'naruto_accounts',b'session_token',b'/api/account/login',b'game-data.ts',b'Deno.serve',b'Access-Control-Allow-Origin']
+          NAME_MARKERS=('naruto-api','naruto_api','game-data.ts','index.ts')
+          report=[]; seen=set(); recovered=0; hits=0
+
+          def refs():
+              return subprocess.check_output(['git','for-each-ref','--format=%(refname)','refs/remotes/origin'],text=True).splitlines()
+          def names(ref):
+              return subprocess.check_output(['git','ls-tree','-r','--name-only',ref],text=True,errors='replace').splitlines()
+          def show(ref,p): return subprocess.check_output(['git','show',f'{ref}:{p}'])
+          def clean_ws(b): return re.sub(rb'\s+',b'',b)
+          def clean_b64(b): return bytes(x for x in b if x in B64)
+          def padded(b): return b + b'='*((-len(b))%4)
+          def b64variants(blob):
+              w=clean_ws(blob)
+              c=clean_b64(blob)
+              out=[]
+              for label,x in [('ws',w),('clean',c)]:
+                  if not x: continue
+                  # standard; if impossible mod 4 == 1, trim one trailing char as salvage
+                  xs=[(label,x)]
+                  if len(x)%4==1 and len(x)>1: xs.append((label+'-trim1',x[:-1]))
+                  # also trim up to 3 chars for corrupted tail
+                  for n in (1,2,3):
+                      if len(x)>n: xs.append((label+f'-tail{n}',x[:-n]))
+                  for ll,y in xs:
+                      try: out.append((ll,base64.b64decode(padded(y),validate=False)))
+                      except Exception: pass
+              return out
+
+          def partial_xz(raw):
+              if not raw.startswith(b'\xfd7zXZ\x00'): return []
+              outs=[]
+              # normal
+              try: outs.append(('xz-full',lzma.decompress(raw)))
+              except Exception: pass
+              # incremental salvage: preserve output produced before corruption/EOF
+              dec=lzma.LZMADecompressor(); acc=bytearray()
+              try:
+                  step=4096
+                  for i in range(0,len(raw),step): acc.extend(dec.decompress(raw[i:i+step]))
+              except Exception:
+                  pass
+              if acc: outs.append(('xz-partial',bytes(acc)))
+              return outs
+
+          def scan_payload(tag,data):
+              nonlocal_dummy=None
+              global recovered,hits
+              sha=hashlib.sha256(data).hexdigest()
+              key=(sha,len(data))
+              if key in seen: return
+              seen.add(key); recovered+=1
+              fn=OUT/'recovered'/f'{recovered:04d}_{re.sub(r"[^A-Za-z0-9._-]+","_",tag)[-140:]}_{sha[:12]}.bin'
+              fn.write_bytes(data)
+              found=[m.decode(errors='replace') for m in MARKERS if m in data]
+              if found:
+                  hits+=1
+                  (OUT/'hits'/f'payload_{hits:04d}_{sha[:12]}.bin').write_bytes(data)
+                  report.append(f'HIT_PAYLOAD\t{tag}\t{len(data)}\t{sha}\t{",".join(found)}')
+              # Try tar normally and in ignore-zero mode.
+              for mode in ('r:*','r|*'):
+                  try:
+                      tf=tarfile.open(fileobj=io.BytesIO(data),mode=mode,ignore_zeros=True)
+                      for idx,m in enumerate(tf):
+                          if not m.isfile(): continue
+                          low=m.name.lower(); namehit=any(x in low for x in NAME_MARKERS)
+                          if m.size>20_000_000 and not namehit: continue
+                          try:
+                              f=tf.extractfile(m); body=f.read() if f else b''
+                          except Exception: continue
+                          marks=[x.decode(errors='replace') for x in MARKERS if x in body]
+                          if namehit or marks:
+                              hits+=1
+                              safe=re.sub(r'[^A-Za-z0-9._-]+','_',m.name)[-150:]
+                              p=OUT/'hits'/f'member_{hits:04d}_{safe}'
+                              p.write_bytes(body)
+                              report.append(f'HIT_MEMBER\t{tag}\t{m.name}\t{len(body)}\t{hashlib.sha256(body).hexdigest()}\t{",".join(marks)}')
+                  except Exception: pass
+
+          for ref in refs():
+              try: ns=names(ref)
+              except Exception: continue
+              dirs=sorted({str(pathlib.PurePosixPath(p).parent) for p in ns if pathlib.PurePosixPath(p).name=='part-00'})
+              for d in dirs:
+                  allp=[p for p in ns if str(pathlib.PurePosixPath(p).parent)==d and pathlib.PurePosixPath(p).name.startswith('part-')]
+                  # unique archive by blob ids
+                  try:
+                      blobs={p:show(ref,p) for p in allp}
+                  except Exception: continue
+                  oidkey='|'.join(sorted(hashlib.sha256(v).hexdigest() for v in blobs.values()))
+                  if oidkey in seen: continue
+                  # normal numeric single-part files only
+                  singles=sorted([p for p in allp if re.fullmatch(r'part-\d+',pathlib.PurePosixPath(p).name)],key=lambda p:int(pathlib.PurePosixPath(p).name.split('-')[1]))
+                  seqs=[('singles',singles)]
+                  # merged alternatives like part-07-08 replace overlapping singles >= first number
+                  for p in allp:
+                      m=re.fullmatch(r'part-(\d+)-(\d+)',pathlib.PurePosixPath(p).name)
+                      if m:
+                          a,b=map(int,m.groups())
+                          prefix=[q for q in singles if int(pathlib.PurePosixPath(q).name.split('-')[1])<a]
+                          seqs.append((f'merged-{a}-{b}',prefix+[p]))
+                          # alternative: retain first overlapping single then merged
+                          first=[q for q in singles if int(pathlib.PurePosixPath(q).name.split('-')[1])<=a]
+                          seqs.append((f'single-{a}+merged',first+[p]))
+                  for seqname,seq in seqs:
+                      if not seq: continue
+                      rawjoin=b''.join(blobs[p] for p in seq)
+                      cleanjoin=b''.join(clean_b64(blobs[p]) for p in seq)
+                      candidates=[]
+                      candidates += b64variants(rawjoin)
+                      candidates += b64variants(cleanjoin)
+                      # decode each part independently then concatenate
+                      decoded_parts=[]; ok=True
+                      for p in seq:
+                          vs=b64variants(blobs[p])
+                          if not vs: ok=False; break
+                          decoded_parts.append(vs[0][1])
+                      if ok: candidates.append(('decode-each',b''.join(decoded_parts)))
+                      for how,raw in candidates:
+                          tag=f'{ref}:{d}:{seqname}:{how}'
+                          scan_payload(tag,raw)
+                          for xhow,plain in partial_xz(raw): scan_payload(tag+':'+xhow,plain)
+
+          (OUT/'reports'/'REPORT.tsv').write_text('\n'.join(report)+'\n')
+          (OUT/'VERDICT.txt').write_text(f'recovered_payloads={recovered}\nhits={hits}\n')
+          PY
+          find "$OUT" -type f -print0 | sort -z | xargs -0 sha256sum > "$OUT/SHA256SUMS.txt"
+          cat "$OUT/VERDICT.txt"
+          cat "$OUT/reports/REPORT.tsv" || true
+      - name: Upload forensic recovery
+        uses: actions/upload-artifact@v4
+        with:
+          name: naruto-api-v84-forensic-repair
+          path: ${{ runner.temp }}/naruto-api-v84-forensic-repair/**
+          if-no-files-found: error
+          retention-days: 7
